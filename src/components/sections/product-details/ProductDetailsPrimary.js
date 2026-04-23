@@ -39,7 +39,7 @@ const ProductDetailsPrimary = () => {
     >
       <div className="container">
         <div className="row">
-          <div className={` ${isNotSidebar ? "" : "col-lg-8"} col-md-12`}>
+          <div className={` ${isNotSidebar ? "" : "col-lg-12"} col-md-12`}>
             <div
               className={`ltn__shop-details-inner ${
                 type === 1 || type === 2 ? "mb-60" : ""
@@ -93,19 +93,7 @@ const ProductDetailsPrimary = () => {
           {isNotSidebar ? (
             ""
           ) : (
-            <div className="col-lg-4">
-              <aside className="sidebar ltn__shop-sidebar ltn__right-sidebar">
-                {/* <!-- Top Rated Product Widget --> */}
-                <SidebarTopRatedProducs />
-
-                {/* <!-- Banner Widget --> */}
-                <SidebarBanner
-                  image={"/img/banner/2.jpg"}
-                  imgWidth={740}
-                  imgHeight={440}
-                />
-              </aside>
-            </div>
+            ""
           )}
         </div>
       </div>

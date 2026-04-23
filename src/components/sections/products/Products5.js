@@ -21,15 +21,8 @@ const Products5 = ({ isRelated, title, tag, pt, pb }) => {
                 isRelated ? "ltn__section-title-2" : " text-center"
               }`}
             >
-              {tag ? (
-                <h6 className="section-subtitle ltn__secondary-color">{tag}</h6>
-              ) : (
-                ""
-              )}
-              <h1 className="section-title">
-                {title ? title : "Special Offers"}
-                {isRelated ? <span>.</span> : ""}
-              </h1>
+             
+              
             </div>
           </div>
         </div>
