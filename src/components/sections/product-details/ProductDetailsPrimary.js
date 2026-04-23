@@ -3,43 +3,39 @@ import getAllProducts from "@/libs/getAllProducts";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import SidebarTopRatedProducs from "@/components/shared/sidebars/widgets/SidebarTopRatedProducs";
-import SidebarBanner from "@/components/shared/sidebars/widgets/SidebarBanner";
 import { useProductContext } from "@/providers/ProductContext";
 import ProductDetailsRight from "@/components/shared/products/ProductDetailsRight";
 import { useCommonContext } from "@/providers/CommonContext";
-import ProductDetailsTab from "@/components/shared/products/ProductDetailsTab";
-import ProductDetailsTab2 from "@/components/shared/products/ProductDetailsTab2";
+
 const ProductDetailsPrimary = () => {
-  // hooks
   const { isNotSidebar, type } = useCommonContext();
   const { setCurrentProduct } = useProductContext();
-  // products and filter current product
+
   const { id: currentId } = useParams();
   const products = getAllProducts();
+
+  // ✅ Re-derives product fresh on every render when URL id changes
   const product = products?.find(
     ({ id }) => id === (!currentId ? 1 : parseInt(currentId))
   );
-  // current product
 
-  const { type: currentType } = product;
-  // other slider images
-  const ohterImages = products?.filter(
-    ({ id, type }) =>
-      id !== parseInt(currentId) && (!currentId ? id !== 1 : true)
+  if (!product) return null; // ✅ Guard against undefined product
+
+  const otherImages = products?.filter(
+    ({ id }) => id !== parseInt(currentId) && (!currentId ? id !== 1 : true)
   );
-  const allImages = [product, ...ohterImages?.slice(0, 6)];
+  const allImages = [product, ...otherImages?.slice(0, 6)];
 
   return (
     <div
-      className={`ltn__shop-details-area  ${
+      className={`ltn__shop-details-area ${
         type === 1 || type === 2 ? "pb-85" : "pb-120"
       }`}
       onMouseEnter={() => setCurrentProduct(product)}
     >
       <div className="container">
         <div className="row">
-          <div className={` ${isNotSidebar ? "" : "col-lg-12"} col-md-12`}>
+          <div className={`${isNotSidebar ? "" : "col-lg-12"} col-md-12`}>
             <div
               className={`ltn__shop-details-inner ${
                 type === 1 || type === 2 ? "mb-60" : ""
@@ -77,24 +73,12 @@ const ProductDetailsPrimary = () => {
                   </div>
                 </div>
                 <div className={isNotSidebar ? "col-lg-6" : "col-md-6"}>
-                  {/*  */}
-                  <ProductDetailsRight product={product} />
+                  {/* ✅ key prop forces re-mount when product changes */}
+                  <ProductDetailsRight key={product.id} product={product} />
                 </div>
               </div>
             </div>
-            {/* <!-- Shop Tab Start --> */}
-            {type === 1 || type === 2 ? (
-              <ProductDetailsTab product={product} />
-            ) : (
-              ""
-            )}
-            {/* <!-- Shop Tab End --> */}
           </div>
-          {isNotSidebar ? (
-            ""
-          ) : (
-            ""
-          )}
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Red Hot Tomato",
-    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores sit odit nesciunt, aliquid, deleniti non et ut dolorem!",
+    "desc": "red hot tomato is a type of vegetable that is commonly used in cooking and salads. It is known for its vibrant red color, juicy texture, and slightly sweet flavor. Red hot tomatoes are rich in vitamins A and C, as well as antioxidants, making them a healthy addition to meals. They can be eaten raw, cooked, or used as a base for sauces and soups.",
     "featured": true,
     "price": 162,
     "previousPrice": 67,
@@ -27,7 +27,7 @@
   {
     "id": 2,
     "title": "Vegetables Juices",
-    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores sit odit nesciunt, aliquid, deleniti non et ut dolorem!",
+    "desc": "Vegetable juices are a healthy way to consume essential nutrients from a variety of vegetables. They are often rich in vitamins, minerals, and antioxidants, making them a great addition to a balanced diet. These juices can be made at home or purchased from stores, and they offer a convenient way to increase your intake of vegetables.",
     "featured": true,
     "price": 85,
     "previousPrice": 99,
@@ -52,7 +52,7 @@
   {
     "id": 3,
     "title": "Orange Fresh Juice",
-    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores sit odit nesciunt, aliquid, deleniti non et ut dolorem!",
+    "desc": "Orange fresh juice is a delicious and nutritious beverage made from freshly squeezed oranges. It is rich in vitamin C and other essential nutrients, making it a great choice for a healthy drink. The juice can be consumed on its own or used as an ingredient in various recipes.",
     "featured": true,
     "price": 92,
     "previousPrice": 88,
