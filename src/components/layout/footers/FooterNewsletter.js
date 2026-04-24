@@ -16,13 +16,13 @@ const FooterNewsletter = () => {
             </div>
           </form>
         </div>
-        <h5 className="mt-30">We Accept</h5>
+        {/* <h5 className="mt-30">We Accept</h5>
         <Image
           src="/img/icons/payment-4.png"
           width={370}
           height={42}
           alt="Payment Image"
-        />
+        /> */}
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 const makePath = (text) => {
   const pathMakeAbleText = text
-    .toLowerCase()
     ?.split("/")
     .join(" ")
     .split("&")

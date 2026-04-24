@@ -5,26 +5,26 @@ const FooterServices2 = () => {
   return (
     <div className="col-xl-2 col-md-6 col-sm-6 col-12">
       <div className="footer-widget footer-menu-widget clearfix">
-        <h4 className="footer-title">Services.</h4>
+        <h4 className="footer-title">Our Products</h4>
         <div className="footer-menu">
           <ul>
             <li>
-              <Link href="/order-tracking">Order tracking</Link>
+              <Link href="/fruits">Fruits</Link>
             </li>
             <li>
-              <Link href="/wishlist">Wish List</Link>
+              <Link href="/veggies">Vegetables</Link>
             </li>
             <li>
-              <Link href="/login">Login</Link>
+              <Link href="/login">Herbal Powder</Link>
             </li>
             <li>
-              <Link href="/account">My account</Link>
+              <Link href="/account">spices</Link>
             </li>
             <li>
-              <Link href="/about">Terms & Conditions</Link>
+              <Link href="/about">Fruite Powder</Link>
             </li>
             <li>
-              <Link href="/about">Promotional Offers</Link>
+              <Link href="/about">Honey</Link>
             </li>
           </ul>
         </div>

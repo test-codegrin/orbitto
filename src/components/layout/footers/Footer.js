@@ -30,10 +30,8 @@ const Footer = () => {
                   <FooterAbout2 />
                   <FooterCompany />
                   <FooterServices2 />
-                  <FooterCustomerCare />
+                  {/* <FooterCustomerCare /> */}
                   <FooterNewsletter />
-              
-             
             </div>
           </div>
         </div>
