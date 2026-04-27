@@ -1,10 +1,7 @@
 "use client";
-import { useCommonContext } from "@/providers/CommonContext";
-import ProductDetailsTab from "./ProductDetailsTab";
 
 const ProductDetailsRight = ({ product }) => {
   const { title, desc } = product || {};  // ✅ use "desc" not "description"
-  const value = useCommonContext();
 
   return (
     <div className="modal-product-info shop-details-info pl-0" id="details">
@@ -18,7 +15,7 @@ const ProductDetailsRight = ({ product }) => {
       <div className="ltn__product-details-menu-2 mt-4">
         
          <a
-          href="#contact"
+          href="/contact"
           className="theme-btn-1 btn btn-effect-1"
           title="Contact Inquiry"
         >
@@ -26,7 +23,6 @@ const ProductDetailsRight = ({ product }) => {
         </a>
       </div>
 
-      {/* <ProductDetailsTab product={product} /> */}
     </div>
   );
 };

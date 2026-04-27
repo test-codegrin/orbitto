@@ -13,40 +13,40 @@ const Products3 = ({
   type,
   isDouble,
 }) => {
-  const drinksProducts = getAllProducts()?.filter(
-    ({ collection }) => makePath(collection) === makePath("Food & Drinks")
+  const fruitsPowderProducts = getAllProducts()?.filter(
+    ({ type }) => makePath(type) === makePath("Fruit Powder")
   );
+  const fruitsPowderProducts1 = fruitsPowderProducts?.slice(0, 6);
+  const fruitsPowderProducts2 = fruitsPowderProducts?.slice(6, 12);
 
-  const drinksProducts1 = drinksProducts?.slice(0, 6);
-  const drinksProducts2 = drinksProducts?.slice(6, 12);
-  const vegetablesProducts = getAllProducts()?.filter(
-    ({ collection }) => makePath(collection) === makePath("Vegetables")
+  const vegetablesPowderProducts = getAllProducts()?.filter(
+    ({ type }) => makePath(type) === makePath("Vegetable Powder")
   );
+  const vegetablesPowderProducts1 = vegetablesPowderProducts?.slice(0, 6);
+  const vegetablesPowderProducts2 = vegetablesPowderProducts?.slice(6, 12);
 
-  const vegetablesProducts1 = vegetablesProducts?.slice(0, 6);
-  const vegetablesProducts2 = vegetablesProducts?.slice(6, 12);
-  const driedProducts = getAllProducts()?.filter(
-    ({ collection }) => makePath(collection) === makePath("Dried Foods")
+  const honeyProducts = getAllProducts()?.filter(
+    ({ type }) => makePath(type) === makePath("Honey")
   );
+  const honeyProducts1 = honeyProducts?.slice(0, 6);
+  const honeyProducts2 = honeyProducts?.slice(6, 12);
 
-  const driedProducts1 = driedProducts?.slice(0, 6);
-  const driedProducts2 = driedProducts?.slice(6, 12);
-  const breadProducts = getAllProducts()?.filter(
-    ({ collection }) => makePath(collection) === makePath("Bread & Cake")
+  const spicesProducts = getAllProducts()?.filter(
+    ({ type }) => makePath(type) === makePath("Spices")
   );
+  const spicesProducts1 = spicesProducts?.slice(0, 6);
+  const spicesProducts2 = spicesProducts?.slice(6, 12);
 
-  const breadProducts1 = breadProducts?.slice(0, 6);
-  const breadProducts2 = breadProducts?.slice(6, 12);
-  const fishProducts = getAllProducts()?.filter(
-    ({ collection }) => makePath(collection) === makePath("Fish & Meat")
+  const herbalProducts = getAllProducts()?.filter(
+    ({ type }) => makePath(type) === makePath("Herbal Powder")
   );
-  const fishProducts1 = fishProducts?.slice(0, 6);
-  const fishProducts2 = fishProducts?.slice(6, 12);
+  const herbalProducts1 = herbalProducts?.slice(0, 6);
+  const herbalProducts2 = herbalProducts?.slice(6, 12);
 
   return (
     <section>
       <div
-        className={`ltn__product-tab-area ltn__product-gutter  pb-70 ${
+        className={`ltn__product-tab-area ltn__product-gutter pb-70 ${
           pt ? pt : "pt-115"
         }`}
       >
@@ -54,7 +54,7 @@ const Products3 = ({
           <div className="row">
             <div className="col-lg-12">
               <div
-                className={`section-title-area  ${
+                className={`section-title-area ${
                   type === 2
                     ? ""
                     : isSmallTitle
@@ -65,19 +65,13 @@ const Products3 = ({
                 <h1 className="section-title">
                   {title ? title : "Our Products"}
                 </h1>
-                {desc ? (
-                  <p>
-                    A highly efficient slip-ring scanner for {"today's"}{" "}
-                    diagnostic requirements.
-                  </p>
-                ) : (
-                  ""
-                )}
+                {desc ? <p>{desc}</p> : ""}
               </div>
+
               <div
                 className={`ltn__tab-menu ltn__tab-menu-2 ${
                   type === 2 ? "ltn__tab-menu-top-right" : ""
-                }  text-uppercase text-center`}
+                } text-uppercase text-center`}
               >
                 <div className="nav">
                   <Link
@@ -85,129 +79,105 @@ const Products3 = ({
                     data-bs-toggle="tab"
                     href="#liton_tab_3_1"
                   >
-                    Food & Drinks
+                    Fruits Powder
                   </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_2" className="">
-                    Vegetables
+                    Vegetables Powder
                   </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_3" className="">
-                    Dried Foods
+                    Honey Powder
                   </Link>
-                  {type === 2 ? (
-                    ""
-                  ) : (
-                    <Link
-                      data-bs-toggle="tab"
-                      href="#liton_tab_3_4"
-                      className=""
-                    >
-                      Bread & Cake
-                    </Link>
-                  )}
+                  <Link data-bs-toggle="tab" href="#liton_tab_3_4" className="">
+                    Spices
+                  </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_5" className="">
-                    Fish & Meat
+                    Herbal Powders
                   </Link>
                 </div>
               </div>
+
               <div className="tab-content">
+                {/* Fruits Powder */}
                 <div className="tab-pane fade active show" id="liton_tab_3_1">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {/* <!-- ltn__product-item --> */}
-                      {drinksProducts1?.map((product, idx) => (
+                      {fruitsPowderProducts1?.map((product, idx) => (
                         <div className="col-lg-12" key={idx}>
                           <ProductCardPrimary product={product} />
                           {isDouble ? (
-                            <ProductCardPrimary
-                              product={drinksProducts2[idx]}
-                            />
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade" id="liton_tab_3_2">
-                  <div className="ltn__product-tab-content-inner">
-                    <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {/* <!-- ltn__product-item --> */}
-                      {vegetablesProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary
-                              product={vegetablesProducts2[idx]}
-                            />
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                      ))}
-                      {/* <!--  --> */}
-                    </div>
-                  </div>
-                </div>
-                <div className="tab-pane fade" id="liton_tab_3_3">
-                  <div className="ltn__product-tab-content-inner">
-                    <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {/* <!-- ltn__product-item --> */}
-                      {driedProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={driedProducts2[idx]} />
-                          ) : (
-                            ""
-                          )}
+                            <ProductCardPrimary product={fruitsPowderProducts2[idx]} />
+                          ) : ""}
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
 
-                {type === 2 ? (
-                  ""
-                ) : (
-                  <div className="tab-pane fade" id="liton_tab_3_4">
-                    <div className="ltn__product-tab-content-inner">
-                      <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                        {/* <!-- ltn__product-item --> */}
-                        {breadProducts1?.map((product, idx) => (
-                          <div className="col-lg-12" key={idx}>
-                            <ProductCardPrimary product={product} />
-                            {isDouble ? (
-                              <ProductCardPrimary
-                                product={breadProducts2[idx]}
-                              />
-                            ) : (
-                              ""
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-                <div className="tab-pane fade" id="liton_tab_3_5">
+                {/* Vegetables Powder */}
+                <div className="tab-pane fade" id="liton_tab_3_2">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {/* <!-- ltn__product-item --> */}
-                      {fishProducts1?.map((product, idx) => (
+                      {vegetablesPowderProducts1?.map((product, idx) => (
                         <div className="col-lg-12" key={idx}>
                           <ProductCardPrimary product={product} />
                           {isDouble ? (
-                            <ProductCardPrimary product={fishProducts2[idx]} />
-                          ) : (
-                            ""
-                          )}
+                            <ProductCardPrimary product={vegetablesPowderProducts2[idx]} />
+                          ) : ""}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Honey Powder */}
+                <div className="tab-pane fade" id="liton_tab_3_3">
+                  <div className="ltn__product-tab-content-inner">
+                    <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
+                      {honeyProducts1?.map((product, idx) => (
+                        <div className="col-lg-12" key={idx}>
+                          <ProductCardPrimary product={product} />
+                          {isDouble ? (
+                            <ProductCardPrimary product={honeyProducts2[idx]} />
+                          ) : ""}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Spices */}
+                <div className="tab-pane fade" id="liton_tab_3_4">
+                  <div className="ltn__product-tab-content-inner">
+                    <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
+                      {spicesProducts1?.map((product, idx) => (
+                        <div className="col-lg-12" key={idx}>
+                          <ProductCardPrimary product={product} />
+                          {isDouble ? (
+                            <ProductCardPrimary product={spicesProducts2[idx]} />
+                          ) : ""}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Herbal Powders */}
+                <div className="tab-pane fade" id="liton_tab_3_5">
+                  <div className="ltn__product-tab-content-inner">
+                    <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
+                      {herbalProducts1?.map((product, idx) => (
+                        <div className="col-lg-12" key={idx}>
+                          <ProductCardPrimary product={product} />
+                          {isDouble ? (
+                            <ProductCardPrimary product={herbalProducts2[idx]} />
+                          ) : ""}
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
