@@ -1,20 +1,22 @@
 "use client";
 
 const ProductDetailsRight = ({ product }) => {
-  const { title, desc } = product || {};  // ✅ use "desc" not "description"
+  const { title, desc, description, type } = product || {};
 
   return (
     <div className="modal-product-info shop-details-info pl-0" id="details">
-      {/* Title */}
       <h3>{title}</h3>
 
-      {/* Description */}
-      <p className="product-description">{desc}</p>
+      <p className="product-description">{description || desc}</p>
 
-      {/* Contact Inquiry Button */}
+      {!!type && (
+        <p className="product-category-text">
+          <strong>Category:</strong> {type}
+        </p>
+      )}
+
       <div className="ltn__product-details-menu-2 mt-4">
-        
-         <a
+        <a
           href="/contact"
           className="theme-btn-1 btn btn-effect-1"
           title="Contact Inquiry"
@@ -22,7 +24,6 @@ const ProductDetailsRight = ({ product }) => {
           <span>Contact Inquiry</span>
         </a>
       </div>
-
     </div>
   );
 };

@@ -2,11 +2,34 @@
 import { useProductContext } from "@/providers/ProductContext";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const ProductCardPrimary = ({ product }) => {
+const ProductCardPrimary = ({
+  product,
+  hideCardWhenImageUnavailable = false,
+  onImageUnavailable,
+}) => {
   const { title, image, id } = product || {};
   const { setCurrentProduct } = useProductContext();
+  const [isImageUnavailable, setIsImageUnavailable] = useState(
+    hideCardWhenImageUnavailable && !image
+  );
+
+  useEffect(() => {
+    setIsImageUnavailable(hideCardWhenImageUnavailable && !image);
+  }, [hideCardWhenImageUnavailable, image, id]);
+
+  const handleImageError = () => {
+    if (!hideCardWhenImageUnavailable) return;
+    setIsImageUnavailable(true);
+    if (onImageUnavailable && id) {
+      onImageUnavailable(id);
+    }
+  };
+
+  if (hideCardWhenImageUnavailable && isImageUnavailable) {
+    return null;
+  }
 
   return (
     <div
@@ -16,10 +39,11 @@ const ProductCardPrimary = ({ product }) => {
       <div className="product-img">
         <Link href={`/products/${id || ""}`}>
           <Image
-            src={image || "/placeholder.png"} // fallback image
+            src={hideCardWhenImageUnavailable ? image : image || "/placeholder.png"}
             alt={title || "product image"}
             width={1000}
             height={1000}
+            onError={handleImageError}
           />
         </Link>
       </div>
