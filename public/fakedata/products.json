@@ -1847,9 +1847,9 @@
   },
   {
     "id": 50,
-    "title": "Honey Powder",
-    "desc": "Honey Powder is produced by spray-drying fresh liquid honey at high temperatures to convert it into a stable, free-flowing powder, often referred to as “dry honey.” It retains the mild aroma, floral-nutty sweetness, and characteristic flavor profile of liquid honey, with the primary difference being its powdered texture. When water is added, the powder can be reconstituted back into liquid honey form.\nHoney naturally contains phenolic acids, flavonoids, proteins, enzymes, amino acids, vitamins, and minerals, which are commonly associated, in a general non-medical sense, with antioxidant and prebiotic characteristics. The powdered format offers improved handling, moisture management, and formulation stability across a wide range of food applications.",
-    "description": "Honey Powder is produced by spray-drying fresh liquid honey at high temperatures to convert it into a stable, free-flowing powder, often referred to as “dry honey.” It retains the mild aroma, floral-nutty sweetness, and characteristic flavor profile of liquid honey, with the primary difference being its powdered texture. When water is added, the powder can be reconstituted back into liquid honey form.\nHoney naturally contains phenolic acids, flavonoids, proteins, enzymes, amino acids, vitamins, and minerals, which are commonly associated, in a general non-medical sense, with antioxidant and prebiotic characteristics. The powdered format offers improved handling, moisture management, and formulation stability across a wide range of food applications.",
+    "title": "Honey",
+    "desc": "Honey is produced by spray-drying fresh liquid honey at high temperatures to convert it into a stable, free-flowing powder, often referred to as “dry honey.” It retains the mild aroma, floral-nutty sweetness, and characteristic flavor profile of liquid honey, with the primary difference being its powdered texture. When water is added, the powder can be reconstituted back into liquid honey form.\nHoney naturally contains phenolic acids, flavonoids, proteins, enzymes, amino acids, vitamins, and minerals, which are commonly associated, in a general non-medical sense, with antioxidant and prebiotic characteristics. The powdered format offers improved handling, moisture management, and formulation stability across a wide range of food applications.",
+    "description": "Honey is produced by spray-drying fresh liquid honey at high temperatures to convert it into a stable, free-flowing powder, often referred to as “dry honey.” It retains the mild aroma, floral-nutty sweetness, and characteristic flavor profile of liquid honey, with the primary difference being its powdered texture. When water is added, the powder can be reconstituted back into liquid honey form.\nHoney naturally contains phenolic acids, flavonoids, proteins, enzymes, amino acids, vitamins, and minerals, which are commonly associated, in a general non-medical sense, with antioxidant and prebiotic characteristics. The powdered format offers improved handling, moisture management, and formulation stability across a wide range of food applications.",
     "applications_and_uses": [
       "Use in dry food formulations where liquid honey is difficult to handle",
       "Sweetening of beverages such as tea and coffee",
@@ -1861,7 +1861,7 @@
       "Pastries, cakes, puddings, and dessert preparations"
     ],
     "specifications": {
-      "Product Name": "Spray Dried Honey Powder",
+      "Product Name": "Spray Dried Honey",
       "Raw Material": "Fresh Honey",
       "Color, Taste & Aroma": "Off-white color with typical honey flavor",
       "Applications": "Instant beverage premixes, health foods, bakery products, baby/weaning foods, fruit salads, jellies, milkshakes, puddings, desserts, custard, etc.",

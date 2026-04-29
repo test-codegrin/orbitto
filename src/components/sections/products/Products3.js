@@ -111,7 +111,7 @@ const Products3 = ({
                     Vegetables Powder
                   </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_3" className="">
-                    Honey Powder
+                    Honey
                   </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_4" className="">
                     Spices
@@ -155,7 +155,7 @@ const Products3 = ({
                   </div>
                 </div>
 
-                {/* Honey Powder */}
+                {/* Honey */}
                 <div className="tab-pane fade" id="liton_tab_3_3">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">

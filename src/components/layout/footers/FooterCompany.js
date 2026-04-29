@@ -12,17 +12,17 @@ const FooterCompany = () => {
               <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="/blogs">Blog</Link>
+              <Link href="/blogs">News</Link>
             </li>
             <li>
               <Link href="/shop">All Products</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/locations">Locations Map</Link>
             </li>
             <li>
               <Link href="/faq">FAQ</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/contact">Contact us</Link>
             </li>
