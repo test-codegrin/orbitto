@@ -7,7 +7,7 @@ const ButtonOpenMobileMenu = () => {
   const { headerStyle, headerSize } = useHeaderContex();
   return (
     <div
-      className={`mobile-menu-toggle d-xl-none  ${
+      className={`mobile-menu-toggle d-lg-none  ${
         headerStyle === 2 ? (headerSize === "lg" ? "" : "menu-btn-white") : ""
       }`}
     >

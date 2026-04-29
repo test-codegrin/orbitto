@@ -9,8 +9,6 @@ import { useHeaderContex } from "@/providers/HeaderContex";
 const Logo = ({ sticky }) => {
   const {
     headerStyle,
-    headerSize,
-    isNotHeaderTop,
     navBg,
     isHeaderSupport,
     isTextWhite,
@@ -28,7 +26,7 @@ const Logo = ({ sticky }) => {
       >
         <div className="site-logo">
           <Link href="/">
-            <Image
+            <Image className="orbot-logo"
               src={
                 navBg === "secondary" && sticky
                   ? logoImage2
@@ -38,7 +36,7 @@ const Logo = ({ sticky }) => {
               }
               alt="Logo"
               width={154}
-              height={32}
+              height={42}
             />
           </Link>
         </div>

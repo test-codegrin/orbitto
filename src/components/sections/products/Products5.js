@@ -17,17 +17,16 @@ const Products5 = ({ isRelated, title, tag, pt, pb }) => {
         <div className="row">
           <div className="col-lg-12">
             <div
-              className={`section-title-area   ${
-                isRelated ? "ltn__section-title-2" : " text-center"
+              className={` ${
+                isRelated ? "mt-20" : "text-center"
               }`}
             >
-             
-              
+              {/* ✅ h1 moved here, inside container */}
+              <h1 className="section-title">Related Products</h1>
             </div>
           </div>
         </div>
         <div className="row ltn__product-slider-item-four-active slick-arrow-1">
-          {/* <!-- ltn__product-item --> */}
           {products?.map((product, idx) => (
             <div key={idx} className="col-lg-12">
               <ProductCardPrimary product={product} isShowDisc={true} />

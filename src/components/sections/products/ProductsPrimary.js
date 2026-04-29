@@ -83,30 +83,7 @@ const ProductsPrimary = ({ isSidebar, currentTapId }) => {
                     </div>
                   </div>
                 </li>
-                <li>
-                  {isSidebar === "left" || isSidebar === false ? (
-                    <ShopShortSelect setArrangeInput={setArrangeInput} />
-                  ) : (
-                    <ShopDataShowing
-                      limit={limit}
-                      totalItems={totalItems}
-                      firstItem={firstItem}
-                      lastItem={lastItem}
-                    />
-                  )}
-                </li>
-                <li>
-                  {isSidebar === "left" || isSidebar === false ? (
-                    <ShopDataShowing
-                      limit={limit}
-                      totalItems={totalItems}
-                      firstItem={firstItem}
-                      lastItem={lastItem}
-                    />
-                  ) : (
-                    <ShopShortSelect setArrangeInput={setArrangeInput} />
-                  )}
-                </li>
+               
               </ul>
             </div>
             <div className="tab-content">

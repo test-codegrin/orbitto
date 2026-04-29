@@ -39,11 +39,11 @@ const ProductCardPrimary2 = ({ product }) => {
         </div>
       </div>
       {/* Contact Inquiry Button */}
-      <div className="ltn__product-details-menu-2">
+      <div className="ltn__product-details-menu-2 text-center mb-3">
         
          <a
-          href="#contact"
-          className="theme-btn-1 btn btn-effect-1"
+          href="/contact"
+          className="theme-btn-1 btn btn-effect-1 "
           title="Contact Inquiry"
         >
           <span>Contact Inquiry</span>

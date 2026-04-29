@@ -4752,11 +4752,11 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 /* ----------------------------------------------------
     Footer About Widget
 ---------------------------------------------------- */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .footer-about-widget {
     padding-right: 35px;
   }
-}
+} */
 
 /* ----------------------------------------------------
     Widget Responsive
@@ -4992,6 +4992,10 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .ltn__header-1 .ltn__header-middle-area {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.site-logo img {
+  height: 75px !important;
+  width: auto;
 }
 
 /* ----------------------------------------------

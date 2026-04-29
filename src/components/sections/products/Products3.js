@@ -9,7 +9,6 @@ const Products3 = ({
   title,
   desc,
   isSmallTitle,
-  subtitle,
   pt,
   type,
   isDouble,
@@ -68,6 +67,7 @@ const Products3 = ({
       return nextIds;
     });
   }, []);
+  
 
   return (
     <section>
