@@ -6,7 +6,6 @@ import Copyright2 from "./Copyright2";
 import FooterAbout2 from "./FooterAbout2";
 import FooterCompany from "./FooterCompany";
 import FooterServices2 from "./FooterServices2";
-import FooterCustomerCare from "./FooterCustomerCare";
 import FooterNewsletter from "./FooterNewsletter";
 
 const Footer = () => {
@@ -25,12 +24,11 @@ const Footer = () => {
        
         >
           <div className={ "container-fluid" }>
-            <div className="row">
+            <div className="row justify-content-between">
          
                   <FooterAbout2 />
                   <FooterCompany />
                   <FooterServices2 />
-                  {/* <FooterCustomerCare /> */}
                   <FooterNewsletter />
             </div>
           </div>

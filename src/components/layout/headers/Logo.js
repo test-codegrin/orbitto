@@ -38,7 +38,7 @@ const Logo = ({ sticky }) => {
               }
               alt="Logo"
               width={154}
-              height={42}
+              height={32}
             />
           </Link>
         </div>

@@ -24,9 +24,10 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Curated Products</h4>
+                      <h4>Product Information Hub</h4>
                       <p>
-                        Provide free home delivery for all product over $100
+                        Explore details about fruits, vegetables,
+                        spices, and herbal products
                       </p>
                     </div>
                   </div>
@@ -79,9 +80,10 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Free home delivery</h4>
+                      <h4>Global Export Quality</h4>
                       <p>
-                        We ensure the product quality that you can trust easily
+                        We provide high-quality export-ready products from
+                        trusted sources
                       </p>
                     </div>
                   </div>
