@@ -49,7 +49,7 @@ const About4 = () => {
                       <Link href="/team">Expert Team</Link>
                     </li>
                     <li>
-                      <Link href="/services/1">Pure Equipment</Link>
+                      <Link href="/products/1">Pure Equipment</Link>
                     </li>
                     <li>
                       <Link href="/products/1">Unlimited Product</Link>

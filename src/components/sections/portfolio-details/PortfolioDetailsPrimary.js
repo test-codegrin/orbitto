@@ -1,12 +1,10 @@
 "use client";
 
-import ServiceSidebar from "@/components/shared/sidebars/ServiceSidebar";
 import getAllPortfolios from "@/libs/getAllPortfolios";
 import getAllTestimonials from "@/libs/getAllTestimonials";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import TestimonialCard from "@/components/shared/cards/TestimonialCard";
-import CommonContext from "@/providers/CommonContext";
 
 const PortfolioDetailsPrimary = () => {
   const { id: currentId } = useParams();
@@ -21,7 +19,7 @@ const PortfolioDetailsPrimary = () => {
     <div className="ltn__page-details-area ltn__service-details-area mb-105">
       <div className="container">
         <div className="row">
-          <div className="col-lg-8">
+          <div className="col-lg-12">
             <div className="ltn__page-details-inner ltn__service-details-inner">
               <div className="ltn__blog-img">
                 <Image src={imgLarge} alt="Image" width={800} height={520} />
@@ -115,40 +113,7 @@ const PortfolioDetailsPrimary = () => {
                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident.
               </p>
-              <div className="ltn__service-list-menu text-uppercase mt-50">
-                <ul>
-                  <li>
-                    <i className="fas fa-car"></i> Front Brakes Repair{" "}
-                    <span className="service-price">
-                      $225.95 <span>Plus Parts</span>
-                    </span>{" "}
-                  </li>
-                  <li>
-                    <i className="fas fa-life-ring"></i> Rear Brakes Repair{" "}
-                    <span className="service-price">
-                      $225.95 <span>Plus Parts</span>
-                    </span>{" "}
-                  </li>
-                  <li>
-                    <i className="fas fa-cog"></i> Axle{" "}
-                    <span className="service-price">
-                      $225.95 <span>Plus Parts</span>
-                    </span>{" "}
-                  </li>
-                  <li>
-                    <i className="fas fa-car"></i> Starters / Alternators{" "}
-                    <span className="service-price">
-                      $225.95 <span>Plus Parts</span>
-                    </span>{" "}
-                  </li>
-                </ul>
-              </div>
             </div>
-          </div>
-          <div className="col-lg-4">
-            <CommonContext value={{ isPortfolio: true }}>
-              <ServiceSidebar />
-            </CommonContext>
           </div>
         </div>
       </div>
