@@ -1,7 +1,6 @@
 "use client";
 import ButtonOpenMobileMenu from "@/components/shared/buttons/ButtonOpenMobileMenu";
 import { useHeaderContex } from "@/providers/HeaderContex";
-import Link from "next/link";
 import React from "react";
 
 const HeaderRight = () => {

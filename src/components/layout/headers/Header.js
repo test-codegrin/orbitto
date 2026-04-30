@@ -7,7 +7,6 @@ import MobileMenu from "./MobileMenu";
 import { useHeaderContex } from "@/providers/HeaderContex";
 import ButtonOpenMobileMenu from "@/components/shared/buttons/ButtonOpenMobileMenu";
 import HeaderSearch from "./HeaderSearch";
-import HeaderRight2 from "./HeaderRight2";
 import MobileMenuShow from "./MobileMenuShow";
 import HeaderBottom from "./HeaderBottom";
 
@@ -40,12 +39,8 @@ const Header = () => {
             : " ltn__header-transparent ltn__header-5  "
         } ${isTextWhite ? "gradient-color-2" : ""}`}
       >
-        {/* <!-- ltn__header-top-area start --> */}
         {isNotHeaderTop ? "" : <HeaderTop />}
 
-        {/* <!-- ltn__header-top-area end --> */}
-
-        {/* <!-- ltn__header-middle-area start --> */}
         <div
           className={`ltn__header-middle-area  
             ${headerStyle === 5 ? "" : "ltn__header-sticky"} ${
@@ -72,17 +67,8 @@ const Header = () => {
             className={headerSize === "lg" ? "container-fluid" : "container"}
           >
             <div className="row">
-              {/* logo */}
               <Logo />
-              {/* navbar */}
-              {headerStyle === 5 ? (
-                <>
-                  <HeaderSearch />{" "}
-                </>
-              ) : (
-                <Navbar />
-              )}
-              {/* header right */}
+              {headerStyle === 5 ? <HeaderSearch /> : <Navbar />}
 
               {isNotHeaderRight ? (
                 <ButtonOpenMobileMenu />
@@ -90,15 +76,14 @@ const Header = () => {
                 <HeaderRight />
               ) : headerStyle === 2 || headerStyle === 4 ? (
                 <ButtonOpenMobileMenu />
-              ) : headerStyle === 5 ? (
-                <HeaderRight2 />
               ) : (
+                // ✅ Removed headerStyle === 5 check for HeaderRight2, now always renders HeaderRight
                 <HeaderRight />
               )}
             </div>
           </div>
         </div>
-        {/* <!-- ltn__header-bottom --> */}
+
         {headerStyle === 5 ? <HeaderBottom /> : ""}
       </header>
       <MobileMenu />
