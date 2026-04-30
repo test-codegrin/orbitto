@@ -1,4 +1,4 @@
-import ProductDetailsMain from "@/components/layout/main/productDetailsMain";
+import ProductDetailsMain from "@/components/layout/main/ProductDetailsMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import React from "react";
 

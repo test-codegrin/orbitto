@@ -6,7 +6,7 @@ import countTotalPrice from "@/libs/countTotalPrice";
 import modifyAmount from "@/libs/modifyAmount";
 import sliceText from "@/libs/sliceText";
 import { useCartContext } from "@/providers/CartContext";
-import { useProductContext } from "@/providers/productContext";
+import { useProductContext } from "@/providers/ProductContext";
 import { useWishlistContext } from "@/providers/WshlistContext";
 import Image from "next/image";
 import Link from "next/link";

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import ProductCardPrimary from "@/components/shared/cards/productCardPrimary";
+import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
 import ProductCardPrimary2 from "@/components/shared/cards/ProductCardPrimary2";
 import Nodata from "@/components/shared/no-data/Nodata";
 import Pagination from "@/components/shared/paginations/Pagination";

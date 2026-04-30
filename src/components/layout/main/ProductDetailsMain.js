@@ -1,8 +1,8 @@
 "use client";
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
-import ProductDetailsPrimary from "@/components/sections/product-details/productDetailsPrimary";
-import Products5 from "@/components/sections/products/products5";
+import ProductDetailsPrimary from "@/components/sections/product-details/ProductDetailsPrimary";
+import Products5 from "@/components/sections/products/Products5";
 import CommonContext from "@/providers/CommonContext";
 
 const ProductDetailsMain = ({ title, text, type, isNotSidebar }) => {
