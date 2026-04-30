@@ -1,5 +1,5 @@
 "use client";
-import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
+import ProductCardPrimary from "@/components/shared/cards/productCardPrimary";
 import getAllProducts from "@/libs/getAllProducts";
 import makePath from "@/libs/makePath";
 import Link from "next/link";

@@ -406,7 +406,7 @@ const CheckoutPrimary = () => {
             {!isProducts ? (
               <Nodata text={"No Product!"} />
             ) : (
-              <div className="shoping-cart-total mt-50">
+              <div className="Producting-cart-total mt-50">
                 <h4 className="title-2">Cart Totals</h4>
                 <table className="table">
                   <tbody>

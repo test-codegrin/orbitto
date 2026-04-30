@@ -27,7 +27,7 @@ const Hero1 = () => {
                       </h1>
                       <div className="btn-wrapper animated">
                         <Link
-                          href="/shop"
+                          href="/product"
                           className="theme-btn-1 text-uppercase btn btn-effect-1"
                         >
                           Explore Products
@@ -79,7 +79,7 @@ const Hero1 = () => {
                       </div>
                       <div className="btn-wrapper animated">
                         <Link
-                          href="/shop"
+                          href="/product"
                           className="theme-btn-1 text-uppercase btn btn-effect-1"
                         >
                           Explore Products

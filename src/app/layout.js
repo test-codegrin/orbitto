@@ -5,12 +5,15 @@ import "./globals.css";
 import "@/assets/css/responsive.css";
 import Script from "next/script";
 import { Suspense } from "react";
+import ProductProvider from "@/providers/ProductContext";
+
 const open_sans = Open_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--ltn__body-font",
 });
+
 const rajdhani = Rajdhani({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -31,15 +34,21 @@ export default function RootLayout({ children }) {
       className={`${rajdhani.variable} ${open_sans.variable}`}
     >
       <body className={open_sans.className}>
-        <Suspense fallback={<div></div>}>
-          {children}
 
-          <Script src="/plugins.js" />
-          <Script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeeHDCOXmUMja1CFg96RbtyKgx381yoBU"
-            async
-          />
-        </Suspense>
+        {/* ✅ Scripts moved outside Suspense, at the body level */}
+        <Script src="/plugins.js" strategy="lazyOnload" />
+        <Script
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
+          strategy="lazyOnload" // ✅ Explicit strategy instead of bare `async`
+        />
+
+        {/* ✅ Provider wraps children so all pages can access product context */}
+        <ProductProvider>
+          <Suspense fallback={<div></div>}>
+            {children}
+          </Suspense>
+        </ProductProvider>
+
       </body>
     </html>
   );

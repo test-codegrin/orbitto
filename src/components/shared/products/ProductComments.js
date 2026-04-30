@@ -5,7 +5,7 @@ import React from "react";
 
 const ProductComments = ({ comments, commentsLength }) => {
   return (
-    <div className="ltn__shop-details-tab-content-inner">
+    <div className="ltn__Product-details-tab-content-inner">
       {/* <!-- comment-area --> */}
       <div className="ltn__comment-area mb-30">
         <h4 className="title-2">Comments ({modifyNumber(commentsLength)})</h4>

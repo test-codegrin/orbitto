@@ -1,8 +1,8 @@
 import Link from "next/link";
 import TabDescription from "./TabDescription";
-import ProductDetailsReviews from "./ProductDetailsReviews";
+import ProductDetailsReviews from "./productDetailsReviews";
 import countCommentLength from "@/libs/countCommentLength";
-import ProductComments from "./ProductComments";
+import ProductComments from "./productComments";
 
 const ProductDetailsTab2 = ({ product }) => {
   const { reviews, comments } = product ? product : {};
@@ -11,12 +11,12 @@ const ProductDetailsTab2 = ({ product }) => {
   const reviewsLength = countCommentLength(reviews);
   const commentsLength = countCommentLength(comments);
   return (
-    <div className="ltn__shop-details-tab-area pb-115">
+    <div className="ltn__Product-details-tab-area pb-115">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="ltn__shop-details-tab-inner">
-              <div className="ltn__shop-details-tab-menu">
+            <div className="ltn__Product-details-tab-inner">
+              <div className="ltn__Product-details-tab-menu">
                 <div className="nav">
                   <Link
                     className="active show"
@@ -75,7 +75,7 @@ const ProductDetailsTab2 = ({ product }) => {
                   />
                 </div>
                 <div className="tab-pane fade" id="liton_tab_details_1_4">
-                  <div className="ltn__shop-details-tab-content-inner">
+                  <div className="ltn__Product-details-tab-content-inner">
                     <h4 className="title-2">Shipping policy for our store</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -102,7 +102,7 @@ const ProductDetailsTab2 = ({ product }) => {
                   </div>
                 </div>
                 <div className="tab-pane fade" id="liton_tab_details_1_5">
-                  <div className="ltn__shop-details-tab-content-inner">
+                  <div className="ltn__Product-details-tab-content-inner">
                     <div className="table-1 mb-20">
                       <table className="">
                         <tbody>

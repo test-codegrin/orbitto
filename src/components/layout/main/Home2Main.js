@@ -7,7 +7,7 @@ import Features4 from "@/components/sections/features/Features4";
 import Features5 from "@/components/sections/features/Features5";
 import Hero2 from "@/components/sections/hero-banners/Hero2";
 import FeaturedProducts from "@/components/sections/products/FeaturedProducts";
-import Products3 from "@/components/sections/products/Products3";
+import Products3 from "@/components/sections/products/products3";
 
 const Home2Main = () => {
   return (

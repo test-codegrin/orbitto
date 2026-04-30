@@ -1,5 +1,5 @@
 "use client";
-import { useProductContext } from "@/providers/ProductContext";
+import { useProductContext } from "@/providers/productContext";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

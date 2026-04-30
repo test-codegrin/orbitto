@@ -6,7 +6,7 @@ const getCategoryItems = () => {
       id: 1,
       name: "Vegetables and Fruits",
       path: "#",
-      icon: <i className="icon-shopping-bags"></i>,
+      icon: <i className="icon-Productping-bags"></i>,
       dropdown: [
         {
           title: "Handbags",
@@ -14,23 +14,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -40,23 +40,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -66,23 +66,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -92,23 +92,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -118,23 +118,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -144,23 +144,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -170,23 +170,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -196,23 +196,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -230,24 +230,24 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Satchels",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
 
             {
               name: "Toter",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
           ],
         },
@@ -257,24 +257,24 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Satchels",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
 
             {
               name: "Toter",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
           ],
         },
@@ -284,24 +284,24 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Satchels",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
 
             {
               name: "Toter",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
           ],
         },
@@ -311,24 +311,24 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Satchels",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
 
             {
               name: "Toter",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
           ],
         },
@@ -346,23 +346,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Satchels",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Toter",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
           ],
         },
@@ -372,23 +372,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Satchels",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Toter",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
           ],
         },
@@ -398,23 +398,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Satchels",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
             {
               name: "Toter",
-              path: "/shop?category=fish",
+              path: "/product?category=fish",
             },
           ],
         },
@@ -432,23 +432,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -458,23 +458,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -484,7 +484,7 @@ const getCategoryItems = () => {
       id: 5,
       name: "Oil and Vinegar",
       path: "#",
-      icon: <i className="icon-shopping-cart"></i>,
+      icon: <i className="icon-Productping-cart"></i>,
       dropdown: [
         {
           title: "Handbags",
@@ -492,23 +492,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=others",
+              path: "/product?category=others",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=others",
+              path: "/product?category=others",
             },
             {
               name: "Satchels",
-              path: "/shop?category=others",
+              path: "/product?category=others",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=others",
+              path: "/product?category=others",
             },
             {
               name: "Toter",
-              path: "/shop?category=others",
+              path: "/product?category=others",
             },
           ],
         },
@@ -526,23 +526,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
             {
               name: "Satchels",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
             {
               name: "Toter",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
           ],
         },
@@ -560,23 +560,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },
@@ -586,7 +586,7 @@ const getCategoryItems = () => {
       id: 8,
       name: "Dry Nuts",
       path: "#",
-      icon: <i className="icon-shopping-bags"></i>,
+      icon: <i className="icon-Productping-bags"></i>,
       dropdown: [
         {
           title: "Handbags",
@@ -594,24 +594,24 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Satchels",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
 
             {
               name: "Toter",
-              path: "/shop?category=meat",
+              path: "/product?category=meat",
             },
           ],
         },
@@ -629,23 +629,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
             {
               name: "Satchels",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
             {
               name: "Toter",
-              path: "/shop?category=fried",
+              path: "/product?category=fried",
             },
           ],
         },
@@ -655,7 +655,7 @@ const getCategoryItems = () => {
       id: 10,
       name: "Dry Nuts",
       path: "#",
-      icon: <i className="icon-shopping-bags"></i>,
+      icon: <i className="icon-Productping-bags"></i>,
       dropdown: [
         {
           title: "Handbags",
@@ -663,23 +663,23 @@ const getCategoryItems = () => {
           items: [
             {
               name: "Clutches",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Cross Body",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Satchels",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Sholuder",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
             {
               name: "Toter",
-              path: "/shop?category=vegetables",
+              path: "/product?category=vegetables",
             },
           ],
         },

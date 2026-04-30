@@ -5,8 +5,8 @@ import Hero15 from "@/components/sections/hero-banners/Hero15";
 import HotDeal2 from "@/components/sections/hot-deals/HotDeal2";
 import HotDeal4 from "@/components/sections/hot-deals/HotDeal4";
 import Offer4 from "@/components/sections/offers/Offer4";
-import Products3 from "@/components/sections/products/Products3";
-import Products5 from "@/components/sections/products/Products5";
+import Products3 from "@/components/sections/products/products3";
+import Products5 from "@/components/sections/products/products5";
 
 import React from "react";
 

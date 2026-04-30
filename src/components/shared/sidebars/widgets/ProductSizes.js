@@ -16,7 +16,7 @@ const ProductSizes = () => {
         {sizes?.map((size, idx) => (
           <li key={idx}>
             <Link
-              href={`${currentPath ? currentPath : "/shop"}?size=${makePath(
+              href={`${currentPath ? currentPath : "/product"}?size=${makePath(
                 size
               )}`}
               className={currentSize === makePath(size) ? "active" : ""}

@@ -38,10 +38,10 @@ const Hero15 = ({ type }) => {
                             </div>
                             <div className="btn-wrapper  animated">
                               <a
-                                href="/shop"
+                                href="/product"
                                 className="theme-btn-1 btn btn-effect-1 text-uppercase"
                               >
-                                Shop now
+                                Productnow
                               </a>
                             </div>
                           </div>
@@ -49,7 +49,7 @@ const Hero15 = ({ type }) => {
                       </div>
                       <div className="col-lg-5 col-md-5 col-sm-5 align-self-center">
                         <div className="slide-item-img">
-                          <a href="/shop"></a>
+                          <a href="/product"></a>
                         </div>
                       </div>
                     </div>
@@ -68,7 +68,7 @@ const Hero15 = ({ type }) => {
                         <div className="slide-item-info">
                           <div className="slide-item-info-inner ltn__slide-animation">
                             <h4 className="slide-sub-title ltn__secondary-color animated text-uppercase">
-                              Welcome to our shop
+                              Welcome to our Product
                             </h4>
                             <h1 className="slide-title animated">
                               Tasty & Healthy <br /> Organic Food
@@ -82,10 +82,10 @@ const Hero15 = ({ type }) => {
                             </div>
                             <div className="btn-wrapper animated">
                               <a
-                                href="/shop"
+                                href="/product"
                                 className="theme-btn-1 btn btn-effect-1 text-uppercase"
                               >
-                                Shop now
+                                Productnow
                               </a>
                             </div>
                           </div>
@@ -93,7 +93,7 @@ const Hero15 = ({ type }) => {
                       </div>
                       <div className="col-lg-5 col-md-5 col-sm-5 align-self-center">
                         <div className="slide-item-img">
-                          <a href="/shop"></a>
+                          <a href="/product"></a>
                         </div>
                       </div>
                     </div>

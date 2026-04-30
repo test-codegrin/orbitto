@@ -5,7 +5,7 @@ import HotDeal3 from "@/components/sections/hot-deals/HotDeal3";
 import HotDeal4 from "@/components/sections/hot-deals/HotDeal4";
 import Portfolio3 from "@/components/sections/portfolio/Portfolio3";
 import FeaturedProducts from "@/components/sections/products/FeaturedProducts";
-import Products3 from "@/components/sections/products/Products3";
+import Products3 from "@/components/sections/products/products3";
 
 const Home6Main = () => {
   return (

@@ -57,7 +57,7 @@ const Hero6 = ({ type, size, slide1Title, slide2Title, isArrowBlack }) => {
                       </div>
                       <div className="btn-wrapper animated">
                         <Link
-                          href="/shop"
+                          href="/product"
                           className="theme-btn-1 btn btn-effect-1 text-uppercase"
                         >
                           Explore Products
@@ -109,7 +109,7 @@ const Hero6 = ({ type, size, slide1Title, slide2Title, isArrowBlack }) => {
                       </div>
                       <div className="btn-wrapper animated">
                         <Link
-                          href="/shop"
+                          href="/product"
                           className="theme-btn-1 btn btn-effect-1 text-uppercase"
                         >
                           Explore Products

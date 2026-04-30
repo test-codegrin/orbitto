@@ -32,7 +32,7 @@ const Hero11 = () => {
                       </h1>
                       <div className="btn-wrapper animated">
                         <Link
-                          href="/shop"
+                          href="/product"
                           className="theme-btn-1 btn btn-effect-1 text-uppercase"
                         >
                           Explore Products

@@ -1,7 +1,7 @@
 "use client";
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
-import ProductsPrimary from "@/components/sections/products/ProductsPrimary";
+import ProductsPrimary from "@/components/sections/products/productsPrimary";
 import useSearch from "@/hooks/useSearch";
 import filterItems from "@/libs/filterItems";
 import getAllProducts from "@/libs/getAllProducts";
@@ -11,7 +11,7 @@ import CommonContext from "@/providers/CommonContext";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const ShopMain = ({ title, isSidebar, text, currentTapId }) => {
+const ProductMain = ({ title, isSidebar, text, currentTapId }) => {
   const allProducts = getAllProducts();
   const category = useSearchParams()?.get("category");
   const brand = useSearchParams()?.get("brand");
@@ -111,9 +111,9 @@ const ShopMain = ({ title, isSidebar, text, currentTapId }) => {
             ? `Search: ${makeText(search)}`
             : title
             ? title
-            : "Shop"
+            : "Product"
         }
-        text={text ? text : "Shop"}
+        text={text ? text : "Product"}
         type={isSidebar === "primary" ? 2 : 3}
         isCapitalize={brand ? true : false}
       />
@@ -128,7 +128,7 @@ const ShopMain = ({ title, isSidebar, text, currentTapId }) => {
           isShowSearch,
           isShowQuickSearchResult,
           setIsShowQuickSearchResult,
-          isShop: true,
+          isProduct: true,
           currentPath,
           category,
           brand,
@@ -143,4 +143,4 @@ const ShopMain = ({ title, isSidebar, text, currentTapId }) => {
   );
 };
 
-export default ShopMain;
+export default ProductMain;

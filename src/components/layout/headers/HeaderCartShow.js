@@ -20,7 +20,7 @@ const HeaderCartShow = () => {
         >
           <Link href="#ltn__utilize-cart-menu" className="ltn__utilize-toggle">
             <span className={headerStyle === 5 ? "mini-cart-icon" : ""}>
-              <i className="icon-shopping-cart"></i> <sup>{totalProduct}</sup>
+              <i className="icon-Productping-cart"></i> <sup>{totalProduct}</sup>
             </span>
             {headerStyle === 5 ? (
               <h6>

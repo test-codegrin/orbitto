@@ -37,12 +37,12 @@ const CartPrimary = () => {
     setIsisClient(true);
   }, [cartProducts]);
   return (
-    <div className="liton__shoping-cart-area mb-120">
+    <div className="liton__Producting-cart-area mb-120">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="shoping-cart-inner">
-              <div className="shoping-cart-table table-responsive">
+            <div className="Producting-cart-inner">
+              <div className="Producting-cart-table table-responsive">
                 {isClient ? (
                   <table className="table">
                     <tbody>
@@ -99,7 +99,7 @@ const CartPrimary = () => {
                   ""
                 )}
               </div>
-              <div className="shoping-cart-total mt-50">
+              <div className="Producting-cart-total mt-50">
                 <h4>Cart Totals</h4>
                 {isClient ? (
                   <table className="table">

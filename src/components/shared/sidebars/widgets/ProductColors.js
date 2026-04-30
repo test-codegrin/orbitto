@@ -36,7 +36,7 @@ const ProductColors = () => {
         {colors?.map((color, idx) => (
           <li key={idx} className={color}>
             <Link
-              href={`${currentPath ? currentPath : "/shop"}?color=${makePath(
+              href={`${currentPath ? currentPath : "/product"}?color=${makePath(
                 color
               )}`}
             ></Link>

@@ -177,7 +177,7 @@ const Faq2 = () => {
             <aside className="sidebar-area ltn__right-sidebar mt-60">
               {/* <!-- Banner Widget --> */}
               <div className="widget ltn__banner-widget">
-                <Link href="/shop">
+                <Link href="/product">
                   <Image
                     style={{ height: "auto" }}
                     src="/img/bg/12.png"

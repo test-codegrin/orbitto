@@ -4,7 +4,7 @@ const ProductDetailsRight = ({ product }) => {
   const { title, desc, description, type } = product || {};
 
   return (
-    <div className="modal-product-info shop-details-info pl-0" id="details">
+    <div className="modal-product-info Product-details-info pl-0" id="details">
       <h3>{title}</h3>
 
       <p className="product-description">{description || desc}</p>

@@ -24,7 +24,7 @@ const selectInputs = [
     name: "Sort by price: high to low",
   },
 ];
-const ShopShortSelect = ({ setArrangeInput }) => {
+const ProductShortSelect = ({ setArrangeInput }) => {
   useEffect(() => {
     getNiceSelectValue(setArrangeInput);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -42,4 +42,4 @@ const ShopShortSelect = ({ setArrangeInput }) => {
   );
 };
 
-export default ShopShortSelect;
+export default ProductShortSelect;

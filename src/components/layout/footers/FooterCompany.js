@@ -15,14 +15,8 @@ const FooterCompany = () => {
               <Link href="/blogs">News</Link>
             </li>
             <li>
-              <Link href="/shop">All Products</Link>
+              <Link href="/product">All Products</Link>
             </li>
-            {/* <li>
-              <Link href="/locations">Locations Map</Link>
-            </li>
-            <li>
-              <Link href="/faq">FAQ</Link>
-            </li> */}
             <li>
               <Link href="/contact">Contact us</Link>
             </li>

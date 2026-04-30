@@ -4,7 +4,7 @@ import Hero6 from "@/components/sections/hero-banners/Hero6";
 import HotDeal3 from "@/components/sections/hot-deals/HotDeal3";
 import Portfolio3 from "@/components/sections/portfolio/Portfolio3";
 import FeaturedProducts from "@/components/sections/products/FeaturedProducts";
-import Products3 from "@/components/sections/products/Products3";
+import Products3 from "@/components/sections/products/products3";
 import Testimonials3 from "@/components/sections/testimonils/Testimonials3";
 import Video from "@/components/sections/videos/Video";
 

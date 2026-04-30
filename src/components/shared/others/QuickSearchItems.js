@@ -10,13 +10,13 @@ const QuickSearchItems = () => {
     isShowSearch,
     sidebar,
     isShowQuickSearchResult,
-    isShop,
+    isProduct,
   } = useCommonContext();
 
   return (
     <div
       className={`sidebar__post quick-search ${
-        isShop ? "quick-search-shop" : ""
+        isProduct? "quick-search-Product" : ""
       } ${
         searchedItems?.length && !isShowSearch && isShowQuickSearchResult
           ? "active"
@@ -28,7 +28,7 @@ const QuickSearchItems = () => {
           ?.slice(0, 5)
           ?.map(({ image, title, id, publishDate, desc }, idx) => (
             <li key={idx}>
-              <Link href={`/${isShop ? "products" : "blogs"}/${id}`}>
+              <Link href={`/${isProduct? "products" : "blogs"}/${id}`}>
                 <div className="sidebar__post__img">
                   <Image
                     alt=""

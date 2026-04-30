@@ -24,7 +24,7 @@ const ProductBrands = () => {
         {brands?.map((brand, idx) => (
           <li key={idx}>
             <Link
-              href={`${currentPath ? currentPath : "/shop"}?brand=${makePath(
+              href={`${currentPath ? currentPath : "/product"}?brand=${makePath(
                 brand
               )}`}
             >

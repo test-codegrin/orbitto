@@ -10,7 +10,7 @@ const Categories = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="section-title-area ">
-              <h1 className="section-title">Shop by Categories</h1>
+              <h1 className="section-title">Productby Categories</h1>
             </div>
           </div>
         </div>

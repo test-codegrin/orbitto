@@ -1,6 +1,6 @@
 import React from "react";
 
-const ShopDataShowing = ({ limit, totalItems, firstItem, lastItem }) => {
+const ProductDataShowing = ({ limit, totalItems, firstItem, lastItem }) => {
   return (
     <div className="showing-product-number text-right">
       <span>
@@ -14,4 +14,4 @@ const ShopDataShowing = ({ limit, totalItems, firstItem, lastItem }) => {
   );
 };
 
-export default ShopDataShowing;
+export default ProductDataShowing;

@@ -61,7 +61,7 @@ const ProductDetailsPrimary = () => {
     };
 
     const bindAfterChange = () => {
-      const $largeImageSlider = $(".ltn__shop-details-large-img");
+      const $largeImageSlider = $(".ltn__Product-details-large-img");
       if (!$largeImageSlider.length || !$largeImageSlider.hasClass("slick-initialized")) {
         return false;
       }
@@ -73,7 +73,7 @@ const ProductDetailsPrimary = () => {
 
     if (bindAfterChange()) {
       return () => {
-        $(".ltn__shop-details-large-img").off("afterChange.productDetailsSync");
+        $(".ltn__Product-details-large-img").off("afterChange.productDetailsSync");
       };
     }
 
@@ -85,7 +85,7 @@ const ProductDetailsPrimary = () => {
 
     return () => {
       window.clearInterval(retryTimer);
-      $(".ltn__shop-details-large-img").off("afterChange.productDetailsSync");
+      $(".ltn__Product-details-large-img").off("afterChange.productDetailsSync");
     };
   }, [allImages]);
 
@@ -93,7 +93,7 @@ const ProductDetailsPrimary = () => {
 
   return (
     <div
-      className={`ltn__shop-details-area ${
+      className={`ltn__Product-details-area ${
         type === 1 || type === 2 ? "pb-85" : "pb-120"
       }`}
       onMouseEnter={() => selectedProduct && setCurrentProduct(selectedProduct)}
@@ -102,14 +102,14 @@ const ProductDetailsPrimary = () => {
         <div className="row">
           <div className={`${isNotSidebar ? "" : "col-lg-12"} col-md-12`}>
             <div
-              className={`ltn__shop-details-inner ${
+              className={`ltn__Product-details-inner ${
                 type === 1 || type === 2 ? "mb-60" : ""
               }`}
             >
               <div className="row">
                 <div className={isNotSidebar ? "col-lg-6" : "col-md-6"}>
-                  <div className="ltn__shop-details-img-gallery">
-                    <div className="ltn__shop-details-large-img">
+                  <div className="ltn__Product-details-img-gallery">
+                    <div className="ltn__Product-details-large-img">
                       {allImages?.map(({ image, title, id }) => (
                         <div key={id} className="single-large-img">
                           <Link
@@ -126,7 +126,7 @@ const ProductDetailsPrimary = () => {
                         </div>
                       ))}
                     </div>
-                    <div className="ltn__shop-details-small-img slick-arrow-2">
+                    <div className="ltn__Product-details-small-img slick-arrow-2">
                       {allImages?.map(({ image, title, id }) => (
                         <div
                           key={id}

@@ -10,7 +10,7 @@ const Offer3 = ({ type }) => {
           <div className="col-lg-4 col-md-6">
             <div className="ltn__banner-item">
               <div className="ltn__banner-img">
-                <Link href="/shop">
+                <Link href="/product">
                   <Image
                     src="/img/banner/1.jpg"
                     width={1000}
@@ -24,7 +24,7 @@ const Offer3 = ({ type }) => {
           <div className="col-lg-4 col-md-6">
             <div className="ltn__banner-item">
               <div className="ltn__banner-img">
-                <Link href="/shop">
+                <Link href="/product">
                   <Image
                     src="/img/banner/2.jpg"
                     width={1000}
@@ -38,7 +38,7 @@ const Offer3 = ({ type }) => {
           <div className="col-lg-4 col-md-6">
             <div className="ltn__banner-item">
               <div className="ltn__banner-img">
-                <Link href="/shop">
+                <Link href="/product">
                   <Image
                     src="/img/banner/1.jpg"
                     width={1000}

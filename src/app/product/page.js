@@ -1,8 +1,7 @@
-import ShopMain from "@/components/layout/main/ShopMain";
+import ProductMain from "@/components/layout/main/ShopMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
-import React from "react";
 
-const ShopGrid = () => {
+const Product= () => {
   return (
     <PageWrapper
       isNotHeaderTop={true}
@@ -10,9 +9,9 @@ const ShopGrid = () => {
       isTextWhite={true}
       isNavbarAppointmentBtn={true}
     >
-      <ShopMain isSidebar={false} title={"Shop Grid"} />
+      <ProductMain isSidebar="primary" />
     </PageWrapper>
   );
 };
 
-export default ShopGrid;
+export default Product;

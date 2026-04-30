@@ -3,13 +3,22 @@ import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import getAllProducts from "@/libs/getAllProducts";
 import { notFound } from "next/navigation";
 
-const products = getAllProducts();
 const ProductDetails = ({ params }) => {
-  const { id } = params;
-  const isExistProducts = products?.find(({ id: id1 }) => id1 === parseInt(id));
-  if (!isExistProducts) {
+  const products = getAllProducts() || [];
+
+  const id = Number(params?.id);
+
+  // ✅ Validate ID
+  if (!id) {
     notFound();
   }
+
+  const product = products.find((p) => p.id === id);
+
+  if (!product) {
+    notFound();
+  }
+
   return (
     <PageWrapper
       isNotHeaderTop={true}
@@ -17,12 +26,17 @@ const ProductDetails = ({ params }) => {
       isTextWhite={true}
       isNavbarAppointmentBtn={true}
     >
-      <ProductDetailsMain type={1} />
+      <ProductDetailsMain product={product} type={1} />
     </PageWrapper>
   );
 };
+
 export async function generateStaticParams() {
-  return products?.map(({ id }) => ({ id: id.toString() }));
+  const products = getAllProducts() || [];
+
+  return products.map((p) => ({
+    id: String(p.id),
+  }));
 }
 
 export default ProductDetails;

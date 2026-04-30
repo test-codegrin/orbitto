@@ -24,7 +24,7 @@ const ProductCategories = () => {
         {categories?.map((category, idx) => (
           <li key={idx}>
             <Link
-              href={`${currentPath ? currentPath : "/shop"}?category=${makePath(
+              href={`${currentPath ? currentPath : "/product"}?category=${makePath(
                 category
               )}`}
               className={currentCategory === makePath(category) ? "active" : ""}

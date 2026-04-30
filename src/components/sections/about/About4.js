@@ -52,7 +52,7 @@ const About4 = () => {
                       <Link href="/services/1">Pure Equipment</Link>
                     </li>
                     <li>
-                      <Link href="/shop">Unlimited Product</Link>
+                      <Link href="/product">Unlimited Product</Link>
                     </li>
                   </ul>
                 </div>

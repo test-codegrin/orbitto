@@ -1,4 +1,4 @@
-import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
+import ProductCardPrimary from "@/components/shared/cards/productCardPrimary";
 import getAllProducts from "@/libs/getAllProducts";
 import React from "react";
 

@@ -5,8 +5,8 @@ import Hero10 from "@/components/sections/hero-banners/Hero10";
 import HotDeal2 from "@/components/sections/hot-deals/HotDeal2";
 import Offer3 from "@/components/sections/offers/Offer3";
 import Offer4 from "@/components/sections/offers/Offer4";
-import Products3 from "@/components/sections/products/Products3";
-import Products5 from "@/components/sections/products/Products5";
+import Products3 from "@/components/sections/products/products3";
+import Products5 from "@/components/sections/products/products5";
 
 const Home10Main = () => {
   return (

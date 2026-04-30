@@ -29,10 +29,10 @@ const HotDeal2 = ({ type }) => {
               ></div>
               <div className="btn-wrapper animated">
                 <Link
-                  href="/shop"
+                  href="/product"
                   className="theme-btn-1 btn btn-effect-1 text-uppercase"
                 >
-                  Shop now
+                  Productnow
                 </Link>
               </div>
             </div>

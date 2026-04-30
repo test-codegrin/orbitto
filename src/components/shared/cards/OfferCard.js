@@ -7,7 +7,7 @@ const OfferCard = ({ offer }) => {
   return (
     <div className="ltn__banner-item ltn__banner-style-3">
       <div className="ltn__banner-img">
-        <Link href="/shop">
+        <Link href="/product">
           <Image src={image} alt="Image" placeholder="blur" />
         </Link>
       </div>
@@ -18,14 +18,14 @@ const OfferCard = ({ offer }) => {
           </strong>
         </div>
         <h2 className="white-color text-capitalize">
-          <Link href="/shop">
+          <Link href="/product">
             {title} <br />
             {title2}
           </Link>
         </h2>
       </div>
       <div className="banner-button">
-        <Link href={`/shop?category=${category}`}>
+        <Link href={`/product?category=${category}`}>
           <i className="fas fa-arrow-right"></i>{" "}
         </Link>
       </div>

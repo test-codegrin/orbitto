@@ -1,8 +1,8 @@
-import ShopMain from "@/components/layout/main/ShopMain";
+import ProductMain from "@/components/layout/main/productMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import React from "react";
 
-const ShopLeftSidebar = () => {
+const ProductGrid = () => {
   return (
     <PageWrapper
       isNotHeaderTop={true}
@@ -10,9 +10,9 @@ const ShopLeftSidebar = () => {
       isTextWhite={true}
       isNavbarAppointmentBtn={true}
     >
-      <ShopMain isSidebar="left" title={"Shop Left Sidebar"} />
+      <ProductMain isSidebar={false} title={"ProductGrid"} />
     </PageWrapper>
   );
 };
 
-export default ShopLeftSidebar;
+export default ProductGrid;

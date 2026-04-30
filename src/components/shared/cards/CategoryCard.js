@@ -23,7 +23,7 @@ const CategoryCard = ({ category }) => {
           ))}
         </ul>
         <Link className="category-btn" href={path}>
-          Shop Now
+          ProductNow
         </Link>
       </div>
     </div>

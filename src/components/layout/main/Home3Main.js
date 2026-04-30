@@ -4,9 +4,9 @@ import Categories3 from "@/components/sections/categories/Categories3";
 import Features5 from "@/components/sections/features/Features5";
 import Hero15 from "@/components/sections/hero-banners/Hero15";
 import HotDeal4 from "@/components/sections/hot-deals/HotDeal4";
-import ProductLists from "@/components/sections/products/ProductLists";
-import Products3 from "@/components/sections/products/Products3";
-import Products5 from "@/components/sections/products/Products5";
+import ProductLists from "@/components/sections/products/productLists";
+import Products3 from "@/components/sections/products/products3";
+import Products5 from "@/components/sections/products/products5";
 import React from "react";
 
 const Home3Main = () => {

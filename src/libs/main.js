@@ -293,17 +293,17 @@ const main = () => {
       /* --------------------------------------------------------
               12. Product Details Page
           --------------------------------------------------------- */
-      $(".ltn__shop-details-large-img").slick({
+      $(".ltn__Product-details-large-img").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         fade: true,
-        asNavFor: ".ltn__shop-details-small-img",
+        asNavFor: ".ltn__Product-details-small-img",
       });
-      $(".ltn__shop-details-small-img").slick({
+      $(".ltn__Product-details-small-img").slick({
         slidesToShow: 4,
         slidesToScroll: 1,
-        asNavFor: ".ltn__shop-details-large-img",
+        asNavFor: ".ltn__Product-details-large-img",
         dots: false,
         arrows: true,
         focusOnSelect: true,

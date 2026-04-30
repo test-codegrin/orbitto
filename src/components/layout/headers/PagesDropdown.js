@@ -8,7 +8,7 @@ const PagesDropdown = ({ itmes }) => {
     <ul className="mega-menu column-4">
       {itmes?.map(({ title, path, dropdownItems, bannerImg }, idx) => (
         <li key={idx}>
-          <Link href={bannerImg ? "/shop" : path}>
+          <Link href={bannerImg ? "/product" : path}>
             {bannerImg ? <Image src={bannerImg} alt="#" width={1000} height={1000}/> : title} 
           </Link>
           {dropdownItems ? (

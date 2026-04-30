@@ -4,7 +4,7 @@ import Link from "next/link";
 const SidebarBanner = ({ image, imgWidth, imgHeight }) => {
   return (
     <div className="widget ltn__banner-widget">
-      <Link href="/shop">
+      <Link href="/product">
         <Image
           src={image ? image : "/img/banner/banner-2.jpg"}
           alt="Banner Image"

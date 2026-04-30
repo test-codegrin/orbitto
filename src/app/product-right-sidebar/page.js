@@ -1,8 +1,8 @@
-import ProductDetailsMain from "@/components/layout/main/ProductDetailsMain";
+import ProductMain from "@/components/layout/main/productMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import React from "react";
 
-const ProductDetails2 = () => {
+const ProductRightSidebar = () => {
   return (
     <PageWrapper
       isNotHeaderTop={true}
@@ -10,9 +10,9 @@ const ProductDetails2 = () => {
       isTextWhite={true}
       isNavbarAppointmentBtn={true}
     >
-      <ProductDetailsMain isNotSidebar={true} type={2} />
+      <ProductMain title={"ProductRight Sidebar"} />
     </PageWrapper>
   );
 };
 
-export default ProductDetails2;
+export default ProductRightSidebar;

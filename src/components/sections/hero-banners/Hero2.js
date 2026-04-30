@@ -42,7 +42,7 @@ const Hero2 = () => {
                       </div>
                       <div className="btn-wrapper animated">
                         <Link
-                          href="/shop"
+                          href="/product"
                           className="theme-btn-1 btn btn-effect-1 text-uppercase"
                         >
                           Explore Products
@@ -85,7 +85,7 @@ const Hero2 = () => {
                       </div>
                       <div className="btn-wrapper animated">
                         <Link
-                          href="/shop"
+                          href="/product"
                           className="theme-btn-1 btn btn-effect-1 text-uppercase"
                         >
                           Explore Products

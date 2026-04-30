@@ -12,7 +12,7 @@ const TabDescription = () => {
   const desc = product?.desc;
 
   return (
-    <div className="ltn__shop-details-tab-content-inner">
+    <div className="ltn__Product-details-tab-content-inner">
       <h4 className="title-2">Product Description</h4>
       <p>{desc ? desc : "No description available."}</p>
     </div>

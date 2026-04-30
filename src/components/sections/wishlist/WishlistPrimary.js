@@ -17,8 +17,8 @@ const WishlistPrimary = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="shoping-cart-inner">
-              <div className="shoping-cart-table table-responsive">
+            <div className="Producting-cart-inner">
+              <div className="Producting-cart-table table-responsive">
                 {isClient ? (
                   <table className="table">
                     <tbody>

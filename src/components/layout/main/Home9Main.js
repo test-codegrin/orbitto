@@ -6,7 +6,7 @@ import Features4 from "@/components/sections/features/Features4";
 import Hero6 from "@/components/sections/hero-banners/Hero6";
 import Portfolio4 from "@/components/sections/portfolio/Portfolio4";
 import FeaturedProducts from "@/components/sections/products/FeaturedProducts";
-import Products3 from "@/components/sections/products/Products3";
+import Products3 from "@/components/sections/products/products3";
 
 const Home9Main = () => {
   return (

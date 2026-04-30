@@ -5,7 +5,7 @@ import React from "react";
 
 const ProductDetailsReviews = ({ reviews, reviewsLength }) => {
   return (
-    <div className="ltn__shop-details-tab-content-inner">
+    <div className="ltn__Product-details-tab-content-inner">
       <h4 className="title-2">Customer Reviews</h4>
       <div className="product-ratting">
         <ul>

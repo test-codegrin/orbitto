@@ -20,7 +20,7 @@ const About5 = ({ pt }) => {
             <div className="about-us-info-wrap">
               <div className="section-title-area ltn__section-title-2">
                 <h6 className="section-subtitle ltn__secondary-color">
-                  Know More About Shop
+                  Know More About Product
                 </h6>
                 <h1 className="section-title">
                   Trusted Organic <br className="d-none d-md-block" /> Food
@@ -39,7 +39,7 @@ const About5 = ({ pt }) => {
               <div className="about-author-info d-flex">
                 <div className="author-name-designation  align-self-center mr-30">
                   <h4 className="mb-0">Jerry Henson</h4>
-                  <small>/ Shop Director</small>
+                  <small>/ ProductDirector</small>
                 </div>
                 <div className="author-sign  align-self-center">
                   <Image

@@ -4,8 +4,8 @@ import TabDescription from "./TabDescription";
 
 const ProductDetailsTab = ({ product }) => {
   return (
-    <div className="ltn__shop-details-tab-inner ltn__shop-details-tab-inner-2">
-      <div className="ltn__shop-details-tab-menu">
+    <div className="ltn__Product-details-tab-inner ltn__Product-details-tab-inner-2">
+      <div className="ltn__Product-details-tab-menu">
         <div className="nav">
           <Link
             className="active show"

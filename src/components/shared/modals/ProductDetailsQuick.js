@@ -1,5 +1,5 @@
 import Image from "next/image";
-// import ProductDetailsRight from "../products/ProductDetailsRight";
+// import ProductDetailsRight from "../products/productDetailsRight";
 
 const ProductDetailsQuick = ({ product }) => {
   // const { image } = product;
