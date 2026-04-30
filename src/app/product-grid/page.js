@@ -1,4 +1,4 @@
-import ProductMain from "@/components/layout/main/productMain";
+import ProductMain from "@/components/layout/main/ShopMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import React from "react";
 

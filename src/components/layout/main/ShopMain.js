@@ -1,7 +1,7 @@
 "use client";
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
-import ProductsPrimary from "@/components/sections/products/productsPrimary";
+import ProductsPrimary from "@/components/sections/products/ProductsPrimary";
 import useSearch from "@/hooks/useSearch";
 import filterItems from "@/libs/filterItems";
 import getAllProducts from "@/libs/getAllProducts";

@@ -1,5 +1,5 @@
 "use client";
-import ProductCard2 from "@/components/shared/cards/productCard2";
+import ProductCard2 from "@/components/shared/cards/ProductCard2";
 import getAllProducts from "@/libs/getAllProducts";
 import React from "react";
 
