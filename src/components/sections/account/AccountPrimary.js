@@ -82,7 +82,7 @@ const AccountPrimary = () => {
                                   <td>Pending</td>
                                   <td>$3000</td>
                                   <td>
-                                    <Link href="/cart">View</Link>
+                                    <Link href="/account">View</Link>
                                   </td>
                                 </tr>
                                 <tr>
@@ -91,7 +91,7 @@ const AccountPrimary = () => {
                                   <td>Approved</td>
                                   <td>$200</td>
                                   <td>
-                                    <Link href="/cart">View</Link>
+                                    <Link href="/account">View</Link>
                                   </td>
                                 </tr>
                                 <tr>
@@ -100,7 +100,7 @@ const AccountPrimary = () => {
                                   <td>On Hold</td>
                                   <td>$990</td>
                                   <td>
-                                    <Link href="/cart">View</Link>
+                                    <Link href="/account">View</Link>
                                   </td>
                                 </tr>
                               </tbody>
@@ -290,3 +290,4 @@ const AccountPrimary = () => {
 };
 
 export default AccountPrimary;
+

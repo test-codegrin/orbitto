@@ -1,5 +1,4 @@
 import React from "react";
-import HeaderCartShow from "./HeaderCartShow";
 import Link from "next/link";
 
 const HeaderRight2 = () => {
@@ -96,10 +95,6 @@ const HeaderRight2 = () => {
                 </li>
               </ul>
             </div>
-          </li>{" "}
-          <li style={{ marginRight: 0 }}>
-            {/* <!-- mini-cart 2 --> */}
-            <HeaderCartShow />
           </li>{" "}
           <li className="d-none">
             {/* <!-- Mobile Menu Button --> */}

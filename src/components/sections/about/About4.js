@@ -52,7 +52,7 @@ const About4 = () => {
                       <Link href="/services/1">Pure Equipment</Link>
                     </li>
                     <li>
-                      <Link href="/product">Unlimited Product</Link>
+                      <Link href="/products/1">Unlimited Product</Link>
                     </li>
                   </ul>
                 </div>
@@ -66,3 +66,4 @@ const About4 = () => {
 };
 
 export default About4;
+

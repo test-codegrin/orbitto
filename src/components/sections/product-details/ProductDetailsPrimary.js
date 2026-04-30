@@ -3,7 +3,7 @@ import getAllProducts from "@/libs/getAllProducts";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useProductContext } from "@/providers/ProductContext";
 import ProductDetailsRight from "@/components/shared/products/ProductDetailsRight";
 import ProductTechnicalSpecifications from "@/components/shared/products/ProductTechnicalSpecifications";
@@ -14,7 +14,7 @@ const ProductDetailsPrimary = () => {
   const { setCurrentProduct } = useProductContext();
 
   const { id: currentId } = useParams();
-  const products = getAllProducts();
+  const products = useMemo(() => getAllProducts(), []);
   const parsedId = Number.parseInt(currentId || "1", 10);
 
   const product = useMemo(
@@ -41,11 +41,19 @@ const ProductDetailsPrimary = () => {
     [allImages, product, selectedProductId]
   );
 
+  const syncCurrentProduct = useCallback(
+    (targetProduct) => {
+      if (!targetProduct?.id) return;
+      setCurrentProduct((prevProduct) =>
+        prevProduct?.id === targetProduct.id ? prevProduct : targetProduct
+      );
+    },
+    [setCurrentProduct]
+  );
+
   useEffect(() => {
-    if (selectedProduct) {
-      setCurrentProduct(selectedProduct);
-    }
-  }, [selectedProduct, setCurrentProduct]);
+    syncCurrentProduct(selectedProduct);
+  }, [selectedProduct, syncCurrentProduct]);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.$ || !allImages?.length) {
@@ -96,7 +104,7 @@ const ProductDetailsPrimary = () => {
       className={`ltn__Product-details-area ${
         type === 1 || type === 2 ? "pb-85" : "pb-120"
       }`}
-      onMouseEnter={() => selectedProduct && setCurrentProduct(selectedProduct)}
+      onMouseEnter={() => syncCurrentProduct(selectedProduct)}
     >
       <div className="container">
         <div className="row">

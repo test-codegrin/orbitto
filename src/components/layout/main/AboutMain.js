@@ -1,7 +1,6 @@
 import About5 from "@/components/sections/about/About5";
 import Blogs2 from "@/components/sections/blogs/Blogs2";
 import CallToAction1 from "@/components/sections/call-to-action/CallToAction1";
-import Faq2 from "@/components/sections/faq/Faq2";
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
 import Services4 from "@/components/sections/services/Services4";
@@ -16,7 +15,6 @@ const AboutMain = () => {
       <Services4 />
       <Team1 />
       <Testimonials3 pt="pt-115" />
-      <Faq2 />
       <CallToAction1 />
       <Blogs2 type={2} pb={"pb-70"} />
       <Features4 />

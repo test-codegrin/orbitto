@@ -4,11 +4,11 @@ import Link from "next/link";
 import React from "react";
 
 const ServiceCard = ({ service, isPrimary }) => {
-  const { title, image, desc, services, category, imgAlt, id } = service;
+  const { title, image, desc } = service;
   return (
     <div className="ltn__service-item-1">
       <div className="service-item-img">
-        <Link href={`/services/${id}`}>
+        <Link href="/services">
           <Image
             src={image}
             alt="#"
@@ -20,7 +20,7 @@ const ServiceCard = ({ service, isPrimary }) => {
       </div>
       <div className="service-item-brief">
         <h3>
-          <Link href={`/services/${id}`}>{sliceText(title, 20)}</Link>
+          <Link href="/services">{sliceText(title, 20)}</Link>
         </h3>
         <p>{sliceText(desc, 100)}</p>
       </div>

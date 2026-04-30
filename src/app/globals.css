@@ -4870,7 +4870,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     Header
 -------------------------------------------------------------- */
 .ltn__header-area {
-  z-index: 9999;
+  z-index: 1000000;
   position: relative;
 }
 
