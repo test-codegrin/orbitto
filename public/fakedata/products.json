@@ -31,7 +31,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903103728.webp",
+    "image": "/img/product/fruit/AcaiBerry.png",
     "slug": "acaiberry-powder"
   },
   {
@@ -1242,43 +1242,6 @@
     "slug": "cream-powder"
   },
   {
-    "id": 34,
-    "title": "Cucumber Powder",
-    "desc": "Cucumber Powder offers the natural taste and aroma of fresh cucumber in a convenient, shelf-stable format. Cucumbers inherently contain nutrients such as vitamin K, vitamin C, potassium, magnesium, phosphorus, folate, and small amounts of other trace minerals. The spray-drying process helps preserve key sensory attributes while ensuring good solubility and flow characteristics.\nIts clean, refreshing profile makes it suitable for seasoning mixes, dips, sauces, dressings, dry blends, and various food applications. The powder can also be used in cosmetic and personal-care formulations where natural cucumber aroma notes or plant-based ingredients are desired.",
-    "description": "Cucumber Powder offers the natural taste and aroma of fresh cucumber in a convenient, shelf-stable format. Cucumbers inherently contain nutrients such as vitamin K, vitamin C, potassium, magnesium, phosphorus, folate, and small amounts of other trace minerals. The spray-drying process helps preserve key sensory attributes while ensuring good solubility and flow characteristics.\nIts clean, refreshing profile makes it suitable for seasoning mixes, dips, sauces, dressings, dry blends, and various food applications. The powder can also be used in cosmetic and personal-care formulations where natural cucumber aroma notes or plant-based ingredients are desired.",
-    "applications_and_uses": [
-      "Used as a seasoning component in culinary recipes.",
-      "Suitable for salad dressings, dips, sauces, soups, and other savory preparations.",
-      "Can be added to dry mixes or blended with spices to impart cucumber flavor.",
-      "Works well in baked goods, bread varieties, and specialty items such as cucumber-flavored cakes.",
-      "Useful in smoothies, juices, and other beverages requiring natural cucumber notes.",
-      "Commonly incorporated into cosmetic formulations for its refreshing sensory profile."
-    ],
-    "specifications": {
-      "Product Name": "Spray Dried Cucumber Powder",
-      "Ingredients (Raw Material)": "Fresh Cucumber Juice",
-      "Color, Taste & Aroma": "White color, typical cucumber flavor and aroma",
-      "Applications": "Bakery products, seasoning blends, namkeen, instant soups, gravies, cosmetic formulations, herbal applications, etc.",
-      "Shelf Life": "18 months from date of production when stored in the original sealed pack under recommended conditions.",
-      "Handling/Storage": [
-        "Store in a cool, dry, clean environment, free from foreign odor and away from direct heat/sunlight",
-        "Recommended storage temperature: 20–25°C (not below 10°C) to maintain free-flowing condition",
-        "Avoid prolonged exposure to air; due to its hygroscopic nature, the powder can absorb moisture and harden over time.",
-        "Reseal the package tightly when not in use."
-      ],
-      "Packaging (Material Type, Package Quantity)": [
-        "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
-        "HDPE 25 kg Drum Pack (at specified facilities)"
-      ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
-      "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
-    },
-    "type": "Vegetable Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903264899.webp",
-    "slug": "cucumber-powder"
-  },
-  {
     "id": 35,
     "title": "Curcumin Color",
     "desc": "Available in both powder and liquid forms , curcumin color offers strong coloring strength, excellent stability, and uniform dispersion in a wide range of formulations. It is suitable for dry mixes as well as liquid systems, ensuring flexibility for different processing requirements.\nCurcumin color is valued not only for its vibrant appearance but also for its natural origin and broad acceptance in vegetarian and vegan foods. With good heat and pH stability, it performs reliably in processed foods, beverages, and functional formulations.\n1. Curcumin Powder\n2. Curcumin Liquid\nCurcumin Powder Applications\nCurcumin Liquid Applications",
@@ -2074,7 +2037,7 @@
       "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012101430338.webp",
+    "image": "/img/product/fruit/Kiwi.png",
     "slug": "kiwi-powder"
   },
   {
