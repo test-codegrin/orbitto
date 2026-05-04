@@ -16,79 +16,79 @@ const SLIDES = [
       title: "Premium Fruit Powder",
       desc: "Bringing the goodness of fresh fruits into every serving.",
     },
-    mainImg: "/img/slider/FruitePowder.png",
+    mainImg: "/img/slider/main/fruit_powder.png",
     floats: [
       {
-        src: "/img/slider/KiwiBlur.png",
+        src: "/img/slider/Fruit/kiwi_blur.png",
         alt: "Kiwi",
         top: "-2%",
         left: "7%",
-        size: 110,
+        size: "100",
       },
-      {
-        src: "/img/slider/CoconutBlur.png",
-        alt: "Coconut",
-        top: "18%",
-        left: "16%",
-        size: 130,
-      },
+      // {
+      //   src: "/img/slider/Fruit/coconut_blur.png",
+      //   alt: "Coconut",
+      //   top: "18%",
+      //   left: "16%",
+      //   size: 130,
+      // },
 
-      {
-        src: "/img/slider/Avocado.png",
-        alt: "Avocado",
-        top: "18%",
-        left: "26%",
-        size: 230,
-        delay: "0.53s",
-      },
-      {
-        src: "/img/slider/Cherry.png",
-        alt: "Cherry",
-        bottom: "30%",
-        left: "35%",
-        size: 210,
-        delay: "0.35s",
-      },
-      {
-        src: "/img/slider/BlueberryBlur.png",
-        alt: "Blueberry",
-        bottom: "10%",
-        left: "-1%",
-        size: 110,
-        delay: "0.35s",
-      },
-      {
-        src: "/img/slider/Blueberry.png",
-        alt: "Blueberry",
-        bottom: "26%",
-        right: "27%",
-        size: 110,
-        delay: "0.55s",
-      },
+      // {
+      //   src: "/img/slider/Fruit/avocado.png",
+      //   alt: "Avocado",
+      //   top: "18%",
+      //   left: "26%",
+      //   size: 230,
+      //   delay: "0.53s",
+      // },
+      // {
+      //   src: "/img/slider/Fruit/cherry.png",
+      //   alt: "Cherry",
+      //   bottom: "30%",
+      //   left: "35%",
+      //   size: 210,
+      //   delay: "0.35s",
+      // },
+      // {
+      //   src: "/img/slider/Fruit/berry_blur.png",
+      //   alt: "Blueberry",
+      //   bottom: "10%",
+      //   left: "-1%",
+      //   size: 110,
+      //   delay: "0.35s",
+      // },
+      // {
+      //   src: "/img/slider/Fruit/berry.png",
+      //   alt: "Blueberry",
+      //   bottom: "26%",
+      //   right: "27%",
+      //   size: 110,
+      //   delay: "0.55s",
+      // },
 
-      {
-        src: "/img/slider/CherryBlur.png",
-        alt: "Small Strawberry",
-        bottom: "8%",
-        right: "-61%",
-        size: 150,
-        delay: "0.45s",
-      },
-      {
-        src: "/img/slider/Blackberry.png",
-        alt: "Blackberry",
-        bottom: "8%",
-        right: "7%",
-        size: 150,
-        delay: "0.6s",
-      },
-      {
-        src: "/img/slider/GreenappleBlur.png",
-        alt: "Green Apple",
-        top: "2%",
-        right: "22%",
-        size: 100,
-      },
+      // {
+      //   src: "/img/slider/Fruit/cherry_blur.png",
+      //   alt: "Small Strawberry",
+      //   bottom: "8%",
+      //   right: "-61%",
+      //   size: 150,
+      //   delay: "0.45s",
+      // },
+      // {
+      //   src: "/img/slider/Fruit/cherry_blur.png",
+      //   alt: "Blackberry",
+      //   bottom: "0%",
+      //   right: "0%",
+      //   size: 150,
+      //   delay: "0.6s",
+      // },
+      // {
+      //   src: "/img/slider/Fruit/GreenappleBlur.png",
+      //   alt: "Green Apple",
+      //   top: "2%",
+      //   right: "22%",
+      //   size: 100,
+      // },
     ],
     accent: "#d63f6e",
     tabIcon: "/img/slider/FruiteBasket.png",
@@ -106,7 +106,7 @@ const SLIDES = [
       title: "Natural Vegetable Powder",
       desc: "Processed to preserve natural flavor and rich nutrients.",
     },
-    mainImg: "/img/slider/VegetablePowder.png",
+    mainImg: "/img/slider/main/vegetable_powder.png",
     floats: [
       {
         src: "/img/slider/BeetsRootBlur.png",
@@ -189,7 +189,7 @@ const SLIDES = [
       title: "Raw Pure Honey",
       desc: "Directly sourced from natural hives for authentic golden taste.",
     },
-    mainImg: "/img/slider/HoneyBowl.png",
+    mainImg: "/img/slider/main/honey.png",
     floats: [
       {
         src: "/img/slider/HoneySunFlower.png",
@@ -255,7 +255,7 @@ const SLIDES = [
       title: "Exotic Spice Blends",
       desc: "Sun-dried and stone-ground for maximum aroma and authentic taste.",
     },
-    mainImg: "/img/slider/RedChilliPowder.png",
+    mainImg: "/img/slider/main/spices.png",
     floats: [
       {
         src: "/img/slider/GaramMsala.png",
@@ -330,7 +330,7 @@ const SLIDES = [
       title: "Pure Herbal Powder",
       desc: "Cold-processed medicinal herbs retaining full nutritional potency.",
     },
-    mainImg: "/img/slider/HerbalPowder.png",
+    mainImg: "/img/slider/main/natural_herbs.png",
     floats: [
       {
         src: "/img/slider/amla.png",
@@ -472,8 +472,8 @@ const CSS = `
   .hs-bowl-wrap {
   position: relative;
   z-index: 2;
-  width: clamp(320px, 42vw, 500px);
-  height: clamp(320px, 42vw, 500px);
+  width: clamp(320px, 42vw, 450px);
+  height: clamp(320px, 42vw, 450px);
 }
 
   .hs-float {
@@ -692,12 +692,11 @@ export default function Hero1() {
                 src={slide.mainImg}
                 alt={`${slide.line1} ${slide.line2} bowl`}
                 fill
-                sizes="(max-width: 768px) 320px, 500px"
+                sizes="(max-width: 768px) 320px, 493px"
                 style={{ objectFit: "contain" }}
                 priority
               />
             </div>
-            
 
             {/* Floating items */}
             {slide.floats.map((item, i) => (
