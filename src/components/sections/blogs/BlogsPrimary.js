@@ -406,7 +406,7 @@ const BlogsPrimary = () => {
         <div
           style={{
             background: "#e6edda",
-            borderRadius: "28px",
+            borderRadius: "39px 9px 39px 9px",
             padding: "48px 52px",
             display: "flex",
             alignItems: "center",

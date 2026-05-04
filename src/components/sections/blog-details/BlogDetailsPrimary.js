@@ -169,7 +169,7 @@ const BlogDetailsPrimary = () => {
         {/* Intro paragraph */}
         <p style={{ fontSize: "15px", color: "#3a5530", lineHeight: "1.8", marginBottom: "52px" }}>
           For decades, the conversation around plant-based protein centered on completeness—did it contain all nine essential amino acids?
-          Today, the science has shifted. The new frontier is just what's in the powder, but how effectively your body can actually use it.
+          Today, the science has shifted. The new frontier is just what is in the powder, but how effectively your body can actually use it.
         </p>
 
         {/* ── Section 1 ── */}
@@ -195,13 +195,13 @@ const BlogDetailsPrimary = () => {
           <span style={{
             position: "absolute", top: "-4px", left: "14px",
             fontFamily: T.font, fontSize: "48px", color: T.greenMid, lineHeight: 1, opacity: 0.5,
-          }}>"</span>
+          }}></span>
           <blockquote style={{
             fontFamily: T.font, fontStyle: "italic",
             fontSize: "17px", lineHeight: "1.7", color: T.greenMid,
             fontWeight: "600", margin: 0,
           }}>
-            "We are not what we eat; we are what we absorb. The cellular matrix of botanical sources must be respected and gently unraveled, not forcefully destroyed."
+            We are not what we eat; we are what we absorb. The cellular matrix of botanical sources must be respected and gently unraveled, not forcefully destroyed.
           </blockquote>
         </div>
 
