@@ -31,7 +31,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/AcaiBerry.png",
+    "image": "/img/product/fruit/Acaiberry.png",
     "slug": "acaiberry-powder"
   },
   {
@@ -197,7 +197,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903110764.webp",
+    "image": "/img/product/fruit/GreenApple.png",
     "slug": "apple-green-powder"
   },
   {
@@ -342,7 +342,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903135816.webp",
+    "image": "/img/product/fruit/Avocado.png",
     "slug": "avocado-powder"
   },
   {
@@ -493,7 +493,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_25103104484347.webp",
+    "image": "/img/product/fruit/BlackCurtunt.png",
     "slug": "black-currant-powder"
   },
   {
@@ -530,7 +530,7 @@
       "Dosage Levels": "Typically 0.01% to 5.0%, adjustable based on application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_25103104592122.webp",
+    "image": "/img/product/fruit/BlackGrapes.png",
     "slug": "black-grapes-powder"
   },
   {
@@ -568,7 +568,7 @@
       "Dosage Levels": "0.01–5.0%, adjustable as per application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012011512164.webp",
+    "image": "/img/product/fruit/Blackberry.png",
     "slug": "blackberry-powder"
   },
   {
@@ -606,7 +606,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_2510310511434.webp",
+    "image": "/img/product/fruit/Blueberry.png",
     "slug": "blueberry-powder"
   },
   {
@@ -1017,7 +1017,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012002074018.webp",
+    "image": "/img/product/fruit/Cherry.png",
     "slug": "cherry-powder"
   },
   {
@@ -1202,7 +1202,7 @@
       "Dosage Levels": "0.01% to 5.0%, adjustable based on application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012011521620.webp",
+    "image": "/img/product/fruit/Cranberry.png",
     "slug": "cranberry-powder"
   },
   {
@@ -1360,7 +1360,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_25111403385151.webp",
+    "image": "/img/product/fruit/CustardApple.png",
     "slug": "custard-apple-powder"
   },
   {
@@ -1471,7 +1471,7 @@
       "Dosage Levels": "0.01% - 5.0%; adjustable as per application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012101380923.webp",
+    "image": "/img/product/fruit/DragonFruit.png",
     "slug": "dragon-fruit-powder"
   },
   {
@@ -1658,7 +1658,7 @@
       "Dosage Levels": "0.01% to 5.0%, adjustable based on application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012011525330.webp",
+    "image": "/img/product/fruit/GreenGrapes.png",
     "slug": "green-grapes-powder"
   },
   {
@@ -1695,7 +1695,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012101390266.webp",
+    "image": "/img/product/fruit/GreenMango.png",
     "slug": "green-mango-amchur-powder"
   },
   {
@@ -1918,7 +1918,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012101413658.webp",
+    "image": "/img/product/fruit/JuckFruit.png",
     "slug": "jackfruit-powder"
   },
   {
@@ -2092,7 +2092,7 @@
       "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903153063.webp",
+    "image": "/img/product/fruit/Lemon.png",
     "slug": "lemon-powder"
   },
   {
@@ -2168,7 +2168,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_2601201153406.webp",
+    "image": "/img/product/fruit/Lime.png",
     "slug": "lime-powder"
   },
   {
@@ -2219,7 +2219,7 @@
       "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903155030.webp",
+    "image": "/img/product/fruit/Litchi.png",
     "slug": "litchi-powder"
   },
   {
@@ -2259,7 +2259,7 @@
       "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903163448.webp",
+    "image": "/img/product/fruit/Mango.png",
     "slug": "mango-powder"
   },
   {
@@ -2370,7 +2370,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012101472158.webp",
+    "image": "/img/product/fruit/Mulberry.png",
     "slug": "mulberry-powder"
   },
   {
@@ -2404,7 +2404,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_2602090319576.webp",
+    "image": "/img/product/fruit/Muskmelon.png",
     "slug": "muskmelon-powder"
   },
   {
@@ -2512,7 +2512,7 @@
       "Dosage Levels": "Starts from 0.01% to 5.0% (adjustable per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012101474690.webp",
+    "image": "/img/product/fruit/Orange.png",
     "slug": "orange-powder"
   },
   {
@@ -2552,7 +2552,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903215723.webp",
+    "image": "/img/product/fruit/Passion fruit.png",
     "slug": "passion-fruit-powder"
   },
   {
@@ -2589,7 +2589,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory requirements)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26020903220942.webp",
+    "image": "/img/product/fruit/Peach.png",
     "slug": "peach-powder"
   },
   {
@@ -2626,7 +2626,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory requirements)"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012101492194.webp",
+    "image": "/img/product/fruit/Pineapple.png",
     "slug": "pineapple-powder"
   },
   {
@@ -3111,7 +3111,7 @@
       "Dosage Levels": "Starts at 0.01% to 5.0%, adjustable as per application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "https://www.drymacfoods.com/common/media/product_26012101504564.webp",
+    "image": "/img/product/fruit/Strawberry.png",
     "slug": "strawberry-powder"
   },
   {
