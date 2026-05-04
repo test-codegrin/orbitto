@@ -15,7 +15,7 @@ const MobileMenu = () => {
     },
     {
       name: "Product",
-      path: "/products/1",
+      path: "/products",
     },
     {
       name: "News",

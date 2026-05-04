@@ -944,15 +944,90 @@ export default function Hero1() {
               </div>
             </div>
 
-            {/* BOTTOM: Category tabs + arrows */}
-            <div className="hs-tabs-row">
-              <button
-                className="hs-arrow"
-                onClick={() => navigate("prev")}
-                aria-label="Previous"
+            {/* Floating items */}
+            {slide.floats.map((item, i) =>
+              (() => {
+                const floatWidth = normalizeDimension(item.width ?? item.size);
+                const floatHeight = normalizeDimension(
+                  item.height ?? item.size,
+                );
+                return (
+                  <div
+                    key={`fl-${animKey}-${i}`}
+                    className="hs-float"
+                    style={{
+                      top: item.top ?? "auto",
+                      left: item.left ?? "auto",
+                      right: item.right ?? "auto",
+                      bottom: item.bottom ?? "auto",
+                      width: floatWidth,
+                      height: floatHeight,
+                      animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay} both,
+                               hs-bob 3.5s ease-in-out ${item.delay} infinite`,
+                    }}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 768px) 30vw, 140px"
+                      style={{
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
+                );
+              })(),
+            )}
+          </div>
+
+          {/* RIGHT: Info Card */}
+          <div key={`card-${animKey}`} className={`hs-card ${cardAnim}`}>
+            <p className="hs-card-title">{slide.card.title}</p>
+            <p className="hs-card-desc">{slide.card.desc}</p>
+            <Link
+              href="/products"
+              className="hs-btn"
+              style={{ backgroundColor: slide.accent }}
+            >
+              View more details
+            </Link>
+          </div>
+        </div>
+
+        {/* BOTTOM: Category tabs + arrows */}
+        <div className="hs-tabs-row">
+          <button
+            className="hs-arrow"
+            onClick={() => navigate("prev")}
+            aria-label="Previous"
+          >
+            &#8592;
+          </button>
+
+          {SLIDES.map((s, i) => (
+            <div
+              key={s.id}
+              className={`hs-tab${i === current ? " active" : ""}`}
+              style={i === current ? { borderColor: s.accent } : {}}
+              onClick={() => goTo(i)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === "Enter" && goTo(i)}
+            >
+              <Image
+                src={s.tabIcon}
+                alt={s.tabLabel}
+                width={48}
+                height={48}
+                style={{ objectFit: "contain" }}
+              />
+              <span
+                className="hs-tab-label"
+                style={i === current ? { color: s.accent } : {}}
               >
                 &#8592;
-              </button>
+              </span>
 
               {SLIDES.map((s, i) => (
                 <div
