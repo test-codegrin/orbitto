@@ -3,6 +3,26 @@ import { useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const DEFAULT_FLOAT_SIZE = 100;
+
+const normalizeDimension = (value) => {
+  if (value === undefined || value === null || value === "") {
+    return `${DEFAULT_FLOAT_SIZE}px`;
+  }
+
+  if (typeof value === "number") {
+    return `${value}px`;
+  }
+
+  const trimmed = String(value).trim();
+
+  if (/^\d+(\.\d+)?$/.test(trimmed)) {
+    return `${trimmed}px`;
+  }
+
+  return trimmed;
+};
+
 const SLIDES = [
   {
     id: 0,
@@ -10,6 +30,8 @@ const SLIDES = [
     line2: "Powder",
     subtitle: "From fruit to fine powder perfection",
     bgText: "FRUIT POWDER",
+    watermarkGradient:
+      "background: linear-gradient(180deg, rgba(201, 118, 167, 0.2) 0%, rgba(176, 95, 211, 0.2) 50%, rgba(245, 222, 110, 0.2) 100%);",
     bgColor: "#fff5f8",
     gradientEnd: "#fce4ec",
     card: {
@@ -21,59 +43,66 @@ const SLIDES = [
       {
         src: "/img/slider/Fruit/kiwi_blur.png",
         alt: "Kiwi",
-        top: "-2%",
-        left: "7%",
-        size: "100",
+        top: "0%",
+        left: "6%",
+        width: "151", // or 120, or "40%"
+        height: "105",
       },
-      // {
-      //   src: "/img/slider/Fruit/coconut_blur.png",
-      //   alt: "Coconut",
-      //   top: "18%",
-      //   left: "16%",
-      //   size: 130,
-      // },
+      {
+        src: "/img/slider/Fruit/coconut_blur.png",
+        alt: "Coconut",
+        top: "15%",
+        left: "18%",
+        width: "90",
+        height: "87",
+      },
 
-      // {
-      //   src: "/img/slider/Fruit/avocado.png",
-      //   alt: "Avocado",
-      //   top: "18%",
-      //   left: "26%",
-      //   size: 230,
-      //   delay: "0.53s",
-      // },
-      // {
-      //   src: "/img/slider/Fruit/cherry.png",
-      //   alt: "Cherry",
-      //   bottom: "30%",
-      //   left: "35%",
-      //   size: 210,
-      //   delay: "0.35s",
-      // },
-      // {
-      //   src: "/img/slider/Fruit/berry_blur.png",
-      //   alt: "Blueberry",
-      //   bottom: "10%",
-      //   left: "-1%",
-      //   size: 110,
-      //   delay: "0.35s",
-      // },
-      // {
-      //   src: "/img/slider/Fruit/berry.png",
-      //   alt: "Blueberry",
-      //   bottom: "26%",
-      //   right: "27%",
-      //   size: 110,
-      //   delay: "0.55s",
-      // },
+      {
+        src: "/img/slider/Fruit/avocado.png",
+        alt: "Avocado",
+        top: "18%",
+        left: "26%",
+        width: "240",
+        height: "240",
+        delay: "0.3s",
+      },
+      {
+        src: "/img/slider/Fruit/cherry.png",
+        alt: "Cherry",
+        bottom: "4%",
+        left: "35%",
+        width: "112",
+        height: "102",
+        delay: "0.35s",
+      },
+      {
+        src: "/img/slider/Fruit/berry_blur.png",
+        alt: "Blueberry",
+        bottom: "-20%",
+        left: "-5%",
+        width: "239",
+        height: "210",
+        delay: "0.35s",
+      },
+      {
+        src: "/img/slider/Fruit/berry.png",
+        alt: "Blueberry",
+        bottom: "5%",
+        right: "31%",
+        width: "208",
+        height: "206",
+        delay: "0.55s",
+      },
 
-      // {
-      //   src: "/img/slider/Fruit/cherry_blur.png",
-      //   alt: "Small Strawberry",
-      //   bottom: "8%",
-      //   right: "-61%",
-      //   size: 150,
-      //   delay: "0.45s",
-      // },
+      {
+        src: "/img/slider/Fruit/cherry_blur.png",
+        alt: "Small Strawberry",
+        bottom: "0%",
+        right: "-10%",
+        width: "350",
+        height: "320",
+        delay: "0.45s",
+      },
       // {
       //   src: "/img/slider/Fruit/cherry_blur.png",
       //   alt: "Blackberry",
@@ -100,6 +129,7 @@ const SLIDES = [
     line2: "Powder",
     subtitle: "From farm to fine powder perfection",
     bgText: "VEGETABLE POWDER",
+    watermarkGradient: "linear-gradient(90deg, #66bb6a 0%, #2a7d3e 100%)",
     bgColor: "#f0fff5",
     gradientEnd: "#d4f5df",
     card: {
@@ -183,6 +213,7 @@ const SLIDES = [
     line2: "Honey",
     subtitle: "Nature's golden sweetness refined",
     bgText: "PURE HONEY",
+    watermarkGradient: "linear-gradient(90deg, #f6c453 0%, #d97706 100%)",
     bgColor: "#fffbf0",
     gradientEnd: "#fef0c7",
     card: {
@@ -249,6 +280,7 @@ const SLIDES = [
     line2: "Spices",
     subtitle: "Handpicked spices bursting with bold flavor",
     bgText: "SPICES",
+    watermarkGradient: "linear-gradient(90deg, #fb8c00 0%, #c2410c 100%)",
     bgColor: "#fff8f2",
     gradientEnd: "#ffe0cc",
     card: {
@@ -324,6 +356,7 @@ const SLIDES = [
     line2: "Powder",
     subtitle: "Pure herbs transformed into healing powder",
     bgText: "HERBAL POWDER",
+    watermarkGradient: "linear-gradient(90deg, #4caf50 0%, #166534 100%)",
     bgColor: "#f4fbf5",
     gradientEnd: "#c8edcf",
     card: {
@@ -416,13 +449,13 @@ const CSS = `
   }
   .hs-bg-gradient.visible { opacity: 1; }
 
-  .hs-watermark {
+.hs-watermark {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleY(1.3) !important;
   font-size: clamp(60px, 11vw, 130px);
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.06em;
   color: rgba(0,0,0,0.055);
   white-space: nowrap;
@@ -439,11 +472,15 @@ const CSS = `
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
   min-height: 600px;
-  padding: 40px 48px 16px;
+  margin-top: 50px;
+  padding: 40px 75px 16px;
   gap: 8px;
 }
 
-  .hs-left { }
+  .hs-left {
+  margin-top: 80px;
+  width: 100%;
+  }
 
   .hs-title {
     font-size: clamp(34px, 3.8vw, 60px);
@@ -467,35 +504,39 @@ const CSS = `
     align-items: center;
     justify-content: center;
     height: 520px;
-  }
+    
+    }
 
   .hs-bowl-wrap {
   position: relative;
   z-index: 2;
-  width: clamp(320px, 42vw, 450px);
-  height: clamp(320px, 42vw, 450px);
+  width: clamp(320px, 42vw, 487px);
+  height: clamp(320px, 42vw, 487px);
 }
 
   .hs-float {
     position: absolute;
+    display: block;
     z-index: 3;
     pointer-events: none;
   }
 
   .hs-card {
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 26px 22px;
-  box-shadow: 0 6px 28px rgba(0,0,0,0.09);
-  max-width: 230px;
+  // background: rgba(255,255,255,0.88);
+  // backdrop-filter: blur(12px);
+  // -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 200px;
+  // border-radius: 20px;
+  // padding: 26px 22px;
+  // box-shadow: 0 6px 28px rgba(0,0,0,0.09);
+  max-width: 530px;
   justify-self: end;
-  border: 1px solid rgba(255,255,255,0.9);
+  
+  // border: 1px solid rgba(255,255,255,0.9);
 }
 
   .hs-card-title {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
     color: #111;
     margin: 0 0 8px;
@@ -504,7 +545,7 @@ const CSS = `
   }
 
   .hs-card-desc {
-    font-size: 13.5px;
+    font-size: 15px;
     color: #666;
     margin: 0 0 18px;
     line-height: 1.55;
@@ -621,6 +662,10 @@ export default function Hero1() {
   const [animKey, setAnimKey] = useState(0);
 
   const slide = SLIDES[current];
+  const watermarkGradient = (slide.watermarkGradient || "")
+    .replace(/^background\s*:\s*/i, "")
+    .replace(/;$/, "")
+    .trim();
 
   const navigate = useCallback((direction) => {
     setDir(direction);
@@ -666,7 +711,16 @@ export default function Hero1() {
         />
 
         {/* Background watermark text */}
-        <div key={`wm-${animKey}`} className="hs-watermark hs-anim-watermark">
+        <div
+          key={`wm-${animKey}`}
+          className="hs-watermark hs-anim-watermark"
+          style={{
+            backgroundImage: watermarkGradient,
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
           {slide.bgText}
         </div>
 
@@ -699,34 +753,40 @@ export default function Hero1() {
             </div>
 
             {/* Floating items */}
-            {slide.floats.map((item, i) => (
-              <div
-                key={`fl-${animKey}-${i}`}
-                className="hs-float"
-                style={{
-                  top: item.top ?? "auto",
-                  left: item.left ?? "auto",
-                  right: item.right ?? "auto",
-                  bottom: item.bottom ?? "auto",
-                  width: item.size,
-                  height: item.size,
-                  animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay} both,
+            {slide.floats.map((item, i) =>
+              (() => {
+                const floatWidth = normalizeDimension(item.width ?? item.size);
+                const floatHeight = normalizeDimension(
+                  item.height ?? item.size,
+                );
+                return (
+                  <div
+                    key={`fl-${animKey}-${i}`}
+                    className="hs-float"
+                    style={{
+                      top: item.top ?? "auto",
+                      left: item.left ?? "auto",
+                      right: item.right ?? "auto",
+                      bottom: item.bottom ?? "auto",
+                      width: floatWidth,
+                      height: floatHeight,
+                      animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay} both,
                                hs-bob 3.5s ease-in-out ${item.delay} infinite`,
-                }}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={item.size}
-                  height={item.size}
-                  style={{
-                    objectFit: "contain",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                />
-              </div>
-            ))}
+                    }}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 768px) 30vw, 140px"
+                      style={{
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
+                );
+              })(),
+            )}
           </div>
 
           {/* RIGHT: Info Card */}
