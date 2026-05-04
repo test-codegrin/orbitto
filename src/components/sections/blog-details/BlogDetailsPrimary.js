@@ -169,7 +169,7 @@ const BlogDetailsPrimary = () => {
         {/* Intro paragraph */}
         <p style={{ fontSize: "15px", color: "#3a5530", lineHeight: "1.8", marginBottom: "52px" }}>
           For decades, the conversation around plant-based protein centered on completeness—did it contain all nine essential amino acids?
-          Today, the science has shifted. The new frontier isn&apos;t just what&apos;s in the powder, but how effectively your body can actually use it.
+          Today, the science has shifted. The new frontier is just what's in the powder, but how effectively your body can actually use it.
         </p>
 
         {/* ── Section 1 ── */}
