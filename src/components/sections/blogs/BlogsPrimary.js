@@ -293,34 +293,6 @@ const BlogsPrimary = () => {
     >
       {/* Header Section */}
       <div style={{ textAlign: "center", padding: "60px 24px 40px" }}>
-        {/* Badge */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "6px",
-            background: "#d4e8c0",
-            color: "#2a5e14",
-            fontSize: "11.5px",
-            fontWeight: "600",
-            letterSpacing: "0.04em",
-            padding: "5px 14px",
-            borderRadius: "20px",
-            marginBottom: "20px",
-            border: "1px solid #b8d89a",
-          }}
-        >
-          <span
-            style={{
-              width: "6px",
-              height: "6px",
-              borderRadius: "50%",
-              background: "#3d8a1e",
-              display: "inline-block",
-            }}
-          />
-          Latest News &amp; Trends
-        </div>
 
         {/* Title */}
         <h1
