@@ -1,9 +1,11 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const DEFAULT_FLOAT_SIZE = 100;
+const BASE_STAGE_WIDTH = 1920;
+const BASE_STAGE_HEIGHT = 940;
 
 const normalizeDimension = (value) => {
   if (value === undefined || value === null || value === "") {
@@ -388,7 +390,7 @@ const SLIDES = [
       {
         src: "/img/slider/Herbs/PricklyPear.png",
         alt: "Prickly Pear",
-       top: "-5%",
+        top: "-5%",
         left: "-2%",
         size: 300,
       },
@@ -455,12 +457,29 @@ const CSS = `
   }
   .hs-bg-gradient.visible { opacity: 1; }
 
+  .hs-stage-outer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hs-stage {
+    position: relative;
+    width: ${BASE_STAGE_WIDTH}px;
+    height: ${BASE_STAGE_HEIGHT}px;
+    transform-origin: top center;
+    transform: scale(var(--hs-stage-scale, 1));
+  }
+
 .hs-watermark {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scaleY(1.3) !important;
-  font-size: clamp(60px, 11vw, 130px);
+  font-size: clamp(60px, 8.2vw, 180px);
   font-weight: 700;
   letter-spacing: 0.06em;
   color: rgba(0,0,0,0.055);
@@ -477,15 +496,15 @@ const CSS = `
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
-  min-height: 600px;
-  margin-top: 50px;
+  min-height: clamp(600px, 66vh, 860px);
+  margin-top: clamp(10px, 8vh, 200px);
   // padding: 40px 75px 16px;
-  padding: 50px;
-  gap: 8px;
+  padding: clamp(20px, 2.6vw, 50px);
+  gap: clamp(8px, 1vw, 24px);
 }
 
   .hs-left {
-  margin-top: 80px;
+  margin-top: clamp(20px, 6.5vh, 80px);
   width: 100%;
   }
 
@@ -510,28 +529,29 @@ const CSS = `
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 520px;
+    height: clamp(380px, 50vh, 500px);
     
     }
 
   .hs-bowl-wrap {
   position: relative;
   z-index: 2;
-  width: clamp(320px, 42vw, 487px);
-  height: clamp(320px, 42vw, 487px);
-  overflow: hidden;
+  width: clamp(320px, 35vw, 500px);
+  height: clamp(320px, 35vw, 500px);
+  overflow: visible;
 }
 
   .hs-bowl-track {
   width: 100%;
   height: 100%;
-  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
   .hs-bowl-item {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  z-index: 20;
 }
 
   .hs-float {
@@ -545,11 +565,11 @@ const CSS = `
   // background: rgba(255,255,255,0.88);
   // backdrop-filter: blur(12px);
   // -webkit-backdrop-filter: blur(12px);
-  margin-bottom: 200px;
+  margin-bottom: clamp(60px, 18vh, 200px);
   // border-radius: 20px;
   // padding: 26px 22px;
   // box-shadow: 0 6px 28px rgba(0,0,0,0.09);
-  max-width: 530px;
+  max-width: clamp(280px, 28vw, 530px);
   justify-self: end;
   
   // border: 1px solid rgba(255,255,255,0.9);
@@ -593,8 +613,8 @@ const CSS = `
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    padding: 40px;
+    gap: clamp(10px, 0.9vw, 18px);
+    padding: clamp(16px, 2.4vw, 40px);
   }
 
   .hs-tab {
@@ -603,12 +623,12 @@ const CSS = `
     align-items: center;
     gap: 8px;
     background: rgba(255,255,255,0.92);
-    border-radius: 18px;
-    padding: 14px 22px;
+    border-radius: clamp(14px, 1vw, 18px);
+    padding: clamp(10px, 0.9vw, 14px) clamp(14px, 1.1vw, 22px);
     cursor: pointer;
     border: 2.5px solid transparent;
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-    width: 165px;
+    width: clamp(132px, 8.7vw, 165px);
     box-shadow: 0 2px 10px rgba(0,0,0,0.06);
   }
   .hs-tab:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
@@ -652,6 +672,30 @@ const CSS = `
     from { transform: translate(-50%, -50%) scale(0.92); opacity: 0; }
     to   { transform: translate(-50%, -50%) scale(1);    opacity: 1; }
   }
+  @keyframes hs-stage-in-next {
+    from { transform: translateY(100%) scale(var(--hs-stage-scale, 1)); }
+    to   { transform: translateY(0) scale(var(--hs-stage-scale, 1)); }
+  }
+  @keyframes hs-stage-in-prev {
+    from { transform: translateY(-100%) scale(var(--hs-stage-scale, 1)); }
+    to   { transform: translateY(0) scale(var(--hs-stage-scale, 1)); }
+  }
+  @keyframes hs-cup-vertical-next {
+    from { transform: translateY(100vh); }
+    to   { transform: translateY(0); }
+  }
+  @keyframes hs-cup-vertical-prev {
+    from { transform: translateY(-100vh); }
+    to   { transform: translateY(0); }
+  }
+  @keyframes hs-cup-out-next {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-100vh); }
+  }
+  @keyframes hs-cup-out-prev {
+    from { transform: translateY(0); }
+    to   { transform: translateY(100vh); }
+  }
   @keyframes hs-float-in-bob {
     0%   { transform: scale(0.6) translateY(20px); opacity: 0; }
     60%  { transform: scale(1.05) translateY(-6px); opacity: 1; }
@@ -669,12 +713,33 @@ const CSS = `
   .hs-anim-card-up   { animation: hs-up-in   0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both; }
   .hs-anim-card-down { animation: hs-down-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both; }
   .hs-anim-watermark { animation: hs-fade-scale 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .hs-anim-cup-next { animation: hs-cup-vertical-next 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .hs-anim-cup-prev { animation: hs-cup-vertical-prev 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .hs-anim-cup-out-next { animation: hs-cup-out-next 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .hs-anim-cup-out-prev { animation: hs-cup-out-prev 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+  @media (min-width: 2560px) {
+    .hs-grid {
+      min-height: 860px;
+      grid-template-columns: 1.1fr 2.8fr 1.1fr;
+      padding: 56px 72px;
+      gap: 24px;
+    }
+    .hs-center { height: 680px; }
+    .hs-bowl-wrap { width: 620px; height: 620px; }
+    .hs-tabs-row { padding: 22px 72px 52px; }
+    .hs-tab { width: 182px; }
+    .hs-watermark { font-size: 190px; }
+  }
 `;
 
 export default function Hero1() {
   const [current, setCurrent] = useState(0);
   const [dir, setDir] = useState("next");
   const [animKey, setAnimKey] = useState(0);
+  const [stageScale, setStageScale] = useState(1);
+  const [prevCup, setPrevCup] = useState(null);
+  const [cupAnimating, setCupAnimating] = useState(false);
 
   const slide = SLIDES[current];
   const watermarkGradient = (slide.watermarkGradient || "")
@@ -685,11 +750,13 @@ export default function Hero1() {
   const navigate = useCallback((direction) => {
     setDir(direction);
     setAnimKey((k) => k + 1);
-    setCurrent((c) =>
-      direction === "next"
+    setCurrent((c) => {
+      setPrevCup(c);
+      setCupAnimating(true);
+      return direction === "next"
         ? (c + 1) % SLIDES.length
-        : (c - 1 + SLIDES.length) % SLIDES.length,
-    );
+        : (c - 1 + SLIDES.length) % SLIDES.length;
+    });
   }, []);
 
   const goTo = useCallback(
@@ -698,6 +765,8 @@ export default function Hero1() {
       const direction = index > current ? "next" : "prev";
       setDir(direction);
       setAnimKey((k) => k + 1);
+      setPrevCup(current);
+      setCupAnimating(true);
       setCurrent(index);
     },
     [current],
@@ -707,6 +776,26 @@ export default function Hero1() {
   const subtitleAnim =
     dir === "next" ? "hs-anim-up-delay" : "hs-anim-down-delay";
   const cardAnim = dir === "next" ? "hs-anim-card-up" : "hs-anim-card-down";
+  const cupInAnim = dir === "next" ? "hs-anim-cup-next" : "hs-anim-cup-prev";
+  const cupOutAnim =
+    dir === "next" ? "hs-anim-cup-out-next" : "hs-anim-cup-out-prev";
+
+  useEffect(() => {
+    const updateScale = () => {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const widthScale = vw / BASE_STAGE_WIDTH;
+      const heightScale = (vh - 80) / BASE_STAGE_HEIGHT;
+      const nextScale = Math.min(widthScale, heightScale);
+      setStageScale(Math.max(0.55, nextScale));
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
+
+  const stageHeight = Math.ceil(BASE_STAGE_HEIGHT * stageScale);
 
   return (
     <>
@@ -725,152 +814,181 @@ export default function Hero1() {
           }}
         />
 
-        {/* Background watermark text */}
-        <div
-          key={`wm-${animKey}`}
-          className="hs-watermark hs-anim-watermark"
-          style={{
-            backgroundImage: watermarkGradient,
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-            letterSpacing: "-5px",
-          }}
-        >
-          {slide.bgText}
-        </div>
+        <div className="hs-stage-outer" style={{ height: stageHeight }}>
+          <div
+            key={`stage-${animKey}`}
+            className="hs-stage"
+            style={{ "--hs-stage-scale": stageScale }}
+          >
+            {/* Background watermark text */}
+            <div
+              key={`wm-${animKey}`}
+              className="hs-watermark hs-anim-watermark"
+              style={{
+                backgroundImage: watermarkGradient,
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                letterSpacing: "-5px",
+              }}
+            >
+              {slide.bgText}
+            </div>
 
-        {/* Main 3-column grid */}
-        <div className="hs-grid">
-          {/* LEFT: Title + Subtitle */}
-          <div className="hs-left">
-            <h1 key={`title-${animKey}`} className={`hs-title ${titleAnim}`}>
-              {slide.line1}
-              <br />
-              {slide.line2}
-            </h1>
-            <p key={`sub-${animKey}`} className={`hs-subtitle ${subtitleAnim}`}>
-              {slide.subtitle}
-            </p>
-          </div>
+            {/* Main 3-column grid */}
+            <div className="hs-grid">
+              {/* LEFT: Title + Subtitle */}
+              <div className="hs-left">
+                <h1
+                  key={`title-${animKey}`}
+                  className={`hs-title ${titleAnim}`}
+                >
+                  {slide.line1}
+                  <br />
+                  {slide.line2}
+                </h1>
+                <p
+                  key={`sub-${animKey}`}
+                  className={`hs-subtitle ${subtitleAnim}`}
+                >
+                  {slide.subtitle}
+                </p>
+              </div>
 
-          {/* CENTER: Bowl + Floating Ingredients */}
-          <div className="hs-center">
-            {/* Bowl image */}
-            <div className="hs-bowl-wrap">
-              <div
-                className="hs-bowl-track"
-                style={{ transform: `translateY(-${current * 100}%)` }}
-              >
-                {SLIDES.map((s) => (
-                  <div key={`bowl-item-${s.id}`} className="hs-bowl-item">
+              {/* CENTER: Bowl + Floating Ingredients */}
+              <div className="hs-center">
+                {/* Bowl image */}
+                <div className="hs-bowl-wrap">
+                  {cupAnimating && prevCup !== null && (
+                    <div
+                      className={`hs-bowl-item ${cupOutAnim}`}
+                      onAnimationEnd={() => {
+                        setCupAnimating(false);
+                        setPrevCup(null);
+                      }}
+                    >
+                      <Image
+                        src={SLIDES[prevCup].mainImg}
+                        alt={`${SLIDES[prevCup].line1} ${SLIDES[prevCup].line2} bowl`}
+                        fill
+                        sizes="(max-width: 768px) 320px, 493px"
+                        style={{ objectFit: "contain" }}
+                      />
+                    </div>
+                  )}
+                  <div
+                    key={`cup-in-${animKey}-${current}`}
+                    className={`hs-bowl-item ${cupAnimating ? cupInAnim : ""}`}
+                  >
                     <Image
-                      src={s.mainImg}
-                      alt={`${s.line1} ${s.line2} bowl`}
+                      src={slide.mainImg}
+                      alt={`${slide.line1} ${slide.line2} bowl`}
                       fill
                       sizes="(max-width: 768px) 320px, 493px"
                       style={{ objectFit: "contain" }}
-                      priority={s.id === current}
+                      priority
                     />
                   </div>
-                ))}
+                </div>
+
+                {/* Floating items */}
+                {slide.floats.map((item, i) =>
+                  (() => {
+                    const floatWidth = normalizeDimension(
+                      item.width ?? item.size,
+                    );
+                    const floatHeight = normalizeDimension(
+                      item.height ?? item.size,
+                    );
+                    return (
+                      <div
+                        key={`fl-${animKey}-${i}`}
+                        className="hs-float"
+                        style={{
+                          top: item.top ?? "auto",
+                          left: item.left ?? "auto",
+                          right: item.right ?? "auto",
+                          bottom: item.bottom ?? "auto",
+                          width: floatWidth,
+                          height: floatHeight,
+                          animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay} both,
+                               hs-bob 3.5s ease-in-out ${item.delay} infinite`,
+                        }}
+                      >
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          sizes="(max-width: 768px) 30vw, 140px"
+                          style={{
+                            objectFit: "contain",
+                          }}
+                        />
+                      </div>
+                    );
+                  })(),
+                )}
+              </div>
+
+              {/* RIGHT: Info Card */}
+              <div key={`card-${animKey}`} className={`hs-card ${cardAnim}`}>
+                <p className="hs-card-title">{slide.card.title}</p>
+                <p className="hs-card-desc">{slide.card.desc}</p>
+                <Link
+                  href="/products/1"
+                  className="hs-btn"
+                  style={{ backgroundColor: slide.accent }}
+                >
+                  View more details
+                </Link>
               </div>
             </div>
 
-            {/* Floating items */}
-            {slide.floats.map((item, i) =>
-              (() => {
-                const floatWidth = normalizeDimension(item.width ?? item.size);
-                const floatHeight = normalizeDimension(
-                  item.height ?? item.size,
-                );
-                return (
-                  <div
-                    key={`fl-${animKey}-${i}`}
-                    className="hs-float"
-                    style={{
-                      top: item.top ?? "auto",
-                      left: item.left ?? "auto",
-                      right: item.right ?? "auto",
-                      bottom: item.bottom ?? "auto",
-                      width: floatWidth,
-                      height: floatHeight,
-                      animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay} both,
-                               hs-bob 3.5s ease-in-out ${item.delay} infinite`,
-                    }}
-                  >
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      fill
-                      sizes="(max-width: 768px) 30vw, 140px"
-                      style={{
-                        objectFit: "contain",
-                      }}
-                    />
-                  </div>
-                );
-              })(),
-            )}
-          </div>
-
-          {/* RIGHT: Info Card */}
-          <div key={`card-${animKey}`} className={`hs-card ${cardAnim}`}>
-            <p className="hs-card-title">{slide.card.title}</p>
-            <p className="hs-card-desc">{slide.card.desc}</p>
-            <Link
-              href="/products/1"
-              className="hs-btn"
-              style={{ backgroundColor: slide.accent }}
-            >
-              View more details
-            </Link>
-          </div>
-        </div>
-
-        {/* BOTTOM: Category tabs + arrows */}
-        <div className="hs-tabs-row">
-          <button
-            className="hs-arrow"
-            onClick={() => navigate("prev")}
-            aria-label="Previous"
-          >
-            &#8592;
-          </button>
-
-          {SLIDES.map((s, i) => (
-            <div
-              key={s.id}
-              className={`hs-tab${i === current ? " active" : ""}`}
-              style={i === current ? { borderColor: s.accent } : {}}
-              onClick={() => goTo(i)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === "Enter" && goTo(i)}
-            >
-              <Image
-                src={s.tabIcon}
-                alt={s.tabLabel}
-                width={48}
-                height={48}
-                style={{ objectFit: "contain" }}
-              />
-              <span
-                className="hs-tab-label"
-                style={i === current ? { color: s.accent } : {}}
+            {/* BOTTOM: Category tabs + arrows */}
+            <div className="hs-tabs-row">
+              <button
+                className="hs-arrow"
+                onClick={() => navigate("prev")}
+                aria-label="Previous"
               >
-                {s.tabLabel}
-              </span>
-            </div>
-          ))}
+                &#8592;
+              </button>
 
-          <button
-            className="hs-arrow"
-            onClick={() => navigate("next")}
-            aria-label="Next"
-          >
-            &#8594;
-          </button>
+              {SLIDES.map((s, i) => (
+                <div
+                  key={s.id}
+                  className={`hs-tab${i === current ? " active" : ""}`}
+                  style={i === current ? { borderColor: s.accent } : {}}
+                  onClick={() => goTo(i)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === "Enter" && goTo(i)}
+                >
+                  <Image
+                    src={s.tabIcon}
+                    alt={s.tabLabel}
+                    width={48}
+                    height={48}
+                    style={{ objectFit: "contain" }}
+                  />
+                  <span
+                    className="hs-tab-label"
+                    style={i === current ? { color: s.accent } : {}}
+                  >
+                    {s.tabLabel}
+                  </span>
+                </div>
+              ))}
+
+              <button
+                className="hs-arrow"
+                onClick={() => navigate("next")}
+                aria-label="Next"
+              >
+                &#8594;
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </>

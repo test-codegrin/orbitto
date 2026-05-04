@@ -1,4 +1,5 @@
 import Blogs2 from "@/components/sections/blogs/Blogs2";
+import About from "@/components/sections/about/About";
 import Features4 from "@/components/sections/features/Features4";
 import Hero1 from "@/components/sections/hero-banners/Hero1";
 import HotDeal3 from "@/components/sections/hot-deals/HotDeal3";
@@ -11,6 +12,7 @@ const IndexMain = () => {
   return (
     <main>
       <Hero1 />
+      <About />
       <Products3 isDouble={true} title={"Our Products"} pt={" pt-85"} />
       <HotDeal3 />
       <FeaturedProducts />
