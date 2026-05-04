@@ -1,31 +1,17 @@
 "use client";
-import BlogSidebar from "@/components/shared/sidebars/BlogSidebar";
 import getAllBlogs from "@/libs/getAllBlogs";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import makePath from "@/libs/makePath";
 import BlogCard4 from "@/components/shared/cards/BlogCard4";
-import CommonContext from "@/providers/CommonContext";
-import useSearch from "@/hooks/useSearch";
 import modifyNumber from "@/libs/modifyNumber";
 import countCommentLength from "@/libs/countCommentLength";
 import sliceText from "@/libs/sliceText";
 
 const BlogDetailsPrimary = () => {
   const { id: currentId } = useParams();
-  const blogs = getAllBlogs();
-  // get searched blogs
-  const {
-    searchedItems,
-    isShowSearch,
-    handleSearch,
-    handleSearchString,
-    startSearch,
-    closeSearch,
-    isShowQuickSearchResult,
-    setIsShowQuickSearchResult,
-  } = useSearch(blogs, `/blogs`);
+  const blogs = getAllBlogs(); 
 
   const blog = blogs?.find(({ id }) => id === parseInt(currentId));
   const {
@@ -91,57 +77,12 @@ const BlogDetailsPrimary = () => {
                     </li>
                   </ul>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum. Sed ut perspiciatis unde omnis
-                  iste natus error sit voluptatem accusantium doloremque
-                  laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                  inventore veritatis et quasi architecto beatae vitae dicta
-                  sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-                  aspernatur aut odit aut fugit, sed quia consequuntur magni
-                  dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                  quisquam est, qui dolorem ipsum quia dolor sit amet,
-                  consectetur, adipisci velit, sed quia non numquam eius modi
-                  tempora incidunt ut labore et dolore magnam aliquam quaerat
-                  voluptatem.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt.
-                </p>
                 <Image src={image} alt="Image" width={800} height={478} />
                 <h2>A cleansing hot shower or bath</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia.{" "}
-                </p>
+                
                 <hr />
                 <h2>Setting the mood with incense</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia.{" "}
-                </p>
+                
                 <hr />
                 <h2>Setting the mood with incense</h2>
                 <div className="list-item-with-icon-2">
@@ -483,23 +424,7 @@ const BlogDetailsPrimary = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
-            <CommonContext
-              value={{
-                author,
-                searchedItems,
-                handleSearch,
-                handleSearchString,
-                startSearch,
-                closeSearch,
-                isShowSearch,
-                isShowQuickSearchResult,
-                setIsShowQuickSearchResult,
-              }}
-            >
-              <BlogSidebar />
-            </CommonContext>
-          </div>
+          
         </div>
       </div>
     </div>

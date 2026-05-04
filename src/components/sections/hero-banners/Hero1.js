@@ -19,12 +19,18 @@ const SLIDES = [
     mainImg: "/img/slider/FruitePowder.png",
     floats: [
       {
+        src: "/img/slider/KiwiBlur.png",
+        alt: "Kiwi",
+        top: "-2%",
+        left: "7%",
+        size: 110,
+      },
+      {
         src: "/img/slider/CoconutBlur.png",
         alt: "Coconut",
         top: "18%",
         left: "16%",
-        size: 110,
-        delay: "0s",
+        size: 130,
       },
 
       {
@@ -32,22 +38,22 @@ const SLIDES = [
         alt: "Avocado",
         top: "18%",
         left: "26%",
-        size: 110,
-        delay: "0s",
+        size: 230,
+        delay: "0.53s",
       },
       {
         src: "/img/slider/Cherry.png",
         alt: "Cherry",
         bottom: "30%",
-        left: "0",
-        size: 110,
+        left: "35%",
+        size: 210,
         delay: "0.35s",
       },
-       {
+      {
         src: "/img/slider/BlueberryBlur.png",
         alt: "Blueberry",
         bottom: "10%",
-        left: "-59%",
+        left: "-1%",
         size: 110,
         delay: "0.35s",
       },
@@ -59,14 +65,7 @@ const SLIDES = [
         size: 110,
         delay: "0.55s",
       },
-      {
-        src: "/img/slider/KiwiBlur.png",
-        alt: "Kiwi",
-        top: "12%",
-        left: "7%",
-        size: 65,
-        delay: "0.2s",
-      },
+
       {
         src: "/img/slider/CherryBlur.png",
         alt: "Small Strawberry",
@@ -86,10 +85,9 @@ const SLIDES = [
       {
         src: "/img/slider/GreenappleBlur.png",
         alt: "Green Apple",
-        top: "4%",
+        top: "2%",
         right: "22%",
         size: 100,
-        delay: "0.15s",
       },
     ],
     accent: "#d63f6e",
@@ -166,7 +164,7 @@ const SLIDES = [
         size: 50,
         delay: "0.5s",
       },
-       {
+      {
         src: "/img/slider/GreenChiliBlur.png",
         alt: "Green Chili",
         bottom: "12%",
@@ -174,7 +172,6 @@ const SLIDES = [
         size: 50,
         delay: "0.5s",
       },
-     
     ],
     accent: "#2a7d3e",
     tabIcon: "/img/slider/VegBasket.png",
@@ -233,7 +230,7 @@ const SLIDES = [
         size: 70,
         delay: "0.55s",
       },
-       {
+      {
         src: "/img/slider/HoneyPadBlur.png",
         alt: "Honey Jar",
         bottom: "20%",
@@ -316,7 +313,6 @@ const SLIDES = [
         size: 170,
         delay: "0.6s",
       },
-      
     ],
     accent: "#c2410c",
     tabIcon: "/img/slider/SpicesBasket.png",
@@ -344,7 +340,7 @@ const SLIDES = [
         size: 105,
         delay: "0s",
       },
-       {
+      {
         src: "/img/slider/PricklyPear.png",
         alt: "Prickly Pear",
         top: "10%",
@@ -352,7 +348,7 @@ const SLIDES = [
         size: 65,
         delay: "0.2s",
       },
-     
+
       {
         src: "/img/slider/Rose.png",
         alt: "Rose",
@@ -421,31 +417,31 @@ const CSS = `
   .hs-bg-gradient.visible { opacity: 1; }
 
   .hs-watermark {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: clamp(52px, 9vw, 115px);
-    font-weight: 900;
-    letter-spacing: 0.06em;
-    color: rgba(0,0,0,0.055);
-    white-space: nowrap;
-    pointer-events: none;
-    z-index: 0;
-    user-select: none;
-    line-height: 1;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(60px, 11vw, 130px);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: rgba(0,0,0,0.055);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  line-height: 1;
+}
 
   .hs-grid {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr 2.2fr 1fr;
-    align-items: center;
-    min-height: 560px;
-    padding: 56px 48px 16px;
-    gap: 16px;
-  }
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  min-height: 600px;
+  padding: 40px 48px 16px;
+  gap: 8px;
+}
 
   .hs-left { }
 
@@ -466,7 +462,7 @@ const CSS = `
   }
 
   .hs-center {
-    position: relative;
+    // position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -474,11 +470,11 @@ const CSS = `
   }
 
   .hs-bowl-wrap {
-    position: relative;
-    z-index: 2;
-    width: clamp(200px, 28vw, 370px);
-    height: clamp(200px, 28vw, 370px);
-  }
+  position: relative;
+  z-index: 2;
+  width: clamp(320px, 42vw, 500px);
+  height: clamp(320px, 42vw, 500px);
+}
 
   .hs-float {
     position: absolute;
@@ -487,16 +483,16 @@ const CSS = `
   }
 
   .hs-card {
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    padding: 26px 22px;
-    box-shadow: 0 6px 28px rgba(0,0,0,0.09);
-    max-width: 255px;
-    justify-self: end;
-    border: 1px solid rgba(255,255,255,0.9);
-  }
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 26px 22px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.09);
+  max-width: 230px;
+  justify-self: end;
+  border: 1px solid rgba(255,255,255,0.9);
+}
 
   .hs-card-title {
     font-size: 18px;
@@ -696,11 +692,12 @@ export default function Hero1() {
                 src={slide.mainImg}
                 alt={`${slide.line1} ${slide.line2} bowl`}
                 fill
-                sizes="(max-width: 768px) 200px, 370px"
+                sizes="(max-width: 768px) 320px, 500px"
                 style={{ objectFit: "contain" }}
                 priority
               />
             </div>
+            
 
             {/* Floating items */}
             {slide.floats.map((item, i) => (
