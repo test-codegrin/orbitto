@@ -240,35 +240,35 @@ const BlogCard = ({ blog }) => {
         </p>
 
         {/* BUTTON */}
-<Link
-  href={`/blogs/${blog.id}`}
-  style={{
-    display: "inline-flex",
-    alignItems: "center",
-    gap: "10px",
-    textDecoration: "none",
-    fontSize: "18px",
-    fontWeight: "600",
-    color: blog.category === "Trends" ? "#b96a2b" : "#3d6b1f",
-  }}
->
-  Read Article
-  <span
-    style={{
-      width: "34px",
-      height: "34px",
-      borderRadius: "50%",
-      background: blog.category === "Trends" ? "#f6dcc6" : "#dce9c9",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      transition: "all 0.3s ease",
-      transform: hovered ? "translateX(4px)" : "translateX(0)",
-    }}
-  >
-    <ArrowIcon />
-  </span>
-</Link>
+        <Link
+          href={`/blogs/${blog.id}`}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "10px",
+            textDecoration: "none",
+            fontSize: "18px",
+            fontWeight: "600",
+            color: blog.category === "Trends" ? "#b96a2b" : "#3d6b1f",
+          }}
+        >
+          Read Article
+          <span
+            style={{
+              width: "34px",
+              height: "34px",
+              borderRadius: "50%",
+              background: blog.category === "Trends" ? "#f6dcc6" : "#dce9c9",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "all 0.3s ease",
+              transform: hovered ? "translateX(4px)" : "translateX(0)",
+            }}
+          >
+            <ArrowIcon />
+          </span>
+        </Link>
       </div>
     </div>
   );
@@ -420,9 +420,7 @@ const BlogsPrimary = () => {
 
         {/* View All Button */}
         <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <button
-            className="theme-btn-1 btn btn-effect-1 text-uppercase"          
-          >
+          <button className="theme-btn-1 btn btn-effect-1 text-uppercase">
             View All Insights
             <ArrowIcon />
           </button>
@@ -489,7 +487,14 @@ const BlogsPrimary = () => {
               to your inbox.
             </p>
 
-            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "12px",
+                flexWrap: "wrap",
+                alignItems: "flex-start",
+              }}
+            >
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -497,36 +502,21 @@ const BlogsPrimary = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 style={{
                   flex: "1",
-                  // minWidth: "180px",
-                  padding: "12px 18px",
-                  borderRadius: "50px",
+                  minWidth: "240px",
+                  height: "55px",
+                  // padding: "0 23px",
                   border: "1.5px solid #b8d89a",
                   background: "#ffffff",
-                  fontSize: "13.5px",
+                  fontSize: "14px",
                   color: "#1a3a18",
                   outline: "none",
                   fontFamily: "inherit",
+                  boxSizing: "border-box",
                 }}
               />
-              <button
-                style={{
-                  background: "#1e4d14",
-                  color: "#ffffff",
-                  padding: "12px 22px",
-                  borderRadius: "50px",
-                  border: "none",
-                  fontSize: "13.5px",
-                  fontWeight: "600",
-                  cursor: "pointer",
-                  whiteSpace: "nowrap",
-                  transition: "background 0.2s ease",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = "#163a0f")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = "#1e4d14")
-                }
+
+              <button 
+              className="theme-btn-1 btn btn-effect-1 text-uppercase"
               >
                 Subscribe
               </button>
