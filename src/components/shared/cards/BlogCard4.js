@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const BlogCard4 = ({ blog }) => {
-  const { title, image, id, publishDate, author, category } = blog;
+  const { title, image, id, publishDate, desc } = blog;
   return (
     <div className="ltn__blog-item ltn__blog-item-6">
       <div className="ltn__blog-img">
