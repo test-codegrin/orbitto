@@ -24,7 +24,7 @@ const getAllFeatues = () => {
       id: 3,
       title: "Fast Feature Delivery",
       img: <i className="icon-mechanic"></i>,
-      path: "/products/1",
+      path: "/products",
       desc: "Lorem ipsum dolor sit amet, consect etur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
       bg: "white",
       bgImg: null,

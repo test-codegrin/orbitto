@@ -819,7 +819,7 @@ export default function Hero1() {
             <p className="hs-card-title">{slide.card.title}</p>
             <p className="hs-card-desc">{slide.card.desc}</p>
             <Link
-              href="/products/1"
+              href="/products"
               className="hs-btn"
               style={{ backgroundColor: slide.accent }}
             >

@@ -24,7 +24,7 @@ const HotDeal3 = () => {
               ></div>
               <div className="btn-wrapper animated">
                 <Link
-                  href="/products/1"
+                  href="/products"
                   className="theme-btn-1 btn btn-effect-1 text-uppercase"
                 >
                   Productnow
