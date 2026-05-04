@@ -69,7 +69,7 @@ const SLIDES = [
       {
         src: "/img/slider/Fruit/cherry.png",
         alt: "Cherry",
-        bottom: "4%",
+        bottom: "14%",
         left: "35%",
         width: "112",
         height: "102",
@@ -103,21 +103,24 @@ const SLIDES = [
         height: "320",
         delay: "0.45s",
       },
-      // {
-      //   src: "/img/slider/Fruit/cherry_blur.png",
-      //   alt: "Blackberry",
-      //   bottom: "0%",
-      //   right: "0%",
-      //   size: 150,
-      //   delay: "0.6s",
-      // },
-      // {
-      //   src: "/img/slider/Fruit/GreenappleBlur.png",
-      //   alt: "Green Apple",
-      //   top: "2%",
-      //   right: "22%",
-      //   size: 100,
-      // },
+      {
+        src: "/img/slider/Fruit/berry_loom.png",
+        alt: "Blackberry",
+        bottom: "-10%",
+        right: "18%",
+        width: "154",
+        height: "129",
+        // delay: "0.6s",
+      },
+      {
+        src: "/img/slider/Fruit/gauvava_blur.png",
+        alt: "Green Apple",
+        top: "-20%",
+        right: "22%",
+        width: "198",
+        height: "212",
+        delay: "0.15s",
+      },
     ],
     accent: "#d63f6e",
     tabIcon: "/img/slider/FruiteBasket.png",
@@ -129,7 +132,8 @@ const SLIDES = [
     line2: "Powder",
     subtitle: "From farm to fine powder perfection",
     bgText: "VEGETABLE POWDER",
-    watermarkGradient: "linear-gradient(90deg, #66bb6a 0%, #2a7d3e 100%)",
+    watermarkGradient:
+      "background: linear-gradient(180deg, rgba(114, 142, 25, 0.2) 0%, rgba(175, 28, 91, 0.2) 50%, rgba(114, 142, 25, 0.2) 100%);",
     bgColor: "#f0fff5",
     gradientEnd: "#d4f5df",
     card: {
@@ -139,67 +143,69 @@ const SLIDES = [
     mainImg: "/img/slider/main/vegetable_powder.png",
     floats: [
       {
-        src: "/img/slider/BeetsRootBlur.png",
+        src: "/img/slider/Vegetable/Beet.png",
         alt: "Beetroot",
         top: "22%",
         left: "25%",
-        size: 115,
+        size: "174",
         delay: "0s",
       },
       {
-        src: "/img/slider/Coriander.png",
+        src: "/img/slider/Vegetable/Coriander.png",
         alt: "Coriander Leaves",
-        top: "22%",
-        left: "40%",
-        size: 115,
+        bottom: "-15%",
+        left: "25%",
+        width: 165,
+        height: 234,
         delay: "0s",
       },
       {
-        src: "/img/slider/Broccoli.png",
+        src: "/img/slider/Vegetable/broccoli.png",
         alt: "Broccoli",
-        bottom: "22%",
-        right: "24%",
-        size: 105,
+        bottom: "0%",
+        right: "30%",
+        size: 242,
         delay: "0.4s",
       },
       {
-        src: "/img/slider/CarrotBlur.png",
+        src: "/img/slider/Vegetable/Carrot.png",
         alt: "Carrot",
-        bottom: "22%",
-        right: "-55%",
-        size: 105,
+        bottom: "-30%",
+        right: "0%",
+        width: 429,
+        height: 479,
         delay: "0.4s",
       },
       {
-        src: "/img/slider/BitterGourd.png",
+        src: "/img/slider/Vegetable/Bittermelon.png",
         alt: "Bitter Gourd",
-        top: "4%",
-        left: "3%",
-        size: 65,
+        top: "-10%",
+        left: "-1%",
+        size: 334,
         delay: "0.15s",
       },
       {
-        src: "/img/slider/OnionRing.png",
+        src: "/img/slider/Vegetable/SlicedOnion.png",
         alt: "Onion Ring",
-        top: "5%",
-        right: "3%",
-        size: 105,
+        top: "-40%",
+        right: "20%",
+        size: 418,
         delay: "0.3s",
       },
       {
-        src: "/img/slider/SpinachBlur.png",
+        src: "/img/slider/Vegetable/blur.png",
         alt: "Spinach",
-        bottom: "12%",
-        left: "-50%",
-        size: 50,
+        bottom: "-10%",
+        left: "0%",
+        size: 155,
         delay: "0.5s",
       },
       {
-        src: "/img/slider/GreenChiliBlur.png",
+        src: "/img/slider/Vegetable/Greenchilli.png",
         alt: "Green Chili",
-        bottom: "12%",
-        left: "3%",
-        size: 50,
+        bottom: "-30%",
+        left: "15%",
+        size: 155,
         delay: "0.5s",
       },
     ],
@@ -213,7 +219,8 @@ const SLIDES = [
     line2: "Honey",
     subtitle: "Nature's golden sweetness refined",
     bgText: "PURE HONEY",
-    watermarkGradient: "linear-gradient(90deg, #f6c453 0%, #d97706 100%)",
+    watermarkGradient:
+      "background: linear-gradient(180deg, rgba(249, 140, 21, 0.2) 0%, rgba(197, 157, 46, 0.2) 100%);",
     bgColor: "#fffbf0",
     gradientEnd: "#fef0c7",
     card: {
@@ -223,51 +230,54 @@ const SLIDES = [
     mainImg: "/img/slider/main/honey.png",
     floats: [
       {
-        src: "/img/slider/HoneySunFlower.png",
+        src: "/img/slider/Honey/bee.gif",
+        alt: "Bee",
+        top: "18%",
+        right: "33%",
+        size: 125,
+        delay: "0s",
+      },
+      {
+        src: "/img/slider/Honey/3.png",
         alt: "Sunflower",
-        top: "18%",
-        right: "27%",
-        size: 200,
-        delay: "0s",
+        top: "0%",
+        right: "20%",
+        size: 314,
+        // delay: "0s",
       },
       {
-        src: "/img/slider/HoneyBee.gif",
-        alt: "Bee",
-        top: "18%",
-        right: "27%",
-        size: 125,
-        delay: "0s",
-      },
-      {
-        src: "/img/slider/HoneyDrop.png",
+        src: "/img/slider/Honey/5.png",
         alt: "Honey Drop",
-        top: "10%",
-        left: "8%",
-        size: 200,
+        top: "-5%",
+        left: "0%",
+        width: 537,
+        height: 268,
       },
       {
-        src: "/img/slider/HoneyBeeQ.gif",
-        alt: "Bee",
-        bottom: "28%",
-        left: "28%",
-        size: 125,
-        delay: "0.4s",
-      },
-      {
-        src: "/img/slider/HoneyPad.png",
+        src: "/img/slider/Honey/1.png",
         alt: "Honey Jar",
-        bottom: "20%",
-        right: "10%",
-        size: 70,
-        delay: "0.55s",
+        bottom: "10%",
+        right: "30%",
+        width: 120,
+        height: 88,
+        // delay: "0.55s",
       },
       {
-        src: "/img/slider/HoneyPadBlur.png",
+        src: "/img/slider/Honey/2.png",
         alt: "Honey Jar",
-        bottom: "20%",
-        right: "-50%",
-        size: 70,
-        delay: "0.55s",
+        bottom: "-20%",
+        right: "-8%",
+        width: 369,
+        height: 274,
+        // delay: "0.55s",
+      },
+      {
+        src: "/img/slider/Honey/4.png",
+        alt: "Honey Jar",
+        top: "-5%",
+        right: "-3%",
+        size: 288,
+        // delay: "0.55s",
       },
     ],
     accent: "#d97706",
@@ -279,8 +289,9 @@ const SLIDES = [
     line1: "Premium",
     line2: "Spices",
     subtitle: "Handpicked spices bursting with bold flavor",
-    bgText: "SPICES",
-    watermarkGradient: "linear-gradient(90deg, #fb8c00 0%, #c2410c 100%)",
+    bgText: "PREMIUM SPICES",
+    watermarkGradient:
+      "background: linear-gradient(180deg, rgba(132, 14, 14, 0.2) 0%, rgba(255, 0, 0, 0.1) 100%);",
     bgColor: "#fff8f2",
     gradientEnd: "#ffe0cc",
     card: {
@@ -290,60 +301,60 @@ const SLIDES = [
     mainImg: "/img/slider/main/spices.png",
     floats: [
       {
-        src: "/img/slider/GaramMsala.png",
+        src: "/img/slider/Spices/GaramMsala.png",
         alt: "Garam Masala",
-        top: "16%",
-        left: "2%",
-        size: 205,
-        delay: "0s",
+        top: "-5%",
+        left: "-2%",
+        size: 310,
+        // delay: "0s",
       },
       {
-        src: "/img/slider/DryChilli.png",
+        src: "/img/slider/Spices/DryChilli.png",
         alt: "Red Chili",
-        top: "16%",
-        left: "25%",
-        size: 205,
-        delay: "0s",
+        bottom: "-40%",
+        right: "-3%",
+        size: 611,
+        // delay: "0s",
       },
       {
-        src: "/img/slider/Clove.png",
+        src: "/img/slider/Spices/Clove.png",
         alt: "Clove",
-        bottom: "-2%",
-        left: "32%",
-        size: 280,
-        delay: "0.35s",
+        bottom: "-12%",
+        left: "15%",
+        size: 278,
+        // delay: "0.35s",
       },
       {
-        src: "/img/slider/RedChilli.png",
+        src: "/img/slider/Spices/RedChilli.png",
         alt: "Red Chili",
-        bottom: "2%",
-        right: "26%",
-        size: 190,
-        delay: "0.5s",
+        bottom: "-5%",
+        right: "30%",
+        size: 287,
+        // delay: "0.5s",
       },
       {
-        src: "/img/slider/Cardamom.png",
-        alt: "Cardamom",
+        src: "/img/slider/Spices/Tea-Leaf.png",
+        alt: "Tea Leaf",
         bottom: "1%",
         right: "-63%",
         size: 260,
-        delay: "0.2s",
+        // delay: "0.2s",
       },
       {
-        src: "/img/slider/Turmeric.png",
+        src: "/img/slider/Spices/Turmeric.png",
         alt: "Turmeric",
-        top: "6%",
-        right: "8%",
-        size: 150,
-        delay: "0.45s",
+        top: "0%",
+        right: "10%",
+        size: 144,
+        // delay: "0.45s",
       },
       {
-        src: "/img/slider/StarAnise.png",
+        src: "/img/slider/Spices/StarAnise.png",
         alt: "Star Anise",
-        bottom: "10%",
-        left: "-54%",
-        size: 170,
-        delay: "0.6s",
+        bottom: "-46%",
+        left: "-3%",
+        size: 287,
+        // delay: "0.6s",
       },
     ],
     accent: "#c2410c",
@@ -356,7 +367,8 @@ const SLIDES = [
     line2: "Powder",
     subtitle: "Pure herbs transformed into healing powder",
     bgText: "HERBAL POWDER",
-    watermarkGradient: "linear-gradient(90deg, #4caf50 0%, #166534 100%)",
+    watermarkGradient:
+      "background: linear-gradient(180deg, rgba(27, 146, 82, 0.054) 0%, rgba(1, 62, 29, 0.2) 100%);",
     bgColor: "#f4fbf5",
     gradientEnd: "#c8edcf",
     card: {
@@ -366,61 +378,55 @@ const SLIDES = [
     mainImg: "/img/slider/main/natural_herbs.png",
     floats: [
       {
-        src: "/img/slider/amla.png",
+        src: "/img/slider/Herbs/amla.png",
         alt: "Amla",
         top: "18%",
         left: "26%",
-        size: 105,
+        size: 236,
         delay: "0s",
       },
       {
-        src: "/img/slider/PricklyPear.png",
+        src: "/img/slider/Herbs/PricklyPear.png",
         alt: "Prickly Pear",
-        top: "10%",
-        left: "6%",
-        size: 65,
-        delay: "0.2s",
+       top: "-5%",
+        left: "-2%",
+        size: 300,
       },
 
       {
-        src: "/img/slider/Rose.png",
+        src: "/img/slider/Herbs/Rose.png",
         alt: "Rose",
-        bottom: "22%",
-        right: "25%",
-        size: 75,
-        delay: "0.5s",
+        bottom: "-20%",
+        left: "8%",
+        size: 300,
       },
       {
-        src: "/img/slider/MoringaLeaf.png",
+        src: "/img/slider/Herbs/MoringaLeaf.png",
         alt: "Moringa Leaf",
-        bottom: "9%",
-        right: "6%",
-        size: 75,
-        delay: "0.6s",
+        bottom: "-5%",
+        right: "27%",
+        size: 352,
       },
       {
-        src: "/img/slider/AloeveraBlur.png",
+        src: "/img/slider/Herbs/AloeveraBlur.png",
         alt: "Aloe Vera",
-        bottom: "9%",
-        right: "6%",
-        size: 75,
-        delay: "0.6s",
+        bottom: "-20%",
+        right: "-5%",
+        size: 438,
       },
       {
-        src: "/img/slider/GreenFennel.png",
+        src: "/img/slider/Herbs/GreenFennel.png",
         alt: "Green Fennel",
-        top: "3%",
-        right: "22%",
-        size: 200,
-        delay: "0.15s",
+        top: "-20%",
+        right: "28%",
+        size: 298,
       },
       {
-        src: "/img/slider/Rose.png",
+        src: "/img/slider/Herbs/Rose-2.png",
         alt: "Rose",
-        top: "3%",
-        right: "22%",
-        size: 45,
-        delay: "0.15s",
+        top: "0",
+        right: "12%",
+        size: 129,
       },
     ],
     accent: "#166534",
@@ -473,7 +479,8 @@ const CSS = `
   align-items: center;
   min-height: 600px;
   margin-top: 50px;
-  padding: 40px 75px 16px;
+  // padding: 40px 75px 16px;
+  padding: 50px;
   gap: 8px;
 }
 
@@ -512,6 +519,19 @@ const CSS = `
   z-index: 2;
   width: clamp(320px, 42vw, 487px);
   height: clamp(320px, 42vw, 487px);
+  overflow: hidden;
+}
+
+  .hs-bowl-track {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+  .hs-bowl-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
   .hs-float {
@@ -574,7 +594,7 @@ const CSS = `
     align-items: center;
     justify-content: center;
     gap: 14px;
-    padding: 8px 48px 44px;
+    padding: 40px;
   }
 
   .hs-tab {
@@ -588,7 +608,7 @@ const CSS = `
     cursor: pointer;
     border: 2.5px solid transparent;
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-    min-width: 120px;
+    width: 165px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.06);
   }
   .hs-tab:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
@@ -628,10 +648,6 @@ const CSS = `
     from { transform: translateY(-55px); opacity: 0; }
     to   { transform: translateY(0);     opacity: 1; }
   }
-  @keyframes hs-scale-in {
-    from { transform: scale(0.78); opacity: 0; }
-    to   { transform: scale(1);    opacity: 1; }
-  }
   @keyframes hs-fade-scale {
     from { transform: translate(-50%, -50%) scale(0.92); opacity: 0; }
     to   { transform: translate(-50%, -50%) scale(1);    opacity: 1; }
@@ -650,7 +666,6 @@ const CSS = `
   .hs-anim-down { animation: hs-down-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
   .hs-anim-up-delay   { animation: hs-up-in   0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both; }
   .hs-anim-down-delay { animation: hs-down-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both; }
-  .hs-anim-bowl { animation: hs-scale-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both; }
   .hs-anim-card-up   { animation: hs-up-in   0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both; }
   .hs-anim-card-down { animation: hs-down-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both; }
   .hs-anim-watermark { animation: hs-fade-scale 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
@@ -719,6 +734,7 @@ export default function Hero1() {
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
+            letterSpacing: "-5px",
           }}
         >
           {slide.bgText}
@@ -741,15 +757,24 @@ export default function Hero1() {
           {/* CENTER: Bowl + Floating Ingredients */}
           <div className="hs-center">
             {/* Bowl image */}
-            <div key={`bowl-${animKey}`} className="hs-bowl-wrap hs-anim-bowl">
-              <Image
-                src={slide.mainImg}
-                alt={`${slide.line1} ${slide.line2} bowl`}
-                fill
-                sizes="(max-width: 768px) 320px, 493px"
-                style={{ objectFit: "contain" }}
-                priority
-              />
+            <div className="hs-bowl-wrap">
+              <div
+                className="hs-bowl-track"
+                style={{ transform: `translateY(-${current * 100}%)` }}
+              >
+                {SLIDES.map((s) => (
+                  <div key={`bowl-item-${s.id}`} className="hs-bowl-item">
+                    <Image
+                      src={s.mainImg}
+                      alt={`${s.line1} ${s.line2} bowl`}
+                      fill
+                      sizes="(max-width: 768px) 320px, 493px"
+                      style={{ objectFit: "contain" }}
+                      priority={s.id === current}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Floating items */}
