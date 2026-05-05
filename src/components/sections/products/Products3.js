@@ -20,26 +20,50 @@ const Products3 = ({
   const fruitsPowderProducts = getAllProducts()?.filter(
     ({ type }) => makePath(type) === makePath("Fruit Powder")
   );
-  const fruitsPowderProducts1 = fruitsPowderProducts?.slice(0, 6);
-  const fruitsPowderProducts2 = fruitsPowderProducts?.slice(6, 12);
+  const fruitsPowderProductPairs = useMemo(() => {
+    const list = fruitsPowderProducts || [];
+    const pairs = [];
+    for (let idx = 0; idx < list.length; idx += 2) {
+      pairs.push([list[idx], list[idx + 1] || null]);
+    }
+    return pairs;
+  }, [fruitsPowderProducts]);
 
   const vegetablesPowderProducts = getAllProducts()?.filter(
     ({ type }) => makePath(type) === makePath("Vegetable Powder")
   );
-  const vegetablesPowderProducts1 = vegetablesPowderProducts?.slice(0, 6);
-  const vegetablesPowderProducts2 = vegetablesPowderProducts?.slice(6, 12);
+  const vegetablesPowderProductPairs = useMemo(() => {
+    const list = vegetablesPowderProducts || [];
+    const pairs = [];
+    for (let idx = 0; idx < list.length; idx += 2) {
+      pairs.push([list[idx], list[idx + 1] || null]);
+    }
+    return pairs;
+  }, [vegetablesPowderProducts]);
 
   const honeyProducts = getAllProducts()?.filter(
     ({ type }) => makePath(type) === makePath("Honey")
   );
-  const honeyProducts1 = honeyProducts?.slice(0, 6);
-  const honeyProducts2 = honeyProducts?.slice(6, 12);
+  const honeyProductPairs = useMemo(() => {
+    const list = honeyProducts || [];
+    const pairs = [];
+    for (let idx = 0; idx < list.length; idx += 2) {
+      pairs.push([list[idx], list[idx + 1] || null]);
+    }
+    return pairs;
+  }, [honeyProducts]);
 
   const spicesProducts = getAllProducts()?.filter(
     ({ type }) => makePath(type) === makePath("Spices")
   );
-  const spicesProducts1 = spicesProducts?.slice(0, 6);
-  const spicesProducts2 = spicesProducts?.slice(6, 12);
+  const spicesProductPairs = useMemo(() => {
+    const list = spicesProducts || [];
+    const pairs = [];
+    for (let idx = 0; idx < list.length; idx += 2) {
+      pairs.push([list[idx], list[idx + 1] || null]);
+    }
+    return pairs;
+  }, [spicesProducts]);
 
   const herbalProducts = useMemo(
     () =>
@@ -126,11 +150,11 @@ const Products3 = ({
                 <div className="tab-pane fade active show" id="liton_tab_3_1">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {fruitsPowderProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={fruitsPowderProducts2[idx]} />
+                      {fruitsPowderProductPairs?.map(([firstProduct, secondProduct], idx) => (
+                        <div className="col-lg-12" key={firstProduct?.id || firstProduct?.slug || idx}>
+                          <ProductCardPrimary product={firstProduct} />
+                          {isDouble && secondProduct ? (
+                            <ProductCardPrimary product={secondProduct} />
                           ) : ""}
                         </div>
                       ))}
@@ -142,11 +166,11 @@ const Products3 = ({
                 <div className="tab-pane fade" id="liton_tab_3_2">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {vegetablesPowderProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={vegetablesPowderProducts2[idx]} />
+                      {vegetablesPowderProductPairs?.map(([firstProduct, secondProduct], idx) => (
+                        <div className="col-lg-12" key={firstProduct?.id || firstProduct?.slug || idx}>
+                          <ProductCardPrimary product={firstProduct} />
+                          {isDouble && secondProduct ? (
+                            <ProductCardPrimary product={secondProduct} />
                           ) : ""}
                         </div>
                       ))}
@@ -158,11 +182,11 @@ const Products3 = ({
                 <div className="tab-pane fade" id="liton_tab_3_3">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {honeyProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={honeyProducts2[idx]} />
+                      {honeyProductPairs?.map(([firstProduct, secondProduct], idx) => (
+                        <div className="col-lg-12" key={firstProduct?.id || firstProduct?.slug || idx}>
+                          <ProductCardPrimary product={firstProduct} />
+                          {isDouble && secondProduct ? (
+                            <ProductCardPrimary product={secondProduct} />
                           ) : ""}
                         </div>
                       ))}
@@ -174,11 +198,11 @@ const Products3 = ({
                 <div className="tab-pane fade" id="liton_tab_3_4">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {spicesProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={spicesProducts2[idx]} />
+                      {spicesProductPairs?.map(([firstProduct, secondProduct], idx) => (
+                        <div className="col-lg-12" key={firstProduct?.id || firstProduct?.slug || idx}>
+                          <ProductCardPrimary product={firstProduct} />
+                          {isDouble && secondProduct ? (
+                            <ProductCardPrimary product={secondProduct} />
                           ) : ""}
                         </div>
                       ))}
