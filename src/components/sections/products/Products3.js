@@ -3,7 +3,7 @@ import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
 import getAllProducts from "@/libs/getAllProducts";
 import makePath from "@/libs/makePath";
 import Link from "next/link";
-import { useCallback, useMemo, useState } from "react";
+import { useMemo } from "react";
 
 const Products3 = ({
   title,
@@ -13,61 +13,77 @@ const Products3 = ({
   type,
   isDouble,
 }) => {
-  const [invalidHerbalImageIds, setInvalidHerbalImageIds] = useState(
-    new Set()
+  const allProducts = useMemo(() => getAllProducts() || [], []);
+
+  const fruitsPowderProducts = useMemo(
+    () =>
+      allProducts.filter(
+        ({ type: productType }) =>
+          makePath(productType || "") === makePath("Fruit Powder")
+      ),
+    [allProducts]
   );
 
-  const fruitsPowderProducts = getAllProducts()?.filter(
-    ({ type }) => makePath(type) === makePath("Fruit Powder")
+  const vegetablesPowderProducts = useMemo(
+    () =>
+      allProducts.filter(
+        ({ type: productType }) =>
+          makePath(productType || "") === makePath("Vegetable Powder")
+      ),
+    [allProducts]
   );
-  const fruitsPowderProducts1 = fruitsPowderProducts?.slice(0, 6);
-  const fruitsPowderProducts2 = fruitsPowderProducts?.slice(6, 12);
 
-  const vegetablesPowderProducts = getAllProducts()?.filter(
-    ({ type }) => makePath(type) === makePath("Vegetable Powder")
+  const honeyProducts = useMemo(
+    () =>
+      allProducts.filter(
+        ({ type: productType }) =>
+          makePath(productType || "") === makePath("Honey")
+      ),
+    [allProducts]
   );
-  const vegetablesPowderProducts1 = vegetablesPowderProducts?.slice(0, 6);
-  const vegetablesPowderProducts2 = vegetablesPowderProducts?.slice(6, 12);
 
-  const honeyProducts = getAllProducts()?.filter(
-    ({ type }) => makePath(type) === makePath("Honey")
+  const spicesProducts = useMemo(
+    () =>
+      allProducts.filter(
+        ({ type: productType }) =>
+          makePath(productType || "") === makePath("Spices")
+      ),
+    [allProducts]
   );
-  const honeyProducts1 = honeyProducts?.slice(0, 6);
-  const honeyProducts2 = honeyProducts?.slice(6, 12);
-
-  const spicesProducts = getAllProducts()?.filter(
-    ({ type }) => makePath(type) === makePath("Spices")
-  );
-  const spicesProducts1 = spicesProducts?.slice(0, 6);
-  const spicesProducts2 = spicesProducts?.slice(6, 12);
 
   const herbalProducts = useMemo(
     () =>
-      getAllProducts()
-        ?.filter(({ type }) => makePath(type) === makePath("Herbal Powder"))
-        ?.filter(
-          ({ id, image }) => !!image && !invalidHerbalImageIds.has(id)
-        ),
-    [invalidHerbalImageIds]
+      allProducts.filter(
+        ({ type: productType }) =>
+          makePath(productType || "") === makePath("Herbal Powder")
+      ),
+    [allProducts]
   );
-  const herbalProductPairs = useMemo(() => {
-    const list = herbalProducts || [];
-    const pairs = [];
-    for (let idx = 0; idx < list.length; idx += 2) {
-      pairs.push([list[idx], list[idx + 1] || null]);
-    }
-    return pairs;
-  }, [herbalProducts]);
 
-  const handleHerbalImageUnavailable = useCallback((id) => {
-    setInvalidHerbalImageIds((previousIds) => {
-      if (!id || previousIds.has(id)) return previousIds;
-      const nextIds = new Set(previousIds);
-      nextIds.add(id);
-      return nextIds;
-    });
-  }, []);
-  
+  const renderProducts = (products = []) => {
+    if (!isDouble) {
+      return products.map((product, idx) => (
+        <div className="col-lg-12" key={product?.id || product?.slug || idx}>
+          <ProductCardPrimary product={product} />
+        </div>
+      ));
+    }
+
+    const pairs = [];
+    for (let idx = 0; idx < products.length; idx += 2) {
+      pairs.push([products[idx], products[idx + 1] || null]);
+    }
+
+    return pairs.map(([firstProduct, secondProduct], idx) => (
+      <div
+        className="col-lg-12"
+        key={firstProduct?.id || firstProduct?.slug || idx}
+      >
+        <ProductCardPrimary product={firstProduct} />
+        {secondProduct ? <ProductCardPrimary product={secondProduct} /> : ""}
+      </div>
+    ));
+  };
 
   return (
     <section>
@@ -127,14 +143,7 @@ const Products3 = ({
                 <div className="tab-pane fade active show" id="liton_tab_3_1">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {fruitsPowderProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={fruitsPowderProducts2[idx]} />
-                          ) : ""}
-                        </div>
-                      ))}
+                      {renderProducts(fruitsPowderProducts)}
                     </div>
                   </div>
                 </div>
@@ -143,14 +152,7 @@ const Products3 = ({
                 <div className="tab-pane fade" id="liton_tab_3_2">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {vegetablesPowderProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={vegetablesPowderProducts2[idx]} />
-                          ) : ""}
-                        </div>
-                      ))}
+                      {renderProducts(vegetablesPowderProducts)}
                     </div>
                   </div>
                 </div>
@@ -159,14 +161,7 @@ const Products3 = ({
                 <div className="tab-pane fade" id="liton_tab_3_3">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {honeyProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={honeyProducts2[idx]} />
-                          ) : ""}
-                        </div>
-                      ))}
+                      {renderProducts(honeyProducts)}
                     </div>
                   </div>
                 </div>
@@ -175,14 +170,7 @@ const Products3 = ({
                 <div className="tab-pane fade" id="liton_tab_3_4">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {spicesProducts1?.map((product, idx) => (
-                        <div className="col-lg-12" key={idx}>
-                          <ProductCardPrimary product={product} />
-                          {isDouble ? (
-                            <ProductCardPrimary product={spicesProducts2[idx]} />
-                          ) : ""}
-                        </div>
-                      ))}
+                      {renderProducts(spicesProducts)}
                     </div>
                   </div>
                 </div>
@@ -191,27 +179,7 @@ const Products3 = ({
                 <div className="tab-pane fade" id="liton_tab_3_5">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {herbalProductPairs?.map(([firstProduct, secondProduct], idx) => (
-                        <div
-                          className="col-lg-12"
-                          key={firstProduct?.id || firstProduct?.slug || idx}
-                        >
-                          <ProductCardPrimary
-                            product={firstProduct}
-                            hideCardWhenImageUnavailable={true}
-                            onImageUnavailable={handleHerbalImageUnavailable}
-                          />
-                          {secondProduct ? (
-                            <ProductCardPrimary
-                              product={secondProduct}
-                              hideCardWhenImageUnavailable={true}
-                              onImageUnavailable={handleHerbalImageUnavailable}
-                            />
-                          ) : (
-                            ""
-                          )}
-                        </div>
-                      ))}
+                      {renderProducts(herbalProducts)}
                     </div>
                   </div>
                 </div>
