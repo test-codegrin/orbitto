@@ -327,12 +327,12 @@ const SLIDES = [
         top: "-5%", left: "0%", width: 537, height: 268,
         fluid: {
            768: { top: "0%",  left: "0%",   size: "28vw" },
-          1024: { top: "0%",  left: "0%",   size: "26vw" },
+          1024: { top: "-5%",  left: "0%",   size: "26vw" },
           1100: { top: "0%",  left: "0%",   size: "28vw" },
           1150: { top: "0%",  left: "0%",   size: "28vw" },
-          1280: { top: "0%",  left: "0%",   size: "28vw" },
-          1366: { top: "0%",  left: "0%",   size: "29vw" },
-          1440: { top: "0%",  left: "0%",   size: "30vw" },
+          1280: { top: "-10%",  left: "0%",   size: "28vw" },
+          1366: { top: "-10%",  left: "0%",   size: "29vw" },
+          1440: { top: "-12%",  left: "0%",   size: "30vw" },
         },
       },
       {
@@ -1012,6 +1012,30 @@ const CSS = `
   }
 
   @media (max-width: 575px) {
+    .hs-fluid-stage {
+      min-height: 650px;
+    }
+    .hs-fluid-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      padding: 18px 16px;
+      text-align: center;
+    }
+    .hs-fluid-left,
+    .hs-fluid-right {
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .hs-fluid-center {
+      width: 100%;
+    }
+    .hs-fluid-bowl-wrap {
+      width: clamp(170px, 58vw, 240px) !important;
+      height: clamp(170px, 58vw, 240px) !important;
+    }
     .hs-fluid-tabs {
       gap: 8px;
       padding: 10px 8px 16px;
