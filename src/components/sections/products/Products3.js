@@ -95,7 +95,7 @@ const Products3 = ({
   return (
     <section>
       <div
-        className={`ltn__product-tab-area ltn__product-gutter pb-70 ${
+        className={`ltn__product-tab-area ltn__product-gutter products3-fixed-card-grid pb-70 ${
           pt ? pt : "pt-115"
         }`}
       >
