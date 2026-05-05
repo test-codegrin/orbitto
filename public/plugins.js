@@ -10943,8 +10943,8 @@
         b.$slider.addClass("slick-slider"),
         (b.$slideTrack =
           0 === b.slideCount
-            ? a('<div class="slick-track"/>').appendTo(b.$slider)
-            : b.$slides.wrapAll('<div class="slick-track"/>').parent()),
+            ? a('<div class="slick-track" style="max-height: 1000px;"/>').appendTo(b.$slider)
+            : b.$slides.wrapAll('<div class="slick-track" style="max-height: 1000px;"/>').parent()),
         (b.$list = b.$slideTrack
           .wrap('<div aria-live="polite" class="slick-list"/>')
           .parent()),
