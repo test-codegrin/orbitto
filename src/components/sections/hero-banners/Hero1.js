@@ -976,12 +976,55 @@ const CSS = `
       height: clamp(120px, 34vw, 220px) !important;
     }
     .hs-fluid-tabs {
-      overflow-x: auto; justify-content: flex-center;
-      padding: 8px 10px 12px; scrollbar-width: none;
+      overflow: hidden;
+      justify-content: space-between;
+      gap: clamp(8px, 2vw, 14px);
+      padding: 12px 12px 18px;
+      scrollbar-width: none;
     }
     .hs-fluid-tabs::-webkit-scrollbar { display: none; }
-    .hs-fluid-tab { width: clamp(64px, 19vw, 96px); padding: 6px 8px; }
-    .hs-fluid-tab-label { font-size: clamp(8px, 2vw, 11px); }
+    .hs-fluid-tab {
+      width: clamp(102px, 24vw, 148px);
+      min-height: 88px;
+      padding: 8px 10px;
+      border-radius: 14px;
+    }
+    .hs-fluid-tab img {
+      width: clamp(34px, 8vw, 54px);
+      height: clamp(30px, 7vw, 48px);
+    }
+    .hs-fluid-tab-label { font-size: clamp(10px, 2.2vw, 14px); }
+    .hs-fluid-arrow {
+      width: clamp(34px, 8vw, 48px);
+      height: 44px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      font-size: clamp(24px, 6vw, 34px);
+      color: #111;
+    }
+    .hs-fluid-arrow:hover {
+      background: transparent;
+      color: #111;
+      border-color: transparent;
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 575px) {
+    .hs-fluid-tabs {
+      gap: 8px;
+      padding: 10px 8px 16px;
+    }
+    .hs-fluid-tab {
+      width: clamp(106px, 34vw, 142px);
+      min-height: 82px;
+      padding: 7px 8px;
+    }
+    .hs-fluid-arrow {
+      width: 32px;
+      font-size: 25px;
+    }
   }
 `;
 
@@ -1075,13 +1118,38 @@ export default function Hero1() {
     };
   });
 
-  const Tabs = ({ fluid }) => (
-    <div className={fluid ? "hs-fluid-tabs" : "hs-tabs-row"}>
-      <button
-        className={fluid ? "hs-fluid-arrow" : "hs-arrow"}
-        onClick={() => navigate("prev")} aria-label="Previous"
-      >&#8592;</button>
-      {SLIDES.map((s, i) => (
+  const getVisibleTabs = (fluid) => {
+    const visibleCount = !fluid
+      ? SLIDES.length
+      : viewportW <= 575
+      ? 2
+      : viewportW <= 768
+      ? 3
+      : SLIDES.length;
+
+    if (visibleCount >= SLIDES.length) {
+      return SLIDES.map((slide, index) => ({ slide, index }));
+    }
+
+    const startOffset = visibleCount === 2 ? 0 : -Math.floor(visibleCount / 2);
+
+    return Array.from({ length: visibleCount }, (_, itemIndex) => {
+      const index =
+        (current + startOffset + itemIndex + SLIDES.length) % SLIDES.length;
+      return { slide: SLIDES[index], index };
+    });
+  };
+
+  const Tabs = ({ fluid }) => {
+    const visibleTabs = getVisibleTabs(fluid);
+
+    return (
+      <div className={fluid ? "hs-fluid-tabs" : "hs-tabs-row"}>
+        <button
+          className={fluid ? "hs-fluid-arrow" : "hs-arrow"}
+          onClick={() => navigate("prev")} aria-label="Previous"
+        >&#8592;</button>
+        {visibleTabs.map(({ slide: s, index: i }) => (
         <div
           key={s.id}
           className={`${fluid ? "hs-fluid-tab" : "hs-tab"}${i === current ? " active" : ""}`}
@@ -1100,13 +1168,14 @@ export default function Hero1() {
             style={i === current ? { color: s.accent } : {}}
           >{s.tabLabel}</span>
         </div>
-      ))}
-      <button
-        className={fluid ? "hs-fluid-arrow" : "hs-arrow"}
-        onClick={() => navigate("next")} aria-label="Next"
-      >&#8594;</button>
-    </div>
-  );
+        ))}
+        <button
+          className={fluid ? "hs-fluid-arrow" : "hs-arrow"}
+          onClick={() => navigate("next")} aria-label="Next"
+        >&#8594;</button>
+      </div>
+    );
+  };
 
   return (
     <>
