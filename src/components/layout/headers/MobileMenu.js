@@ -4,6 +4,24 @@ import Link from "next/link";
 import React from "react";
 
 const MobileMenu = () => {
+  const closeMobileMenu = (event) => {
+    event.preventDefault();
+
+    document.body.classList.remove("ltn__utilize-open");
+    document
+      .getElementById("ltn__utilize-mobile-menu")
+      ?.classList.remove("ltn__utilize-open");
+
+    document.querySelectorAll(".mobile-menu-toggle a").forEach((button) => {
+      button.classList.remove("close");
+    });
+
+    const overlay = document.querySelector(".ltn__utilize-overlay");
+    if (overlay) {
+      overlay.style.display = "none";
+    }
+  };
+
   const navItems = [
     {
       name: "Home",
@@ -43,7 +61,9 @@ const MobileMenu = () => {
               <Image src="/img/logo.png" alt="Logo" width={154} height={42} />
             </Link>
           </div>
-          <button className="ltn__utilize-close">×</button>
+          <button className="ltn__utilize-close" onClick={closeMobileMenu}>
+            ×
+          </button>
         </div>
         <div className="ltn__utilize-menu-search-form">
           <form action="#">

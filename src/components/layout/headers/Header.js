@@ -20,6 +20,22 @@ const Header = () => {
     isTextWhite,
     isStickyOnMobile,
   } = useHeaderContex();
+
+  const closeMobileMenu = (event) => {
+    event.preventDefault();
+
+    document.body.classList.remove("ltn__utilize-open");
+    document
+      .getElementById("ltn__utilize-mobile-menu")
+      ?.classList.remove("ltn__utilize-open");
+
+    document.querySelectorAll(".mobile-menu-toggle a").forEach((button) => {
+      button.classList.remove("close");
+    });
+
+    event.currentTarget.style.display = "none";
+  };
+
   return (
     <>
       <header
@@ -87,7 +103,7 @@ const Header = () => {
         {headerStyle === 5 ? <HeaderBottom /> : ""}
       </header>
       <MobileMenu />
-      <div className="ltn__utilize-overlay"></div>
+      <div className="ltn__utilize-overlay" onClick={closeMobileMenu}></div>
       {headerStyle === 5 ? <MobileMenuShow /> : ""}
     </>
   );

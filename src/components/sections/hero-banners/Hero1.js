@@ -976,7 +976,7 @@ const CSS = `
       height: clamp(120px, 34vw, 220px) !important;
     }
     .hs-fluid-tabs {
-      overflow-x: auto; justify-content: flex-start;
+      overflow-x: auto; justify-content: flex-center;
       padding: 8px 10px 12px; scrollbar-width: none;
     }
     .hs-fluid-tabs::-webkit-scrollbar { display: none; }

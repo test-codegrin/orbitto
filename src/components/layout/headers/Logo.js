@@ -15,7 +15,7 @@ const Logo = ({ sticky }) => {
   } = useHeaderContex();
 
   return (
-    <div className={sticky ? "sticky-logo" : "col"}>
+    <div className={sticky ? "sticky-logo" : "header-logo-column"}>
       <div
         className={`${
           !isHeaderSupport && (headerStyle === 3 || headerStyle === 5)
