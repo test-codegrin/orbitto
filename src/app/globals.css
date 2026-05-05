@@ -4522,6 +4522,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  max-height: 1000px;
+
 }
 
 .insta-slide-gutter .slick-list {
