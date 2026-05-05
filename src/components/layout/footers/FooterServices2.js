@@ -9,22 +9,22 @@ const FooterServices2 = () => {
         <div className="footer-menu">
           <ul>
             <li>
-              <Link href="/fruits">Fruits</Link>
+              <Link href="/products">Fruits</Link>
             </li>
             <li>
-              <Link href="/veggies">Vegetables</Link>
+              <Link href="/products">Vegetables</Link>
             </li>
             <li>
-              <Link href="/login">Herbal Powder</Link>
+              <Link href="/products">Herbal Powder</Link>
             </li>
             <li>
-              <Link href="/account">spices</Link>
+              <Link href="/products">spices</Link>
             </li>
             <li>
-              <Link href="/about">Fruite Powder</Link>
+              <Link href="/products">Fruite Powder</Link>
             </li>
             <li>
-              <Link href="/about">Honey</Link>
+              <Link href="/products">Honey</Link>
             </li>
           </ul>
         </div>
