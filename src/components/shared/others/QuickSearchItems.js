@@ -26,9 +26,13 @@ const QuickSearchItems = () => {
       <ul>
         {searchedItems
           ?.slice(0, 5)
-          ?.map(({ image, title, id, publishDate, desc }, idx) => (
+          ?.map(({ image, title, id, slug, publishDate, desc }, idx) => (
             <li key={idx}>
-              <Link href={`/${isProduct? "products" : "blogs"}/${id}`}>
+              <Link
+                href={`/${isProduct ? "products" : "blogs"}/${
+                  isProduct ? slug || id : id
+                }`}
+              >
                 <div className="sidebar__post__img">
                   <Image
                     alt=""

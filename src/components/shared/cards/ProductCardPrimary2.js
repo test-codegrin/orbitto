@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ProductCardPrimary2 = ({ product }) => {
-  const { title, desc, image, id, status } = product;
+  const { title, desc, image, id, slug, status } = product;
+  const productPath = `/products/${slug || id}`;
   const { setCurrentProduct } = useProductContext();
 
   return (
@@ -15,7 +16,7 @@ const ProductCardPrimary2 = ({ product }) => {
       onMouseEnter={() => setCurrentProduct(product)}
     >
       <div className="product-img">
-        <Link href={`/products/${id}`}>
+        <Link href={productPath}>
           <Image src={image} alt={title} width={1000} height={1000} />
         </Link>
         {status && (
@@ -32,7 +33,7 @@ const ProductCardPrimary2 = ({ product }) => {
       </div>
       <div className="product-info">
         <h2 className="product-title">
-          <Link href={`/products/${id}`}>{title}</Link>
+          <Link href={productPath}>{title}</Link>
         </h2>
         <div className="product-brief">
           <p>{sliceText(desc, 140)}</p>
