@@ -281,7 +281,7 @@ const BlogsPrimary = () => {
   return (
     <div
       style={{
-        background: "#f0f4e8",
+        background: "#ffffff",
         minHeight: "100vh",
       }}
     >

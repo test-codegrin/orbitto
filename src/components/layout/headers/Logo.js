@@ -7,12 +7,7 @@ import Link from "next/link";
 import { useHeaderContex } from "@/providers/HeaderContex";
 
 const Logo = ({ sticky }) => {
-  const {
-    headerStyle,
-    navBg,
-    isHeaderSupport,
-    isTextWhite,
-  } = useHeaderContex();
+  const { headerStyle, navBg, isHeaderSupport } = useHeaderContex();
 
   return (
     <div className={sticky ? "sticky-logo" : "header-logo-column"}>
@@ -28,11 +23,7 @@ const Logo = ({ sticky }) => {
           <Link href="/">
             <Image className="orbot-logo"
               src={
-                navBg === "secondary" && sticky
-                  ? logoImage2
-                  : headerStyle === 2 || isTextWhite
-                  ? logoImage2
-                  : logoImage1
+                navBg === "secondary" && sticky ? logoImage2 : logoImage1
               }
               alt="Logo"
               width={154}

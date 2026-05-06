@@ -4,7 +4,7 @@ import { useHeaderContex } from "@/providers/HeaderContex";
 import Logo from "./Logo";
 
 const Navbar = () => {
-  const { headerStyle, headerSize, isNavbarAppointmentBtn, isTextWhite } =
+  const { headerStyle, headerSize, isNavbarAppointmentBtn } =
     useHeaderContex();
 
   const navItems = [
@@ -19,9 +19,7 @@ const Navbar = () => {
   return (
     <div
       className={`col header-menu-column ${
-        headerStyle === 2 || isTextWhite
-          ? "menu-color-white"
-          : headerStyle === 5
+        headerStyle === 5
           ? "justify-content-center align-items-center"
           : ""
       }`}

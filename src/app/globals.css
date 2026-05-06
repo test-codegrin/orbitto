@@ -3810,6 +3810,14 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   padding-bottom: 80px;
 }
 
+main > .page-breadcrumb-area + * {
+  margin-top: clamp(32px, 5vw, 72px) !important;
+}
+
+main > .page-breadcrumb-area + [class*="pt-"] {
+  padding-top: 0 !important;
+}
+
 .ltn__breadcrumb-list ul {
   margin: 0;
   padding: 0;
@@ -3885,7 +3893,12 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   color: var(--ltn__color-1);
 }
 .ltn__breadcrumb-color-white .ltn__breadcrumb-list li:last-child {
-  color: var(--ltn__secondary-color);
+  color: var(--white);
+}
+
+.ltn__breadcrumb-color-white .ltn__secondary-color,
+.ltn__breadcrumb-color-white .ltn__breadcrumb-list li:last-child {
+  color: var(--white) !important;
 }
 
 /* breadcrumb-area-3 */
@@ -4875,6 +4888,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .ltn__header-area {
   z-index: 1000000;
   position: relative;
+  background-color: var(--white);
+  background-image: none;
 }
 
 /* ----------------------------------------------
@@ -4945,6 +4960,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 ---------------------------------------------- */
 .ltn__header-middle-area {
   z-index: 999;
+  background-color: var(--white);
+  background-image: none;
 }
 
 .ltn__header-middle-area > .container-fluid > .row,
@@ -5154,7 +5171,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .ltn__main-menu li:hover > a {
-  color: var(--ltn__secondary-color);
+  color: var(--ltn__heading-color);
 }
 
 /* Submenu */
@@ -5643,14 +5660,14 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .ltn__header-options-2 .ltn__drop-menu > ul > li > a:hover,
 .ltn__header-options-2 .mini-cart-icon a:hover,
 .ltn__header-options-2 .header-wishlist:hover {
-  background: var(--ltn__secondary-color);
+  background: var(--ltn__heading-color);
   color: var(--white);
 }
 
 .ltn__header-options-2 .header-search-1:hover,
 .ltn__header-options-2 .ltn__drop-menu > ul > li:hover > a,
 .ltn__header-options-2 .mini-cart-icon a:hover {
-  background: var(--ltn__secondary-color);
+  background: var(--ltn__heading-color);
   color: var(--white);
 }
 
@@ -6065,12 +6082,12 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   align-self: center;
 }
 .special-link a {
-  background-color: var(--ltn__secondary-color);
+  background-color: var(--ltn__heading-color);
   color: var(--white) !important;
   padding: 12px 30px !important;
 }
 .special-link a:hover {
-  background-color: var(--ltn__secondary-color-2);
+  background-color: var(--ltn__primary-color-2);
   color: var(--white) !important;
 }
 

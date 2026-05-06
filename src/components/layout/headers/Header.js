@@ -41,7 +41,7 @@ const Header = () => {
       <header
         className={`ltn__header-area    ${
           headerStyle === 2
-            ? "ltn__header-4 ltn__header-6 ltn__header-transparent gradient-color-2"
+            ? "ltn__header-4 ltn__header-6"
             : headerStyle === 3
             ? isNotHeaderRight
               ? "ltn__header-4 "
@@ -53,7 +53,7 @@ const Header = () => {
             : isNotTransparent
             ? "ltn__header-5"
             : " ltn__header-transparent ltn__header-5  "
-        } ${isTextWhite ? "gradient-color-2" : ""}`}
+        }`}
       >
         {isNotHeaderTop ? "" : <HeaderTop />}
 
@@ -65,8 +65,6 @@ const Header = () => {
             ${
               headerStyle === 5
                 ? ""
-                : headerStyle === 2 || isTextWhite
-                ? "ltn__sticky-bg-black"
                 : "ltn__sticky-bg-white "
             }  
             ${

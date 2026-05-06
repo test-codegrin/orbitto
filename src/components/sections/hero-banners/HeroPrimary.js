@@ -10,7 +10,7 @@ const HeroPrimary = ({ text, title, item, type, mb, isCapitalize, bg }) => {
           : type === 2
           ? "ltn__breadcrumb-area-3 plr--9"
           : "ltn__breadcrumb-area-2"
-      }  ltn__breadcrumb-color-white bg-overlay-theme-black-90 bg-image ${
+      } page-breadcrumb-area ltn__breadcrumb-color-white bg-overlay-theme-black-90 bg-image ${
         mb ? mb : ""
       }`}
       data-bs-bg={bg ? bg : "/img/bg/9.jpg"}
