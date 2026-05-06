@@ -75,7 +75,7 @@ const BlogDetailsPrimary = () => {
       {/* ══════════════════════════════════════════
           HERO
       ══════════════════════════════════════════ */}
-      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "48px 28px 0" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "48px 28px 0" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", alignItems: "center" }}>
 
           {/* Left — title block */}
@@ -86,7 +86,7 @@ const BlogDetailsPrimary = () => {
               background: T.greenLight, color: T.greenMid,
               fontSize: "10px", fontWeight: "700", letterSpacing: "0.1em",
               textTransform: "uppercase", padding: "5px 14px",
-              borderRadius: "30px", marginBottom: "20px",
+              borderRadius: "39px 9px 39px 9px", marginBottom: "20px",
               border: `1px solid ${T.border}`,
             }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: T.greenMid, display: "inline-block" }} />
@@ -136,10 +136,10 @@ const BlogDetailsPrimary = () => {
           </div>
 
           {/* Right — hero image */}
-          <div style={{ position: "relative", borderRadius: "22px", overflow: "hidden", aspectRatio: "4/3" }}>
+          <div style={{ position: "relative", borderRadius: "99px 9px 99px 9px", overflow: "hidden", aspectRatio: "4/3" }}>
             {image
-              ? <Image src={image} alt={title} fill style={{ objectFit: "cover" }} />
-              : <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#1a4d1a,#2d8a2d)", minHeight: "280px" }} />
+              ? <Image src={image} alt={title} fill style={{ objectFit: "cover",  }} />
+              : <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#1a4d1a,#2d8a2d)", minHeight: "280px",  }} />
             }
             {/* Play button overlay */}
             <div style={{
@@ -208,8 +208,8 @@ const BlogDetailsPrimary = () => {
         {/* ── Dual images ── */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "52px" }}>
           {["/img/blog/blog-details/1.jpg", "/img/service/31.jpg"].map((src, i) => (
-            <div key={i} style={{ borderRadius: T.radius, overflow: "hidden", aspectRatio: "4/3", background: i === 0 ? "#0d3d2a" : "#0a2e18" }}>
-              <Image src={src} alt={`Article image ${i + 1}`} width={600} height={450} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <div key={i} style={{ borderRadius: "99px 9px 99px 9px", overflow: "hidden", aspectRatio: "4/3" }}>
+              <Image src={src} alt={`Article image ${i + 1}`} width={600} height={450} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block"}} />
             </div>
           ))}
         </div>
@@ -226,6 +226,7 @@ const BlogDetailsPrimary = () => {
         <div style={{
           background: T.card, borderRadius: T.radius,
           border: `1px solid ${T.border}`,
+          borderRadius: "9px 59px 9px 59px",
           padding: "28px 32px", marginBottom: "40px",
           boxShadow: "0 2px 16px rgba(30,70,20,0.07)",
         }}>
@@ -250,44 +251,6 @@ const BlogDetailsPrimary = () => {
         <p style={{ fontSize: "14px", color: T.muted, lineHeight: "1.8", marginBottom: "60px" }}>
           The resulting blend is not just a supplement; it is a bio-active functional food. By honoring the complex architecture of plant cells while applying modern milling precision, we deliver a product that feels remarkably light yet intensely nourishing.
         </p>
-
-        {/* ══ Tags + Social ══ */}
-        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: "24px", marginBottom: "40px" }}>
-          {tags?.length ? (
-            <div>
-              <div style={{ fontSize: "11px", fontWeight: "700", color: T.muted, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "10px" }}>Related Tags</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                {tags.map((tag, i) => (
-                  <Link key={i} href={`/blogs?tag=${makePath(tag)}`} style={{
-                    padding: "5px 14px", borderRadius: "30px",
-                    background: T.greenLight, color: T.greenMid,
-                    fontSize: "12px", fontWeight: "600", textDecoration: "none",
-                    border: `1px solid ${T.border}`,
-                  }}>{tag}</Link>
-                ))}
-              </div>
-            </div>
-          ) : null}
-
-          <div>
-            <div style={{ fontSize: "11px", fontWeight: "700", color: T.muted, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "10px" }}>Share</div>
-            <div style={{ display: "flex", gap: "8px" }}>
-              {[
-                { href: "https://www.facebook.com", icon: <FB /> },
-                { href: "https://X.com", icon: <TW /> },
-                { href: "https://www.linkedin.com", icon: <LI /> },
-                { href: "https://www.youtube.com", icon: <YT /> },
-              ].map(({ href, icon }) => (
-                <Link key={href} href={href} style={{
-                  width: 36, height: 36, borderRadius: "50%",
-                  background: T.card, border: `1px solid ${T.border}`,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: T.muted, transition: "all 0.2s", textDecoration: "none",
-                }}>{icon}</Link>
-              ))}
-            </div>
-          </div>
-        </div>
 
         {/* ── divider ── */}
         <div style={{ height: 1, background: T.border, marginBottom: "36px" }} />
