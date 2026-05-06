@@ -118,9 +118,7 @@ const BlogCard = ({ blog }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        // borderRadius: "34px",
         overflow: "hidden",
-        // background: "#fff",
         transition: "all 0.35s ease",
         transform: hovered ? "translateY(-6px)" : "translateY(0px)",
         boxShadow: hovered
@@ -133,7 +131,6 @@ const BlogCard = ({ blog }) => {
         style={{
           height: "260px",
           overflow: "hidden",
-          borderRadius: "74px 0 0 0",
           position: "relative",
         }}
       >
@@ -173,7 +170,6 @@ const BlogCard = ({ blog }) => {
         style={{
           background: cardBg[blog.category],
           padding: "24px 26px 26px",
-          borderRadius: "5px 70px 2px 70px",
           position: "relative",
           zIndex: 2,
           minHeight: "300px",
@@ -190,7 +186,6 @@ const BlogCard = ({ blog }) => {
             width: "100%",
             height: "45px",
             background: cardBg[blog.category],
-            borderRadius: "60px 0 0 0",
             zIndex: -1,
           }}
         />
@@ -288,7 +283,6 @@ const BlogsPrimary = () => {
       style={{
         background: "#f0f4e8",
         minHeight: "100vh",
-        fontFamily: "'Helvetica Neue', Arial, sans-serif",
       }}
     >
       {/* Header Section */}
@@ -346,7 +340,6 @@ const BlogsPrimary = () => {
                 alignItems: "center",
                 gap: "4px",
                 padding: "10px 22px",
-                borderRadius: "16px 5px 16px 5px",
                 border: isActive ? "none" : "1.5px solid #dde8cc",
                 background: isActive ? "#1e4d14" : "#ffffff",
                 color: isActive ? "#ffffff" : "#4a6a38",
@@ -406,7 +399,6 @@ const BlogsPrimary = () => {
         <div
           style={{
             background: "#e6edda",
-            borderRadius: "39px 9px 39px 9px",
             padding: "48px 52px",
             display: "flex",
             alignItems: "center",

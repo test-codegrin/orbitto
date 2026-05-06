@@ -3805,7 +3805,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 ---------------------------------------------------- */
 .ltn__breadcrumb-area {
   background-color: var(--section-bg-1);
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   padding-top: 80px;
   padding-bottom: 80px;
 }
@@ -3847,7 +3847,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 /* breadcrumb-area-2 */
 .ltn__breadcrumb-area-2 {
   padding-top: 250px;
-  padding-bottom: 130px;
+  /* padding-bottom: 130px; */
 }
 
 .ltn__breadcrumb-inner-2 {
@@ -3962,14 +3962,14 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .ltn__widget-title {
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 35px;
   text-transform: capitalize;
 }
 
 .ltn__widget-title-border {
   position: relative;
-  /* padding-left: 45px; */
+  padding-left: 45px;
 }
 .ltn__widget-title-border::after,
 .ltn__widget-title-border::before {

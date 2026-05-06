@@ -7,12 +7,10 @@ const BlogCard4 = ({ blog }) => {
   const { title, image, id, publishDate, desc } = blog;
   return (
     <div className="ltn__blog-item ltn__blog-item-6"
-          style={{ borderRadius: "20px 20px 0 0" }}
     >
       <div className="ltn__blog-img">
         <Link href={`/blogs/${id}`}>
           <Image 
-          style={{ borderRadius: "20px 2px 20px 2px" }}
           src={image} alt="Image" width={2000} height={1000} />
         </Link>
       </div>

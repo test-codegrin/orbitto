@@ -51,8 +51,8 @@ const T = {
   amber: "#c87941",
   radius: "20px",
   radiusSm: "12px",
-  font: "'Georgia', 'Times New Roman', serif",
-  sans: "'Helvetica Neue', Arial, sans-serif",
+  // font: "'Georgia', 'Times New Roman', serif",
+  // sans: "'Helvetica Neue', Arial, sans-serif",
 };
 
 const BlogDetailsPrimary = () => {
@@ -86,7 +86,7 @@ const BlogDetailsPrimary = () => {
               background: T.greenLight, color: T.greenMid,
               fontSize: "10px", fontWeight: "700", letterSpacing: "0.1em",
               textTransform: "uppercase", padding: "5px 14px",
-              borderRadius: "39px 9px 39px 9px", marginBottom: "20px",
+               marginBottom: "20px",
               border: `1px solid ${T.border}`,
             }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: T.greenMid, display: "inline-block" }} />
@@ -136,7 +136,7 @@ const BlogDetailsPrimary = () => {
           </div>
 
           {/* Right — hero image */}
-          <div style={{ position: "relative", borderRadius: "99px 9px 99px 9px", overflow: "hidden", aspectRatio: "4/3" }}>
+          <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3" }}>
             {image
               ? <Image src={image} alt={title} fill style={{ objectFit: "cover",  }} />
               : <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#1a4d1a,#2d8a2d)", minHeight: "280px",  }} />
@@ -208,7 +208,7 @@ const BlogDetailsPrimary = () => {
         {/* ── Dual images ── */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "52px" }}>
           {["/img/blog/blog-details/1.jpg", "/img/service/31.jpg"].map((src, i) => (
-            <div key={i} style={{ borderRadius: "99px 9px 99px 9px", overflow: "hidden", aspectRatio: "4/3" }}>
+            <div key={i} style={{ overflow: "hidden", aspectRatio: "4/3" }}>
               <Image src={src} alt={`Article image ${i + 1}`} width={600} height={450} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block"}} />
             </div>
           ))}
@@ -226,7 +226,6 @@ const BlogDetailsPrimary = () => {
         <div style={{
           background: T.card, borderRadius: T.radius,
           border: `1px solid ${T.border}`,
-          borderRadius: "9px 59px 9px 59px",
           padding: "28px 32px", marginBottom: "40px",
           boxShadow: "0 2px 16px rgba(30,70,20,0.07)",
         }}>
