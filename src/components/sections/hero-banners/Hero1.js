@@ -33,7 +33,7 @@ const SLIDES = [
     bgColor: "#fff5f8",
     gradientEnd: "#fce4ec",
     card: { title: "Premium Fruit Powder", desc: "Bringing the goodness of fresh fruits into every serving." },
-    mainImg: "/img/slider/main/1.png",
+    mainImg: "/img/slider/main/Blueberry.png",
     floats: [
       {
         src: "/img/slider/Fruit/kiwi_blur.png", alt: "Kiwi",
@@ -168,7 +168,7 @@ const SLIDES = [
     bgColor: "#f0fff5",
     gradientEnd: "#d4f5df",
     card: { title: "Natural Vegetable Powder", desc: "Processed to preserve natural flavor and rich nutrients." },
-    mainImg: "/img/slider/main/2.png",
+    mainImg: "/img/slider/main/brocili.png",
     floats: [
       {
         src: "/img/slider/Vegetable/Beet.png", alt: "Beetroot",
@@ -290,7 +290,7 @@ const SLIDES = [
     bgColor: "#fffbf0",
     gradientEnd: "#fef0c7",
     card: { title: "Raw Pure Honey", desc: "Directly sourced from natural hives for authentic golden taste." },
-    mainImg: "/img/slider/main/3.png",
+    mainImg: "/img/slider/main/Honey.png",
     floats: [
       {
         src: "/img/slider/Honey/bee.gif",
@@ -390,7 +390,7 @@ const SLIDES = [
     bgColor: "#fff8f2",
     gradientEnd: "#ffe0cc",
     card: { title: "Exotic Spice Blends", desc: "Sun-dried and stone-ground for maximum aroma and authentic taste." },
-    mainImg: "/img/slider/main/4.png",
+    mainImg: "/img/slider/main/Red chilli.png",
     floats: [
       {
         src: "/img/slider/Spices/GaramMsala.png", alt: "Garam Masala",
@@ -499,7 +499,7 @@ const SLIDES = [
     bgColor: "#f4fbf5",
     gradientEnd: "#c8edcf",
     card: { title: "Pure Herbal Powder", desc: "Cold-processed medicinal herbs retaining full nutritional potency." },
-    mainImg: "/img/slider/main/5.png",
+    mainImg: "/img/slider/main/aloe vera.png",
     floats: [
       {
         src: "/img/slider/Herbs/amla.png", alt: "Amla",
@@ -659,11 +659,11 @@ const CSS = `
   .hs-subtitle { font-size: 15px; color: #777; line-height: 1.6; margin: 0; }
   .hs-center {
     display: flex; align-items: center; justify-content: center;
-    height: clamp(380px, 50vh, 620px);
+    height: clamp(380px, 50vh, 500px);
   }
   .hs-bowl-wrap {
     position: relative; z-index: 2;
-    width: clamp(320px, 38vw, 620px); height: clamp(320px, 38vw, 620px);
+    width: clamp(320px, 38vw, 500px); height: clamp(320px, 38vw, 500px);
     overflow: visible;
   }
   .hs-bowl-item { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 20; }
@@ -1235,11 +1235,11 @@ export default function Hero1() {
                   {cupAnimating && prevCup !== null && (
                     <div className={`hs-bowl-item ${cupOutAnim}`}
                       onAnimationEnd={() => { setCupAnimating(false); setPrevCup(null); }}>
-                      <Image src={SLIDES[prevCup].mainImg} alt="" fill sizes="620px" style={{ objectFit: "contain" }} />
+                      <Image src={SLIDES[prevCup].mainImg} alt="" fill sizes="500px" style={{ objectFit: "contain" }} />
                     </div>
                   )}
                   <div key={`cup-in-${animKey}-${current}`} className={`hs-bowl-item ${cupAnimating ? cupInAnim : ""}`}>
-                    <Image src={slide.mainImg} alt={`${slide.line1} ${slide.line2}`} fill sizes="620px"
+                    <Image src={slide.mainImg} alt={`${slide.line1} ${slide.line2}`} fill sizes="500px"
                       style={{ objectFit: "contain" }} priority />
                   </div>
                 </div>
