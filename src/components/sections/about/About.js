@@ -28,7 +28,7 @@ const About = () => {
             Orbitto delivers natural, clean, and high-performance food
             solutions.
           </p>
-          <Link href="/products/1" className="home-about__btn">
+          <Link href="/products/acaiberry-powder" className="home-about__btn">
             View more details
           </Link>
         </div>

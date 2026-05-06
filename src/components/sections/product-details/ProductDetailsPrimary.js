@@ -13,13 +13,16 @@ const ProductDetailsPrimary = () => {
   const { isNotSidebar, type } = useCommonContext();
   const { setCurrentProduct } = useProductContext();
 
-  const { id: currentId } = useParams();
+  const { id: currentProductParam } = useParams();
   const products = useMemo(() => getAllProducts(), []);
-  const parsedId = Number.parseInt(currentId || "1", 10);
 
   const product = useMemo(
-    () => products?.find(({ id }) => id === parsedId),
-    [products, parsedId]
+    () =>
+      products?.find(
+        ({ id, slug }) =>
+          slug === currentProductParam || String(id) === currentProductParam
+      ),
+    [products, currentProductParam]
   );
 
   const allImages = useMemo(() => {
@@ -28,7 +31,7 @@ const ProductDetailsPrimary = () => {
     return [product, ...otherImages?.slice(0, 6)];
   }, [products, product]);
 
-  const [selectedProductId, setSelectedProductId] = useState(parsedId);
+  const [selectedProductId, setSelectedProductId] = useState(product?.id);
 
   useEffect(() => {
     if (product?.id) {

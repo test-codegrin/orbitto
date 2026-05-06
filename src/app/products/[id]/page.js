@@ -5,15 +5,15 @@ import { notFound } from "next/navigation";
 
 const ProductDetails = ({ params }) => {
   const products = getAllProducts() || [];
+  const productParam = params?.id;
 
-  const id = Number(params?.id);
-
-  // ✅ Validate ID
-  if (!id) {
+  if (!productParam) {
     notFound();
   }
 
-  const product = products.find((p) => p.id === id);
+  const product = products.find(
+    (p) => p.slug === productParam || String(p.id) === productParam
+  );
 
   if (!product) {
     notFound();
@@ -35,7 +35,7 @@ export async function generateStaticParams() {
   const products = getAllProducts() || [];
 
   return products.map((p) => ({
-    id: String(p.id),
+    id: p.slug || String(p.id),
   }));
 }
 

@@ -16,7 +16,11 @@ const useSearch = (items, pathForRedirect) => {
   // handle search
   const handleSearch = (e) => {
     e.preventDefault();
-    router.push(`${pathForRedirect}?search=${makePath(searchString)}`);
+    const currentSearchString = e.currentTarget.search.value || searchString;
+
+    if (!currentSearchString?.trim()) return;
+
+    router.push(`${pathForRedirect}?search=${makePath(currentSearchString)}`);
     setIsShowSearch(true);
     setpreviousSearchedItems(searchedItems);
     e.target.search.value = "";
@@ -25,7 +29,7 @@ const useSearch = (items, pathForRedirect) => {
   const handleSearchString = (e) => {
     const value = e.target.value;
     setIsShowSearch(false);
-    setSearchString(value.toLowerCase());
+    setSearchString(value.toLowerCase().trim());
     setIsShowQuickSearchResult(true);
   };
   // star search

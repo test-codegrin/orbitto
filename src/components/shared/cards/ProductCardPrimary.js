@@ -9,7 +9,8 @@ const ProductCardPrimary = ({
   hideCardWhenImageUnavailable = false,
   onImageUnavailable,
 }) => {
-  const { title, image, id } = product || {};
+  const { title, image, id, slug } = product || {};
+  const productPath = `/products/${slug || id || ""}`;
   const { setCurrentProduct } = useProductContext();
   const [isImageUnavailable, setIsImageUnavailable] = useState(
     hideCardWhenImageUnavailable && !image
@@ -37,7 +38,7 @@ const ProductCardPrimary = ({
       onMouseEnter={() => product && setCurrentProduct(product)}
     >
       <div className="product-img">
-        <Link href={`/products/${id || ""}`}>
+        <Link href={productPath}>
           <Image
             src={hideCardWhenImageUnavailable ? image : image || "/placeholder.png"}
             alt={title || "product image"}
@@ -50,7 +51,7 @@ const ProductCardPrimary = ({
 
       <div className="product-info">
         <h2 className="product-title">
-          <Link href={`/products/${id || ""}`}>
+          <Link href={productPath}>
             {title || "No Title"}
           </Link>
         </h2>
