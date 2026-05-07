@@ -8,7 +8,8 @@ const BASE_STAGE_WIDTH = 1920;
 const BASE_STAGE_HEIGHT = 940;
 
 const normalizeDimension = (value) => {
-  if (value === undefined || value === null || value === "") return `${DEFAULT_FLOAT_SIZE}px`;
+  if (value === undefined || value === null || value === "")
+    return `${DEFAULT_FLOAT_SIZE}px`;
   if (typeof value === "number") return `${value}px`;
   const trimmed = String(value).trim();
   if (/^\d+(\.\d+)?$/.test(trimmed)) return `${trimmed}px`;
@@ -32,124 +33,169 @@ const SLIDES = [
       "background: linear-gradient(180deg, rgba(201, 118, 167, 0.2) 0%, rgba(176, 95, 211, 0.2) 50%, rgba(245, 222, 110, 0.2) 100%);",
     bgColor: "#fff5f8",
     gradientEnd: "#fce4ec",
-    card: { title: "Premium Fruit Powder", desc: "Bringing the goodness of fresh fruits into every serving." },
+    card: {
+      title: "Premium Fruit Powder",
+      desc: "Bringing the goodness of fresh fruits into every serving.",
+    },
     mainImg: "/img/slider/main/Blueberry.png",
     floats: [
       {
-        src: "/img/slider/Fruit/kiwi_blur.png", alt: "Kiwi",
-        top: "0%", left: "6%", width: "151", height: "105",
+        src: "/img/slider/Fruit/kiwi_blur.png",
+        alt: "Kiwi",
+        top: "0%",
+        left: "6%",
+        width: "151",
+        height: "105",
         fluid: {
-           768: { top: "2%",  left: "1%",   size: "9vw"  },
-          1024: { top: "2%",  left: "1%",   size: "10vw" },
-          1100: { top: "2%",  left: "1%",   size: "11vw" },
-          1150: { top: "1%",  left: "1%",   size: "11vw" },
-          1280: { top: "1%",  left: "1%",   size: "10vw" },
-          1366: { top: "1%",  left: "1%",   size: "10vw" },
-          1440: { top: "1%",  left: "1%",   size: "10vw" },
+          768: { top: "2%", left: "1%", size: "9vw" },
+          1024: { top: "2%", left: "1%", size: "10vw" },
+          1100: { top: "2%", left: "1%", size: "11vw" },
+          1150: { top: "1%", left: "1%", size: "11vw" },
+          1280: { top: "1%", left: "1%", size: "10vw" },
+          1366: { top: "1%", left: "1%", size: "10vw" },
+          1440: { top: "1%", left: "1%", size: "10vw" },
         },
       },
       {
-        src: "/img/slider/Fruit/coconut_blur.png", alt: "Coconut",
-        top: "15%", left: "18%", width: "90", height: "87",
+        src: "/img/slider/Fruit/coconut_blur.png",
+        alt: "Coconut",
+        top: "15%",
+        left: "18%",
+        width: "90",
+        height: "87",
         fluid: {
-           768: { top: "20%", left: "9%",   size: "7vw"  },
-          1024: { top: "18%", left: "11%",  size: "6vw"  },
-          1100: { top: "18%", left: "13%",  size: "7vw"  },
-          1150: { top: "18%", left: "12%",  size: "6vw"  },
-          1280: { top: "18%", left: "11%",  size: "6vw"  },
-          1366: { top: "18%", left: "12%",  size: "6vw"  },
-          1440: { top: "18%", left: "13%",  size: "6vw"  },
+          768: { top: "20%", left: "9%", size: "7vw" },
+          1024: { top: "18%", left: "11%", size: "6vw" },
+          1100: { top: "18%", left: "13%", size: "7vw" },
+          1150: { top: "18%", left: "12%", size: "6vw" },
+          1280: { top: "18%", left: "11%", size: "6vw" },
+          1366: { top: "18%", left: "12%", size: "6vw" },
+          1440: { top: "18%", left: "13%", size: "6vw" },
         },
       },
       {
-        src: "/img/slider/Fruit/avocado.png", alt: "Avocado",
-        top: "18%", left: "26%", width: "240", height: "240", delay: "0.3s",
+        src: "/img/slider/Fruit/avocado.png",
+        alt: "Avocado",
+        top: "18%",
+        left: "26%",
+        width: "240",
+        height: "240",
+        delay: "0.3s",
         fluid: {
-           768: { top: "8%",  left: "12%",  size: "14vw" },
-          1024: { top: "10%", left: "15%",  size: "13vw" },
-          1100: { top: "12%", left: "18%",  size: "14vw" },
-          1150: { top: "11%", left: "17%",  size: "13vw" },
-          1280: { top: "10%", left: "15%",  size: "13vw" },
-          1366: { top: "10%", left: "16%",  size: "14vw" },
-          1440: { top: "10%", left: "17%",  size: "14vw" },
+          768: { top: "8%", left: "12%", size: "14vw" },
+          1024: { top: "10%", left: "15%", size: "13vw" },
+          1100: { top: "12%", left: "18%", size: "14vw" },
+          1150: { top: "11%", left: "17%", size: "13vw" },
+          1280: { top: "10%", left: "15%", size: "13vw" },
+          1366: { top: "10%", left: "16%", size: "14vw" },
+          1440: { top: "10%", left: "17%", size: "14vw" },
         },
       },
       {
-        src: "/img/slider/Fruit/cherry.png", alt: "Cherry",
-        bottom: "14%", left: "35%", width: "112", height: "102", delay: "0.35s",
+        src: "/img/slider/Fruit/cherry.png",
+        alt: "Cherry",
+        bottom: "14%",
+        left: "35%",
+        width: "112",
+        height: "102",
+        delay: "0.35s",
         fluid: {
-           768: { bottom: "10%", left: "20%", size: "8vw"  },
-          1024: { bottom: "12%", left: "24%", size: "7vw"  },
-          1100: { bottom: "14%", left: "28%", size: "8vw"  },
-          1150: { bottom: "12%", left: "27%", size: "8vw"  },
-          1280: { bottom: "12%", left: "25%", size: "8vw"  },
-          1366: { bottom: "13%", left: "27%", size: "8vw"  },
-          1440: { bottom: "14%", left: "28%", size: "8vw"  },
+          768: { bottom: "10%", left: "20%", size: "8vw" },
+          1024: { bottom: "12%", left: "24%", size: "7vw" },
+          1100: { bottom: "14%", left: "28%", size: "8vw" },
+          1150: { bottom: "12%", left: "27%", size: "8vw" },
+          1280: { bottom: "12%", left: "25%", size: "8vw" },
+          1366: { bottom: "13%", left: "27%", size: "8vw" },
+          1440: { bottom: "14%", left: "28%", size: "8vw" },
         },
       },
       {
-        src: "/img/slider/Fruit/berry_blur.png", alt: "Blueberry",
-        bottom: "-20%", left: "-5%", width: "239", height: "210", delay: "0.35s",
+        src: "/img/slider/Fruit/berry_blur.png",
+        alt: "Blueberry",
+        bottom: "-20%",
+        left: "-5%",
+        width: "239",
+        height: "210",
+        delay: "0.35s",
         fluid: {
-           768: { bottom: "0%",  left: "0%",   size: "14vw" },
-          1024: { bottom: "0%",  left: "0%",   size: "13vw" },
-          1100: { bottom: "0%",  left: "0%",   size: "15vw" },
-          1150: { bottom: "0%",  left: "0%",   size: "15vw" },
-          1280: { bottom: "0%",  left: "0%",   size: "15vw" },
-          1366: { bottom: "0%",  left: "0%",   size: "16vw" },
-          1440: { bottom: "0%",  left: "0%",   size: "16vw" },
+          768: { bottom: "0%", left: "0%", size: "14vw" },
+          1024: { bottom: "0%", left: "0%", size: "13vw" },
+          1100: { bottom: "0%", left: "0%", size: "15vw" },
+          1150: { bottom: "0%", left: "0%", size: "15vw" },
+          1280: { bottom: "0%", left: "0%", size: "15vw" },
+          1366: { bottom: "0%", left: "0%", size: "16vw" },
+          1440: { bottom: "0%", left: "0%", size: "16vw" },
         },
       },
       {
-        src: "/img/slider/Fruit/berry.png", alt: "Blueberry",
-        bottom: "5%", right: "31%", width: "208", height: "206", delay: "0.55s",
+        src: "/img/slider/Fruit/berry.png",
+        alt: "Blueberry",
+        bottom: "5%",
+        right: "31%",
+        width: "208",
+        height: "206",
+        delay: "0.55s",
         fluid: {
-           768: { bottom: "6%",  right: "17%", size: "14vw" },
-          1024: { bottom: "8%",  right: "20%", size: "13vw" },
+          768: { bottom: "6%", right: "17%", size: "14vw" },
+          1024: { bottom: "8%", right: "20%", size: "13vw" },
           1100: { bottom: "10%", right: "24%", size: "14vw" },
-          1150: { bottom: "8%",  right: "23%", size: "13vw" },
-          1280: { bottom: "6%",  right: "21%", size: "13vw" },
-          1366: { bottom: "7%",  right: "22%", size: "14vw" },
-          1440: { bottom: "8%",  right: "24%", size: "14vw" },
+          1150: { bottom: "8%", right: "23%", size: "13vw" },
+          1280: { bottom: "6%", right: "21%", size: "13vw" },
+          1366: { bottom: "7%", right: "22%", size: "14vw" },
+          1440: { bottom: "8%", right: "24%", size: "14vw" },
         },
       },
       {
-        src: "/img/slider/Fruit/cherry_blur.png", alt: "Small Strawberry",
-        bottom: "0%", right: "-10%", width: "350", height: "320", delay: "0.45s",
+        src: "/img/slider/Fruit/cherry_blur.png",
+        alt: "Small Strawberry",
+        bottom: "0%",
+        right: "-10%",
+        width: "350",
+        height: "320",
+        delay: "0.45s",
         fluid: {
-           768: { bottom: "0%",  right: "0%",  size: "20vw" },
-          1024: { bottom: "0%",  right: "0%",  size: "20vw" },
-          1100: { bottom: "0%",  right: "0%",  size: "22vw" },
-          1150: { bottom: "0%",  right: "0%",  size: "21vw" },
-          1280: { bottom: "0%",  right: "0%",  size: "21vw" },
-          1366: { bottom: "0%",  right: "0%",  size: "22vw" },
-          1440: { bottom: "0%",  right: "0%",  size: "24vw" },
+          768: { bottom: "0%", right: "0%", size: "20vw" },
+          1024: { bottom: "0%", right: "0%", size: "20vw" },
+          1100: { bottom: "0%", right: "0%", size: "22vw" },
+          1150: { bottom: "0%", right: "0%", size: "21vw" },
+          1280: { bottom: "0%", right: "0%", size: "21vw" },
+          1366: { bottom: "0%", right: "0%", size: "22vw" },
+          1440: { bottom: "0%", right: "0%", size: "24vw" },
         },
       },
       {
-        src: "/img/slider/Fruit/berry_loom.png", alt: "Blackberry",
-        bottom: "-10%", right: "18%", width: "154", height: "129",
+        src: "/img/slider/Fruit/berry_loom.png",
+        alt: "Blackberry",
+        bottom: "-10%",
+        right: "18%",
+        width: "154",
+        height: "129",
         fluid: {
-           768: { bottom: "4%",  right: "9%",  size: "10vw" },
-          1024: { bottom: "4%",  right: "11%", size: "9vw"  },
-          1100: { bottom: "4%",  right: "13%", size: "10vw" },
-          1150: { bottom: "4%",  right: "12%", size: "10vw" },
-          1280: { bottom: "4%",  right: "11%", size: "10vw" },
-          1366: { bottom: "4%",  right: "12%", size: "10vw" },
-          1440: { bottom: "5%",  right: "13%", size: "10vw" },
+          768: { bottom: "4%", right: "9%", size: "10vw" },
+          1024: { bottom: "4%", right: "11%", size: "9vw" },
+          1100: { bottom: "4%", right: "13%", size: "10vw" },
+          1150: { bottom: "4%", right: "12%", size: "10vw" },
+          1280: { bottom: "4%", right: "11%", size: "10vw" },
+          1366: { bottom: "4%", right: "12%", size: "10vw" },
+          1440: { bottom: "5%", right: "13%", size: "10vw" },
         },
       },
       {
-        src: "/img/slider/Fruit/gauvava_blur.png", alt: "Green Apple",
-        top: "-20%", right: "22%", width: "198", height: "212", delay: "0.15s",
+        src: "/img/slider/Fruit/gauvava_blur.png",
+        alt: "Green Apple",
+        top: "-20%",
+        right: "22%",
+        width: "198",
+        height: "212",
+        delay: "0.15s",
         fluid: {
-           768: { top: "2%",  right: "10%", size: "13vw" },
-          1024: { top: "2%",  right: "13%", size: "12vw" },
-          1100: { top: "2%",  right: "16%", size: "13vw" },
-          1150: { top: "2%",  right: "14%", size: "13vw" },
-          1280: { top: "2%",  right: "13%", size: "12vw" },
-          1366: { top: "2%",  right: "14%", size: "13vw" },
-          1440: { top: "2%",  right: "15%", size: "13vw" },
+          768: { top: "2%", right: "10%", size: "13vw" },
+          1024: { top: "2%", right: "13%", size: "12vw" },
+          1100: { top: "2%", right: "16%", size: "13vw" },
+          1150: { top: "2%", right: "14%", size: "13vw" },
+          1280: { top: "2%", right: "13%", size: "12vw" },
+          1366: { top: "2%", right: "14%", size: "13vw" },
+          1440: { top: "2%", right: "15%", size: "13vw" },
         },
       },
     ],
@@ -167,111 +213,148 @@ const SLIDES = [
       "background: linear-gradient(180deg, rgba(114, 142, 25, 0.2) 0%, rgba(175, 28, 91, 0.2) 50%, rgba(114, 142, 25, 0.2) 100%);",
     bgColor: "#f0fff5",
     gradientEnd: "#d4f5df",
-    card: { title: "Natural Vegetable Powder", desc: "Processed to preserve natural flavor and rich nutrients." },
+    card: {
+      title: "Natural Vegetable Powder",
+      desc: "Processed to preserve natural flavor and rich nutrients.",
+    },
     mainImg: "/img/slider/main/brocili.png",
     floats: [
       {
-        src: "/img/slider/Vegetable/Beet.png", alt: "Beetroot",
-        top: "22%", left: "25%", size: "174", delay: "0s",
+        src: "/img/slider/Vegetable/Beet.png",
+        alt: "Beetroot",
+        top: "22%",
+        left: "25%",
+        size: "174",
+        delay: "0s",
         fluid: {
-           768: { top: "12%", left: "12%",  size: "13vw" },
-          1024: { top: "14%", left: "15%",  size: "12vw" },
-          1100: { top: "16%", left: "18%",  size: "13vw" },
-          1150: { top: "14%", left: "17%",  size: "12vw" },
-          1280: { top: "13%", left: "16%",  size: "12vw" },
-          1366: { top: "14%", left: "17%",  size: "13vw" },
-          1440: { top: "14%", left: "18%",  size: "13vw" },
+          768: { top: "12%", left: "12%", size: "13vw" },
+          1024: { top: "14%", left: "15%", size: "12vw" },
+          1100: { top: "16%", left: "18%", size: "13vw" },
+          1150: { top: "14%", left: "17%", size: "12vw" },
+          1280: { top: "13%", left: "16%", size: "12vw" },
+          1366: { top: "14%", left: "17%", size: "13vw" },
+          1440: { top: "14%", left: "18%", size: "13vw" },
         },
       },
       {
-        src: "/img/slider/Vegetable/Coriander.png", alt: "Coriander Leaves",
-        bottom: "-15%", left: "25%", width: 165, height: 234, delay: "0s",
+        src: "/img/slider/Vegetable/Coriander.png",
+        alt: "Coriander Leaves",
+        bottom: "-15%",
+        left: "25%",
+        width: 165,
+        height: 234,
+        delay: "0s",
         fluid: {
-           768: { bottom: "2%",  left: "12%",  size: "10vw" },
-          1024: { bottom: "2%",  left: "15%",  size: "9vw"  },
-          1100: { bottom: "2%",  left: "18%",  size: "10vw" },
-          1150: { bottom: "2%",  left: "16%",  size: "10vw" },
-          1280: { bottom: "2%",  left: "15%",  size: "10vw" },
-          1366: { bottom: "2%",  left: "16%",  size: "10vw" },
-          1440: { bottom: "2%",  left: "18%",  size: "10vw" },
+          768: { bottom: "2%", left: "12%", size: "10vw" },
+          1024: { bottom: "2%", left: "15%", size: "9vw" },
+          1100: { bottom: "2%", left: "18%", size: "10vw" },
+          1150: { bottom: "2%", left: "16%", size: "10vw" },
+          1280: { bottom: "2%", left: "15%", size: "10vw" },
+          1366: { bottom: "2%", left: "16%", size: "10vw" },
+          1440: { bottom: "2%", left: "18%", size: "10vw" },
         },
       },
       {
-        src: "/img/slider/Vegetable/broccoli.png", alt: "Broccoli",
-        bottom: "0%", right: "30%", size: 242, delay: "0.4s",
+        src: "/img/slider/Vegetable/broccoli.png",
+        alt: "Broccoli",
+        bottom: "0%",
+        right: "30%",
+        size: 242,
+        delay: "0.4s",
         fluid: {
-           768: { bottom: "4%",  right: "15%", size: "15vw" },
-          1024: { bottom: "6%",  right: "18%", size: "14vw" },
-          1100: { bottom: "8%",  right: "22%", size: "16vw" },
-          1150: { bottom: "7%",  right: "21%", size: "15vw" },
-          1280: { bottom: "6%",  right: "19%", size: "15vw" },
-          1366: { bottom: "6%",  right: "20%", size: "15vw" },
-          1440: { bottom: "8%",  right: "22%", size: "16vw" },
+          768: { bottom: "4%", right: "15%", size: "15vw" },
+          1024: { bottom: "6%", right: "18%", size: "14vw" },
+          1100: { bottom: "8%", right: "22%", size: "16vw" },
+          1150: { bottom: "7%", right: "21%", size: "15vw" },
+          1280: { bottom: "6%", right: "19%", size: "15vw" },
+          1366: { bottom: "6%", right: "20%", size: "15vw" },
+          1440: { bottom: "8%", right: "22%", size: "16vw" },
         },
       },
       {
-        src: "/img/slider/Vegetable/Carrot.png", alt: "Carrot",
-        bottom: "-30%", right: "0%", width: 429, height: 479, delay: "0.4s",
+        src: "/img/slider/Vegetable/Carrot.png",
+        alt: "Carrot",
+        bottom: "-30%",
+        right: "0%",
+        width: 429,
+        height: 479,
+        delay: "0.4s",
         fluid: {
-           768: { bottom: "0%",  right: "0%",  size: "24vw" },
-          1024: { bottom: "0%",  right: "0%",  size: "24vw" },
-          1100: { bottom: "0%",  right: "0%",  size: "26vw" },
-          1150: { bottom: "0%",  right: "0%",  size: "24vw" },
-          1280: { bottom: "0%",  right: "0%",  size: "24vw" },
-          1366: { bottom: "0%",  right: "0%",  size: "25vw" },
-          1440: { bottom: "0%",  right: "0%",  size: "26vw" },
+          768: { bottom: "0%", right: "0%", size: "24vw" },
+          1024: { bottom: "0%", right: "0%", size: "24vw" },
+          1100: { bottom: "0%", right: "0%", size: "26vw" },
+          1150: { bottom: "0%", right: "0%", size: "24vw" },
+          1280: { bottom: "0%", right: "0%", size: "24vw" },
+          1366: { bottom: "0%", right: "0%", size: "25vw" },
+          1440: { bottom: "0%", right: "0%", size: "26vw" },
         },
       },
       {
-        src: "/img/slider/Vegetable/Bittermelon.png", alt: "BitterGourd",
-        top: "-10%", left: "-1%", size: 334, delay: "0.15s",
+        src: "/img/slider/Vegetable/Bittermelon.png",
+        alt: "BitterGourd",
+        top: "-10%",
+        left: "-1%",
+        size: 334,
+        delay: "0.15s",
         fluid: {
-           768: { top: "0%",   left: "0%",   size: "18vw" },
-          1024: { top: "0%",   left: "0%",   size: "18vw" },
-          1100: { top: "0%",   left: "0%",   size: "20vw" },
-          1150: { top: "0%",   left: "0%",   size: "19vw" },
-          1280: { top: "0%",   left: "0%",   size: "19vw" },
-          1366: { top: "0%",   left: "0%",   size: "20vw" },
-          1440: { top: "0%",   left: "0%",   size: "21vw" },
+          768: { top: "0%", left: "0%", size: "18vw" },
+          1024: { top: "0%", left: "0%", size: "18vw" },
+          1100: { top: "0%", left: "0%", size: "20vw" },
+          1150: { top: "0%", left: "0%", size: "19vw" },
+          1280: { top: "0%", left: "0%", size: "19vw" },
+          1366: { top: "0%", left: "0%", size: "20vw" },
+          1440: { top: "0%", left: "0%", size: "21vw" },
         },
       },
       {
-        src: "/img/slider/Vegetable/SlicedOnion.png", alt: "Onion Ring",
-        top: "-40%", right: "20%", size: 418, delay: "0.3s",
+        src: "/img/slider/Vegetable/SlicedOnion.png",
+        alt: "Onion Ring",
+        top: "-40%",
+        right: "20%",
+        size: 418,
+        delay: "0.3s",
         fluid: {
-           768: { top: "0%",   right: "8%",  size: "22vw" },
-          1024: { top: "0%",   right: "11%", size: "20vw" },
-          1100: { top: "0%",   right: "14%", size: "22vw" },
-          1150: { top: "0%",   right: "13%", size: "21vw" },
-          1280: { top: "0%",   right: "11%", size: "21vw" },
-          1366: { top: "0%",   right: "12%", size: "21vw" },
-          1440: { top: "0%",   right: "14%", size: "22vw" },
+          768: { top: "0%", right: "8%", size: "22vw" },
+          1024: { top: "0%", right: "11%", size: "20vw" },
+          1100: { top: "0%", right: "14%", size: "22vw" },
+          1150: { top: "0%", right: "13%", size: "21vw" },
+          1280: { top: "0%", right: "11%", size: "21vw" },
+          1366: { top: "0%", right: "12%", size: "21vw" },
+          1440: { top: "0%", right: "14%", size: "22vw" },
         },
       },
       {
-        src: "/img/slider/Vegetable/blur.png", alt: "Spinach",
-        bottom: "-10%", left: "0%", size: 155, delay: "0.5s",
+        src: "/img/slider/Vegetable/blur.png",
+        alt: "Spinach",
+        bottom: "-10%",
+        left: "0%",
+        size: 155,
+        delay: "0.5s",
         fluid: {
-           768: { bottom: "2%",  left: "3%",   size: "10vw" },
-          1024: { bottom: "2%",  left: "4%",   size: "9vw"  },
-          1100: { bottom: "2%",  left: "5%",   size: "10vw" },
-          1150: { bottom: "2%",  left: "4%",   size: "10vw" },
-          1280: { bottom: "2%",  left: "4%",   size: "10vw" },
-          1366: { bottom: "2%",  left: "4%",   size: "10vw" },
-          1440: { bottom: "2%",  left: "5%",   size: "10vw" },
+          768: { bottom: "2%", left: "3%", size: "10vw" },
+          1024: { bottom: "2%", left: "4%", size: "9vw" },
+          1100: { bottom: "2%", left: "5%", size: "10vw" },
+          1150: { bottom: "2%", left: "4%", size: "10vw" },
+          1280: { bottom: "2%", left: "4%", size: "10vw" },
+          1366: { bottom: "2%", left: "4%", size: "10vw" },
+          1440: { bottom: "2%", left: "5%", size: "10vw" },
         },
       },
       {
-        src: "/img/slider/Vegetable/Greenchilli.png", alt: "Green Chili",
-        bottom: "-30%", left: "15%", size: 155, delay: "0.5s",
+        src: "/img/slider/Vegetable/Greenchilli.png",
+        alt: "Green Chili",
+        bottom: "-30%",
+        left: "15%",
+        size: 155,
+        delay: "0.5s",
         fluid: {
-           768: { bottom: "0%",  left: "5%",   size: "10vw" },
-          1024: { bottom: "0%",  left: "7%",   size: "9vw"  },
-          1100: { bottom: "0%",  left: "9%",   size: "10vw" },
-          1150: { bottom: "0%",  left: "8%",   size: "10vw" },
-          1280: { bottom: "0%",  left: "7%",   size: "10vw" },
-          1366: { bottom: "0%",  left: "8%",   size: "10vw" },
-          1440: { bottom: "0%",  left: "9%",   size: "10vw" },
+          768: { bottom: "0%", left: "5%", size: "10vw" },
+          1024: { bottom: "0%", left: "7%", size: "9vw" },
+          1100: { bottom: "0%", left: "9%", size: "10vw" },
+          1150: { bottom: "0%", left: "8%", size: "10vw" },
+          1280: { bottom: "0%", left: "7%", size: "10vw" },
+          1366: { bottom: "0%", left: "8%", size: "10vw" },
+          1440: { bottom: "0%", left: "9%", size: "10vw" },
         },
       },
     ],
@@ -289,7 +372,10 @@ const SLIDES = [
       "background: linear-gradient(180deg, rgba(249, 140, 21, 0.2) 0%, rgba(197, 157, 46, 0.2) 100%);",
     bgColor: "#fffbf0",
     gradientEnd: "#fef0c7",
-    card: { title: "Raw Pure Honey", desc: "Directly sourced from natural hives for authentic golden taste." },
+    card: {
+      title: "Raw Pure Honey",
+      desc: "Directly sourced from natural hives for authentic golden taste.",
+    },
     mainImg: "/img/slider/main/HoneyBowl.png",
     floats: [
       {
@@ -300,78 +386,96 @@ const SLIDES = [
         size: 125,
         delay: "0s",
         fluid: {
-           768: { top: "14%", left: "18%",  size: "8vw"  },
-          1024: { top: "16%", left: "22%",  size: "7vw"  },
-          1100: { top: "18%", left: "26%",  size: "8vw"  },
-          1150: { top: "17%", left: "24%",  size: "8vw"  },
-          1280: { top: "16%", left: "22%",  size: "7vw"  },
-          1366: { top: "18%", left: "24%",  size: "8vw"  },
-          1440: { top: "18%", left: "26%",  size: "8vw"  },
+          768: { top: "14%", left: "18%", size: "8vw" },
+          1024: { top: "16%", left: "22%", size: "7vw" },
+          1100: { top: "18%", left: "26%", size: "8vw" },
+          1150: { top: "17%", left: "24%", size: "8vw" },
+          1280: { top: "16%", left: "22%", size: "7vw" },
+          1366: { top: "18%", left: "24%", size: "8vw" },
+          1440: { top: "18%", left: "26%", size: "8vw" },
         },
       },
       {
-        src: "/img/slider/Honey/3.png", alt: "Sunflower",
-        top: "0%", right: "20%", size: 314,
+        src: "/img/slider/Honey/3.png",
+        alt: "Sunflower",
+        top: "0%",
+        right: "20%",
+        size: 314,
         fluid: {
-           768: { top: "2%",  right: "8%",  size: "20vw" },
-          1024: { top: "2%",  right: "10%", size: "18vw" },
-          1100: { top: "2%",  right: "12%", size: "20vw" },
-          1150: { top: "2%",  right: "12%", size: "20vw" },
-          1280: { top: "2%",  right: "11%", size: "20vw" },
-          1366: { top: "2%",  right: "12%", size: "20vw" },
-          1440: { top: "2%",  right: "14%", size: "22vw" },
+          768: { top: "2%", right: "8%", size: "20vw" },
+          1024: { top: "2%", right: "10%", size: "18vw" },
+          1100: { top: "2%", right: "12%", size: "20vw" },
+          1150: { top: "2%", right: "12%", size: "20vw" },
+          1280: { top: "2%", right: "11%", size: "20vw" },
+          1366: { top: "2%", right: "12%", size: "20vw" },
+          1440: { top: "2%", right: "14%", size: "22vw" },
         },
       },
       {
-        src: "/img/slider/Honey/5.png", alt: "Honey Drop",
-        top: "-5%", left: "0%", width: 537, height: 268,
+        src: "/img/slider/Honey/5.png",
+        alt: "Honey Drop",
+        top: "-5%",
+        left: "0%",
+        width: 537,
+        height: 268,
         fluid: {
-           768: { top: "0%",  left: "0%",   size: "28vw" },
-          1024: { top: "-5%",  left: "0%",   size: "26vw" },
-          1100: { top: "0%",  left: "0%",   size: "28vw" },
-          1150: { top: "0%",  left: "0%",   size: "28vw" },
-          1280: { top: "-10%",  left: "0%",   size: "28vw" },
-          1366: { top: "-10%",  left: "0%",   size: "29vw" },
-          1440: { top: "-12%",  left: "0%",   size: "30vw" },
+          768: { top: "0%", left: "0%", size: "28vw" },
+          1024: { top: "-5%", left: "0%", size: "26vw" },
+          1100: { top: "0%", left: "0%", size: "28vw" },
+          1150: { top: "0%", left: "0%", size: "28vw" },
+          1280: { top: "-10%", left: "0%", size: "28vw" },
+          1366: { top: "-10%", left: "0%", size: "29vw" },
+          1440: { top: "-12%", left: "0%", size: "30vw" },
         },
       },
       {
-        src: "/img/slider/Honey/1.png", alt: "Honey Jar",
-        bottom: "10%", right: "30%", width: 120, height: 88,
+        src: "/img/slider/Honey/1.png",
+        alt: "Honey Jar",
+        bottom: "10%",
+        right: "30%",
+        width: 120,
+        height: 88,
         fluid: {
-           768: { bottom: "10%", right: "15%", size: "8vw"  },
-          1024: { bottom: "12%", right: "19%", size: "7vw"  },
-          1100: { bottom: "14%", right: "23%", size: "8vw"  },
-          1150: { bottom: "13%", right: "22%", size: "8vw"  },
-          1280: { bottom: "12%", right: "21%", size: "7vw"  },
-          1366: { bottom: "13%", right: "22%", size: "8vw"  },
-          1440: { bottom: "14%", right: "23%", size: "8vw"  },
+          768: { bottom: "10%", right: "15%", size: "8vw" },
+          1024: { bottom: "12%", right: "19%", size: "7vw" },
+          1100: { bottom: "14%", right: "23%", size: "8vw" },
+          1150: { bottom: "13%", right: "22%", size: "8vw" },
+          1280: { bottom: "12%", right: "21%", size: "7vw" },
+          1366: { bottom: "13%", right: "22%", size: "8vw" },
+          1440: { bottom: "14%", right: "23%", size: "8vw" },
         },
       },
       {
-        src: "/img/slider/Honey/2.png", alt: "Honey Jar",
-        bottom: "-20%", right: "-8%", width: 369, height: 274,
+        src: "/img/slider/Honey/2.png",
+        alt: "Honey Jar",
+        bottom: "-20%",
+        right: "-8%",
+        width: 369,
+        height: 274,
         fluid: {
-           768: { bottom: "0%",  right: "0%",  size: "24vw" },
-          1024: { bottom: "0%",  right: "0%",  size: "22vw" },
-          1100: { bottom: "0%",  right: "0%",  size: "24vw" },
-          1150: { bottom: "0%",  right: "0%",  size: "24vw" },
-          1280: { bottom: "0%",  right: "0%",  size: "24vw" },
-          1366: { bottom: "0%",  right: "0%",  size: "25vw" },
-          1440: { bottom: "0%",  right: "0%",  size: "26vw" },
+          768: { bottom: "0%", right: "0%", size: "24vw" },
+          1024: { bottom: "0%", right: "0%", size: "22vw" },
+          1100: { bottom: "0%", right: "0%", size: "24vw" },
+          1150: { bottom: "0%", right: "0%", size: "24vw" },
+          1280: { bottom: "0%", right: "0%", size: "24vw" },
+          1366: { bottom: "0%", right: "0%", size: "25vw" },
+          1440: { bottom: "0%", right: "0%", size: "26vw" },
         },
       },
       {
-        src: "/img/slider/Honey/4.png", alt: "Honey Jar",
-        top: "-5%", right: "-3%", size: 288,
+        src: "/img/slider/Honey/4.png",
+        alt: "Honey Jar",
+        top: "-5%",
+        right: "-3%",
+        size: 288,
         fluid: {
-           768: { top: "2%",  right: "0%",  size: "18vw" },
-          1024: { top: "2%",  right: "1%",  size: "16vw" },
-          1100: { top: "2%",  right: "1%",  size: "18vw" },
-          1150: { top: "2%",  right: "1%",  size: "18vw" },
-          1280: { top: "2%",  right: "1%",  size: "17vw" },
-          1366: { top: "2%",  right: "1%",  size: "18vw" },
-          1440: { top: "2%",  right: "1%",  size: "19vw" },
+          768: { top: "2%", right: "0%", size: "18vw" },
+          1024: { top: "2%", right: "1%", size: "16vw" },
+          1100: { top: "2%", right: "1%", size: "18vw" },
+          1150: { top: "2%", right: "1%", size: "18vw" },
+          1280: { top: "2%", right: "1%", size: "17vw" },
+          1366: { top: "2%", right: "1%", size: "18vw" },
+          1440: { top: "2%", right: "1%", size: "19vw" },
         },
       },
     ],
@@ -389,66 +493,84 @@ const SLIDES = [
       "background: linear-gradient(180deg, rgba(132, 14, 14, 0.2) 0%, rgba(255, 0, 0, 0.1) 100%);",
     bgColor: "#fff8f2",
     gradientEnd: "#ffe0cc",
-    card: { title: "Exotic Spice Blends", desc: "Sun-dried and stone-ground for maximum aroma and authentic taste." },
+    card: {
+      title: "Exotic Spice Blends",
+      desc: "Sun-dried and stone-ground for maximum aroma and authentic taste.",
+    },
     mainImg: "/img/slider/main/Red chilli.png",
     floats: [
       {
-        src: "/img/slider/Spices/GaramMsala.png", alt: "GaramMasala",
-        top: "-5%", left: "-2%", size: 310,
+        src: "/img/slider/Spices/GaramMsala.png",
+        alt: "GaramMasala",
+        top: "-5%",
+        left: "-2%",
+        size: 310,
         fluid: {
-           768: { top: "0%",  left: "0%",   size: "18vw" },
-          1024: { top: "0%",  left: "0%",   size: "18vw" },
-          1100: { top: "0%",  left: "0%",   size: "20vw" },
-          1150: { top: "0%",  left: "0%",   size: "20vw" },
-          1280: { top: "0%",  left: "0%",   size: "20vw" },
-          1366: { top: "0%",  left: "0%",   size: "20vw" },
-          1440: { top: "0%",  left: "0%",   size: "21vw" },
+          768: { top: "0%", left: "0%", size: "18vw" },
+          1024: { top: "0%", left: "0%", size: "18vw" },
+          1100: { top: "0%", left: "0%", size: "20vw" },
+          1150: { top: "0%", left: "0%", size: "20vw" },
+          1280: { top: "0%", left: "0%", size: "20vw" },
+          1366: { top: "0%", left: "0%", size: "20vw" },
+          1440: { top: "0%", left: "0%", size: "21vw" },
         },
       },
       {
-        src: "/img/slider/Spices/DryChilli.png", alt: "Red Chili",
-        bottom: "-40%", right: "-3%", size: 611,
+        src: "/img/slider/Spices/DryChilli.png",
+        alt: "Red Chili",
+        bottom: "-40%",
+        right: "-3%",
+        size: 611,
         fluid: {
-           768: { bottom: "0%",  right: "0%",  size: "28vw" },
-          1024: { bottom: "0%",  right: "0%",  size: "28vw" },
-          1100: { bottom: "0%",  right: "0%",  size: "30vw" },
-          1150: { bottom: "0%",  right: "0%",  size: "30vw" },
-          1280: { bottom: "0%",  right: "0%",  size: "29vw" },
-          1366: { bottom: "0%",  right: "0%",  size: "30vw" },
-          1440: { bottom: "0%",  right: "0%",  size: "32vw" },
+          768: { bottom: "0%", right: "0%", size: "28vw" },
+          1024: { bottom: "0%", right: "0%", size: "28vw" },
+          1100: { bottom: "0%", right: "0%", size: "30vw" },
+          1150: { bottom: "0%", right: "0%", size: "30vw" },
+          1280: { bottom: "0%", right: "0%", size: "29vw" },
+          1366: { bottom: "0%", right: "0%", size: "30vw" },
+          1440: { bottom: "0%", right: "0%", size: "32vw" },
         },
       },
       {
-        src: "/img/slider/Spices/Clove.png", alt: "Clove",
-        bottom: "-12%", left: "15%", size: 278,
+        src: "/img/slider/Spices/Clove.png",
+        alt: "Clove",
+        bottom: "-12%",
+        left: "15%",
+        size: 278,
         fluid: {
-           768: { bottom: "2%",  left: "5%",   size: "17vw" },
-          1024: { bottom: "2%",  left: "6%",   size: "16vw" },
-          1100: { bottom: "2%",  left: "8%",   size: "18vw" },
-          1150: { bottom: "2%",  left: "7%",   size: "17vw" },
-          1280: { bottom: "2%",  left: "6%",   size: "17vw" },
-          1366: { bottom: "2%",  left: "7%",   size: "17vw" },
-          1440: { bottom: "2%",  left: "8%",   size: "18vw" },
+          768: { bottom: "2%", left: "5%", size: "17vw" },
+          1024: { bottom: "2%", left: "6%", size: "16vw" },
+          1100: { bottom: "2%", left: "8%", size: "18vw" },
+          1150: { bottom: "2%", left: "7%", size: "17vw" },
+          1280: { bottom: "2%", left: "6%", size: "17vw" },
+          1366: { bottom: "2%", left: "7%", size: "17vw" },
+          1440: { bottom: "2%", left: "8%", size: "18vw" },
         },
       },
       {
-        src: "/img/slider/Spices/RedChilli.png", alt: "Red Chili",
-        bottom: "-5%", right: "30%", size: 287,
+        src: "/img/slider/Spices/RedChilli.png",
+        alt: "Red Chili",
+        bottom: "-5%",
+        right: "30%",
+        size: 287,
         fluid: {
-           768: { bottom: "2%",  right: "15%", size: "17vw" },
-          1024: { bottom: "2%",  right: "18%", size: "16vw" },
-          1100: { bottom: "4%",  right: "22%", size: "18vw" },
-          1150: { bottom: "4%",  right: "21%", size: "18vw" },
-          1280: { bottom: "3%",  right: "20%", size: "17vw" },
-          1366: { bottom: "3%",  right: "21%", size: "18vw" },
-          1440: { bottom: "4%",  right: "22%", size: "19vw" },
+          768: { bottom: "2%", right: "15%", size: "17vw" },
+          1024: { bottom: "2%", right: "18%", size: "16vw" },
+          1100: { bottom: "4%", right: "22%", size: "18vw" },
+          1150: { bottom: "4%", right: "21%", size: "18vw" },
+          1280: { bottom: "3%", right: "20%", size: "17vw" },
+          1366: { bottom: "3%", right: "21%", size: "18vw" },
+          1440: { bottom: "4%", right: "22%", size: "19vw" },
         },
       },
       {
-        src: "/img/slider/Spices/Tea-Leaf.png", alt: "Tea Leaf",
-        bottom: "1%", right: "-63%", size: 260,
+        src: "/img/slider/Spices/Tea-Leaf.png",
+        alt: "Tea Leaf",
+        bottom: "1%",
+        right: "-63%",
+        size: 260,
         fluid: {
-           768: { bottom: "0%", right: "0%", size: "0px" },
+          768: { bottom: "0%", right: "0%", size: "0px" },
           1024: { bottom: "0%", right: "0%", size: "0px" },
           1100: { bottom: "0%", right: "0%", size: "0px" },
           1150: { bottom: "0%", right: "0%", size: "0px" },
@@ -458,29 +580,35 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Spices/Turmeric.png", alt: "Turmeric",
-        top: "0%", right: "10%", size: 144,
+        src: "/img/slider/Spices/Turmeric.png",
+        alt: "Turmeric",
+        top: "0%",
+        right: "10%",
+        size: 144,
         fluid: {
-           768: { top: "6%",  right: "4%",   size: "10vw" },
-          1024: { top: "6%",  right: "5%",   size: "9vw"  },
-          1100: { top: "6%",  right: "6%",   size: "10vw" },
-          1150: { top: "5%",  right: "5%",   size: "10vw" },
-          1280: { top: "5%",  right: "5%",   size: "9vw"  },
-          1366: { top: "5%",  right: "6%",   size: "10vw" },
-          1440: { top: "6%",  right: "6%",   size: "10vw" },
+          768: { top: "6%", right: "4%", size: "10vw" },
+          1024: { top: "6%", right: "5%", size: "9vw" },
+          1100: { top: "6%", right: "6%", size: "10vw" },
+          1150: { top: "5%", right: "5%", size: "10vw" },
+          1280: { top: "5%", right: "5%", size: "9vw" },
+          1366: { top: "5%", right: "6%", size: "10vw" },
+          1440: { top: "6%", right: "6%", size: "10vw" },
         },
       },
       {
-        src: "/img/slider/Spices/StarAnise.png", alt: "Star Anise",
-        bottom: "-46%", left: "-3%", size: 287,
+        src: "/img/slider/Spices/StarAnise.png",
+        alt: "Star Anise",
+        bottom: "-46%",
+        left: "-3%",
+        size: 287,
         fluid: {
-           768: { bottom: "0%",  left: "0%",   size: "15vw" },
-          1024: { bottom: "0%",  left: "0%",   size: "14vw" },
-          1100: { bottom: "0%",  left: "0%",   size: "16vw" },
-          1150: { bottom: "0%",  left: "0%",   size: "16vw" },
-          1280: { bottom: "0%",  left: "0%",   size: "15vw" },
-          1366: { bottom: "0%",  left: "0%",   size: "16vw" },
-          1440: { bottom: "0%",  left: "0%",   size: "17vw" },
+          768: { bottom: "0%", left: "0%", size: "15vw" },
+          1024: { bottom: "0%", left: "0%", size: "14vw" },
+          1100: { bottom: "0%", left: "0%", size: "16vw" },
+          1150: { bottom: "0%", left: "0%", size: "16vw" },
+          1280: { bottom: "0%", left: "0%", size: "15vw" },
+          1366: { bottom: "0%", left: "0%", size: "16vw" },
+          1440: { bottom: "0%", left: "0%", size: "17vw" },
         },
       },
     ],
@@ -498,98 +626,123 @@ const SLIDES = [
       "background: linear-gradient(180deg, rgba(27, 146, 82, 0.054) 0%, rgba(1, 62, 29, 0.2) 100%);",
     bgColor: "#f4fbf5",
     gradientEnd: "#c8edcf",
-    card: { title: "Pure Herbal Powder", desc: "Cold-processed medicinal herbs retaining full nutritional potency." },
+    card: {
+      title: "Pure Herbal Powder",
+      desc: "Cold-processed medicinal herbs retaining full nutritional potency.",
+    },
     mainImg: "/img/slider/main/aloe vera.png",
     floats: [
       {
-        src: "/img/slider/Herbs/amla.png", alt: "Amla",
-        top: "18%", left: "26%", size: 236, delay: "0s",
+        src: "/img/slider/Herbs/amla.png",
+        alt: "Amla",
+        top: "18%",
+        left: "26%",
+        size: 236,
+        delay: "0s",
         fluid: {
-           768: { top: "10%", left: "12%",  size: "15vw" },
-          1024: { top: "12%", left: "15%",  size: "14vw" },
-          1100: { top: "14%", left: "18%",  size: "15vw" },
-          1150: { top: "12%", left: "18%",  size: "15vw" },
-          1280: { top: "12%", left: "17%",  size: "15vw" },
-          1366: { top: "13%", left: "18%",  size: "15vw" },
-          1440: { top: "14%", left: "19%",  size: "16vw" },
+          768: { top: "10%", left: "12%", size: "15vw" },
+          1024: { top: "12%", left: "15%", size: "14vw" },
+          1100: { top: "14%", left: "18%", size: "15vw" },
+          1150: { top: "12%", left: "18%", size: "15vw" },
+          1280: { top: "12%", left: "17%", size: "15vw" },
+          1366: { top: "13%", left: "18%", size: "15vw" },
+          1440: { top: "14%", left: "19%", size: "16vw" },
         },
       },
       {
-        src: "/img/slider/Herbs/PricklyPear.png", alt: "PricklyPear",
-        top: "-5%", left: "-2%", size: 300,
+        src: "/img/slider/Herbs/PricklyPear.png",
+        alt: "PricklyPear",
+        top: "-5%",
+        left: "-2%",
+        size: 300,
         fluid: {
-           768: { top: "0%",  left: "0%",   size: "18vw" },
-          1024: { top: "0%",  left: "0%",   size: "17vw" },
-          1100: { top: "0%",  left: "0%",   size: "18vw" },
-          1150: { top: "0%",  left: "0%",   size: "18vw" },
-          1280: { top: "0%",  left: "0%",   size: "18vw" },
-          1366: { top: "0%",  left: "0%",   size: "18vw" },
-          1440: { top: "0%",  left: "0%",   size: "19vw" },
+          768: { top: "0%", left: "0%", size: "18vw" },
+          1024: { top: "0%", left: "0%", size: "17vw" },
+          1100: { top: "0%", left: "0%", size: "18vw" },
+          1150: { top: "0%", left: "0%", size: "18vw" },
+          1280: { top: "0%", left: "0%", size: "18vw" },
+          1366: { top: "0%", left: "0%", size: "18vw" },
+          1440: { top: "0%", left: "0%", size: "19vw" },
         },
       },
       {
-        src: "/img/slider/Herbs/Rose.png", alt: "Rose",
-        bottom: "-20%", left: "8%", size: 300,
+        src: "/img/slider/Herbs/Rose.png",
+        alt: "Rose",
+        bottom: "-20%",
+        left: "8%",
+        size: 300,
         fluid: {
-           768: { bottom: "2%",  left: "1%",   size: "18vw" },
-          1024: { bottom: "2%",  left: "2%",   size: "17vw" },
-          1100: { bottom: "2%",  left: "3%",   size: "18vw" },
-          1150: { bottom: "2%",  left: "2%",   size: "18vw" },
-          1280: { bottom: "2%",  left: "2%",   size: "18vw" },
-          1366: { bottom: "2%",  left: "2%",   size: "18vw" },
-          1440: { bottom: "2%",  left: "3%",   size: "19vw" },
+          768: { bottom: "2%", left: "1%", size: "18vw" },
+          1024: { bottom: "2%", left: "2%", size: "17vw" },
+          1100: { bottom: "2%", left: "3%", size: "18vw" },
+          1150: { bottom: "2%", left: "2%", size: "18vw" },
+          1280: { bottom: "2%", left: "2%", size: "18vw" },
+          1366: { bottom: "2%", left: "2%", size: "18vw" },
+          1440: { bottom: "2%", left: "3%", size: "19vw" },
         },
       },
       {
-        src: "/img/slider/Herbs/MoringaLeaf.png", alt: "MoringaLeaf",
-        bottom: "-5%", right: "27%", size: 352,
+        src: "/img/slider/Herbs/MoringaLeaf.png",
+        alt: "MoringaLeaf",
+        bottom: "-5%",
+        right: "27%",
+        size: 352,
         fluid: {
-           768: { bottom: "2%",  right: "14%", size: "22vw" },
-          1024: { bottom: "2%",  right: "17%", size: "20vw" },
-          1100: { bottom: "4%",  right: "20%", size: "22vw" },
-          1150: { bottom: "3%",  right: "19%", size: "22vw" },
-          1280: { bottom: "2%",  right: "18%", size: "22vw" },
-          1366: { bottom: "2%",  right: "19%", size: "22vw" },
-          1440: { bottom: "4%",  right: "21%", size: "23vw" },
+          768: { bottom: "2%", right: "14%", size: "22vw" },
+          1024: { bottom: "2%", right: "17%", size: "20vw" },
+          1100: { bottom: "4%", right: "20%", size: "22vw" },
+          1150: { bottom: "3%", right: "19%", size: "22vw" },
+          1280: { bottom: "2%", right: "18%", size: "22vw" },
+          1366: { bottom: "2%", right: "19%", size: "22vw" },
+          1440: { bottom: "4%", right: "21%", size: "23vw" },
         },
       },
       {
-        src: "/img/slider/Herbs/AloeveraBlur.png", alt: "Aloe Vera",
-        bottom: "-20%", right: "-5%", size: 438,
+        src: "/img/slider/Herbs/AloeveraBlur.png",
+        alt: "Aloe Vera",
+        bottom: "-20%",
+        right: "-5%",
+        size: 438,
         fluid: {
-           768: { bottom: "0%",  right: "0%",  size: "28vw" },
-          1024: { bottom: "0%",  right: "0%",  size: "26vw" },
-          1100: { bottom: "0%",  right: "0%",  size: "28vw" },
-          1150: { bottom: "0%",  right: "0%",  size: "28vw" },
-          1280: { bottom: "0%",  right: "0%",  size: "27vw" },
-          1366: { bottom: "0%",  right: "0%",  size: "28vw" },
-          1440: { bottom: "0%",  right: "0%",  size: "29vw" },
+          768: { bottom: "0%", right: "0%", size: "28vw" },
+          1024: { bottom: "0%", right: "0%", size: "26vw" },
+          1100: { bottom: "0%", right: "0%", size: "28vw" },
+          1150: { bottom: "0%", right: "0%", size: "28vw" },
+          1280: { bottom: "0%", right: "0%", size: "27vw" },
+          1366: { bottom: "0%", right: "0%", size: "28vw" },
+          1440: { bottom: "0%", right: "0%", size: "29vw" },
         },
       },
       {
-        src: "/img/slider/Herbs/GreenFennel.png", alt: "GreenFennel",
-        top: "-20%", right: "28%", size: 298,
+        src: "/img/slider/Herbs/GreenFennel.png",
+        alt: "GreenFennel",
+        top: "-20%",
+        right: "28%",
+        size: 298,
         fluid: {
-           768: { top: "2%",  right: "14%", size: "18vw" },
-          1024: { top: "2%",  right: "17%", size: "17vw" },
-          1100: { top: "2%",  right: "20%", size: "18vw" },
-          1150: { top: "2%",  right: "19%", size: "18vw" },
-          1280: { top: "2%",  right: "18%", size: "18vw" },
-          1366: { top: "2%",  right: "19%", size: "18vw" },
-          1440: { top: "2%",  right: "21%", size: "19vw" },
+          768: { top: "2%", right: "14%", size: "18vw" },
+          1024: { top: "2%", right: "17%", size: "17vw" },
+          1100: { top: "2%", right: "20%", size: "18vw" },
+          1150: { top: "2%", right: "19%", size: "18vw" },
+          1280: { top: "2%", right: "18%", size: "18vw" },
+          1366: { top: "2%", right: "19%", size: "18vw" },
+          1440: { top: "2%", right: "21%", size: "19vw" },
         },
       },
       {
-        src: "/img/slider/Herbs/Rose-2.png", alt: "Rose",
-        top: "0", right: "12%", size: 129,
+        src: "/img/slider/Herbs/Rose-2.png",
+        alt: "Rose",
+        top: "0",
+        right: "12%",
+        size: 129,
         fluid: {
-           768: { top: "6%",  right: "4%",   size: "9vw"  },
-          1024: { top: "6%",  right: "5%",   size: "8vw"  },
-          1100: { top: "6%",  right: "6%",   size: "9vw"  },
-          1150: { top: "5%",  right: "6%",   size: "9vw"  },
-          1280: { top: "5%",  right: "5%",   size: "8vw"  },
-          1366: { top: "5%",  right: "6%",   size: "9vw"  },
-          1440: { top: "6%",  right: "7%",   size: "9vw"  },
+          768: { top: "6%", right: "4%", size: "9vw" },
+          1024: { top: "6%", right: "5%", size: "8vw" },
+          1100: { top: "6%", right: "6%", size: "9vw" },
+          1150: { top: "5%", right: "6%", size: "9vw" },
+          1280: { top: "5%", right: "5%", size: "8vw" },
+          1366: { top: "5%", right: "6%", size: "9vw" },
+          1440: { top: "6%", right: "7%", size: "9vw" },
         },
       },
     ],
@@ -616,7 +769,8 @@ const CSS = `
   .hs-root {
     position: relative; width: 100%; min-height: 100vh;
     padding-top: var(--navbar-height, 80px);
-    overflow: hidden; transition: background-color 0.65s ease; font-family: inherit;
+    overflow: hidden; transition: background-color 0.65s ease;
+    font-family: 'Roboto', sans-serif;
   }
   .hs-bg-gradient {
     position: absolute; inset: 0; opacity: 0;
@@ -654,7 +808,6 @@ const CSS = `
   .hs-title {
     font-size: clamp(34px, 3.8vw, 60px); font-weight: 800;
     line-height: 1.08; color: #111; margin: 0 0 14px;
-    font-family: var(--font-playfair), Georgia, serif;
   }
   .hs-subtitle { font-size: 15px; color: #777; line-height: 1.6; margin: 0; }
   .hs-center {
@@ -673,8 +826,7 @@ const CSS = `
     max-width: clamp(280px, 28vw, 530px); justify-self: end;
   }
   .hs-card-title {
-    font-size: 24px; font-weight: 700; color: #111; margin: 0 0 8px; line-height: 1.3;
-    font-family: var(--font-playfair), Georgia, serif;
+    font-size: clamp(34px, 3.8vw, 55px); font-weight: 700; color: #111; margin: 0 0 8px; line-height: 1.08;
   }
   .hs-card-desc { font-size: 15px; color: #666; margin: 0 0 18px; line-height: 1.55; }
   .hs-btn {
@@ -807,13 +959,14 @@ const CSS = `
       gap: clamp(12px, 1.8vw, 28px) !important;
     }
     .hs-fluid-title {
-      font-size: clamp(28px, 3.2vw, 52px) !important;
+       font-size: clamp(28px, 3.2vw, 52px) !important;
     }
     .hs-fluid-subtitle {
       font-size: clamp(12px, 1.1vw, 15px) !important;
     }
     .hs-fluid-card-title {
-      font-size: clamp(16px, 1.6vw, 24px) !important;
+         font-size: clamp(28px, 3.2vw, 52px) !important;
+ !important;
     }
     .hs-fluid-card-desc {
       font-size: clamp(11px, 1vw, 15px) !important;
@@ -881,7 +1034,6 @@ const CSS = `
   .hs-fluid-title {
     font-size: clamp(20px, 3.8vw, 50px);
     font-weight: 800; line-height: 1.08; color: #111; margin: 0;
-    font-family: var(--font-playfair), Georgia, serif;
   }
   .hs-fluid-subtitle {
     font-size: clamp(10px, 1.2vw, 14px);
@@ -910,9 +1062,8 @@ const CSS = `
     padding-bottom: clamp(16px, 3vh, 48px);
   }
   .hs-fluid-card-title {
-    font-size: clamp(12px, 1.7vw, 22px);
-    font-weight: 700; color: #111; margin: 0; line-height: 1.3;
-    font-family: var(--font-playfair), Georgia, serif;
+    font-size: clamp(20px, 3.8vw, 50px);
+    font-weight: 800; line-height: 1.08; color: #111; margin: 0;
   }
   .hs-fluid-card-desc {
     font-size: clamp(10px, 1.1vw, 14px);
@@ -1060,7 +1211,7 @@ export default function Hero1() {
   const [prevCup, setPrevCup] = useState(null);
   const [cupAnimating, setCupAnimating] = useState(false);
   const [viewportW, setViewportW] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1440
+    typeof window !== "undefined" ? window.innerWidth : 1440,
   );
 
   const slide = SLIDES[current];
@@ -1094,11 +1245,13 @@ export default function Hero1() {
     [current],
   );
 
-  const titleAnim    = dir === "next" ? "hs-anim-up"          : "hs-anim-down";
-  const subtitleAnim = dir === "next" ? "hs-anim-up-delay"    : "hs-anim-down-delay";
-  const cardAnim     = dir === "next" ? "hs-anim-card-up"     : "hs-anim-card-down";
-  const cupInAnim    = dir === "next" ? "hs-anim-cup-next"    : "hs-anim-cup-prev";
-  const cupOutAnim   = dir === "next" ? "hs-anim-cup-out-next": "hs-anim-cup-out-prev";
+  const titleAnim = dir === "next" ? "hs-anim-up" : "hs-anim-down";
+  const subtitleAnim =
+    dir === "next" ? "hs-anim-up-delay" : "hs-anim-down-delay";
+  const cardAnim = dir === "next" ? "hs-anim-card-up" : "hs-anim-card-down";
+  const cupInAnim = dir === "next" ? "hs-anim-cup-next" : "hs-anim-cup-prev";
+  const cupOutAnim =
+    dir === "next" ? "hs-anim-cup-out-next" : "hs-anim-cup-out-prev";
 
   useEffect(() => {
     const update = () => {
@@ -1125,8 +1278,10 @@ export default function Hero1() {
     if (!ov) {
       return {
         ...item,
-        _top: item.top ?? "auto", _left: item.left ?? "auto",
-        _right: item.right ?? "auto", _bottom: item.bottom ?? "auto",
+        _top: item.top ?? "auto",
+        _left: item.left ?? "auto",
+        _right: item.right ?? "auto",
+        _bottom: item.bottom ?? "auto",
         _w: normalizeDimension(item.width ?? item.size),
         _h: normalizeDimension(item.height ?? item.size),
       };
@@ -1134,11 +1289,12 @@ export default function Hero1() {
     const sz = ov.size ?? "10vw";
     return {
       ...item,
-      _top:    ov.top    ?? "auto",
-      _left:   ov.left   ?? "auto",
-      _right:  ov.right  ?? "auto",
+      _top: ov.top ?? "auto",
+      _left: ov.left ?? "auto",
+      _right: ov.right ?? "auto",
       _bottom: ov.bottom ?? "auto",
-      _w: sz, _h: sz,
+      _w: sz,
+      _h: sz,
     };
   });
 
@@ -1146,10 +1302,10 @@ export default function Hero1() {
     const visibleCount = !fluid
       ? SLIDES.length
       : viewportW <= 575
-      ? 2
-      : viewportW <= 768
-      ? 3
-      : SLIDES.length;
+        ? 2
+        : viewportW <= 768
+          ? 3
+          : SLIDES.length;
 
     if (visibleCount >= SLIDES.length) {
       return SLIDES.map((slide, index) => ({ slide, index }));
@@ -1171,32 +1327,43 @@ export default function Hero1() {
       <div className={fluid ? "hs-fluid-tabs" : "hs-tabs-row"}>
         <button
           className={fluid ? "hs-fluid-arrow" : "hs-arrow"}
-          onClick={() => navigate("prev")} aria-label="Previous"
-        >&#8592;</button>
-        {visibleTabs.map(({ slide: s, index: i }) => (
-        <div
-          key={s.id}
-          className={`${fluid ? "hs-fluid-tab" : "hs-tab"}${i === current ? " active" : ""}`}
-          style={i === current ? { borderColor: s.accent } : {}}
-          onClick={() => goTo(i)}
-          role="button" tabIndex={0}
-          onKeyDown={(e) => e.key === "Enter" && goTo(i)}
+          onClick={() => navigate("prev")}
+          aria-label="Previous"
         >
-          <Image
-            src={s.tabIcon} alt={s.tabLabel}
-            width={fluid ? 30 : 48} height={fluid ? 30 : 48}
-            style={{ objectFit: "contain" }}
-          />
-          <span
-            className={fluid ? "hs-fluid-tab-label" : "hs-tab-label"}
-            style={i === current ? { color: s.accent } : {}}
-          >{s.tabLabel}</span>
-        </div>
+          &#8592;
+        </button>
+        {visibleTabs.map(({ slide: s, index: i }) => (
+          <div
+            key={s.id}
+            className={`${fluid ? "hs-fluid-tab" : "hs-tab"}${i === current ? " active" : ""}`}
+            style={i === current ? { borderColor: s.accent } : {}}
+            onClick={() => goTo(i)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === "Enter" && goTo(i)}
+          >
+            <Image
+              src={s.tabIcon}
+              alt={s.tabLabel}
+              width={fluid ? 30 : 48}
+              height={fluid ? 30 : 48}
+              style={{ objectFit: "contain" }}
+            />
+            <span
+              className={fluid ? "hs-fluid-tab-label" : "hs-tab-label"}
+              style={i === current ? { color: s.accent } : {}}
+            >
+              {s.tabLabel}
+            </span>
+          </div>
         ))}
         <button
           className={fluid ? "hs-fluid-arrow" : "hs-arrow"}
-          onClick={() => navigate("next")} aria-label="Next"
-        >&#8594;</button>
+          onClick={() => navigate("next")}
+          aria-label="Next"
+        >
+          &#8594;
+        </button>
       </div>
     );
   };
@@ -1205,55 +1372,112 @@ export default function Hero1() {
     <>
       <style>{CSS}</style>
       <section className="hs-root" style={{ backgroundColor: slide.bgColor }}>
-        <div className="hs-bg-gradient visible"
-          style={{ background: `linear-gradient(155deg, ${slide.bgColor} 30%, ${slide.gradientEnd} 100%)` }} />
+        <div
+          className="hs-bg-gradient visible"
+          style={{
+            background: `linear-gradient(155deg, ${slide.bgColor} 30%, ${slide.gradientEnd} 100%)`,
+          }}
+        />
 
         {/* ══════════════════════════════════════════════
             DESKTOP — scaled-stage layout (> 1440px only)
         ════════════════════════════════════════════════ */}
         <div className="hs-stage-outer" style={{ height: stageHeight }}>
-          <div key={`stage-${animKey}`} className="hs-stage" style={{ "--hs-stage-scale": stageScale }}>
+          <div
+            key={`stage-${animKey}`}
+            className="hs-stage"
+            style={{ "--hs-stage-scale": stageScale }}
+          >
             <div
-              key={`wm-${animKey}`} className="hs-watermark hs-anim-watermark"
+              key={`wm-${animKey}`}
+              className="hs-watermark hs-anim-watermark"
               style={{
                 backgroundImage: watermarkGradient,
-                WebkitBackgroundClip: "text", backgroundClip: "text",
-                color: "transparent", letterSpacing: "-5px",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                letterSpacing: "-5px",
               }}
-            >{slide.bgText}</div>
+            >
+              {slide.bgText}
+            </div>
 
             <div className="hs-grid">
               <div className="hs-left">
-                <h1 key={`title-${animKey}`} className={`hs-title ${titleAnim}`}>{slide.line1}<br />{slide.line2}</h1>
-                <p  key={`sub-${animKey}`}   className={`hs-subtitle ${subtitleAnim}`}>{slide.subtitle}</p>
+                <h1
+                  key={`title-${animKey}`}
+                  className={`hs-title ${titleAnim}`}
+                >
+                  {slide.line1}
+                  <br />
+                  {slide.line2}
+                </h1>
+                <p
+                  key={`sub-${animKey}`}
+                  className={`hs-subtitle ${subtitleAnim}`}
+                >
+                  {slide.subtitle}
+                </p>
               </div>
 
               <div className="hs-center">
                 <div className="hs-bowl-wrap">
                   {cupAnimating && prevCup !== null && (
-                    <div className={`hs-bowl-item ${cupOutAnim}`}
-                      onAnimationEnd={() => { setCupAnimating(false); setPrevCup(null); }}>
-                      <Image src={SLIDES[prevCup].mainImg} alt="" fill sizes="500px" style={{ objectFit: "contain" }} />
+                    <div
+                      className={`hs-bowl-item ${cupOutAnim}`}
+                      onAnimationEnd={() => {
+                        setCupAnimating(false);
+                        setPrevCup(null);
+                      }}
+                    >
+                      <Image
+                        src={SLIDES[prevCup].mainImg}
+                        alt=""
+                        fill
+                        sizes="500px"
+                        style={{ objectFit: "contain" }}
+                      />
                     </div>
                   )}
-                  <div key={`cup-in-${animKey}-${current}`} className={`hs-bowl-item ${cupAnimating ? cupInAnim : ""}`}>
-                    <Image src={slide.mainImg} alt={`${slide.line1} ${slide.line2}`} fill sizes="500px"
-                      style={{ objectFit: "contain" }} priority />
+                  <div
+                    key={`cup-in-${animKey}-${current}`}
+                    className={`hs-bowl-item ${cupAnimating ? cupInAnim : ""}`}
+                  >
+                    <Image
+                      src={slide.mainImg}
+                      alt={`${slide.line1} ${slide.line2}`}
+                      fill
+                      sizes="500px"
+                      style={{ objectFit: "contain" }}
+                      priority
+                    />
                   </div>
                 </div>
                 {slide.floats.map((item, i) => {
                   const fw = normalizeDimension(item.width ?? item.size);
                   const fh = normalizeDimension(item.height ?? item.size);
                   return (
-                    <div key={`fl-${animKey}-${i}`} className="hs-float"
+                    <div
+                      key={`fl-${animKey}-${i}`}
+                      className="hs-float"
                       style={{
-                        top: item.top ?? "auto", left: item.left ?? "auto",
-                        right: item.right ?? "auto", bottom: item.bottom ?? "auto",
-                        width: fw, height: fh,
-                        animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay||"0s"} both,
-                                    hs-bob 3.5s ease-in-out ${item.delay||"0s"} infinite`,
-                      }}>
-                      <Image src={item.src} alt={item.alt} fill sizes="140px" style={{ objectFit: "contain" }} />
+                        top: item.top ?? "auto",
+                        left: item.left ?? "auto",
+                        right: item.right ?? "auto",
+                        bottom: item.bottom ?? "auto",
+                        width: fw,
+                        height: fh,
+                        animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay || "0s"} both,
+                                    hs-bob 3.5s ease-in-out ${item.delay || "0s"} infinite`,
+                      }}
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        sizes="140px"
+                        style={{ objectFit: "contain" }}
+                      />
                     </div>
                   );
                 })}
@@ -1263,7 +1487,13 @@ export default function Hero1() {
                 <p className="hs-card-title">{slide.card.title}</p>
                 <p className="hs-card-desc">{slide.card.desc}</p>
                 <div className="btn-wrapper animated">
-                  <Link href="/products/acaiberry-powder" className="theme-btn-1 btn btn-effect-1 text-uppercase" style={{ backgroundColor: slide.accent }}>View more details</Link>
+                  <Link
+                    href="/products/acaiberry-powder"
+                    className="theme-btn-1 btn btn-effect-1 text-uppercase"
+                    style={{ backgroundColor: slide.accent }}
+                  >
+                    View more details
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1280,15 +1510,20 @@ export default function Hero1() {
         ════════════════════════════════════════════════ */}
         <div className="hs-fluid">
           <div className="hs-fluid-stage">
-
             {/* Watermark */}
-            <div key={`fwm-${animKey}`} className="hs-fluid-watermark"
+            <div
+              key={`fwm-${animKey}`}
+              className="hs-fluid-watermark"
               style={{
                 backgroundImage: watermarkGradient,
-                WebkitBackgroundClip: "text", backgroundClip: "text",
-                color: "transparent", letterSpacing: "-3px",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                letterSpacing: "-3px",
               }}
-            >{slide.bgText}</div>
+            >
+              {slide.bgText}
+            </div>
 
             {/* ── Floats — spread across full stage width ── */}
             {fluidFloats.map((item, i) => {
@@ -1299,16 +1534,25 @@ export default function Hero1() {
                   key={`ffl-${animKey}-${i}`}
                   className="hs-fluid-float"
                   style={{
-                    ...(item._top    !== "auto" ? { top:    item._top    } : {}),
-                    ...(item._left   !== "auto" ? { left:   item._left   } : {}),
-                    ...(item._right  !== "auto" ? { right:  item._right  } : {}),
-                    ...(item._bottom !== "auto" ? { bottom: item._bottom } : {}),
-                    width: sz, height: item._h,
-                    animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay||"0s"} both,
-                                hs-bob 3.5s ease-in-out ${item.delay||"0s"} infinite`,
+                    ...(item._top !== "auto" ? { top: item._top } : {}),
+                    ...(item._left !== "auto" ? { left: item._left } : {}),
+                    ...(item._right !== "auto" ? { right: item._right } : {}),
+                    ...(item._bottom !== "auto"
+                      ? { bottom: item._bottom }
+                      : {}),
+                    width: sz,
+                    height: item._h,
+                    animation: `hs-float-in-bob 0.7s cubic-bezier(0.22,1,0.36,1) ${item.delay || "0s"} both,
+                                hs-bob 3.5s ease-in-out ${item.delay || "0s"} infinite`,
                   }}
                 >
-                  <Image src={item.src} alt={item.alt} fill sizes="20vw" style={{ objectFit: "contain" }} />
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="20vw"
+                    style={{ objectFit: "contain" }}
+                  />
                 </div>
               );
             })}
@@ -1317,10 +1561,18 @@ export default function Hero1() {
             <div className="hs-fluid-main">
               {/* LEFT */}
               <div className="hs-fluid-left">
-                <h1 key={`ftitle-${animKey}`} className={`hs-fluid-title ${titleAnim}`}>
-                  {slide.line1}<br />{slide.line2}
+                <h1
+                  key={`ftitle-${animKey}`}
+                  className={`hs-fluid-title ${titleAnim}`}
+                >
+                  {slide.line1}
+                  <br />
+                  {slide.line2}
                 </h1>
-                <p key={`fsub-${animKey}`} className={`hs-fluid-subtitle ${subtitleAnim}`}>
+                <p
+                  key={`fsub-${animKey}`}
+                  className={`hs-fluid-subtitle ${subtitleAnim}`}
+                >
                   {slide.subtitle}
                 </p>
               </div>
@@ -1329,31 +1581,58 @@ export default function Hero1() {
               <div className="hs-fluid-center">
                 <div className="hs-fluid-bowl-wrap">
                   {cupAnimating && prevCup !== null && (
-                    <div className={`hs-fluid-bowl-item ${cupOutAnim}`}
-                      onAnimationEnd={() => { setCupAnimating(false); setPrevCup(null); }}>
-                      <Image src={SLIDES[prevCup].mainImg} alt="" fill sizes="28vw" style={{ objectFit: "contain" }} />
+                    <div
+                      className={`hs-fluid-bowl-item ${cupOutAnim}`}
+                      onAnimationEnd={() => {
+                        setCupAnimating(false);
+                        setPrevCup(null);
+                      }}
+                    >
+                      <Image
+                        src={SLIDES[prevCup].mainImg}
+                        alt=""
+                        fill
+                        sizes="28vw"
+                        style={{ objectFit: "contain" }}
+                      />
                     </div>
                   )}
-                  <div key={`fcup-${animKey}-${current}`} className={`hs-fluid-bowl-item ${cupAnimating ? cupInAnim : ""}`}>
-                    <Image src={slide.mainImg} alt={`${slide.line1} ${slide.line2}`} fill sizes="28vw"
-                      style={{ objectFit: "contain" }} priority />
+                  <div
+                    key={`fcup-${animKey}-${current}`}
+                    className={`hs-fluid-bowl-item ${cupAnimating ? cupInAnim : ""}`}
+                  >
+                    <Image
+                      src={slide.mainImg}
+                      alt={`${slide.line1} ${slide.line2}`}
+                      fill
+                      sizes="28vw"
+                      style={{ objectFit: "contain" }}
+                      priority
+                    />
                   </div>
                 </div>
               </div>
 
               {/* RIGHT */}
-              <div key={`fcard-${animKey}`} className={`hs-fluid-right ${cardAnim}`}>
-                <p className="hs-fluid-card-title">{slide.card.title}</p>
+              <div
+                key={`fcard-${animKey}`}
+                className={`hs-fluid-right ${cardAnim}`}
+              >
+                <h1 className="hs-fluid-card-title">{slide.card.title}</h1>
                 <p className="hs-fluid-card-desc">{slide.card.desc}</p>
                 <div className="btn-wrapper animated">
-                  <Link href="/products/acaiberry-powder" className="theme-btn-1 btn btn-effect-1 text-uppercase" style={{ backgroundColor: slide.accent }}>
+                  <Link
+                    href="/products/acaiberry-powder"
+                    className="theme-btn-1 btn btn-effect-1 text-uppercase"
+                    style={{ backgroundColor: slide.accent }}
+                  >
                     View more details
                   </Link>
                 </div>
               </div>
             </div>
-
-          </div>{/* /hs-fluid-stage */}
+          </div>
+          {/* /hs-fluid-stage */}
 
           <Tabs fluid={true} />
         </div>

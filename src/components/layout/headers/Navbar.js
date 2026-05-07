@@ -41,7 +41,12 @@ const Navbar = () => {
               headerStyle === 2 ||
               headerStyle === 4) && (
               <li className="special-link text-uppercase">
-                <Link href="/contact">GET A Quote</Link>
+                <Link
+                  href="/contact"
+                  className="theme-btn-1 btn btn-effect-1 text-uppercase"
+                >
+                  GET A Quote
+                </Link>
               </li>
             )}
           </ul>

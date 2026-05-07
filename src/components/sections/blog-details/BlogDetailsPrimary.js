@@ -8,6 +8,7 @@ import BlogCard4 from "@/components/shared/cards/BlogCard4";
 import modifyNumber from "@/libs/modifyNumber";
 import countCommentLength from "@/libs/countCommentLength";
 import sliceText from "@/libs/sliceText";
+import { useState } from "react";
 
 /* ─── tiny icon helpers ─────────────────────────────────────── */
 const CalIcon = () => (
@@ -68,9 +69,34 @@ const BlogDetailsPrimary = () => {
   const totalBlogs = blogs?.length;
   const commentsLength = countCommentLength(comments);
   const totalComments = modifyNumber(commentsLength);
+  const HoverImage = ({ src, alt }) => {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ overflow: "hidden", aspectRatio: "4/3" }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={600}
+        height={450}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          display: "block",
+          transition: "transform 0.5s ease",
+          transform: hovered ? "scale(1.06)" : "scale(1)",
+        }}
+      />
+    </div>
+  );
+};
 
   return (
-    <div style={{ background: T.bg, minHeight: "100vh", fontFamily: T.sans }}>
+    <div style={{minHeight: "100vh" }}>
 
       {/* ══════════════════════════════════════════
           HERO
@@ -205,14 +231,12 @@ const BlogDetailsPrimary = () => {
           </blockquote>
         </div>
 
-        {/* ── Dual images ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "52px" }}>
-          {["/img/blog/blog-details/1.jpg", "/img/service/31.jpg"].map((src, i) => (
-            <div key={i} style={{ overflow: "hidden", aspectRatio: "4/3" }}>
-              <Image src={src} alt={`Article image ${i + 1}`} width={600} height={450} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block"}} />
-            </div>
-          ))}
-        </div>
+       {/* ── Dual images ── */}
+<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "52px" }}>
+  {["/img/blog/blog-details/1.jpg", "/img/service/31.jpg"].map((src, i) => (
+    <HoverImage key={i} src={src} alt={`Article image ${i + 1}`} />
+  ))}
+</div>
 
         {/* ── Section 2 ── */}
         <h2 style={{ fontFamily: T.font, fontSize: "26px", fontWeight: "800", color: T.text, letterSpacing: "-0.02em", margin: "0 0 20px" }}>
@@ -224,7 +248,7 @@ const BlogDetailsPrimary = () => {
 
         {/* ── Stats Card ── */}
         <div style={{
-          background: T.card, borderRadius: T.radius,
+          background: T.card,
           border: `1px solid ${T.border}`,
           padding: "28px 32px", marginBottom: "40px",
           boxShadow: "0 2px 16px rgba(30,70,20,0.07)",
@@ -287,7 +311,7 @@ const BlogDetailsPrimary = () => {
 
         {/* ══ Author card ══ */}
         <div style={{
-          background: T.card, borderRadius: T.radius, border: `1px solid ${T.border}`,
+          background: T.card, border: `1px solid ${T.border}`,
           padding: "28px 32px", marginBottom: "52px",
           display: "flex", gap: "20px", alignItems: "flex-start",
           boxShadow: "0 2px 16px rgba(30,70,20,0.07)",
@@ -306,10 +330,6 @@ const BlogDetailsPrimary = () => {
             </p>
           </div>
         </div>
-
-
-        {/* ── divider ── */}
-        <div style={{ height: 1, background: T.border, marginBottom: "48px" }} />
       </div>
 
     </div>

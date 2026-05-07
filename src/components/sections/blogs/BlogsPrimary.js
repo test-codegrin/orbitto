@@ -60,6 +60,54 @@ const blogs = [
       "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=600&q=80",
     imageBg: "#1a6b3c",
   },
+  {
+    id: 5,
+    category: "Science",
+    date: "Sep 29, 2024",
+    readTime: "7 min read",
+    title: "The Role of Fermentation in Functional Foods",
+    excerpt:
+      "Exploring how fermentation enhances nutrient availability and creates more potent superfood formulations.",
+    image:
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    imageBg: "#dfe8d6",
+  },
+  {
+    id: 6,
+    category: "Trends",
+    date: "Sep 12, 2024",
+    readTime: "6 min read",
+    title: "Plant-Based Protein Powders with Probiotic Support",
+    excerpt:
+      "Why the latest supplement blends combine plant proteins with probiotics for digestive resilience.",
+    image:
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+    imageBg: "#d8e9f0",
+  },
+  {
+    id: 7,
+    category: "Technology",
+    date: "Sep 04, 2024",
+    readTime: "7 min read",
+    title: "Precision Milling Techniques for Nutrient Preservation",
+    excerpt:
+      "How ultra-fine milling technology retains delicate vitamins and minerals during powder extraction.",
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80",
+    imageBg: "#45526f",
+  },
+  {
+    id: 8,
+    category: "Nutrition",
+    date: "Aug 28, 2024",
+    readTime: "5 min read",
+    title: "Optimizing Daily Greens for Better Absorption",
+    excerpt:
+      "Simple formulation tips to maximize the benefits of greens powders, from enzymes to bioactive stabilizers.",
+    image:
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80",
+    imageBg: "#3f673c",
+  },
 ];
 
 const categoryColors = {
@@ -122,9 +170,9 @@ const BlogCard = ({ blog }) => {
         overflow: "hidden",
         transition: "all 0.35s ease",
         transform: hovered ? "translateY(-6px)" : "translateY(0px)",
-        boxShadow: hovered
-          ? "0 18px 45px rgba(20,40,10,0.12)"
-          : "0 4px 18px rgba(20,40,10,0.06)",
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
       }}
     >
       {/* IMAGE */}
@@ -159,7 +207,7 @@ const BlogCard = ({ blog }) => {
             fontSize: "12px",
             fontWeight: "600",
             color: "#1d3d19",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
+            // boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
           }}
         >
           {blog.category}
@@ -173,7 +221,7 @@ const BlogCard = ({ blog }) => {
           padding: "24px 26px 26px",
           position: "relative",
           zIndex: 2,
-          minHeight: "300px",
+          flex: 1,
           display: "flex",
           flexDirection: "column",
         }}
@@ -289,7 +337,6 @@ const BlogsPrimary = () => {
     >
       {/* Header Section */}
       <div style={{ textAlign: "center", padding: "60px 24px 40px" }}>
-
         {/* Title */}
         <h1
           style={{
@@ -298,7 +345,6 @@ const BlogsPrimary = () => {
             color: "#1a3a18",
             margin: "0 0 16px",
             letterSpacing: "-0.03em",
-            fontFamily: "'Georgia', 'Times New Roman', serif",
             lineHeight: "1.1",
           }}
         >
@@ -342,14 +388,18 @@ const BlogsPrimary = () => {
                 alignItems: "center",
                 gap: "4px",
                 padding: "10px 22px",
-                border: isActive ? "none" : "1.5px solid #dde8cc",
+                border: "1.5px solid #dde8cc",
                 background: isActive ? "#1e4d14" : "#ffffff",
                 color: isActive ? "#ffffff" : "#4a6a38",
                 fontWeight: "600",
                 fontSize: "12px",
                 cursor: "pointer",
-                transition: "all 0.2s ease",
+                transition:
+                  "background 0.2s ease, color 0.2s ease, border-color 0.2s ease",
                 letterSpacing: "0.01em",
+                minWidth: "140px",
+                boxSizing: "border-box",
+                borderColor: isActive ? "#1e4d14" : "#dde8cc",
               }}
             >
               <span style={{ fontSize: "13px", opacity: isActive ? 1 : 0.7 }}>
@@ -377,6 +427,7 @@ const BlogsPrimary = () => {
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))",
               gap: "28px",
+              alignItems: "stretch", // ← add
             }}
           >
             {filtered.map((blog) => (
@@ -435,7 +486,6 @@ const BlogsPrimary = () => {
                 fontWeight: "800",
                 color: "#1a3a18",
                 margin: "0 0 12px",
-                fontFamily: "'Georgia', serif",
                 letterSpacing: "-0.02em",
                 lineHeight: "1.2",
               }}
@@ -478,15 +528,12 @@ const BlogsPrimary = () => {
                   fontSize: "14px",
                   color: "#1a3a18",
                   outline: "none",
-                  fontFamily: "inherit",
                   boxSizing: "border-box",
                 }}
               />
 
               <div className="btn-wrapper animated">
-                <button 
-                className="theme-btn-1 btn btn-effect-1 text-uppercase"
-                >
+                <button className="theme-btn-1 btn btn-effect-1 text-uppercase">
                   Subscribe
                 </button>
               </div>
