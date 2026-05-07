@@ -223,7 +223,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Vegetable/Bittermelon.png", alt: "Bitter Gourd",
+        src: "/img/slider/Vegetable/Bittermelon.png", alt: "BitterGourd",
         top: "-10%", left: "-1%", size: 334, delay: "0.15s",
         fluid: {
            768: { top: "0%",   left: "0%",   size: "18vw" },
@@ -393,7 +393,7 @@ const SLIDES = [
     mainImg: "/img/slider/main/Red chilli.png",
     floats: [
       {
-        src: "/img/slider/Spices/GaramMsala.png", alt: "Garam Masala",
+        src: "/img/slider/Spices/GaramMsala.png", alt: "GaramMasala",
         top: "-5%", left: "-2%", size: 310,
         fluid: {
            768: { top: "0%",  left: "0%",   size: "18vw" },
@@ -515,7 +515,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Herbs/PricklyPear.png", alt: "Prickly Pear",
+        src: "/img/slider/Herbs/PricklyPear.png", alt: "PricklyPear",
         top: "-5%", left: "-2%", size: 300,
         fluid: {
            768: { top: "0%",  left: "0%",   size: "18vw" },
@@ -541,7 +541,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Herbs/MoringaLeaf.png", alt: "Moringa Leaf",
+        src: "/img/slider/Herbs/MoringaLeaf.png", alt: "MoringaLeaf",
         bottom: "-5%", right: "27%", size: 352,
         fluid: {
            768: { bottom: "2%",  right: "14%", size: "22vw" },
@@ -567,7 +567,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Herbs/GreenFennel.png", alt: "Green Fennel",
+        src: "/img/slider/Herbs/GreenFennel.png", alt: "GreenFennel",
         top: "-20%", right: "28%", size: 298,
         fluid: {
            768: { top: "2%",  right: "14%", size: "18vw" },

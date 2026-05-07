@@ -71,7 +71,7 @@
       "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Honey powder.png",
+    "image": "/img/product/Herbs/Aloevera.png",
     "slug": "aloevera-powder"
   },
   {
@@ -112,10 +112,9 @@
     "image": "/img/product/Herbs/Amla.png",
     "slug": "amla-powder"
   },
-
   {
     "id": 5,
-    "title": "Apple (Green) Powder",
+    "title": "Green Apple Powder",
     "desc": "Green apple powder combines the refreshing taste of fresh apples with the convenience of a shelf-stable, easy-to-use format. Known for its tangy flavor and nutritional profile, it provides vitamins, antioxidants, and fiber that support digestion and overall wellness.\nDrymac’s Green Apple Powder dissolves quickly in water, blends smoothly, and retains its authentic apple character. Its versatility makes it a popular choice across food and beverage manufacturing, nutraceuticals, and functional foods.",
     "description": "Green apple powder combines the refreshing taste of fresh apples with the convenience of a shelf-stable, easy-to-use format. Known for its tangy flavor and nutritional profile, it provides vitamins, antioxidants, and fiber that support digestion and overall wellness.\nDrymac’s Green Apple Powder dissolves quickly in water, blends smoothly, and retains its authentic apple character. Its versatility makes it a popular choice across food and beverage manufacturing, nutraceuticals, and functional foods.",
     "applications_and_uses": [
@@ -149,10 +148,9 @@
     "image": "/img/product/fruit/GreenApple.png",
     "slug": "green-apple-powder"
   },
-
   {
     "id": 7,
-    "title": "Apple Powder",
+    "title": "Red Apple Powder",
     "desc": "Drymac’s Apple Powder delivers the authentic flavor, nutrients, and aroma of fresh apples in a shelf-stable powdered form. It blends easily, dissolves quickly, and retains the fruit’s natural sweetness and tart balance.\nPacked with antioxidants, dietary fiber, and natural sugars, Apple Powder supports both flavor enhancement and functional nutrition. It’s widely used in instant mixes, beverages, bakery items, and nutraceutical products for its versatility and consistent performance.\nOur apple powder ensures uniform taste, easy solubility, and a smooth texture — making it an excellent choice for both health-focused and indulgent formulations.",
     "description": "Drymac’s Apple Powder delivers the authentic flavor, nutrients, and aroma of fresh apples in a shelf-stable powdered form. It blends easily, dissolves quickly, and retains the fruit’s natural sweetness and tart balance.\nPacked with antioxidants, dietary fiber, and natural sugars, Apple Powder supports both flavor enhancement and functional nutrition. It’s widely used in instant mixes, beverages, bakery items, and nutraceutical products for its versatility and consistent performance.\nOur apple powder ensures uniform taste, easy solubility, and a smooth texture — making it an excellent choice for both health-focused and indulgent formulations.",
     "applications_and_uses": [
@@ -220,7 +218,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/ASH gourd.png",
+    "image": "/img/product/vegetable/AshGourd.png",
     "slug": "ash-gourd-powder"
   },
   {
@@ -259,7 +257,6 @@
     "image": "/img/product/fruit/Avocado.png",
     "slug": "avocado-powder"
   },
-
   {
     "id": 11,
     "title": "Beetroot Powder",
@@ -298,12 +295,12 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Beetroot.png",
+    "image": "/img/product/vegetable/Beetroot.png",
     "slug": "beetroot-powder"
   },
   {
     "id": 12,
-    "title": "Bitter Gourd powder",
+    "title": "Bitter Gourd Powder",
     "desc": "Bitter gourd powder retains the vegetable’s naturally bitter flavor, along with its inherent nutrient profile, while offering good solubility and flowability. The spray-drying process allows the characteristic taste and attributes of bitter gourd to be incorporated into dry blends and food applications.\nBitter gourd fruit is known for containing proteins, vitamins, and minerals common to cucurbit vegetables. The powder format allows its naturally occurring components to be used in foods, beverages, herbal preparations, and cosmetic formulations.",
     "description": "Bitter gourd powder retains the vegetable’s naturally bitter flavor, along with its inherent nutrient profile, while offering good solubility and flowability. The spray-drying process allows the characteristic taste and attributes of bitter gourd to be incorporated into dry blends and food applications.\nBitter gourd fruit is known for containing proteins, vitamins, and minerals common to cucurbit vegetables. The powder format allows its naturally occurring components to be used in foods, beverages, herbal preparations, and cosmetic formulations.",
     "applications_and_uses": [
@@ -334,7 +331,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Bitter gourd.png",
+    "image": "/img/product/vegetable/BitterGourd.png",
     "slug": "bitter-gourd-powder"
   },
   {
@@ -521,7 +518,7 @@
       "Dosage Levels": "0.01% up to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Bottle gourd.png",
+    "image": "/img/product/vegetable/BottleGourd.png",
     "slug": "bottle-gourd-powder"
   },
   {
@@ -556,10 +553,9 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Broccoli.png",
+    "image": "/img/product/vegetable/Broccoli.png",
     "slug": "broccoli-powder"
   },
-
   {
     "id": 20,
     "title": "Cabbage Powder",
@@ -595,7 +591,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Cabbage.png",
+    "image": "/img/product/vegetable/Cabbage.png",
     "slug": "cabbage-powder"
   },
   {
@@ -631,7 +627,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/capsicum.png",
+    "image": "/img/product/vegetable/Capsicum.png",
     "slug": "capsicum-powder"
   },
   {
@@ -668,7 +664,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Carrot.png",
+    "image": "/img/product/vegetable/Carrot.png",
     "slug": "carrot-powder"
   },
   {
@@ -705,10 +701,9 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/caulifiower.png",
+    "image": "/img/product/vegetable/Cauliflower.png",
     "slug": "cauliflower-powder"
   },
-
   {
     "id": 27,
     "title": "Cherry Powder",
@@ -745,7 +740,6 @@
     "image": "/img/product/fruit/Cherry.png",
     "slug": "cherry-powder"
   },
-
   {
     "id": 29,
     "title": "Chikoo Powder",
@@ -816,10 +810,9 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines.)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Coriander.png",
+    "image": "/img/product/vegetable/Coriander.png",
     "slug": "coriander-powder"
   },
-
   {
     "id": 37,
     "title": "Custard Apple Powder",
@@ -861,7 +854,7 @@
   },
   {
     "id": 38,
-    "title": "Date Sugar (From Dry Dates)",
+    "title": "Date Sugar From Dry Dates",
     "desc": "This naturally derived sugar offers a warm, caramel-like sweetness with a subtle fruity aroma, closely resembling the flavor profile of whole dates. Its minimally processed nature makes it suitable for applications where nutritional value and ingredient transparency are important.\nDate sugar blends well into dry mixes and formulations, providing sweetness along with functional nutritional benefits. It is widely used in bakery products, beverages, breakfast cereals, and functional foods as a natural sugar replacement without the need for additives or preservatives.",
     "description": "This naturally derived sugar offers a warm, caramel-like sweetness with a subtle fruity aroma, closely resembling the flavor profile of whole dates. Its minimally processed nature makes it suitable for applications where nutritional value and ingredient transparency are important.\nDate sugar blends well into dry mixes and formulations, providing sweetness along with functional nutritional benefits. It is widely used in bakery products, beverages, breakfast cereals, and functional foods as a natural sugar replacement without the need for additives or preservatives.",
     "applications_and_uses": [
@@ -893,7 +886,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Date powder.png",
+    "image": "/img/product/Herbs/DateSugar.png",
     "slug": "date-sugar-from-dry-dates"
   },
   {
@@ -930,7 +923,7 @@
       "Dosage Levels": "Starts from 0.01% to 5.0%; adjustable as per application and regulatory requirements"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Honey powder.png",
+    "image": "/img/product/Herbs/DatePowder.png",
     "slug": "dates-powder"
   },
   {
@@ -1004,7 +997,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Garlic.png",
+    "image": "/img/product/vegetable/Garlic.png",
     "slug": "garlic-powder"
   },
   {
@@ -1042,7 +1035,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Ginger.png",
+    "image": "/img/product/vegetable/Ginger.png",
     "slug": "ginger-powder"
   },
   {
@@ -1079,7 +1072,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)."
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Green chilli.png",
+    "image": "/img/product/vegetable/GreenChilli.png",
     "slug": "green-chilli-powder"
   },
   {
@@ -1118,7 +1111,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Green fennel.png",
+    "image": "/img/product/Herbs/Greenfennel.png",
     "slug": "green-fennel-powder"
   },
   {
@@ -1159,7 +1152,7 @@
   },
   {
     "id": 46,
-    "title": "Green Mango-Amchur Powder",
+    "title": "Green Mango Amchur Powder",
     "desc": "Naturally rich in vitamin C, antioxidants, and organic fruit acids, amchur powder provides both flavor intensity and functional versatility in clean-label formulations. Its bright, tart taste makes it a preferred souring agent in spice blends, snacks, and traditional recipes without adding moisture.\nWith a fine, free-flowing texture and consistent flavor strength, amchur powder blends easily into dry mixes and prepared foods. It offers a convenient, shelf-stable alternative to fresh or liquid souring ingredients, ensuring uniform taste and ease of handling in commercial food processing.",
     "description": "Naturally rich in vitamin C, antioxidants, and organic fruit acids, amchur powder provides both flavor intensity and functional versatility in clean-label formulations. Its bright, tart taste makes it a preferred souring agent in spice blends, snacks, and traditional recipes without adding moisture.\nWith a fine, free-flowing texture and consistent flavor strength, amchur powder blends easily into dry mixes and prepared foods. It offers a convenient, shelf-stable alternative to fresh or liquid souring ingredients, ensuring uniform taste and ease of handling in commercial food processing.",
     "applications_and_uses": [
@@ -1194,10 +1187,9 @@
     "image": "/img/product/fruit/GreenMango.png",
     "slug": "green-mango-amchur-powder"
   },
- 
   {
     "id": 48,
-    "title": "Guava Powder (Pink)",
+    "title": "Guava Powder Pink",
     "desc": "Spray-dried pink guava powder functions as both a natural sweetening component and a flavoring agent. It helps enhance the nutritional and functional profile of finished products while delivering the characteristic tropical notes of pink guava. Its smooth solubility makes it suitable for fruit custards, ice creams, yogurts, and applications that require additional fruit solids in instant drinks and flavored beverages.\nThis powder is valued not only for its flavor but also for its nutrient content, including vitamin C and folate, which support general wellness. Its ease of use and consistency make it ideal for manufacturers looking to incorporate natural fruit identity into formulations without handling fresh fruit.",
     "description": "Spray-dried pink guava powder functions as both a natural sweetening component and a flavoring agent. It helps enhance the nutritional and functional profile of finished products while delivering the characteristic tropical notes of pink guava. Its smooth solubility makes it suitable for fruit custards, ice creams, yogurts, and applications that require additional fruit solids in instant drinks and flavored beverages.\nThis powder is valued not only for its flavor but also for its nutrient content, including vitamin C and folate, which support general wellness. Its ease of use and consistency make it ideal for manufacturers looking to incorporate natural fruit identity into formulations without handling fresh fruit.",
     "applications_and_uses": [
@@ -1233,7 +1225,7 @@
   },
   {
     "id": 49,
-    "title": "Guava Powder (White)",
+    "title": "Guava Powder White",
     "desc": "Spray-dried white guava powder functions as both a natural sweetener and flavoring agent, delivering the characteristic mellow, fruity profile of white guava. Its nutritional attributes add value to a variety of applications, and it integrates seamlessly into recipes that require fruit solids, including custards, ice creams, yogurts, and flavor-enhanced beverage mixes.\nWhite guava powder is versatile and easy to use, adding gentle sweetness and enhancing the overall body and aroma in formulations. Naturally occurring nutrients found in guava—such as folate—contribute to its functional appeal. It supports the creation of smooth, stable mixtures and is suitable for applications ranging from bakery items to dairy-based products.",
     "description": "Spray-dried white guava powder functions as both a natural sweetener and flavoring agent, delivering the characteristic mellow, fruity profile of white guava. Its nutritional attributes add value to a variety of applications, and it integrates seamlessly into recipes that require fruit solids, including custards, ice creams, yogurts, and flavor-enhanced beverage mixes.\nWhite guava powder is versatile and easy to use, adding gentle sweetness and enhancing the overall body and aroma in formulations. Naturally occurring nutrients found in guava—such as folate—contribute to its functional appeal. It supports the creation of smooth, stable mixtures and is suitable for applications ranging from bakery items to dairy-based products.",
     "applications_and_uses": [
@@ -1269,7 +1261,7 @@
   },
   {
     "id": 50,
-    "title": "Honey",
+    "title": "Honey Powder",
     "desc": "Honey is produced by spray-drying fresh liquid honey at high temperatures to convert it into a stable, free-flowing powder, often referred to as “dry honey.” It retains the mild aroma, floral-nutty sweetness, and characteristic flavor profile of liquid honey, with the primary difference being its powdered texture. When water is added, the powder can be reconstituted back into liquid honey form.\nHoney naturally contains phenolic acids, flavonoids, proteins, enzymes, amino acids, vitamins, and minerals, which are commonly associated, in a general non-medical sense, with antioxidant and prebiotic characteristics. The powdered format offers improved handling, moisture management, and formulation stability across a wide range of food applications.",
     "description": "Honey is produced by spray-drying fresh liquid honey at high temperatures to convert it into a stable, free-flowing powder, often referred to as “dry honey.” It retains the mild aroma, floral-nutty sweetness, and characteristic flavor profile of liquid honey, with the primary difference being its powdered texture. When water is added, the powder can be reconstituted back into liquid honey form.\nHoney naturally contains phenolic acids, flavonoids, proteins, enzymes, amino acids, vitamins, and minerals, which are commonly associated, in a general non-medical sense, with antioxidant and prebiotic characteristics. The powdered format offers improved handling, moisture management, and formulation stability across a wide range of food applications.",
     "applications_and_uses": [
@@ -1303,10 +1295,9 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Wheat grass.png",
+    "image": "/img/product/Herbs/Wheatgrass.png",
     "slug": "honey-powder"
   },
- 
   {
     "id": 52,
     "title": "Jackfruit Powder",
@@ -1377,7 +1368,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Jelepeno Chilli.png",
+    "image": "/img/product/vegetable/JelepenoChilli.png",
     "slug": "jalapeno-chilli-powder"
   },
   {
@@ -1519,7 +1510,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Lettuce.png",
+    "image": "/img/product/vegetable/Lettuce.png",
     "slug": "lettuce-powder"
   },
   {
@@ -1686,7 +1677,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory requirements)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Mint.png",
+    "image": "/img/product/vegetable/Mint.png",
     "slug": "mint-powder"
   },
   {
@@ -1723,7 +1714,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Moringa leaf.png",
+    "image": "/img/product/Herbs/Moringaleaf.png",
     "slug": "moringa-leaf-powder"
   },
   {
@@ -1829,7 +1820,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Okra.png",
+    "image": "/img/product/vegetable/Okra.png",
     "slug": "okra-powder"
   },
   {
@@ -1865,7 +1856,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Onine.png",
+    "image": "/img/product/vegetable/Onine.png",
     "slug": "onion-powder"
   },
   {
@@ -1940,7 +1931,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Passion fruit.png",
+    "image": "/img/product/fruit/PassionFruit.png",
     "slug": "passion-fruit-powder"
   },
   {
@@ -2088,7 +2079,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Prickly pear.png",
+    "image": "/img/product/Herbs/Pricklypear.png",
     "slug": "prickly-pear-powder"
   },
   {
@@ -2125,7 +2116,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Pumpkin.png",
+    "image": "/img/product/vegetable/Pumpkin.png",
     "slug": "pumpkin-powder"
   },
   {
@@ -2234,8 +2225,8 @@
       "Dosage Levels": "0.01–5.0%, adjustable as per application and regulatory requirements"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/RipeBanana.png",
-    "slug": "ripe-banana-powder"
+    "image": "/img/product/fruit/RipePapaya.png",
+    "slug": "ripe-papaya-powder"
   },
   {
     "id": 77,
@@ -2272,11 +2263,9 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Rose flavor.png",
+    "image": "/img/product/Herbs/Roseflavor.png",
     "slug": "rose-flavor-powder"
   },
- 
-  
   {
     "id": 80,
     "title": "Spinach Powder",
@@ -2311,7 +2300,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Spinach.png",
+    "image": "/img/product/vegetable/Spinach.png",
     "slug": "spinach-powder"
   },
   {
@@ -2351,7 +2340,6 @@
     "image": "/img/product/Herbs/Spirulina.png",
     "slug": "spirulina-powder"
   },
-
   {
     "id": 83,
     "title": "Strawberry Powder",
@@ -2388,10 +2376,9 @@
       "Dosage Levels": "Starts at 0.01% to 5.0%, adjustable as per application and regulatory guidelines"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/strawberry.png",
+    "image": "/img/product/fruit/Strawberry.png",
     "slug": "strawberry-powder"
   },
-  
   {
     "id": 85,
     "title": "Sugarcane Juice Powder",
@@ -2426,7 +2413,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Sugercan.png",
+    "image": "/img/product/fruit/Sugarcane.png",
     "slug": "sugarcane-juice-powder"
   },
   {
@@ -2464,7 +2451,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Sweet Potato.png",
+    "image": "/img/product/vegetable/SweetPotato.png",
     "slug": "sweet-potato-powder"
   },
   {
@@ -2500,7 +2487,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Tamarina.png",
+    "image": "/img/product/vegetable/Tamarind.png",
     "slug": "tamarind-powder"
   },
   {
@@ -2537,7 +2524,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Tomato.png",
+    "image": "/img/product/vegetable/Tomato.png",
     "slug": "tomato-powder"
   },
   {
@@ -2577,7 +2564,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Unripe Banana.png",
+    "image": "/img/product/fruit/UnripeBanana.png",
     "slug": "unripe-banana-powder"
   },
   {
@@ -2613,11 +2600,9 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Unripe papaya.png",
+    "image": "/img/product/fruit/UnripePapaya.png",
     "slug": "unripe-papaya-powder"
   },
-  
- 
   {
     "id": 93,
     "title": "Watermelon Powder",
@@ -2690,7 +2675,7 @@
       "Type": "Raw, Unprocessed, Unfiltered"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Raw ajwain honey.png",
+    "image": "/img/product/honey/Rawajwainhoney.png",
     "slug": "raw-ajwain-honey"
   },
   {
@@ -2727,7 +2712,7 @@
       "Type": "Raw, Unprocessed"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Eucalyptus.png",
+    "image": "/img/product/honey/Eucalyptus.png",
     "slug": "eucalyptus-honey"
   },
   {
@@ -2764,7 +2749,7 @@
       "Type": "Creamed / Set Honey"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Edcalyptus honey.png",
+    "image": "/img/product/honey/Edcalyptushoney.png",
     "slug": "mustard-cream-honey"
   },
   {
@@ -2801,12 +2786,12 @@
       "Type": "Raw, Natural, Monofloral"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Sunflower honey.png",
+    "image": "/img/product/honey/Sunflowerhoney.png",
     "slug": "sunflower-honey"
   },
   {
     "id": 99,
-    "title": "Acacia (Kikar) Honey",
+    "title": "Acacia Kikar Honey",
     "desc": "Acacia Honey, also known as Kikar Honey in India, is one of the most prized varieties of honey in the world. Sourced from the nectar of white Acacia blossoms, it is characterized by its exceptionally light color, mild delicate sweetness, and remarkably slow crystallization. Its low sucrose content and high fructose level make it a preferred honey for health-conscious consumers.",
     "description": "Acacia Honey, also known as Kikar Honey in India, is one of the most prized varieties of honey in the world. Sourced from the nectar of white Acacia blossoms, it is characterized by its exceptionally light color, mild delicate sweetness, and remarkably slow crystallization. Its low sucrose content and high fructose level make it a preferred honey for health-conscious consumers.",
     "applications_and_uses": [
@@ -2838,12 +2823,12 @@
       "Type": "Raw, Monofloral, Unprocessed"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Acacia (Kikar) Honey.png",
+    "image": "/img/product/honey/Acacia(Kikar)Honey.png",
     "slug": "acacia-kikar-honey"
   },
   {
     "id": 100,
-    "title": "Berseem (Alfalfa) Honey",
+    "title": "Berseem Alfalfa Honey",
     "desc": "Berseem Honey, also known as Alfalfa Honey, is a light, mild, and aromatic honey harvested from the blossoms of Berseem clover — one of the most cultivated fodder crops in India. With its clean sweetness and fine crystalline texture, it is a popular table honey and widely used in the food processing industry for its neutral flavor profile.",
     "description": "Berseem Honey, also known as Alfalfa Honey, is a light, mild, and aromatic honey harvested from the blossoms of Berseem clover — one of the most cultivated fodder crops in India. With its clean sweetness and fine crystalline texture, it is a popular table honey and widely used in the food processing industry for its neutral flavor profile.",
     "applications_and_uses": [
@@ -2875,7 +2860,7 @@
       "Type": "Raw, Natural, Monofloral"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Berseem (Alfalfa) honey.png",
+    "image": "/img/product/honey/Berseem(Alfalfa)honey.png",
     "slug": "berseem-alfalfa-honey"
   },
   {
@@ -2912,12 +2897,12 @@
       "Type": "Raw, Polyfloral, Natural"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Multiflora Honey.png",
+    "image": "/img/product/honey/MultifloraHoney.png",
     "slug": "multiflora-honey"
   },
   {
     "id": 102,
-    "title": "Sidr (Wild Berry) Honey",
+    "title": "Sidr Wild Berry Honey",
     "desc": "Sidr Honey is one of the rarest and most highly valued honeys in the world, harvested from the nectar of the ancient Sidr tree (Ziziphus spina-christi), also known as the Wild Berry or Lote tree. Prized in Middle Eastern and South Asian cultures for centuries, it is renowned for its thick, rich consistency, deeply complex flavor, and exceptional therapeutic properties.",
     "description": "Sidr Honey is one of the rarest and most highly valued honeys in the world, harvested from the nectar of the ancient Sidr tree (Ziziphus spina-christi), also known as the Wild Berry or Lote tree. Prized in Middle Eastern and South Asian cultures for centuries, it is renowned for its thick, rich consistency, deeply complex flavor, and exceptional therapeutic properties.",
     "applications_and_uses": [
@@ -2949,7 +2934,7 @@
       "Type": "Raw, Premium Monofloral, Unprocessed"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Sidr (wild berry) honey.png",
+    "image": "/img/product/honey/Sidr(wildberry)honey.png",
     "slug": "sidr-wild-berry-honey"
   },
   {
@@ -2986,7 +2971,7 @@
       "Type": "Raw, Wild-Harvested, Unfiltered, Unprocessed"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Wild Forest honey.png",
+    "image": "/img/product/honey/WildForesthoney.png",
     "slug": "wild-forest-honey"
   },
   {
@@ -3023,7 +3008,7 @@
       "Type": "Raw, Monofloral, Natural"
     },
     "type": "Honey",
-    "image": "/img/product/Honey/Coriander Honey.png",
+    "image": "/img/product/honey/CorianderHoney.png",
     "slug": "coriander-honey"
   },
   {
@@ -3063,7 +3048,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/Spices/Turmeric.png",
+    "image": "/img/product/spices/Turmeric.png",
     "slug": "turmeric-powder"
   },
   {
@@ -3103,7 +3088,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/Spices/Red chilli.png",
+    "image": "/img/product/spices/Redchilli.png",
     "slug": "red-chilli-powder"
   },
   {
@@ -3141,7 +3126,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/Spices/Garam masala.png",
+    "image": "/img/product/spices/Garammasala.png",
     "slug": "garam-masala"
   },
   {
@@ -3179,7 +3164,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/Spices/Cumin.png",
+    "image": "/img/product/spices/Cumin.png",
     "slug": "cumin-powder"
   },
   {
@@ -3218,7 +3203,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/Spices/Asafoetida.png",
+    "image": "/img/product/spices/Asafoetida.png",
     "slug": "asafoetida-powder"
   },
   {
@@ -3256,7 +3241,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/Spices/Tea masala powder.png",
+    "image": "/img/product/spices/Teamasalapowder.png",
     "slug": "tea-masala"
   }
 ]
