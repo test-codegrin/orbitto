@@ -218,7 +218,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/AshGourd.png",
+    "image": "/img/product/Vegetable/AshGourd.png",
     "slug": "ash-gourd-powder"
   },
   {
@@ -295,7 +295,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Beetroot.png",
+    "image": "/img/product/Vegetable/Beetroot.png",
     "slug": "beetroot-powder"
   },
   {
@@ -331,7 +331,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/BitterGourd.png",
+    "image": "/img/product/Vegetable/BitterGourd.png",
     "slug": "bitter-gourd-powder"
   },
   {
@@ -518,7 +518,7 @@
       "Dosage Levels": "0.01% up to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/BottleGourd.png",
+    "image": "/img/product/Vegetable/BottleGourd.png",
     "slug": "bottle-gourd-powder"
   },
   {
@@ -553,7 +553,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Broccoli.png",
+    "image": "/img/product/Vegetable/Broccoli.png",
     "slug": "broccoli-powder"
   },
   {
@@ -591,7 +591,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Cabbage.png",
+    "image": "/img/product/Vegetable/Cabbage.png",
     "slug": "cabbage-powder"
   },
   {
@@ -627,7 +627,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Capsicum.png",
+    "image": "/img/product/Vegetable/capsicum.png",
     "slug": "capsicum-powder"
   },
   {
@@ -664,7 +664,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Carrot.png",
+    "image": "/img/product/Vegetable/Carrot.png",
     "slug": "carrot-powder"
   },
   {
@@ -701,7 +701,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Cauliflower.png",
+    "image": "/img/product/Vegetable/Cauliflower.png",
     "slug": "cauliflower-powder"
   },
   {
@@ -810,7 +810,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines.)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Coriander.png",
+    "image": "/img/product/Vegetable/Coriander.png",
     "slug": "coriander-powder"
   },
   {
@@ -997,7 +997,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Garlic.png",
+    "image": "/img/product/Vegetable/Garlic.png",
     "slug": "garlic-powder"
   },
   {
@@ -1035,7 +1035,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Ginger.png",
+    "image": "/img/product/Vegetable/Ginger.png",
     "slug": "ginger-powder"
   },
   {
@@ -1072,7 +1072,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)."
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/GreenChilli.png",
+    "image": "/img/product/Vegetable/GreenChilli.png",
     "slug": "green-chilli-powder"
   },
   {
@@ -1368,7 +1368,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/JelepenoChilli.png",
+    "image": "/img/product/Vegetable/JelepenoChilli.png",
     "slug": "jalapeno-chilli-powder"
   },
   {
@@ -1510,7 +1510,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Lettuce.png",
+    "image": "/img/product/Vegetable/Lettuce.png",
     "slug": "lettuce-powder"
   },
   {
@@ -1677,7 +1677,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory requirements)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Mint.png",
+    "image": "/img/product/Vegetable/Mint.png",
     "slug": "mint-powder"
   },
   {
@@ -1820,7 +1820,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Okra.png",
+    "image": "/img/product/Vegetable/Okra.png",
     "slug": "okra-powder"
   },
   {
@@ -1856,7 +1856,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Onine.png",
+    "image": "/img/product/Vegetable/Onine.png",
     "slug": "onion-powder"
   },
   {
@@ -2116,7 +2116,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Pumpkin.png",
+    "image": "/img/product/Vegetable/Pumpkin.png",
     "slug": "pumpkin-powder"
   },
   {
@@ -2300,7 +2300,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Spinach.png",
+    "image": "/img/product/Vegetable/Spinach.png",
     "slug": "spinach-powder"
   },
   {
@@ -2451,7 +2451,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/SweetPotato.png",
+    "image": "/img/product/Vegetable/SweetPotato.png",
     "slug": "sweet-potato-powder"
   },
   {
@@ -2487,7 +2487,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Tamarind.png",
+    "image": "/img/product/Vegetable/Tamarind.png",
     "slug": "tamarind-powder"
   },
   {
@@ -2524,7 +2524,7 @@
       "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/vegetable/Tomato.png",
+    "image": "/img/product/Vegetable/Tomato.png",
     "slug": "tomato-powder"
   },
   {
@@ -2675,7 +2675,7 @@
       "Type": "Raw, Unprocessed, Unfiltered"
     },
     "type": "Honey",
-    "image": "/img/product/honey/Rawajwainhoney.png",
+    "image": "/img/product/Honey/Rawajwainhoney.png",
     "slug": "raw-ajwain-honey"
   },
   {
@@ -2712,7 +2712,7 @@
       "Type": "Raw, Unprocessed"
     },
     "type": "Honey",
-    "image": "/img/product/honey/Eucalyptus.png",
+    "image": "/img/product/Honey/Eucalyptus.png",
     "slug": "eucalyptus-honey"
   },
   {
@@ -2749,7 +2749,7 @@
       "Type": "Creamed / Set Honey"
     },
     "type": "Honey",
-    "image": "/img/product/honey/Edcalyptushoney.png",
+    "image": "/img/product/Honey/Edcalyptushoney.png",
     "slug": "mustard-cream-honey"
   },
   {
@@ -2786,7 +2786,7 @@
       "Type": "Raw, Natural, Monofloral"
     },
     "type": "Honey",
-    "image": "/img/product/honey/Sunflowerhoney.png",
+    "image": "/img/product/Honey/Sunflowerhoney.png",
     "slug": "sunflower-honey"
   },
   {
@@ -2823,7 +2823,7 @@
       "Type": "Raw, Monofloral, Unprocessed"
     },
     "type": "Honey",
-    "image": "/img/product/honey/Acacia(Kikar)Honey.png",
+    "image": "/img/product/Honey/Acacia(Kikar)Honey.png",
     "slug": "acacia-kikar-honey"
   },
   {
@@ -2860,7 +2860,7 @@
       "Type": "Raw, Natural, Monofloral"
     },
     "type": "Honey",
-    "image": "/img/product/honey/Berseem(Alfalfa)honey.png",
+    "image": "/img/product/Honey/Berseem(Alfalfa)honey.png",
     "slug": "berseem-alfalfa-honey"
   },
   {
@@ -2897,7 +2897,7 @@
       "Type": "Raw, Polyfloral, Natural"
     },
     "type": "Honey",
-    "image": "/img/product/honey/MultifloraHoney.png",
+    "image": "/img/product/Honey/MultifloraHoney.png",
     "slug": "multiflora-honey"
   },
   {
@@ -2934,7 +2934,7 @@
       "Type": "Raw, Premium Monofloral, Unprocessed"
     },
     "type": "Honey",
-    "image": "/img/product/honey/Sidr(wildberry)honey.png",
+    "image": "/img/product/Honey/Sidr(wildberry)honey.png",
     "slug": "sidr-wild-berry-honey"
   },
   {
@@ -2971,7 +2971,7 @@
       "Type": "Raw, Wild-Harvested, Unfiltered, Unprocessed"
     },
     "type": "Honey",
-    "image": "/img/product/honey/WildForesthoney.png",
+    "image": "/img/product/Honey/WildForesthoney.png",
     "slug": "wild-forest-honey"
   },
   {
@@ -3008,7 +3008,7 @@
       "Type": "Raw, Monofloral, Natural"
     },
     "type": "Honey",
-    "image": "/img/product/honey/CorianderHoney.png",
+    "image": "/img/product/Honey/CorianderHoney.png",
     "slug": "coriander-honey"
   },
   {
@@ -3048,7 +3048,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/spices/Turmeric.png",
+    "image": "/img/product/Spices/Turmeric.png",
     "slug": "turmeric-powder"
   },
   {
@@ -3088,7 +3088,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/spices/Redchilli.png",
+    "image": "/img/product/Spices/Redchilli.png",
     "slug": "red-chilli-powder"
   },
   {
@@ -3126,7 +3126,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/spices/Garammasala.png",
+    "image": "/img/product/Spices/Garammasala.png",
     "slug": "garam-masala"
   },
   {
@@ -3164,7 +3164,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/spices/Cumin.png",
+    "image": "/img/product/Spices/Cumin.png",
     "slug": "cumin-powder"
   },
   {
@@ -3203,7 +3203,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/spices/Asafoetida.png",
+    "image": "/img/product/Spices/Asafoetida.png",
     "slug": "asafoetida-powder"
   },
   {
@@ -3241,7 +3241,7 @@
       "Certifications": "FSSAI, APEDA, ISO (on request)"
     },
     "type": "Spices",
-    "image": "/img/product/spices/Teamasalapowder.png",
+    "image": "/img/product/Spices/Teamasalapowder.png",
     "slug": "tea-masala"
   }
 ]
