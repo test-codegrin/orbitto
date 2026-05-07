@@ -1,4 +1,4 @@
-import { Open_Sans, Rajdhani } from "next/font/google";
+import { Open_Sans, Playfair_Display, Rajdhani } from "next/font/google";
 import "@/assets/css/font-icons.css";
 import "@/assets/css/plugins.css";
 import "./globals.css";
@@ -21,6 +21,13 @@ const rajdhani = Rajdhani({
   variable: "--ltn__heading-font",
 });
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["800"],
+  display: "swap",
+  variable: "--font-playfair",
+});
+
 export const metadata = {
   title: "Broccoli - Organic Food React Template",
   description: "Broccoli - Organic Food React Template",
@@ -31,7 +38,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       suppressHydrationWarning={true}
-      className={`${rajdhani.variable} ${open_sans.variable}`}
+      className={`${rajdhani.variable} ${open_sans.variable} ${playfair.variable}`}
     >
       <body className={open_sans.className}>
 

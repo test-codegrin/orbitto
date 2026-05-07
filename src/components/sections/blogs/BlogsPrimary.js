@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const categories = [
@@ -134,12 +135,12 @@ const BlogCard = ({ blog }) => {
           position: "relative",
         }}
       >
-        <img
+        <Image
           src={blog.image}
           alt={blog.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 384px"
           style={{
-            width: "100%",
-            height: "100%",
             objectFit: "cover",
             transition: "transform 0.5s ease",
             transform: hovered ? "scale(1.06)" : "scale(1)",
@@ -272,6 +273,7 @@ const BlogCard = ({ blog }) => {
 const BlogsPrimary = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [email, setEmail] = useState("");
+  const [newsletterImageError, setNewsletterImageError] = useState(false);
 
   const filtered =
     activeCategory === "all"
@@ -495,18 +497,22 @@ const BlogsPrimary = () => {
               borderRadius: "20px",
               overflow: "hidden",
               flexShrink: 0,
+              position: "relative",
+              background: newsletterImageError
+                ? "linear-gradient(135deg,#a8e063,#56ab2f)"
+                : "transparent",
             }}
           >
-            <img
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80"
-              alt="Colorful nutrition powders"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              onError={(e) => {
-                e.target.parentNode.style.background =
-                  "linear-gradient(135deg,#a8e063,#56ab2f)";
-                e.target.style.display = "none";
-              }}
-            />
+            {!newsletterImageError && (
+              <Image
+                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80"
+                alt="Colorful nutrition powders"
+                fill
+                sizes="200px"
+                style={{ objectFit: "cover" }}
+                onError={() => setNewsletterImageError(true)}
+              />
+            )}
           </div>
         </div>
       </div>

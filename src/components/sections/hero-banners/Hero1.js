@@ -654,7 +654,7 @@ const CSS = `
   .hs-title {
     font-size: clamp(34px, 3.8vw, 60px); font-weight: 800;
     line-height: 1.08; color: #111; margin: 0 0 14px;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-playfair), Georgia, serif;
   }
   .hs-subtitle { font-size: 15px; color: #777; line-height: 1.6; margin: 0; }
   .hs-center {
@@ -674,7 +674,7 @@ const CSS = `
   }
   .hs-card-title {
     font-size: 24px; font-weight: 700; color: #111; margin: 0 0 8px; line-height: 1.3;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-playfair), Georgia, serif;
   }
   .hs-card-desc { font-size: 15px; color: #666; margin: 0 0 18px; line-height: 1.55; }
   .hs-btn {
@@ -881,7 +881,7 @@ const CSS = `
   .hs-fluid-title {
     font-size: clamp(20px, 3.8vw, 50px);
     font-weight: 800; line-height: 1.08; color: #111; margin: 0;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-playfair), Georgia, serif;
   }
   .hs-fluid-subtitle {
     font-size: clamp(10px, 1.2vw, 14px);
@@ -912,7 +912,7 @@ const CSS = `
   .hs-fluid-card-title {
     font-size: clamp(12px, 1.7vw, 22px);
     font-weight: 700; color: #111; margin: 0; line-height: 1.3;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-playfair), Georgia, serif;
   }
   .hs-fluid-card-desc {
     font-size: clamp(10px, 1.1vw, 14px);
@@ -1204,8 +1204,6 @@ export default function Hero1() {
   return (
     <>
       <style>{CSS}</style>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap" />
-
       <section className="hs-root" style={{ backgroundColor: slide.bgColor }}>
         <div className="hs-bg-gradient visible"
           style={{ background: `linear-gradient(155deg, ${slide.bgColor} 30%, ${slide.gradientEnd} 100%)` }} />

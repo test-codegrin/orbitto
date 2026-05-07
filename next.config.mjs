@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.drymacfoods.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };
