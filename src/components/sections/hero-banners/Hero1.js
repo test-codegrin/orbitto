@@ -290,7 +290,7 @@ const SLIDES = [
     bgColor: "#fffbf0",
     gradientEnd: "#fef0c7",
     card: { title: "Raw Pure Honey", desc: "Directly sourced from natural hives for authentic golden taste." },
-    mainImg: "/img/slider/main/Honey.png",
+    mainImg: "/img/slider/main/HoneyBowl.png",
     floats: [
       {
         src: "/img/slider/Honey/bee.gif",
