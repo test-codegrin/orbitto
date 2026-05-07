@@ -147,7 +147,7 @@
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/GreenApple.png",
-    "slug": "apple-green-powder"
+    "slug": "green-apple-powder"
   },
 
   {
@@ -183,8 +183,8 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Red Apple.png",
-    "slug": "apple-powder"
+    "image": "/img/product/fruit/RedApple.png",
+    "slug": "red-apple-powder"
   },
   {
     "id": 8,
@@ -1191,7 +1191,7 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Green Mango.png",
+    "image": "/img/product/fruit/GreenMango.png",
     "slug": "green-mango-amchur-powder"
   },
  
@@ -1228,7 +1228,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Pink Guava.png",
+    "image": "/img/product/fruit/PinkGuava.png",
     "slug": "guava-powder-pink"
   },
   {
@@ -1264,7 +1264,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/White Guava.png",
+    "image": "/img/product/fruit/WhiteGuava.png",
     "slug": "guava-powder-white"
   },
   {
@@ -2200,7 +2200,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Ripe Bunana.png",
+    "image": "/img/product/fruit/RipeBanana.png",
     "slug": "ripe-banana-powder"
   },
   {
@@ -2234,8 +2234,8 @@
       "Dosage Levels": "0.01–5.0%, adjustable as per application and regulatory requirements"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Ripe papaya.png",
-    "slug": "ripe-papaya-powder"
+    "image": "/img/product/fruit/RipeBanana.png",
+    "slug": "ripe-banana-powder"
   },
   {
     "id": 77,
