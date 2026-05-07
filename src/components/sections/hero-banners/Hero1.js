@@ -1262,7 +1262,9 @@ export default function Hero1() {
               <div key={`card-${animKey}`} className={`hs-card ${cardAnim}`}>
                 <p className="hs-card-title">{slide.card.title}</p>
                 <p className="hs-card-desc">{slide.card.desc}</p>
-                <Link href="/products/acaiberry-powder" className="hs-btn" style={{ backgroundColor: slide.accent }}>View more details</Link>
+                <div className="btn-wrapper animated">
+                  <Link href="/products/acaiberry-powder" className="theme-btn-1 btn btn-effect-1 text-uppercase" style={{ backgroundColor: slide.accent }}>View more details</Link>
+                </div>
               </div>
             </div>
             <Tabs fluid={false} />
@@ -1343,9 +1345,11 @@ export default function Hero1() {
               <div key={`fcard-${animKey}`} className={`hs-fluid-right ${cardAnim}`}>
                 <p className="hs-fluid-card-title">{slide.card.title}</p>
                 <p className="hs-fluid-card-desc">{slide.card.desc}</p>
-                <Link href="/products/acaiberry-powder" className="hs-fluid-btn" style={{ backgroundColor: slide.accent }}>
-                  View more details
-                </Link>
+                <div className="btn-wrapper animated">
+                  <Link href="/products/acaiberry-powder" className="theme-btn-1 btn btn-effect-1 text-uppercase" style={{ backgroundColor: slide.accent }}>
+                    View more details
+                  </Link>
+                </div>
               </div>
             </div>
 

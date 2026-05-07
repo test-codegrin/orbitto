@@ -387,10 +387,12 @@ const BlogsPrimary = () => {
 
         {/* View All Button */}
         <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <button className="theme-btn-1 btn btn-effect-1 text-uppercase">
-            View All Insights
-            <ArrowIcon />
-          </button>
+          <div className="btn-wrapper animated">
+            <button className="theme-btn-1 btn btn-effect-1 text-uppercase">
+              View All Insights
+              <ArrowIcon />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -481,11 +483,13 @@ const BlogsPrimary = () => {
                 }}
               />
 
-              <button 
-              className="theme-btn-1 btn btn-effect-1 text-uppercase"
-              >
-                Subscribe
-              </button>
+              <div className="btn-wrapper animated">
+                <button 
+                className="theme-btn-1 btn btn-effect-1 text-uppercase"
+                >
+                  Subscribe
+                </button>
+              </div>
             </div>
           </div>
 

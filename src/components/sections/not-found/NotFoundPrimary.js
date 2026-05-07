@@ -25,8 +25,8 @@ const NotFoundPrimary = ({ title }) => {
                 </p>
               )}
 
-              <div className="btn-wrapper">
-                <Link href="/" className="btn btn-transparent">
+              <div className="btn-wrapper animated">
+                <Link href="/" className="theme-btn-1 btn btn-effect-1 text-uppercase">
                   <i className="fas fa-long-arrow-alt-left"></i> BACK TO HOME
                 </Link>
               </div>

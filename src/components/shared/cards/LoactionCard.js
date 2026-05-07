@@ -15,16 +15,18 @@ const LoactionCard = ({ location }) => {
         <i className="fas fa-phone-volume"></i>
         {contact}
       </h4>
-      <div className="btn-wrapper">
+      <div className="btn-wrapper animated">
         <Link
           href={path}
-          className="btn btn-transparent btn-border btn-effect-4"
+          className="theme-btn-1 btn btn-effect-1 text-uppercase"
         >
           <i className="fas fa-location-arrow"></i> Get An Appointment
         </Link>
+      </div>
+      <div className="btn-wrapper animated">
         <Link
           href={website}
-          className="btn btn-transparent btn-border btn-effect-3"
+          className="theme-btn-1 btn btn-effect-1 text-uppercase"
         >
           <i className="fas fa-globe"></i> View Website
         </Link>

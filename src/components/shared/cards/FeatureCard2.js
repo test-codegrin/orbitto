@@ -18,9 +18,11 @@ const FeatureCard2 = ({ feature, idx }) => {
           <Link href={path}>{title}</Link>
         </h3>
         <p>{desc}</p>
-        <Link className="ltn__service-btn" href={path}>
-          Read More
-        </Link>
+        <div className="btn-wrapper animated">
+          <Link className="theme-btn-1 btn btn-effect-1 text-uppercase" href={path}>
+            Read More
+          </Link>
+        </div>
       </div>
     </div>
   );

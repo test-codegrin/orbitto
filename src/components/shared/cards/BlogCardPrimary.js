@@ -41,8 +41,8 @@ const BlogCardPrimary = ({ blog }) => {
               </li>
             </ul>
           </div>
-          <div className="ltn__blog-btn">
-            <Link href={`/blogs/${id}`}>Read more</Link>
+          <div className="btn-wrapper animated">
+            <Link href={`/blogs/${id}`} className="theme-btn-1 btn btn-effect-1 text-uppercase">Read more</Link>
           </div>
         </div>
       </div>

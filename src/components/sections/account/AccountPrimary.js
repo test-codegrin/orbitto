@@ -264,10 +264,10 @@ const AccountPrimary = () => {
                                   </div>
                                 </div>
                               </fieldset>
-                              <div className="btn-wrapper">
+                              <div className="btn-wrapper animated">
                                 <button
                                   type="submit"
-                                  className="btn theme-btn-1 btn-effect-1 text-uppercase"
+                                  className="theme-btn-1 btn btn-effect-1 text-uppercase"
                                 >
                                   Save Changes
                                 </button>

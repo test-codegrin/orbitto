@@ -41,14 +41,15 @@ const ProductCardPrimary2 = ({ product }) => {
       </div>
       {/* Contact Inquiry Button */}
       <div className="ltn__product-details-menu-2 text-center mb-3">
-        
-         <a
-          href="/contact"
-          className="theme-btn-1 btn btn-effect-1 "
-          title="Contact Inquiry"
-        >
-          <span>Contact Inquiry</span>
-        </a>
+        <div className="btn-wrapper animated">
+          <Link
+            href="/contact"
+            className="theme-btn-1 btn btn-effect-1 text-uppercase"
+            title="Contact Inquiry"
+          >
+            <span>Contact Inquiry</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

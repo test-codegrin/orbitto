@@ -61,9 +61,9 @@ const PortfolioPrimary = ({ type }) => {
         {isAll ? (
           ""
         ) : (
-          <div className="btn-wrapper text-center">
+          <div className="btn-wrapper animated text-center">
             <button
-              className="btn btn-transparent btn-effect-3 btn-border"
+              className="theme-btn-1 btn btn-effect-1 text-uppercase"
               onClick={() => setIsAll(true)}
             >
               LOAD MORE +

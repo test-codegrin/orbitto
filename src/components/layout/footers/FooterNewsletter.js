@@ -9,8 +9,8 @@ const FooterNewsletter = () => {
         <div className="footer-newsletter">
           <form action="#">
             <input type="email" name="email" placeholder="Email*" />
-            <div className="btn-wrapper">
-              <button className="theme-btn-1 btn" type="submit">
+            <div className="btn-wrapper animated">
+              <button className="theme-btn-1 btn btn-effect-1 text-uppercase" type="submit">
                 <i className="fas fa-location-arrow"></i>
               </button>
             </div>

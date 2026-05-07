@@ -140,9 +140,9 @@ const ContactPrimary = () => {
                     next time I comment.
                   </label>
                 </p>
-                <div className="btn-wrapper mt-0">
+                <div className="btn-wrapper animated mt-0">
                   <button
-                    className="btn theme-btn-1 btn-effect-1 text-uppercase"
+                    className="theme-btn-1 btn btn-effect-1 text-uppercase"
                     type="submit"
                     disabled={!formData.agree}
                   >
