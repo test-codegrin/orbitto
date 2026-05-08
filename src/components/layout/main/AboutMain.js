@@ -1,10 +1,10 @@
 import About5 from "@/components/sections/about/About5";
-import Blogs2 from "@/components/sections/blogs/Blogs2";
-import CallToAction1 from "@/components/sections/call-to-action/CallToAction1";
+// import Blogs2 from "@/components/sections/blogs/Blogs2";
+// import CallToAction1 from "@/components/sections/call-to-action/CallToAction1";
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
 import Team1 from "@/components/sections/team/Team1";
-import Testimonials3 from "@/components/sections/testimonils/Testimonials3";
+// import Testimonials3 from "@/components/sections/testimonils/Testimonials3";
 
 const AboutMain = () => {
   return (

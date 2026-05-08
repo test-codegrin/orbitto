@@ -9,7 +9,7 @@ const PortfolioMain = ({ type }) => {
     <main>
       <HeroPrimary title={"Our Gallery"} text="Gallery" />
       <PortfolioPrimary type={type} />
-      <Blogs2 type={2} pb="pb-70" />
+      {/* <Blogs2 type={2} pb="pb-70" /> */}
       <Features4 />
     </main>
   );

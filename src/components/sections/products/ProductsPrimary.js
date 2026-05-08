@@ -56,7 +56,7 @@ const ProductsPrimary = ({ isSidebar }) => {
             </div>
 
             <div className="ltn__product-tab-content-inner ltn__product-grid-view">
-              <div className="row">
+              <div className="row products3-fixed-card-grid">
                 {currentItems?.map((product, idx) => (
                   <div
                     className={`${
