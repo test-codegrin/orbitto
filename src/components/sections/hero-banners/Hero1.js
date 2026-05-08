@@ -30,7 +30,7 @@ const SLIDES = [
     subtitle: "From fruit to fine powder perfection",
     bgText: "FRUIT POWDER",
     watermarkGradient:
-      "background: linear-gradient(180deg, rgba(201, 118, 167, 0.2) 0%, rgba(176, 95, 211, 0.2) 50%, rgba(245, 222, 110, 0.2) 100%);",
+      "background: linear-gradient(180deg, rgba(201, 118, 167, 0.2) 0%, #b05fd333 50%, rgba(245, 222, 110, 0.2) 100%);",
     bgColor: "#fff5f8",
     gradientEnd: "#fce4ec",
     card: {
@@ -199,7 +199,7 @@ const SLIDES = [
         },
       },
     ],
-    accent: "#d63f6e",
+    accent: "#432750",
     tabIcon: "/img/slider/FruiteBasket.png",
     tabLabel: "Fruit Powder",
   },
@@ -902,7 +902,7 @@ const CSS = `
   .hs-anim-cup-out-prev { animation: hs-cup-out-prev 1.2s cubic-bezier(0.22,1,0.36,1) both; }
 
   @media (min-width: 2560px) {
-    .hs-grid { min-height: 860px; grid-template-columns: 1.1fr 2.8fr 1.1fr; padding: 56px 72px; gap: 24px; }
+    .hs-grid { min-height: 860px; grid-template-columns: 1.1fr 2.8fr; padding: 56px 72px; gap: 24px; }
     .hs-center { height: 680px; }
     .hs-bowl-wrap { width: 620px; height: 620px; }
     .hs-tabs-row { padding: 22px 72px 52px; }
@@ -954,7 +954,7 @@ const CSS = `
       height: clamp(300px, 28vw, 440px) !important;
     }
     .hs-fluid-main {
-      grid-template-columns: 1fr 2fr 1fr !important;
+      grid-template-columns: 1fr 2fr !important;
       padding: clamp(20px, 2.5vw, 50px) clamp(24px, 3.5vw, 60px) !important;
       gap: clamp(12px, 1.8vw, 28px) !important;
     }
@@ -1017,7 +1017,7 @@ const CSS = `
     inset: 0;
     z-index: 4;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
     gap: clamp(8px, 1.5vw, 20px);
     padding: clamp(14px, 2vw, 36px) clamp(18px, 3vw, 50px);
@@ -1118,7 +1118,7 @@ const CSS = `
   @media (max-width: 768px) {
     .hs-fluid-stage { min-height: clamp(300px, 55vw, 440px); }
     .hs-fluid-main {
-      grid-template-columns: 1fr 1.8fr 1fr;
+      grid-template-columns: 1fr 1.8fr;
       gap: clamp(4px, 1.5vw, 12px);
       padding: 10px 12px;
     }
@@ -1418,6 +1418,15 @@ export default function Hero1() {
                 >
                   {slide.subtitle}
                 </p>
+                <div className="btn-wrapper animated">
+                  <Link
+                    href="/products/acaiberry-powder"
+                    className="theme-btn-1 btn btn-effect-1 text-uppercase"
+                    style={{ backgroundColor: slide.accent }}
+                  >
+                    View more details
+                  </Link>
+                </div>
               </div>
 
               <div className="hs-center">
@@ -1481,20 +1490,6 @@ export default function Hero1() {
                     </div>
                   );
                 })}
-              </div>
-
-              <div key={`card-${animKey}`} className={`hs-card ${cardAnim}`}>
-                <p className="hs-card-title">{slide.card.title}</p>
-                <p className="hs-card-desc">{slide.card.desc}</p>
-                <div className="btn-wrapper animated">
-                  <Link
-                    href="/products/acaiberry-powder"
-                    className="theme-btn-1 btn btn-effect-1 text-uppercase"
-                    style={{ backgroundColor: slide.accent }}
-                  >
-                    View more details
-                  </Link>
-                </div>
               </div>
             </div>
             <Tabs fluid={false} />
@@ -1575,6 +1570,15 @@ export default function Hero1() {
                 >
                   {slide.subtitle}
                 </p>
+                <div className="btn-wrapper animated">
+                  <Link
+                    href="/products/acaiberry-powder"
+                    className="theme-btn-1 btn btn-effect-1 text-uppercase"
+                    style={{ backgroundColor: slide.accent }}
+                  >
+                    View more details
+                  </Link>
+                </div>
               </div>
 
               {/* CENTER — bowl only; floats escape this container */}
@@ -1610,24 +1614,6 @@ export default function Hero1() {
                       priority
                     />
                   </div>
-                </div>
-              </div>
-
-              {/* RIGHT */}
-              <div
-                key={`fcard-${animKey}`}
-                className={`hs-fluid-right ${cardAnim}`}
-              >
-                <h1 className="hs-fluid-card-title">{slide.card.title}</h1>
-                <p className="hs-fluid-card-desc">{slide.card.desc}</p>
-                <div className="btn-wrapper animated">
-                  <Link
-                    href="/products/acaiberry-powder"
-                    className="theme-btn-1 btn btn-effect-1 text-uppercase"
-                    style={{ backgroundColor: slide.accent }}
-                  >
-                    View more details
-                  </Link>
                 </div>
               </div>
             </div>

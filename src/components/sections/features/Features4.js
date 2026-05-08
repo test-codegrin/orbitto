@@ -19,15 +19,15 @@ const Features4 = ({ type, mb }) => {
                         src={"/img/icons/icon-img/11.png"}
                         width={51}
                         height={50}
-                        alt="#"
+                        alt="100% Organic"
                         priority={false}
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Product Information Hub</h4>
+                      <h4>100% Organic & Pure</h4>
                       <p>
-                        Explore details about fruits, vegetables,
-                        spices, and herbal products
+                        Every product is naturally grown, free from pesticides,
+                        preservatives, and artificial additives
                       </p>
                     </div>
                   </div>
@@ -39,13 +39,16 @@ const Features4 = ({ type, mb }) => {
                         src={"/img/icons/icon-img/12.png"}
                         width={51}
                         height={50}
-                        alt="#"
+                        alt="Traditional Sourcing"
                         priority={false}
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Handmade</h4>
-                      <p>We ensure the product quality that is our main goal</p>
+                      <h4>Traditionally Sourced</h4>
+                      <p>
+                        Handpicked from trusted farms and spice gardens using
+                        age-old, time-honoured farming practices
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -56,14 +59,15 @@ const Features4 = ({ type, mb }) => {
                         src={"/img/icons/icon-img/13.png"}
                         width={51}
                         height={50}
-                        alt="#"
+                        alt="Quality Assured"
                         priority={false}
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Natural Food</h4>
+                      <h4>Quality You Can Trust</h4>
                       <p>
-                        Return product within 3 days for any product you buy
+                        Rigorously tested for purity, freshness, and authentic
+                        flavour before reaching your hands
                       </p>
                     </div>
                   </div>
@@ -75,15 +79,15 @@ const Features4 = ({ type, mb }) => {
                         src={"/img/icons/icon-img/14.png"}
                         width={51}
                         height={50}
-                        alt="#"
+                        alt="Direct from Farm"
                         priority={false}
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Global Export Quality</h4>
+                      <h4>Farm to Your Doorstep</h4>
                       <p>
-                        We provide high-quality export-ready products from
-                        trusted sources
+                        Sourced directly from farmers, ensuring freshness,
+                        fair trade, and zero unnecessary middlemen
                       </p>
                     </div>
                   </div>

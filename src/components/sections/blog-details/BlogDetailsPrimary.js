@@ -112,7 +112,7 @@ const BlogDetailsPrimary = () => {
               background: T.greenLight, color: T.greenMid,
               fontSize: "10px", fontWeight: "700", letterSpacing: "0.1em",
               textTransform: "uppercase", padding: "5px 14px",
-               marginBottom: "20px",
+              marginBottom: "20px",
               border: `1px solid ${T.border}`,
             }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: T.greenMid, display: "inline-block" }} />

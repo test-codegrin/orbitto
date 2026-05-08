@@ -439,7 +439,10 @@ const BlogsPrimary = () => {
         {/* View All Button */}
         <div style={{ textAlign: "center", marginTop: "48px" }}>
           <div className="btn-wrapper animated">
-            <button className="theme-btn-1 btn btn-effect-1 text-uppercase">
+            <button 
+              className="theme-btn-1 btn btn-effect-1 text-uppercase"
+              onClick={() => setActiveCategory("all")}
+            >
               View All Insights
               <ArrowIcon />
             </button>
@@ -510,7 +513,6 @@ const BlogsPrimary = () => {
                 display: "flex",
                 gap: "12px",
                 flexWrap: "wrap",
-                alignItems: "flex-start",
               }}
             >
               <input
@@ -522,7 +524,6 @@ const BlogsPrimary = () => {
                   flex: "1",
                   minWidth: "240px",
                   height: "55px",
-                  // padding: "0 23px",
                   border: "1.5px solid #b8d89a",
                   background: "#ffffff",
                   fontSize: "14px",
@@ -532,7 +533,7 @@ const BlogsPrimary = () => {
                 }}
               />
 
-              <div className="btn-wrapper animated">
+              <div className=" animated">
                 <button className="theme-btn-1 btn btn-effect-1 text-uppercase">
                   Subscribe
                 </button>
