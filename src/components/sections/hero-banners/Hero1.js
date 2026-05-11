@@ -485,8 +485,8 @@ const SLIDES = [
   },
   {
     id: 3,
-    line1: "Premium",
-    line2: "Spices",
+    line1: "",
+    line2: "Premium Spices",
     subtitle: "Handpicked spices bursting with bold flavor",
     bgText: "PREMIUM SPICES",
     watermarkGradient:
@@ -502,8 +502,8 @@ const SLIDES = [
       {
         src: "/img/slider/Spices/GaramMsala.png",
         alt: "GaramMasala",
-        top: "-5%",
-        left: "-2%",
+        top: "-9%",
+        left: "-6%",
         size: 310,
         fluid: {
           768: { top: "0%", left: "0%", size: "18vw" },

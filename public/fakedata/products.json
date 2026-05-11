@@ -1295,9 +1295,50 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Herbal Powder",
-    "image": "/img/product/Herbs/Wheatgrass.png",
+    "image": "/img/product/Herbs/HoneyPowder.png",
     "slug": "honey-powder"
   },
+  {
+  "id": 51,
+  "title": "Wheatgrass Powder",
+  "desc": "Wheatgrass powder is produced by harvesting the young shoots of Triticum aestivum at peak nutritional maturity and processing them through low-temperature drying and fine milling into a stable, free-flowing green powder. This careful processing helps preserve the naturally occurring chlorophyll, enzymes, and heat-sensitive nutrients present in fresh wheatgrass.\nWheatgrass naturally contains chlorophyll, vitamins A, C, and E, iron, magnesium, calcium, amino acids, enzymes, and flavonoids, which are commonly associated, in a general non-medical sense, with antioxidant and alkalizing characteristics. Its mild, earthy-green flavor blends well into a wide range of food and beverage applications, making it a versatile superfood ingredient for health-focused formulations.",
+  "description": "Wheatgrass powder is produced by harvesting the young shoots of Triticum aestivum at peak nutritional maturity and processing them through low-temperature drying and fine milling into a stable, free-flowing green powder. This careful processing helps preserve the naturally occurring chlorophyll, enzymes, and heat-sensitive nutrients present in fresh wheatgrass.\nWheatgrass naturally contains chlorophyll, vitamins A, C, and E, iron, magnesium, calcium, amino acids, enzymes, and flavonoids, which are commonly associated, in a general non-medical sense, with antioxidant and alkalizing characteristics. Its mild, earthy-green flavor blends well into a wide range of food and beverage applications, making it a versatile superfood ingredient for health-focused formulations.",
+  "applications_and_uses": [
+    "Smoothies, green juices, and health shots",
+    "Instant beverage premixes and wellness drink formulations",
+    "Nutritional supplement capsules and tablets",
+    "Energy bars, protein bars, and snack formulations",
+    "Bakery products such as bread, muffins, and pancakes for nutritional enrichment",
+    "Breakfast cereals, oatmeal, and porridge blends",
+    "Yogurt, chia puddings, and dairy-based health foods",
+    "Natural skincare formulations such as face masks and scrubs"
+  ],
+  "specifications": {
+    "Product Name": "Wheatgrass Powder",
+    "Botanical Name": "Triticum aestivum",
+    "Raw Material": "Young leaves of freshly sprouted wheatgrass",
+    "Color, Taste & Aroma": "Vibrant green powder with a mild, earthy-green aroma and characteristic grassy flavor",
+    "Applications": "Smoothies, health drinks, instant beverage premixes, nutritional supplements, energy bars, bakery products, cereals, health foods, and nutraceutical formulations",
+    "Shelf Life": "24 months from the date of production when stored in proper sealed packaging under recommended conditions",
+    "Handling & Storage": [
+      "Store in a cool, dry, clean, odor-free environment, away from direct heat and sunlight",
+      "Recommended storage temperature: 15–25°C",
+      "Highly hygroscopic avoid prolonged exposure to air and moisture",
+      "Do not mix with hot liquids as heat may degrade active enzymes and heat-sensitive nutrients",
+      "Reseal packaging tightly after each use"
+    ],
+    "Packaging Options": [
+      "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
+      "HDPE 25 kg drum pack (as specified)"
+    ],
+    "MOQ": "100 kg or above",
+    "Lead Time": "Immediate dispatch",
+    "Dosage Levels": "0.5% to 5.0% (adjustable as per application and regulatory guidelines)"
+  },
+  "type": "Herbal Powder",
+  "image": "/img/product/Herbs/Wheatgrass.png",
+  "slug": "wheatgrass-powder"
+},
   {
     "id": 52,
     "title": "Jackfruit Powder",
@@ -1331,7 +1372,7 @@
       "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/JuckFruit.png",
+    "image": "/img/product/fruit/JackFruit.png",
     "slug": "jackfruit-powder"
   },
   {

@@ -1632,7 +1632,7 @@ ul {
 
 @media (max-width: 767px) {
   .slick-dots {
-    margin: 0 0 15px;
+    display: none;
   }
 }
 
@@ -8408,7 +8408,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 }
 
 .products3-fixed-card-grid .ltn__product-item-3 .product-img {
-  height: 235px;
+  height: 270px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8443,7 +8443,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 }
 
 .products3-fixed-card-grid .ltn__product-item-3 .product-info {
-  min-height: 100px;
+  min-height: 65px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9302,10 +9302,10 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 
 @media (max-width: 991px) {
   .products3-fixed-card-grid .ltn__product-item-3 {
-    height: 300px;
+    height: 310px;
   }
   .products3-fixed-card-grid .ltn__product-item-3 .product-img {
-    height: 210px;
+    height: 240px;
   }
   .ltn__product-item-3 .product-info {
     padding: 25px 15px 15px;
@@ -9323,13 +9323,13 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 
 @media (max-width: 767px) {
   .products3-fixed-card-grid .ltn__product-item-3 {
-    height: 245px;
+    height: 255px;
   }
   .products3-fixed-card-grid .ltn__product-item-3 .product-img {
-    height: 165px;
+    height: 190px;
   }
   .products3-fixed-card-grid .ltn__product-item-3 .product-img img {
-    padding: 12px;
+    /* padding: 12px; */
   }
   .products3-fixed-card-grid .ltn__product-item-3 .product-info {
     min-height: 80px;
@@ -10505,11 +10505,12 @@ main > .page-breadcrumb-area + [class*="pt-"] {
     Countdown Area
 ---------------------------------------------------- */
 .ltn__countdown {
-  margin-top: 30px;
-  display: inline-block;
+  /* margin-top: 30px; */
+  display: flex;
+  /* justify-content: start; */
   -webkit-box-shadow: var(--ltn__box-shadow-3);
   box-shadow: var(--ltn__box-shadow-3);
-  padding: 25px 40px 5px;
+  /* padding: 25px 40px 5px; */
 }
 .ltn__countdown .single {
   display: inline-block;
@@ -10536,7 +10537,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 
 .ltn__countdown-3 {
   margin-top: 0;
-  padding: 20px 30px 1px;
+  padding:1px 1px 1px;
   padding-left: 0;
   -webkit-box-shadow: none;
   box-shadow: none;

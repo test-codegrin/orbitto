@@ -577,6 +577,8 @@ const main = () => {
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 1,
+        swipe: true,
+        touchMove: true,
         prevArrow:
           '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
         nextArrow:
@@ -602,18 +604,22 @@ const main = () => {
             breakpoint: 768,
             settings: {
               arrows: false,
-              dots: true,
+              dots: false,
               slidesToShow: 2,
               slidesToScroll: 1,
+              swipe: true,
+              touchMove: true,
             },
           },
           {
             breakpoint: 580,
             settings: {
               arrows: false,
-              dots: true,
+              dots: false,
               slidesToShow: 2,
               slidesToScroll: 1,
+              swipe: true,
+              touchMove: true,
             },
           },
         ],
