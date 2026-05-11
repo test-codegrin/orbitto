@@ -9,14 +9,14 @@ import ProductDetailsRight from "@/components/shared/products/ProductDetailsRigh
 import ProductTechnicalSpecifications from "@/components/shared/products/ProductTechnicalSpecifications";
 import { useCommonContext } from "@/providers/CommonContext";
 
-const ProductDetailsPrimary = () => {
+const ProductDetailsPrimary = ({ initialProduct }) => {
   const { isNotSidebar, type } = useCommonContext();
   const { setCurrentProduct } = useProductContext();
 
   const { id: currentProductParam } = useParams();
   const products = useMemo(() => getAllProducts(), []);
 
-  const product = useMemo(
+  const matchedProduct = useMemo(
     () =>
       products?.find(
         ({ id, slug }) =>
@@ -24,11 +24,14 @@ const ProductDetailsPrimary = () => {
       ),
     [products, currentProductParam]
   );
+  const product = matchedProduct || initialProduct;
 
   const allImages = useMemo(() => {
     if (!product) return [];
-    const otherImages = products?.filter(({ id }) => id !== product.id);
-    return [product, ...otherImages?.slice(0, 6)];
+    const sameTypeProducts = products?.filter(
+      ({ id, type }) => id !== product.id && (!product.type || type === product.type)
+    );
+    return [product, ...(sameTypeProducts || []).slice(0, 6)];
   }, [products, product]);
 
   const [selectedProductId, setSelectedProductId] = useState(product?.id);
@@ -57,6 +60,70 @@ const ProductDetailsPrimary = () => {
   useEffect(() => {
     syncCurrentProduct(selectedProduct);
   }, [selectedProduct, syncCurrentProduct]);
+
+  useEffect(() => {
+    if (!currentProductParam || typeof window === "undefined") return;
+
+    const nextProductPath = selectedProduct?.slug || selectedProduct?.id;
+    if (!nextProductPath) return;
+
+    if (String(nextProductPath) !== String(currentProductParam)) {
+      window.history.replaceState(
+        window.history.state,
+        "",
+        `/products/${nextProductPath}`
+      );
+    }
+  }, [selectedProduct, currentProductParam]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.$ || !allImages?.length) {
+      return;
+    }
+
+    const selectedIndex = allImages.findIndex(({ id }) => id === selectedProductId);
+    if (selectedIndex < 0) return;
+
+    const $ = window.$;
+
+    const syncSliderToSelection = () => {
+      const $largeImageSlider = $(".ltn__Product-details-large-img");
+      const $smallImageSlider = $(".ltn__Product-details-small-img");
+
+      if (
+        !$largeImageSlider.length ||
+        !$smallImageSlider.length ||
+        !$largeImageSlider.hasClass("slick-initialized") ||
+        !$smallImageSlider.hasClass("slick-initialized")
+      ) {
+        return false;
+      }
+
+      if ($largeImageSlider.slick("slickCurrentSlide") !== selectedIndex) {
+        $largeImageSlider.slick("slickGoTo", selectedIndex, true);
+      }
+
+      if ($smallImageSlider.slick("slickCurrentSlide") !== selectedIndex) {
+        $smallImageSlider.slick("slickGoTo", selectedIndex, true);
+      }
+
+      return true;
+    };
+
+    if (syncSliderToSelection()) {
+      return;
+    }
+
+    const retryTimer = window.setInterval(() => {
+      if (syncSliderToSelection()) {
+        window.clearInterval(retryTimer);
+      }
+    }, 250);
+
+    return () => {
+      window.clearInterval(retryTimer);
+    };
+  }, [allImages, selectedProductId]);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.$ || !allImages?.length) {
@@ -97,6 +164,43 @@ const ProductDetailsPrimary = () => {
     return () => {
       window.clearInterval(retryTimer);
       $(".ltn__Product-details-large-img").off("afterChange.productDetailsSync");
+    };
+  }, [allImages]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.$ || allImages.length < 2) {
+      return;
+    }
+
+    const $ = window.$;
+    const $smallImageSlider = $(".ltn__Product-details-small-img");
+
+    const handleArrowClick = (event) => {
+      const isNextArrow = $(event.currentTarget).hasClass("slick-next");
+
+      setSelectedProductId((prevId) => {
+        const currentIndex = allImages.findIndex(({ id }) => id === prevId);
+        const safeCurrentIndex = currentIndex < 0 ? 0 : currentIndex;
+        const nextIndex = isNextArrow
+          ? (safeCurrentIndex + 1) % allImages.length
+          : (safeCurrentIndex - 1 + allImages.length) % allImages.length;
+
+        return allImages[nextIndex]?.id;
+      });
+    };
+
+    $smallImageSlider.off("click.productDetailsArrowSync", ".slick-prev, .slick-next");
+    $smallImageSlider.on(
+      "click.productDetailsArrowSync",
+      ".slick-prev, .slick-next",
+      handleArrowClick
+    );
+
+    return () => {
+      $smallImageSlider.off(
+        "click.productDetailsArrowSync",
+        ".slick-prev, .slick-next"
+      );
     };
   }, [allImages]);
 

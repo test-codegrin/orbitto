@@ -5,7 +5,14 @@ import ProductDetailsPrimary from "@/components/sections/product-details/Product
 import Products5 from "@/components/sections/products/Products5";
 import CommonContext from "@/providers/CommonContext";
 
-const ProductDetailsMain = ({ title, text, type, isNotSidebar, breadcrumbItem }) => {
+const ProductDetailsMain = ({
+  title,
+  text,
+  type,
+  isNotSidebar,
+  breadcrumbItem,
+  product,
+}) => {
   return (
     <main>
       <HeroPrimary
@@ -15,7 +22,7 @@ const ProductDetailsMain = ({ title, text, type, isNotSidebar, breadcrumbItem })
         type={3}
       />
       <CommonContext value={{ type, isNotSidebar }}>
-        <ProductDetailsPrimary />
+        <ProductDetailsPrimary initialProduct={product} />
       </CommonContext>
       <Products5 isRelated={true} title="Related Products" tag="// Foods" />
       <Features4 />
