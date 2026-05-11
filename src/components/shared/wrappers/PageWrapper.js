@@ -28,7 +28,7 @@ const PageWrapper = ({
   isCommingSoon,
 }) => {
   useEffect(() => {
-    main();
+    return main();
   }, []);
   return (
     <div className="body-wrapper">

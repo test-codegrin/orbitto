@@ -48,9 +48,61 @@
 import mplace from "./maplace-active";
 
 const main = () => {
+  let isInitialized = false;
+  let parallaxInstance = null;
+
+  const getJquery = () =>
+    typeof window !== "undefined" && window.$ ? window.$ : null;
+
+  const cleanup = () => {
+    clearCheckJquery();
+
+    const $ = getJquery();
+    if (!$ || !isInitialized) return;
+
+    const slickSelectors = [
+      ".ltn__Product-details-large-img",
+      ".ltn__Product-details-small-img",
+      ".ltn__slide-one-active",
+      ".ltn__slide-active-2",
+      ".ltn__product-slider-one-active",
+      ".ltn__product-slider-item-four-active",
+      ".ltn__related-product-slider-one-active",
+      ".ltn__tab-product-slider-one-active",
+      ".ltn__small-product-slider-active",
+      ".ltn__blog-slider-one-active",
+      ".ltn__testimonial-slider-active",
+      ".ltn__testimonial-slider-2-active",
+      ".ltn__testimonial-slider-3-active",
+      ".ltn__category-slider-active",
+      ".ltn__image-slider-1-active",
+      ".ltn__image-slider-2-active",
+      ".ltn__image-slider-3-active",
+      ".ltn__image-slider-4-active",
+      ".ltn__brand-logo-active",
+    ].join(",");
+
+    $(window).off("scroll.ltnHeaderSticky");
+    $(".ltn__utilize-toggle").off("click.ltnUtilize");
+    $(".ltn__utilize-close, .ltn__utilize-overlay").off("click.ltnUtilize");
+    $(".ltn__utilize-menu, .overlay-menu").off("click.ltnUtilizeMenu");
+    $(".ltn__category-menu-title").off("click.ltnCategory");
+    $(".ltn__category-menu-more-item-parent").off("click.ltnCategoryMore");
+    $(".ltn__category-menu-toggle .ltn__category-menu-drop > a").off(
+      "click.ltnCategoryDrop"
+    );
+    $(".header-search-1").off("click.ltnHeaderSearch");
+    $(slickSelectors).filter(".slick-initialized").slick("unslick");
+
+    if (parallaxInstance && typeof parallaxInstance.destroy === "function") {
+      parallaxInstance.destroy();
+    }
+  };
+
   const checkJquery = setInterval(() => {
     if (typeof window !== "undefined" && window.$) {
       clearCheckJquery();
+      isInitialized = true;
       /* --------------------------------------------------------
               1. Variables
           --------------------------------------------------------- */
@@ -68,7 +120,7 @@ const main = () => {
           $ltn__utilize = $(".ltn__utilize"),
           $ltn__utilizeOverlay = $(".ltn__utilize-overlay"),
           $mobileMenuToggle = $(".mobile-menu-toggle");
-        $ltn__utilizeToggle.on("click", function (e) {
+        $ltn__utilizeToggle.on("click.ltnUtilize", function (e) {
           e.preventDefault();
           var $this = $(this),
             $target = $this.attr("href");
@@ -80,7 +132,7 @@ const main = () => {
           }
         });
         $(".ltn__utilize-close, .ltn__utilize-overlay").on(
-          "click",
+          "click.ltnUtilize",
           function (e) {
             e.preventDefault();
             $body.removeClass("ltn__utilize-open");
@@ -100,11 +152,14 @@ const main = () => {
 
         /*Add Toggle Button With Off Canvas Sub Menu*/
         $ltn__utilizeNavSubMenu
-          .parent()
+          .parent("li")
+          .filter(function () {
+            return !$(this).children(".menu-expand").length;
+          })
           .prepend('<span class="menu-expand"></span>');
 
         /*Category Sub Menu Toggle*/
-        $ltn__utilizeNav.on("click", "li a, .menu-expand", function (e) {
+        $ltn__utilizeNav.on("click.ltnUtilizeMenu", "li a, .menu-expand", function (e) {
           var $this = $(this);
           if ($this.attr("href") === "#" || $this.hasClass("menu-expand")) {
             e.preventDefault();
@@ -162,12 +217,12 @@ const main = () => {
               3-2. Category Menu
           --------------------------------------------------------- */
 
-      $(".ltn__category-menu-title").on("click", function () {
+      $(".ltn__category-menu-title").on("click.ltnCategory", function () {
         $(".ltn__category-menu-toggle").slideToggle(500);
       });
 
       /* Category Menu More Item show */
-      $(".ltn__category-menu-more-item-parent").on("click", function () {
+      $(".ltn__category-menu-more-item-parent").on("click.ltnCategoryMore", function () {
         $(".ltn__category-menu-more-item-child").slideToggle();
         $(this).toggleClass("rx-change");
       });
@@ -183,7 +238,7 @@ const main = () => {
       /* Category Menu Responsive */
       function ltn__CategoryMenuToggle() {
         $(".ltn__category-menu-toggle .ltn__category-menu-drop > a").on(
-          "click",
+          "click.ltnCategoryDrop",
           function () {
             if ($(window).width() < 991) {
               $(this).removeAttr("href");
@@ -203,9 +258,9 @@ const main = () => {
             }
           }
         );
-        $(".ltn__category-menu-toggle .ltn__category-menu-drop > a").append(
-          '<span class="expand"></span>'
-        );
+        $(".ltn__category-menu-toggle .ltn__category-menu-drop > a")
+          .not(":has(.expand)")
+          .append('<span class="expand"></span>');
       }
       ltn__CategoryMenuToggle();
 
@@ -233,7 +288,7 @@ const main = () => {
               5. Toogle Search
           -------------------------------------------------------- */
       // Handle click on toggle search button
-      $(".header-search-1").on("click", function () {
+      $(".header-search-1").on("click.ltnHeaderSearch", function () {
         $(".header-search-1, .header-search-1-form").toggleClass("search-open");
         return false;
       });
@@ -1245,7 +1300,7 @@ const main = () => {
           */
       if ($(".ltn__parallax-effect-active").length) {
         var scene = $(".ltn__parallax-effect-active").get(0);
-        var parallaxInstance = new Parallax(scene);
+        parallaxInstance = new Parallax(scene);
       }
 
       /* --------------------------------------------------------
@@ -1258,7 +1313,7 @@ const main = () => {
           36. Header menu sticky
       -------------------------------------------------------- */
 
-      $(window).on("scroll", function () {
+      $(window).on("scroll.ltnHeaderSticky", function () {
         var scroll = $(window).scrollTop();
 
         if (scroll < 445) {
@@ -1295,6 +1350,8 @@ const main = () => {
   function clearCheckJquery() {
     clearInterval(checkJquery);
   }
+
+  return cleanup;
 };
 
 export default main;
