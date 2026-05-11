@@ -170,6 +170,7 @@ const ProductDetailsPrimary = () => {
               applicationsAndUses={
                 (selectedProduct || product)?.applications_and_uses || []
               }
+              product={selectedProduct || product}
             />
           </div>
         </div>

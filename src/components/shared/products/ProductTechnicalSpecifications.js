@@ -1,14 +1,25 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 
-const ProductTechnicalSpecifications = ({ specifications, applicationsAndUses }) => {
+const ProductTechnicalSpecifications = ({
+  specifications,
+  applicationsAndUses,
+  product,
+}) => {
   const specificationEntries = Object.entries(specifications || {}).filter(
     ([, value]) =>
       value !== undefined &&
       value !== null &&
       (!Array.isArray(value) || value.length > 0)
   );
+  const isMoqLabel = (label = "") =>
+    /moq|minimum\s*order\s*quantity/i.test(label);
+  const quoteProduct = product?.slug || product?.title || "";
+  const quoteHref = quoteProduct
+    ? `/contact?product=${encodeURIComponent(quoteProduct)}`
+    : "/contact";
   const applicationItems = useMemo(
     () => (Array.isArray(applicationsAndUses) ? applicationsAndUses.filter(Boolean) : []),
     [applicationsAndUses]
@@ -127,7 +138,18 @@ const ProductTechnicalSpecifications = ({ specifications, applicationsAndUses })
                         ))}
                       </ul>
                     ) : (
-                      String(value)
+                      <span className="product-specification-value-with-action">
+                        {!!String(value).trim() && <span>{String(value)}</span>}
+                        {isMoqLabel(label) && (
+                          <Link
+                            href={quoteHref}
+                            className="product-inline-quote-btn"
+                            title="Get a quote"
+                          >
+                            Get a Quote
+                          </Link>
+                        )}
+                      </span>
                     )}
                   </td>
                 </tr>

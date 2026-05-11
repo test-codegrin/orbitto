@@ -18,7 +18,11 @@ const Pagination = ({
             <Link
               href={`#${path ? path : "blogs"}`}
               onClick={(e) =>
-                handleCurrentPage(e, currenIndex < 1 ? 0 : currenIndex - 1)
+                handleCurrentPage(
+                  e,
+                  currenIndex < 1 ? 0 : currenIndex - 1,
+                  path
+                )
               }
               style={{
                 visibility: currenIndex > 0 ? "visible" : "hidden",
@@ -31,7 +35,7 @@ const Pagination = ({
             <>
               <li>
                 <Link
-                  onClick={(e) => handleCurrentPage(e, 0)}
+                  onClick={(e) => handleCurrentPage(e, 0, path)}
                   href={`#${path ? path : "blogs"}`}
                 >
                   1
@@ -39,7 +43,9 @@ const Pagination = ({
               </li>
               <li>
                 <Link
-                  onClick={(e) => handleCurrentPage(e, currenIndex - 1)}
+                  onClick={(e) =>
+                    handleCurrentPage(e, currenIndex - 1, path)
+                  }
                   href={`#${path ? path : "blogs"}`}
                 >
                   ...
@@ -55,7 +61,7 @@ const Pagination = ({
               className={` ${item === currenIndex ? "active" : ""}`}
             >
               <Link
-                onClick={(e) => handleCurrentPage(e, item)}
+                onClick={(e) => handleCurrentPage(e, item, path)}
                 href={`#${path ? path : "blogs"}`}
               >
                 {item + 1}
@@ -66,7 +72,9 @@ const Pagination = ({
             <>
               <li>
                 <Link
-                  onClick={(e) => handleCurrentPage(e, currenIndex + 1)}
+                  onClick={(e) =>
+                    handleCurrentPage(e, currenIndex + 1, path)
+                  }
                   href={`#${path ? path : "blogs"}`}
                 >
                   ...
@@ -74,7 +82,9 @@ const Pagination = ({
               </li>
               <li>
                 <Link
-                  onClick={(e) => handleCurrentPage(e, totalPages - 1)}
+                  onClick={(e) =>
+                    handleCurrentPage(e, totalPages - 1, path)
+                  }
                   href={`#${path ? path : "blogs"}`}
                 >
                   {totalPages}
@@ -92,7 +102,8 @@ const Pagination = ({
                   e,
                   currenIndex > totalPages - 2
                     ? totalPages - 1
-                    : currenIndex + 1
+                    : currenIndex + 1,
+                  path
                 )
               }
               style={{

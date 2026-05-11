@@ -5,12 +5,13 @@ import ProductDetailsPrimary from "@/components/sections/product-details/Product
 import Products5 from "@/components/sections/products/Products5";
 import CommonContext from "@/providers/CommonContext";
 
-const ProductDetailsMain = ({ title, text, type, isNotSidebar }) => {
+const ProductDetailsMain = ({ title, text, type, isNotSidebar, breadcrumbItem }) => {
   return (
     <main>
       <HeroPrimary
         title={title ? title : "Product Details"}
         text={text ? text : "Product Details"}
+        item={breadcrumbItem || { name: "Products", path: "/products" }}
         type={3}
       />
       <CommonContext value={{ type, isNotSidebar }}>

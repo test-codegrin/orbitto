@@ -1,7 +1,7 @@
 import React from "react";
 
-const Nodata = ({ text }) => {
-  return <p className="empty">{text}</p>;
+const Nodata = ({ text, className = "" }) => {
+  return <p className={`empty ${className}`.trim()}>{text}</p>;
 };
 
 export default Nodata;

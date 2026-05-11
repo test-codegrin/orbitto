@@ -9,7 +9,7 @@ import getRangeValue from "@/libs/getRangeValue";
 import makeText from "@/libs/makeText";
 import CommonContext from "@/providers/CommonContext";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const ProductMain = ({ title, isSidebar, text }) => {
   const allProducts = getAllProducts();
@@ -36,41 +36,49 @@ const ProductMain = ({ title, isSidebar, text }) => {
     setIsShowQuickSearchResult,
   } = useSearch(allProducts, currentPath);
 
-  const productsBeforePriceFilter = filterItems(
-    allProducts,
-    category
-      ? "category"
-      : brand
-      ? "brand"
-      : tag
-      ? "tags"
-      : size
-      ? "size"
-      : color
-      ? "color"
-      : search
-      ? "search"
-      : "",
-    category
-      ? category
-      : brand
-      ? brand
-      : tag
-      ? tag
-      : size
-      ? size
-      : color
-      ? color
-      : search
-      ? search
-      : "",
-    true
+  const productsBeforePriceFilter = useMemo(
+    () =>
+      filterItems(
+        allProducts,
+        category
+          ? "category"
+          : brand
+          ? "brand"
+          : tag
+          ? "tags"
+          : size
+          ? "size"
+          : color
+          ? "color"
+          : search
+          ? "search"
+          : "",
+        category
+          ? category
+          : brand
+          ? brand
+          : tag
+          ? tag
+          : size
+          ? size
+          : color
+          ? color
+          : search
+          ? search
+          : "",
+        true
+      ),
+    [allProducts, category, brand, tag, size, color, search]
   );
 
-  const filteredProducts = filterItems(
-    productsBeforePriceFilter,
-    rangeValue ? "range" : "",
-    rangeValue ? rangeValue : ""
+  const filteredProducts = useMemo(
+    () =>
+      filterItems(
+        productsBeforePriceFilter,
+        rangeValue ? "range" : "",
+        rangeValue ? rangeValue : ""
+      ),
+    [productsBeforePriceFilter, rangeValue]
   );
 
   useEffect(() => {

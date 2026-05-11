@@ -17,8 +17,15 @@ const usePagination = (filteredItems, currentLimit, pagiItemsLengthPerView) => {
   const paginationItems = paginationItemsUnmodified?.map((it, idx) => idx);
 
   // hande currentpage
-  const handleCurrentPage = (e, id) => {
-    setCurrentpage(id);
+  const handleCurrentPage = (e, id, scrollTargetId) => {
+    e?.preventDefault?.();
+    const safePage =
+      typeof id === "number" ? Math.max(0, Math.min(id, totalPages - 1)) : 0;
+    setCurrentpage(safePage);
+    if (scrollTargetId && typeof window !== "undefined") {
+      const target = document.getElementById(scrollTargetId);
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
   let showMore = false;
   let currentPaginationItems = paginationItems;

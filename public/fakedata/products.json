@@ -26,9 +26,9 @@
         "5 kg aluminum foil bags (4 bags x 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Acaiberry.png",
@@ -66,9 +66,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Aloevera.png",
@@ -104,9 +104,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Amla.png",
@@ -140,9 +140,9 @@
         "5 kg aluminum foil bags (4 bags x 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/GreenApple.png",
@@ -176,9 +176,9 @@
         "5 kg aluminum foil bags (4 bags x 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/RedApple.png",
@@ -213,9 +213,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/AshGourd.png",
@@ -249,9 +249,9 @@
         "5 kg aluminum foil bags (4 bags x 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Avocado.png",
@@ -290,9 +290,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Beetroot.png",
@@ -326,9 +326,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/BitterGourd.png",
@@ -363,9 +363,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "Available in HDPE 25 kg Drum Pack (for specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 Kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/BlackCurtunt.png",
@@ -400,9 +400,9 @@
         "5 kg aluminum foil bags (4 bags x 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "Typically 0.01% to 5.0%, adjustable based on application and regulatory guidelines"
+      "Dosage Levels": "Typically 0.01% to 5.0%, adjustable based on application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/BlackGrapes.png",
@@ -438,9 +438,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE drum packing available as per requirement"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0%, adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "0.01–5.0%, adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Blackberry.png",
@@ -476,9 +476,9 @@
         "5 kg aluminum foil bags (4 bags x 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Blueberry.png",
@@ -513,9 +513,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% up to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% up to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/BottleGourd.png",
@@ -548,9 +548,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Broccoli.png",
@@ -586,9 +586,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Cabbage.png",
@@ -622,9 +622,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg packed in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/capsicum.png",
@@ -659,9 +659,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg packed in a 5-ply corrugated box)",
         "HDPE 25 kg Drum Pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Carrot.png",
@@ -696,9 +696,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Cauliflower.png",
@@ -732,9 +732,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE drum packaging available (25 kg)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Cherry.png",
@@ -768,9 +768,9 @@
         "5 kg Aluminium Foil Bags in 5-ply Corrugated Box (20 kg: 5 kg × 4)",
         "HDPE 25 kg Drum Pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "Starts from 0.01% to 5.0%, adjustable per application and regulatory guidelines"
+      "Dosage Levels": "Starts from 0.01% to 5.0%, adjustable per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Saporilla.png",
@@ -805,9 +805,9 @@
         "5 kg Aluminum Foil Bags( 4 x 5 kg bags = 20 kg in a 5-Ply Corrugated Box)",
         "HDPE 25 kg Drum Pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ):": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines.)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines.)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Coriander.png",
@@ -844,9 +844,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/CustardApple.png",
@@ -881,9 +881,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/DateSugar.png",
@@ -918,9 +918,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "Starts from 0.01% to 5.0%; adjustable as per application and regulatory requirements"
+      "Dosage Levels": "Starts from 0.01% to 5.0%; adjustable as per application and regulatory requirements",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/DatePowder.png",
@@ -955,9 +955,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% - 5.0%; adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "0.01% - 5.0%; adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/DragonFruit.png",
@@ -992,9 +992,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Garlic.png",
@@ -1030,9 +1030,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Ginger.png",
@@ -1067,9 +1067,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)."
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines).",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/GreenChilli.png",
@@ -1106,9 +1106,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Greenfennel.png",
@@ -1142,9 +1142,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE drum packaging available (25 kg)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0%, adjustable based on application and regulatory guidelines"
+      "Dosage Levels": "0.01% to 5.0%, adjustable based on application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/GreenGrapes.png",
@@ -1179,9 +1179,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum packing available (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/GreenMango.png",
@@ -1215,9 +1215,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum packs available on request"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/PinkGuava.png",
@@ -1251,9 +1251,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available."
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/WhiteGuava.png",
@@ -1290,55 +1290,55 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Honeypowder.png",
     "slug": "honey-powder"
   },
   {
-  "id": 51,
-  "title": "Wheatgrass Powder",
-  "desc": "Wheatgrass powder is produced by harvesting the young shoots of Triticum aestivum at peak nutritional maturity and processing them through low-temperature drying and fine milling into a stable, free-flowing green powder. This careful processing helps preserve the naturally occurring chlorophyll, enzymes, and heat-sensitive nutrients present in fresh wheatgrass.\nWheatgrass naturally contains chlorophyll, vitamins A, C, and E, iron, magnesium, calcium, amino acids, enzymes, and flavonoids, which are commonly associated, in a general non-medical sense, with antioxidant and alkalizing characteristics. Its mild, earthy-green flavor blends well into a wide range of food and beverage applications, making it a versatile superfood ingredient for health-focused formulations.",
-  "description": "Wheatgrass powder is produced by harvesting the young shoots of Triticum aestivum at peak nutritional maturity and processing them through low-temperature drying and fine milling into a stable, free-flowing green powder. This careful processing helps preserve the naturally occurring chlorophyll, enzymes, and heat-sensitive nutrients present in fresh wheatgrass.\nWheatgrass naturally contains chlorophyll, vitamins A, C, and E, iron, magnesium, calcium, amino acids, enzymes, and flavonoids, which are commonly associated, in a general non-medical sense, with antioxidant and alkalizing characteristics. Its mild, earthy-green flavor blends well into a wide range of food and beverage applications, making it a versatile superfood ingredient for health-focused formulations.",
-  "applications_and_uses": [
-    "Smoothies, green juices, and health shots",
-    "Instant beverage premixes and wellness drink formulations",
-    "Nutritional supplement capsules and tablets",
-    "Energy bars, protein bars, and snack formulations",
-    "Bakery products such as bread, muffins, and pancakes for nutritional enrichment",
-    "Breakfast cereals, oatmeal, and porridge blends",
-    "Yogurt, chia puddings, and dairy-based health foods",
-    "Natural skincare formulations such as face masks and scrubs"
-  ],
-  "specifications": {
-    "Product Name": "Wheatgrass Powder",
-    "Botanical Name": "Triticum aestivum",
-    "Raw Material": "Young leaves of freshly sprouted wheatgrass",
-    "Color, Taste & Aroma": "Vibrant green powder with a mild, earthy-green aroma and characteristic grassy flavor",
-    "Applications": "Smoothies, health drinks, instant beverage premixes, nutritional supplements, energy bars, bakery products, cereals, health foods, and nutraceutical formulations",
-    "Shelf Life": "24 months from the date of production when stored in proper sealed packaging under recommended conditions",
-    "Handling & Storage": [
-      "Store in a cool, dry, clean, odor-free environment, away from direct heat and sunlight",
-      "Recommended storage temperature: 15–25°C",
-      "Highly hygroscopic avoid prolonged exposure to air and moisture",
-      "Do not mix with hot liquids as heat may degrade active enzymes and heat-sensitive nutrients",
-      "Reseal packaging tightly after each use"
+    "id": 51,
+    "title": "Wheatgrass Powder",
+    "desc": "Wheatgrass powder is produced by harvesting the young shoots of Triticum aestivum at peak nutritional maturity and processing them through low-temperature drying and fine milling into a stable, free-flowing green powder. This careful processing helps preserve the naturally occurring chlorophyll, enzymes, and heat-sensitive nutrients present in fresh wheatgrass.\nWheatgrass naturally contains chlorophyll, vitamins A, C, and E, iron, magnesium, calcium, amino acids, enzymes, and flavonoids, which are commonly associated, in a general non-medical sense, with antioxidant and alkalizing characteristics. Its mild, earthy-green flavor blends well into a wide range of food and beverage applications, making it a versatile superfood ingredient for health-focused formulations.",
+    "description": "Wheatgrass powder is produced by harvesting the young shoots of Triticum aestivum at peak nutritional maturity and processing them through low-temperature drying and fine milling into a stable, free-flowing green powder. This careful processing helps preserve the naturally occurring chlorophyll, enzymes, and heat-sensitive nutrients present in fresh wheatgrass.\nWheatgrass naturally contains chlorophyll, vitamins A, C, and E, iron, magnesium, calcium, amino acids, enzymes, and flavonoids, which are commonly associated, in a general non-medical sense, with antioxidant and alkalizing characteristics. Its mild, earthy-green flavor blends well into a wide range of food and beverage applications, making it a versatile superfood ingredient for health-focused formulations.",
+    "applications_and_uses": [
+      "Smoothies, green juices, and health shots",
+      "Instant beverage premixes and wellness drink formulations",
+      "Nutritional supplement capsules and tablets",
+      "Energy bars, protein bars, and snack formulations",
+      "Bakery products such as bread, muffins, and pancakes for nutritional enrichment",
+      "Breakfast cereals, oatmeal, and porridge blends",
+      "Yogurt, chia puddings, and dairy-based health foods",
+      "Natural skincare formulations such as face masks and scrubs"
     ],
-    "Packaging Options": [
-      "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
-      "HDPE 25 kg drum pack (as specified)"
-    ],
-    "MOQ": "100 kg or above",
-    "Lead Time": "Immediate dispatch",
-    "Dosage Levels": "0.5% to 5.0% (adjustable as per application and regulatory guidelines)"
+    "specifications": {
+      "Product Name": "Wheatgrass Powder",
+      "Botanical Name": "Triticum aestivum",
+      "Raw Material": "Young leaves of freshly sprouted wheatgrass",
+      "Color, Taste & Aroma": "Vibrant green powder with a mild, earthy-green aroma and characteristic grassy flavor",
+      "Applications": "Smoothies, health drinks, instant beverage premixes, nutritional supplements, energy bars, bakery products, cereals, health foods, and nutraceutical formulations",
+      "Shelf Life": "24 months from the date of production when stored in proper sealed packaging under recommended conditions",
+      "Handling & Storage": [
+        "Store in a cool, dry, clean, odor-free environment, away from direct heat and sunlight",
+        "Recommended storage temperature: 15–25°C",
+        "Highly hygroscopic avoid prolonged exposure to air and moisture",
+        "Do not mix with hot liquids as heat may degrade active enzymes and heat-sensitive nutrients",
+        "Reseal packaging tightly after each use"
+      ],
+      "Packaging Options": [
+        "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
+        "HDPE 25 kg drum pack (as specified)"
+      ],
+      "Lead Time": "Immediate dispatch",
+      "Dosage Levels": "0.5% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
+    },
+    "type": "Herbal Powder",
+    "image": "/img/product/Herbs/Wheatgrass.png",
+    "slug": "wheatgrass-powder"
   },
-  "type": "Herbal Powder",
-  "image": "/img/product/Herbs/Wheatgrass.png",
-  "slug": "wheatgrass-powder"
-},
   {
     "id": 52,
     "title": "Jackfruit Powder",
@@ -1367,9 +1367,9 @@
         "5 Kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/JackFruit.png",
@@ -1404,9 +1404,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/JelepenoChilli.png",
@@ -1452,9 +1452,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Kiwi.png",
@@ -1507,9 +1507,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Lemon.png",
@@ -1546,9 +1546,9 @@
         "Avoid prolonged exposure to air; the powder is hygroscopic and may harden if moisture is absorbed.",
         "Reseal the package tightly when not in use."
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Lettuce.png",
@@ -1583,9 +1583,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg total: 5 kg × 4)",
         "25 kg HDPE drum packing available (at specified facilities)"
       ],
-      "MOQ": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/fruit/Lime.png",
@@ -1634,9 +1634,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Litchi.png",
@@ -1674,9 +1674,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "0.01% to 5.0%, adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Mango.png",
@@ -1713,9 +1713,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory requirements)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory requirements)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Mint.png",
@@ -1750,9 +1750,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
         "HDPE 25 kg drum pack (as specified)"
       ],
-      "MOQ": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Moringaleaf.png",
@@ -1785,9 +1785,9 @@
         "5 Kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box",
         "HDPE 25 kg drum pack available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Mulberry.png",
@@ -1819,9 +1819,9 @@
         "5 Kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Muskmelon.png",
@@ -1856,9 +1856,9 @@
         "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg total: 5 kg × 4)",
         "25 kg HDPE drum packing available (at specified facilities)"
       ],
-      "MOQ": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Okra.png",
@@ -1892,9 +1892,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate Dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Onine.png",
@@ -1927,9 +1927,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg, packed in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "Starts from 0.01% to 5.0% (adjustable per application and regulatory guidelines)"
+      "Dosage Levels": "Starts from 0.01% to 5.0% (adjustable per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Orange.png",
@@ -1967,9 +1967,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/PassionFruit.png",
@@ -2004,9 +2004,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory requirements)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory requirements)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Peach.png",
@@ -2041,9 +2041,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory requirements)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory requirements)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Pineapple.png",
@@ -2078,9 +2078,9 @@
         "5 kg aluminum foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Pomogranate.png",
@@ -2115,9 +2115,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Pricklypear.png",
@@ -2152,9 +2152,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available at specified facilities"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Pumpkin.png",
@@ -2190,9 +2190,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg) in a 5-ply corrugated box",
         "HDPE 25 kg drum pack also available"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "Starts at 0.01% to 5.0%, adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "Starts at 0.01% to 5.0%, adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Ruspberry.png",
@@ -2227,9 +2227,9 @@
         "5 kg aluminum foil bags (4 bags x 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01–5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/RipeBanana.png",
@@ -2261,9 +2261,9 @@
         "5 kg aluminium foil bags (4 bags × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available"
       ],
-      "MOQ": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01–5.0%, adjustable as per application and regulatory requirements"
+      "Dosage Levels": "0.01–5.0%, adjustable as per application and regulatory requirements",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/RipePapaya.png",
@@ -2299,9 +2299,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Roseflavor.png",
@@ -2336,9 +2336,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available at specified facilities"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Spinach.png",
@@ -2373,9 +2373,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Spirulina.png",
@@ -2412,9 +2412,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "Starts at 0.01% to 5.0%, adjustable as per application and regulatory guidelines"
+      "Dosage Levels": "Starts at 0.01% to 5.0%, adjustable as per application and regulatory guidelines",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Strawberry.png",
@@ -2449,9 +2449,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Sugarcane.png",
@@ -2487,9 +2487,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/SweetPotato.png",
@@ -2523,9 +2523,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available upon request"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Tamarind.png",
@@ -2560,9 +2560,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack available upon request"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01% - 5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Tomato.png",
@@ -2600,9 +2600,9 @@
         "5 kg aluminum foil bags (4 bags x 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/UnripeBanana.png",
@@ -2636,9 +2636,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "25 kg HDPE drum pack (at specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "5 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)"
+      "Dosage Levels": "0.01% to 5.0% (adjustable based on application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/UnripePapaya.png",
@@ -2674,9 +2674,9 @@
         "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
         "HDPE 25 kg drum pack (available in specified facilities)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg or above",
       "Lead Time": "Immediate dispatch",
-      "Dosage Levels": "0.01%-5.0% (adjustable as per application and regulatory guidelines)"
+      "Dosage Levels": "0.01%-5.0% (adjustable as per application and regulatory guidelines)",
+      "MOQ": ""
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Watermalon.png",
@@ -2711,9 +2711,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Raw, Unprocessed, Unfiltered"
+      "Type": "Raw, Unprocessed, Unfiltered",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/Rawajwainhoney.png",
@@ -2748,9 +2748,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Raw, Unprocessed"
+      "Type": "Raw, Unprocessed",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/Eucalyptus.png",
@@ -2785,9 +2785,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Creamed / Set Honey"
+      "Type": "Creamed / Set Honey",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/Edcalyptushoney.png",
@@ -2822,9 +2822,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Raw, Natural, Monofloral"
+      "Type": "Raw, Natural, Monofloral",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/Sunflowerhoney.png",
@@ -2859,9 +2859,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Raw, Monofloral, Unprocessed"
+      "Type": "Raw, Monofloral, Unprocessed",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/Acacia(Kikar)Honey.png",
@@ -2896,9 +2896,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Raw, Natural, Monofloral"
+      "Type": "Raw, Natural, Monofloral",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/Berseem(Alfalfa)honey.png",
@@ -2933,9 +2933,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Raw, Polyfloral, Natural"
+      "Type": "Raw, Polyfloral, Natural",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/MultifloraHoney.png",
@@ -2970,9 +2970,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "50 kg",
       "Lead Time": "7–10 business days (seasonal availability)",
-      "Type": "Raw, Premium Monofloral, Unprocessed"
+      "Type": "Raw, Premium Monofloral, Unprocessed",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/Sidr(wildberry)honey.png",
@@ -3007,9 +3007,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Raw, Wild-Harvested, Unfiltered, Unprocessed"
+      "Type": "Raw, Wild-Harvested, Unfiltered, Unprocessed",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/WildForesthoney.png",
@@ -3044,9 +3044,9 @@
         "1 kg PET jar",
         "25 kg food-grade drum (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Type": "Raw, Monofloral, Natural"
+      "Type": "Raw, Monofloral, Natural",
+      "MOQ": ""
     },
     "type": "Honey",
     "image": "/img/product/Honey/CorianderHoney.png",
@@ -3084,9 +3084,9 @@
         "5 kg bag",
         "25 kg HDPE bag (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Certifications": "FSSAI, APEDA, ISO (on request)"
+      "Certifications": "FSSAI, APEDA, ISO (on request)",
+      "MOQ": ""
     },
     "type": "Spices",
     "image": "/img/product/Spices/Turmeric.png",
@@ -3124,9 +3124,9 @@
         "5 kg bag",
         "25 kg HDPE bag (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Certifications": "FSSAI, APEDA, ISO (on request)"
+      "Certifications": "FSSAI, APEDA, ISO (on request)",
+      "MOQ": ""
     },
     "type": "Spices",
     "image": "/img/product/Spices/Redchilli.png",
@@ -3162,9 +3162,9 @@
         "5 kg bag",
         "25 kg HDPE bag (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Certifications": "FSSAI, APEDA, ISO (on request)"
+      "Certifications": "FSSAI, APEDA, ISO (on request)",
+      "MOQ": ""
     },
     "type": "Spices",
     "image": "/img/product/Spices/Garammasala.png",
@@ -3200,9 +3200,9 @@
         "5 kg bag",
         "25 kg HDPE bag (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Certifications": "FSSAI, APEDA, ISO (on request)"
+      "Certifications": "FSSAI, APEDA, ISO (on request)",
+      "MOQ": ""
     },
     "type": "Spices",
     "image": "/img/product/Spices/Cumin.png",
@@ -3239,9 +3239,9 @@
         "5 kg bag (bulk)",
         "25 kg HDPE bag (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "50 kg",
       "Lead Time": "Immediate dispatch",
-      "Certifications": "FSSAI, APEDA, ISO (on request)"
+      "Certifications": "FSSAI, APEDA, ISO (on request)",
+      "MOQ": ""
     },
     "type": "Spices",
     "image": "/img/product/Spices/Asafoetida.png",
@@ -3277,9 +3277,9 @@
         "5 kg bag",
         "25 kg HDPE bag (bulk export)"
       ],
-      "Minimum Order Quantity (MOQ)": "100 kg",
       "Lead Time": "Immediate dispatch",
-      "Certifications": "FSSAI, APEDA, ISO (on request)"
+      "Certifications": "FSSAI, APEDA, ISO (on request)",
+      "MOQ": ""
     },
     "type": "Spices",
     "image": "/img/product/Spices/Teamasalapowder.png",

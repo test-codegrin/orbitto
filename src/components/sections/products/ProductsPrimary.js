@@ -19,6 +19,10 @@ const ProductsPrimary = ({ isSidebar }) => {
     () => filteredProducts || [],
     [filteredProducts]
   );
+  const productListKey = useMemo(
+    () => arrangedProducts?.map(({ id }) => id).join("|"),
+    [arrangedProducts]
+  );
 
   const {
     currentItems,
@@ -33,10 +37,13 @@ const ProductsPrimary = ({ isSidebar }) => {
 
   useEffect(() => {
     setCurrentpage(0);
-  }, [arrangedProducts, setCurrentpage]);
+  }, [productListKey, setCurrentpage]);
 
   return (
-    <div className="ltn__product-area ltn__product-gutter mb-120">
+    <div
+      id="products"
+      className="ltn__product-area ltn__product-gutter mb-120"
+    >
       <div className="container">
         <div className="row">
           <div
@@ -44,29 +51,29 @@ const ProductsPrimary = ({ isSidebar }) => {
               isSidebar === "left" ? "order-lg-2" : ""
             }`}
           >
-            {!totalPages && <Nodata text="No Product Found!" />}
-
-            <div
-              className={`ltn__Product-options ltn__product-topbar ${
-                !totalPages ? "no-data" : ""
-              }`}
-            >
+            <div className="ltn__Product-options ltn__product-topbar">
               <ProductCategories isDropdown />
               <SidebarSearch isCompact />
             </div>
 
             <div className="ltn__product-tab-content-inner ltn__product-grid-view">
               <div className="row products3-fixed-card-grid">
-                {currentItems?.map((product, idx) => (
-                  <div
-                    className={`${
-                      isSidebar === false ? "col-xl-3 col-lg-4" : "col-xl-4"
-                    } col-sm-6 col-6`}
-                    key={product?.id || idx}
-                  >
-                    <ProductCardPrimary product={product} />
+                {!totalPages ? (
+                  <div className="col-12">
+                    <Nodata text="No Product Found!" className="empty-products" />
                   </div>
-                ))}
+                ) : (
+                  currentItems?.map((product, idx) => (
+                    <div
+                      className={`${
+                        isSidebar === false ? "col-xl-3 col-lg-4" : "col-xl-4"
+                      } col-sm-6 col-6`}
+                      key={product?.id || idx}
+                    >
+                      <ProductCardPrimary product={product} />
+                    </div>
+                  ))
+                )}
               </div>
             </div>
 
@@ -78,6 +85,7 @@ const ProductsPrimary = ({ isSidebar }) => {
                 items={paginationItems}
                 currenIndex={currentpage}
                 handleCurrentPage={handleCurrentPage}
+                path="products"
               />
             )}
           </div>
