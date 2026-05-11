@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import Header from "@/components/layout/headers/Header";
 import HeaderContex from "@/providers/HeaderContex";
 import Footer from "@/components/layout/footers/Footer";
@@ -27,7 +27,7 @@ const PageWrapper = ({
   footerBg,
   isCommingSoon,
 }) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     return main();
   }, []);
   return (
