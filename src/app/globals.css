@@ -15674,6 +15674,27 @@ blockquote::before {
   display: none;
 }
 
+.preloader-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.preloader-brand {
+  will-change: transform;
+}
+
+.preloader-brand--moving {
+  transition: transform var(--preloader-move-duration, 900ms) ease-in-out;
+}
+
+.preloader-logo-img {
+  width: 154px;
+  height: auto;
+}
+
 .empty.empty-products {
   height: auto;
   min-height: 120px;
