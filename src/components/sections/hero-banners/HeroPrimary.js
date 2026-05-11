@@ -33,7 +33,7 @@ const HeroPrimary = ({ text, title, item, type, mb, isCapitalize, bg }) => {
               {/* CENTER: Title */}
               <div className="section-title-area ltn__section-title-2">
                 <h6 className="section-subtitle ltn__secondary-color">
-                  Welcome to our company
+                  Welcome to our Orbitto
                 </h6>
                 <h1
                   className={`section-title white-color ${

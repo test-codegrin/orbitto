@@ -239,9 +239,9 @@ const SLIDES = [
       {
         src: "/img/slider/Vegetable/Coriander.png",
         alt: "Coriander Leaves",
-        bottom: "-15%",
+        bottom: "0%",
         left: "25%",
-        width: 165,
+        width: 265,
         height: 234,
         delay: "0s",
         fluid: {
@@ -274,8 +274,8 @@ const SLIDES = [
       {
         src: "/img/slider/Vegetable/Carrot.png",
         alt: "Carrot",
-        bottom: "-30%",
-        right: "0%",
+        bottom: "-10%",
+        right: "-12%",
         width: 429,
         height: 479,
         delay: "0.4s",
@@ -327,7 +327,7 @@ const SLIDES = [
         src: "/img/slider/Vegetable/blur.png",
         alt: "Spinach",
         bottom: "-10%",
-        left: "0%",
+        left: "-5%",
         size: 155,
         delay: "0.5s",
         fluid: {
@@ -502,9 +502,9 @@ const SLIDES = [
       {
         src: "/img/slider/Spices/GaramMsala.png",
         alt: "GaramMasala",
-        top: "-9%",
-        left: "-6%",
-        size: 310,
+        top: "-15%",
+        left: "-4%",
+        size: 410,
         fluid: {
           768: { top: "0%", left: "0%", size: "18vw" },
           1024: { top: "0%", left: "0%", size: "18vw" },
@@ -518,9 +518,9 @@ const SLIDES = [
       {
         src: "/img/slider/Spices/DryChilli.png",
         alt: "Red Chili",
-        bottom: "-40%",
+        top: "4%",
         right: "-3%",
-        size: 611,
+        size: 511,
         fluid: {
           768: { bottom: "0%", right: "0%", size: "28vw" },
           1024: { bottom: "0%", right: "0%", size: "28vw" },
@@ -564,11 +564,11 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Spices/Tea-Leaf.png",
+        src: "/img/slider/Spices/Leaf.png",
         alt: "Tea Leaf",
-        bottom: "1%",
-        right: "-63%",
-        size: 260,
+        bottom: "-50%",
+        right: "-12%",
+        size: 560,
         fluid: {
           768: { bottom: "0%", right: "0%", size: "0px" },
           1024: { bottom: "0%", right: "0%", size: "0px" },
@@ -582,8 +582,8 @@ const SLIDES = [
       {
         src: "/img/slider/Spices/Turmeric.png",
         alt: "Turmeric",
-        top: "0%",
-        right: "10%",
+        top: "-10%",
+        right: "30%",
         size: 144,
         fluid: {
           768: { top: "6%", right: "4%", size: "10vw" },

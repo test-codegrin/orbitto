@@ -742,20 +742,20 @@
   },
   {
     "id": 29,
-    "title": "Chikoo Powder",
-    "desc": "Chikoo Powder is a naturally sweet, light brown powder made from fresh chikoo pulp. It delivers the characteristic flavor and aroma of the fruit and blends easily into dry and liquid formulations due to its free-flowing, water-soluble nature.\nChikoo is known to contain polyphenols, including tannins, as well as dietary fiber, vitamins, and minerals. These natural components are associated with general digestive comfort and overall wellness, making the powder suitable for nutraceutical and functional product development. Its smooth sweetness and authentic fruitiness make it simple to enhance the flavor and appeal of beverages, instant mixes, desserts, and other applications.",
-    "description": "Chikoo Powder is a naturally sweet, light brown powder made from fresh chikoo pulp. It delivers the characteristic flavor and aroma of the fruit and blends easily into dry and liquid formulations due to its free-flowing, water-soluble nature.\nChikoo is known to contain polyphenols, including tannins, as well as dietary fiber, vitamins, and minerals. These natural components are associated with general digestive comfort and overall wellness, making the powder suitable for nutraceutical and functional product development. Its smooth sweetness and authentic fruitiness make it simple to enhance the flavor and appeal of beverages, instant mixes, desserts, and other applications.",
+    "title": "Sapodilla Powder",
+    "desc": "Sapodilla Powder is a naturally sweet, light brown powder made from fresh Sapodilla pulp. It delivers the characteristic flavor and aroma of the fruit and blends easily into dry and liquid formulations due to its free-flowing, water-soluble nature.\nSapodilla is known to contain polyphenols, including tannins, as well as dietary fiber, vitamins, and minerals. These natural components are associated with general digestive comfort and overall wellness, making the powder suitable for nutraceutical and functional product development. Its smooth sweetness and authentic fruitiness make it simple to enhance the flavor and appeal of beverages, instant mixes, desserts, and other applications.",
+    "description": "Sapodilla Powder is a naturally sweet, light brown powder made from fresh Sapodilla pulp. It delivers the characteristic flavor and aroma of the fruit and blends easily into dry and liquid formulations due to its free-flowing, water-soluble nature.\nSapodilla is known to contain polyphenols, including tannins, as well as dietary fiber, vitamins, and minerals. These natural components are associated with general digestive comfort and overall wellness, making the powder suitable for nutraceutical and functional product development. Its smooth sweetness and authentic fruitiness make it simple to enhance the flavor and appeal of beverages, instant mixes, desserts, and other applications.",
     "applications_and_uses": [
       "Ideal for use in ice creams, milkshakes, smoothies, and fruit-based beverages",
       "A flavoring ingredient for biscuits, baked goods, confectionery, and desserts",
-      "Commonly used in traditional and Ayurvedic-inspired formulations where chikoo’s natural polyphenols and fiber are valued",
+      "Commonly used in traditional and Ayurvedic-inspired formulations where Sapodilla’s natural polyphenols and fiber are valued",
       "Suitable for instant mixes, cereal bars, chocolates, coating systems, snack mixes, yoghurts, and ready-meal components",
       "Blends well with other fruit powders to create fruit-based mixes and \"fruit cocktail\" profiles"
     ],
     "specifications": {
-      "Product Name": "Spray Dried Chikoo Powder",
-      "Ingredients (Raw Material)": "Fresh Chikoo Pulp",
-      "Colour, Taste & Aroma": "Light brown color with typical chikoo flavor",
+      "Product Name": "Spray Dried Sapodilla Powder",
+      "Ingredients (Raw Material)": "Fresh Sapodilla Pulp",
+      "Colour, Taste & Aroma": "Light brown color with typical Sapodilla flavor",
       "Application": "Beverages, sweets, confectionery, instant mixes, snacks, nutraceuticals, bakery, health supplements",
       "Shelf Life": "18 months from the date of production when stored in proper conditions in the original sealed pack",
       "Handling/Storage": [
@@ -774,7 +774,7 @@
     },
     "type": "Fruit Powder",
     "image": "/img/product/fruit/Saporilla.png",
-    "slug": "chikoo-powder"
+    "slug": "Sapodilla-powder"
   },
   {
     "id": 31,
