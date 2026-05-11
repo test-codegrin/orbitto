@@ -1,10 +1,12 @@
 import { Open_Sans, Playfair_Display, Rajdhani } from "next/font/google";
-import "@/assets/css/font-icons.css";
-import "@/assets/css/plugins.css";
-import "./globals.css";
-import "@/assets/css/responsive.css";
 import Script from "next/script";
 import { Suspense } from "react";
+
+import "@/assets/css/font-icons.css";
+import "@/assets/css/plugins.css";
+import "@/assets/css/responsive.css";
+import "./globals.css";
+
 import ProductProvider from "@/providers/ProductContext";
 
 const open_sans = Open_Sans({
@@ -34,6 +36,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const mapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
   return (
     <html
       lang="en"
@@ -41,21 +45,17 @@ export default function RootLayout({ children }) {
       className={`${rajdhani.variable} ${open_sans.variable} ${playfair.variable}`}
     >
       <body className={open_sans.className}>
-
-        {/* ✅ Scripts moved outside Suspense, at the body level */}
         <Script src="/plugins.js" strategy="lazyOnload" />
-        <Script
-          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
-          strategy="lazyOnload" // ✅ Explicit strategy instead of bare `async`
-        />
+        {mapsApiKey ? (
+          <Script
+            src={`https://maps.googleapis.com/maps/api/js?key=${mapsApiKey}&loading=async`}
+            strategy="lazyOnload"
+          />
+        ) : null}
 
-        {/* ✅ Provider wraps children so all pages can access product context */}
         <ProductProvider>
-          <Suspense fallback={<div></div>}>
-            {children}
-          </Suspense>
+          <Suspense fallback={<div></div>}>{children}</Suspense>
         </ProductProvider>
-
       </body>
     </html>
   );

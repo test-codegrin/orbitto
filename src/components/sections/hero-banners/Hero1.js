@@ -1210,9 +1210,7 @@ export default function Hero1() {
   const [stageScale, setStageScale] = useState(1);
   const [prevCup, setPrevCup] = useState(null);
   const [cupAnimating, setCupAnimating] = useState(false);
-  const [viewportW, setViewportW] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1440,
-  );
+  const [viewportW, setViewportW] = useState(1440);
 
   const slide = SLIDES[current];
   const watermarkGradient = (slide.watermarkGradient || "")
