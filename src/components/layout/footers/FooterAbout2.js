@@ -14,7 +14,7 @@ const FooterAbout2 = () => {
           <div className="site-logo">
             <Image
               src={footerBg === "dark" ? logoImage2 : logoImage}
-              alt="Logo" width={154} height={42}
+              alt="Logo" width={254} height={52}
             />
           </div>
         </div>

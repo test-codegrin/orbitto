@@ -99,10 +99,14 @@ const ContactPrimary = () => {
                     <div className="input-item">
                       <select name="serviceType" className="nice-select">
                         <option>Select Service Type</option>
-                        <option>Car Repair </option>
-                        <option>Engine Repairing </option>
-                        <option>Oil Change</option>
-                        <option>Car Wash</option>
+                        <option>MOQ</option>
+                        <option>Price </option>
+                        <option>Product Details</option>
+                        <option>Bulk/Wholesale Supply</option>
+                        <option>Private Labeling</option>
+                        <option>Sample Request</option>
+                        <option>Packaging Type</option>
+
                       </select>
                     </div>
                   </div>

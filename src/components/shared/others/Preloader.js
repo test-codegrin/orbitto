@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const TOTAL_DURATION = 2000;
+const TOTAL_DURATION = 1200;
 const MOVE_DURATION = 800;
 const HOLD_DURATION = TOTAL_DURATION - MOVE_DURATION;
 
