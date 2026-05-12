@@ -1,6 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import getAllProducts from "@/libs/getAllProducts";
+import { useEffect, useMemo, useRef, useState } from "react";
+
+const products = getAllProducts();
 
 const ContactPrimary = () => {
   const [formData, setFormData] = useState({
@@ -8,23 +11,89 @@ const ContactPrimary = () => {
     email: "",
     phone: "",
     agree: false,
+    serviceType: "Select Service Type",
+    product: [],
     message: "",
   });
   const [serviceType, setServiceType] = useState("Select Service Type");
+  const [productSearch, setProductSearch] = useState("");
+  const [selectedProducts, setSelectedProducts] = useState([]);
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
   const [status, setStatus] = useState("");
+  const productDropdownRef = useRef(null);
+  const productSearchInputRef = useRef(null);
+
+  const filteredProducts = useMemo(() => {
+    const searchValue = productSearch.trim().toLowerCase();
+
+    return products.filter(
+      (product) =>
+        !selectedProducts.includes(product.title) &&
+        (!searchValue || product.title.toLowerCase().includes(searchValue))
+    );
+  }, [productSearch, selectedProducts]);
+
   // get value from input
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((currentData) => ({
+      ...currentData,
       [name]: name === "agree" ? checked : value,
       serviceType,
-    });
+      product: selectedProducts,
+    }));
   };
+
+  const handleProductSelect = (productName) => {
+    if (selectedProducts.includes(productName)) {
+      return;
+    }
+
+    const nextProducts = [...selectedProducts, productName];
+    setSelectedProducts(nextProducts);
+    setProductSearch("");
+    setIsProductDropdownOpen(true);
+    setTimeout(() => productSearchInputRef.current?.focus(), 0);
+    setFormData((currentData) => ({
+      ...currentData,
+      serviceType,
+      product: nextProducts,
+    }));
+  };
+
+  const handleProductRemove = (productName) => {
+    const nextProducts = selectedProducts.filter(
+      (product) => product !== productName
+    );
+    setSelectedProducts(nextProducts);
+    setFormData((currentData) => ({
+      ...currentData,
+      serviceType,
+      product: nextProducts,
+    }));
+  };
+
+  const handleServiceTypeChange = (e) => {
+    const value = e.target.value;
+    setServiceType(value);
+    setFormData((currentData) => ({
+      ...currentData,
+      serviceType: value,
+      product: selectedProducts,
+    }));
+  };
+
   // handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
+    const selectCurrent = document.querySelector(".nice-select .current");
+    const currentServiceType = selectCurrent?.innerText || serviceType;
+    const submitData = {
+      ...formData,
+      serviceType: currentServiceType,
+      product: selectedProducts,
+    };
 
     try {
       const response = await fetch("/api/sendEmail", {
@@ -32,18 +101,23 @@ const ContactPrimary = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submitData),
       });
       if (response.ok) {
         setStatus("Thanks! Your message has been sent.");
+        setServiceType("Select Service Type");
         setFormData({
           name: "",
           email: "",
           phone: "",
           agree: false,
           serviceType: "Select Service Type",
+          product: [],
           message: "",
         });
+        setSelectedProducts([]);
+        setProductSearch("");
+        setIsProductDropdownOpen(false);
       } else {
         setStatus("Failed to send email.");
       }
@@ -62,6 +136,24 @@ const ContactPrimary = () => {
       selectCurrent.innerText = "Select Service Type";
     }
   }, [formData.agree, status]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        productDropdownRef.current &&
+        !productDropdownRef.current.contains(event.target)
+      ) {
+        setIsProductDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="ltn__contact-message-area mb-120 mb--100">
       <div className="container">
@@ -97,7 +189,11 @@ const ContactPrimary = () => {
                   </div>
                   <div className="col-md-6">
                     <div className="input-item">
-                      <select name="serviceType" className="nice-select">
+                      <select
+                        name="serviceType"
+                        className="nice-select"
+                        onChange={handleServiceTypeChange}
+                      >
                         <option>Select Service Type</option>
                         <option>MOQ</option>
                         <option>Price </option>
@@ -122,11 +218,102 @@ const ContactPrimary = () => {
                       />
                     </div>
                   </div>
+                  <div className="col-12">
+                    <div
+                      className="product-selection-box"
+                      ref={productDropdownRef}
+                    >
+                      <label className="product-selection-title">
+                        Select Product
+                      </label>
+                      <div className="product-dropdown">
+                        <div
+                          className="product-search-control"
+                          onClick={() => {
+                            setIsProductDropdownOpen(true);
+                            productSearchInputRef.current?.focus();
+                          }}
+                        >
+                          {selectedProducts.map((productName) => (
+                            <span className="product-chip" key={productName}>
+                              {productName}
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleProductRemove(productName);
+                                }}
+                                aria-label={`Remove ${productName}`}
+                              >
+                                &times;
+                              </button>
+                            </span>
+                          ))}
+                          <input
+                            ref={productSearchInputRef}
+                            type="search"
+                            className="product-search-input"
+                            value={productSearch}
+                            onChange={(e) => {
+                              setProductSearch(e.target.value);
+                              setIsProductDropdownOpen(true);
+                            }}
+                            onFocus={() => setIsProductDropdownOpen(true)}
+                            placeholder={
+                              selectedProducts.length
+                                ? "Search more products"
+                                : "Search or select products"
+                            }
+                            aria-label="Search or select products"
+                            aria-autocomplete="list"
+                            aria-haspopup="listbox"
+                            aria-expanded={isProductDropdownOpen}
+                            aria-controls="product-dropdown-list"
+                            autoComplete="off"
+                            role="combobox"
+                          />
+                          <span className="product-dropdown-arrow" />
+                        </div>
+                        {isProductDropdownOpen ? (
+                          <div
+                            className="product-list"
+                            id="product-dropdown-list"
+                            role="listbox"
+                          >
+                            {filteredProducts.length ? (
+                              filteredProducts.map((product) => (
+                                <button
+                                  type="button"
+                                  key={product.id}
+                                  className="product-option"
+                                  onClick={() =>
+                                    handleProductSelect(product.title)
+                                  }
+                                  aria-selected={false}
+                                  role="option"
+                                >
+                                  {product.title}
+                                </button>
+                              ))
+                            ) : (
+                              <p className="product-empty-message">
+                                No products found.
+                              </p>
+                            )}
+                          </div>
+                        ) : null}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="input-item input-item-textarea ltn__custom-icon">
+                <div className="input-item input-item-textarea contact-message-field">
+                  <label htmlFor="contact-message">
+                    Describe Your Requirement
+                  </label>
                   <textarea
+                    id="contact-message"
                     name="message"
-                    placeholder="Enter message"
+                    placeholder="I would like to..."
                     value={formData.message}
                     onChange={(e) => handleChange(e)}
                     required

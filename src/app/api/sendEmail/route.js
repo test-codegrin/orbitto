@@ -2,7 +2,8 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   const body = await req.json();
-  const { name, email, phone, serviceType, message } = body;
+  const { name, email, phone, serviceType, product, message } = body;
+  const products = Array.isArray(product) ? product.join(", ") : product;
 
   // Set up the Nodemailer transporter
   const transporter = nodemailer.createTransport({
@@ -24,6 +25,7 @@ export async function POST(req) {
                <p><strong>Email:</strong> ${email}</p>
                <p><strong>Phone:</strong> ${phone}</p>
                <p style="text-transfrom:capitalize;"><strong>Service Type:</strong> ${serviceType}</p>
+               <p><strong>Products:</strong> ${products || "Not selected"}</p>
                <p><strong>Message:</strong> ${message}</p>`, // HTML content
     });
 

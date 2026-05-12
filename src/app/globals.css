@@ -12239,6 +12239,196 @@ blockquote::before {
   color: var(--ltn__color-1);
 }
 
+.product-selection-box {
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.product-selection-title {
+  color: var(--ltn__heading-color);
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.product-dropdown {
+  position: relative;
+}
+
+.product-search-control {
+  align-items: center;
+  background-color: var(--white);
+  border: 2px solid var(--border-color-9);
+  cursor: text;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 65px;
+  margin-bottom: 0;
+  padding: 10px 52px 10px 12px;
+  width: 100%;
+}
+
+.product-search-control:focus-within {
+  border-color: var(--ltn__secondary-color);
+}
+
+.product-chip {
+  align-items: center;
+  background-color: rgba(128, 185, 40, 0.12);
+  border: 1px solid rgba(128, 185, 40, 0.28);
+  color: var(--ltn__heading-color);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 8px;
+  line-height: 1.25;
+  max-width: 100%;
+  min-height: 34px;
+  padding: 6px 9px 6px 12px;
+}
+
+.product-chip button {
+  align-items: center;
+  background: transparent;
+  color: var(--ltn__paragraph-color);
+  display: inline-flex;
+  font-size: 18px;
+  height: 20px;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  width: 20px;
+}
+
+.product-chip button:hover {
+  color: var(--ltn__secondary-color);
+}
+
+.product-search-input {
+  background-color: transparent;
+  border: 0;
+  color: var(--ltn__paragraph-color);
+  flex: 1 1 180px;
+  font-size: 16px;
+  height: 36px;
+  margin-bottom: 0;
+  min-width: 160px;
+  padding: 0;
+  width: auto;
+}
+
+.product-search-input:focus {
+  border: 0;
+}
+
+.product-dropdown-arrow {
+  align-items: center;
+  background: transparent;
+  color: var(--ltn__paragraph-color);
+  display: flex;
+  font-size: 22px;
+  height: 38px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: 12px;
+  top: 13px;
+  width: 38px;
+}
+
+.product-dropdown-arrow::before {
+  border-bottom: 2px solid var(--ltn__secondary-color);
+  border-right: 2px solid var(--ltn__secondary-color);
+  content: "";
+  display: block;
+  height: 8px;
+  transform: rotate(45deg) translateY(-2px);
+  width: 8px;
+}
+
+.product-list {
+  background-color: var(--white);
+  border: 2px solid var(--border-color-9);
+  border-top: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  left: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 12px;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 8;
+}
+
+.product-option {
+  background-color: var(--white);
+  border: 1px solid var(--border-color-9);
+  color: var(--ltn__paragraph-color);
+  font-size: 14px;
+  line-height: 1.35;
+  min-height: 44px;
+  padding: 10px 12px;
+  text-align: left;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.product-option:hover,
+.product-option.selected {
+  background-color: var(--ltn__secondary-color);
+  border-color: var(--ltn__secondary-color);
+  color: var(--white);
+}
+
+.product-empty-message {
+  color: var(--ltn__paragraph-color);
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.contact-message-field {
+  border: 2px solid var(--border-color-9);
+  margin-bottom: 30px;
+  padding: 0 24px 22px;
+}
+
+.contact-message-field label {
+  background-color: var(--white);
+  color: var(--ltn__heading-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0;
+  padding: 0 12px;
+  transform: translateY(-50%);
+}
+
+.contact-message-field textarea {
+  border: 0;
+  color: var(--ltn__paragraph-color);
+  font-size: 18px;
+  min-height: 190px;
+  margin-bottom: 0;
+  padding: 8px 0 0;
+}
+
+.contact-message-field textarea::placeholder {
+  color: var(--ltn__color-1);
+}
+
+.contact-message-field textarea:focus {
+  border: 0;
+}
+
 .contact-form-box-2 input,
 .contact-form-box-2 textarea {
   border-top: 0;
@@ -12285,6 +12475,24 @@ blockquote::before {
 @media (max-width: 767px) {
   .contact-form-box {
     padding: 40px 25px 50px;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+    max-height: 230px;
+  }
+
+  .contact-message-field {
+    padding: 0 18px 18px;
+  }
+
+  .product-search-input {
+    flex-basis: 140px;
+    min-width: 120px;
+  }
+
+  .contact-message-field textarea {
+    font-size: 16px;
   }
 }
 
