@@ -18,7 +18,7 @@ const ExportSupport = () => {
             <Image
               src="/img/hero/Container.png"
               alt="Packed turmeric powder for export"
-              width={260}
+              width={290}
               height={220}
               sizes="(max-width: 768px) 42vw, 18vw"
             />
@@ -27,7 +27,7 @@ const ExportSupport = () => {
             <Image
               src="/img/hero/Container2.png"
               alt="Natural honey product for export"
-              width={260}
+              width={290}
               height={220}
               sizes="(max-width: 768px) 42vw, 18vw"
             />
