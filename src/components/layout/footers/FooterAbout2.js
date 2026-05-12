@@ -1,4 +1,5 @@
 "use client";
+import BrandSocialLinks from "@/components/shared/socials/BrandSocialLinks";
 import Image from "next/image";
 const logoImage = "/img/logo.png";
 const logoImage2 = "/img/logo-2.png";
@@ -57,28 +58,7 @@ const FooterAbout2 = () => {
           </ul>
         </div>
         <div className="ltn__social-media mt-20">
-          <ul>
-            <li>
-              <Link href="https://www.facebook.com" title="Facebook">
-                <i className="fab fa-facebook-f"></i>
-              </Link>
-            </li>{" "}
-            <li>
-              <Link href="https://x.com" title="Twitter">
-                <i className="fab fa-twitter"></i>
-              </Link>
-            </li>{" "}
-            <li>
-              <Link href="https://www.linkedin.com" title="Linkedin">
-                <i className="fab fa-linkedin"></i>
-              </Link>
-            </li>{" "}
-            <li>
-              <Link href="https://www.youtube.com" title="Youtube">
-                <i className="fab fa-youtube"></i>
-              </Link>
-            </li>
-          </ul>
+          <BrandSocialLinks className="brand-social-links--footer" />
         </div>
       </div>
     </div>

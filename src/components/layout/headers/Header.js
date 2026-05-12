@@ -14,7 +14,6 @@ const Header = () => {
   const {
     headerStyle,
     headerSize,
-    isNotHeaderTop,
     isNotHeaderRight,
     isNotTransparent,
     isTextWhite,
@@ -55,7 +54,7 @@ const Header = () => {
             : " ltn__header-transparent ltn__header-5  "
         }`}
       >
-        {isNotHeaderTop ? "" : <HeaderTop />}
+        <HeaderTop />
 
         <div
           className={`ltn__header-middle-area  

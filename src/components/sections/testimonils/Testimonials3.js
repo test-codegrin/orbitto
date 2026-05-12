@@ -7,8 +7,8 @@ const Testimonials3 = ({ pt }) => {
   );
   return (
     <div
-      className={`ltn__testimonial-area section-bg-1   pb-70 ${
-        pt ? pt : "pt-290"
+      className={`ltn__testimonial-area section-bg-1   mb-100 ${
+        pt ? pt : "pt-50"
       }`}
     >
       <div className="container-fluid">
