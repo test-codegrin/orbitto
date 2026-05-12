@@ -26,6 +26,7 @@ const ProductsPrimary = ({ isSidebar }) => {
 
   const {
     currentItems,
+    totalItems,
     currentpage,
     setCurrentpage,
     paginationItems,
@@ -33,7 +34,58 @@ const ProductsPrimary = ({ isSidebar }) => {
     showMore,
     totalPages,
     handleCurrentPage,
+    firstItem,
+    lastItem,
   } = usePagination(arrangedProducts, limit, 5);
+
+  const pageJumpOptions = useMemo(() => {
+    const options = [];
+
+    if (currentpage > 0) {
+      options.push({
+        value: currentpage - 1,
+        label: "<<",
+      });
+    }
+
+    if (showMore === "left") {
+      options.push({
+        value: 0,
+        label: "1",
+      });
+      options.push({
+        value: currentpage - 1,
+        label: "...",
+      });
+    }
+
+    currentPaginationItems?.forEach((item) => {
+      options.push({
+        value: item,
+        label: `${item + 1}`,
+      });
+    });
+
+    if (showMore === "right") {
+      options.push({
+        value: currentpage + 1,
+        label: "...",
+      });
+      options.push({
+        value: totalPages - 1,
+        label: `${totalPages}`,
+      });
+    }
+
+    if (currentpage < totalPages - 1) {
+      options.push({
+        value: currentpage + 1,
+        label: ">>",
+      });
+    }
+
+    return options;
+  }, [currentpage, currentPaginationItems, showMore, totalPages]);
 
   useEffect(() => {
     setCurrentpage(0);
@@ -54,6 +106,43 @@ const ProductsPrimary = ({ isSidebar }) => {
             <div className="ltn__Product-options ltn__product-topbar">
               <ProductCategories isDropdown />
               <SidebarSearch isCompact />
+              <div className="showing-product-number text-right">
+                <span>
+                  Showing{" "}
+                  {totalItems === 0
+                    ? 0
+                    : firstItem === lastItem || totalItems <= limit
+                    ? lastItem
+                    : `${firstItem}-${lastItem}`}{" "}
+                  of {totalItems} results
+                </span>
+                {totalPages > 1 && (
+                  <div className="product-page-jump">
+                    <label htmlFor="product-page-select">Page</label>
+                    <select
+                      id="product-page-select"
+                      value={currentpage}
+                      onChange={(e) =>
+                        handleCurrentPage(
+                          undefined,
+                          Number(e.target.value),
+                          "products"
+                        )
+                      }
+                    >
+                      {pageJumpOptions?.map((option, idx) => (
+                        <option
+                          key={`${option.label}-${option.value}-${idx}`}
+                          value={option.value}
+                        >
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                    <span>of {totalPages}</span>
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className="ltn__product-tab-content-inner ltn__product-grid-view">
