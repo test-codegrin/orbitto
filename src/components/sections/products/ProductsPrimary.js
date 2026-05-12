@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
 import Nodata from "@/components/shared/no-data/Nodata";
@@ -15,6 +15,8 @@ const ProductsPrimary = ({ isSidebar }) => {
   const { filteredProducts } = useCommonContext();
 
   const limit = isSidebar === false ? 16 : 21;
+  const pageJumpRef = useRef(null);
+  const [isPageJumpOpen, setIsPageJumpOpen] = useState(false);
   const arrangedProducts = useMemo(
     () => filteredProducts || [],
     [filteredProducts]
@@ -34,62 +36,37 @@ const ProductsPrimary = ({ isSidebar }) => {
     showMore,
     totalPages,
     handleCurrentPage,
-    firstItem,
-    lastItem,
   } = usePagination(arrangedProducts, limit, 5);
 
-  const pageJumpOptions = useMemo(() => {
-    const options = [];
-
-    if (currentpage > 0) {
-      options.push({
-        value: currentpage - 1,
-        label: "<<",
-      });
-    }
-
-    if (showMore === "left") {
-      options.push({
-        value: 0,
-        label: "1",
-      });
-      options.push({
-        value: currentpage - 1,
-        label: "...",
-      });
-    }
-
-    currentPaginationItems?.forEach((item) => {
-      options.push({
+  const pageJumpOptions = useMemo(
+    () =>
+      paginationItems?.map((item) => ({
         value: item,
         label: `${item + 1}`,
-      });
-    });
-
-    if (showMore === "right") {
-      options.push({
-        value: currentpage + 1,
-        label: "...",
-      });
-      options.push({
-        value: totalPages - 1,
-        label: `${totalPages}`,
-      });
-    }
-
-    if (currentpage < totalPages - 1) {
-      options.push({
-        value: currentpage + 1,
-        label: ">>",
-      });
-    }
-
-    return options;
-  }, [currentpage, currentPaginationItems, showMore, totalPages]);
+      })),
+    [paginationItems]
+  );
 
   useEffect(() => {
     setCurrentpage(0);
   }, [productListKey, setCurrentpage]);
+
+  const handlePageJumpSelect = (pageIndex) => {
+    setIsPageJumpOpen(false);
+    handleCurrentPage(undefined, pageIndex, "products");
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!pageJumpRef.current?.contains(event.target)) {
+        setIsPageJumpOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div
@@ -107,38 +84,58 @@ const ProductsPrimary = ({ isSidebar }) => {
               <ProductCategories isDropdown />
               <SidebarSearch isCompact />
               <div className="showing-product-number text-right">
-                <span>
-                  Showing{" "}
-                  {totalItems === 0
-                    ? 0
-                    : firstItem === lastItem || totalItems <= limit
-                    ? lastItem
-                    : `${firstItem}-${lastItem}`}{" "}
-                  of {totalItems} results
-                </span>
                 {totalPages > 1 && (
                   <div className="product-page-jump">
-                    <label htmlFor="product-page-select">Page</label>
-                    <select
-                      id="product-page-select"
-                      value={currentpage}
-                      onChange={(e) =>
-                        handleCurrentPage(
-                          undefined,
-                          Number(e.target.value),
-                          "products"
-                        )
-                      }
-                    >
-                      {pageJumpOptions?.map((option, idx) => (
-                        <option
-                          key={`${option.label}-${option.value}-${idx}`}
-                          value={option.value}
+                    <span>Page</span>
+                    <div className="product-page-select" ref={pageJumpRef}>
+                      <button
+                        type="button"
+                        className={`product-page-select__toggle ${
+                          isPageJumpOpen ? "active" : ""
+                        }`}
+                        aria-expanded={isPageJumpOpen}
+                        aria-haspopup="listbox"
+                        onClick={() =>
+                          setIsPageJumpOpen((current) => !current)
+                        }
+                      >
+                        {currentpage + 1}
+                        <i
+                          className={`fas ${
+                            isPageJumpOpen
+                              ? "fa-chevron-up"
+                              : "fa-chevron-down"
+                          }`}
+                        ></i>
+                      </button>
+                      {isPageJumpOpen ? (
+                        <ul
+                          className="product-page-select__list"
+                          role="listbox"
+                          aria-label="Select product page"
                         >
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
+                          {pageJumpOptions?.map((option) => (
+                            <li
+                              key={option.value}
+                              role="option"
+                              aria-selected={option.value === currentpage}
+                            >
+                              <button
+                                type="button"
+                                className={
+                                  option.value === currentpage ? "active" : ""
+                                }
+                                onClick={() =>
+                                  handlePageJumpSelect(option.value)
+                                }
+                              >
+                                {option.label}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
                     <span>of {totalPages}</span>
                   </div>
                 )}
