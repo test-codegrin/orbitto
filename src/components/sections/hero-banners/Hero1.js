@@ -759,9 +759,10 @@ const SLIDES = [
 function getFluidOverride(item, viewportW) {
   if (!item.fluid) return null;
   // Sorted ascending — find the smallest bp that is >= viewportW
-  const breakpoints = [768, 1024, 1100, 1150, 1280, 1366, 1440];
-  const bp = breakpoints.find((b) => viewportW <= b);
-  return bp ? (item.fluid[bp] ?? null) : null;
+  const breakpoints = [480, 576, 768, 1024, 1100, 1150, 1280, 1366, 1440];
+  const candidates = breakpoints.filter((b) => viewportW <= b);
+  const bp = candidates.find((b) => item.fluid[b]);
+  return bp ? item.fluid[bp] : null;
 }
 
 const CSS = `
@@ -941,7 +942,8 @@ const CSS = `
     width: 100%;
     flex: 1;
     overflow: hidden;
-    min-height: clamp(380px, 60vh, 700px);
+    min-height: clamp(520px, 68vh, 760px);
+    isolation: isolate;
   }
 
   /* ── Laptop range: larger stage & bowl to use full viewport height ── */
@@ -950,23 +952,22 @@ const CSS = `
       min-height: clamp(520px, 68vh, 760px);
     }
     .hs-fluid-bowl-wrap {
-      width:  clamp(300px, 28vw, 440px) !important;
-      height: clamp(300px, 28vw, 440px) !important;
+      width:  clamp(330px, 30vw, 460px) !important;
+      height: clamp(330px, 30vw, 460px) !important;
     }
     .hs-fluid-main {
-      grid-template-columns: 1fr 2fr !important;
-      padding: clamp(20px, 2.5vw, 50px) clamp(24px, 3.5vw, 60px) !important;
-      gap: clamp(12px, 1.8vw, 28px) !important;
+      grid-template-columns: minmax(230px, 1fr) minmax(320px, 1.18fr) minmax(230px, 1fr) !important;
+      padding: clamp(24px, 3vw, 54px) clamp(34px, 4vw, 72px) !important;
+      gap: clamp(16px, 2vw, 34px) !important;
     }
     .hs-fluid-title {
-       font-size: clamp(28px, 3.2vw, 52px) !important;
+       font-size: clamp(32px, 3.5vw, 54px) !important;
     }
     .hs-fluid-subtitle {
-      font-size: clamp(12px, 1.1vw, 15px) !important;
+      font-size: clamp(13px, 1.08vw, 16px) !important;
     }
     .hs-fluid-card-title {
          font-size: clamp(28px, 3.2vw, 52px) !important;
- !important;
     }
     .hs-fluid-card-desc {
       font-size: clamp(11px, 1vw, 15px) !important;
@@ -992,9 +993,9 @@ const CSS = `
   }
 
   .hs-fluid-watermark {
-    position: absolute; top: 42%; left: 50%;
+    position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%) scaleY(1.3);
-    font-size: clamp(24px, 7.5vw, 90px);
+    font-size: clamp(44px, 7.5vw, 110px);
     font-weight: 700; letter-spacing: 0.03em;
     white-space: nowrap; pointer-events: none;
     user-select: none; line-height: 1; z-index: 0;
@@ -1010,6 +1011,9 @@ const CSS = `
     display: block;
     z-index: 3;
     pointer-events: none;
+    max-width: min(30vw, 430px);
+    max-height: min(30vw, 430px);
+    filter: drop-shadow(0 16px 24px rgba(0,0,0,0.06));
   }
 
   .hs-fluid-main {
@@ -1017,10 +1021,14 @@ const CSS = `
     inset: 0;
     z-index: 4;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns:
+      minmax(230px, 1fr)
+      minmax(300px, 1.18fr)
+      minmax(230px, 1fr);
     align-items: center;
-    gap: clamp(8px, 1.5vw, 20px);
-    padding: clamp(14px, 2vw, 36px) clamp(18px, 3vw, 50px);
+    justify-items: center;
+    gap: clamp(14px, 2vw, 34px);
+    padding: clamp(22px, 3vw, 54px) clamp(28px, 4vw, 72px);
     pointer-events: none;
   }
   .hs-fluid-left,
@@ -1028,26 +1036,50 @@ const CSS = `
   .hs-fluid-right { pointer-events: auto; }
 
   .hs-fluid-left {
-    display: flex; flex-direction: column; gap: 10px;
-    padding-top: clamp(6px, 2vh, 28px);
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+    display: flex; flex-direction: column; justify-content: center;
+    gap: clamp(10px, 1.1vw, 16px);
+    width: min(100%, 390px);
+    min-height: clamp(220px, 38vh, 430px);
+    padding-top: 0;
   }
   .hs-fluid-title {
-    font-size: clamp(20px, 3.8vw, 50px);
+    font-size: clamp(32px, 3.5vw, 54px);
     font-weight: 800; line-height: 1.08; color: #111; margin: 0;
   }
   .hs-fluid-subtitle {
-    font-size: clamp(10px, 1.2vw, 14px);
+    font-size: clamp(13px, 1.08vw, 16px);
     color: #777; line-height: 1.6; margin: 0;
+  }
+  .hs-fluid-left .btn-wrapper {
+    margin-top: clamp(4px, 0.8vw, 10px);
+  }
+  .hs-fluid-left .theme-btn-1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: clamp(42px, 3.4vw, 52px);
+    padding: clamp(11px, 1vw, 15px) clamp(18px, 1.8vw, 28px);
+    font-size: clamp(12px, 0.95vw, 14px);
+    white-space: nowrap;
   }
 
   .hs-fluid-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex; align-items: center; justify-content: center;
-    position: relative;
+    width: auto;
+    min-height: clamp(300px, 48vh, 520px);
+    z-index: 5;
   }
   .hs-fluid-bowl-wrap {
     position: relative;
-    width:  clamp(160px, 26vw, 380px);
-    height: clamp(160px, 26vw, 380px);
+    width:  clamp(320px, 30vw, 460px);
+    height: clamp(320px, 30vw, 460px);
     overflow: visible;
     z-index: 5;
   }
@@ -1083,8 +1115,8 @@ const CSS = `
   .hs-fluid-tabs {
     position: relative; z-index: 10;
     display: flex; align-items: center; justify-content: center;
-    gap: clamp(5px, 0.9vw, 14px);
-    padding: clamp(8px, 1.2vw, 20px) clamp(12px, 2vw, 36px) clamp(10px, 1.8vw, 24px);
+    gap: clamp(8px, 1vw, 16px);
+    padding: clamp(12px, 1.5vw, 24px) clamp(18px, 3vw, 48px) clamp(16px, 2vw, 28px);
     flex-wrap: nowrap;
   }
   .hs-fluid-tab {
@@ -1094,7 +1126,7 @@ const CSS = `
     padding: clamp(7px, 0.7vw, 12px) clamp(8px, 0.9vw, 18px);
     cursor: pointer; border: 2.5px solid transparent;
     transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
-    width: clamp(78px, 9vw, 145px);
+    width: clamp(112px, 9vw, 152px);
     box-shadow: 0 2px 10px rgba(0,0,0,0.06); flex-shrink: 0;
   }
   .hs-fluid-tab:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
@@ -1114,17 +1146,110 @@ const CSS = `
   }
   .hs-fluid-arrow:hover { background: #222; color: #fff; border-color: #222; transform: scale(1.08); }
 
-  /* ── 768px fine-tune ── */
-  @media (max-width: 768px) {
-    .hs-fluid-stage { min-height: clamp(300px, 55vw, 440px); }
+  @media (max-width: 1280px) {
+    .hs-fluid-stage { min-height: clamp(500px, 66vh, 720px); }
     .hs-fluid-main {
-      grid-template-columns: 1fr 1.8fr;
-      gap: clamp(4px, 1.5vw, 12px);
-      padding: 10px 12px;
+      grid-template-columns: minmax(210px, 0.95fr) minmax(290px, 1.1fr) minmax(210px, 0.95fr) !important;
+      padding: clamp(22px, 2.8vw, 46px) clamp(26px, 3.5vw, 56px) !important;
+      gap: clamp(14px, 1.8vw, 28px) !important;
+    }
+    .hs-fluid-left {
+      width: min(100%, 350px);
+      min-height: clamp(210px, 36vh, 390px);
+    }
+    .hs-fluid-title { font-size: clamp(30px, 3.7vw, 48px) !important; }
+    .hs-fluid-subtitle { font-size: clamp(12px, 1.15vw, 15px) !important; }
+    .hs-fluid-left .theme-btn-1 {
+      min-height: clamp(40px, 3.6vw, 48px);
+      padding-inline: clamp(16px, 1.8vw, 24px);
     }
     .hs-fluid-bowl-wrap {
-      width:  clamp(120px, 34vw, 220px) !important;
-      height: clamp(120px, 34vw, 220px) !important;
+      width: clamp(300px, 31vw, 420px) !important;
+      height: clamp(300px, 31vw, 420px) !important;
+    }
+    .hs-fluid-float {
+      max-width: min(28vw, 360px);
+      max-height: min(28vw, 360px);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .hs-fluid-stage { min-height: clamp(460px, 64vh, 640px); }
+    .hs-fluid-main {
+      grid-template-columns: minmax(190px, 0.95fr) minmax(260px, 1.05fr) minmax(120px, 0.45fr) !important;
+      padding: clamp(18px, 2.8vw, 34px) clamp(20px, 3vw, 38px) !important;
+      gap: clamp(10px, 1.8vw, 22px) !important;
+    }
+    .hs-fluid-left {
+      width: min(100%, 310px);
+      min-height: clamp(190px, 34vh, 340px);
+    }
+    .hs-fluid-title { font-size: clamp(28px, 4vw, 42px) !important; }
+    .hs-fluid-subtitle {
+      max-width: 280px;
+      font-size: clamp(12px, 1.3vw, 14px) !important;
+    }
+    .hs-fluid-left .theme-btn-1 {
+      min-height: 40px;
+      padding: 10px 18px;
+      font-size: 12px;
+    }
+    .hs-fluid-center { min-height: clamp(260px, 44vh, 430px); }
+    .hs-fluid-bowl-wrap {
+      width: clamp(260px, 34vw, 350px) !important;
+      height: clamp(260px, 34vw, 350px) !important;
+    }
+    .hs-fluid-watermark { font-size: clamp(42px, 8vw, 86px) !important; }
+    .hs-fluid-float {
+      max-width: min(24vw, 280px);
+      max-height: min(24vw, 280px);
+    }
+    .hs-fluid-tabs { padding-inline: clamp(14px, 2.2vw, 28px); }
+    .hs-fluid-tab { width: clamp(104px, 12vw, 136px); }
+  }
+
+  /* ── 768px fine-tune ── */
+  @media (max-width: 768px) {
+    .hs-fluid-stage { min-height: clamp(480px, 78vh, 620px); }
+    .hs-fluid-main {
+      grid-template-columns: minmax(175px, 0.92fr) minmax(230px, 1.08fr) !important;
+      gap: clamp(8px, 2vw, 16px) !important;
+      padding: clamp(16px, 3vw, 28px) clamp(14px, 3vw, 26px) !important;
+      align-items: center;
+    }
+    .hs-fluid-left {
+      width: min(100%, 280px);
+      min-height: clamp(180px, 34vh, 310px);
+    }
+    .hs-fluid-title {
+      font-size: clamp(26px, 5vw, 38px) !important;
+    }
+    .hs-fluid-subtitle {
+      max-width: 160px;
+      font-size: clamp(12px, 1.9vw, 14px) !important;
+    }
+    .hs-fluid-left .theme-btn-1 {
+      min-height: 38px;
+      padding: 9px 15px;
+      font-size: 11px;
+    }
+    .hs-fluid-center {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      min-height: clamp(240px, 42vh, 360px);
+    }
+    .hs-fluid-bowl-wrap {
+      width:  clamp(220px, 40vw, 300px) !important;
+      height: clamp(220px, 40vw, 300px) !important;
+    }
+    .hs-fluid-watermark {
+      top: 48%;
+      font-size: clamp(34px, 8.5vw, 68px) !important;
+    }
+    .hs-fluid-float {
+      max-width: min(22vw, 180px);
+      max-height: min(22vw, 180px);
     }
     .hs-fluid-tabs {
       overflow: hidden;
@@ -1162,30 +1287,58 @@ const CSS = `
     }
   }
 
-  @media (max-width: 575px) {
+  @media (max-width: 576px) {
     .hs-fluid-stage {
-      min-height: 650px;
+      min-height: clamp(620px, 100svh, 740px);
     }
     .hs-fluid-main {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 14px;
-      padding: 18px 16px;
+      align-items: center;
+      gap: clamp(16px, 3vh, 24px);
+      padding: clamp(26px, 5vh, 42px) clamp(16px, 5vw, 26px);
       text-align: center;
     }
     .hs-fluid-left,
     .hs-fluid-right {
       align-items: center;
+      width: min(100%, 360px);
+      min-height: 0;
       padding-top: 0;
       padding-bottom: 0;
     }
+    .hs-fluid-title {
+      font-size: clamp(32px, 9vw, 44px) !important;
+    }
+    .hs-fluid-subtitle {
+      max-width: 330px;
+      font-size: clamp(13px, 3.4vw, 15px) !important;
+    }
+    .hs-fluid-left .theme-btn-1 {
+      min-height: 42px;
+      padding: 11px 18px;
+      font-size: 12px;
+    }
     .hs-fluid-center {
+      position: relative;
+      left: auto;
+      top: auto;
+      transform: none;
       width: 100%;
+      min-height: clamp(210px, 38vh, 290px);
     }
     .hs-fluid-bowl-wrap {
-      width: clamp(170px, 58vw, 240px) !important;
-      height: clamp(170px, 58vw, 240px) !important;
+      width: clamp(205px, 60vw, 265px) !important;
+      height: clamp(205px, 60vw, 265px) !important;
+    }
+    .hs-fluid-watermark {
+      top: 50%;
+      font-size: clamp(34px, 12vw, 58px) !important;
+    }
+    .hs-fluid-float {
+      max-width: min(25vw, 130px);
+      max-height: min(25vw, 130px);
     }
     .hs-fluid-tabs {
       gap: 8px;
@@ -1199,6 +1352,58 @@ const CSS = `
     .hs-fluid-arrow {
       width: 32px;
       font-size: 25px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hs-fluid-stage {
+      min-height: clamp(600px, 96svh, 700px);
+    }
+    .hs-fluid-main {
+      gap: clamp(14px, 2.8vh, 20px);
+      padding: clamp(24px, 4.5vh, 34px) 14px;
+    }
+    .hs-fluid-title {
+      font-size: clamp(29px, 9.5vw, 38px) !important;
+    }
+    .hs-fluid-subtitle {
+      max-width: 300px;
+      font-size: clamp(12px, 3.5vw, 14px) !important;
+    }
+    .hs-fluid-left .theme-btn-1 {
+      min-height: 40px;
+      padding: 10px 16px;
+      font-size: 11px;
+    }
+    .hs-fluid-center {
+      min-height: clamp(190px, 35vh, 255px);
+    }
+    .hs-fluid-bowl-wrap {
+      width: clamp(185px, 62vw, 235px) !important;
+      height: clamp(185px, 62vw, 235px) !important;
+    }
+    .hs-fluid-float {
+      max-width: min(24vw, 104px);
+      max-height: min(24vw, 104px);
+    }
+    .hs-fluid-tabs {
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 6px 14px;
+    }
+    .hs-fluid-tab {
+      width: clamp(98px, 34vw, 126px);
+      min-height: 76px;
+      padding: 6px;
+    }
+    .hs-fluid-tab-label {
+      font-size: clamp(9px, 2.8vw, 12px);
+      white-space: normal;
+      line-height: 1.15;
+    }
+    .hs-fluid-arrow {
+      width: 28px;
+      font-size: 22px;
     }
   }
 `;
@@ -1543,7 +1748,7 @@ export default function Hero1() {
                     src={item.src}
                     alt={item.alt}
                     fill
-                    sizes="20vw"
+                    sizes="(max-width: 480px) 24vw, (max-width: 576px) 25vw, (max-width: 768px) 22vw, (max-width: 1024px) 24vw, (max-width: 1280px) 28vw, 30vw"
                     style={{ objectFit: "contain" }}
                   />
                 </div>
@@ -1594,7 +1799,7 @@ export default function Hero1() {
                         src={SLIDES[prevCup].mainImg}
                         alt=""
                         fill
-                        sizes="28vw"
+                        sizes="(max-width: 480px) 62vw, (max-width: 576px) 60vw, (max-width: 768px) 40vw, (max-width: 1024px) 34vw, (max-width: 1280px) 31vw, 30vw"
                         style={{ objectFit: "contain" }}
                       />
                     </div>
@@ -1607,7 +1812,7 @@ export default function Hero1() {
                       src={slide.mainImg}
                       alt={`${slide.line1} ${slide.line2}`}
                       fill
-                      sizes="28vw"
+                      sizes="(max-width: 480px) 62vw, (max-width: 576px) 60vw, (max-width: 768px) 40vw, (max-width: 1024px) 34vw, (max-width: 1280px) 31vw, 30vw"
                       style={{ objectFit: "contain" }}
                       priority
                     />
