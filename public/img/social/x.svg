@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" role="img" aria-labelledby="xTitle">
+  <title id="xTitle">X</title>
+  <rect width="36" height="36" rx="18" fill="#000"/>
+  <path fill="#fff" d="M20.61 16.55 30.84 4.66h-2.42l-8.88 10.32-7.09-10.32H4.27l10.73 15.62L4.27 32.76h2.42l9.38-10.91 7.49 10.91h8.18L20.61 16.55Zm-3.32 3.86-1.09-1.56L7.55 6.49h3.74l6.98 9.98 1.09 1.56 9.07 12.98h-3.74l-7.4-10.6Z"/>
+</svg>
