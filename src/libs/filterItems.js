@@ -3,12 +3,22 @@ import countDiscount from "./countDiscount";
 import makePath from "./makePath";
 import makeText from "./makeText";
 
+const productCategoryAliases = {
+  fruit: makePath("Fruit Powder"),
+  vegetable: makePath("Vegetable Powder"),
+};
+
 const filterItems = (items, collection, filterItem, isProducts) => {
   switch (collection) {
     case "category":
+      const normalizedFilterItem =
+        isProducts && productCategoryAliases[filterItem]
+          ? productCategoryAliases[filterItem]
+          : filterItem;
+
       return items?.filter(
         ({ type, category }) =>
-          makePath(isProducts ? type : category) === filterItem
+          makePath(isProducts ? type : category) === normalizedFilterItem
       );
 
     case "brand":

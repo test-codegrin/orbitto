@@ -11,20 +11,20 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
   const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const categories = [
-    "All Products",
-    "Fruit Powder",
-    "Vegetable Powder",
-    "Honey",
-    "Spices",
-    "Herbal Powder",
+    { label: "All Products", value: "" },
+    { label: "Fruit", value: "fruit" },
+    { label: "Vegetable", value: "vegetable" },
+    { label: "Fruit Powder", value: makePath("Fruit Powder") },
+    { label: "Vegetable Powder", value: makePath("Vegetable Powder") },
+    { label: "Honey", value: makePath("Honey") },
+    { label: "Spices", value: makePath("Spices") },
+    { label: "Herbal Powder", value: makePath("Herbal Powder") },
   ];
   const productPath = currentPath ? currentPath : "/shop";
   const selectedCategory = currentCategory || "";
   const selectedCategoryLabel =
-    categories.find((category, idx) => {
-      const categoryPath = idx === 0 ? "" : makePath(category);
-      return categoryPath === selectedCategory;
-    }) || categories[0];
+    categories.find(({ value }) => value === selectedCategory)?.label ||
+    categories[0].label;
   const handleCategorySelect = (categoryPath) => {
     setIsOpen(false);
     router.push(
@@ -66,23 +66,19 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
           className={`ltn__product-category-dropdown ${isOpen ? "active" : ""}`}
           role="listbox"
         >
-          {categories?.map((category, idx) => {
-            const categoryPath = idx === 0 ? "" : makePath(category);
-
+          {categories?.map(({ label, value }) => {
             return (
               <li
-                key={categoryPath || "all-products"}
+                key={value || "all-products"}
                 role="option"
-                aria-selected={selectedCategory === categoryPath}
+                aria-selected={selectedCategory === value}
               >
                 <button
                   type="button"
-                  className={
-                    selectedCategory === categoryPath ? "active" : ""
-                  }
-                  onClick={() => handleCategorySelect(categoryPath)}
+                  className={selectedCategory === value ? "active" : ""}
+                  onClick={() => handleCategorySelect(value)}
                 >
-                  {category}
+                  {label}
                 </button>
               </li>
             );
@@ -98,25 +94,19 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
         Product categories
       </h4>
       <ul>
-        {categories?.map((category, idx) => {
-          const categoryPath = idx === 0 ? "" : makePath(category);
-
+        {categories?.map(({ label, value }) => {
           return (
-            <li key={categoryPath || "all-products"}>
+            <li key={value || "all-products"}>
               <Link
-                href={
-                  categoryPath
-                    ? `${productPath}?category=${categoryPath}`
-                    : productPath
-                }
+                href={value ? `${productPath}?category=${value}` : productPath}
                 className={
-                  (categoryPath && currentCategory === categoryPath) ||
-                  (!categoryPath && !currentCategory)
+                  (value && currentCategory === value) ||
+                  (!value && !currentCategory)
                     ? "active"
                     : ""
                 }
               >
-                {category}{" "}
+                {label}{" "}
                 <span>
                   <i className="fas fa-long-arrow-alt-right"></i>
                 </span>

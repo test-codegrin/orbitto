@@ -128,25 +128,31 @@ const Products3 = ({
                     data-bs-toggle="tab"
                     href="#liton_tab_3_1"
                   >
-                    Fruits Powder
+                    Fruit
                   </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_2" className="">
-                    Vegetables Powder
+                    Vegetable
                   </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_3" className="">
-                    Honey
+                    Fruits Powder
                   </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_4" className="">
-                    Spices
+                    Vegetables Powder
                   </Link>
                   <Link data-bs-toggle="tab" href="#liton_tab_3_5" className="">
+                    Honey
+                  </Link>
+                  <Link data-bs-toggle="tab" href="#liton_tab_3_6" className="">
+                    Spices
+                  </Link>
+                  <Link data-bs-toggle="tab" href="#liton_tab_3_7" className="">
                     Herbal Powders
                   </Link>
                 </div>
               </div>
 
               <div className="tab-content">
-                {/* Fruits Powder */}
+                {/* Fruit */}
                 <div className="tab-pane fade active show" id="liton_tab_3_1">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
@@ -162,7 +168,7 @@ const Products3 = ({
                   </div>
                 </div>
 
-                {/* Vegetables Powder */}
+                {/* Vegetable */}
                 <div className="tab-pane fade" id="liton_tab_3_2">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
@@ -178,8 +184,40 @@ const Products3 = ({
                   </div>
                 </div>
 
-                {/* Honey */}
+                {/* Fruits Powder */}
                 <div className="tab-pane fade" id="liton_tab_3_3">
+                  <div className="ltn__product-tab-content-inner">
+                    <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
+                      {fruitsPowderProductPairs?.map(([firstProduct, secondProduct], idx) => (
+                        <div className="col-lg-12" key={firstProduct?.id || firstProduct?.slug || idx}>
+                          <ProductCardPrimary product={firstProduct} />
+                          {isDouble && secondProduct ? (
+                            <ProductCardPrimary product={secondProduct} />
+                          ) : ""}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vegetables Powder */}
+                <div className="tab-pane fade" id="liton_tab_3_4">
+                  <div className="ltn__product-tab-content-inner">
+                    <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
+                      {vegetablesPowderProductPairs?.map(([firstProduct, secondProduct], idx) => (
+                        <div className="col-lg-12" key={firstProduct?.id || firstProduct?.slug || idx}>
+                          <ProductCardPrimary product={firstProduct} />
+                          {isDouble && secondProduct ? (
+                            <ProductCardPrimary product={secondProduct} />
+                          ) : ""}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Honey */}
+                <div className="tab-pane fade" id="liton_tab_3_5">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
                       {honeyProductPairs?.map(([firstProduct, secondProduct], idx) => (
@@ -195,7 +233,7 @@ const Products3 = ({
                 </div>
 
                 {/* Spices */}
-                <div className="tab-pane fade" id="liton_tab_3_4">
+                <div className="tab-pane fade" id="liton_tab_3_6">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
                       {spicesProductPairs?.map(([firstProduct, secondProduct], idx) => (
@@ -211,7 +249,7 @@ const Products3 = ({
                 </div>
 
                 {/* Herbal Powders */}
-                <div className="tab-pane fade" id="liton_tab_3_5">
+                <div className="tab-pane fade" id="liton_tab_3_7">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
                       {herbalProductPairs?.map(([firstProduct, secondProduct], idx) => (
