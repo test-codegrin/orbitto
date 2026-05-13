@@ -16698,9 +16698,641 @@ blockquote::before {
     margin-bottom: 10px;
   }
 
-  .home-offerings__card p {
+.home-offerings__card p {
     font-size: 15px;
     line-height: 1.45;
+  }
+}
+
+.about-sequence {
+  background: #fff;
+}
+
+.about-sequence__section {
+  padding: 72px 0;
+}
+
+.about-sequence__section + .about-sequence__section {
+  padding-top: 28px;
+}
+
+.about-sequence__container {
+  margin: 0 auto;
+  width: min(1160px, calc(100% - 48px));
+}
+
+.about-sequence__eyebrow {
+  color: #0b7a34;
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.about-intro__grid {
+  align-items: center;
+  display: grid;
+  gap: 44px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+}
+
+.about-intro__image {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.about-intro__image img {
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-intro__content h2,
+.about-values__content h2,
+.about-commitment__content h2,
+.about-forte__content h2 {
+  color: #242424;
+  font-size: clamp(30px, 2.9vw, 42px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.15;
+  margin: 0 0 24px;
+}
+
+.about-intro__content p,
+.about-values__content p,
+.about-commitment__content p,
+.about-mission__card p {
+  color: #4b4b4b;
+  font-size: 16px;
+  line-height: 1.72;
+  margin: 0 0 16px;
+}
+
+.about-intro__content p:last-child,
+.about-values__content p:last-child,
+.about-commitment__content p:last-child,
+.about-mission__card p:last-child {
+  margin-bottom: 0;
+}
+
+.about-values__grid {
+  align-items: center;
+  display: grid;
+  gap: 38px;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+}
+
+.about-values__cards {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-values__card {
+  align-items: center;
+  border-radius: 0 30px 0 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 0 28px 30px;
+  text-align: center;
+}
+
+.about-values__card--lavender {
+  background: #e8e0fb;
+}
+
+.about-values__card--peach {
+  background: #f9d9c8;
+}
+
+.about-values__card--mint {
+  background: #daf9dd;
+}
+
+.about-values__icon {
+  align-items: center;
+  background: #8bcf8e;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  font-size: 38px;
+  height: 92px;
+  justify-content: center;
+  margin: -46px 0 18px;
+  width: 92px;
+}
+
+.about-values__card--lavender .about-values__icon {
+  background: #b7a7e2;
+}
+
+.about-values__card--peach .about-values__icon {
+  background: #f5ad7f;
+}
+
+.about-values__card h3,
+.about-mission__card h3 {
+  color: #050505;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+
+.about-values__card p {
+  color: #111;
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.about-mission__grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-mission__card {
+  background: #f6f6f6;
+  border-radius: 12px;
+  min-height: 260px;
+  padding: 44px 46px;
+}
+
+.about-mission__card > i {
+  color: #0b7a34;
+  display: block;
+  font-size: 46px;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.about-commitment {
+  background: linear-gradient(180deg, #f8f9f7 0%, #fff 100%);
+}
+
+.about-commitment__grid {
+  align-items: center;
+  display: grid;
+  gap: 44px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.about-commitment__visual {
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 18px 50px rgba(20, 35, 20, 0.07);
+  display: flex;
+  justify-content: center;
+  min-height: 320px;
+  overflow: hidden;
+  padding: 34px;
+  position: relative;
+}
+
+.about-commitment__visual::before,
+.about-commitment__visual::after {
+  border: 2px solid rgba(11, 122, 52, 0.14);
+  border-radius: 50%;
+  content: "";
+  height: 190px;
+  position: absolute;
+  width: 190px;
+}
+
+.about-commitment__visual::before {
+  left: -70px;
+  top: -70px;
+}
+
+.about-commitment__visual::after {
+  bottom: -80px;
+  right: -70px;
+}
+
+.about-commitment__stamp {
+  align-items: center;
+  border: 4px solid #0b7a34;
+  border-radius: 16px;
+  color: #0b7a34;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+  min-height: 190px;
+  padding: 26px;
+  position: relative;
+  text-align: center;
+  transform: rotate(-6deg);
+  width: min(360px, 100%);
+  z-index: 1;
+}
+
+.about-commitment__stamp::before {
+  border: 2px dashed rgba(11, 122, 52, 0.5);
+  border-radius: 10px;
+  content: "";
+  inset: 10px;
+  position: absolute;
+}
+
+.about-commitment__stamp i {
+  font-size: 58px;
+  line-height: 1;
+}
+
+.about-commitment__stamp span {
+  color: #0b7a34;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.about-commitment__content h2 {
+  font-size: clamp(32px, 3.4vw, 54px);
+  line-height: 1.18;
+}
+
+.about-forte {
+  background: #8cc63f;
+  margin-top: 26px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.about-forte__grid {
+  align-items: center;
+  display: grid;
+  gap: 54px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.98fr);
+  min-height: 360px;
+}
+
+.about-forte__image {
+  align-self: stretch;
+  display: flex;
+  margin-left: calc((100vw - min(1160px, calc(100vw - 48px))) / -2);
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.about-forte__image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  width: 100%;
+}
+
+.about-forte__content {
+  padding: 48px 0;
+}
+
+.about-forte__content h2 {
+  color: #fff;
+  font-size: clamp(28px, 2.7vw, 38px);
+  margin-bottom: 22px;
+}
+
+.about-forte__content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-forte__content li {
+  align-items: flex-start;
+  color: #fff;
+  display: flex;
+  font-size: 17px;
+  font-weight: 700;
+  gap: 16px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.about-forte__content li:last-child {
+  margin-bottom: 0;
+}
+
+.about-forte__content li i {
+  color: #0a7b30;
+  flex: 0 0 auto;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+.about-forte-info {
+  background: #343434;
+  overflow: hidden;
+  padding: 48px 0 42px;
+  position: relative;
+}
+
+.about-forte-info::before,
+.about-forte-info::after {
+  color: rgba(255, 255, 255, 0.04);
+  content: "\f06c";
+  font-family: "Font Awesome 5 Free";
+  font-size: 210px;
+  font-weight: 900;
+  line-height: 1;
+  position: absolute;
+  transform: rotate(-24deg);
+}
+
+.about-forte-info::before {
+  left: 4%;
+  top: 20px;
+}
+
+.about-forte-info::after {
+  bottom: -78px;
+  right: 5%;
+}
+
+.about-forte-info__grid {
+  display: grid;
+  gap: 54px;
+  grid-template-columns: 1.25fr 0.75fr 1fr;
+  position: relative;
+  z-index: 1;
+}
+
+.about-forte-info__column h3 {
+  color: #8cc63f;
+  font-size: clamp(26px, 2.3vw, 36px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+
+.about-forte-info__column p,
+.about-forte-info__column a,
+.about-forte-info__column li,
+.about-forte-info__column span {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.about-forte-info__column p {
+  margin: 0;
+}
+
+.about-forte-info__column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-forte-info__column li {
+  margin-bottom: 6px;
+}
+
+.about-forte-info__column a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.about-forte-info__column a:hover,
+.about-forte-info__column a:focus-visible {
+  color: #8cc63f;
+}
+
+.about-forte-info__contact li {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.about-forte-info__contact i {
+  color: #fff;
+  width: 16px;
+}
+
+.about-forte-info__column span {
+  color: #8cc63f;
+  display: block;
+  font-weight: 800;
+  margin: 18px 0 10px;
+}
+
+.about-forte-info__socials {
+  display: flex;
+  gap: 20px;
+}
+
+.about-forte-info__socials a {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (max-width: 1199px) {
+  .about-sequence__section {
+    padding: 62px 0;
+  }
+
+  .about-intro__grid,
+  .about-values__grid,
+  .about-commitment__grid,
+  .about-forte__grid {
+    gap: 34px;
+  }
+
+  .about-values__cards {
+    gap: 18px;
+  }
+
+  .about-values__card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .about-sequence__section {
+    padding: 52px 0;
+  }
+
+  .about-sequence__section + .about-sequence__section {
+    padding-top: 18px;
+  }
+
+  .about-sequence__container {
+    width: min(760px, calc(100% - 40px));
+  }
+
+  .about-intro__grid,
+  .about-values__grid,
+  .about-commitment__grid,
+  .about-forte__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values__content {
+    text-align: center;
+  }
+
+  .about-values__cards {
+    padding-top: 44px;
+  }
+
+  .about-mission__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-mission__card {
+    min-height: 0;
+    padding: 34px;
+  }
+
+  .about-commitment__visual {
+    min-height: 260px;
+  }
+
+  .about-commitment__content {
+    text-align: center;
+  }
+
+  .about-forte__image {
+    margin: 0;
+    min-height: 260px;
+  }
+
+  .about-forte__content {
+    padding: 0 0 44px;
+  }
+
+  .about-forte-info__grid {
+    gap: 28px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-sequence__section {
+    padding: 44px 0;
+  }
+
+  .about-sequence__container {
+    width: min(100% - 30px, 560px);
+  }
+
+  .about-values__cards {
+    gap: 56px;
+    grid-template-columns: 1fr;
+  }
+
+  .about-values__card {
+    min-height: 0;
+    padding: 0 24px 26px;
+  }
+
+  .about-forte__grid {
+    gap: 26px;
+  }
+
+  .about-commitment__visual {
+    padding: 26px;
+  }
+}
+
+@media (max-width: 575px) {
+  .about-sequence__section {
+    padding: 38px 0;
+  }
+
+  .about-sequence__section + .about-sequence__section {
+    padding-top: 12px;
+  }
+
+  .about-sequence__eyebrow {
+    font-size: 18px;
+  }
+
+  .about-intro__content h2,
+  .about-values__content h2,
+  .about-commitment__content h2,
+  .about-forte__content h2 {
+    font-size: 27px;
+    margin-bottom: 16px;
+  }
+
+  .about-intro__content p,
+  .about-values__content p,
+  .about-commitment__content p,
+  .about-mission__card p,
+  .about-values__card p,
+  .about-forte__content li {
+    font-size: 15px;
+  }
+
+  .about-values__icon {
+    font-size: 32px;
+    height: 78px;
+    margin-top: -39px;
+    width: 78px;
+  }
+
+  .about-values__card h3,
+  .about-mission__card h3 {
+    font-size: 22px;
+  }
+
+  .about-mission__card {
+    padding: 28px 24px;
+  }
+
+  .about-mission__card > i {
+    font-size: 38px;
+  }
+
+  .about-commitment__visual {
+    min-height: 220px;
+  }
+
+  .about-commitment__stamp {
+    min-height: 150px;
+    padding: 22px;
+  }
+
+  .about-commitment__stamp i {
+    font-size: 42px;
+  }
+
+  .about-commitment__stamp span {
+    font-size: 24px;
+  }
+
+  .about-forte__image {
+    min-height: 210px;
+  }
+
+  .about-forte-info {
+    padding: 38px 0 34px;
+  }
+
+  .about-forte-info__column h3 {
+    margin-bottom: 12px;
+  }
+
+  .about-forte-info__column p,
+  .about-forte-info__column a,
+  .about-forte-info__column li,
+  .about-forte-info__column span {
+    font-size: 15px;
   }
 }
 
