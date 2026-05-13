@@ -11,12 +11,27 @@ import SidebarSearch from "@/components/shared/sidebars/widgets/SidebarSearch";
 import usePagination from "@/hooks/usePagination";
 import { useCommonContext } from "@/providers/CommonContext";
 
+const powderNoteCategories = new Set([
+  // "fruit",
+  // "vegetable",
+  "fruit_powder",
+  "vegetable_powder",
+  "spices",
+  "herbal_powder",
+]);
+
+const normalizeCategory = (value) =>
+  value?.toLowerCase().replace(/-/g, "_") || "";
+
 const ProductsPrimary = ({ isSidebar }) => {
-  const { filteredProducts } = useCommonContext();
+  const { filteredProducts, category } = useCommonContext();
 
   const limit = isSidebar === false ? 16 : 21;
   const pageJumpRef = useRef(null);
   const [isPageJumpOpen, setIsPageJumpOpen] = useState(false);
+  const shouldShowPowderNote = powderNoteCategories.has(
+    normalizeCategory(category)
+  );
   const arrangedProducts = useMemo(
     () => filteredProducts || [],
     [filteredProducts]
@@ -174,6 +189,18 @@ const ProductsPrimary = ({ isSidebar }) => {
                 path="products"
               />
             )}
+
+            {shouldShowPowderNote ? (
+              <div className="product-category-note">
+                <div className="product-category-note__icon" aria-hidden="true">
+                  <i className="fas fa-info"></i>
+                </div>
+                <p>
+                  Apart from these, other powders can also be prepared according
+                  to the trader&rsquo;s order and seasonal requirements.
+                </p>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

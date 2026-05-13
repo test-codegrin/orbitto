@@ -1,6 +1,7 @@
 import Blogs2 from "@/components/sections/blogs/Blogs2";
 import About from "@/components/sections/about/About";
 import ExportSupport from "@/components/sections/export-support/ExportSupport";
+import Expertise from "@/components/sections/expertise/Expertise";
 import Features4 from "@/components/sections/features/Features4";
 import Hero1 from "@/components/sections/hero-banners/Hero1";
 import HotDeal3 from "@/components/sections/hot-deals/HotDeal3";
@@ -14,6 +15,7 @@ const IndexMain = () => {
       <Hero1 />
       <About />
       <ExportSupport />
+      <Expertise />
       <Offerings />
       <Products3 isDouble={true} title={"Our Products"} pt={" pt-85"} />
       <HotDeal3 />
