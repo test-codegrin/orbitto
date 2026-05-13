@@ -4,7 +4,7 @@ const Adress = () => {
   return (
     <div className="ltn__contact-address-area mb-90">
       <div className="container">
-        <div className="row">
+        <div className="row ltn__contact-address-row">
           <div className="col-lg-4">
             <div className="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
               <div className="ltn__contact-address-icon">
@@ -33,7 +33,7 @@ const Adress = () => {
               </div>
               <h3>Phone Number</h3>
               <p>
-                +0123-456789 <br /> +987-6543210
+                +91 99047 27348 <br /> +91 97266 87849 <br />+91 77790 69188
               </p>
             </div>
           </div>
@@ -49,8 +49,7 @@ const Adress = () => {
               </div>
               <h3>Office Address</h3>
               <p>
-                18/A, New Born Town Hall <br />
-                New York, US
+                NH-27, Wankaner, Morbi, Gujarat-363621
               </p>
             </div>
           </div>

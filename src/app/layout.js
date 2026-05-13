@@ -31,8 +31,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Broccoli - Organic Food React Template",
-  description: "Broccoli - Organic Food React Template",
+  title: "Orbitto - Organic Food",
+  description: "Orbitto - Organic Food ",
 };
 
 export default function RootLayout({ children }) {

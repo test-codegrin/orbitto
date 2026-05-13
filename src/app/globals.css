@@ -5029,7 +5029,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   align-items: center;
   display: inline-flex;
   flex-wrap: nowrap;
-  gap: 12px;
+  gap: 8px;
   line-height: 1;
   list-style: none;
   margin: 0;
@@ -5048,9 +5048,11 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(15, 28, 16, 0.08);
   border-radius: 50%;
+  box-sizing: border-box;
   display: inline-flex;
   height: 28px;
   justify-content: center;
+  padding: 4px;
   text-decoration: none;
   transition:
     transform 0.2s ease,
@@ -5061,9 +5063,9 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 
 .brand-social-link img {
   display: block;
-  height: 100%;
+  height: 20px;
   object-fit: contain;
-  width: 100%;
+  width: 20px;
 }
 
 .brand-social-link:hover {
@@ -5072,12 +5074,18 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 }
 
 .brand-social-links--footer {
-  gap: 10px;
+  gap: 8px;
 }
 
 .brand-social-links--footer .brand-social-link {
   height: 34px;
+  padding: 5px;
   width: 34px;
+}
+
+.brand-social-links--footer .brand-social-link img {
+  height: 22px;
+  width: 22px;
 }
 
 /* ----------------------------------------------
@@ -6837,7 +6845,12 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   }
   .brand-social-links--top .brand-social-link {
     height: 24px;
+    padding: 4px;
     width: 24px;
+  }
+  .brand-social-links--top .brand-social-link img {
+    height: 16px;
+    width: 16px;
   }
   .ltn__top-bar-menu .ltn__currency-menu .active-currency,
   .ltn__top-bar-menu > ul > li {
@@ -12689,6 +12702,19 @@ blockquote::before {
   box-shadow: none;
   border: 2px solid var(--border-color-11);
   padding: 50px 30px 25px;
+}
+.ltn__contact-address-row {
+  align-items: stretch;
+}
+.ltn__contact-address-row > [class*="col-"] {
+  display: flex;
+}
+.ltn__contact-address-row .ltn__contact-address-item-3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 .ltn__contact-address-item-3 i {
   font-size: 50px;
