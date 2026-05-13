@@ -40,8 +40,8 @@ const MobileMenu = () => {
       path: "/blogs",
     },
     {
-      name: "Pages",
-      path: "/portfolio",
+      name: "Application",
+      path: "/application",
     },
     {
       name: "Contact",

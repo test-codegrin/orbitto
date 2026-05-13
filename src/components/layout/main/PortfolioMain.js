@@ -1,15 +1,13 @@
-import Blogs2 from "@/components/sections/blogs/Blogs2";
+import ApplicationPrimary from "@/components/sections/application/ApplicationPrimary";
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
-import PortfolioPrimary from "@/components/sections/portfolio/PortfolioPrimary";
 import React from "react";
 
-const PortfolioMain = ({ type }) => {
+const PortfolioMain = () => {
   return (
     <main>
-      <HeroPrimary title={"Our Gallery"} text="Gallery" />
-      <PortfolioPrimary type={type} />
-      {/* <Blogs2 type={2} pb="pb-70" /> */}
+      <HeroPrimary title={"Application"} text="Application" />
+      <ApplicationPrimary />
       <Features4 />
     </main>
   );
