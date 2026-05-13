@@ -16633,8 +16633,8 @@ blockquote::before {
   min-width: min(520px, 100%);
   margin-bottom: 22px;
   padding: 13px 32px;
-  background: #101313;
-  color: #d4a06a;
+  /* background: #101313; */
+  color: #2f502f;
   font-size: clamp(24px, 2.6vw, 38px);
   font-weight: 500;
   line-height: 1.15;
@@ -17308,7 +17308,6 @@ blockquote::before {
 }
 
 .about-forte {
-  background: #8cc63f;
   margin-top: 26px;
   overflow: hidden;
   padding: 0;
@@ -17316,37 +17315,38 @@ blockquote::before {
 
 .about-forte__grid {
   align-items: center;
+  background: #8cc63f;
   display: grid;
-  gap: 54px;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.98fr);
-  min-height: 360px;
+  gap: 0;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  min-height: 326px;
+  overflow: hidden;
 }
 
 .about-forte__image {
   align-self: stretch;
   background: #93c447;
   display: flex;
-  margin-left: calc((100vw - min(1160px, calc(100vw - 48px))) / -2);
-  height: 360px;
-  width:800px;
+  height: 326px;
   overflow: hidden;
 }
 
 .about-forte__image img {
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: left center;
   width: 100%;
 }
 
 .about-forte__content {
-  padding: 48px 0;
+  max-width: 470px;
+  padding: 30px 34px 30px 52px;
 }
 
 .about-forte__content h2 {
   color: #fff;
-  font-size: clamp(30px, 2.9vw, 42px);
-  margin-bottom: 22px;
+  font-size: clamp(25px, 2.1vw, 32px);
+  margin-bottom: 14px;
 }
 
 .about-forte__content ul {
@@ -17359,11 +17359,11 @@ blockquote::before {
   align-items: flex-start;
   color: #fff;
   display: flex;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  gap: 16px;
-  line-height: 1.62;
-  margin-bottom: 18px;
+  gap: 14px;
+  line-height: 1.45;
+  margin-bottom: 14px;
 }
 
 .about-forte__content li:last-child {
@@ -17373,7 +17373,7 @@ blockquote::before {
 .about-forte__content li i {
   color: #0a7b30;
   flex: 0 0 auto;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   margin-top: 2px;
 }
@@ -17495,8 +17495,7 @@ blockquote::before {
   .about-intro__grid,
   .about-values__grid,
   .about-quality__grid,
-  .about-commitment__grid,
-  .about-forte__grid {
+  .about-commitment__grid {
     gap: 34px;
   }
 
@@ -17565,12 +17564,13 @@ blockquote::before {
   }
 
   .about-forte__image {
-    margin: 0;
+    height: 280px;
     min-height: 260px;
   }
 
   .about-forte__content {
-    padding: 0 0 44px;
+    max-width: none;
+    padding: 34px 38px 42px;
   }
 
   .about-quality__heading {
@@ -17616,7 +17616,7 @@ blockquote::before {
   }
 
   .about-forte__grid {
-    gap: 26px;
+    gap: 0;
   }
 
   .about-quality__heading h2 {
@@ -17741,6 +17741,7 @@ blockquote::before {
   }
 
   .about-forte__image {
+    height: 230px;
     min-height: 210px;
   }
 

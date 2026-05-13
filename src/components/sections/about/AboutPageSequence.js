@@ -197,7 +197,7 @@ const AboutPageSequence = () => {
         <div className="about-sequence__container about-forte__grid">
           <div className="about-forte__image" aria-hidden="true">
             <Image
-              src="/img/about/powder.webp"
+              src="/img/about/forte-powder-spoons.png"
               alt=""
               width={900}
               height={400}
