@@ -784,6 +784,44 @@
     "slug": "cherry-powder"
   },
   {
+    "id": 28,
+    "title": "Chicory Powder",
+    "desc": "Chicory Powder is produced by roasting and finely grinding the roots, buds, or leaves of the chicory plant. When blended with coffee, it adds color, body, and a fuller mouthfeel to the beverage and has long been used in traditional South Indian filter coffee preparations.\nChicory root powder is naturally caffeine-free and is widely used as a coffee alternative or blending ingredient. It is also known to contain dietary fiber and is traditionally associated, in a general non-medical sense, with digestion-friendly food applications. Its warm, slightly bitter profile makes it suitable for both beverage and culinary use.",
+    "description": "Chicory Powder is produced by roasting and finely grinding the roots, buds, or leaves of the chicory plant. When blended with coffee, it adds color, body, and a fuller mouthfeel to the beverage and has long been used in traditional South Indian filter coffee preparations.\nChicory root powder is naturally caffeine-free and is widely used as a coffee alternative or blending ingredient. It is also known to contain dietary fiber and is traditionally associated, in a general non-medical sense, with digestion-friendly food applications. Its warm, slightly bitter profile makes it suitable for both beverage and culinary use.",
+    "applications_and_uses": [
+      "Coffee blending to enhance depth, flavor, and balance",
+      "Preparation of filter coffee and decaffeinated coffee-style beverages",
+      "Coffee substitute for caffeine-free beverages",
+      "Milkshakes, smoothies, and instant drink formulations",
+      "Cooking spice to flavor meals and beverages",
+      "Sweetener and dietary fiber source in select food products",
+      "Encapsulation, extraction, and infusion for food and beverage applications"
+    ],
+    "specifications": {
+      "Product Name": "Spray Dried Instant Chicory Powder",
+      "Raw Material": "Roasted Chicory Cube",
+      "Color, Taste & Aroma": "Brown color with typical chicory flavor",
+      "Applications": "Instant beverage premixes, health foods, bakery products, nutraceutical products, coffee premix, cosmetics, etc.",
+      "Shelf Life": "18 months from the date of production when stored in proper sealed packaging under recommended conditions",
+      "Handling & Storage": [
+        "Store in a cool, dry, clean, odor-free environment, away from direct heat and sunlight",
+        "Recommended storage temperature: 20–25°C; do not store below 10°C",
+        "Highly hygroscopic — avoid prolonged exposure to air",
+        "Reseal the packaging tightly after each use"
+      ],
+      "Packaging Options": [
+        "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
+        "HDPE 25 kg drum pack (as specified)"
+      ],
+      "MOQ": "100 kg or above",
+      "Lead Time": "Immediate dispatch",
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+    },
+    "type": "Vegetable Powder",
+    "image": "/img/product/Vegetable/Chicory.png",
+    "slug": "chicory-powder"
+  },
+  {
     "id": 29,
     "title": "Sapodilla Powder",
     "desc": "Sapodilla Powder is a naturally sweet, light brown powder made from fresh Sapodilla pulp. It delivers the characteristic flavor and aroma of the fruit and blends easily into dry and liquid formulations due to its free-flowing, water-soluble nature.\nSapodilla is known to contain polyphenols, including tannins, as well as dietary fiber, vitamins, and minerals. These natural components are associated with general digestive comfort and overall wellness, making the powder suitable for nutraceutical and functional product development. Its smooth sweetness and authentic fruitiness make it simple to enhance the flavor and appeal of beverages, instant mixes, desserts, and other applications.",
@@ -855,6 +893,43 @@
     "type": "Vegetable Powder",
     "image": "/img/product/Vegetable/Coriander.png",
     "slug": "coriander-powder"
+  },
+  {
+    "id": 34,
+    "title": "Cucumber Powder",
+    "desc": "Cucumber Powder offers the natural taste and aroma of fresh cucumber in a convenient, shelf-stable format. Cucumbers inherently contain nutrients such as vitamin K, vitamin C, potassium, magnesium, phosphorus, folate, and small amounts of other trace minerals. The spray-drying process helps preserve key sensory attributes while ensuring good solubility and flow characteristics.\nIts clean, refreshing profile makes it suitable for seasoning mixes, dips, sauces, dressings, dry blends, and various food applications. The powder can also be used in cosmetic and personal-care formulations where natural cucumber aroma notes or plant-based ingredients are desired.",
+    "description": "Cucumber Powder offers the natural taste and aroma of fresh cucumber in a convenient, shelf-stable format. Cucumbers inherently contain nutrients such as vitamin K, vitamin C, potassium, magnesium, phosphorus, folate, and small amounts of other trace minerals. The spray-drying process helps preserve key sensory attributes while ensuring good solubility and flow characteristics.\nIts clean, refreshing profile makes it suitable for seasoning mixes, dips, sauces, dressings, dry blends, and various food applications. The powder can also be used in cosmetic and personal-care formulations where natural cucumber aroma notes or plant-based ingredients are desired.",
+    "applications_and_uses": [
+      "Used as a seasoning component in culinary recipes.",
+      "Suitable for salad dressings, dips, sauces, soups, and other savory preparations.",
+      "Can be added to dry mixes or blended with spices to impart cucumber flavor.",
+      "Works well in baked goods, bread varieties, and specialty items such as cucumber-flavored cakes.",
+      "Useful in smoothies, juices, and other beverages requiring natural cucumber notes.",
+      "Commonly incorporated into cosmetic formulations for its refreshing sensory profile."
+    ],
+    "specifications": {
+      "Product Name": "Spray Dried Cucumber Powder",
+      "Ingredients (Raw Material)": "Fresh Cucumber Juice",
+      "Color, Taste & Aroma": "White color, typical cucumber flavor and aroma",
+      "Applications": "Bakery products, seasoning blends, namkeen, instant soups, gravies, cosmetic formulations, herbal applications, etc.",
+      "Shelf Life": "18 months from date of production when stored in the original sealed pack under recommended conditions.",
+      "Handling/Storage": [
+        "Store in a cool, dry, clean environment, free from foreign odor and away from direct heat/sunlight",
+        "Recommended storage temperature: 20–25°C (not below 10°C) to maintain free-flowing condition",
+        "Avoid prolonged exposure to air; due to its hygroscopic nature, the powder can absorb moisture and harden over time.",
+        "Reseal the package tightly when not in use."
+      ],
+      "Packaging (Material Type, Package Quantity)": [
+        "5 kg aluminum foil bags (4 × 5 kg = 20 kg in a 5-ply corrugated box)",
+        "HDPE 25 kg Drum Pack (at specified facilities)"
+      ],
+      "Minimum Order Quantity (MOQ)": "100 kg or above",
+      "Lead Time": "Immediate Dispatch",
+      "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
+    },
+    "type": "Vegetable Powder",
+    "image": "/img/product/Vegetable/Cucumber.png",
+    "slug": "cucumber-powder"
   },
   {
     "id": 37,
