@@ -72,7 +72,7 @@ const TeamDetailsPrimary = () => {
                         <strong>Experience:</strong> 10+ Years
                       </li>
                       <li>
-                        <strong>Location:</strong> 13/A, NYC
+                        <strong>Location:</strong> NH-27, Wankaner, Morbi, Gujarat-363621
                       </li>
                       <li>
                         <strong>Practice Area:</strong> Car Repair
@@ -84,7 +84,7 @@ const TeamDetailsPrimary = () => {
                   <div className="ltn__team-details-member-about">
                     <ul>
                       <li>
-                        <strong>Email:</strong> example@example.com
+                        <strong>Email:</strong> orbittointernational@gmail.com
                       </li>
                       <li>
                         <strong>Fax:</strong> +0123-456 789

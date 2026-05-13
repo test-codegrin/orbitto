@@ -22,12 +22,12 @@ const HeaderTop = () => {
               <ul className="top-header-contact-list">
                 <li>
                   <Link href="/locations">
-                    <i className="icon-placeholder"></i> 15/A, Nest Tower, NYC
+                    <i className="icon-placeholder"></i> NH-27, Wankaner, Morbi, Gujarat-363621
                   </Link>
                 </li>
                 <li>
-                  <Link href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you">
-                    <i className="icon-mail"></i> info@webmail.com
+                  <Link href="mailto:orbittointernational@gmail.com?Subject=Flower%20greetings%20to%20you">
+                    <i className="icon-mail"></i> orbittointernational@gmail.com
                   </Link>
                 </li>
               </ul>

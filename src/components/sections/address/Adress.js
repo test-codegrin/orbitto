@@ -17,8 +17,7 @@ const Adress = () => {
               </div>
               <h3>Email Address</h3>
               <p>
-                info@webmail.com <br />
-                jobs@webexample.com
+                orbittointernational@gmail.com
               </p>
             </div>
           </div>

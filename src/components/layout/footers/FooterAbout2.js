@@ -30,7 +30,7 @@ const FooterAbout2 = () => {
                 <i className="icon-placeholder"></i>
               </div>
               <div className="footer-address-info">
-                <p>Brooklyn, New York, United States</p>
+                <p>NH-27, Wankaner, Morbi, Gujarat-363621</p>
               </div>
             </li>
             <li>
@@ -49,8 +49,8 @@ const FooterAbout2 = () => {
               </div>
               <div className="footer-address-info">
                 <p>
-                  <Link href="mailto:example@example.com">
-                    example@example.com
+                  <Link href="mailto:orbittointernational@gmail.com">
+                    orbittointernational@gmail.com
                   </Link>
                 </p>
               </div>
