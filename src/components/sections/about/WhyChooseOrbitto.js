@@ -96,20 +96,30 @@ const slides = [
   },
 ];
 
+const cardEntryDirections = [
+  "from-left",
+  "from-right",
+  "from-bottom",
+  "from-top",
+];
+
 const WhyChooseOrbitto = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const currentSlide = slides[activeSlide];
+  const [activePage, setActivePage] = useState(0);
+  const [animationCycle, setAnimationCycle] = useState(0);
+  const storyContent = slides[2];
+  const cardPages = slides.map((slide) => slide.cards);
+  const currentCards = cardPages[activePage];
 
   const handlePrev = () => {
-    setActiveSlide((current) =>
-      current === 0 ? slides.length - 1 : current - 1
-    );
+    setActivePage((current) => (current === 0 ? cardPages.length - 1 : current - 1));
+    setAnimationCycle((current) => current + 1);
   };
 
   const handleNext = () => {
-    setActiveSlide((current) =>
-      current === slides.length - 1 ? 0 : current + 1
+    setActivePage((current) =>
+      current === cardPages.length - 1 ? 0 : current + 1
     );
+    setAnimationCycle((current) => current + 1);
   };
 
   return (
@@ -126,16 +136,16 @@ const WhyChooseOrbitto = () => {
 
         <div className="why-orbitto-grid">
           <div className="why-orbitto-left">
-            <div className="why-orbitto-story" key={`story-${activeSlide}`}>
+            <div className="why-orbitto-story">
               <Image
-                src={currentSlide.image}
-                alt={currentSlide.imageAlt}
+                src={storyContent.image}
+                alt={storyContent.imageAlt}
                 width={640}
                 height={380}
                 className="why-orbitto-story__image"
               />
               <div className="why-orbitto-story__copy">
-                {currentSlide.copy.map((text) => (
+                {storyContent.copy.map((text) => (
                   <p key={text}>{text}</p>
                 ))}
               </div>
@@ -144,14 +154,14 @@ const WhyChooseOrbitto = () => {
             <div className="why-orbitto-controls">
               <button
                 type="button"
-                aria-label="Show previous Orbitto benefit"
+                aria-label="Show previous Orbitto feature set"
                 onClick={handlePrev}
               >
                 <i className="fas fa-arrow-left"></i>
               </button>
               <button
                 type="button"
-                aria-label="Show next Orbitto benefit"
+                aria-label="Show next Orbitto feature set"
                 onClick={handleNext}
               >
                 <i className="fas fa-arrow-right"></i>
@@ -159,12 +169,13 @@ const WhyChooseOrbitto = () => {
             </div>
           </div>
 
-          <div
-            className="why-orbitto-features"
-            key={`features-${activeSlide}`}
-          >
-            {currentSlide.cards.map(({ icon, title, desc }) => (
-              <div className="why-orbitto-card" key={title}>
+          <div className="why-orbitto-features" key={`features-${animationCycle}`}>
+            {currentCards.map(({ icon, title, desc }, index) => (
+              <div
+                className={`why-orbitto-card ${cardEntryDirections[index]}`}
+                key={`${title}-${animationCycle}`}
+                style={{ "--card-delay": `${index * 0.08}s` }}
+              >
                 <i className={icon}></i>
                 <h3>{title}</h3>
                 <p>{desc}</p>
@@ -174,14 +185,14 @@ const WhyChooseOrbitto = () => {
         </div>
 
         <Image
-          src="/img/slider/Greenchilli.png"
+          src="/img/product/Vegetable/GreenChilli.png"
           alt=""
           width={120}
           height={120}
           className="why-orbitto-decor why-orbitto-decor--left"
         />
         <Image
-          src="/img/product/fruit/Kiwi.png"
+          src="/img/product/Vegetable/Broccoli.png"
           alt=""
           width={130}
           height={130}

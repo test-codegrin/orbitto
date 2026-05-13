@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 
 const About5 = ({ pt }) => {
   return (
@@ -20,35 +19,15 @@ const About5 = ({ pt }) => {
             <div className="about-us-info-wrap">
               <div className="section-title-area ltn__section-title-2">
                 <h6 className="section-subtitle ltn__secondary-color">
-                  Know More About Product
+                  About Us
                 </h6>
-                <h1 className="section-title">
-                  Trusted Organic <br className="d-none d-md-block" /> Food
-                  Store
-                </h1>
+                <h1 className="section-title">Orbitto</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore
+                  Orbitto is a manufacturer of spray-dried fruit, vegetable,
+                  dairy, and specialty powders - delivering natural ingredients
+                  that bring nutrition, functionality, and convenience to food
+                  and beverage innovations worldwide.
                 </p>
-              </div>
-              <p>
-                sellers who aspire to be good, do good, and spread goodness. We
-                democratic, self-sustaining, two-sided marketplace which thrives
-                on trust and is built on community and quality content.
-              </p>
-              <div className="about-author-info d-flex">
-                <div className="author-name-designation  align-self-center mr-30">
-                  <h4 className="mb-0">Jerry Henson</h4>
-                  <small>/ ProductDirector</small>
-                </div>
-                <div className="author-sign  align-self-center">
-                  <Image
-                    src="/img/icons/icon-img/author-sign.png"
-                    alt="#"
-                    width={35}
-                    height={500}
-                  />
-                </div>
               </div>
             </div>
           </div>

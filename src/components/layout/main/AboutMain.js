@@ -11,7 +11,7 @@ const AboutMain = () => {
       <About5 pt={"pt-0"} />
       <WhyChooseOrbitto />
       <AboutPageSequence />
-      <Features4 />
+      <Features4 mb="before-bg-bottom-2 mt-40" />
     </main>
   );
 };

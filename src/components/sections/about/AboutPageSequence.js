@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const coreValues = [
   {
@@ -41,6 +40,12 @@ const fortes = [
   "Authentic and natural raw materials",
   "A wide product range for evolving customer needs",
   "Consistency in taste, profile, and flavor delivery",
+];
+
+const qualityPoints = [
+  "Achieving high levels of customer satisfaction by building quality and food safety into every process.",
+  "Continual improvement of our quality and food safety management systems through team-wide participation.",
+  "Consistently meeting changing customer needs with compliant, reliable, and hygienic production standards.",
 ];
 
 const AboutPageSequence = () => {
@@ -120,6 +125,45 @@ const AboutPageSequence = () => {
         </div>
       </section>
 
+      <section className="about-sequence__section about-quality">
+        <div className="about-sequence__container">
+          <div className="about-quality__heading">
+            <span className="about-sequence__eyebrow">Quality &amp; Food safety</span>
+            <h2>What we do to ensure process and product quality</h2>
+            <p>
+              Food safety is not a destination for us, but a journey of continual
+              improvement and development. We follow high standards across all
+              operations and maintain strict benchmark practices.
+            </p>
+          </div>
+
+          <div className="about-quality__grid">
+            <div className="about-quality__image">
+              <Image
+                src="/img/service/2.jpg"
+                alt="Food safety policy and process quality checks"
+                width={760}
+                height={450}
+                sizes="(max-width: 991px) 100vw, 52vw"
+              />
+            </div>
+
+            <div className="about-quality__content">
+              <p>
+                At Orbitto, we are dedicated to manufacturing spray-dried food
+                ingredients with hygienic processing, careful controls, and
+                quality-first execution to achieve measurable consistency.
+              </p>
+              <ul>
+                {qualityPoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="about-sequence__section about-commitment">
         <div className="about-sequence__container about-commitment__grid">
           <div className="about-commitment__visual" aria-hidden="true">
@@ -153,10 +197,10 @@ const AboutPageSequence = () => {
         <div className="about-sequence__container about-forte__grid">
           <div className="about-forte__image" aria-hidden="true">
             <Image
-              src="/img/about/forte-powder-spoons.png"
+              src="/img/about/powder.webp"
               alt=""
-              width={980}
-              height={460}
+              width={900}
+              height={400}
               sizes="(max-width: 991px) 100vw, 50vw"
             />
           </div>
@@ -174,60 +218,6 @@ const AboutPageSequence = () => {
           </div>
         </div>
 
-        <div className="about-forte-info">
-          <div className="about-sequence__container about-forte-info__grid">
-            <div className="about-forte-info__column">
-              <h3>Get in Touch</h3>
-              <p>
-                Ahmedabad, Gujarat, India.
-                <br />
-                Natural food powders, ingredients, and export support for
-                growing brands.
-              </p>
-            </div>
-
-            <div className="about-forte-info__column">
-              <h3>Quick Links</h3>
-              <ul>
-                <li>
-                  <Link href="/products">Products</Link>
-                </li>
-                <li>
-                  <Link href="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="about-forte-info__column">
-              <h3>Contact Us</h3>
-              <ul className="about-forte-info__contact">
-                <li>
-                  <i className="fas fa-phone-alt"></i>
-                  <Link href="/contact">Request a call</Link>
-                </li>
-                <li>
-                  <i className="fas fa-envelope"></i>
-                  <Link href="/contact">Send an enquiry</Link>
-                </li>
-              </ul>
-              <span>Follow Us</span>
-              <div className="about-forte-info__socials">
-                <Link href="#" aria-label="Facebook">
-                  <i className="fab fa-facebook-f"></i>
-                </Link>
-                <Link href="#" aria-label="Twitter">
-                  <i className="fab fa-twitter"></i>
-                </Link>
-                <Link href="#" aria-label="LinkedIn">
-                  <i className="fab fa-linkedin-in"></i>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
   );
