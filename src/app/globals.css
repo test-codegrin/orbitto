@@ -8526,7 +8526,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: var(--section-bg-1);
+  /* background-color: var(--section-bg-1);? */
 }
 
 .products3-fixed-card-grid .ltn__product-item-3 .product-img a {
@@ -8546,7 +8546,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 .products3-fixed-card-grid .ltn__product-item-3 .product-img img {
   width: 100%;
   height: 100% !important;
-  object-fit: cover;
+  object-fit: contain;
   z-index: 1;
 }
 
