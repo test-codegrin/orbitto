@@ -16362,6 +16362,22 @@ blockquote::before {
   background: #f7f7f7;
   padding: 100px 0 90px;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.home-about::before {
+  content: "";
+  position: absolute;
+  inset: -8% -12%;
+  background-image: url("/img/hero/background fruits.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(1080px, 76vw) auto;
+  opacity: 0.06;
+  transform: rotate(180deg);
+  transform-origin: center;
+  pointer-events: none;
+  z-index: 0;
 }
 /* 
 .home-about__bg-text {
@@ -16385,9 +16401,9 @@ blockquote::before {
   width: min(1720px, calc(100% - 80px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.08fr 1fr;
-  align-items: start;
-  gap: 100px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr);
+  align-items: center;
+  gap: clamp(40px, 6vw, 110px);
 }
 
 .home-about__content h2 {
@@ -16422,13 +16438,15 @@ blockquote::before {
 .home-about__image-wrap {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
 }
 
 .home-about__image {
-  width: 80%;
+  width: min(100%, 920px);
+  max-width: none;
   height: auto;
+  object-fit: contain;
   display: block;
 }
 
@@ -16437,6 +16455,14 @@ blockquote::before {
     width: min(1720px, calc(100% - 40px));
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .home-about__image-wrap {
+    justify-content: center;
+  }
+
+  .home-about__image {
+    width: min(100%, 920px);
   }
 }
 
