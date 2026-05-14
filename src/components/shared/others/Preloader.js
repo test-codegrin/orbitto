@@ -6,6 +6,38 @@ import Image from "next/image";
 const TOTAL_DURATION = 1200;
 const MOVE_DURATION = 800;
 const HOLD_DURATION = TOTAL_DURATION - MOVE_DURATION;
+const EDGE_PADDING = 20;
+
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+const isRectVisible = (rect) =>
+  rect.width > 0 &&
+  rect.height > 0 &&
+  rect.bottom > 0 &&
+  rect.right > 0 &&
+  rect.top < window.innerHeight &&
+  rect.left < window.innerWidth;
+
+const getBestLogoTarget = () => {
+  const logoNodes = Array.from(
+    document.querySelectorAll(".ltn__header-area .orbot-logo")
+  );
+
+  if (!logoNodes.length) return null;
+
+  const stickyVisibleLogo = logoNodes.find((logoNode) => {
+    const rect = logoNode.getBoundingClientRect();
+    return Boolean(logoNode.closest(".sticky-active")) && isRectVisible(rect);
+  });
+
+  if (stickyVisibleLogo) return stickyVisibleLogo;
+
+  const visibleLogo = logoNodes.find((logoNode) =>
+    isRectVisible(logoNode.getBoundingClientRect())
+  );
+
+  return visibleLogo || logoNodes[0];
+};
 
 const Preloader = () => {
   const brandRef = useRef(null);
@@ -16,18 +48,34 @@ const Preloader = () => {
   useEffect(() => {
     const startMoveTimer = setTimeout(() => {
       const brand = brandRef.current;
-      const target = document.querySelector(
-        ".ltn__header-area .header-logo-column .orbot-logo"
-      );
+      window.dispatchEvent(new Event("scroll"));
+      const target = getBestLogoTarget();
 
       if (brand && target) {
         const sourceRect = brand.getBoundingClientRect();
         const targetRect = target.getBoundingClientRect();
         const sourceCenterX = sourceRect.left + sourceRect.width / 2;
         const sourceCenterY = sourceRect.top + sourceRect.height / 2;
-        const targetCenterX = targetRect.left + targetRect.width / 2;
-        const targetCenterY = targetRect.top + targetRect.height / 2;
-        const scale = targetRect.width / sourceRect.width || 1;
+        const rawTargetCenterX = targetRect.left + targetRect.width / 2;
+        const rawTargetCenterY = targetRect.top + targetRect.height / 2;
+        const targetCenterX = isRectVisible(targetRect)
+          ? rawTargetCenterX
+          : clamp(
+              rawTargetCenterX,
+              sourceRect.width / 2 + EDGE_PADDING,
+              window.innerWidth - sourceRect.width / 2 - EDGE_PADDING
+            );
+        const targetCenterY = isRectVisible(targetRect)
+          ? rawTargetCenterY
+          : clamp(
+              rawTargetCenterY,
+              sourceRect.height / 2 + EDGE_PADDING,
+              window.innerHeight - sourceRect.height / 2 - EDGE_PADDING
+            );
+        const scale =
+          sourceRect.width > 0 && targetRect.width > 0
+            ? targetRect.width / sourceRect.width
+            : 1;
 
         setMotion({
           x: targetCenterX - sourceCenterX,
