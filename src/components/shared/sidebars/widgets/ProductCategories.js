@@ -1,5 +1,5 @@
 "use client";
-import makePath from "@/libs/makePath";
+import { normalizeProductType } from "@/libs/productType";
 import { useCommonContext } from "@/providers/CommonContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -14,16 +14,18 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
     { label: "All Products", value: "" },
     { label: "Fruit", value: "fruit" },
     { label: "Vegetable", value: "vegetable" },
-    { label: "Fruit Powder", value: makePath("Fruit Powder") },
-    { label: "Vegetable Powder", value: makePath("Vegetable Powder") },
-    { label: "Honey", value: makePath("Honey") },
-    { label: "Spices", value: makePath("Spices") },
-    { label: "Herbal Powder", value: makePath("Herbal Powder") },
+    { label: "Fruit Powder", value: "fruit_powder" },
+    { label: "Vegetable Powder", value: "vegetable_powder" },
+    { label: "Honey", value: "honey" },
+    { label: "Spices", value: "spices" },
+    { label: "Herbal Powder", value: "herbal_powder" },
   ];
   const productPath = currentPath ? currentPath : "/shop";
-  const selectedCategory = currentCategory || "";
+  const selectedCategory = normalizeProductType(currentCategory) || "";
   const selectedCategoryLabel =
-    categories.find(({ value }) => value === selectedCategory)?.label ||
+    categories.find(
+      ({ value }) => normalizeProductType(value) === selectedCategory
+    )?.label ||
     categories[0].label;
   const handleCategorySelect = (categoryPath) => {
     setIsOpen(false);
@@ -67,15 +69,17 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
           role="listbox"
         >
           {categories?.map(({ label, value }) => {
+            const isActive = selectedCategory === normalizeProductType(value);
+
             return (
               <li
                 key={value || "all-products"}
                 role="option"
-                aria-selected={selectedCategory === value}
+                aria-selected={isActive}
               >
                 <button
                   type="button"
-                  className={selectedCategory === value ? "active" : ""}
+                  className={isActive ? "active" : ""}
                   onClick={() => handleCategorySelect(value)}
                 >
                   {label}
@@ -100,7 +104,7 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
               <Link
                 href={value ? `${productPath}?category=${value}` : productPath}
                 className={
-                  (value && currentCategory === value) ||
+                  (value && selectedCategory === normalizeProductType(value)) ||
                   (!value && !currentCategory)
                     ? "active"
                     : ""

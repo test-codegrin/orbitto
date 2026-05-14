@@ -3402,5 +3402,808 @@
     "type": "Spices",
     "image": "/img/product/Spices/Teamasalapowder.png",
     "slug": "tea-masala"
+  },
+  {
+  "id": 111,
+  "title": "Mango (Ripe)",
+  "desc": "Fresh mangoes are naturally rich in vitamins, minerals, dietary fiber, and antioxidants. They are widely consumed worldwide for their sweet taste, vibrant color, and nutritional value. Carefully selected and hygienically packed mangoes are ideal for retail markets, food processing industries, juice manufacturers, and international export businesses.",
+  
+  "description": "Fresh mangoes are harvested at the proper maturity stage to ensure excellent taste, texture, and shelf life during transportation. Our export-quality mangoes are cleaned, sorted, graded, and packed according to international export standards. They are suitable for direct consumption, juice processing, desserts, smoothies, and food manufacturing applications.",
+
+  "applications_and_uses": [
+    "Direct fresh fruit consumption",
+    "Juice and beverage manufacturing",
+    "Ice cream, desserts, and bakery applications",
+    "Fruit salads and smoothies",
+    "Food processing and pulp extraction",
+    "Export for retail supermarkets and wholesale markets"
+  ],
+
+  "specifications": {
+    "Product Name": "Fresh Mango",
+    "Color, Taste & Aroma": "Natural yellow to orange, Sweet and juicy",
+    "Size": "200g – 500g per piece (custom grading available)",
+    "Maturity": "Export-grade mature fruit",
+    "Shelf Life": "2–4 weeks under proper storage conditions",
+    
+    "Storage Temperature": "10°C – 13°C",
+    "Handling & Storage": "Store in a cool, dry place away from direct sunlight and moisture",
+
+    "Packaging Options": [
+      "3 kg corrugated export box",
+      "5 kg corrugated export box",
+      "10 kg corrugated export carton",
+      "Custom packaging available as per buyer requirements"
+    ],
+
+    "MOQ": "",
+    "Lead Time": "Based on season and order quantity"
+  },
+  "type": "Fruit",
+  "image": "/img/product/fruit/mango.png",
+  "slug": "mango-ripe"
+},
+ {
+    "id": 112,
+    "title": "Banana (Unripe)",
+    "desc": "Fresh unripe bananas are carefully harvested for export purposes and are widely used for retail distribution, ripening centers, food processing, and international markets. They are valued for their long shelf life, firm texture, and nutritional benefits including potassium, fiber, and essential vitamins.",
+    "description": "Our export-quality unripe bananas are selected at the ideal maturity stage to ensure safe transportation and controlled ripening at destination markets. The bananas are cleaned, sorted, graded, and hygienically packed according to international export standards.",
+
+    "applications_and_uses": [
+      "Retail fruit markets",
+      "Ripening centers",
+      "Food processing industries",
+      "Banana chips manufacturing",
+      "Smoothies and desserts",
+      "Wholesale export markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Banana (Unripe)",
+      "Color, Taste & Aroma": "Natural green color with mild raw banana aroma",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature unripe fruit",
+      "Shelf Life": "2–4 weeks under proper storage conditions",
+
+      "Storage Temperature": "13°C – 14°C",
+      "Handling & Storage": "Store in a cool and dry environment away from direct sunlight",
+
+      "Packaging Options": [
+        "7 kg export carton",
+        "13 kg export carton",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Fruit",
+    "image": "/img/product/fruit/banana-unripe.png",
+    "slug": "banana-unripe"
+  },
+
+  {
+    "id": 113,
+    "title": "Mango (Unripe)",
+    "desc": "Fresh unripe mangoes are widely used for pickles, food processing, export markets, and culinary applications. They are appreciated for their firm texture, tangy flavor, and freshness.",
+    "description": "Our export-quality unripe mangoes are harvested at the correct maturity stage to ensure durability during transportation and extended shelf life. The fruits are hygienically cleaned, sorted, and packed as per international export standards.",
+
+    "applications_and_uses": [
+      "Pickle manufacturing",
+      "Food processing industries",
+      "Juice and pulp industries",
+      "Retail fruit markets",
+      "Export wholesale markets",
+      "Traditional culinary applications"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Mango (Unripe)",
+      "Color, Taste & Aroma": "Natural green color with tangy raw mango flavor",
+      "Size": "200g – 500g per piece (custom grading available)",
+      "Maturity": "Export-grade mature unripe fruit",
+      "Shelf Life": "2–4 weeks under proper storage conditions",
+
+      "Storage Temperature": "10°C – 13°C",
+      "Handling & Storage": "Store in a cool, dry place away from moisture and direct sunlight",
+
+      "Packaging Options": [
+        "5 kg corrugated export box",
+        "10 kg corrugated export carton",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Fruit",
+    "image": "/img/product/fruit/mango-unripe.png",
+    "slug": "mango-unripe"
+  },
+
+  {
+    "id": 114,
+    "title": "Grapes (Green)",
+    "desc": "Fresh green grapes are highly popular in international markets due to their sweet taste, crisp texture, and nutritional value. They are widely consumed as fresh table grapes and used in juice and food industries.",
+    "description": "Our export-quality green grapes are carefully selected, cleaned, graded, and packed under hygienic conditions to maintain freshness, taste, and shelf life during transportation.",
+
+    "applications_and_uses": [
+      "Fresh fruit consumption",
+      "Juice production",
+      "Fruit salads and desserts",
+      "Retail supermarkets",
+      "Food processing industries",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Green Grapes",
+      "Color, Taste & Aroma": "Natural green color with sweet flavor",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature fruit",
+      "Shelf Life": "2–6 weeks under proper storage conditions",
+
+      "Storage Temperature": "0°C – 2°C",
+      "Handling & Storage": "Store under refrigerated conditions away from moisture",
+
+      "Packaging Options": [
+        "4.5 kg export carton",
+        "5 kg corrugated box",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Fruit",
+    "image": "/img/product/fruit/grapes-green.png",
+    "slug": "grapes-green"
+  },
+
+  {
+    "id": 115,
+    "title": "Pomegranate",
+    "desc": "Fresh pomegranates are valued worldwide for their rich antioxidants, vibrant color, and sweet-tart flavor. They are widely used for fresh consumption, juice extraction, and food processing applications.",
+    "description": "Our export-quality pomegranates are carefully harvested, sorted, and packed to maintain freshness and premium quality during international transportation.",
+
+    "applications_and_uses": [
+      "Fresh fruit consumption",
+      "Juice manufacturing",
+      "Food processing industries",
+      "Desserts and salads",
+      "Retail supermarkets",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Pomegranate",
+      "Color, Taste & Aroma": "Deep red color with sweet-tart flavor",
+      "Size": "250g – 500g per piece (custom grading available)",
+      "Maturity": "Export-grade mature fruit",
+      "Shelf Life": "1–2 months under proper storage conditions",
+
+      "Storage Temperature": "5°C – 7°C",
+      "Handling & Storage": "Store in a cool and dry place away from direct sunlight",
+
+      "Packaging Options": [
+        "5 kg export carton",
+        "10 kg corrugated export box",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Fruit",
+    "image": "/img/product/fruit/pomegranate.png",
+    "slug": "pomegranate"
+  },
+
+  {
+    "id": 116,
+    "title": "Lemon",
+    "desc": "Fresh lemons are widely used across global markets for their refreshing citrus flavor, juice content, and nutritional benefits. They are ideal for fresh consumption, beverages, culinary use, and food processing industries.",
+    "description": "Our export-quality lemons are carefully selected, cleaned, graded, and hygienically packed to maintain freshness and long shelf life during export transportation.",
+
+    "applications_and_uses": [
+      "Fresh consumption",
+      "Juice and beverage manufacturing",
+      "Culinary applications",
+      "Food processing industries",
+      "Retail supermarkets",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Lemon",
+      "Color, Taste & Aroma": "Natural yellow color with citrus aroma and tangy taste",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature fruit",
+      "Shelf Life": "3–6 weeks under proper storage conditions",
+
+      "Storage Temperature": "8°C – 10°C",
+      "Handling & Storage": "Store in a cool and dry environment away from moisture",
+
+      "Packaging Options": [
+        "5 kg export carton",
+        "10 kg corrugated box",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Fruit",
+    "image": "/img/product/fruit/lemon.png",
+    "slug": "lemon"
+  },
+
+  {
+    "id": 117,
+    "title": "Orange",
+    "desc": "Fresh oranges are popular worldwide for their juicy texture, refreshing citrus flavor, and high vitamin C content. They are widely used for fresh consumption, juice production, and export markets.",
+    "description": "Our export-quality oranges are carefully sorted, cleaned, and packed according to international export standards to ensure freshness and premium quality.",
+
+    "applications_and_uses": [
+      "Fresh fruit consumption",
+      "Juice manufacturing",
+      "Desserts and salads",
+      "Retail supermarkets",
+      "Food processing industries",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Orange",
+      "Color, Taste & Aroma": "Bright orange color with sweet citrus flavor",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature fruit",
+      "Shelf Life": "3–8 weeks under proper storage conditions",
+
+      "Storage Temperature": "3°C – 8°C",
+      "Handling & Storage": "Store in a cool, dry place away from direct sunlight",
+
+      "Packaging Options": [
+        "5 kg export carton",
+        "10 kg corrugated export box",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Fruit",
+    "image": "/img/product/fruit/orange.png",
+    "slug": "orange"
+  },
+
+  {
+    "id": 118,
+    "title": "Dragon Fruit",
+    "desc": "Fresh dragon fruit is known for its vibrant appearance, refreshing taste, and rich nutritional profile. It is highly demanded in international fruit markets and health-focused food industries.",
+    "description": "Our export-quality dragon fruits are carefully harvested, sorted, graded, and hygienically packed to ensure freshness and superior quality during export transportation.",
+
+    "applications_and_uses": [
+      "Fresh fruit consumption",
+      "Smoothies and beverages",
+      "Desserts and salads",
+      "Health food industries",
+      "Retail supermarkets",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Dragon Fruit",
+      "Color, Taste & Aroma": "Bright pink skin with mildly sweet flavor",
+      "Size": "250g – 600g per piece (custom grading available)",
+      "Maturity": "Export-grade mature fruit",
+      "Shelf Life": "2–4 weeks under proper storage conditions",
+
+      "Storage Temperature": "7°C – 10°C",
+      "Handling & Storage": "Store in a cool and dry environment away from direct sunlight",
+
+      "Packaging Options": [
+        "2 kg export carton",
+        "5 kg corrugated export box",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Fruit",
+    "image": "/img/product/fruit/dragon-fruit.png",
+    "slug": "dragon-fruit"
+  },
+
+  {
+    "id": 119,
+    "title": "Green Lime",
+    "desc": "Fresh green limes are widely used for beverages, culinary applications, and food processing industries due to their strong citrus flavor and high juice content.",
+    "description": "Our export-quality green limes are carefully selected, cleaned, sorted, and packed under hygienic conditions to maintain freshness and shelf life during transportation.",
+
+    "applications_and_uses": [
+      "Juice and beverages",
+      "Culinary applications",
+      "Food processing industries",
+      "Retail supermarkets",
+      "Restaurants and hotels",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Green Lime",
+      "Color, Taste & Aroma": "Natural green color with strong citrus aroma",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature fruit",
+      "Shelf Life": "3–5 weeks under proper storage conditions",
+
+      "Storage Temperature": "8°C – 10°C",
+      "Handling & Storage": "Store in a cool and dry place away from moisture and heat",
+
+      "Packaging Options": [
+        "5 kg export carton",
+        "10 kg corrugated export box",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Fruit",
+    "image": "/img/product/fruit/green-lime.png",
+    "slug": "green-lime"
+  },
+  {
+    "id": 201,
+    "title": "Onion",
+    "desc": "Fresh onions are widely used across global markets for culinary applications, food processing, and retail distribution. They are valued for their pungent flavor, long shelf life, and export demand.",
+    "description": "Our export-quality onions are carefully harvested, cleaned, graded, and hygienically packed according to international export standards to ensure freshness and durability during transportation.",
+
+    "applications_and_uses": [
+      "Cooking and culinary applications",
+      "Food processing industries",
+      "Sauces and seasoning production",
+      "Retail supermarkets",
+      "Wholesale export markets",
+      "Hotels and restaurants"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Onion",
+      "Color, Taste & Aroma": "Natural red/pink color with strong onion aroma",
+      "Size": "40mm – 80mm (custom grading available)",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "1–3 months under proper storage conditions",
+
+      "Storage Temperature": "0°C – 4°C",
+      "Handling & Storage": "Store in a cool, dry, and well-ventilated place",
+
+      "Packaging Options": [
+        "5 kg mesh bag",
+        "10 kg mesh bag",
+        "25 kg export bag",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/onion.png",
+    "slug": "onion"
+  },
+
+  {
+    "id": 202,
+    "title": "Garlic",
+    "desc": "Fresh garlic is highly demanded worldwide for its strong flavor, medicinal properties, and culinary uses. It is widely used in households, food processing industries, and export markets.",
+    "description": "Our export-quality garlic is carefully selected, cleaned, sorted, and packed under hygienic conditions to maintain freshness and premium quality during transportation.",
+
+    "applications_and_uses": [
+      "Cooking and culinary applications",
+      "Seasoning and spice blends",
+      "Food processing industries",
+      "Pickle manufacturing",
+      "Retail supermarkets",
+      "Wholesale export markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Garlic",
+      "Color, Taste & Aroma": "Natural white color with strong garlic aroma",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "3–6 months under proper storage conditions",
+
+      "Storage Temperature": "0°C – 2°C",
+      "Handling & Storage": "Store in a cool, dry, and ventilated environment",
+
+      "Packaging Options": [
+        "5 kg mesh bag",
+        "10 kg mesh bag",
+        "20 kg export carton",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/garlic.png",
+    "slug": "garlic"
+  },
+
+  {
+    "id": 203,
+    "title": "Green Chilli",
+    "desc": "Fresh green chillies are widely used in culinary applications and food processing industries due to their spicy flavor, freshness, and vibrant green color.",
+    "description": "Our export-quality green chillies are carefully harvested, cleaned, sorted, and packed to maintain freshness and shelf life during export transportation.",
+
+    "applications_and_uses": [
+      "Cooking and seasoning",
+      "Sauce and pickle manufacturing",
+      "Food processing industries",
+      "Retail supermarkets",
+      "Restaurants and hotels",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Green Chilli",
+      "Color, Taste & Aroma": "Natural green color with spicy flavor",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "1–3 weeks under proper storage conditions",
+
+      "Storage Temperature": "7°C – 10°C",
+      "Handling & Storage": "Store in a cool and dry place away from moisture",
+
+      "Packaging Options": [
+        "2 kg export carton",
+        "5 kg corrugated box",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/green-chilli.png",
+    "slug": "green-chilli"
+  },
+
+  {
+    "id": 204,
+    "title": "Cauliflower",
+    "desc": "Fresh cauliflower is widely consumed worldwide for its nutritional value, mild flavor, and versatile culinary applications.",
+    "description": "Our export-quality cauliflower is carefully selected, cleaned, graded, and hygienically packed to ensure freshness and quality during transportation.",
+
+    "applications_and_uses": [
+      "Cooking and culinary dishes",
+      "Frozen food processing",
+      "Retail supermarkets",
+      "Restaurants and hotels",
+      "Food manufacturing industries",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Cauliflower",
+      "Color, Taste & Aroma": "Natural white color with fresh vegetable aroma",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "1–3 weeks under proper storage conditions",
+
+      "Storage Temperature": "0°C – 4°C",
+      "Handling & Storage": "Store under refrigerated conditions for maximum freshness",
+
+      "Packaging Options": [
+        "5 kg corrugated export box",
+        "10 kg export carton",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/cauliflower.png",
+    "slug": "cauliflower"
+  },
+
+  {
+    "id": 205,
+    "title": "Cabbage",
+    "desc": "Fresh cabbage is highly popular in international markets for salads, cooking, and food processing applications due to its freshness and nutritional benefits.",
+    "description": "Our export-quality cabbage is hygienically harvested, sorted, graded, and packed according to export standards to maintain freshness during shipment.",
+
+    "applications_and_uses": [
+      "Salads and culinary dishes",
+      "Food processing industries",
+      "Retail supermarkets",
+      "Restaurants and hotels",
+      "Pickle and fermented food production",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Cabbage",
+      "Color, Taste & Aroma": "Natural green color with mild fresh flavor",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "2–6 weeks under proper storage conditions",
+
+      "Storage Temperature": "0°C – 4°C",
+      "Handling & Storage": "Store in a cool and refrigerated environment",
+
+      "Packaging Options": [
+        "10 kg export carton",
+        "20 kg corrugated box",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/cabbage.png",
+    "slug": "cabbage"
+  },
+
+  {
+    "id": 206,
+    "title": "Bottle Gourd",
+    "desc": "Fresh bottle gourds are widely used in cooking and food processing industries due to their soft texture, nutritional value, and refreshing taste.",
+    "description": "Our export-quality bottle gourds are carefully selected, cleaned, and packed to maintain freshness and premium quality during export transportation.",
+
+    "applications_and_uses": [
+      "Cooking and culinary applications",
+      "Soup and curry preparation",
+      "Food processing industries",
+      "Retail supermarkets",
+      "Restaurants and hotels",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Bottle Gourd",
+      "Color, Taste & Aroma": "Natural light green color with mild fresh flavor",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "1–3 weeks under proper storage conditions",
+
+      "Storage Temperature": "10°C – 12°C",
+      "Handling & Storage": "Store in a cool and dry place away from sunlight",
+
+      "Packaging Options": [
+        "5 kg corrugated box",
+        "10 kg export carton",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/bottle-gourd.png",
+    "slug": "bottle-gourd"
+  },
+
+  {
+    "id": 207,
+    "title": "Ginger",
+    "desc": "Fresh ginger is highly valued worldwide for its strong aroma, medicinal benefits, and culinary applications. It is widely used in food, beverages, and spice industries.",
+    "description": "Our export-quality ginger is carefully harvested, cleaned, sorted, and packed to preserve freshness and quality during export transportation.",
+
+    "applications_and_uses": [
+      "Cooking and seasoning",
+      "Tea and beverages",
+      "Food processing industries",
+      "Spice manufacturing",
+      "Medicinal and herbal applications",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Ginger",
+      "Color, Taste & Aroma": "Natural light brown color with strong ginger aroma",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "1–2 months under proper storage conditions",
+
+      "Storage Temperature": "12°C – 14°C",
+      "Handling & Storage": "Store in a cool and dry environment",
+
+      "Packaging Options": [
+        "5 kg mesh bag",
+        "10 kg export carton",
+        "20 kg packaging available",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/ginger.png",
+    "slug": "ginger"
+  },
+
+  {
+    "id": 208,
+    "title": "Fresh Turmeric",
+    "desc": "Fresh turmeric is widely used in culinary, medicinal, and food processing industries due to its vibrant color, earthy flavor, and natural health benefits.",
+    "description": "Our export-quality fresh turmeric is carefully selected, cleaned, and packed under hygienic conditions to ensure premium quality and freshness.",
+
+    "applications_and_uses": [
+      "Cooking and seasoning",
+      "Spice manufacturing",
+      "Herbal and medicinal applications",
+      "Food processing industries",
+      "Retail supermarkets",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Turmeric",
+      "Color, Taste & Aroma": "Natural yellow-orange color with earthy aroma",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "1–2 months under proper storage conditions",
+
+      "Storage Temperature": "12°C – 14°C",
+      "Handling & Storage": "Store in a cool, dry, and ventilated environment",
+
+      "Packaging Options": [
+        "5 kg mesh bag",
+        "10 kg export carton",
+        "20 kg packaging available",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/fresh-turmeric.png",
+    "slug": "fresh-turmeric"
+  },
+
+  {
+    "id": 209,
+    "title": "Drumstick",
+    "desc": "Fresh drumsticks are widely used in cooking and food processing industries due to their nutritional value, unique flavor, and culinary versatility.",
+    "description": "Our export-quality drumsticks are carefully harvested, cleaned, graded, and packed to maintain freshness and quality during transportation.",
+
+    "applications_and_uses": [
+      "Cooking and curry preparation",
+      "Soup and stew applications",
+      "Food processing industries",
+      "Retail supermarkets",
+      "Restaurants and hotels",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Drumstick",
+      "Color, Taste & Aroma": "Natural green color with fresh vegetable aroma",
+      "Size": "Custom export grading available",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "1–2 weeks under proper storage conditions",
+
+      "Storage Temperature": "8°C – 10°C",
+      "Handling & Storage": "Store in a cool and dry environment",
+
+      "Packaging Options": [
+        "5 kg corrugated export box",
+        "10 kg export carton",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/drumstick.png",
+    "slug": "drumstick"
+  },
+
+  {
+    "id": 210,
+    "title": "Potato",
+    "desc": "Fresh potatoes are among the most widely consumed vegetables worldwide and are highly demanded for cooking, food processing, and export markets.",
+    "description": "Our export-quality potatoes are carefully selected, graded, and hygienically packed to ensure long shelf life and superior quality during transportation.",
+
+    "applications_and_uses": [
+      "Cooking and culinary applications",
+      "French fries and chips manufacturing",
+      "Food processing industries",
+      "Retail supermarkets",
+      "Restaurants and hotels",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Fresh Potato",
+      "Color, Taste & Aroma": "Natural light brown skin with mild earthy flavor",
+      "Size": "40mm – 80mm (custom grading available)",
+      "Maturity": "Export-grade mature vegetable",
+      "Shelf Life": "1–4 months under proper storage conditions",
+
+      "Storage Temperature": "4°C – 8°C",
+      "Handling & Storage": "Store in a cool, dark, and dry environment",
+
+      "Packaging Options": [
+        "5 kg mesh bag",
+        "10 kg mesh bag",
+        "25 kg export bag",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/potato.png",
+    "slug": "potato"
+  },
+
+  {
+    "id": 211,
+    "title": "Psyllium Husk",
+    "desc": "Psyllium husk is widely known for its high dietary fiber content and is extensively used in food, pharmaceutical, and health supplement industries worldwide.",
+    "description": "Our export-quality psyllium husk is carefully processed, cleaned, and packed under hygienic conditions to ensure premium purity and international export standards.",
+
+    "applications_and_uses": [
+      "Health supplements",
+      "Dietary fiber products",
+      "Food processing industries",
+      "Pharmaceutical applications",
+      "Bakery and nutrition products",
+      "Export wholesale markets"
+    ],
+
+    "specifications": {
+      "Product Name": "Psyllium Husk",
+      "Color, Taste & Aroma": "Off-white color with neutral aroma",
+      "Size": "Custom grade available",
+      "Maturity": "Processed export-grade product",
+      "Shelf Life": "12–24 months under proper storage conditions",
+
+      "Storage Temperature": "Store at room temperature",
+      "Handling & Storage": "Store in a cool, dry, and moisture-free environment",
+
+      "Packaging Options": [
+        "5 kg food-grade bag",
+        "25 kg export bag",
+        "Custom packaging available as per buyer requirements"
+      ],
+
+      "MOQ": "",
+      "Lead Time": "Based on order quantity"
+    },
+
+    "type": "Vegetable",
+    "image": "/img/product/vegetable/psyllium-husk.png",
+    "slug": "psyllium-husk"
   }
 ]

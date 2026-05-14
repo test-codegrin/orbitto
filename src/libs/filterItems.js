@@ -2,23 +2,23 @@ import breakRage from "./breakRage";
 import countDiscount from "./countDiscount";
 import makePath from "./makePath";
 import makeText from "./makeText";
-
-const productCategoryAliases = {
-  fruit: makePath("Fruit Powder"),
-  vegetable: makePath("Vegetable Powder"),
-};
+import {
+  isProductType,
+  normalizeProductCategoryFilter,
+} from "./productType";
 
 const filterItems = (items, collection, filterItem, isProducts) => {
   switch (collection) {
     case "category":
-      const normalizedFilterItem =
-        isProducts && productCategoryAliases[filterItem]
-          ? productCategoryAliases[filterItem]
-          : filterItem;
+      const normalizedFilterItem = isProducts
+        ? normalizeProductCategoryFilter(filterItem)
+        : filterItem;
 
       return items?.filter(
         ({ type, category }) =>
-          makePath(isProducts ? type : category) === normalizedFilterItem
+          isProducts
+            ? isProductType(type, normalizedFilterItem)
+            : makePath(category) === normalizedFilterItem
       );
 
     case "brand":
@@ -53,7 +53,9 @@ const filterItems = (items, collection, filterItem, isProducts) => {
     case "search":
       if (!filterItem) return [];
       const searchText = new RegExp(makeText(filterItem), "i");
-      return items?.filter(({ title }) => searchText.test(title));
+      return items?.filter(({ title, type, category }) =>
+        [title, type, category].some((value) => searchText.test(value || ""))
+      );
 
     case "popularity":
       return [...items]?.sort((a, b) => b.views - a.views);

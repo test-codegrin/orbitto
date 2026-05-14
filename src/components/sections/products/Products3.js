@@ -1,7 +1,7 @@
 "use client";
 import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
 import getAllProducts from "@/libs/getAllProducts";
-import makePath from "@/libs/makePath";
+import { isProductType } from "@/libs/productType";
 import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
 
@@ -17,8 +17,34 @@ const Products3 = ({
     new Set()
   );
 
-  const fruitsPowderProducts = getAllProducts()?.filter(
-    ({ type }) => makePath(type) === makePath("Fruit Powder")
+  const allProducts = useMemo(() => getAllProducts(), []);
+
+  const fruitProducts = allProducts?.filter(({ type }) =>
+    isProductType(type, "Fruit")
+  );
+  const fruitProductPairs = useMemo(() => {
+    const list = fruitProducts || [];
+    const pairs = [];
+    for (let idx = 0; idx < list.length; idx += 2) {
+      pairs.push([list[idx], list[idx + 1] || null]);
+    }
+    return pairs;
+  }, [fruitProducts]);
+
+  const vegetableProducts = allProducts?.filter(({ type }) =>
+    isProductType(type, "Vegetable")
+  );
+  const vegetableProductPairs = useMemo(() => {
+    const list = vegetableProducts || [];
+    const pairs = [];
+    for (let idx = 0; idx < list.length; idx += 2) {
+      pairs.push([list[idx], list[idx + 1] || null]);
+    }
+    return pairs;
+  }, [vegetableProducts]);
+
+  const fruitsPowderProducts = allProducts?.filter(
+    ({ type }) => isProductType(type, "Fruit Powder")
   );
   const fruitsPowderProductPairs = useMemo(() => {
     const list = fruitsPowderProducts || [];
@@ -29,8 +55,8 @@ const Products3 = ({
     return pairs;
   }, [fruitsPowderProducts]);
 
-  const vegetablesPowderProducts = getAllProducts()?.filter(
-    ({ type }) => makePath(type) === makePath("Vegetable Powder")
+  const vegetablesPowderProducts = allProducts?.filter(
+    ({ type }) => isProductType(type, "Vegetable Powder")
   );
   const vegetablesPowderProductPairs = useMemo(() => {
     const list = vegetablesPowderProducts || [];
@@ -41,8 +67,8 @@ const Products3 = ({
     return pairs;
   }, [vegetablesPowderProducts]);
 
-  const honeyProducts = getAllProducts()?.filter(
-    ({ type }) => makePath(type) === makePath("Honey")
+  const honeyProducts = allProducts?.filter(
+    ({ type }) => isProductType(type, "Honey")
   );
   const honeyProductPairs = useMemo(() => {
     const list = honeyProducts || [];
@@ -53,8 +79,8 @@ const Products3 = ({
     return pairs;
   }, [honeyProducts]);
 
-  const spicesProducts = getAllProducts()?.filter(
-    ({ type }) => makePath(type) === makePath("Spices")
+  const spicesProducts = allProducts?.filter(
+    ({ type }) => isProductType(type, "Spices")
   );
   const spicesProductPairs = useMemo(() => {
     const list = spicesProducts || [];
@@ -67,12 +93,12 @@ const Products3 = ({
 
   const herbalProducts = useMemo(
     () =>
-      getAllProducts()
-        ?.filter(({ type }) => makePath(type) === makePath("Herbal Powder"))
+      allProducts
+        ?.filter(({ type }) => isProductType(type, "Herbal Powder"))
         ?.filter(
           ({ id, image }) => !!image && !invalidHerbalImageIds.has(id)
         ),
-    [invalidHerbalImageIds]
+    [allProducts, invalidHerbalImageIds]
   );
   const herbalProductPairs = useMemo(() => {
     const list = herbalProducts || [];
@@ -156,7 +182,7 @@ const Products3 = ({
                 <div className="tab-pane fade active show" id="liton_tab_3_1">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {fruitsPowderProductPairs?.map(([firstProduct, secondProduct], idx) => (
+                      {fruitProductPairs?.map(([firstProduct, secondProduct], idx) => (
                         <div className="col-lg-12" key={firstProduct?.id || firstProduct?.slug || idx}>
                           <ProductCardPrimary product={firstProduct} />
                           {isDouble && secondProduct ? (
@@ -172,7 +198,7 @@ const Products3 = ({
                 <div className="tab-pane fade" id="liton_tab_3_2">
                   <div className="ltn__product-tab-content-inner">
                     <div className="row ltn__tab-product-slider-one-active slick-arrow-1">
-                      {vegetablesPowderProductPairs?.map(([firstProduct, secondProduct], idx) => (
+                      {vegetableProductPairs?.map(([firstProduct, secondProduct], idx) => (
                         <div className="col-lg-12" key={firstProduct?.id || firstProduct?.slug || idx}>
                           <ProductCardPrimary product={firstProduct} />
                           {isDouble && secondProduct ? (
