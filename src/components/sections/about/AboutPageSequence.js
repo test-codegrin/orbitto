@@ -34,6 +34,45 @@ const missionVision = [
   },
 ];
 
+const companyOwners = [
+  {
+    name: "YASH PATEL",
+    role: "MARKETING MANAGER",
+    phone: "+91 99047 27348",
+    image: "/img/team/1.jpg",
+  },
+  {
+    name: "PARTH PATEL",
+    role: "MARKETING MANAGER & MANAGEMENT MANAGER",
+    phone: "+91 97266 87849",
+    image: "/img/team/2.jpg",
+  },
+  {
+    name: "DHRUV PATEL",
+    role: "PURCHASE & PRODUCTION MANAGER",
+    phone: "+91 77790 69188",
+    image: "/img/team/3.jpg",
+  },
+];
+
+const companyHighlights = [
+  {
+    icon: "fas fa-industry",
+    title: "Manufacturer",
+    subtitle: "MANUFACTURER, SUPPLIER & EXPORT",
+  },
+  {
+    icon: "fas fa-certificate",
+    title: "GST NO",
+    subtitle: "24AAKFO1682L1ZX",
+  },
+  {
+    icon: "fas fa-globe-americas",
+    title: "MARKET COVERED",
+    subtitle: "GLOBAL",
+  },
+];
+
 const fortes = [
   "100% vegetarian, non-GMO, natural and safe products",
   "Traceability across the supply chain",
@@ -167,9 +206,14 @@ const AboutPageSequence = () => {
       <section className="about-sequence__section about-commitment">
         <div className="about-sequence__container about-commitment__grid">
           <div className="about-commitment__visual" aria-hidden="true">
-            <div className="about-commitment__stamp">
-              <i className="fas fa-certificate"></i>
-              <span>Our Commitment</span>
+            <div>
+              <Image
+                src="/img/about/OurCommitment.jpg"
+                alt=""
+                width={300}
+                height={300}
+                sizes="(max-width: 991px) 100vw, 30vw"
+              />            
             </div>
           </div>
 
@@ -194,30 +238,94 @@ const AboutPageSequence = () => {
       </section>
 
       <section className="about-sequence__section about-forte">
-        <div className="about-sequence__container about-forte__grid">
-          <div className="about-forte__image" aria-hidden="true">
-            <Image
-              src="/img/about/forte-powder-spoons.png"
-              alt=""
-              width={900}
-              height={400}
-              sizes="(max-width: 991px) 100vw, 50vw"
-            />
+        <div className="about-sequence__container">
+          <div className="about-forte__header">
+            <div>
+              <span className="about-sequence__eyebrow">Our Strength</span>
+              <h2>Orbitto&rsquo;s Forte</h2>
+            </div>
+            <p>
+              A practical foundation for consistent sourcing, processing, and
+              delivery across every Orbitto ingredient solution.
+            </p>
           </div>
 
-          <div className="about-forte__content">
-            <h2>Orbitto&rsquo;s Forte</h2>
-            <ul>
-              {fortes.map((item) => (
-                <li key={item}>
-                  <i className="fas fa-leaf"></i>
+          <div className="about-forte__layout">
+            <div className="about-forte__visual" aria-hidden="true">
+              <Image
+                src="/img/about/forte-powder-spoons.png"
+                alt=""
+                width={680}
+                height={420}
+                sizes="(max-width: 991px) 100vw, 36vw"
+              />
+            </div>
+
+            <div className="about-forte__list">
+              {fortes.map((item, index) => (
+                <article className="about-forte__item" key={item}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
                   <span>{item}</span>
-                </li>
+                </article>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
+      </section>
 
+      <section className="about-sequence__section about-leadership">
+        <div className="about-sequence__container">
+          <div className="about-leadership__heading">
+            <span className="about-sequence__eyebrow">Our Leadership</span>
+            <h2>Company Owners</h2>
+            <p>
+              Meet the leadership team guiding Orbitto International with a
+              focus on quality, reliable supply, and long-term customer
+              partnerships.
+            </p>
+          </div>
+
+          <div className="about-leadership__grid">
+            {companyOwners.map(({ name, role, phone, image }) => (
+              <article className="about-leadership__card" key={phone}>
+                <div className="about-leadership__avatar">
+                  <Image
+                    src={image}
+                    alt={name}
+                    width={168}
+                    height={168}
+                    sizes="84px"
+                  />
+                </div>
+                <div className="about-leadership__body">
+                  <span className="about-leadership__role">{role}</span>
+                  <h3>{name}</h3>
+                  <a
+                    className="about-leadership__phone"
+                    href={`tel:${phone.replace(/\s/g, "")}`}
+                  >
+                    <i className="fas fa-phone-alt"></i>
+                    {phone}
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="about-company-highlights">
+        <div className="about-sequence__container about-company-highlights__grid">
+          {companyHighlights.map(({ icon, title, subtitle }) => (
+            <article className="about-company-highlights__item" key={title}>
+              <div className="about-company-highlights__icon">
+                <i className={icon}></i>
+              </div>
+              <h3>{title}</h3>
+              <p>{subtitle}</p>
+            </article>
+          ))}
+        </div>
       </section>
     </div>
   );

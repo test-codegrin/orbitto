@@ -65,7 +65,7 @@ const slides = [
     ],
   },
   {
-    image: "/img/service/1.jpg",
+    image: "/img/about/Grinder.png",
     imageAlt: "Premium product packaging for export clients",
     copy: [
       "Orbitto values the time and money clients invest in every order, so service speed and clarity are always part of the work.",

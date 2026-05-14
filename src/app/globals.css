@@ -16983,7 +16983,6 @@ blockquote::before {
 }
 
 .about-intro__image {
-  border-radius: 18px;
   overflow: hidden;
 }
 
@@ -16997,7 +16996,7 @@ blockquote::before {
 .about-intro__content h2,
 .about-values__content h2,
 .about-commitment__content h2,
-.about-forte__content h2 {
+.about-forte__header h2 {
   color: #242424;
   font-size: clamp(30px, 2.9vw, 42px);
   font-weight: 800;
@@ -17115,6 +17114,193 @@ blockquote::before {
   font-size: 46px;
   line-height: 1;
   margin-bottom: 18px;
+}
+
+.about-leadership {
+  background: linear-gradient(180deg, #fff 0%, #f8fbf6 100%);
+}
+
+.about-leadership__heading {
+  margin: 0 auto 36px;
+  max-width: 760px;
+  text-align: center;
+}
+
+.about-leadership__heading h2 {
+  color: #242424;
+  font-size: clamp(30px, 2.9vw, 42px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.about-leadership__heading p {
+  color: #4b4b4b;
+  font-size: 16px;
+  line-height: 1.68;
+  margin: 0;
+}
+
+.about-leadership__grid {
+  align-items: stretch;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-leadership__card {
+  background: #fff;
+  border: 1px solid rgba(7, 28, 31, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(20, 35, 20, 0.07);
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 34px 28px 30px;
+  position: relative;
+  text-align: center;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.about-leadership__card::before {
+  background: #0b7a34;
+  content: "";
+  height: 4px;
+  left: 28px;
+  position: absolute;
+  right: 28px;
+  top: 0;
+}
+
+.about-leadership__card:hover {
+  border-color: rgba(11, 122, 52, 0.22);
+  box-shadow: 0 22px 52px rgba(20, 35, 20, 0.11);
+  transform: translateY(-6px);
+}
+
+.about-leadership__avatar {
+  align-items: center;
+  background: #f0f7ec;
+  border: 3px solid rgba(11, 122, 52, 0.16);
+  border-radius: 50%;
+  display: flex;
+  height: 84px;
+  justify-content: center;
+  margin: 0 auto 22px;
+  overflow: hidden;
+  width: 84px;
+}
+
+.about-leadership__avatar img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.about-leadership__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.about-leadership__role {
+  color: #0b7a34;
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.about-leadership__card h3 {
+  color: #071c1f;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.about-leadership__phone {
+  align-items: center;
+  color: #3d3d3d;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 700;
+  gap: 10px;
+  justify-content: center;
+  line-height: 1.3;
+  margin-top: auto;
+}
+
+.about-leadership__phone i {
+  color: #0b7a34;
+  font-size: 15px;
+}
+
+.about-leadership__phone:hover,
+.about-leadership__phone:focus-visible {
+  color: #0b7a34;
+}
+
+.about-company-highlights {
+  background-color: #eaf8e9;
+  background-image: radial-gradient(
+    circle,
+    rgba(118, 188, 62, 0.18) 2px,
+    transparent 2.5px
+  );
+  background-position: 0 0;
+  background-size: 28px 28px;
+  padding: 58px 0 50px;
+}
+
+.about-company-highlights__grid {
+  align-items: start;
+  display: grid;
+  gap: 34px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-company-highlights__item {
+  text-align: center;
+}
+
+.about-company-highlights__icon {
+  align-items: center;
+  background: #002f29;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px rgba(0, 47, 41, 0.16);
+  color: #fff;
+  display: flex;
+  font-size: 22px;
+  height: 50px;
+  justify-content: center;
+  margin: 0 auto 16px;
+  width: 50px;
+}
+
+.about-company-highlights__item h3 {
+  color: #001f1a;
+  font-size: clamp(24px, 2.2vw, 32px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
+.about-company-highlights__item p {
+  color: #002f29;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.3;
+  margin: 0;
 }
 
 .about-quality {
@@ -17308,74 +17494,119 @@ blockquote::before {
 }
 
 .about-forte {
+  background: #f7faf4;
   margin-top: 26px;
   overflow: hidden;
-  padding: 0;
+  position: relative;
 }
 
-.about-forte__grid {
-  align-items: center;
-  background: #8cc63f;
+.about-forte__header {
+  align-items: end;
   display: grid;
-  gap: 0;
-  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
-  min-height: 326px;
-  overflow: hidden;
+  gap: 30px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
+  margin-bottom: 34px;
 }
 
-.about-forte__image {
-  align-self: stretch;
-  background: #93c447;
-  display: flex;
-  height: 326px;
-  overflow: hidden;
+.about-forte__header h2 {
+  color: #242424;
+  font-size: clamp(31px, 3vw, 44px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.12;
+  margin: 0;
 }
 
-.about-forte__image img {
+.about-forte__header p {
+  color: #4b4b4b;
+  font-size: 16px;
+  line-height: 1.62;
+  margin: 0;
+}
+
+.about-forte__layout {
+  align-items: stretch;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+}
+
+.about-forte__visual {
+  background: #fff;
+  border: 1px solid rgba(7, 28, 31, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 18px 48px rgba(20, 35, 20, 0.08);
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-forte__visual::after {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 122, 52, 0) 45%,
+    rgba(11, 122, 52, 0.18) 100%
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.about-forte__visual img {
+  display: block;
   height: 100%;
+  min-height: 360px;
   object-fit: cover;
   object-position: left center;
   width: 100%;
 }
 
-.about-forte__content {
-  max-width: 470px;
-  padding: 30px 34px 30px 52px;
+.about-forte__list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.about-forte__content h2 {
-  color: #fff;
-  font-size: clamp(25px, 2.1vw, 32px);
-  margin-bottom: 14px;
+.about-forte__item {
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(7, 28, 31, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(20, 35, 20, 0.055);
+  display: flex;
+  gap: 16px;
+  min-height: 112px;
+  padding: 22px 24px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
-.about-forte__content ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.about-forte__item:hover {
+  border-color: rgba(11, 122, 52, 0.24);
+  box-shadow: 0 18px 42px rgba(20, 35, 20, 0.09);
+  transform: translateY(-4px);
 }
 
-.about-forte__content li {
-  align-items: flex-start;
+.about-forte__item span:first-child {
+  align-items: center;
+  background: #0b7a34;
+  border-radius: 50%;
   color: #fff;
   display: flex;
-  font-size: 14px;
-  font-weight: 600;
-  gap: 14px;
-  line-height: 1.45;
-  margin-bottom: 14px;
-}
-
-.about-forte__content li:last-child {
-  margin-bottom: 0;
-}
-
-.about-forte__content li i {
-  color: #0a7b30;
   flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 800;
+  height: 44px;
+  justify-content: center;
+  line-height: 1;
+  width: 44px;
+}
+
+.about-forte__item span:last-child {
+  color: #242424;
   font-size: 14px;
-  line-height: 1.5;
-  margin-top: 2px;
+  font-weight: 700;
+  line-height: 1.48;
 }
 
 .about-forte-info {
@@ -17503,6 +17734,15 @@ blockquote::before {
     gap: 18px;
   }
 
+  .about-leadership__grid {
+    gap: 20px;
+  }
+
+  .about-leadership__card {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
   .about-values__card {
     padding-left: 20px;
     padding-right: 20px;
@@ -17526,7 +17766,8 @@ blockquote::before {
   .about-values__grid,
   .about-quality__grid,
   .about-commitment__grid,
-  .about-forte__grid {
+  .about-forte__header,
+  .about-forte__layout {
     grid-template-columns: 1fr;
   }
 
@@ -17540,6 +17781,14 @@ blockquote::before {
 
   .about-mission__grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-leadership__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-company-highlights {
+    padding: 48px 0 42px;
   }
 
   .about-mission__card {
@@ -17563,14 +17812,15 @@ blockquote::before {
     font-size: 14px;
   }
 
-  .about-forte__image {
-    height: 280px;
-    min-height: 260px;
+  .about-forte__header {
+    align-items: start;
+    gap: 14px;
+    margin-bottom: 28px;
   }
 
-  .about-forte__content {
-    max-width: none;
-    padding: 34px 38px 42px;
+  .about-forte__visual img {
+    max-height: 320px;
+    min-height: 280px;
   }
 
   .about-quality__heading {
@@ -17580,14 +17830,6 @@ blockquote::before {
   .about-quality__badge {
     font-size: clamp(18px, 4vw, 28px);
     padding: 12px 18px;
-  }
-
-  .about-forte__content h2 {
-    font-size: 30px;
-  }
-
-  .about-forte__content li {
-    font-size: 16px;
   }
 
   .about-forte-info__grid {
@@ -17610,13 +17852,35 @@ blockquote::before {
     grid-template-columns: 1fr;
   }
 
+  .about-leadership__heading {
+    margin-bottom: 28px;
+  }
+
+  .about-leadership__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-leadership__card {
+    min-height: 0;
+  }
+
+  .about-company-highlights__grid {
+    gap: 28px;
+  }
+
+  .about-company-highlights__icon {
+    height: 46px;
+    margin-bottom: 14px;
+    width: 46px;
+  }
+
   .about-values__card {
     min-height: 0;
     padding: 0 24px 26px;
   }
 
-  .about-forte__grid {
-    gap: 0;
+  .about-forte__list {
+    grid-template-columns: 1fr;
   }
 
   .about-quality__heading h2 {
@@ -17629,11 +17893,11 @@ blockquote::before {
     font-size: 16px;
   }
 
-  .about-forte__content h2 {
+  .about-forte__header h2 {
     font-size: 27px;
   }
 
-  .about-forte__content li {
+  .about-forte__item span:last-child {
     font-size: 15px;
   }
 
@@ -17666,7 +17930,8 @@ blockquote::before {
   .about-intro__content h2,
   .about-values__content h2,
   .about-commitment__content h2,
-  .about-forte__content h2 {
+  .about-leadership__heading h2,
+  .about-forte__header h2 {
     font-size: 27px;
     margin-bottom: 16px;
   }
@@ -17676,23 +17941,58 @@ blockquote::before {
   .about-commitment__content p,
   .about-mission__card p,
   .about-values__card p,
+  .about-leadership__heading p,
   .about-quality__heading p,
   .about-quality__content p,
   .about-quality__content li,
-  .about-forte__content li {
+  .about-forte__header p,
+  .about-forte__item span:last-child {
     font-size: 15px;
+  }
+
+  .about-leadership__card {
+    padding: 30px 22px 26px;
+  }
+
+  .about-leadership__avatar {
+    height: 74px;
+    margin-bottom: 18px;
+    width: 74px;
+  }
+
+  .about-leadership__card h3 {
+    font-size: 22px;
+  }
+
+  .about-leadership__phone {
+    font-size: 15px;
+  }
+
+  .about-company-highlights {
+    background-size: 24px 24px;
+    padding: 42px 0 36px;
+  }
+
+  .about-company-highlights__grid {
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  .about-company-highlights__item h3 {
+    font-size: 26px;
   }
 
   .about-quality__heading h2 {
     font-size: 28px;
   }
 
-  .about-forte__content h2 {
+  .about-forte__header h2 {
     font-size: 26px;
   }
 
-  .about-forte__content li {
-    font-size: 15px;
+  .about-forte__item {
+    min-height: 96px;
+    padding: 18px 20px;
   }
 
   .about-commitment__content h2 {
@@ -17740,9 +18040,8 @@ blockquote::before {
     font-size: 24px;
   }
 
-  .about-forte__image {
-    height: 230px;
-    min-height: 210px;
+  .about-forte__visual img {
+    min-height: 220px;
   }
 
   .about-forte-info {

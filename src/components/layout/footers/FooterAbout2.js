@@ -30,7 +30,9 @@ const FooterAbout2 = () => {
                 <i className="icon-placeholder"></i>
               </div>
               <div className="footer-address-info">
-                <p>NH-27, Wankaner, Morbi, Gujarat-363621</p>
+                <p>SURVEY NO-144/P,PLOT NO-C 288,SHOP NO-104,FIRST
+FLOOR,ROYAL SHOPPING CENTER, RAFALESHWAR
+INDUSTRIAL ESTATE,8-A NATIONAL HIGHWAY,ATJAMBUDIYA, MORBI, MORBI, GUJARAT, 363642</p>
               </div>
             </li>
             <li>
