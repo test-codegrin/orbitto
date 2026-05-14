@@ -31,8 +31,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Acaiberry.png",
-    "slug": "acaiberry-powder"
+    "image": "/img/product/FruitPowder/Acaiberry.png",
+    "slug": "acaiberry-powder",
+    "path": "/products/acaiberry-powder"
   },
   {
     "id": 2,
@@ -72,7 +73,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Aloevera.png",
-    "slug": "aloevera-powder"
+    "slug": "aloevera-powder",
+    "path": "/products/aloevera-powder"
   },
   {
     "id": 3,
@@ -110,51 +112,53 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Amla.png",
-    "slug": "amla-powder"
+    "slug": "amla-powder",
+    "path": "/products/amla-powder"
   },
   {
-  "id": 52,
-  "title": "Pear Powder",
-  "desc": "Pear powder is produced by carefully drying fresh, ripe pears (Pyrus communis) and finely milling them into a stable, free-flowing powder. Depending on the processing method — spray drying or freeze drying — the powder retains the naturally sweet taste, gentle aroma, and characteristic light color of fresh pears. When reconstituted with water, it delivers a clean, true-to-fruit pear flavor with no artificial aftertaste.\nPears naturally contain dietary fiber, pectin, vitamins C and B, beta-carotene, potassium, calcium, iron, magnesium, amino acids, and polyphenolic antioxidants, which are commonly associated, in a general non-medical sense, with antioxidant and digestive support characteristics. The powdered format offers improved shelf stability, year-round availability, and ease of formulation across a wide range of food and beverage applications.",
-  "description": "Pear powder is produced by carefully drying fresh, ripe pears (Pyrus communis) and finely milling them into a stable, free-flowing powder. Depending on the processing method — spray drying or freeze drying — the powder retains the naturally sweet taste, gentle aroma, and characteristic light color of fresh pears. When reconstituted with water, it delivers a clean, true-to-fruit pear flavor with no artificial aftertaste.\nPears naturally contain dietary fiber, pectin, vitamins C and B, beta-carotene, potassium, calcium, iron, magnesium, amino acids, and polyphenolic antioxidants, which are commonly associated, in a general non-medical sense, with antioxidant and digestive support characteristics. The powdered format offers improved shelf stability, year-round availability, and ease of formulation across a wide range of food and beverage applications.",
-  "applications_and_uses": [
-    "Smoothies, fruit juices, and instant beverage premixes",
-    "Natural sweetener and flavor enhancer in dry mix beverages and health drinks",
-    "Bakery products such as muffins, cakes, cookies, and bread for natural fruit flavor and moisture retention",
-    "Desserts, puddings, custards, and fruit-based confectionery fillings",
-    "Yogurt, ice cream, and dairy-based product flavoring",
-    "Breakfast cereals, oatmeal, and nutrition bars for fiber fortification",
-    "Sauces, dressings, and marinades for subtle natural sweetness",
-    "Dietary supplement capsules and tablet formulations",
-    "Baby and weaning food preparations requiring mild, natural fruit flavor",
-    "Cosmetic and nutricosmetic formulations for skin brightening applications"
-  ],
-  "specifications": {
-    "Product Name": "Pear Fruit Powder",
-    "Botanical Name": "Pyrus communis",
-    "Raw Material": "Fresh, ripe whole pears",
-    "Color, Taste & Aroma": "Light cream to pale yellow powder with a naturally sweet, mild pear aroma and characteristic true-to-fruit flavor",
-    "Applications": "Instant beverage premixes, smoothies, bakery products, desserts, dairy foods, cereals, nutrition bars, baby foods, dietary supplements, and nutraceutical formulations",
-    "Shelf Life": "24 months from the date of production when stored in proper sealed packaging under recommended conditions",
-    "Handling & Storage": [
-      "Store in a cool, dry, clean, odor-free environment, away from direct heat and sunlight",
-      "Recommended storage temperature: 15–25°C",
-      "Highly hygroscopic avoid prolonged exposure to air and moisture",
-      "Mix with dry ingredients before incorporation into batters or wet formulations to prevent clumping",
-      "Reseal packaging tightly after each use"
+    "id": 52,
+    "title": "Pear Powder",
+    "desc": "Pear powder is produced by carefully drying fresh, ripe pears (Pyrus communis) and finely milling them into a stable, free-flowing powder. Depending on the processing method — spray drying or freeze drying — the powder retains the naturally sweet taste, gentle aroma, and characteristic light color of fresh pears. When reconstituted with water, it delivers a clean, true-to-fruit pear flavor with no artificial aftertaste.\nPears naturally contain dietary fiber, pectin, vitamins C and B, beta-carotene, potassium, calcium, iron, magnesium, amino acids, and polyphenolic antioxidants, which are commonly associated, in a general non-medical sense, with antioxidant and digestive support characteristics. The powdered format offers improved shelf stability, year-round availability, and ease of formulation across a wide range of food and beverage applications.",
+    "description": "Pear powder is produced by carefully drying fresh, ripe pears (Pyrus communis) and finely milling them into a stable, free-flowing powder. Depending on the processing method — spray drying or freeze drying — the powder retains the naturally sweet taste, gentle aroma, and characteristic light color of fresh pears. When reconstituted with water, it delivers a clean, true-to-fruit pear flavor with no artificial aftertaste.\nPears naturally contain dietary fiber, pectin, vitamins C and B, beta-carotene, potassium, calcium, iron, magnesium, amino acids, and polyphenolic antioxidants, which are commonly associated, in a general non-medical sense, with antioxidant and digestive support characteristics. The powdered format offers improved shelf stability, year-round availability, and ease of formulation across a wide range of food and beverage applications.",
+    "applications_and_uses": [
+      "Smoothies, fruit juices, and instant beverage premixes",
+      "Natural sweetener and flavor enhancer in dry mix beverages and health drinks",
+      "Bakery products such as muffins, cakes, cookies, and bread for natural fruit flavor and moisture retention",
+      "Desserts, puddings, custards, and fruit-based confectionery fillings",
+      "Yogurt, ice cream, and dairy-based product flavoring",
+      "Breakfast cereals, oatmeal, and nutrition bars for fiber fortification",
+      "Sauces, dressings, and marinades for subtle natural sweetness",
+      "Dietary supplement capsules and tablet formulations",
+      "Baby and weaning food preparations requiring mild, natural fruit flavor",
+      "Cosmetic and nutricosmetic formulations for skin brightening applications"
     ],
-    "Packaging Options": [
-      "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
-      "HDPE 25 kg drum pack (as specified)"
-    ],
-    "MOQ": "",
-    "Lead Time": "Immediate dispatch",
-    "Dosage Levels": "0.5% to 10.0% (adjustable as per application and regulatory guidelines)"
+    "specifications": {
+      "Product Name": "Pear Fruit Powder",
+      "Botanical Name": "Pyrus communis",
+      "Raw Material": "Fresh, ripe whole pears",
+      "Color, Taste & Aroma": "Light cream to pale yellow powder with a naturally sweet, mild pear aroma and characteristic true-to-fruit flavor",
+      "Applications": "Instant beverage premixes, smoothies, bakery products, desserts, dairy foods, cereals, nutrition bars, baby foods, dietary supplements, and nutraceutical formulations",
+      "Shelf Life": "24 months from the date of production when stored in proper sealed packaging under recommended conditions",
+      "Handling & Storage": [
+        "Store in a cool, dry, clean, odor-free environment, away from direct heat and sunlight",
+        "Recommended storage temperature: 15–25°C",
+        "Highly hygroscopic avoid prolonged exposure to air and moisture",
+        "Mix with dry ingredients before incorporation into batters or wet formulations to prevent clumping",
+        "Reseal packaging tightly after each use"
+      ],
+      "Packaging Options": [
+        "5 kg aluminum foil bags packed in 5-ply corrugated boxes (20 kg: 5 kg × 4 units)",
+        "HDPE 25 kg drum pack (as specified)"
+      ],
+      "MOQ": "",
+      "Lead Time": "Immediate dispatch",
+      "Dosage Levels": "0.5% to 10.0% (adjustable as per application and regulatory guidelines)"
+    },
+    "type": "Fruit Powder",
+    "image": "/img/product/FruitPowder/Pear.png",
+    "slug": "pear-powder",
+    "path": "/products/pear-powder"
   },
-  "type": "Fruit Powder",
-  "image": "/img/product/fruit/Pear.png",
-  "slug": "pear-powder"
-},
   {
     "id": 5,
     "title": "Green Apple Powder",
@@ -188,8 +192,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/GreenApple.png",
-    "slug": "green-apple-powder"
+    "image": "/img/product/FruitPowder/GreenApple.png",
+    "slug": "green-apple-powder",
+    "path": "/products/green-apple-powder"
   },
   {
     "id": 7,
@@ -224,8 +229,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/RedApple.png",
-    "slug": "red-apple-powder"
+    "image": "/img/product/FruitPowder/RedApple.png",
+    "slug": "red-apple-powder",
+    "path": "/products/red-apple-powder"
   },
   {
     "id": 8,
@@ -261,8 +267,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/AshGourd.png",
-    "slug": "ash-gourd-powder"
+    "image": "/img/product/VegetablePowder/AshGourd.png",
+    "slug": "ash-gourd-powder",
+    "path": "/products/ash-gourd-powder"
   },
   {
     "id": 9,
@@ -297,8 +304,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Avocado.png",
-    "slug": "avocado-powder"
+    "image": "/img/product/FruitPowder/Avocado.png",
+    "slug": "avocado-powder",
+    "path": "/products/avocado-powder"
   },
   {
     "id": 11,
@@ -338,8 +346,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Beetroot.png",
-    "slug": "beetroot-powder"
+    "image": "/img/product/VegetablePowder/Beetroot.png",
+    "slug": "beetroot-powder",
+    "path": "/products/beetroot-powder"
   },
   {
     "id": 12,
@@ -374,8 +383,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/BitterGourd.png",
-    "slug": "bitter-gourd-powder"
+    "image": "/img/product/VegetablePowder/BitterGourd.png",
+    "slug": "bitter-gourd-powder",
+    "path": "/products/bitter-gourd-powder"
   },
   {
     "id": 13,
@@ -411,8 +421,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/BlackCurtunt.png",
-    "slug": "black-currant-powder"
+    "image": "/img/product/FruitPowder/BlackCurtunt.png",
+    "slug": "black-currant-powder",
+    "path": "/products/black-currant-powder"
   },
   {
     "id": 14,
@@ -448,8 +459,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/BlackGrapes.png",
-    "slug": "black-grapes-powder"
+    "image": "/img/product/FruitPowder/BlackGrapes.png",
+    "slug": "black-grapes-powder",
+    "path": "/products/black-grapes-powder"
   },
   {
     "id": 15,
@@ -486,8 +498,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Blackberry.png",
-    "slug": "blackberry-powder"
+    "image": "/img/product/FruitPowder/Blackberry.png",
+    "slug": "blackberry-powder",
+    "path": "/products/blackberry-powder"
   },
   {
     "id": 16,
@@ -524,8 +537,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Blueberry.png",
-    "slug": "blueberry-powder"
+    "image": "/img/product/FruitPowder/Blueberry.png",
+    "slug": "blueberry-powder",
+    "path": "/products/blueberry-powder"
   },
   {
     "id": 17,
@@ -561,8 +575,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/BottleGourd.png",
-    "slug": "bottle-gourd-powder"
+    "image": "/img/product/VegetablePowder/BottleGourd.png",
+    "slug": "bottle-gourd-powder",
+    "path": "/products/bottle-gourd-powder"
   },
   {
     "id": 18,
@@ -596,8 +611,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Broccoli.png",
-    "slug": "broccoli-powder"
+    "image": "/img/product/VegetablePowder/Broccoli.png",
+    "slug": "broccoli-powder",
+    "path": "/products/broccoli-powder"
   },
   {
     "id": 20,
@@ -634,8 +650,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Cabbage.png",
-    "slug": "cabbage-powder"
+    "image": "/img/product/VegetablePowder/Cabbage.png",
+    "slug": "cabbage-powder",
+    "path": "/products/cabbage-powder"
   },
   {
     "id": 21,
@@ -670,8 +687,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/capsicum.png",
-    "slug": "capsicum-powder"
+    "image": "/img/product/VegetablePowder/capsicum.png",
+    "slug": "capsicum-powder",
+    "path": "/products/capsicum-powder"
   },
   {
     "id": 23,
@@ -707,8 +725,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Carrot.png",
-    "slug": "carrot-powder"
+    "image": "/img/product/VegetablePowder/Carrot.png",
+    "slug": "carrot-powder",
+    "path": "/products/carrot-powder"
   },
   {
     "id": 24,
@@ -744,8 +763,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Cauliflower.png",
-    "slug": "cauliflower-powder"
+    "image": "/img/product/VegetablePowder/Cauliflower.png",
+    "slug": "cauliflower-powder",
+    "path": "/products/cauliflower-powder"
   },
   {
     "id": 27,
@@ -780,8 +800,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Cherry.png",
-    "slug": "cherry-powder"
+    "image": "/img/product/FruitPowder/Cherry.png",
+    "slug": "cherry-powder",
+    "path": "/products/cherry-powder"
   },
   {
     "id": 28,
@@ -818,8 +839,9 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Chicory.png",
-    "slug": "chicory-powder"
+    "image": "/img/product/VegetablePowder/Chicory.png",
+    "slug": "chicory-powder",
+    "path": "/products/chicory-powder"
   },
   {
     "id": 29,
@@ -854,8 +876,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Saporilla.png",
-    "slug": "Sapodilla-powder"
+    "image": "/img/product/FruitPowder/Saporilla.png",
+    "slug": "Sapodilla-powder",
+    "path": "/products/Sapodilla-powder"
   },
   {
     "id": 31,
@@ -891,8 +914,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Coriander.png",
-    "slug": "coriander-powder"
+    "image": "/img/product/VegetablePowder/Coriander.png",
+    "slug": "coriander-powder",
+    "path": "/products/coriander-powder"
   },
   {
     "id": 34,
@@ -928,8 +952,9 @@
       "Dosage Levels": "0.01% to 5.0% (adjustable as per application and regulatory guidelines)"
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Cucumber.png",
-    "slug": "cucumber-powder"
+    "image": "/img/product/VegetablePowder/Cucumber.png",
+    "slug": "cucumber-powder",
+    "path": "/products/cucumber-powder"
   },
   {
     "id": 37,
@@ -967,8 +992,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/CustardApple.png",
-    "slug": "custard-apple-powder"
+    "image": "/img/product/FruitPowder/CustardApple.png",
+    "slug": "custard-apple-powder",
+    "path": "/products/custard-apple-powder"
   },
   {
     "id": 38,
@@ -1005,7 +1031,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/DateSugar.png",
-    "slug": "date-sugar-from-dry-dates"
+    "slug": "date-sugar-from-dry-dates",
+    "path": "/products/date-sugar-from-dry-dates"
   },
   {
     "id": 39,
@@ -1042,7 +1069,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/DatePowder.png",
-    "slug": "dates-powder"
+    "slug": "dates-powder",
+    "path": "/products/dates-powder"
   },
   {
     "id": 40,
@@ -1078,8 +1106,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/DragonFruit.png",
-    "slug": "dragon-fruit-powder"
+    "image": "/img/product/FruitPowder/DragonFruit.png",
+    "slug": "dragon-fruit-powder",
+    "path": "/products/dragon-fruit-powder"
   },
   {
     "id": 41,
@@ -1115,8 +1144,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Garlic.png",
-    "slug": "garlic-powder"
+    "image": "/img/product/VegetablePowder/Garlic.png",
+    "slug": "garlic-powder",
+    "path": "/products/garlic-powder"
   },
   {
     "id": 42,
@@ -1153,8 +1183,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Ginger.png",
-    "slug": "ginger-powder"
+    "image": "/img/product/VegetablePowder/Ginger.png",
+    "slug": "ginger-powder",
+    "path": "/products/ginger-powder"
   },
   {
     "id": 43,
@@ -1190,8 +1221,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/GreenChilli.png",
-    "slug": "green-chilli-powder"
+    "image": "/img/product/VegetablePowder/GreenChilli.png",
+    "slug": "green-chilli-powder",
+    "path": "/products/green-chilli-powder"
   },
   {
     "id": 44,
@@ -1230,7 +1262,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Greenfennel.png",
-    "slug": "green-fennel-powder"
+    "slug": "green-fennel-powder",
+    "path": "/products/green-fennel-powder"
   },
   {
     "id": 45,
@@ -1265,8 +1298,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/GreenGrapes.png",
-    "slug": "green-grapes-powder"
+    "image": "/img/product/FruitPowder/GreenGrapes.png",
+    "slug": "green-grapes-powder",
+    "path": "/products/green-grapes-powder"
   },
   {
     "id": 46,
@@ -1302,8 +1336,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/GreenMango.png",
-    "slug": "green-mango-amchur-powder"
+    "image": "/img/product/FruitPowder/GreenMango.png",
+    "slug": "green-mango-amchur-powder",
+    "path": "/products/green-mango-amchur-powder"
   },
   {
     "id": 48,
@@ -1338,8 +1373,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/PinkGuava.png",
-    "slug": "guava-powder-pink"
+    "image": "/img/product/FruitPowder/PinkGuava.png",
+    "slug": "guava-powder-pink",
+    "path": "/products/guava-powder-pink"
   },
   {
     "id": 49,
@@ -1374,8 +1410,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/WhiteGuava.png",
-    "slug": "guava-powder-white"
+    "image": "/img/product/FruitPowder/WhiteGuava.png",
+    "slug": "guava-powder-white",
+    "path": "/products/guava-powder-white"
   },
   {
     "id": 50,
@@ -1414,7 +1451,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Honeypowder.png",
-    "slug": "honey-powder"
+    "slug": "honey-powder",
+    "path": "/products/honey-powder"
   },
   {
     "id": 51,
@@ -1455,7 +1493,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Wheatgrass.png",
-    "slug": "wheatgrass-powder"
+    "slug": "wheatgrass-powder",
+    "path": "/products/wheatgrass-powder"
   },
   {
     "id": 52,
@@ -1490,8 +1529,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/JackFruit.png",
-    "slug": "jackfruit-powder"
+    "image": "/img/product/FruitPowder/JackFruit.png",
+    "slug": "jackfruit-powder",
+    "path": "/products/jackfruit-powder"
   },
   {
     "id": 53,
@@ -1527,8 +1567,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/JelepenoChilli.png",
-    "slug": "jalapeno-chilli-powder"
+    "image": "/img/product/VegetablePowder/JelepenoChilli.png",
+    "slug": "jalapeno-chilli-powder",
+    "path": "/products/jalapeno-chilli-powder"
   },
   {
     "id": 55,
@@ -1575,8 +1616,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Kiwi.png",
-    "slug": "kiwi-powder"
+    "image": "/img/product/FruitPowder/Kiwi.png",
+    "slug": "kiwi-powder",
+    "path": "/products/kiwi-powder"
   },
   {
     "id": 56,
@@ -1630,8 +1672,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Lemon.png",
-    "slug": "lemon-powder"
+    "image": "/img/product/FruitPowder/Lemon.png",
+    "slug": "lemon-powder",
+    "path": "/products/lemon-powder"
   },
   {
     "id": 57,
@@ -1669,8 +1712,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Lettuce.png",
-    "slug": "lettuce-powder"
+    "image": "/img/product/VegetablePowder/Lettuce.png",
+    "slug": "lettuce-powder",
+    "path": "/products/lettuce-powder"
   },
   {
     "id": 58,
@@ -1706,8 +1750,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Lime.png",
-    "slug": "lime-powder"
+    "image": "/img/product/FruitPowder/Lime.png",
+    "slug": "lime-powder",
+    "path": "/products/lime-powder"
   },
   {
     "id": 59,
@@ -1757,8 +1802,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Litchi.png",
-    "slug": "litchi-powder"
+    "image": "/img/product/FruitPowder/Litchi.png",
+    "slug": "litchi-powder",
+    "path": "/products/litchi-powder"
   },
   {
     "id": 60,
@@ -1797,8 +1843,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Mango.png",
-    "slug": "mango-powder"
+    "image": "/img/product/FruitPowder/Mango.png",
+    "slug": "mango-powder",
+    "path": "/products/mango-powder"
   },
   {
     "id": 61,
@@ -1836,8 +1883,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Mint.png",
-    "slug": "mint-powder"
+    "image": "/img/product/VegetablePowder/Mint.png",
+    "slug": "mint-powder",
+    "path": "/products/mint-powder"
   },
   {
     "id": 62,
@@ -1874,7 +1922,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Moringaleaf.png",
-    "slug": "moringa-leaf-powder"
+    "slug": "moringa-leaf-powder",
+    "path": "/products/moringa-leaf-powder"
   },
   {
     "id": 63,
@@ -1908,8 +1957,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Mulberry.png",
-    "slug": "mulberry-powder"
+    "image": "/img/product/FruitPowder/Mulberry.png",
+    "slug": "mulberry-powder",
+    "path": "/products/mulberry-powder"
   },
   {
     "id": 64,
@@ -1942,8 +1992,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Muskmelon.png",
-    "slug": "muskmelon-powder"
+    "image": "/img/product/FruitPowder/Muskmelon.png",
+    "slug": "muskmelon-powder",
+    "path": "/products/muskmelon-powder"
   },
   {
     "id": 65,
@@ -1979,8 +2030,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Okra.png",
-    "slug": "okra-powder"
+    "image": "/img/product/VegetablePowder/Okra.png",
+    "slug": "okra-powder",
+    "path": "/products/okra-powder"
   },
   {
     "id": 66,
@@ -2015,8 +2067,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Onine.png",
-    "slug": "onion-powder"
+    "image": "/img/product/VegetablePowder/Onine.png",
+    "slug": "onion-powder",
+    "path": "/products/onion-powder"
   },
   {
     "id": 67,
@@ -2050,8 +2103,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Orange.png",
-    "slug": "orange-powder"
+    "image": "/img/product/FruitPowder/Orange.png",
+    "slug": "orange-powder",
+    "path": "/products/orange-powder"
   },
   {
     "id": 68,
@@ -2090,8 +2144,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/PassionFruit.png",
-    "slug": "passion-fruit-powder"
+    "image": "/img/product/FruitPowder/PassionFruit.png",
+    "slug": "passion-fruit-powder",
+    "path": "/products/passion-fruit-powder"
   },
   {
     "id": 69,
@@ -2127,8 +2182,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Peach.png",
-    "slug": "peach-powder"
+    "image": "/img/product/FruitPowder/Peach.png",
+    "slug": "peach-powder",
+    "path": "/products/peach-powder"
   },
   {
     "id": 70,
@@ -2164,8 +2220,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Pineapple.png",
-    "slug": "pineapple-powder"
+    "image": "/img/product/FruitPowder/Pineapple.png",
+    "slug": "pineapple-powder",
+    "path": "/products/pineapple-powder"
   },
   {
     "id": 71,
@@ -2201,8 +2258,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Pomogranate.png",
-    "slug": "pomegranate-powder"
+    "image": "/img/product/FruitPowder/Pomogranate.png",
+    "slug": "pomegranate-powder",
+    "path": "/products/pomegranate-powder"
   },
   {
     "id": 72,
@@ -2239,7 +2297,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Pricklypear.png",
-    "slug": "prickly-pear-powder"
+    "slug": "prickly-pear-powder",
+    "path": "/products/prickly-pear-powder"
   },
   {
     "id": 73,
@@ -2275,8 +2334,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Pumpkin.png",
-    "slug": "pumpkin-powder"
+    "image": "/img/product/VegetablePowder/Pumpkin.png",
+    "slug": "pumpkin-powder",
+    "path": "/products/pumpkin-powder"
   },
   {
     "id": 74,
@@ -2313,8 +2373,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Ruspberry.png",
-    "slug": "raspberry-powder"
+    "image": "/img/product/FruitPowder/Ruspberry.png",
+    "slug": "raspberry-powder",
+    "path": "/products/raspberry-powder"
   },
   {
     "id": 75,
@@ -2350,8 +2411,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/RipeBanana.png",
-    "slug": "ripe-banana-powder"
+    "image": "/img/product/FruitPowder/RipeBanana.png",
+    "slug": "ripe-banana-powder",
+    "path": "/products/ripe-banana-powder"
   },
   {
     "id": 76,
@@ -2384,8 +2446,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/RipePapaya.png",
-    "slug": "ripe-papaya-powder"
+    "image": "/img/product/FruitPowder/RipePapaya.png",
+    "slug": "ripe-papaya-powder",
+    "path": "/products/ripe-papaya-powder"
   },
   {
     "id": 77,
@@ -2423,7 +2486,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Roseflavor.png",
-    "slug": "rose-flavor-powder"
+    "slug": "rose-flavor-powder",
+    "path": "/products/rose-flavor-powder"
   },
   {
     "id": 80,
@@ -2459,8 +2523,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Spinach.png",
-    "slug": "spinach-powder"
+    "image": "/img/product/VegetablePowder/Spinach.png",
+    "slug": "spinach-powder",
+    "path": "/products/spinach-powder"
   },
   {
     "id": 81,
@@ -2497,7 +2562,8 @@
     },
     "type": "Herbal Powder",
     "image": "/img/product/Herbs/Spirulina.png",
-    "slug": "spirulina-powder"
+    "slug": "spirulina-powder",
+    "path": "/products/spirulina-powder"
   },
   {
     "id": 83,
@@ -2535,8 +2601,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Strawberry.png",
-    "slug": "strawberry-powder"
+    "image": "/img/product/FruitPowder/Strawberry.png",
+    "slug": "strawberry-powder",
+    "path": "/products/strawberry-powder"
   },
   {
     "id": 85,
@@ -2572,8 +2639,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Sugarcane.png",
-    "slug": "sugarcane-juice-powder"
+    "image": "/img/product/FruitPowder/Sugarcane.png",
+    "slug": "sugarcane-juice-powder",
+    "path": "/products/sugarcane-juice-powder"
   },
   {
     "id": 86,
@@ -2610,8 +2678,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/SweetPotato.png",
-    "slug": "sweet-potato-powder"
+    "image": "/img/product/VegetablePowder/SweetPotato.png",
+    "slug": "sweet-potato-powder",
+    "path": "/products/sweet-potato-powder"
   },
   {
     "id": 87,
@@ -2646,8 +2715,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Tamarind.png",
-    "slug": "tamarind-powder"
+    "image": "/img/product/VegetablePowder/Tamarind.png",
+    "slug": "tamarind-powder",
+    "path": "/products/tamarind-powder"
   },
   {
     "id": 88,
@@ -2683,8 +2753,9 @@
       "MOQ": ""
     },
     "type": "Vegetable Powder",
-    "image": "/img/product/Vegetable/Tomato.png",
-    "slug": "tomato-powder"
+    "image": "/img/product/VegetablePowder/Tomato.png",
+    "slug": "tomato-powder",
+    "path": "/products/tomato-powder"
   },
   {
     "id": 89,
@@ -2723,8 +2794,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/UnripeBanana.png",
-    "slug": "unripe-banana-powder"
+    "image": "/img/product/FruitPowder/UnripeBanana.png",
+    "slug": "unripe-banana-powder",
+    "path": "/products/unripe-banana-powder"
   },
   {
     "id": 90,
@@ -2759,8 +2831,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/UnripePapaya.png",
-    "slug": "unripe-papaya-powder"
+    "image": "/img/product/FruitPowder/UnripePapaya.png",
+    "slug": "unripe-papaya-powder",
+    "path": "/products/unripe-papaya-powder"
   },
   {
     "id": 93,
@@ -2797,8 +2870,9 @@
       "MOQ": ""
     },
     "type": "Fruit Powder",
-    "image": "/img/product/fruit/Watermalon.png",
-    "slug": "watermelon-powder"
+    "image": "/img/product/FruitPowder/Watermalon.png",
+    "slug": "watermelon-powder",
+    "path": "/products/watermelon-powder"
   },
   {
     "id": 95,
@@ -2835,7 +2909,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/Rawajwainhoney.png",
-    "slug": "raw-ajwain-honey"
+    "slug": "raw-ajwain-honey",
+    "path": "/products/raw-ajwain-honey"
   },
   {
     "id": 96,
@@ -2872,7 +2947,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/Eucalyptus.png",
-    "slug": "eucalyptus-honey"
+    "slug": "eucalyptus-honey",
+    "path": "/products/eucalyptus-honey"
   },
   {
     "id": 97,
@@ -2909,7 +2985,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/Edcalyptushoney.png",
-    "slug": "mustard-cream-honey"
+    "slug": "mustard-cream-honey",
+    "path": "/products/mustard-cream-honey"
   },
   {
     "id": 98,
@@ -2946,7 +3023,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/Sunflowerhoney.png",
-    "slug": "sunflower-honey"
+    "slug": "sunflower-honey",
+    "path": "/products/sunflower-honey"
   },
   {
     "id": 99,
@@ -2983,7 +3061,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/Acacia(Kikar)Honey.png",
-    "slug": "acacia-kikar-honey"
+    "slug": "acacia-kikar-honey",
+    "path": "/products/acacia-kikar-honey"
   },
   {
     "id": 100,
@@ -3020,7 +3099,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/Berseem(Alfalfa)honey.png",
-    "slug": "berseem-alfalfa-honey"
+    "slug": "berseem-alfalfa-honey",
+    "path": "/products/berseem-alfalfa-honey"
   },
   {
     "id": 101,
@@ -3057,7 +3137,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/MultifloraHoney.png",
-    "slug": "multiflora-honey"
+    "slug": "multiflora-honey",
+    "path": "/products/multiflora-honey"
   },
   {
     "id": 102,
@@ -3094,7 +3175,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/Sidr(wildberry)honey.png",
-    "slug": "sidr-wild-berry-honey"
+    "slug": "sidr-wild-berry-honey",
+    "path": "/products/sidr-wild-berry-honey"
   },
   {
     "id": 103,
@@ -3131,7 +3213,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/WildForesthoney.png",
-    "slug": "wild-forest-honey"
+    "slug": "wild-forest-honey",
+    "path": "/products/wild-forest-honey"
   },
   {
     "id": 104,
@@ -3168,7 +3251,8 @@
     },
     "type": "Honey",
     "image": "/img/product/Honey/CorianderHoney.png",
-    "slug": "coriander-honey"
+    "slug": "coriander-honey",
+    "path": "/products/coriander-honey"
   },
   {
     "id": 105,
@@ -3208,7 +3292,8 @@
     },
     "type": "Spices",
     "image": "/img/product/Spices/Turmeric.png",
-    "slug": "turmeric-powder"
+    "slug": "turmeric-powder",
+    "path": "/products/turmeric-powder"
   },
   {
     "id": 106,
@@ -3248,7 +3333,8 @@
     },
     "type": "Spices",
     "image": "/img/product/Spices/Redchilli.png",
-    "slug": "red-chilli-powder"
+    "slug": "red-chilli-powder",
+    "path": "/products/red-chilli-powder"
   },
   {
     "id": 107,
@@ -3286,7 +3372,8 @@
     },
     "type": "Spices",
     "image": "/img/product/Spices/Garammasala.png",
-    "slug": "garam-masala"
+    "slug": "garam-masala",
+    "path": "/products/garam-masala"
   },
   {
     "id": 108,
@@ -3324,7 +3411,8 @@
     },
     "type": "Spices",
     "image": "/img/product/Spices/Cumin.png",
-    "slug": "cumin-powder"
+    "slug": "cumin-powder",
+    "path": "/products/cumin-powder"
   },
   {
     "id": 109,
@@ -3363,7 +3451,8 @@
     },
     "type": "Spices",
     "image": "/img/product/Spices/Asafoetida.png",
-    "slug": "asafoetida-powder"
+    "slug": "asafoetida-powder",
+    "path": "/products/asafoetida-powder"
   },
   {
     "id": 110,
@@ -3401,54 +3490,49 @@
     },
     "type": "Spices",
     "image": "/img/product/Spices/Teamasalapowder.png",
-    "slug": "tea-masala"
+    "slug": "tea-masala",
+    "path": "/products/tea-masala"
   },
   {
-  "id": 111,
-  "title": "Mango (Ripe)",
-  "desc": "Fresh mangoes are naturally rich in vitamins, minerals, dietary fiber, and antioxidants. They are widely consumed worldwide for their sweet taste, vibrant color, and nutritional value. Carefully selected and hygienically packed mangoes are ideal for retail markets, food processing industries, juice manufacturers, and international export businesses.",
-  
-  "description": "Fresh mangoes are harvested at the proper maturity stage to ensure excellent taste, texture, and shelf life during transportation. Our export-quality mangoes are cleaned, sorted, graded, and packed according to international export standards. They are suitable for direct consumption, juice processing, desserts, smoothies, and food manufacturing applications.",
-
-  "applications_and_uses": [
-    "Direct fresh fruit consumption",
-    "Juice and beverage manufacturing",
-    "Ice cream, desserts, and bakery applications",
-    "Fruit salads and smoothies",
-    "Food processing and pulp extraction",
-    "Export for retail supermarkets and wholesale markets"
-  ],
-
-  "specifications": {
-    "Product Name": "Fresh Mango",
-    "Color, Taste & Aroma": "Natural yellow to orange, Sweet and juicy",
-    "Size": "200g – 500g per piece (custom grading available)",
-    "Maturity": "Export-grade mature fruit",
-    "Shelf Life": "2–4 weeks under proper storage conditions",
-    
-    "Storage Temperature": "10°C – 13°C",
-    "Handling & Storage": "Store in a cool, dry place away from direct sunlight and moisture",
-
-    "Packaging Options": [
-      "3 kg corrugated export box",
-      "5 kg corrugated export box",
-      "10 kg corrugated export carton",
-      "Custom packaging available as per buyer requirements"
+    "id": 111,
+    "title": "Mango (Ripe)",
+    "desc": "Fresh mangoes are naturally rich in vitamins, minerals, dietary fiber, and antioxidants. They are widely consumed worldwide for their sweet taste, vibrant color, and nutritional value. Carefully selected and hygienically packed mangoes are ideal for retail markets, food processing industries, juice manufacturers, and international export businesses.",
+    "description": "Fresh mangoes are harvested at the proper maturity stage to ensure excellent taste, texture, and shelf life during transportation. Our export-quality mangoes are cleaned, sorted, graded, and packed according to international export standards. They are suitable for direct consumption, juice processing, desserts, smoothies, and food manufacturing applications.",
+    "applications_and_uses": [
+      "Direct fresh fruit consumption",
+      "Juice and beverage manufacturing",
+      "Ice cream, desserts, and bakery applications",
+      "Fruit salads and smoothies",
+      "Food processing and pulp extraction",
+      "Export for retail supermarkets and wholesale markets"
     ],
-
-    "MOQ": "",
-    "Lead Time": "Based on season and order quantity"
+    "specifications": {
+      "Product Name": "Fresh Mango",
+      "Color, Taste & Aroma": "Natural yellow to orange, Sweet and juicy",
+      "Size": "200g – 500g per piece (custom grading available)",
+      "Maturity": "Export-grade mature fruit",
+      "Shelf Life": "2–4 weeks under proper storage conditions",
+      "Storage Temperature": "10°C – 13°C",
+      "Handling & Storage": "Store in a cool, dry place away from direct sunlight and moisture",
+      "Packaging Options": [
+        "3 kg corrugated export box",
+        "5 kg corrugated export box",
+        "10 kg corrugated export carton",
+        "Custom packaging available as per buyer requirements"
+      ],
+      "MOQ": "",
+      "Lead Time": "Based on season and order quantity"
+    },
+    "type": "Fruit",
+    "image": "/img/product/Fruit/MangoRipe.png",
+    "slug": "mango-ripe",
+    "path": "/products/mango-ripe"
   },
-  "type": "Fruit",
-  "image": "/img/product/fruit/mango.png",
-  "slug": "mango-ripe"
-},
- {
+  {
     "id": 112,
     "title": "Banana (Unripe)",
     "desc": "Fresh unripe bananas are carefully harvested for export purposes and are widely used for retail distribution, ripening centers, food processing, and international markets. They are valued for their long shelf life, firm texture, and nutritional benefits including potassium, fiber, and essential vitamins.",
     "description": "Our export-quality unripe bananas are selected at the ideal maturity stage to ensure safe transportation and controlled ripening at destination markets. The bananas are cleaned, sorted, graded, and hygienically packed according to international export standards.",
-
     "applications_and_uses": [
       "Retail fruit markets",
       "Ripening centers",
@@ -3457,38 +3541,32 @@
       "Smoothies and desserts",
       "Wholesale export markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Banana (Unripe)",
       "Color, Taste & Aroma": "Natural green color with mild raw banana aroma",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature unripe fruit",
       "Shelf Life": "2–4 weeks under proper storage conditions",
-
       "Storage Temperature": "13°C – 14°C",
       "Handling & Storage": "Store in a cool and dry environment away from direct sunlight",
-
       "Packaging Options": [
         "7 kg export carton",
         "13 kg export carton",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Fruit",
-    "image": "/img/product/fruit/banana-unripe.png",
-    "slug": "banana-unripe"
+    "image": "/img/product/Fruit/BananaUnripe.png",
+    "slug": "banana-unripe",
+    "path": "/products/banana-unripe"
   },
-
   {
     "id": 113,
     "title": "Mango (Unripe)",
     "desc": "Fresh unripe mangoes are widely used for pickles, food processing, export markets, and culinary applications. They are appreciated for their firm texture, tangy flavor, and freshness.",
     "description": "Our export-quality unripe mangoes are harvested at the correct maturity stage to ensure durability during transportation and extended shelf life. The fruits are hygienically cleaned, sorted, and packed as per international export standards.",
-
     "applications_and_uses": [
       "Pickle manufacturing",
       "Food processing industries",
@@ -3497,38 +3575,32 @@
       "Export wholesale markets",
       "Traditional culinary applications"
     ],
-
     "specifications": {
       "Product Name": "Fresh Mango (Unripe)",
       "Color, Taste & Aroma": "Natural green color with tangy raw mango flavor",
       "Size": "200g – 500g per piece (custom grading available)",
       "Maturity": "Export-grade mature unripe fruit",
       "Shelf Life": "2–4 weeks under proper storage conditions",
-
       "Storage Temperature": "10°C – 13°C",
       "Handling & Storage": "Store in a cool, dry place away from moisture and direct sunlight",
-
       "Packaging Options": [
         "5 kg corrugated export box",
         "10 kg corrugated export carton",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Fruit",
-    "image": "/img/product/fruit/mango-unripe.png",
-    "slug": "mango-unripe"
+    "image": "/img/product/Fruit/MangoUnripe.png",
+    "slug": "mango-unripe",
+    "path": "/products/mango-unripe"
   },
-
   {
     "id": 114,
     "title": "Grapes (Green)",
     "desc": "Fresh green grapes are highly popular in international markets due to their sweet taste, crisp texture, and nutritional value. They are widely consumed as fresh table grapes and used in juice and food industries.",
     "description": "Our export-quality green grapes are carefully selected, cleaned, graded, and packed under hygienic conditions to maintain freshness, taste, and shelf life during transportation.",
-
     "applications_and_uses": [
       "Fresh fruit consumption",
       "Juice production",
@@ -3537,38 +3609,32 @@
       "Food processing industries",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Green Grapes",
       "Color, Taste & Aroma": "Natural green color with sweet flavor",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature fruit",
       "Shelf Life": "2–6 weeks under proper storage conditions",
-
       "Storage Temperature": "0°C – 2°C",
       "Handling & Storage": "Store under refrigerated conditions away from moisture",
-
       "Packaging Options": [
         "4.5 kg export carton",
         "5 kg corrugated box",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Fruit",
-    "image": "/img/product/fruit/grapes-green.png",
-    "slug": "grapes-green"
+    "image": "/img/product/Fruit/GreenGrapes.png",
+    "slug": "grapes-green",
+    "path": "/products/grapes-green"
   },
-
   {
     "id": 115,
     "title": "Pomegranate",
     "desc": "Fresh pomegranates are valued worldwide for their rich antioxidants, vibrant color, and sweet-tart flavor. They are widely used for fresh consumption, juice extraction, and food processing applications.",
     "description": "Our export-quality pomegranates are carefully harvested, sorted, and packed to maintain freshness and premium quality during international transportation.",
-
     "applications_and_uses": [
       "Fresh fruit consumption",
       "Juice manufacturing",
@@ -3577,38 +3643,32 @@
       "Retail supermarkets",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Pomegranate",
       "Color, Taste & Aroma": "Deep red color with sweet-tart flavor",
       "Size": "250g – 500g per piece (custom grading available)",
       "Maturity": "Export-grade mature fruit",
       "Shelf Life": "1–2 months under proper storage conditions",
-
       "Storage Temperature": "5°C – 7°C",
       "Handling & Storage": "Store in a cool and dry place away from direct sunlight",
-
       "Packaging Options": [
         "5 kg export carton",
         "10 kg corrugated export box",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Fruit",
-    "image": "/img/product/fruit/pomegranate.png",
-    "slug": "pomegranate"
+    "image": "/img/product/Fruit/Pomegrante.png",
+    "slug": "pomegranate",
+    "path": "/products/pomegranate"
   },
-
   {
     "id": 116,
     "title": "Lemon",
     "desc": "Fresh lemons are widely used across global markets for their refreshing citrus flavor, juice content, and nutritional benefits. They are ideal for fresh consumption, beverages, culinary use, and food processing industries.",
     "description": "Our export-quality lemons are carefully selected, cleaned, graded, and hygienically packed to maintain freshness and long shelf life during export transportation.",
-
     "applications_and_uses": [
       "Fresh consumption",
       "Juice and beverage manufacturing",
@@ -3617,38 +3677,32 @@
       "Retail supermarkets",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Lemon",
       "Color, Taste & Aroma": "Natural yellow color with citrus aroma and tangy taste",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature fruit",
       "Shelf Life": "3–6 weeks under proper storage conditions",
-
       "Storage Temperature": "8°C – 10°C",
       "Handling & Storage": "Store in a cool and dry environment away from moisture",
-
       "Packaging Options": [
         "5 kg export carton",
         "10 kg corrugated box",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Fruit",
-    "image": "/img/product/fruit/lemon.png",
-    "slug": "lemon"
+    "image": "/img/product/Fruit/Lemon.png",
+    "slug": "lemon",
+    "path": "/products/lemon"
   },
-
   {
     "id": 117,
     "title": "Orange",
     "desc": "Fresh oranges are popular worldwide for their juicy texture, refreshing citrus flavor, and high vitamin C content. They are widely used for fresh consumption, juice production, and export markets.",
     "description": "Our export-quality oranges are carefully sorted, cleaned, and packed according to international export standards to ensure freshness and premium quality.",
-
     "applications_and_uses": [
       "Fresh fruit consumption",
       "Juice manufacturing",
@@ -3657,38 +3711,32 @@
       "Food processing industries",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Orange",
       "Color, Taste & Aroma": "Bright orange color with sweet citrus flavor",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature fruit",
       "Shelf Life": "3–8 weeks under proper storage conditions",
-
       "Storage Temperature": "3°C – 8°C",
       "Handling & Storage": "Store in a cool, dry place away from direct sunlight",
-
       "Packaging Options": [
         "5 kg export carton",
         "10 kg corrugated export box",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Fruit",
-    "image": "/img/product/fruit/orange.png",
-    "slug": "orange"
+    "image": "/img/product/Fruit/Orange.png",
+    "slug": "orange",
+    "path": "/products/orange"
   },
-
   {
     "id": 118,
     "title": "Dragon Fruit",
     "desc": "Fresh dragon fruit is known for its vibrant appearance, refreshing taste, and rich nutritional profile. It is highly demanded in international fruit markets and health-focused food industries.",
     "description": "Our export-quality dragon fruits are carefully harvested, sorted, graded, and hygienically packed to ensure freshness and superior quality during export transportation.",
-
     "applications_and_uses": [
       "Fresh fruit consumption",
       "Smoothies and beverages",
@@ -3697,38 +3745,32 @@
       "Retail supermarkets",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Dragon Fruit",
       "Color, Taste & Aroma": "Bright pink skin with mildly sweet flavor",
       "Size": "250g – 600g per piece (custom grading available)",
       "Maturity": "Export-grade mature fruit",
       "Shelf Life": "2–4 weeks under proper storage conditions",
-
       "Storage Temperature": "7°C – 10°C",
       "Handling & Storage": "Store in a cool and dry environment away from direct sunlight",
-
       "Packaging Options": [
         "2 kg export carton",
         "5 kg corrugated export box",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Fruit",
-    "image": "/img/product/fruit/dragon-fruit.png",
-    "slug": "dragon-fruit"
+    "image": "/img/product/Fruit/DragonFruit.png",
+    "slug": "dragon-fruit",
+    "path": "/products/dragon-fruit"
   },
-
   {
     "id": 119,
     "title": "Green Lime",
     "desc": "Fresh green limes are widely used for beverages, culinary applications, and food processing industries due to their strong citrus flavor and high juice content.",
     "description": "Our export-quality green limes are carefully selected, cleaned, sorted, and packed under hygienic conditions to maintain freshness and shelf life during transportation.",
-
     "applications_and_uses": [
       "Juice and beverages",
       "Culinary applications",
@@ -3737,37 +3779,32 @@
       "Restaurants and hotels",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Green Lime",
       "Color, Taste & Aroma": "Natural green color with strong citrus aroma",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature fruit",
       "Shelf Life": "3–5 weeks under proper storage conditions",
-
       "Storage Temperature": "8°C – 10°C",
       "Handling & Storage": "Store in a cool and dry place away from moisture and heat",
-
       "Packaging Options": [
         "5 kg export carton",
         "10 kg corrugated export box",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Fruit",
-    "image": "/img/product/fruit/green-lime.png",
-    "slug": "green-lime"
+    "image": "/img/product/Fruit/GreenLime.png",
+    "slug": "green-lime",
+    "path": "/products/green-lime"
   },
   {
     "id": 201,
     "title": "Onion",
     "desc": "Fresh onions are widely used across global markets for culinary applications, food processing, and retail distribution. They are valued for their pungent flavor, long shelf life, and export demand.",
     "description": "Our export-quality onions are carefully harvested, cleaned, graded, and hygienically packed according to international export standards to ensure freshness and durability during transportation.",
-
     "applications_and_uses": [
       "Cooking and culinary applications",
       "Food processing industries",
@@ -3776,39 +3813,33 @@
       "Wholesale export markets",
       "Hotels and restaurants"
     ],
-
     "specifications": {
       "Product Name": "Fresh Onion",
       "Color, Taste & Aroma": "Natural red/pink color with strong onion aroma",
       "Size": "40mm – 80mm (custom grading available)",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "1–3 months under proper storage conditions",
-
       "Storage Temperature": "0°C – 4°C",
       "Handling & Storage": "Store in a cool, dry, and well-ventilated place",
-
       "Packaging Options": [
         "5 kg mesh bag",
         "10 kg mesh bag",
         "25 kg export bag",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/onion.png",
-    "slug": "onion"
+    "image": "/img/product/Vegetable/Onion.png",
+    "slug": "onion",
+    "path": "/products/onion"
   },
-
   {
     "id": 202,
     "title": "Garlic",
     "desc": "Fresh garlic is highly demanded worldwide for its strong flavor, medicinal properties, and culinary uses. It is widely used in households, food processing industries, and export markets.",
     "description": "Our export-quality garlic is carefully selected, cleaned, sorted, and packed under hygienic conditions to maintain freshness and premium quality during transportation.",
-
     "applications_and_uses": [
       "Cooking and culinary applications",
       "Seasoning and spice blends",
@@ -3817,39 +3848,33 @@
       "Retail supermarkets",
       "Wholesale export markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Garlic",
       "Color, Taste & Aroma": "Natural white color with strong garlic aroma",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "3–6 months under proper storage conditions",
-
       "Storage Temperature": "0°C – 2°C",
       "Handling & Storage": "Store in a cool, dry, and ventilated environment",
-
       "Packaging Options": [
         "5 kg mesh bag",
         "10 kg mesh bag",
         "20 kg export carton",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/garlic.png",
-    "slug": "garlic"
+    "image": "/img/product/Vegetable/Garlic.png",
+    "slug": "garlic",
+    "path": "/products/garlic"
   },
-
   {
     "id": 203,
     "title": "Green Chilli",
     "desc": "Fresh green chillies are widely used in culinary applications and food processing industries due to their spicy flavor, freshness, and vibrant green color.",
     "description": "Our export-quality green chillies are carefully harvested, cleaned, sorted, and packed to maintain freshness and shelf life during export transportation.",
-
     "applications_and_uses": [
       "Cooking and seasoning",
       "Sauce and pickle manufacturing",
@@ -3858,38 +3883,32 @@
       "Restaurants and hotels",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Green Chilli",
       "Color, Taste & Aroma": "Natural green color with spicy flavor",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "1–3 weeks under proper storage conditions",
-
       "Storage Temperature": "7°C – 10°C",
       "Handling & Storage": "Store in a cool and dry place away from moisture",
-
       "Packaging Options": [
         "2 kg export carton",
         "5 kg corrugated box",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/green-chilli.png",
-    "slug": "green-chilli"
+    "image": "/img/product/Vegetable/GreenChili.png",
+    "slug": "green-chilli",
+    "path": "/products/green-chilli"
   },
-
   {
     "id": 204,
     "title": "Cauliflower",
     "desc": "Fresh cauliflower is widely consumed worldwide for its nutritional value, mild flavor, and versatile culinary applications.",
     "description": "Our export-quality cauliflower is carefully selected, cleaned, graded, and hygienically packed to ensure freshness and quality during transportation.",
-
     "applications_and_uses": [
       "Cooking and culinary dishes",
       "Frozen food processing",
@@ -3898,38 +3917,32 @@
       "Food manufacturing industries",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Cauliflower",
       "Color, Taste & Aroma": "Natural white color with fresh vegetable aroma",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "1–3 weeks under proper storage conditions",
-
       "Storage Temperature": "0°C – 4°C",
       "Handling & Storage": "Store under refrigerated conditions for maximum freshness",
-
       "Packaging Options": [
         "5 kg corrugated export box",
         "10 kg export carton",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/cauliflower.png",
-    "slug": "cauliflower"
+    "image": "/img/product/Vegetable/Cauliflower.png",
+    "slug": "cauliflower",
+    "path": "/products/cauliflower"
   },
-
   {
     "id": 205,
     "title": "Cabbage",
     "desc": "Fresh cabbage is highly popular in international markets for salads, cooking, and food processing applications due to its freshness and nutritional benefits.",
     "description": "Our export-quality cabbage is hygienically harvested, sorted, graded, and packed according to export standards to maintain freshness during shipment.",
-
     "applications_and_uses": [
       "Salads and culinary dishes",
       "Food processing industries",
@@ -3938,38 +3951,32 @@
       "Pickle and fermented food production",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Cabbage",
       "Color, Taste & Aroma": "Natural green color with mild fresh flavor",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "2–6 weeks under proper storage conditions",
-
       "Storage Temperature": "0°C – 4°C",
       "Handling & Storage": "Store in a cool and refrigerated environment",
-
       "Packaging Options": [
         "10 kg export carton",
         "20 kg corrugated box",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/cabbage.png",
-    "slug": "cabbage"
+    "image": "/img/product/Vegetable/Cabbage.png",
+    "slug": "cabbage",
+    "path": "/products/cabbage"
   },
-
   {
     "id": 206,
     "title": "Bottle Gourd",
     "desc": "Fresh bottle gourds are widely used in cooking and food processing industries due to their soft texture, nutritional value, and refreshing taste.",
     "description": "Our export-quality bottle gourds are carefully selected, cleaned, and packed to maintain freshness and premium quality during export transportation.",
-
     "applications_and_uses": [
       "Cooking and culinary applications",
       "Soup and curry preparation",
@@ -3978,38 +3985,32 @@
       "Restaurants and hotels",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Bottle Gourd",
       "Color, Taste & Aroma": "Natural light green color with mild fresh flavor",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "1–3 weeks under proper storage conditions",
-
       "Storage Temperature": "10°C – 12°C",
       "Handling & Storage": "Store in a cool and dry place away from sunlight",
-
       "Packaging Options": [
         "5 kg corrugated box",
         "10 kg export carton",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/bottle-gourd.png",
-    "slug": "bottle-gourd"
+    "image": "/img/product/Vegetable/BottleGourd.png",
+    "slug": "bottle-gourd",
+    "path": "/products/bottle-gourd"
   },
-
   {
     "id": 207,
     "title": "Ginger",
     "desc": "Fresh ginger is highly valued worldwide for its strong aroma, medicinal benefits, and culinary applications. It is widely used in food, beverages, and spice industries.",
     "description": "Our export-quality ginger is carefully harvested, cleaned, sorted, and packed to preserve freshness and quality during export transportation.",
-
     "applications_and_uses": [
       "Cooking and seasoning",
       "Tea and beverages",
@@ -4018,39 +4019,33 @@
       "Medicinal and herbal applications",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Ginger",
       "Color, Taste & Aroma": "Natural light brown color with strong ginger aroma",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "1–2 months under proper storage conditions",
-
       "Storage Temperature": "12°C – 14°C",
       "Handling & Storage": "Store in a cool and dry environment",
-
       "Packaging Options": [
         "5 kg mesh bag",
         "10 kg export carton",
         "20 kg packaging available",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/ginger.png",
-    "slug": "ginger"
+    "image": "/img/product/Vegetable/Ginger.png",
+    "slug": "ginger",
+    "path": "/products/ginger"
   },
-
   {
     "id": 208,
     "title": "Fresh Turmeric",
     "desc": "Fresh turmeric is widely used in culinary, medicinal, and food processing industries due to its vibrant color, earthy flavor, and natural health benefits.",
     "description": "Our export-quality fresh turmeric is carefully selected, cleaned, and packed under hygienic conditions to ensure premium quality and freshness.",
-
     "applications_and_uses": [
       "Cooking and seasoning",
       "Spice manufacturing",
@@ -4059,39 +4054,33 @@
       "Retail supermarkets",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Turmeric",
       "Color, Taste & Aroma": "Natural yellow-orange color with earthy aroma",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "1–2 months under proper storage conditions",
-
       "Storage Temperature": "12°C – 14°C",
       "Handling & Storage": "Store in a cool, dry, and ventilated environment",
-
       "Packaging Options": [
         "5 kg mesh bag",
         "10 kg export carton",
         "20 kg packaging available",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/fresh-turmeric.png",
-    "slug": "fresh-turmeric"
+    "image": "/img/product/Vegetable/FreshTurmeric.png",
+    "slug": "fresh-turmeric",
+    "path": "/products/fresh-turmeric"
   },
-
   {
     "id": 209,
     "title": "Drumstick",
     "desc": "Fresh drumsticks are widely used in cooking and food processing industries due to their nutritional value, unique flavor, and culinary versatility.",
     "description": "Our export-quality drumsticks are carefully harvested, cleaned, graded, and packed to maintain freshness and quality during transportation.",
-
     "applications_and_uses": [
       "Cooking and curry preparation",
       "Soup and stew applications",
@@ -4100,38 +4089,32 @@
       "Restaurants and hotels",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Drumstick",
       "Color, Taste & Aroma": "Natural green color with fresh vegetable aroma",
       "Size": "Custom export grading available",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "1–2 weeks under proper storage conditions",
-
       "Storage Temperature": "8°C – 10°C",
       "Handling & Storage": "Store in a cool and dry environment",
-
       "Packaging Options": [
         "5 kg corrugated export box",
         "10 kg export carton",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/drumstick.png",
-    "slug": "drumstick"
+    "image": "/img/product/Vegetable/Drumstick.png",
+    "slug": "drumstick",
+    "path": "/products/drumstick"
   },
-
   {
     "id": 210,
     "title": "Potato",
     "desc": "Fresh potatoes are among the most widely consumed vegetables worldwide and are highly demanded for cooking, food processing, and export markets.",
     "description": "Our export-quality potatoes are carefully selected, graded, and hygienically packed to ensure long shelf life and superior quality during transportation.",
-
     "applications_and_uses": [
       "Cooking and culinary applications",
       "French fries and chips manufacturing",
@@ -4140,39 +4123,33 @@
       "Restaurants and hotels",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Fresh Potato",
       "Color, Taste & Aroma": "Natural light brown skin with mild earthy flavor",
       "Size": "40mm – 80mm (custom grading available)",
       "Maturity": "Export-grade mature vegetable",
       "Shelf Life": "1–4 months under proper storage conditions",
-
       "Storage Temperature": "4°C – 8°C",
       "Handling & Storage": "Store in a cool, dark, and dry environment",
-
       "Packaging Options": [
         "5 kg mesh bag",
         "10 kg mesh bag",
         "25 kg export bag",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on season and order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/potato.png",
-    "slug": "potato"
+    "image": "/img/product/Vegetable/Potato.png",
+    "slug": "potato",
+    "path": "/products/potato"
   },
-
   {
     "id": 211,
     "title": "Psyllium Husk",
     "desc": "Psyllium husk is widely known for its high dietary fiber content and is extensively used in food, pharmaceutical, and health supplement industries worldwide.",
     "description": "Our export-quality psyllium husk is carefully processed, cleaned, and packed under hygienic conditions to ensure premium purity and international export standards.",
-
     "applications_and_uses": [
       "Health supplements",
       "Dietary fiber products",
@@ -4181,29 +4158,25 @@
       "Bakery and nutrition products",
       "Export wholesale markets"
     ],
-
     "specifications": {
       "Product Name": "Psyllium Husk",
       "Color, Taste & Aroma": "Off-white color with neutral aroma",
       "Size": "Custom grade available",
       "Maturity": "Processed export-grade product",
       "Shelf Life": "12–24 months under proper storage conditions",
-
       "Storage Temperature": "Store at room temperature",
       "Handling & Storage": "Store in a cool, dry, and moisture-free environment",
-
       "Packaging Options": [
         "5 kg food-grade bag",
         "25 kg export bag",
         "Custom packaging available as per buyer requirements"
       ],
-
       "MOQ": "",
       "Lead Time": "Based on order quantity"
     },
-
     "type": "Vegetable",
-    "image": "/img/product/vegetable/psyllium-husk.png",
-    "slug": "psyllium-husk"
+    "image": "/img/product/1.png",
+    "slug": "psyllium-husk",
+    "path": "/products/psyllium-husk"
   }
 ]

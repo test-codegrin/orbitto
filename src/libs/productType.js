@@ -1,7 +1,7 @@
-import makePath from "./makePath";
-
 export const normalizeProductType = (value) =>
-  makePath(value || "")?.toLowerCase();
+  String(value || "")
+    .toLowerCase()
+    .replace(/[\s_-]+/g, "");
 
 export const isProductType = (productType, expectedType) =>
   normalizeProductType(productType) === normalizeProductType(expectedType);
@@ -9,9 +9,9 @@ export const isProductType = (productType, expectedType) =>
 export const productCategoryAliases = {
   fruit: "Fruit",
   vegetable: "Vegetable",
-  fruit_powder: "Fruit Powder",
-  vegetable_powder: "Vegetable Powder",
-  herbal_powder: "Herbal Powder",
+  fruitpowder: "FruitPowder",
+  vegetablepowder: "VegetablePowder",
+  herbalpowder: "Herbal Powder",
 };
 
 export const normalizeProductCategoryFilter = (value) => {

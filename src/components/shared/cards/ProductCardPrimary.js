@@ -9,8 +9,8 @@ const ProductCardPrimary = ({
   hideCardWhenImageUnavailable = false,
   onImageUnavailable,
 }) => {
-  const { title, image, id, slug } = product || {};
-  const productPath = `/products/${slug || id || ""}`;
+  const { title, image, id, slug, path } = product || {};
+  const productPath = path || `/products/${slug || id || ""}`;
   const { setCurrentProduct } = useProductContext();
   const [isImageUnavailable, setIsImageUnavailable] = useState(
     hideCardWhenImageUnavailable && !image

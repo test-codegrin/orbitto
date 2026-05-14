@@ -9,19 +9,17 @@ import ProductCategories from "@/components/shared/sidebars/widgets/ProductCateg
 import SidebarSearch from "@/components/shared/sidebars/widgets/SidebarSearch";
 
 import usePagination from "@/hooks/usePagination";
+import { normalizeProductType } from "@/libs/productType";
 import { useCommonContext } from "@/providers/CommonContext";
 
 const powderNoteCategories = new Set([
-  // "fruit",
-  // "vegetable",
-  "fruit_powder",
-  "vegetable_powder",
+  "fruit",
+  "vegetable",
+  "fruitpowder",
+  "vegetablepowder",
   "spices",
-  "herbal_powder",
+  "herbalpowder",
 ]);
-
-const normalizeCategory = (value) =>
-  value?.toLowerCase().replace(/-/g, "_") || "";
 
 const ProductsPrimary = ({ isSidebar }) => {
   const { filteredProducts, category } = useCommonContext();
@@ -30,7 +28,7 @@ const ProductsPrimary = ({ isSidebar }) => {
   const pageJumpRef = useRef(null);
   const [isPageJumpOpen, setIsPageJumpOpen] = useState(false);
   const shouldShowPowderNote = powderNoteCategories.has(
-    normalizeCategory(category)
+    normalizeProductType(category)
   );
   const arrangedProducts = useMemo(
     () => filteredProducts || [],
