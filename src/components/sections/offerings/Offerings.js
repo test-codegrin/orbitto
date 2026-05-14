@@ -12,7 +12,7 @@ const offerings = [
     desc: "Launch your own brand with customized formulations & packaging",
   },
   {
-    image: "/img/icons/cargo-ship.svg",
+    icon: "fas fa-ship",
     title: "Bulk Ingredient Supply",
     desc: "High-quality natural food ingredients for industrial use",
   },

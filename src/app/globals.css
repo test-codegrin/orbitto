@@ -16820,10 +16820,11 @@ blockquote::before {
   margin: 0 auto 30px;
   max-width: 760px;
   text-align: center;
+  color: var(--ltn__secondary-color-2);
 }
 
 .home-offerings__heading h2 {
-  color: #07120c;
+   color: var(--ltn__secondary-color-2);
   font-size: clamp(32px, 3.1vw, 46px);
   font-weight: 800;
   letter-spacing: 0;
@@ -16868,7 +16869,7 @@ blockquote::before {
 
 .home-offerings__icon {
   align-items: center;
-  color: #030303;
+  color: var(--ltn__secondary-color-2);
   display: flex;
   font-size: clamp(42px, 3.8vw, 58px);
   height: 64px;
@@ -18106,7 +18107,7 @@ blockquote::before {
 }
 
 .why-orbitto-heading span {
-  color: var(--ltn__secondary-color);
+  color: var(--ltn__secondary-color-3);
   display: block;
   font-size: 18px;
   font-weight: 700;
