@@ -8,6 +8,7 @@ const ProductCardPrimary = ({
   product,
   hideCardWhenImageUnavailable = false,
   onImageUnavailable,
+  imageFitVariant,
 }) => {
   const { title, image, id, slug, path } = product || {};
   const productPath = path || `/products/${slug || id || ""}`;
@@ -34,7 +35,9 @@ const ProductCardPrimary = ({
 
   return (
     <div
-      className="ltn__product-item ltn__product-item-3 text-center"
+      className={`ltn__product-item ltn__product-item-3 text-center${
+        imageFitVariant === "box" ? " product-card--box-image" : ""
+      }`}
       onMouseEnter={() => product && setCurrentProduct(product)}
     >
       <div className="product-img">

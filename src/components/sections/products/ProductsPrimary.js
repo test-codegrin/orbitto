@@ -9,7 +9,7 @@ import ProductCategories from "@/components/shared/sidebars/widgets/ProductCateg
 import SidebarSearch from "@/components/shared/sidebars/widgets/SidebarSearch";
 
 import usePagination from "@/hooks/usePagination";
-import { normalizeProductType } from "@/libs/productType";
+import { isProductType, normalizeProductType } from "@/libs/productType";
 import { useCommonContext } from "@/providers/CommonContext";
 
 const powderNoteCategories = new Set([
@@ -68,6 +68,10 @@ const ProductsPrimary = ({ isSidebar }) => {
     setIsPageJumpOpen(false);
     handleCurrentPage(undefined, pageIndex, "products");
   };
+
+  const isBoxProduct = (product) =>
+    isProductType(product?.type, "Fruit") ||
+    isProductType(product?.type, "Vegetable");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -156,7 +160,7 @@ const ProductsPrimary = ({ isSidebar }) => {
             </div>
 
             <div className="ltn__product-tab-content-inner ltn__product-grid-view">
-              <div className="row products3-fixed-card-grid">
+              <div className="row products3-fixed-card-grid products-page-card-grid">
                 {!totalPages ? (
                   <div className="col-12">
                     <Nodata text="No Product Found!" className="empty-products" />
@@ -169,7 +173,10 @@ const ProductsPrimary = ({ isSidebar }) => {
                       } col-sm-6 col-6`}
                       key={product?.id || idx}
                     >
-                      <ProductCardPrimary product={product} />
+                      <ProductCardPrimary
+                        product={product}
+                        imageFitVariant={isBoxProduct(product) ? "box" : undefined}
+                      />
                     </div>
                   ))
                 )}

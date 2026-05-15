@@ -217,7 +217,7 @@ const ApplicationPrimary = () => {
                     className="application-card__image"
                     style={{ objectPosition: imagePosition || "center" }}
                   />
-                  <div className="application-card__label">
+                  <div className="application-card__label application-card__label--effect">
                     <h3>{itemTitle}</h3>
                   </div>
                 </article>

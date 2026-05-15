@@ -8550,6 +8550,21 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   z-index: 1;
 }
 
+.products-page-card-grid
+  .ltn__product-item-3.product-card--box-image
+  .product-img {
+  padding: 12px;
+  background-color: var(--white);
+}
+
+.products-page-card-grid
+  .ltn__product-item-3.product-card--box-image
+  .product-img
+  img {
+  object-fit: contain;
+  object-position: center;
+}
+
 .products3-fixed-card-grid .ltn__product-item-3 .product-info {
   min-height: 65px;
   display: -webkit-box;
@@ -18470,7 +18485,7 @@ blockquote::before {
   min-height: 0;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   background: #f5f5f5;
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.08);
 }
@@ -18495,9 +18510,25 @@ blockquote::before {
   align-items: center;
   padding: 14px 46px 14px 18px;
   background: #ffffff;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.application-card__label::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: var(--ltn__secondary-color);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.application-card:hover .application-card__label--effect::after {
+  width: 100%;
 }
 
 .application-card__label h3 {
@@ -18507,6 +18538,11 @@ blockquote::before {
   font-size: clamp(18px, 1.3vw, 24px);
   line-height: 1.2;
   font-weight: 800;
+  transition: color 0.3s ease;
+}
+
+.application-card:hover .application-card__label--effect h3 {
+  color: var(--white);
 }
 
 @media (max-width: 1399px) {
