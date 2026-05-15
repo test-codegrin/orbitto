@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const About5 = ({ pt }) => {
   return (
-    <div className={`ltn__about-us-area ${pt ? pt : "pt-120"} pb-120`}>
+    <div className={`ltn__about-us-area ${pt ? pt : "pt-50"} pb-50`}>
       <div className="container">
         <div className="row">
           <div className="col-lg-6 align-self-center">

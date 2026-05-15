@@ -330,13 +330,24 @@ const BlogsPrimary = () => {
 
   return (
     <div
+      className="news-page"
       style={{
         background: "#ffffff",
         minHeight: "100vh",
+        width: "100%",
+        maxWidth: "100%",
+        overflowX: "clip",
+        boxSizing: "border-box",
       }}
     >
       {/* Header Section */}
-      <div style={{ textAlign: "center", padding: "60px 24px 40px" }}>
+      <div
+        style={{
+          textAlign: "center",
+          padding: "60px clamp(16px, 4vw, 24px) 40px",
+          boxSizing: "border-box",
+        }}
+      >
         {/* Title */}
         <h1
           style={{
@@ -368,12 +379,15 @@ const BlogsPrimary = () => {
 
       {/* Category Tabs */}
       <div
+        className="news-category-tabs"
         style={{
           display: "flex",
           justifyContent: "center",
           gap: "8px",
-          padding: "0 24px 48px",
+          padding: "0 clamp(16px, 4vw, 24px) 48px",
           flexWrap: "wrap",
+          maxWidth: "100%",
+          boxSizing: "border-box",
         }}
       >
         {categories.map((cat) => {
@@ -413,7 +427,13 @@ const BlogsPrimary = () => {
 
       {/* Blog Grid */}
       <div
-        style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px 64px" }}
+        style={{
+          maxWidth: "1200px",
+          width: "100%",
+          margin: "0 auto",
+          padding: "0 clamp(16px, 4vw, 24px) 64px",
+          boxSizing: "border-box",
+        }}
       >
         {filtered.length === 0 ? (
           <div
@@ -425,9 +445,11 @@ const BlogsPrimary = () => {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))",
+              gridTemplateColumns:
+                "repeat(auto-fit,minmax(min(100%, 320px),1fr))",
               gap: "28px",
-              alignItems: "stretch", // ← add
+              alignItems: "stretch",
+              width: "100%",
             }}
           >
             {filtered.map((blog) => (
@@ -452,12 +474,18 @@ const BlogsPrimary = () => {
 
       {/* Newsletter Section */}
       <div
-        style={{ padding: "0 24px 60px", maxWidth: "1100px", margin: "0 auto" }}
+        style={{
+          padding: "0 clamp(16px, 4vw, 24px) 60px",
+          maxWidth: "1100px",
+          width: "100%",
+          margin: "0 auto",
+          boxSizing: "border-box",
+        }}
       >
         <div
           style={{
             background: "#e6edda",
-            padding: "48px 52px",
+            padding: "clamp(28px, 5vw, 48px) clamp(20px, 5vw, 52px)",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -465,6 +493,8 @@ const BlogsPrimary = () => {
             flexWrap: "wrap",
             position: "relative",
             overflow: "hidden",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
           {/* Decorative circle */}
@@ -482,7 +512,13 @@ const BlogsPrimary = () => {
           />
 
           {/* Left: Text + Input */}
-          <div style={{ flex: "1", minWidth: "260px", maxWidth: "440px" }}>
+          <div
+            style={{
+              flex: "1 1 280px",
+              minWidth: 0,
+              maxWidth: "440px",
+            }}
+          >
             <h2
               style={{
                 fontSize: "clamp(24px, 4vw, 34px)",
@@ -513,6 +549,7 @@ const BlogsPrimary = () => {
                 display: "flex",
                 gap: "12px",
                 flexWrap: "wrap",
+                width: "100%",
               }}
             >
               <input
@@ -521,8 +558,8 @@ const BlogsPrimary = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 style={{
-                  flex: "1",
-                  minWidth: "240px",
+                  flex: "1 1 220px",
+                  minWidth: 0,
                   height: "55px",
                   border: "1.5px solid #b8d89a",
                   background: "#ffffff",
@@ -544,7 +581,7 @@ const BlogsPrimary = () => {
           {/* Right: Visual */}
           <div
             style={{
-              width: "200px",
+              width: "min(200px, 100%)",
               height: "180px",
               borderRadius: "20px",
               overflow: "hidden",
