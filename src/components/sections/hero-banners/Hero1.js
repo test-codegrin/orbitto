@@ -1573,7 +1573,7 @@ export default function Hero1() {
 
   return (
     <>
-      <style>{CSS}</style>
+      <style suppressHydrationWarning>{CSS}</style>
       <section className="hs-root" style={{ backgroundColor: slide.bgColor }}>
         <div
           className="hs-bg-gradient visible"

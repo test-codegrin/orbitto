@@ -17291,14 +17291,11 @@ blockquote::before {
 
 .about-company-highlights {
   background-color: #eaf8e9;
-  background-image: radial-gradient(
-    circle,
-    rgba(118, 188, 62, 0.18) 2px,
-    transparent 2.5px
-  );
-  background-position: 0 0;
-  background-size: 28px 28px;
-  padding: 58px 0 50px;
+  background-image: url("/img/about/stat-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 58px 0 72px;
 }
 
 .about-company-highlights__grid {
@@ -17829,7 +17826,7 @@ blockquote::before {
   }
 
   .about-company-highlights {
-    padding: 48px 0 42px;
+    padding: 48px 0 56px;
   }
 
   .about-mission__card {
@@ -18010,8 +18007,7 @@ blockquote::before {
   }
 
   .about-company-highlights {
-    background-size: 24px 24px;
-    padding: 42px 0 36px;
+    padding: 42px 0 48px;
   }
 
   .about-company-highlights__grid {

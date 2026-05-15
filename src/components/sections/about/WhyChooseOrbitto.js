@@ -185,14 +185,14 @@ const WhyChooseOrbitto = () => {
         </div>
 
         <Image
-          src="/img/product/Vegetable/GreenChilli.png"
+          src="/img/slider/Fruit/avocado.png"
           alt=""
           width={120}
           height={120}
           className="why-orbitto-decor why-orbitto-decor--left"
         />
         <Image
-          src="/img/product/Vegetable/Broccoli.png"
+          src="/img/slider/Fruit/berry.png"
           alt=""
           width={130}
           height={130}
