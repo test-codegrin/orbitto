@@ -326,7 +326,7 @@ const BlogDetailsPrimary = () => {
             <div style={{ fontSize: "11px", fontWeight: "700", color: T.muted, letterSpacing: "0.07em", textTransform: "uppercase", marginBottom: "4px" }}>Written by</div>
             <h3 style={{ fontFamily: T.font, fontSize: "20px", fontWeight: "800", color: T.text, margin: "0 0 8px" }}>{author?.name || "Dr. Elena Rostova"}</h3>
             <p style={{ fontSize: "13px", color: T.muted, lineHeight: "1.7", margin: 0 }}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+              Orbitto shares product insights, application ideas, and ingredient knowledge for food, beverage, wellness, and export buyers.
             </p>
           </div>
         </div>

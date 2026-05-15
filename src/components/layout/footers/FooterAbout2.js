@@ -15,13 +15,17 @@ const FooterAbout2 = () => {
           <div className="site-logo">
             <Image
               src={footerBg === "dark" ? logoImage2 : logoImage}
-              alt="Logo" width={254} height={52}
+              alt="Logo"
+              width={254}
+              height={52}
             />
           </div>
         </div>
         <p>
-          Lorem Ipsum is simply dummy text of the and typesetting industry.
-          Lorem Ipsum is dummy text of the printing.
+          Orbitto International delivers quality-focused fruits, vegetables,
+          fruit powders, vegetable powders, spices, honey, and herbal
+          ingredients crafted for reliable sourcing, consistent standards, and
+          global export needs.
         </p>
         <div className="footer-address">
           <ul>
@@ -30,9 +34,11 @@ const FooterAbout2 = () => {
                 <i className="icon-placeholder"></i>
               </div>
               <div className="footer-address-info">
-                <p>SURVEY NO-144/P,PLOT NO-C 288,SHOP NO-104,FIRST
-FLOOR,ROYAL SHOPPING CENTER, RAFALESHWAR
-INDUSTRIAL ESTATE,8-A NATIONAL HIGHWAY,ATJAMBUDIYA, MORBI, MORBI, GUJARAT, 363642</p>
+                <p>
+                  SURVEY NO-144/P,PLOT NO-C 288,SHOP NO-104,FIRST FLOOR,ROYAL
+                  SHOPPING CENTER, RAFALESHWAR INDUSTRIAL ESTATE,8-A NATIONAL
+                  HIGHWAY,ATJAMBUDIYA, MORBI, MORBI, GUJARAT, 363642
+                </p>
               </div>
             </li>
             <li>

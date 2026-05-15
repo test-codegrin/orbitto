@@ -9,13 +9,13 @@ const SkillProgross = () => {
           We Have A Skillest Team Ever<span>.</span>
         </h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore
+          Our team focuses on careful sourcing, hygienic processing, and
+          dependable export support for natural food ingredients.
         </p>
       </div>
       <div className="ltn__progress-bar-inner">
         <div className="ltn__progress-bar-item">
-          <p>Gardening</p>
+          <p>Product Sourcing</p>
           <div className="progress">
             <div
               className="progress-bar wow fadeInLeft"
@@ -29,7 +29,7 @@ const SkillProgross = () => {
           </div>
         </div>
         <div className="ltn__progress-bar-item">
-          <p>Landscaping</p>
+          <p>Processing Support</p>
           <div className="progress">
             <div
               className="progress-bar wow fadeInLeft"
@@ -43,7 +43,7 @@ const SkillProgross = () => {
           </div>
         </div>
         <div className="ltn__progress-bar-item">
-          <p>Vegetable Growing</p>
+          <p>Export Coordination</p>
           <div className="progress">
             <div
               className="progress-bar wow fadeInLeft"

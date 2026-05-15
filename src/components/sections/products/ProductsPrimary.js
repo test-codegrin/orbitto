@@ -21,6 +21,9 @@ const powderNoteCategories = new Set([
   "herbalpowder",
 ]);
 
+const getProductKey = (product, fallback) =>
+  product?.slug || product?.path || `${product?.type || "product"}-${product?.id || fallback}`;
+
 const ProductsPrimary = ({ isSidebar }) => {
   const { filteredProducts, category } = useCommonContext();
 
@@ -35,7 +38,10 @@ const ProductsPrimary = ({ isSidebar }) => {
     [filteredProducts]
   );
   const productListKey = useMemo(
-    () => arrangedProducts?.map(({ id }) => id).join("|"),
+    () =>
+      arrangedProducts
+        ?.map((product, idx) => getProductKey(product, idx))
+        .join("|"),
     [arrangedProducts]
   );
 
@@ -171,7 +177,7 @@ const ProductsPrimary = ({ isSidebar }) => {
                       className={`${
                         isSidebar === false ? "col-xl-3 col-lg-4" : "col-xl-4"
                       } col-sm-6 col-6`}
-                      key={product?.id || idx}
+                      key={getProductKey(product, idx)}
                     >
                       <ProductCardPrimary
                         product={product}

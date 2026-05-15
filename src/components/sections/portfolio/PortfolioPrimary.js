@@ -41,21 +41,17 @@ const PortfolioPrimary = ({ type }) => {
         </div>
         <div id="ltn__inline_description_1" style={{ display: "none" }}>
           <h4 className="first">
-            This content comes from a hidden element on that page
+            Orbitto ingredient applications
           </h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis
-            mi eu elit tempor facilisis id et neque. Nulla sit amet sem sapien.
-            Vestibulum imperdiet porta ante ac ornare. Nulla et lorem eu nibh
-            adipiscing ultricies nec at lacus. Cras laoreet ultricies sem, at
-            blandit mi eleifend aliquam. Nunc enim ipsum, vehicula non pretium
-            varius, cursus ac tortor.
+            Orbitto ingredients are selected for real-world food, beverage,
+            wellness, and culinary applications where taste, color, and
+            consistency matter.
           </p>
           <p>
-            Vivamus fringilla congue laoreet. Quisque ultrices sodales orci,
-            quis rhoncus justo auctor in. Phasellus dui eros, bibendum eu
-            feugiat ornare, faucibus eu mi. Nunc aliquet tempus sem, id aliquam
-            diam varius ac. Maecenas nisl nunc, molestie vitae eleifend vel.
+            From fruit powders and spices to honey and herbal blends, our
+            product range helps manufacturers build dependable formulations for
+            domestic and export markets.
           </p>
         </div>
         {isAll ? (

@@ -54,19 +54,16 @@ const TeamDetailsPrimary = () => {
           <div className="col-lg-8">
             <div className="ltn__team-details-member-info-details">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
+                Our team brings practical experience in ingredient sourcing,
+                quality handling, customer support, and export coordination for
+                Orbitto&rsquo;s natural food product range.
               </p>
               <div className="row">
                 <div className="col-lg-6">
                   <div className="ltn__team-details-member-about">
                     <ul>
                       <li>
-                        <strong>Positions:</strong> Senior Technician
+                        <strong>Positions:</strong> Ingredient Specialist
                       </li>
                       <li>
                         <strong>Experience:</strong> 10+ Years
@@ -75,7 +72,7 @@ const TeamDetailsPrimary = () => {
                         <strong>Location:</strong> NH-27, Wankaner, Morbi, Gujarat-363621
                       </li>
                       <li>
-                        <strong>Practice Area:</strong> Car Repair
+                        <strong>Practice Area:</strong> Food Ingredients
                       </li>
                     </ul>
                   </div>
@@ -98,23 +95,11 @@ const TeamDetailsPrimary = () => {
               </div>
               <hr />
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia consequu
-                ntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit, sed quia non numquam eius modi
-                tempora incidunt ut labore et dolore magnam aliquam quaerat
-                voluptatem.
+                From first inquiry to dispatch, the team helps customers choose
+                suitable fruit powders, vegetable powders, spices, honey, and
+                herbal ingredients for their applications. The focus is on clear
+                communication, consistent product information, and dependable
+                order handling.
               </p>
 
               <div className="row ltn__custom-gutter mt-50 mb-20">
@@ -126,23 +111,9 @@ const TeamDetailsPrimary = () => {
               </div>
 
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia consequu
-                ntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                consectetur, adipisci velit, sed quia non numquam eius modi
-                tempora incidunt ut labore et dolore magnam aliquam quaerat
-                voluptatem.
+                Orbitto&rsquo;s people work closely with buyers, traders, and
+                manufacturers to support repeatable ingredient supply for food,
+                beverage, wellness, and export markets.
               </p>
             </div>
           </div>

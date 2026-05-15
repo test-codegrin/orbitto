@@ -26,27 +26,16 @@ const PortfolioDetailsPrimary = () => {
               </div>
               <p>
                 {" "}
-                <span className="ltn__first-letter">L</span>orem ipsum dolor sit
-                amet, consectetur adipisicing elit, sed do eiusmod tempor incidi
-                dunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exerc itation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                <span className="ltn__first-letter">O</span>ur portfolio
+                highlights how Orbitto ingredients support food, beverage, and
+                wellness applications with dependable taste, color, and
+                formulation performance.
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione.{" "}
+                We work with fruit powders, vegetable powders, spices, honey,
+                and herbal ingredients that can be used across instant mixes,
+                bakery items, beverages, confectionery, nutraceuticals, and
+                other value-added products.{" "}
               </p>
               <div className="row">
                 {testimonials?.map((testimonial, idx) => (
@@ -57,19 +46,9 @@ const PortfolioDetailsPrimary = () => {
               </div>
 
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione.{" "}
+                Each product is chosen with practical use in mind, helping
+                manufacturers maintain flavor impact, visual appeal, and clean
+                ingredient positioning across production batches.{" "}
               </p>
               <div className="row">
                 <div className="col-lg-6">
@@ -79,7 +58,7 @@ const PortfolioDetailsPrimary = () => {
                     width={600}
                     height={600}
                   />
-                  <label>Image caption here.</label>
+                  <label>Ingredient preparation and product application.</label>
                 </div>
                 <div className="col-lg-6">
                   <Image
@@ -91,27 +70,14 @@ const PortfolioDetailsPrimary = () => {
                 </div>
               </div>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia
-                consequuntur magni dolores eos qui ratione.{" "}
+                Our team supports customers with product selection, packaging
+                options, and dispatch coordination so every order is aligned
+                with its intended market and application.{" "}
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                Whether you need powders for beverages, seasonings for savory
+                foods, honey-based ingredients, or herbal formulations, Orbitto
+                helps deliver consistent ingredients for repeatable results.
               </p>
             </div>
           </div>
