@@ -8,36 +8,35 @@ const applicationSections = [
     items: [
       {
         title: "Beverages",
-        image: "/img/banner/15.png",
-        imagePosition: "72% center",
+        image: "/img/applications/Beverages.png",
       },
       {
         title: "Smoothies & Shakes",
-        image: "/img/applications/smoothies-shakes.jpg",
+        image: "/img/applications/Beverages.png",
       },
       {
         title: "Bakery Items",
-        image: "/img/applications/desserts.jpg",
+        image: "/img/applications/Bakery.jpg",
       },
       {
         title: "Desserts",
-        image: "/img/applications/bakery-items.jpg",
+        image: "/img/applications/Desserts.jpg",
       },
       {
         title: "Ice Creams",
-        image: "/img/applications/ice-creams.jpg",
+        image: "/img/applications/IceCreams.jpg",
       },
       {
         title: "Confectionery",
-        image: "/img/applications/confectionery.jpg",
+        image: "/img/applications/Confectionery.jpg",
       },
       {
         title: "Snacks",
-        image: "/img/applications/snacks.jpg",
+        image: "/img/applications/SavorySnacks.jpg",
       },
       {
         title: "Breakfast Items",
-        image: "/img/applications/breakfast-items.jpg",
+        image: "/img/applications/Breakfast.jpg",
       },
     ],
   },
@@ -47,35 +46,35 @@ const applicationSections = [
     items: [
       {
         title: "Soups",
-        image: "/img/slider/main/vegetable_powder.png",
+        image: "/img/applications/Soups.jpg",
       },
       {
         title: "Sauces",
-        image: "/img/service/1.jpg",
+        image: "/img/applications/Sauces.jpg",
       },
       {
         title: "Seasonings",
-        image: "/img/applications/snacks.jpg",
+        image: "/img/applications/Seasonings.jpg",
       },
       {
         title: "Ready Meals",
-        image: "/img/img-slide/11.jpg",
+        image: "/img/applications/Meals.jpg",
       },
       {
         title: "Instant Mixes",
-        image: "/img/product/Vegetable/Tomato.png",
+        image: "/img/applications/InstantMixes.jpg",
       },
       {
         title: "Noodles & Pasta",
-        image: "/img/applications/bakery-items.jpg",
+        image: "/img/applications/NoodlesPasta.jpg",
       },
       {
         title: "Savory Snacks",
-        image: "/img/applications/snacks.jpg",
+        image: "/img/applications/SavorySnacks.jpg",
       },
       {
         title: "Health Foods",
-        image: "/img/slider/main/brocili.png",
+        image: "/img/applications/HealthFoods.jpg",
       },
     ],
   },
@@ -85,35 +84,35 @@ const applicationSections = [
     items: [
       {
         title: "Beverages",
-        image: "/img/slider/main/honey.png",
+        image: "/img/applications/HoneyBeverages.jpg",
       },
       {
         title: "Bakery Items",
-        image: "/img/applications/desserts.jpg",
+        image: "/img/applications/HoneyBakery.jpg",
       },
       {
         title: "Confectionery",
-        image: "/img/applications/confectionery.jpg",
+        image: "/img/applications/HoneyConfectionery.jpg",
       },
       {
         title: "Breakfast Items",
-        image: "/img/applications/breakfast-items.jpg",
+        image: "/img/applications/HoneyBreakfast.jpg",
       },
       {
         title: "Dairy Desserts",
-        image: "/img/applications/ice-creams.jpg",
+        image: "/img/applications/HoneyDairyDesserts.jpg",
       },
       {
         title: "Sauces & Dressings",
-        image: "/img/banner/11.png",
+        image: "/img/applications/HoneySaucesDressings.jpg",
       },
       {
         title: "Nutraceuticals",
-        image: "/img/slider/main/HoneyBowl.png",
+        image: "/img/applications/HoneyNutraceuticals.jpg",
       },
       {
         title: "Ready Mixes",
-        image: "/img/banner/14.png",
+        image: "/img/applications/HoneyReadyMixes.jpg",
       },
     ],
   },
@@ -123,35 +122,35 @@ const applicationSections = [
     items: [
       {
         title: "Spice Blends",
-        image: "/img/slider/main/spices.png",
+        image: "/img/applications/SpiceBlends.jpg",
       },
       {
         title: "Seasonings",
-        image: "/img/slider/main/Red chilli.png",
+        image: "/img/applications/SpiceSeasonings.jpg",
       },
       {
         title: "Savory Snacks",
-        image: "/img/applications/snacks.jpg",
+        image: "/img/applications/SpiceSavorySnacks.jpg",
       },
       {
         title: "Sauces",
-        image: "/img/product/Spices/Redchilli.png",
+        image: "/img/applications/SpiceSauces.jpg",
       },
       {
         title: "Marinades",
-        image: "/img/product/Spices/Garammasala.png",
+        image: "/img/applications/SpiceMarinades.jpg",
       },
       {
         title: "Pickles",
-        image: "/img/product/Spices/Turmeric.png",
+        image: "/img/applications/SpicePickles.jpg",
       },
       {
         title: "Instant Noodles",
-        image: "/img/applications/bakery-items.jpg",
+        image: "/img/applications/SpiceInstantNoodles.jpg",
       },
       {
         title: "Ready Meals",
-        image: "/img/img-slide/11.jpg",
+        image: "/img/applications/SpiceReadyMeals.jpg",
       },
     ],
   },
@@ -161,35 +160,35 @@ const applicationSections = [
     items: [
       {
         title: "Herbal Tea",
-        image: "/img/slider/main/natural_herbs.png",
+        image: "/img/applications/HerbalTea.jpg",
       },
       {
         title: "Functional Drinks",
-        image: "/img/banner/13.png",
+        image: "/img/applications/HerbalFunctionalDrinks.jpg",
       },
       {
         title: "Supplements",
-        image: "/img/product/Herbs/Amla.png",
+        image: "/img/applications/HerbalSupplements.jpg",
       },
       {
         title: "Wellness Mixes",
-        image: "/img/slider/main/aloe vera.png",
+        image: "/img/applications/HerbalWellnessMixes.jpg",
       },
       {
         title: "Health Foods",
-        image: "/img/applications/breakfast-items.jpg",
+        image: "/img/applications/HerbalHealthFoods.jpg",
       },
       {
         title: "Dairy Products",
-        image: "/img/applications/ice-creams.jpg",
+        image: "/img/applications/HerbalDairyProducts.jpg",
       },
       {
         title: "Bakery Items",
-        image: "/img/applications/desserts.jpg",
+        image: "/img/applications/HerbalBakeryItems.jpg",
       },
       {
         title: "Nutraceuticals",
-        image: "/img/product/Herbs/Moringaleaf.png",
+        image: "/img/applications/HerbalNutraceuticals.jpg",
       },
     ],
   },
