@@ -1,5 +1,4 @@
 "use client";
-import BrandSocialLinks from "@/components/shared/socials/BrandSocialLinks";
 import Image from "next/image";
 const logoImage = "/img/logo.png";
 const logoImage2 = "/img/logo-2.png";
@@ -64,9 +63,6 @@ const FooterAbout2 = () => {
               </div>
             </li>
           </ul>
-        </div>
-        <div className="ltn__social-media mt-20">
-          <BrandSocialLinks className="brand-social-links--footer" />
         </div>
       </div>
     </div>

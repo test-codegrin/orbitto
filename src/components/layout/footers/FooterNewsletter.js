@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BrandSocialLinks from "@/components/shared/socials/BrandSocialLinks";
 
 const FooterNewsletter = () => {
   return (
@@ -15,6 +15,9 @@ const FooterNewsletter = () => {
               </button>
             </div>
           </form>
+        </div>
+        <div className="footer-newsletter-socials">
+          <BrandSocialLinks className="brand-social-links--footer" />
         </div>
        
       </div>

@@ -19,12 +19,12 @@ const Features4 = ({ type, mb }) => {
                         src={"/img/icons/icon-img/11.png"}
                         width={51}
                         height={50}
-                        alt="100% Organic"
+                        alt="Organic"
                         priority={false}
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>100% Organic & Pure</h4>
+                      <h4>Organic & Pure</h4>
                       <p>
                         Every product is naturally grown, free from pesticides,
                         preservatives, and artificial additives

@@ -8,7 +8,7 @@ const HotDeal3 = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-5">
-            <Image src="/img/banner/11.png" height={1000} width={500} alt="#" />
+            <Image src="/img/banner/HoneyJar.png" height={1000} width={500} alt="#" />
           </div>
           <div className="col-lg-7">
             <div className="call-to-action-inner call-to-action-inner-4 text-color-white--- text-center---">

@@ -39,6 +39,8 @@ const BrandSocialLinks = ({ className = "" }) => {
             title={name}
             aria-label={name}
             className="brand-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <Image src={icon} alt="" width={36} height={36} />
           </Link>

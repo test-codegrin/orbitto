@@ -94,7 +94,7 @@ const AboutPageSequence = () => {
         <div className="about-sequence__container about-intro__grid">
           <div className="about-intro__image">
             <Image
-              src="/img/hero/about.png"
+              src="/img/about/VegetablePowder.png"
               alt="Orbitto premium fruit powder product"
               width={640}
               height={430}

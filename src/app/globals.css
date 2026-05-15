@@ -15590,6 +15590,10 @@ blockquote::before {
   height: 100%;
 }
 
+.footer-newsletter-socials {
+  margin-top: 24px;
+}
+
 /* ----------------------------------------------------
     Footer Timeline Widget
 ---------------------------------------------------- */
