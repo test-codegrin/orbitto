@@ -1,6 +1,22 @@
+"use client";
+
+import makePath from "@/libs/makePath";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const HeaderSearch = () => {
+  const router = useRouter();
+
+  const handleProductSearch = (event) => {
+    event.preventDefault();
+    const searchValue = event.currentTarget.search.value.trim();
+
+    if (!searchValue) return;
+
+    router.push(`/products?search=${makePath(searchValue)}`);
+    event.currentTarget.reset();
+  };
+
   return (
     <div className="col header-contact-serarch-column d-none d-lg-block">
       <div className="header-contact-search">
@@ -18,7 +34,7 @@ const HeaderSearch = () => {
         </div>
         {/* <!-- header-search-2 --> */}
         <div className="header-search-2">
-          <form id="#123" method="get" action="#">
+          <form onSubmit={handleProductSearch}>
             <input type="text" name="search" placeholder="Search here..." />
             <button type="submit">
               <span>

@@ -1,12 +1,19 @@
 "use client";
+import makePath from "@/libs/makePath";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const MobileMenu = () => {
+  const router = useRouter();
+
   const closeMobileMenu = (event) => {
     event.preventDefault();
+    closeMobileMenuPanel();
+  };
 
+  const closeMobileMenuPanel = () => {
     document.body.classList.remove("ltn__utilize-open");
     document
       .getElementById("ltn__utilize-mobile-menu")
@@ -20,6 +27,17 @@ const MobileMenu = () => {
     if (overlay) {
       overlay.style.display = "none";
     }
+  };
+
+  const handleProductSearch = (event) => {
+    event.preventDefault();
+    const searchValue = event.currentTarget.search.value.trim();
+
+    if (!searchValue) return;
+
+    closeMobileMenuPanel();
+    router.push(`/products?search=${makePath(searchValue)}`);
+    event.currentTarget.reset();
   };
 
   const navItems = [
@@ -66,9 +84,9 @@ const MobileMenu = () => {
           </button>
         </div>
         <div className="ltn__utilize-menu-search-form">
-          <form action="#">
-            <input type="text" placeholder="Search..." />
-            <button>
+          <form onSubmit={handleProductSearch}>
+            <input type="text" name="search" placeholder="Search products..." />
+            <button type="submit">
               <i className="fas fa-search"></i>
             </button>
           </form>

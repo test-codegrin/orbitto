@@ -13,8 +13,6 @@ import { isProductType, normalizeProductType } from "@/libs/productType";
 import { useCommonContext } from "@/providers/CommonContext";
 
 const powderNoteCategories = new Set([
-  "fruit",
-  "vegetable",
   "fruitpowder",
   "vegetablepowder",
   "spices",
