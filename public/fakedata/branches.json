@@ -1,112 +1,14 @@
 [
   {
-    "province": "Alabama",
+    "province": "Gujarat",
     "locations": [
       {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
+        "provinceDetails": "Orbitto International",
+        "address": "SURVEY NO-144/P, PLOT NO-C 288, SHOP NO-104, FIRST FLOOR, ROYAL SHOPPING CENTER, RAFALESHWAR INDUSTRIAL ESTATE, 8-A NATIONAL HIGHWAY, AT JAMBUDIYA, MORBI, GUJARAT,",
+        "proviceCode": "363642",
+        "contact": "+91 99047 27348",
         "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      }
-    ]
-  },
-  {
-    "province": "Boston",
-    "locations": [
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      }
-    ]
-  },
-  {
-    "province": "New York",
-    "locations": [
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
-      },
-      {
-        "proviceDetails": "Boston, New York",
-        "address": "5816 S. Coulter Street Amarillo,",
-        "proviceCode": "TX 79119",
-        "contact": "0123456789",
-        "path": "/contact",
-        "website": "#"
+        "website": "https://maps.app.goo.gl/3HTCLWjBhSfM1aNf9?g_st=aw"
       }
     ]
   }

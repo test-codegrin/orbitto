@@ -1,30 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
+import { socialUrls } from "@/libs/contactInfo";
 
 const socialLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com",
+    href: socialUrls.facebook,
     icon: "/img/social/facebook.svg",
   },
   {
     name: "X",
-    href: "https://x.com",
+    href: socialUrls.x,
     icon: "/img/social/x.svg",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com",
+    href: socialUrls.instagram,
     icon: "/img/social/instagram.svg",
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com",
+    href: socialUrls.linkedin,
     icon: "/img/social/linkedin.svg",
   },
   {
     name: "YouTube",
-    href: "https://www.youtube.com",
+    href: socialUrls.youtube,
     icon: "/img/social/youtube.svg",
   },
 ];

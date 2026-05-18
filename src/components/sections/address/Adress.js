@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { locationUrl, officeAddress2 } from "@/libs/contactInfo";
 
 const Adress = () => {
   return (
@@ -49,7 +51,13 @@ const Adress = () => {
               </div>
               <h3>Office Address</h3>
               <p>
-                NH-27, Wankaner, Morbi, Gujarat-363621
+                <Link
+                  href={locationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {officeAddress2}
+                </Link>
               </p>
             </div>
           </div>

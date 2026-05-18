@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { socialUrls } from "@/libs/contactInfo";
 
 const TeamCard = ({ teamSingle }) => {
   const { id, name, img, desig, duration } = teamSingle;
@@ -19,17 +20,29 @@ const TeamCard = ({ teamSingle }) => {
         <div className="ltn__social-media">
           <ul>
             <li>
-              <a href="https://www.facebook.com">
+              <a
+                href={socialUrls.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-facebook-f"></i>
               </a>
             </li>
             <li>
-              <a href="https://x.com">
+              <a
+                href={socialUrls.x}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com">
+              <a
+                href={socialUrls.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-linkedin"></i>
               </a>
             </li>

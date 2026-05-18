@@ -4,6 +4,7 @@ const logoImage = "/img/logo.png";
 const logoImage2 = "/img/logo-2.png";
 import Link from "next/link";
 import { useFooterContex } from "@/providers/FooterContext";
+import { locationUrl, officeAddress } from "@/libs/contactInfo";
 
 const FooterAbout2 = () => {
   const { footerStyle, footerBg } = useFooterContex();
@@ -34,9 +35,13 @@ const FooterAbout2 = () => {
               </div>
               <div className="footer-address-info">
                 <p>
-                  SURVEY NO-144/P,PLOT NO-C 288,SHOP NO-104,FIRST FLOOR,ROYAL
-                  SHOPPING CENTER, RAFALESHWAR INDUSTRIAL ESTATE,8-A NATIONAL
-                  HIGHWAY,ATJAMBUDIYA, MORBI, MORBI, GUJARAT, 363642
+                  <Link
+                    href={locationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {officeAddress}
+                  </Link>
                 </p>
               </div>
             </li>

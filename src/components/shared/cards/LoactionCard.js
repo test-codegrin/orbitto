@@ -2,11 +2,20 @@ import Link from "next/link";
 import React from "react";
 
 const LoactionCard = ({ location }) => {
-  const { provinceDetails, address, proviceCode, path, website, contact } =
-    location;
+  const {
+    provinceDetails,
+    proviceDetails,
+    address,
+    proviceCode,
+    path,
+    website,
+    contact,
+  } = location;
   return (
     <div className="ltn__map-item">
-      <h3 className="ltn__location-name">{provinceDetails}</h3>
+      <h3 className="ltn__location-name">
+        {provinceDetails || proviceDetails}
+      </h3>
       <h5 className="ltn__location-single-info">
         <i className="fas fa-map-marked-alt"></i>
         {address} <br /> {proviceCode}
@@ -27,8 +36,10 @@ const LoactionCard = ({ location }) => {
         <Link
           href={website}
           className="theme-btn-1 btn btn-effect-1 text-uppercase"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <i className="fas fa-globe"></i> View Website
+          <i className="fas fa-globe"></i> View Location
         </Link>
       </div>
     </div>

@@ -1,5 +1,6 @@
 "use client";
 import BrandSocialLinks from "@/components/shared/socials/BrandSocialLinks";
+import { locationUrl, officeAddress2 } from "@/libs/contactInfo";
 import { useHeaderContex } from "@/providers/HeaderContex";
 import Link from "next/link";
 
@@ -21,8 +22,12 @@ const HeaderTop = () => {
             <div className="ltn__top-bar-menu">
               <ul className="top-header-contact-list">
                 <li>
-                  <Link href="/locations">
-                    <i className="icon-placeholder"></i> NH-27, Wankaner, Morbi, Gujarat-363621
+                  <Link
+                    href={locationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="icon-placeholder"></i> {officeAddress2}
                   </Link>
                 </li>
                 <li>

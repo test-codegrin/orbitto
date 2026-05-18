@@ -1,3 +1,5 @@
+import { mapEmbedUrl } from "@/libs/contactInfo";
+
 const portfolioImage1 = "/img/gallery/1.jpg";
 const portfolioImage2 = "/img/gallery/2.jpg";
 const portfolioImage3 = "/img/gallery/3.jpg";
@@ -82,7 +84,7 @@ const getAllPortfolios = () => {
     {
       id: 6,
       title: "Google Map",
-      path: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1575.9076122223137!2d144.96590401578402!3d-37.81779982944919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b6af832249%3A0xe39e415e49a7c44e!2sFlinders%20Street%20Railway%20Station!5e0!3m2!1sen!2sbd!4v1598113544515!5m2!1sen!2sbd",
+      path: mapEmbedUrl,
       desc: "Web Design & Development, Branding",
       icon: <i className="fas fa-map-marker-alt"></i>,
       img: portfolioImage6,
