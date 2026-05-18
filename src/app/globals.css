@@ -5045,6 +5045,28 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   margin-bottom: 4px;
 }
 
+.contact-phone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-phone-list span {
+  display: block;
+}
+
+.contact-phone-list strong {
+  font-weight: 700;
+}
+
+.contact-phone-list a {
+  color: inherit;
+}
+
+.contact-phone-list a:hover {
+  color: var(--ltn__secondary-color);
+}
+
 .top-header-socials {
   display: flex;
   justify-content: flex-end;
