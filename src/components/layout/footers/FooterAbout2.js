@@ -4,7 +4,11 @@ const logoImage = "/img/logo.png";
 const logoImage2 = "/img/logo-2.png";
 import Link from "next/link";
 import { useFooterContex } from "@/providers/FooterContext";
-import { locationUrl, officeAddress } from "@/libs/contactInfo";
+import {
+  locationUrl,
+  officeAddress,
+  officeAddressTitle,
+} from "@/libs/contactInfo";
 
 const FooterAbout2 = () => {
   const { footerStyle, footerBg } = useFooterContex();
@@ -40,7 +44,11 @@ const FooterAbout2 = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {officeAddress}
+                    <strong className="footer-address-title">
+                      {officeAddressTitle} :
+                    </strong>
+                    <br />
+                    <span>{officeAddress}</span>
                   </Link>
                 </p>
               </div>

@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { locationUrl, officeAddress2 } from "@/libs/contactInfo";
+import {
+  locationUrl,
+  manufacturingAddressTitle,
+  officeAddress2,
+} from "@/libs/contactInfo";
 
 const Adress = () => {
   return (
@@ -56,7 +60,11 @@ const Adress = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {officeAddress2}
+                  <strong className="contact-address-title">
+                    {manufacturingAddressTitle} :
+                  </strong>
+                  <br />
+                  <span>{officeAddress2}</span>
                 </Link>
               </p>
             </div>

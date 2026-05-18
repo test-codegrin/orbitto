@@ -39,13 +39,13 @@ const companyOwners = [
     name: "YASH PATEL",
     role: "MARKETING MANAGER",
     phone: "+91 99047 27348",
-    image: "/img/team/1.jpg",
+    image: "/img/OwnerProfile/YashPatel.png",
   },
   {
     name: "PARTH PATEL",
     role: "MARKETING MANAGER & MANAGEMENT MANAGER",
     phone: "+91 97266 87849",
-    image: "/img/team/2.jpg",
+    image: "/img/OwnerProfile/ParthPatel.png",
   },
   {
     name: "DHRUV PATEL",
