@@ -20,7 +20,7 @@ const applicationSections = [
       },
       {
         title: "Desserts",
-        image: "/img/applications/Desserts.jpg",
+        image: "/img/applications/desserts.jpg",
       },
       {
         title: "Ice Creams",
@@ -28,7 +28,7 @@ const applicationSections = [
       },
       {
         title: "Confectionery",
-        image: "/img/applications/Confectionery.jpg",
+        image: "/img/applications/confectionery.jpg",
       },
       {
         title: "Snacks",

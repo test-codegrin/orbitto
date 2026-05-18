@@ -23,11 +23,11 @@ const socialLinks = [
     href: socialUrls.linkedin,
     icon: "/img/social/linkedin.svg",
   },
-  {
-    name: "YouTube",
-    href: socialUrls.youtube,
-    icon: "/img/social/youtube.svg",
-  },
+  // {
+  //   name: "YouTube",
+  //   href: socialUrls.youtube,
+  //   icon: "/img/social/youtube.svg",
+  // },
 ];
 
 const BrandSocialLinks = ({ className = "" }) => {
