@@ -1,6 +1,6 @@
 "use client";
 import makePath from "@/libs/makePath";
-import { socialUrls } from "@/libs/contactInfo";
+import { locationUrl, officeAddress3, socialUrls } from "@/libs/contactInfo";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -129,8 +129,27 @@ const MobileMenu = () => {
           </ul>
         </div>
 
+        <div className="mobile-sidebar-contact">
+          <Link
+            href={locationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mobile-sidebar-contact-link"
+          >
+            <i className="icon-placeholder"></i>
+            <span>{officeAddress3}</span>
+          </Link>
+          <Link
+            href="mailto:orbittointernational@gmail.com"
+            className="mobile-sidebar-contact-link"
+          >
+            <i className="icon-mail"></i>
+            <span>orbittointernational@gmail.com</span>
+          </Link>
+        </div>
+
         <div className="ltn__social-media-2 mt-5">
-          <ul>
+          <ul className="mobile-sidebar-social-links">
             <li>
               <Link
                 href={socialUrls.facebook}
@@ -138,7 +157,12 @@ const MobileMenu = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-facebook-f"></i>
+                <Image
+                  src="/img/social/facebook.svg"
+                  alt=""
+                  width={22}
+                  height={22}
+                />
               </Link>
             </li>
             <li>
@@ -148,7 +172,7 @@ const MobileMenu = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-twitter"></i>
+                <Image src="/img/social/x.svg" alt="" width={22} height={22} />
               </Link>
             </li>
             <li>
@@ -158,7 +182,12 @@ const MobileMenu = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-linkedin"></i>
+                <Image
+                  src="/img/social/linkedin.svg"
+                  alt=""
+                  width={22}
+                  height={22}
+                />
               </Link>
             </li>
             <li>
@@ -168,7 +197,12 @@ const MobileMenu = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-instagram"></i>
+                <Image
+                  src="/img/social/instagram.svg"
+                  alt=""
+                  width={22}
+                  height={22}
+                />
               </Link>
             </li>
           </ul>

@@ -51,7 +51,7 @@ const companyOwners = [
     name: "DHRUV PATEL",
     role: "PURCHASE & PRODUCTION MANAGER & FOUNDER",
     phone: "+91 77790 69188",
-    image: "/img/team/3.jpg",
+    image: null,
   },
 ];
 
@@ -289,13 +289,20 @@ const AboutPageSequence = () => {
             {companyOwners.map(({ name, role, phone, image }) => (
               <article className="about-leadership__card" key={phone}>
                 <div className="about-leadership__avatar">
-                  <Image
-                    src={image}
-                    alt={name}
-                    width={168}
-                    height={168}
-                    sizes="84px"
-                  />
+                  {image ? (
+                    <Image
+                      src={image}
+                      alt={name}
+                      width={168}
+                      height={168}
+                      sizes="84px"
+                    />
+                  ) : (
+                    <i
+                      className="fas fa-user about-leadership__placeholder-icon"
+                      aria-hidden="true"
+                    ></i>
+                  )}
                 </div>
                 <div className="about-leadership__body">
                   <span className="about-leadership__role">{role}</span>

@@ -27,6 +27,7 @@ const SLIDES = [
     id: 0,
     line1: "Fruit",
     line2: "Powder",
+    categoryHref: "/products?category=fruit_powder",
     subtitle: "From fruit to fine powder perfection",
     bgText: "FRUIT POWDER",
     watermarkGradient:
@@ -207,6 +208,7 @@ const SLIDES = [
     id: 1,
     line1: "Vegetable",
     line2: "Powder",
+    categoryHref: "/products?category=vegetable_powder",
     subtitle: "From farm to fine powder perfection",
     bgText: "VEGETABLE POWDER",
     watermarkGradient:
@@ -366,6 +368,7 @@ const SLIDES = [
     id: 2,
     line1: "Pure",
     line2: "Honey",
+    categoryHref: "/products?category=honey",
     subtitle: "Nature's golden sweetness refined",
     bgText: "PURE HONEY",
     watermarkGradient:
@@ -487,6 +490,7 @@ const SLIDES = [
     id: 3,
     line1: "",
     line2: "Premium Spices",
+    categoryHref: "/products?category=spices",
     subtitle: "Handpicked spices bursting with bold flavor",
     bgText: "PREMIUM SPICES",
     watermarkGradient:
@@ -620,6 +624,7 @@ const SLIDES = [
     id: 4,
     line1: "Herbal",
     line2: "Powder",
+    categoryHref: "/products?category=herbal_powder",
     subtitle: "Pure herbs transformed into healing powder",
     bgText: "HERBAL POWDER",
     watermarkGradient:
@@ -1623,7 +1628,7 @@ export default function Hero1() {
                 </p>
                 <div className="btn-wrapper animated">
                   <Link
-                    href="/products/acaiberry-powder"
+                    href={slide.categoryHref}
                     className="theme-btn-1 btn btn-effect-1 text-uppercase"
                     style={{ backgroundColor: slide.accent }}
                   >
@@ -1775,7 +1780,7 @@ export default function Hero1() {
                 </p>
                 <div className="btn-wrapper animated">
                   <Link
-                    href="/products/acaiberry-powder"
+                    href={slide.categoryHref}
                     className="theme-btn-1 btn btn-effect-1 text-uppercase"
                     style={{ backgroundColor: slide.accent }}
                   >
