@@ -77,7 +77,14 @@ const MobileMenu = () => {
         <div className="ltn__utilize-menu-head">
           <div className="site-logo">
             <Link href="/">
-              <Image src="/img/logo.png" alt="Logo" width={154} height={42} />
+              <Image
+                className="orbot-logo"
+                src="/img/logo.png"
+                alt="Logo"
+                width={155}
+                height={89}
+                priority
+              />
             </Link>
           </div>
           <button className="ltn__utilize-close" onClick={closeMobileMenu}>

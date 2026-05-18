@@ -5183,11 +5183,13 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   white-space: nowrap;
 }
 .site-logo a {
+  align-items: center;
   color: var(--ltn__primary-color);
+  display: inline-flex;
   font-size: 30px;
   font-weight: 600;
+  height: 100%;
   letter-spacing: 1px;
-  display: contents;
 }
 .site-logo i {
   color: var(--ltn__secondary-color);
@@ -5202,7 +5204,11 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   padding-bottom: 10px;
 }
 .site-logo img {
-  height: 58px !important;
+  display: block;
+  height: auto;
+  max-height: 58px;
+  max-width: 155px;
+  object-fit: contain;
   width: auto;
 }
 
@@ -6930,7 +6936,8 @@ main > .page-breadcrumb-area + [class*="pt-"] {
     min-width: 100px;
   }
   .site-logo img {
-    height: 48px !important;
+    height: auto;
+    max-height: 48px;
   }
   .ltn__header-5 .top-bar-right,
   .ltn__header-4 .top-bar-right {

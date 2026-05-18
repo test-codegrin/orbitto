@@ -21,13 +21,15 @@ const Logo = ({ sticky }) => {
       >
         <div className="site-logo">
           <Link href="/">
-            <Image className="orbot-logo"
+            <Image
+              className="orbot-logo"
               src={
                 navBg === "secondary" && sticky ? logoImage2 : logoImage1
               }
               alt="Logo"
-              width={154}
-              height={52}
+              width={155}
+              height={89}
+              priority
             />
           </Link>
         </div>
