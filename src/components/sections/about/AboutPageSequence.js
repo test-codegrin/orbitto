@@ -37,19 +37,19 @@ const missionVision = [
 const companyOwners = [
   {
     name: "YASH PATEL",
-    role: "MARKETING MANAGER",
+    role: "MARKETING DIRECTOR",
     phone: "+91 99047 27348",
     image: "/img/OwnerProfile/YashPatel.png",
   },
   {
     name: "PARTH PATEL",
-    role: "MARKETING MANAGER & MANAGEMENT MANAGER",
+    role: "MARKETING DIRECTOR & MANAGEMENT DIRECTOR",
     phone: "+91 97266 87849",
     image: "/img/OwnerProfile/ParthPatel.png",
   },
   {
     name: "DHRUV PATEL",
-    role: "PURCHASE & PRODUCTION MANAGER",
+    role: "PURCHASE & PRODUCTION DIRECTOR",
     phone: "+91 77790 69188",
     image: "/img/team/3.jpg",
   },
