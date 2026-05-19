@@ -3838,7 +3838,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 .ltn__breadcrumb-list ul li:after {
   position: absolute;
   content: "\f054";
-  font-family: "Font Awesome\ 5 Free";
+  /* font-family: "Font Awesome\ 5 Free"; */
   font-weight: 900;
   font-size: 10px;
   right: -20px;
@@ -4193,7 +4193,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   text-transform: uppercase;
   background-color: var(--section-bg-1);
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
 }
 .ltn__tagcloud-widget ul li a:hover {
   background-color: var(--ltn__secondary-color);
@@ -5309,7 +5309,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 .header-feature-item p {
   margin-bottom: 0;
   font-size: 16px;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   font-weight: 700;
   line-height: 1.2;
 }
@@ -5367,7 +5367,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   white-space: nowrap;
   color: var(--ltn__heading-color);
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
 }
 
 .ltn__main-menu li:hover > a {
@@ -5733,7 +5733,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  font-family: "Font Awesome\ 5 Free";
+  /* font-family: "Font Awesome\ 5 Free"; */
   font-weight: 900;
 }
 
@@ -6153,7 +6153,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  font-family: "icomoon";
+  /* font-family: "icomoon"; */
   color: var(--ltn__secondary-color);
 }
 
@@ -7211,7 +7211,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 }
 .ltn__category-menu-title h2::before,
 .ltn__category-menu-title h2::after {
-  font-family: "Font Awesome\ 5 Free";
+  /* font-family: "Font Awesome\ 5 Free"; */
   font-weight: 900;
   display: block;
   font-size: 14px;
@@ -9350,7 +9350,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 .ltn__product-category-select label {
   color: var(--ltn__heading-color);
   display: block;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   font-size: 14px;
   font-weight: 700;
   line-height: 1;
@@ -10738,7 +10738,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 .ltn__feature-item-5 .ltn__feature-icon span::before {
   position: absolute;
   content: "\e942";
-  font-family: "icomoon";
+  /* font-family: "icomoon"; */
   right: -10px;
   top: -10px;
   height: 35px;
@@ -11140,7 +11140,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 }
 .ltn__blog-meta li {
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   display: inline-block;
   margin-right: 25px;
   position: relative;
@@ -11320,7 +11320,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 .ltn__blog-item-4 .ltn__blog-btn {
   font-size: 14px;
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   color: var(--ltn__secondary-color);
   text-transform: uppercase;
 }
@@ -11425,7 +11425,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 .ltn__blog-item-5 .ltn__blog-btn {
   font-size: 14px;
   font-weight: 700;
-  font-family: var(--ltn__body-font);
+  /* font-family: var(--ltn__body-font); */
 }
 
 /* blog-item-quote */
@@ -11457,7 +11457,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 .ltn__blog-item-quote blockquote::before {
   position: absolute;
   content: "\e94d";
-  font-family: "icomoon";
+  /* font-family: "icomoon"; */
   font-size: 30px;
   left: 0;
   right: 0;
@@ -11738,7 +11738,7 @@ blockquote::before {
   display: block;
   font-size: 13px;
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   color: var(--ltn__secondary-color);
 }
 
@@ -11838,7 +11838,7 @@ blockquote::before {
 .ltn__prev-next-btn::before {
   position: absolute;
   content: "\e958";
-  font-family: "icomoon";
+  /* font-family: "icomoon"; */
   left: 50%;
   top: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
@@ -11982,7 +11982,7 @@ blockquote::before {
   padding: 18px 0;
   margin: 0;
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
 }
 .ltn__service-list-menu ul li:last-child {
   border-bottom: 2px solid #f6f6f6;
@@ -11995,7 +11995,7 @@ blockquote::before {
   float: right;
   text-transform: capitalize;
   font-weight: 400;
-  font-family: var(--ltn__body-font);
+  /* font-family: var(--ltn__body-font); */
 }
 
 @media (max-width: 767px) {
@@ -12618,7 +12618,7 @@ blockquote::before {
   font-size: 30px;
 }
 .ltn__counterup-item-3 h6 {
-  font-family: var(--ltn__body-font);
+  /* font-family: var(--ltn__body-font); */
 }
 
 @media (max-width: 1199px) {
@@ -13082,7 +13082,7 @@ blockquote::before {
 .ltn__faq-inner .card .ltn__card-title::before {
   position: absolute;
   content: "\e903";
-  font-family: "icomoon";
+  /* font-family: "icomoon"; */
   right: 15px;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -13911,7 +13911,7 @@ blockquote::before {
 .list-item-with-icon ul li::before {
   position: absolute;
   content: "\f00c";
-  font-family: "Font Awesome\ 5 Free";
+  /* font-family: "Font Awesome\ 5 Free"; */
   font-weight: 900;
   left: 0;
   top: -5px;
@@ -14443,7 +14443,7 @@ blockquote::before {
   min-width: 200px;
   font-size: 16px;
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
 }
 .ltn__service-form-box .nice-select:after {
   right: 20px;
@@ -14460,7 +14460,7 @@ blockquote::before {
   padding: 0 20px;
   border: 1px solid;
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   text-transform: uppercase;
 }
 .ltn__service-form-box .btn-wrapper {
@@ -14643,7 +14643,7 @@ blockquote::before {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  font-family: "Font Awesome\ 5 Free";
+  /* font-family: "Font Awesome\ 5 Free"; */
   font-weight: 900;
   color: var(--ltn__secondary-color);
 }
@@ -14699,7 +14699,7 @@ blockquote::before {
   min-width: 200px;
   font-size: 16px;
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   width: 100%;
 }
 .ltn__car-dealer-form-box .nice-select .list {
@@ -14713,7 +14713,7 @@ blockquote::before {
 
 .ltn__car-dealer-form-box .ltn__custom-icon .nice-select::before {
   content: "\f063";
-  font-family: "Font Awesome\ 5 Free";
+  /* font-family: "Font Awesome\ 5 Free"; */
   font-weight: 900;
   margin-right: 10px;
   color: var(--ltn__secondary-color);
@@ -15346,7 +15346,7 @@ blockquote::before {
 
 .ltn__contact-feature-info .h6,
 .ltn__contact-feature-info .h2 {
-  font-family: var(--ltn__body-font);
+  /* font-family: var(--ltn__body-font); */
 }
 
 .ltn__contact-feature-info .h6 {
@@ -15799,7 +15799,7 @@ blockquote::before {
 }
 .ltn__footer-timeline-widget ul li {
   list-style: none;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   font-weight: 700;
   border-bottom: 1px solid;
   border-color: var(--border-color-6);
@@ -15855,7 +15855,7 @@ blockquote::before {
 .ltn__copyright-design h6,
 .ltn__copyright-design h4 {
   font-size: 14px;
-  font-family: var(--ltn__body-font);
+  /* font-family: var(--ltn__body-font); */
   font-weight: 700;
 }
 
@@ -15873,7 +15873,7 @@ blockquote::before {
   margin-top: 0;
   margin-right: 20px;
   font-size: 14px;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   font-weight: 700;
 }
 .ltn__copyright-menu ul li:last-child {
@@ -16096,7 +16096,7 @@ blockquote::before {
   display: inline-block;
   font-size: 16px;
   font-weight: 700;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   padding: 15px 40px;
   text-align: center;
   cursor: pointer;
@@ -16865,10 +16865,10 @@ blockquote::before {
   min-width: min(520px, 100%);
   margin-bottom: 22px;
   padding: 13px 32px;
-  /* background: #101313; */
   color: #2f502f;
   font-size: clamp(24px, 2.6vw, 38px);
-  font-weight: 500;
+  font-weight: 700;
+  font-style: bold;
   line-height: 1.15;
 }
 
@@ -17855,7 +17855,7 @@ blockquote::before {
 .about-forte-info::after {
   color: rgba(255, 255, 255, 0.04);
   content: "\f06c";
-  font-family: "Font Awesome 5 Free";
+  /* font-family: "Font Awesome 5 Free"; */
   font-size: 210px;
   font-weight: 900;
   line-height: 1;
@@ -18727,7 +18727,7 @@ blockquote::before {
 .application-card__label h3 {
   margin-bottom: 0;
   color: #ef4d22;
-  font-family: var(--ltn__heading-font);
+  /* font-family: var(--ltn__heading-font); */
   font-size: clamp(18px, 1.3vw, 24px);
   line-height: 1.2;
   font-weight: 800;
