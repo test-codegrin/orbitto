@@ -59,7 +59,7 @@ const FooterAbout2 = () => {
               </div>
               <div className="footer-address-info">
                 <p>
-                  <Link href="tel:+0123-456789">+0123-456789</Link>
+                  <Link href="tel:+91 99047 27348">+91 99047 27348</Link>
                 </p>
               </div>
             </li>
