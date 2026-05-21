@@ -22,7 +22,7 @@ export const createAdminSessionToken = async (admin) => {
   })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime("8h")
+    .setExpirationTime("5h")
     .sign(getSessionSecret());
 };
 

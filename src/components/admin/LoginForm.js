@@ -11,6 +11,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [isCheckingSession, setIsCheckingSession] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isGoogleSubmitting, setIsGoogleSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -27,6 +28,27 @@ const LoginForm = () => {
 
     checkSession();
   }, [router]);
+
+  useEffect(() => {
+    const errorCode = searchParams.get("error");
+    if (!errorCode) return;
+
+    const authErrors = {
+      google_not_admin:
+        "Account restricted",
+      google_auth_failed: "Google sign in failed. Please try again.",
+      oauth_exchange_failed: "Unable to verify Google sign in. Please try again.",
+      invalid_oauth_state:
+        "Google login was blocked for security reasons. Please try again.",
+      oauth_not_configured:
+        "Google OAuth is not configured on server. Please contact admin.",
+      google_email_missing:
+        "Google account email is missing. Please use another account.",
+      missing_oauth_code: "Google login is incomplete. Please try again.",
+    };
+
+    setMessage(authErrors[errorCode] || "Authentication failed. Please try again.");
+  }, [searchParams]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,6 +71,29 @@ const LoginForm = () => {
 
     router.replace(searchParams.get("redirectedFrom") || "/admin");
     router.refresh();
+  };
+
+  const handleGoogleLogin = async () => {
+    setMessage("");
+    setIsGoogleSubmitting(true);
+
+    try {
+      const response = await fetch("/api/admin/oauth/google/start", {
+        method: "POST",
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result?.url) {
+        setMessage(result?.error || "Unable to start Google login.");
+        setIsGoogleSubmitting(false);
+        return;
+      }
+
+      window.location.assign(result.url);
+    } catch {
+      setMessage("Unable to start Google login.");
+      setIsGoogleSubmitting(false);
+    }
   };
 
   if (isCheckingSession) {
@@ -96,6 +141,15 @@ const LoginForm = () => {
 
           <button type="submit" className="admin-button admin-button-primary" disabled={isSubmitting}>
             {isSubmitting ? "Signing in..." : "Login"}
+          </button>
+
+          <button
+            type="button"
+            className="admin-button admin-button-light"
+            onClick={handleGoogleLogin}
+            disabled={isGoogleSubmitting}
+          >
+            {isGoogleSubmitting ? "Redirecting..." : "Continue with Google"}
           </button>
         </form>
 

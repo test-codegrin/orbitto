@@ -52,6 +52,20 @@ export const getActiveAdminById = async (adminId) => {
     .maybeSingle();
 };
 
+export const getActiveAdminByEmail = async (email) => {
+  const normalizedEmail = String(email || "").trim().toLowerCase();
+  if (!normalizedEmail) {
+    return { data: null, error: null };
+  }
+
+  return supabaseAdmin
+    .from("admins")
+    .select("admin_id, username, email, full_name, role, is_active, created_at, updated_at")
+    .ilike("email", normalizedEmail)
+    .eq("is_active", true)
+    .maybeSingle();
+};
+
 export const createAdmin = async ({ username, email, password_hash, full_name }) => {
   return supabaseAdmin
     .from("admins")
