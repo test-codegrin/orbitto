@@ -12,7 +12,14 @@ const ProductCardPrimary = ({
   onProductClick,
 }) => {
   const { title, image, id, slug, path } = product || {};
-  const productPath = path || `/products/${slug || id || ""}`;
+  const normalizedPath = typeof path === "string" ? path.trim() : "";
+  const isUnsafePath =
+    normalizedPath === "#" ||
+    normalizedPath.toLowerCase().startsWith("javascript:");
+  const productPath =
+    normalizedPath && !isUnsafePath
+      ? normalizedPath
+      : `/products/${slug || id || ""}`;
   const { setCurrentProduct } = useProductContext();
   const [isImageUnavailable, setIsImageUnavailable] = useState(
     hideCardWhenImageUnavailable && !image

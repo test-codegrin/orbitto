@@ -91,21 +91,6 @@ const ProductDetailsPrimary = ({ initialProductIdOrSlug }) => {
     }
   }, [setCurrentProduct]);
 
-  const openRelatedProductPage = useCallback((targetProduct) => {
-    const nextProductPath = targetProduct?.slug || targetProduct?.id;
-    if (!nextProductPath || targetProduct.id === productRef.current?.id) return;
-
-    if (typeof window !== "undefined") {
-      window.history.pushState(
-        window.history.state,
-        "",
-        `/products/${nextProductPath}`
-      );
-    }
-
-    loadProductPageData(nextProductPath, { showMainLoader: true });
-  }, [loadProductPageData]);
-
   const switchProduct = useCallback((targetProduct) => {
     const nextProductPath = targetProduct?.slug || targetProduct?.id;
     if (!nextProductPath || targetProduct.id === productRef.current?.id) return;
@@ -565,7 +550,6 @@ const ProductDetailsPrimary = ({ initialProductIdOrSlug }) => {
                 >
                   <ProductCardPrimary
                     product={relatedProduct}
-                    onProductClick={openRelatedProductPage}
                   />
                 </div>
               ))}
