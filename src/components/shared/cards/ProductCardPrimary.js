@@ -9,6 +9,7 @@ const ProductCardPrimary = ({
   hideCardWhenImageUnavailable = false,
   onImageUnavailable,
   imageFitVariant,
+  onProductClick,
 }) => {
   const { title, image, id, slug, path } = product || {};
   const productPath = path || `/products/${slug || id || ""}`;
@@ -29,6 +30,12 @@ const ProductCardPrimary = ({
     }
   };
 
+  const handleProductClick = (event) => {
+    if (!onProductClick) return;
+    event.preventDefault();
+    onProductClick(product);
+  };
+
   if (hideCardWhenImageUnavailable && isImageUnavailable) {
     return null;
   }
@@ -41,7 +48,7 @@ const ProductCardPrimary = ({
       onMouseEnter={() => product && setCurrentProduct(product)}
     >
       <div className="product-img">
-        <Link href={productPath}>
+        <Link href={productPath} prefetch={!onProductClick} onClick={handleProductClick}>
           {image ? (
             <Image
               src={image}
@@ -61,7 +68,7 @@ const ProductCardPrimary = ({
 
       <div className="product-info">
         <h2 className="product-title">
-          <Link href={productPath}>
+          <Link href={productPath} prefetch={!onProductClick} onClick={handleProductClick}>
             {title || "No Title"}
           </Link>
         </h2>

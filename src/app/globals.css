@@ -9677,6 +9677,23 @@ main > .page-breadcrumb-area + [class*="pt-"] {
 }
 
 /* ltn__Product-details-img-gallery */
+.product-details-smooth {
+  transition: opacity 220ms ease;
+}
+
+.product-details-smooth.is-refreshing {
+  opacity: 0.72;
+}
+
+.product-detail-content-smooth {
+  transition: opacity 220ms ease;
+  will-change: opacity;
+}
+
+.product-detail-content-smooth.is-switching {
+  opacity: 0.55;
+}
+
 .ltn__Product-details-img-gallery {
   margin-bottom: 35px;
 }

@@ -237,23 +237,10 @@ export const getPublicProducts = async ({
 };
 
 export const getPublicProductBySlug = async (slug) => {
-  const requestedSlug = slugify(slug);
-  if (!requestedSlug) {
-    return { data: null, error: new Error("Product not found") };
+  const resolveResult = await resolvePublicProductByIdOrSlug(slug);
+  if (resolveResult.error || !resolveResult.productId) {
+    return { data: null, error: resolveResult.error || new Error("Product not found") };
   }
-
-  const { data: candidates, error: candidateError } = await supabaseAdmin
-    .from("products")
-    .select("products_id, product_name");
-
-  if (candidateError) return { data: null, error: candidateError };
-
-  const match = (candidates || []).find(
-    (product) =>
-      product.products_id === slug || slugify(product.product_name) === requestedSlug
-  );
-
-  if (!match) return { data: null, error: new Error("Product not found") };
 
   const { data, error } = await supabaseAdmin
     .from("products")
@@ -271,11 +258,88 @@ export const getPublicProductBySlug = async (slug) => {
         categories(categories_id, category_name)
       `
     )
-    .eq("products_id", match.products_id)
+    .eq("products_id", resolveResult.productId)
     .single();
 
   return {
     data: data ? mapPublicProductDetail(data) : null,
+    error,
+  };
+};
+
+const resolvePublicProductByIdOrSlug = async (idOrSlug) => {
+  const requestedSlug = slugify(idOrSlug);
+  if (!requestedSlug) {
+    return { productId: null, error: new Error("Product not found") };
+  }
+
+  const { data: candidates, error } = await supabaseAdmin
+    .from("products")
+    .select("products_id, product_name");
+
+  if (error) return { productId: null, error };
+
+  const normalizedInput = String(idOrSlug);
+  const match = (candidates || []).find(
+    (product) =>
+      String(product.products_id) === normalizedInput ||
+      slugify(product.product_name) === requestedSlug
+  );
+
+  if (!match) {
+    return { productId: null, error: new Error("Product not found") };
+  }
+
+  return { productId: match.products_id, error: null };
+};
+
+export const getPublicRelatedProductsBySlug = async (idOrSlug, { limit = 6 } = {}) => {
+  const resolveResult = await resolvePublicProductByIdOrSlug(idOrSlug);
+  if (resolveResult.error || !resolveResult.productId) {
+    return { data: [], error: resolveResult.error || new Error("Product not found") };
+  }
+
+  const { data: currentProduct, error: currentProductError } = await supabaseAdmin
+    .from("products")
+    .select("products_id, categories_id")
+    .eq("products_id", resolveResult.productId)
+    .single();
+
+  if (currentProductError || !currentProduct) {
+    return {
+      data: [],
+      error: currentProductError || new Error("Product not found"),
+    };
+  }
+
+  let query = supabaseAdmin
+    .from("products")
+    .select(
+      `
+        products_id,
+        categories_id,
+        product_name,
+        product_description,
+        product_specification,
+        product_application,
+        image_name,
+        created_at,
+        updated_at,
+        categories(categories_id, category_name)
+      `
+    )
+    .neq("products_id", currentProduct.products_id)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+
+  if (currentProduct.categories_id) {
+    query = query.eq("categories_id", currentProduct.categories_id);
+  }
+
+  const { data, error } = await query;
+
+  return {
+    data: (data || []).map(mapPublicProductDetail),
     error,
   };
 };
