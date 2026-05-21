@@ -1,5 +1,4 @@
 "use client";
-import getAllProducts from "@/libs/getAllProducts";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -14,25 +13,12 @@ const ProductDetailsPrimary = ({ initialProduct }) => {
   const { setCurrentProduct } = useProductContext();
 
   const { id: currentProductParam } = useParams();
-  const products = useMemo(() => getAllProducts(), []);
-
-  const matchedProduct = useMemo(
-    () =>
-      products?.find(
-        ({ id, slug }) =>
-          slug === currentProductParam || String(id) === currentProductParam
-      ),
-    [products, currentProductParam]
-  );
-  const product = matchedProduct || initialProduct;
+  const product = initialProduct;
 
   const allImages = useMemo(() => {
     if (!product) return [];
-    const sameTypeProducts = products?.filter(
-      ({ id, type }) => id !== product.id && (!product.type || type === product.type)
-    );
-    return [product, ...(sameTypeProducts || []).slice(0, 6)];
-  }, [products, product]);
+    return [product];
+  }, [product]);
 
   const [selectedProductId, setSelectedProductId] = useState(product?.id);
 
@@ -227,17 +213,24 @@ const ProductDetailsPrimary = ({ initialProduct }) => {
                     <div className="ltn__Product-details-large-img">
                       {allImages?.map(({ image, title, id }) => (
                         <div key={id} className="single-large-img">
-                          <Link
-                            href={image || "/img/product/1.png"}
-                            data-rel="lightcase:myCollection"
-                          >
-                            <Image
-                              src={image || "/img/product/1.png"}
-                              alt={title || "Product image"}
-                              width={1000}
-                              height={1000}
+                          {image ? (
+                            <Link
+                              href={image}
+                              data-rel="lightcase:myCollection"
+                            >
+                              <Image
+                                src={image}
+                                alt={title || "Product image"}
+                                width={1000}
+                                height={1000}
+                              />
+                            </Link>
+                          ) : (
+                            <span
+                              className="product-details-image-empty"
+                              aria-label="No product image"
                             />
-                          </Link>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -248,12 +241,19 @@ const ProductDetailsPrimary = ({ initialProduct }) => {
                           className="single-small-img"
                           onClick={() => setSelectedProductId(id)}
                         >
-                          <Image
-                            src={image || "/img/product/1.png"}
-                            alt={title || "Product image"}
-                            width={1000}
-                            height={1000}
-                          />
+                          {image ? (
+                            <Image
+                              src={image}
+                              alt={title || "Product image"}
+                              width={1000}
+                              height={1000}
+                            />
+                          ) : (
+                            <span
+                              className="product-details-thumb-empty"
+                              aria-label="No product image"
+                            />
+                          )}
                         </div>
                       ))}
                     </div>

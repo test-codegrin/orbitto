@@ -21,9 +21,18 @@ const powderNoteCategories = new Set([
 
 const getProductKey = (product, fallback) =>
   product?.slug || product?.path || `${product?.type || "product"}-${product?.id || fallback}`;
+const skeletonItems = Array.from({ length: 8 }, (_, index) => index);
 
 const ProductsPrimary = ({ isSidebar }) => {
-  const { filteredProducts, category } = useCommonContext();
+  const {
+    filteredProducts,
+    category,
+    productPagination,
+    productPage,
+    setProductPage,
+    isProductsLoading,
+    productsError,
+  } = useCommonContext();
 
   const limit = isSidebar === false ? 16 : 21;
   const pageJumpRef = useRef(null);
@@ -43,9 +52,9 @@ const ProductsPrimary = ({ isSidebar }) => {
     [arrangedProducts]
   );
 
+  const clientPagination = usePagination(arrangedProducts, limit, 5);
   const {
     currentItems,
-    totalItems,
     currentpage,
     setCurrentpage,
     paginationItems,
@@ -53,15 +62,52 @@ const ProductsPrimary = ({ isSidebar }) => {
     showMore,
     totalPages,
     handleCurrentPage,
-  } = usePagination(arrangedProducts, limit, 5);
+  } = clientPagination;
+  const isApiPaginated = Boolean(productPagination);
+  const visibleItems = isApiPaginated ? arrangedProducts : currentItems;
+  const visibleTotalPages = isApiPaginated
+    ? productPagination.totalPages
+    : totalPages;
+  const visibleCurrentPage = isApiPaginated
+    ? Math.max((productPagination.page || productPage || 1) - 1, 0)
+    : currentpage;
+  const visiblePaginationItems = isApiPaginated
+    ? Array.from({ length: visibleTotalPages }, (_, index) => index)
+    : paginationItems;
+  const visibleCurrentPaginationItems = isApiPaginated
+    ? visiblePaginationItems.slice(
+        Math.max(visibleCurrentPage - 2, 0),
+        Math.min(visibleCurrentPage + 3, visibleTotalPages)
+      )
+    : currentPaginationItems;
+  const visibleShowMore = isApiPaginated
+    ? visibleCurrentPage > 2
+      ? "left"
+      : visibleCurrentPage < visibleTotalPages - 3
+      ? "right"
+      : ""
+    : showMore;
+
+  const handleVisibleCurrentPage = (event, pageIndex, path) => {
+    if (isApiPaginated) {
+      event?.preventDefault();
+      setProductPage(pageIndex + 1);
+      document.querySelector(`#${path || "products"}`)?.scrollIntoView({
+        behavior: "smooth",
+      });
+      return;
+    }
+
+    handleCurrentPage(event, pageIndex, path);
+  };
 
   const pageJumpOptions = useMemo(
     () =>
-      paginationItems?.map((item) => ({
+      visiblePaginationItems?.map((item) => ({
         value: item,
         label: `${item + 1}`,
       })),
-    [paginationItems]
+    [visiblePaginationItems]
   );
 
   useEffect(() => {
@@ -70,7 +116,7 @@ const ProductsPrimary = ({ isSidebar }) => {
 
   const handlePageJumpSelect = (pageIndex) => {
     setIsPageJumpOpen(false);
-    handleCurrentPage(undefined, pageIndex, "products");
+    handleVisibleCurrentPage(undefined, pageIndex, "products");
   };
 
   const isBoxProduct = (product) =>
@@ -105,7 +151,7 @@ const ProductsPrimary = ({ isSidebar }) => {
               <ProductCategories isDropdown />
               <SidebarSearch isCompact />
               <div className="showing-product-number text-right">
-                {totalPages > 1 && (
+                {visibleTotalPages > 1 && (
                   <div className="product-page-jump">
                     <span>Page</span>
                     <div className="product-page-select" ref={pageJumpRef}>
@@ -120,7 +166,7 @@ const ProductsPrimary = ({ isSidebar }) => {
                           setIsPageJumpOpen((current) => !current)
                         }
                       >
-                        {currentpage + 1}
+                        {visibleCurrentPage + 1}
                         <i
                           className={`fas ${
                             isPageJumpOpen
@@ -139,12 +185,12 @@ const ProductsPrimary = ({ isSidebar }) => {
                             <li
                               key={option.value}
                               role="option"
-                              aria-selected={option.value === currentpage}
+                              aria-selected={option.value === visibleCurrentPage}
                             >
                               <button
                                 type="button"
-                                className={
-                                  option.value === currentpage ? "active" : ""
+                              className={
+                                  option.value === visibleCurrentPage ? "active" : ""
                                 }
                                 onClick={() =>
                                   handlePageJumpSelect(option.value)
@@ -157,7 +203,7 @@ const ProductsPrimary = ({ isSidebar }) => {
                         </ul>
                       ) : null}
                     </div>
-                    <span>of {totalPages}</span>
+                    <span>of {visibleTotalPages}</span>
                   </div>
                 )}
               </div>
@@ -165,12 +211,30 @@ const ProductsPrimary = ({ isSidebar }) => {
 
             <div className="ltn__product-tab-content-inner ltn__product-grid-view">
               <div className="row products3-fixed-card-grid products-page-card-grid">
-                {!totalPages ? (
+                {isProductsLoading ? (
+                  skeletonItems.map((item) => (
+                    <div
+                      className={`${
+                        isSidebar === false ? "col-xl-3 col-lg-4" : "col-xl-4"
+                      } col-sm-6 col-6`}
+                      key={`product-skeleton-${item}`}
+                    >
+                      <div className="product-card-skeleton" aria-hidden="true">
+                        <div className="product-card-skeleton__image" />
+                        <div className="product-card-skeleton__title" />
+                      </div>
+                    </div>
+                  ))
+                ) : productsError ? (
+                  <div className="col-12">
+                    <Nodata text={productsError} className="empty-products" />
+                  </div>
+                ) : !visibleTotalPages ? (
                   <div className="col-12">
                     <Nodata text="No Product Found!" className="empty-products" />
                   </div>
                 ) : (
-                  currentItems?.map((product, idx) => (
+                  visibleItems?.map((product, idx) => (
                     <div
                       className={`${
                         isSidebar === false ? "col-xl-3 col-lg-4" : "col-xl-4"
@@ -187,14 +251,14 @@ const ProductsPrimary = ({ isSidebar }) => {
               </div>
             </div>
 
-            {totalPages > 1 && (
+            {visibleTotalPages > 1 && (
               <Pagination
-                totalPages={totalPages}
-                currentPaginationItems={currentPaginationItems}
-                showMore={showMore}
-                items={paginationItems}
-                currenIndex={currentpage}
-                handleCurrentPage={handleCurrentPage}
+                totalPages={visibleTotalPages}
+                currentPaginationItems={visibleCurrentPaginationItems}
+                showMore={visibleShowMore}
+                items={visiblePaginationItems}
+                currenIndex={visibleCurrentPage}
+                handleCurrentPage={handleVisibleCurrentPage}
                 path="products"
               />
             )}

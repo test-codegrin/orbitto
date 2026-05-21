@@ -1,19 +1,19 @@
 import ProductDetailsMain from "@/components/layout/main/ProductDetailsMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
-import getAllProducts from "@/libs/getAllProducts";
+import {
+  getPublicProductBySlug,
+  getPublicProducts,
+} from "@/libs/supabase/queries/products";
 import { notFound } from "next/navigation";
 
-const ProductDetails = ({ params }) => {
-  const products = getAllProducts() || [];
+const ProductDetails = async ({ params }) => {
   const productParam = params?.id;
 
   if (!productParam) {
     notFound();
   }
 
-  const product = products.find(
-    (p) => p.slug === productParam || String(p.id) === productParam
-  );
+  const { data: product } = await getPublicProductBySlug(productParam);
 
   if (!product) {
     notFound();
@@ -32,9 +32,9 @@ const ProductDetails = ({ params }) => {
 };
 
 export async function generateStaticParams() {
-  const products = getAllProducts() || [];
+  const { data: products } = await getPublicProducts({ limit: 200 });
 
-  return products.map((p) => ({
+  return (products || []).map((p) => ({
     id: p.slug || String(p.id),
   }));
 }

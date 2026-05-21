@@ -1,10 +1,8 @@
 "use client";
-import getAllProducts from "@/libs/getAllProducts";
 import React, { createContext, useContext, useState } from "react";
 const productContext = createContext(null);
 const ProductContext = ({ children }) => {
-  const products = getAllProducts();
-  const [currentProduct, setCurrentProduct] = useState(products[0]);
+  const [currentProduct, setCurrentProduct] = useState(null);
   return (
     <productContext.Provider value={{ currentProduct, setCurrentProduct }}>
       {children}

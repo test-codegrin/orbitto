@@ -2,9 +2,9 @@
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
 import ProductsPrimary from "@/components/sections/products/ProductsPrimary";
+import useProducts from "@/hooks/useProducts";
 import useSearch from "@/hooks/useSearch";
 import filterItems from "@/libs/filterItems";
-import getAllProducts from "@/libs/getAllProducts";
 import getRangeValue from "@/libs/getRangeValue";
 import makeText from "@/libs/makeText";
 import CommonContext from "@/providers/CommonContext";
@@ -12,7 +12,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
 const ProductMain = ({ title, isSidebar, text }) => {
-  const allProducts = getAllProducts();
+  const productLimit = isSidebar === false ? 16 : 21;
   const category = useSearchParams()?.get("category");
   const brand = useSearchParams()?.get("brand");
   const tag = useSearchParams()?.get("tag");
@@ -20,10 +20,22 @@ const ProductMain = ({ title, isSidebar, text }) => {
   const color = useSearchParams()?.get("color");
   const search = useSearchParams()?.get("search");
   const currentPath = usePathname();
+  const [productPage, setProductPage] = useState(1);
   const [rangeValue, setRangeValue] = useState(null);
   const maxSize = 5000;
   const intLowerLimit = 50;
   const intUpperLimit = 1500;
+  const {
+    products: allProducts,
+    pagination: productPagination,
+    isLoading: isProductsLoading,
+    error: productsError,
+  } = useProducts({
+    category,
+    search,
+    page: productPage,
+    limit: productLimit,
+  });
 
   const {
     searchedItems,
@@ -37,12 +49,10 @@ const ProductMain = ({ title, isSidebar, text }) => {
   } = useSearch(allProducts, currentPath);
 
   const productsBeforePriceFilter = useMemo(
-    () =>
-      filterItems(
+    () => {
+      return filterItems(
         allProducts,
-        category
-          ? "category"
-          : brand
+        brand
           ? "brand"
           : tag
           ? "tags"
@@ -50,25 +60,12 @@ const ProductMain = ({ title, isSidebar, text }) => {
           ? "size"
           : color
           ? "color"
-          : search
-          ? "search"
           : "",
-        category
-          ? category
-          : brand
-          ? brand
-          : tag
-          ? tag
-          : size
-          ? size
-          : color
-          ? color
-          : search
-          ? search
-          : "",
+        brand ? brand : tag ? tag : size ? size : color ? color : "",
         true
-      ),
-    [allProducts, category, brand, tag, size, color, search]
+      );
+    },
+    [allProducts, brand, tag, size, color]
   );
 
   const filteredProducts = useMemo(
@@ -84,6 +81,7 @@ const ProductMain = ({ title, isSidebar, text }) => {
   useEffect(() => {
     getRangeValue(setRangeValue, maxSize, intLowerLimit, intUpperLimit, true);
     setRangeValue(null);
+    setProductPage(1);
   }, [category, brand, tag, size, color, search, intLowerLimit, maxSize, intUpperLimit]);
 
   useEffect(() => {
@@ -117,6 +115,11 @@ const ProductMain = ({ title, isSidebar, text }) => {
       <CommonContext
         value={{
           filteredProducts,
+          productPagination,
+          productPage,
+          setProductPage,
+          isProductsLoading,
+          productsError,
           searchedItems,
           handleSearch,
           handleSearchString,

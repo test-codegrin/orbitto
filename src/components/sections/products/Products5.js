@@ -1,11 +1,11 @@
+"use client";
+
 import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
-import getAllProducts from "@/libs/getAllProducts";
+import useProducts from "@/hooks/useProducts";
 import React from "react";
 
 const Products5 = ({ isRelated, title, tag, pt, pb }) => {
-  const products = getAllProducts()
-    ?.sort((a, b) => b.disc - a.disc)
-    .slice(0, 6);
+  const { products } = useProducts({ limit: 6 });
 
   return (
     <div

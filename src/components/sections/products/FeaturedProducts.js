@@ -1,12 +1,11 @@
+"use client";
+
 import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
-import getAllProducts from "@/libs/getAllProducts";
+import useProducts from "@/hooks/useProducts";
 import React from "react";
 
 const FeaturedProducts = () => {
-  const allProducts = getAllProducts();
-  const featuredProducts = allProducts
-    ?.filter(({ featured }) => featured)
-    ?.slice(0, 8);
+  const { products: featuredProducts } = useProducts({ limit: 8 });
   return (
     <div className="ltn__product-area ltn__product-gutter pt-115 pb-70">
       <div className="container">

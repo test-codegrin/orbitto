@@ -2,17 +2,20 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import {
+  splitLineSeparatedText,
+  splitProductApplicationText,
+} from "@/libs/productApplications";
+import { normalizeSpecificationEntries } from "@/libs/productSpecifications";
 
 const ProductTechnicalSpecifications = ({
   specifications,
   applicationsAndUses,
   product,
 }) => {
-  const specificationEntries = Object.entries(specifications || {}).filter(
-    ([, value]) =>
-      value !== undefined &&
-      value !== null &&
-      (!Array.isArray(value) || value.length > 0)
+  const specificationEntries = useMemo(
+    () => normalizeSpecificationEntries(specifications),
+    [specifications]
   );
   const isMoqLabel = (label = "") =>
     /moq|minimum\s*order\s*quantity/i.test(label);
@@ -21,7 +24,7 @@ const ProductTechnicalSpecifications = ({
     ? `/contact?product=${encodeURIComponent(quoteProduct)}`
     : "/contact";
   const applicationItems = useMemo(
-    () => (Array.isArray(applicationsAndUses) ? applicationsAndUses.filter(Boolean) : []),
+    () => splitProductApplicationText(applicationsAndUses),
     [applicationsAndUses]
   );
   const hasSpecifications = specificationEntries.length > 0;
@@ -70,6 +73,35 @@ const ProductTechnicalSpecifications = ({
     } else {
       applicationTabRef.current?.focus();
     }
+  };
+
+  const renderSpecificationValue = (label, value) => {
+    const items = splitLineSeparatedText(value);
+
+    if (items.length > 1) {
+      return (
+        <ul className="product-specifications-list">
+          {items.map((item, idx) => (
+            <li key={`${label}-${idx}`}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    return (
+      <span className="product-specification-value-with-action">
+        {items[0] ? <span>{items[0]}</span> : null}
+        {isMoqLabel(label) && (
+          <Link
+            href={quoteHref}
+            className="product-inline-quote-btn"
+            title="Get a quote"
+          >
+            Get a Quote
+          </Link>
+        )}
+      </span>
+    );
   };
 
   return (
@@ -127,31 +159,10 @@ const ProductTechnicalSpecifications = ({
         >
           <table className="product-specifications-table">
             <tbody>
-              {specificationEntries.map(([label, value]) => (
-                <tr key={label}>
-                  <th scope="row">{label}</th>
-                  <td>
-                    {Array.isArray(value) ? (
-                      <ul className="product-specifications-list">
-                        {value.filter(Boolean).map((item, idx) => (
-                          <li key={`${label}-${idx}`}>{item}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <span className="product-specification-value-with-action">
-                        {!!String(value).trim() && <span>{String(value)}</span>}
-                        {isMoqLabel(label) && (
-                          <Link
-                            href={quoteHref}
-                            className="product-inline-quote-btn"
-                            title="Get a quote"
-                          >
-                            Get a Quote
-                          </Link>
-                        )}
-                      </span>
-                    )}
-                  </td>
+              {specificationEntries.map(({ key, value, order }, index) => (
+                <tr key={`${key}-${order || index}`}>
+                  <th scope="row">{key}</th>
+                  <td>{renderSpecificationValue(key, value)}</td>
                 </tr>
               ))}
             </tbody>

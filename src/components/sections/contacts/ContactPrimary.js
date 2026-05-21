@@ -1,11 +1,10 @@
 "use client";
 
-import getAllProducts from "@/libs/getAllProducts";
+import useProducts from "@/hooks/useProducts";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const products = getAllProducts();
-
 const ContactPrimary = () => {
+  const { products } = useProducts({ limit: 200 });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,7 +30,7 @@ const ContactPrimary = () => {
         !selectedProducts.includes(product.title) &&
         (!searchValue || product.title.toLowerCase().includes(searchValue))
     );
-  }, [productSearch, selectedProducts]);
+  }, [productSearch, products, selectedProducts]);
 
   // get value from input
   const handleChange = (e) => {

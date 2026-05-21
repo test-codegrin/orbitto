@@ -42,13 +42,20 @@ const ProductCardPrimary = ({
     >
       <div className="product-img">
         <Link href={productPath}>
-          <Image
-            src={hideCardWhenImageUnavailable ? image : image || "/placeholder.png"}
-            alt={title || "product image"}
-            width={1000}
-            height={1000}
-            onError={handleImageError}
-          />
+          {image ? (
+            <Image
+              src={image}
+              alt={title || "product image"}
+              width={1000}
+              height={1000}
+              onError={handleImageError}
+            />
+          ) : (
+            <span
+              className="product-img-empty"
+              aria-label="No product image"
+            />
+          )}
         </Link>
       </div>
 

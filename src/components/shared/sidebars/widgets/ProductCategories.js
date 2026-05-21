@@ -1,4 +1,5 @@
 "use client";
+import useCategories from "@/hooks/useCategories";
 import { normalizeProductType } from "@/libs/productType";
 import { useCommonContext } from "@/providers/CommonContext";
 import Link from "next/link";
@@ -7,18 +8,18 @@ import React, { useEffect, useRef, useState } from "react";
 
 const ProductCategories = ({ className = "", isDropdown = false }) => {
   const { currentPath, category: currentCategory } = useCommonContext();
+  const { categories: apiCategories, isLoading: isCategoriesLoading } =
+    useCategories();
   const router = useRouter();
   const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
+  const categoryOptions = (apiCategories || []).map((category) => ({
+    label: category.name,
+    value: category.slug,
+  }));
   const categories = [
     { label: "All Products", value: "" },
-    { label: "Fruit", value: "fruit" },
-    { label: "Vegetable", value: "vegetable" },
-    { label: "Fruit Powder", value: "fruit_powder" },
-    { label: "Vegetable Powder", value: "vegetable_powder" },
-    { label: "Honey", value: "honey" },
-    { label: "Spices", value: "spices" },
-    { label: "Herbal Powder", value: "herbal_powder" },
+    ...categoryOptions,
   ];
   const productPath = currentPath ? currentPath : "/shop";
   const selectedCategory = normalizeProductType(currentCategory) || "";
@@ -68,6 +69,13 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
           className={`ltn__product-category-dropdown ${isOpen ? "active" : ""}`}
           role="listbox"
         >
+          {isCategoriesLoading ? (
+            <li className="product-category-skeleton-wrap" aria-hidden="true">
+              <span className="product-category-skeleton" />
+              <span className="product-category-skeleton" />
+              <span className="product-category-skeleton" />
+            </li>
+          ) : null}
           {categories?.map(({ label, value }) => {
             const isActive = selectedCategory === normalizeProductType(value);
 
