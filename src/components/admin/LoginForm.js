@@ -152,10 +152,6 @@ const LoginForm = () => {
             {isGoogleSubmitting ? "Redirecting..." : "Continue with Google"}
           </button>
         </form>
-
-        <p className="admin-auth-footnote">
-          First setup? <Link href="/admin/register">Register the first admin</Link>
-        </p>
       </section>
     </main>
   );

@@ -63,10 +63,6 @@ const RegisterForm = () => {
 
     if (!response.ok) {
       setMessage({ type: "error", text: result?.error || "Registration failed." });
-
-      if (response.status === 403) {
-        window.setTimeout(() => router.replace("/login"), 1800);
-      }
       return;
     }
 
@@ -90,7 +86,7 @@ const RegisterForm = () => {
             Orbitto
           </Link>
           <h1>Register Admin</h1>
-          <p>Create the first admin account. Registration closes after that.</p>
+          <p>Create an admin account.</p>
         </div>
 
         {message ? (

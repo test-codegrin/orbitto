@@ -26,20 +26,20 @@ export const getAdminByLoginIdentifier = async (identifier) => {
   const adminSelect =
     "admin_id, username, email, password_hash, full_name, role, is_active, created_at, updated_at";
 
-  const usernameResult = await supabaseAdmin
-    .from("admins")
-    .select(adminSelect)
-    .eq("username", normalizedIdentifier)
-    .maybeSingle();
-
-  if (usernameResult.data || usernameResult.error) {
-    return usernameResult;
+  if (normalizedIdentifier.includes("@")) {
+    return supabaseAdmin
+      .from("admins")
+      .select(adminSelect)
+      .ilike("email", normalizedIdentifier)
+      .maybeSingle();
   }
 
   return supabaseAdmin
     .from("admins")
     .select(adminSelect)
-    .eq("email", normalizedIdentifier)
+    .eq("username", normalizedIdentifier)
+    .order("created_at", { ascending: false })
+    .limit(1)
     .maybeSingle();
 };
 

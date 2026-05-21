@@ -119,10 +119,10 @@ const AdminPanel = () => {
 
   const loadProducts = useCallback(
     async ({
-      page = productPage,
-      limit = productLimit,
-      search = appliedProductSearch,
-      category = selectedProductCategory,
+      page = 1,
+      limit = 10,
+      search = "",
+      category = "",
     } = {}) => {
       setIsProductsLoading(true);
 
@@ -140,48 +140,23 @@ const AdminPanel = () => {
         setIsProductsLoading(false);
       }
     },
-    [
-      adminFetch,
-      appliedProductSearch,
-      productLimit,
-      productPage,
-      selectedProductCategory,
-      showNotice,
-    ]
+    [adminFetch, showNotice]
   );
 
   const loadAdminData = useCallback(async () => {
     setIsLoading(true);
-    setIsProductsLoading(true);
 
     try {
-      const [categoriesResult, productsResult] = await Promise.all([
-        adminFetch("/api/admin/categories"),
-        adminFetch(
-          buildAdminProductsUrl({
-            page: productPage,
-            limit: productLimit,
-            search: appliedProductSearch,
-            category: selectedProductCategory,
-          })
-        ),
-      ]);
+      const categoriesResult = await adminFetch("/api/admin/categories");
 
       setCategories(categoriesResult.categories || []);
-      setProducts(productsResult.products || []);
-      setProductPagination(productsResult.pagination || defaultProductPagination);
     } catch (error) {
       showNotice("error", error.message || "Unable to load admin data.");
     } finally {
       setIsLoading(false);
-      setIsProductsLoading(false);
     }
   }, [
     adminFetch,
-    appliedProductSearch,
-    productLimit,
-    productPage,
-    selectedProductCategory,
     showNotice,
   ]);
 
@@ -195,11 +170,46 @@ const AdminPanel = () => {
       }
 
       setSessionChecked(true);
-      loadAdminData();
     };
 
     checkAuth();
-  }, [loadAdminData, router]);
+  }, [router]);
+
+  useEffect(() => {
+    if (!sessionChecked) return;
+    loadAdminData();
+  }, [sessionChecked, loadAdminData]);
+
+  useEffect(() => {
+    if (!sessionChecked || isLoading) return;
+    loadProducts({
+      page: productPage,
+      limit: productLimit,
+      search: appliedProductSearch,
+      category: selectedProductCategory,
+    });
+  }, [
+    sessionChecked,
+    isLoading,
+    loadProducts,
+    productPage,
+    productLimit,
+    appliedProductSearch,
+    selectedProductCategory,
+  ]);
+
+  useEffect(() => {
+    const nextSearch = productSearchInput.trim();
+    const timer = window.setTimeout(() => {
+      setAppliedProductSearch((currentSearch) => {
+        if (currentSearch === nextSearch) return currentSearch;
+        return nextSearch;
+      });
+      setProductPage(1);
+    }, 500);
+
+    return () => window.clearTimeout(timer);
+  }, [productSearchInput]);
 
   const resetCategoryForm = () => {
     setCategoryName("");
@@ -371,7 +381,8 @@ const AdminPanel = () => {
 
   const handleProductSearchSubmit = (event) => {
     event.preventDefault();
-    setAppliedProductSearch(productSearchInput.trim());
+    const nextSearch = productSearchInput.trim();
+    setAppliedProductSearch(nextSearch);
     setProductPage(1);
   };
 
@@ -401,6 +412,17 @@ const AdminPanel = () => {
     await fetch("/api/admin/logout", { method: "POST" });
     router.replace("/login");
     router.refresh();
+  };
+
+  const handleRefresh = () => {
+    loadAdminData();
+    if (!sessionChecked) return;
+    loadProducts({
+      page: productPage,
+      limit: productLimit,
+      search: appliedProductSearch,
+      category: selectedProductCategory,
+    });
   };
 
   const updateSpecRow = (index, field, value) => {
@@ -473,7 +495,7 @@ const AdminPanel = () => {
             <p>Admin Panel</p>
             <h1>{activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</h1>
           </div>
-          <button type="button" className="admin-button admin-button-light" onClick={loadAdminData}>
+          <button type="button" className="admin-button admin-button-light" onClick={handleRefresh}>
             Refresh
           </button>
         </header>

@@ -1,6 +1,6 @@
 import { jsonError, normalizeString } from "@/libs/adminAuth/api";
 import { hashPassword } from "@/libs/adminAuth/password";
-import { createAdmin, getAdminCount, sanitizeAdmin } from "@/libs/adminAuth/service";
+import { createAdmin, sanitizeAdmin } from "@/libs/adminAuth/service";
 
 export async function POST(request) {
   const body = await request.json().catch(() => null);
@@ -17,16 +17,6 @@ export async function POST(request) {
     return jsonError("Password must be at least 6 characters.");
   }
 
-  const countResult = await getAdminCount();
-
-  if (countResult.error) {
-    return jsonError(countResult.error.message, 500);
-  }
-
-  if ((countResult.count || 0) > 0) {
-    return jsonError("Admin already exists. Registration is disabled.", 403);
-  }
-
   const password_hash = await hashPassword(password);
   const { data, error } = await createAdmin({
     username,
@@ -36,10 +26,15 @@ export async function POST(request) {
   });
 
   if (error) {
-    return jsonError(
-      error.code === "23505" ? "Username or email already exists." : error.message,
-      500
-    );
+    if (error.code === "23505") {
+      const duplicateHint = String(error.message || "").toLowerCase();
+      if (duplicateHint.includes("email")) {
+        return jsonError("Email already exists.", 409);
+      }
+      return jsonError("Duplicate value already exists.", 409);
+    }
+
+    return jsonError(error.message || "Registration failed.", 500);
   }
 
   return Response.json({ admin: sanitizeAdmin(data), message: "Admin registered." }, { status: 201 });
