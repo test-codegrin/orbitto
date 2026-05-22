@@ -29,6 +29,24 @@ const defaultProductPagination = {
   hasPrevPage: false,
 };
 
+const emptyBlogForm = {
+  blog_id: "",
+  blog_read_time: "",
+  blog_description: "",
+  blog_video_url: "",
+  blog_author: "",
+  blog_quote: "",
+  blog_metrics: "",
+  blog_author_info: "",
+};
+
+const defaultPagination = {
+  page: 1,
+  limit: 10,
+  total: 0,
+  totalPages: 0,
+};
+
 const buildAdminProductsUrl = ({ page, limit, search, category }) => {
   const params = new URLSearchParams();
   params.set("page", String(page || 1));
@@ -36,6 +54,34 @@ const buildAdminProductsUrl = ({ page, limit, search, category }) => {
   if (search) params.set("search", search);
   if (category) params.set("category", category);
   return `/api/admin/products?${params.toString()}`;
+};
+
+const buildAdminBlogCategoriesUrl = ({ page, limit, search }) => {
+  const params = new URLSearchParams();
+  params.set("page", String(page || 1));
+  params.set("limit", String(limit || 10));
+  if (search) params.set("search", search);
+  return `/api/admin/blog/categories?${params.toString()}`;
+};
+
+const buildAdminBlogsUrl = ({
+  page,
+  limit,
+  search,
+  blogId,
+  category,
+  sortBy,
+  sortOrder,
+}) => {
+  const params = new URLSearchParams();
+  params.set("page", String(page || 1));
+  params.set("limit", String(limit || 10));
+  if (search) params.set("search", search);
+  if (blogId) params.set("blog_id", blogId);
+  if (category) params.set("category", category);
+  if (sortBy) params.set("sortBy", sortBy);
+  if (sortOrder) params.set("sortOrder", sortOrder);
+  return `/api/admin/blog?${params.toString()}`;
 };
 
 const createSpecRow = (key = "", value = "") => ({
@@ -53,6 +99,12 @@ const formatDate = (value) => {
     month: "short",
     day: "2-digit",
   }).format(new Date(value));
+};
+
+const sectionLabel = (section) => {
+  if (section === "blogCategories") return "Blog Categories";
+  if (section === "blogs") return "Blogs";
+  return section.charAt(0).toUpperCase() + section.slice(1);
 };
 
 const AdminPanel = () => {
@@ -80,9 +132,39 @@ const AdminPanel = () => {
   const [productPagination, setProductPagination] = useState(
     defaultProductPagination
   );
+  const [blogCategories, setBlogCategories] = useState([]);
+  const [blogCategoryName, setBlogCategoryName] = useState("");
+  const [editingBlogCategory, setEditingBlogCategory] = useState(null);
+  const [blogCategoriesPage, setBlogCategoriesPage] = useState(1);
+  const [blogCategoriesLimit, setBlogCategoriesLimit] = useState(10);
+  const [blogCategoriesSearch, setBlogCategoriesSearch] = useState("");
+  const [blogCategoriesPagination, setBlogCategoriesPagination] = useState(
+    defaultPagination
+  );
+  const [isBlogCategoriesLoading, setIsBlogCategoriesLoading] = useState(false);
+  const [blogs, setBlogs] = useState([]);
+  const [blogForm, setBlogForm] = useState(emptyBlogForm);
+  const [editingBlog, setEditingBlog] = useState(null);
+  const [isBlogFormOpen, setIsBlogFormOpen] = useState(false);
+  const [blogImageFile, setBlogImageFile] = useState(null);
+  const [isBlogsLoading, setIsBlogsLoading] = useState(false);
+  const [blogsPage, setBlogsPage] = useState(1);
+  const [blogsLimit, setBlogsLimit] = useState(10);
+  const [blogsSearchInput, setBlogsSearchInput] = useState("");
+  const [appliedBlogsSearch, setAppliedBlogsSearch] = useState("");
+  const [blogsFilterBlogId, setBlogsFilterBlogId] = useState("");
+  const [blogsFilterCategory, setBlogsFilterCategory] = useState("");
+  const [blogsSortBy, setBlogsSortBy] = useState("created_at");
+  const [blogsSortOrder, setBlogsSortOrder] = useState("desc");
+  const [blogsPagination, setBlogsPagination] = useState(defaultPagination);
 
   const recentCategories = useMemo(() => categories.slice(0, 5), [categories]);
   const recentProducts = useMemo(() => products.slice(0, 5), [products]);
+  const recentBlogCategories = useMemo(
+    () => blogCategories.slice(0, 5),
+    [blogCategories]
+  );
+  const recentBlogs = useMemo(() => blogs.slice(0, 5), [blogs]);
 
   const showNotice = useCallback((type, text) => {
     setNotice({ type, text });
@@ -109,7 +191,7 @@ const AdminPanel = () => {
       }
 
       if (!response.ok) {
-        throw new Error(result?.error || "Request failed.");
+        throw new Error(result?.message || result?.error || "Request failed.");
       }
 
       return result;
@@ -143,6 +225,64 @@ const AdminPanel = () => {
     [adminFetch, showNotice]
   );
 
+  const loadBlogCategories = useCallback(
+    async ({ page = 1, limit = 10, search = "" } = {}) => {
+      setIsBlogCategoriesLoading(true);
+
+      try {
+        const result = await adminFetch(
+          buildAdminBlogCategoriesUrl({ page, limit, search })
+        );
+
+        setBlogCategories(result.data || []);
+        setBlogCategoriesPagination(result.pagination || defaultPagination);
+        if (result.pagination?.page) setBlogCategoriesPage(result.pagination.page);
+      } catch (error) {
+        showNotice("error", error.message || "Unable to load blog categories.");
+      } finally {
+        setIsBlogCategoriesLoading(false);
+      }
+    },
+    [adminFetch, showNotice]
+  );
+
+  const loadBlogs = useCallback(
+    async ({
+      page = 1,
+      limit = 10,
+      search = "",
+      blogId = "",
+      category = "",
+      sortBy = "created_at",
+      sortOrder = "desc",
+    } = {}) => {
+      setIsBlogsLoading(true);
+
+      try {
+        const result = await adminFetch(
+          buildAdminBlogsUrl({
+            page,
+            limit,
+            search,
+            blogId,
+            category,
+            sortBy,
+            sortOrder,
+          })
+        );
+
+        setBlogs(result.data || []);
+        setBlogsPagination(result.pagination || defaultPagination);
+        if (result.pagination?.page) setBlogsPage(result.pagination.page);
+      } catch (error) {
+        showNotice("error", error.message || "Unable to load blogs.");
+      } finally {
+        setIsBlogsLoading(false);
+      }
+    },
+    [adminFetch, showNotice]
+  );
+
   const loadAdminData = useCallback(async () => {
     setIsLoading(true);
 
@@ -150,6 +290,11 @@ const AdminPanel = () => {
       const categoriesResult = await adminFetch("/api/admin/categories");
 
       setCategories(categoriesResult.categories || []);
+      await loadBlogCategories({
+        page: blogCategoriesPage,
+        limit: blogCategoriesLimit,
+        search: blogCategoriesSearch,
+      });
     } catch (error) {
       showNotice("error", error.message || "Unable to load admin data.");
     } finally {
@@ -158,6 +303,10 @@ const AdminPanel = () => {
   }, [
     adminFetch,
     showNotice,
+    loadBlogCategories,
+    blogCategoriesPage,
+    blogCategoriesLimit,
+    blogCategoriesSearch,
   ]);
 
   useEffect(() => {
@@ -210,6 +359,59 @@ const AdminPanel = () => {
 
     return () => window.clearTimeout(timer);
   }, [productSearchInput]);
+
+  useEffect(() => {
+    const nextSearch = blogsSearchInput.trim();
+    const timer = window.setTimeout(() => {
+      setAppliedBlogsSearch((currentSearch) => {
+        if (currentSearch === nextSearch) return currentSearch;
+        return nextSearch;
+      });
+      setBlogsPage(1);
+    }, 500);
+
+    return () => window.clearTimeout(timer);
+  }, [blogsSearchInput]);
+
+  useEffect(() => {
+    if (!sessionChecked || isLoading) return;
+    loadBlogCategories({
+      page: blogCategoriesPage,
+      limit: blogCategoriesLimit,
+      search: blogCategoriesSearch,
+    });
+  }, [
+    sessionChecked,
+    isLoading,
+    loadBlogCategories,
+    blogCategoriesPage,
+    blogCategoriesLimit,
+    blogCategoriesSearch,
+  ]);
+
+  useEffect(() => {
+    if (!sessionChecked || isLoading) return;
+    loadBlogs({
+      page: blogsPage,
+      limit: blogsLimit,
+      search: appliedBlogsSearch,
+      blogId: blogsFilterBlogId,
+      category: blogsFilterCategory,
+      sortBy: blogsSortBy,
+      sortOrder: blogsSortOrder,
+    });
+  }, [
+    sessionChecked,
+    isLoading,
+    loadBlogs,
+    blogsPage,
+    blogsLimit,
+    appliedBlogsSearch,
+    blogsFilterBlogId,
+    blogsFilterCategory,
+    blogsSortBy,
+    blogsSortOrder,
+  ]);
 
   const resetCategoryForm = () => {
     setCategoryName("");
@@ -408,6 +610,267 @@ const AdminPanel = () => {
     setProductPage(page);
   };
 
+  const resetBlogCategoryForm = () => {
+    setBlogCategoryName("");
+    setEditingBlogCategory(null);
+  };
+
+  const handleBlogCategorySubmit = async (event) => {
+    event.preventDefault();
+    const trimmedName = blogCategoryName.trim();
+
+    if (!trimmedName) {
+      showNotice("error", "Blog category is required.");
+      return;
+    }
+
+    setIsSaving(true);
+    try {
+      const isEditing = Boolean(editingBlogCategory);
+      await adminFetch(
+        editingBlogCategory
+          ? `/api/admin/blog/categories/${editingBlogCategory.blog_id}`
+          : "/api/admin/blog/categories",
+        {
+          method: editingBlogCategory ? "PUT" : "POST",
+          body: JSON.stringify({ blog_category: trimmedName }),
+        }
+      );
+      showNotice(
+        "success",
+        editingBlogCategory ? "Blog category updated." : "Blog category added."
+      );
+      resetBlogCategoryForm();
+      if (isEditing) {
+        loadBlogCategories({
+          page: blogCategoriesPage,
+          limit: blogCategoriesLimit,
+          search: blogCategoriesSearch,
+        });
+      } else {
+        setBlogCategoriesSearch("");
+        if (blogCategoriesPage === 1) {
+          loadBlogCategories({
+            page: 1,
+            limit: blogCategoriesLimit,
+            search: "",
+          });
+        } else {
+          setBlogCategoriesPage(1);
+        }
+      }
+    } catch (error) {
+      showNotice("error", error.message);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleEditBlogCategory = (category) => {
+    setActiveSection("blogCategories");
+    setEditingBlogCategory(category);
+    setBlogCategoryName(category.blog_category || "");
+  };
+
+  const handleDeleteBlogCategory = async (category) => {
+    const confirmed = window.confirm(
+      `Delete "${category.blog_category}"? Related blog details will also be deleted by cascade.`
+    );
+    if (!confirmed) return;
+
+    setIsSaving(true);
+    try {
+      await adminFetch(`/api/admin/blog/categories/${category.blog_id}`, {
+        method: "DELETE",
+      });
+      showNotice("success", "Blog category deleted.");
+      if (blogCategories.length <= 1 && blogCategoriesPage > 1) {
+        setBlogCategoriesPage((page) => page - 1);
+      } else {
+        loadBlogCategories({
+          page: blogCategoriesPage,
+          limit: blogCategoriesLimit,
+          search: blogCategoriesSearch,
+        });
+      }
+      if (blogsFilterCategory && blogsFilterCategory === String(category.blog_id)) {
+        setBlogsFilterCategory("");
+      }
+    } catch (error) {
+      showNotice("error", error.message);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const openBlogForm = (blog = null) => {
+    setActiveSection("blogs");
+    setEditingBlog(blog);
+    setIsBlogFormOpen(true);
+
+    if (blog) {
+      setBlogForm({
+        blog_id: blog.blog_id ? String(blog.blog_id) : "",
+        blog_read_time: blog.blog_read_time || "",
+        blog_description: blog.blog_description || "",
+        blog_video_url: blog.blog_video_url || "",
+        blog_author: blog.blog_author || "",
+        blog_quote: blog.blog_quote || "",
+        blog_metrics: blog.blog_metrics
+          ? JSON.stringify(blog.blog_metrics, null, 2)
+          : "",
+        blog_author_info: blog.blog_author_info || "",
+      });
+      return;
+    }
+
+    setBlogForm(emptyBlogForm);
+    setBlogImageFile(null);
+  };
+
+  const closeBlogForm = () => {
+    setIsBlogFormOpen(false);
+    setEditingBlog(null);
+    setBlogForm(emptyBlogForm);
+    setBlogImageFile(null);
+  };
+
+  const handleBlogSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!blogForm.blog_id) {
+      showNotice("error", "Blog category is required.");
+      return;
+    }
+    if (!blogForm.blog_description.trim()) {
+      showNotice("error", "Blog description is required.");
+      return;
+    }
+    if (!blogForm.blog_author.trim()) {
+      showNotice("error", "Blog author is required.");
+      return;
+    }
+
+    let parsedMetrics = null;
+    if (blogForm.blog_metrics.trim()) {
+      try {
+        parsedMetrics = JSON.parse(blogForm.blog_metrics);
+        if (!parsedMetrics || Array.isArray(parsedMetrics) || typeof parsedMetrics !== "object") {
+          throw new Error("invalid");
+        }
+      } catch {
+        showNotice("error", "Blog metrics must be a valid JSON object.");
+        return;
+      }
+    }
+
+    setIsSaving(true);
+    try {
+      const formData = new FormData();
+      formData.append("blog_id", String(Number(blogForm.blog_id)));
+      formData.append("blog_read_time", blogForm.blog_read_time.trim());
+      formData.append("blog_description", blogForm.blog_description.trim());
+      formData.append("blog_video_url", blogForm.blog_video_url.trim());
+      formData.append("blog_author", blogForm.blog_author.trim());
+      formData.append("blog_quote", blogForm.blog_quote.trim());
+      formData.append("blog_author_info", blogForm.blog_author_info.trim());
+      formData.append(
+        "blog_metrics",
+        parsedMetrics ? JSON.stringify(parsedMetrics) : ""
+      );
+      if (blogImageFile) {
+        formData.append("image", blogImageFile);
+      }
+
+      await adminFetch(
+        editingBlog ? `/api/admin/blog/${editingBlog.blog_detail_id}` : "/api/admin/blog",
+        {
+          method: editingBlog ? "PUT" : "POST",
+          body: formData,
+        }
+      );
+      showNotice("success", editingBlog ? "Blog updated." : "Blog added.");
+      closeBlogForm();
+      if (blogsPage === 1) {
+        loadBlogs({
+          page: 1,
+          limit: blogsLimit,
+          search: appliedBlogsSearch,
+          blogId: blogsFilterBlogId,
+          category: blogsFilterCategory,
+          sortBy: blogsSortBy,
+          sortOrder: blogsSortOrder,
+        });
+      } else {
+        setBlogsPage(1);
+      }
+    } catch (error) {
+      showNotice("error", error.message);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleDeleteBlog = async (blog) => {
+    const confirmed = window.confirm(`Delete this blog entry by "${blog.blog_author}"?`);
+    if (!confirmed) return;
+
+    setIsSaving(true);
+    try {
+      await adminFetch(`/api/admin/blog/${blog.blog_detail_id}`, { method: "DELETE" });
+      showNotice("success", "Blog deleted.");
+      if (blogs.length <= 1 && blogsPage > 1) {
+        setBlogsPage((page) => page - 1);
+      } else {
+        loadBlogs({
+          page: blogsPage,
+          limit: blogsLimit,
+          search: appliedBlogsSearch,
+          blogId: blogsFilterBlogId,
+          category: blogsFilterCategory,
+          sortBy: blogsSortBy,
+          sortOrder: blogsSortOrder,
+        });
+      }
+    } catch (error) {
+      showNotice("error", error.message);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleBlogCategoryPageChange = (page) => {
+    if (page < 1) return;
+    if (blogCategoriesPagination.totalPages > 0 && page > blogCategoriesPagination.totalPages) return;
+    setBlogCategoriesPage(page);
+  };
+
+  const handleBlogCategoryLimitChange = (value) => {
+    setBlogCategoriesLimit(Number(value));
+    setBlogCategoriesPage(1);
+  };
+
+  const handleBlogCategorySearchSubmit = (event) => {
+    event.preventDefault();
+    setBlogCategoriesPage(1);
+  };
+
+  const handleBlogClearFilters = () => {
+    setBlogsSearchInput("");
+    setAppliedBlogsSearch("");
+    setBlogsFilterBlogId("");
+    setBlogsFilterCategory("");
+    setBlogsSortBy("created_at");
+    setBlogsSortOrder("desc");
+    setBlogsPage(1);
+  };
+
+  const handleBlogsPageChange = (page) => {
+    if (page < 1) return;
+    if (blogsPagination.totalPages > 0 && page > blogsPagination.totalPages) return;
+    setBlogsPage(page);
+  };
+
   const handleLogout = async () => {
     await fetch("/api/admin/logout", { method: "POST" });
     router.replace("/login");
@@ -422,6 +885,20 @@ const AdminPanel = () => {
       limit: productLimit,
       search: appliedProductSearch,
       category: selectedProductCategory,
+    });
+    loadBlogCategories({
+      page: blogCategoriesPage,
+      limit: blogCategoriesLimit,
+      search: blogCategoriesSearch,
+    });
+    loadBlogs({
+      page: blogsPage,
+      limit: blogsLimit,
+      search: appliedBlogsSearch,
+      blogId: blogsFilterBlogId,
+      category: blogsFilterCategory,
+      sortBy: blogsSortBy,
+      sortOrder: blogsSortOrder,
     });
   };
 
@@ -472,14 +949,20 @@ const AdminPanel = () => {
         <div>
           <div className="admin-logo">Orbitto Admin</div>
           <nav className="admin-nav" aria-label="Admin navigation">
-            {["dashboard", "categories", "products"].map((section) => (
+            {[
+              "dashboard",
+              "categories",
+              "products",
+              "blogCategories",
+              "blogs",
+            ].map((section) => (
               <button
                 key={section}
                 type="button"
                 className={activeSection === section ? "active" : ""}
                 onClick={() => setActiveSection(section)}
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {sectionLabel(section)}
               </button>
             ))}
           </nav>
@@ -493,7 +976,7 @@ const AdminPanel = () => {
         <header className="admin-header">
           <div>
             <p>Admin Panel</p>
-            <h1>{activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</h1>
+            <h1>{sectionLabel(activeSection)}</h1>
           </div>
           <button type="button" className="admin-button admin-button-light" onClick={handleRefresh}>
             Refresh
@@ -511,8 +994,13 @@ const AdminPanel = () => {
             categories={categories}
             products={products}
             totalProducts={productPagination.totalItems}
+            blogCategories={blogCategories}
+            blogs={blogs}
+            totalBlogs={blogsPagination.total}
             recentCategories={recentCategories}
             recentProducts={recentProducts}
+            recentBlogCategories={recentBlogCategories}
+            recentBlogs={recentBlogs}
           />
         ) : null}
 
@@ -563,12 +1051,77 @@ const AdminPanel = () => {
             onDelete={handleDeleteProduct}
           />
         ) : null}
+
+        {!isLoading && activeSection === "blogCategories" ? (
+          <BlogCategoriesManager
+            blogCategories={blogCategories}
+            blogCategoryName={blogCategoryName}
+            editingBlogCategory={editingBlogCategory}
+            isSaving={isSaving}
+            isLoading={isBlogCategoriesLoading}
+            pagination={blogCategoriesPagination}
+            search={blogCategoriesSearch}
+            limit={blogCategoriesLimit}
+            onSearchChange={setBlogCategoriesSearch}
+            onSearchSubmit={handleBlogCategorySearchSubmit}
+            onLimitChange={handleBlogCategoryLimitChange}
+            onPageChange={handleBlogCategoryPageChange}
+            onCategoryNameChange={setBlogCategoryName}
+            onSubmit={handleBlogCategorySubmit}
+            onCancel={resetBlogCategoryForm}
+            onEdit={handleEditBlogCategory}
+            onDelete={handleDeleteBlogCategory}
+          />
+        ) : null}
+
+        {!isLoading && activeSection === "blogs" ? (
+          <BlogsManager
+            blogCategories={blogCategories}
+            blogs={blogs}
+            blogForm={blogForm}
+            editingBlog={editingBlog}
+            isBlogFormOpen={isBlogFormOpen}
+            isSaving={isSaving}
+            isBlogsLoading={isBlogsLoading}
+            blogsSearchInput={blogsSearchInput}
+            blogsFilterBlogId={blogsFilterBlogId}
+            blogsFilterCategory={blogsFilterCategory}
+            blogsSortBy={blogsSortBy}
+            blogsSortOrder={blogsSortOrder}
+            blogsLimit={blogsLimit}
+            blogsPagination={blogsPagination}
+            onOpenForm={openBlogForm}
+            onCloseForm={closeBlogForm}
+            onBlogFormChange={setBlogForm}
+            onBlogsSearchInputChange={setBlogsSearchInput}
+            onBlogsFilterBlogIdChange={setBlogsFilterBlogId}
+            onBlogsFilterCategoryChange={setBlogsFilterCategory}
+            onBlogsSortByChange={setBlogsSortBy}
+            onBlogsSortOrderChange={setBlogsSortOrder}
+            onBlogsLimitChange={setBlogsLimit}
+            onBlogsPageChange={handleBlogsPageChange}
+            onBlogsClearFilters={handleBlogClearFilters}
+            onSubmit={handleBlogSubmit}
+            onDelete={handleDeleteBlog}
+            blogImageFile={blogImageFile}
+            onBlogImageFileChange={setBlogImageFile}
+          />
+        ) : null}
       </section>
     </main>
   );
 };
 
-const Dashboard = ({ categories, totalProducts, recentCategories, recentProducts }) => (
+const Dashboard = ({
+  categories,
+  totalProducts,
+  blogCategories,
+  totalBlogs,
+  recentCategories,
+  recentProducts,
+  recentBlogCategories,
+  recentBlogs,
+}) => (
   <div className="admin-grid">
     <article className="admin-stat-card">
       <span>Total Categories</span>
@@ -578,8 +1131,26 @@ const Dashboard = ({ categories, totalProducts, recentCategories, recentProducts
       <span>Total Products</span>
       <strong>{totalProducts}</strong>
     </article>
+    <article className="admin-stat-card">
+      <span>Total Blog Categories</span>
+      <strong>{blogCategories.length}</strong>
+    </article>
+    <article className="admin-stat-card">
+      <span>Total Blogs</span>
+      <strong>{totalBlogs}</strong>
+    </article>
     <RecentList title="Recently Added Products" items={recentProducts} labelKey="product_name" />
     <RecentList title="Recently Added Categories" items={recentCategories} labelKey="category_name" />
+    <RecentList
+      title="Recently Added Blog Entries"
+      items={recentBlogs}
+      labelKey="blog_description"
+    />
+    <RecentList
+      title="Recently Added Blog Categories"
+      items={recentBlogCategories}
+      labelKey="blog_category"
+    />
   </div>
 );
 
@@ -589,7 +1160,14 @@ const RecentList = ({ title, items, labelKey }) => (
     {items.length ? (
       <ul className="admin-recent-list">
         {items.map((item) => (
-          <li key={item.products_id || item.categories_id}>
+          <li
+            key={
+              item.products_id ||
+              item.categories_id ||
+              item.blog_detail_id ||
+              item.blog_id
+            }
+          >
             <span>{item[labelKey]}</span>
             <small>{formatDate(item.created_at)}</small>
           </li>
@@ -677,6 +1255,484 @@ const CategoriesManager = ({
             )}
           </tbody>
         </table>
+      </div>
+    </article>
+  </div>
+);
+
+const BlogCategoriesManager = ({
+  blogCategories,
+  blogCategoryName,
+  editingBlogCategory,
+  isSaving,
+  isLoading,
+  pagination,
+  search,
+  limit,
+  onSearchChange,
+  onSearchSubmit,
+  onLimitChange,
+  onPageChange,
+  onCategoryNameChange,
+  onSubmit,
+  onCancel,
+  onEdit,
+  onDelete,
+}) => (
+  <div className="admin-stack">
+    <article className="admin-card">
+      <h2>{editingBlogCategory ? "Edit Blog Category" : "Add Blog Category"}</h2>
+      <form className="admin-form admin-inline-form" onSubmit={onSubmit}>
+        <label>
+          Blog Category
+          <input
+            value={blogCategoryName}
+            onChange={(event) => onCategoryNameChange(event.target.value)}
+            required
+          />
+        </label>
+        <div className="admin-form-actions">
+          <button type="submit" className="admin-button admin-button-primary" disabled={isSaving}>
+            {isSaving
+              ? "Saving..."
+              : editingBlogCategory
+                ? "Update Blog Category"
+                : "Add Blog Category"}
+          </button>
+          {editingBlogCategory ? (
+            <button type="button" className="admin-button admin-button-light" onClick={onCancel}>
+              Cancel
+            </button>
+          ) : null}
+        </div>
+      </form>
+    </article>
+
+    <article className="admin-card">
+      <div className="admin-products-table-header">
+        <h2>Blog Categories</h2>
+        <span>
+          {pagination.total} {pagination.total === 1 ? "category" : "categories"}
+        </span>
+      </div>
+
+      <form className="admin-product-filters" onSubmit={onSearchSubmit}>
+        <label>
+          Search Blog Categories
+          <input
+            value={search}
+            onChange={(event) => onSearchChange(event.target.value)}
+            placeholder="Search by category name"
+          />
+        </label>
+        <label>
+          Page Size
+          <select value={limit} onChange={(event) => onLimitChange(event.target.value)}>
+            {[10, 20, 50].map((size) => (
+              <option key={size} value={size}>
+                {size}
+              </option>
+            ))}
+          </select>
+        </label>
+      </form>
+
+      <div className="admin-table-wrap">
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Blog ID</th>
+              <th>Category Name</th>
+              <th>Created At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {isLoading ? (
+              <tr>
+                <td colSpan="4" className="admin-empty-cell">
+                  Loading blog categories...
+                </td>
+              </tr>
+            ) : blogCategories.length ? (
+              blogCategories.map((category) => (
+                <tr key={category.blog_id}>
+                  <td>{category.blog_id}</td>
+                  <td>{category.blog_category}</td>
+                  <td>{formatDate(category.created_at)}</td>
+                  <td>
+                    <div className="admin-row-actions">
+                      <button type="button" onClick={() => onEdit(category)}>
+                        Edit
+                      </button>
+                      <button type="button" className="danger" onClick={() => onDelete(category)}>
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4" className="admin-empty-cell">
+                  No blog categories found.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="admin-pagination">
+        <button
+          type="button"
+          className="admin-button admin-button-light"
+          disabled={pagination.page <= 1 || isLoading}
+          onClick={() => onPageChange(pagination.page - 1)}
+        >
+          Previous
+        </button>
+        <span>
+          Page {pagination.totalPages ? pagination.page : 0} of {pagination.totalPages}
+        </span>
+        <button
+          type="button"
+          className="admin-button admin-button-light"
+          disabled={pagination.page >= pagination.totalPages || isLoading}
+          onClick={() => onPageChange(pagination.page + 1)}
+        >
+          Next
+        </button>
+      </div>
+    </article>
+  </div>
+);
+
+const BlogsManager = ({
+  blogCategories,
+  blogs,
+  blogForm,
+  editingBlog,
+  isBlogFormOpen,
+  isSaving,
+  isBlogsLoading,
+  blogsSearchInput,
+  blogsFilterBlogId,
+  blogsFilterCategory,
+  blogsSortBy,
+  blogsSortOrder,
+  blogsLimit,
+  blogsPagination,
+  onOpenForm,
+  onCloseForm,
+  onBlogFormChange,
+  onBlogsSearchInputChange,
+  onBlogsFilterBlogIdChange,
+  onBlogsFilterCategoryChange,
+  onBlogsSortByChange,
+  onBlogsSortOrderChange,
+  onBlogsLimitChange,
+  onBlogsPageChange,
+  onBlogsClearFilters,
+  onSubmit,
+  onDelete,
+  blogImageFile,
+  onBlogImageFileChange,
+}) => (
+  <div className="admin-stack">
+    <div className="admin-section-actions">
+      <button type="button" className="admin-button admin-button-primary" onClick={() => onOpenForm()}>
+        Add Blog
+      </button>
+    </div>
+
+    {isBlogFormOpen ? (
+      <article className="admin-card">
+        <div className="admin-card-header">
+          <h2>{editingBlog ? "Edit Blog" : "Add Blog"}</h2>
+          <button type="button" className="admin-button admin-button-light" onClick={onCloseForm}>
+            Close
+          </button>
+        </div>
+
+        <form className="admin-form admin-product-form" onSubmit={onSubmit}>
+          <label>
+            Blog Category
+            <select
+              value={blogForm.blog_id}
+              onChange={(event) =>
+                onBlogFormChange((form) => ({ ...form, blog_id: event.target.value }))
+              }
+              required
+            >
+              <option value="">Select blog category</option>
+              {blogCategories.map((category) => (
+                <option key={category.blog_id} value={category.blog_id}>
+                  {category.blog_category}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label>
+            Blog Author
+            <input
+              value={blogForm.blog_author}
+              onChange={(event) =>
+                onBlogFormChange((form) => ({ ...form, blog_author: event.target.value }))
+              }
+              required
+            />
+          </label>
+
+          <label>
+            Read Time
+            <input
+              value={blogForm.blog_read_time}
+              onChange={(event) =>
+                onBlogFormChange((form) => ({ ...form, blog_read_time: event.target.value }))
+              }
+            />
+          </label>
+
+          <label>
+            Upload Blog Image
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(event) => onBlogImageFileChange(event.target.files?.[0] || null)}
+            />
+          </label>
+
+          <label>
+            Video URL
+            <input
+              value={blogForm.blog_video_url}
+              onChange={(event) =>
+                onBlogFormChange((form) => ({ ...form, blog_video_url: event.target.value }))
+              }
+            />
+          </label>
+
+          <label>
+            Blog Quote
+            <input
+              value={blogForm.blog_quote}
+              onChange={(event) =>
+                onBlogFormChange((form) => ({ ...form, blog_quote: event.target.value }))
+              }
+            />
+          </label>
+
+          <label>
+            Blog Description
+            <textarea
+              rows="5"
+              value={blogForm.blog_description}
+              onChange={(event) =>
+                onBlogFormChange((form) => ({ ...form, blog_description: event.target.value }))
+              }
+              required
+            />
+          </label>
+
+          <label>
+            Blog Metrics (JSON)
+            <textarea
+              rows="5"
+              placeholder='{"views": 100, "likes": 10}'
+              value={blogForm.blog_metrics}
+              onChange={(event) =>
+                onBlogFormChange((form) => ({ ...form, blog_metrics: event.target.value }))
+              }
+            />
+          </label>
+
+          <label>
+            Author Info
+            <textarea
+              rows="4"
+              value={blogForm.blog_author_info}
+              onChange={(event) =>
+                onBlogFormChange((form) => ({ ...form, blog_author_info: event.target.value }))
+              }
+            />
+          </label>
+
+          <div className="admin-form-actions">
+            <button type="submit" className="admin-button admin-button-primary" disabled={isSaving}>
+              {isSaving ? "Saving..." : editingBlog ? "Update Blog" : "Add Blog"}
+            </button>
+          </div>
+          {blogImageFile ? <small>Selected image: {blogImageFile.name}</small> : null}
+        </form>
+      </article>
+    ) : null}
+
+    <article className="admin-card">
+      <div className="admin-products-table-header">
+        <h2>Blogs</h2>
+        <span>{blogsPagination.total} entries</span>
+      </div>
+
+      <form className="admin-product-filters" onSubmit={(event) => event.preventDefault()}>
+        <label>
+          Search
+          <input
+            value={blogsSearchInput}
+            onChange={(event) => onBlogsSearchInputChange(event.target.value)}
+            placeholder="Search by description, author, or category"
+          />
+        </label>
+        <label>
+          Blog Category
+          <select
+            value={blogsFilterCategory}
+            onChange={(event) => {
+              onBlogsFilterCategoryChange(event.target.value);
+              onBlogsPageChange(1);
+            }}
+          >
+            <option value="">All Categories</option>
+            {blogCategories.map((category) => (
+              <option key={category.blog_id} value={category.blog_id}>
+                {category.blog_category}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Filter by Blog ID
+          <input
+            value={blogsFilterBlogId}
+            onChange={(event) => {
+              onBlogsFilterBlogIdChange(event.target.value);
+              onBlogsPageChange(1);
+            }}
+            placeholder="e.g. 1"
+          />
+        </label>
+        <label>
+          Sort By
+          <select
+            value={blogsSortBy}
+            onChange={(event) => {
+              onBlogsSortByChange(event.target.value);
+              onBlogsPageChange(1);
+            }}
+          >
+            <option value="created_at">Created At</option>
+            <option value="updated_at">Updated At</option>
+          </select>
+        </label>
+        <label>
+          Sort Order
+          <select
+            value={blogsSortOrder}
+            onChange={(event) => {
+              onBlogsSortOrderChange(event.target.value);
+              onBlogsPageChange(1);
+            }}
+          >
+            <option value="desc">Desc</option>
+            <option value="asc">Asc</option>
+          </select>
+        </label>
+        <label>
+          Page Size
+          <select
+            value={blogsLimit}
+            onChange={(event) => {
+              onBlogsLimitChange(Number(event.target.value));
+              onBlogsPageChange(1);
+            }}
+          >
+            {[10, 20, 50].map((size) => (
+              <option key={size} value={size}>
+                {size}
+              </option>
+            ))}
+          </select>
+        </label>
+        <div className="admin-product-filter-actions">
+          <button type="button" className="admin-button admin-button-light" onClick={onBlogsClearFilters}>
+            Clear
+          </button>
+        </div>
+      </form>
+
+      <div className="admin-table-wrap">
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Detail ID</th>
+              <th>Category</th>
+              <th>Author</th>
+              <th>Description</th>
+              <th>Created At</th>
+              <th>Updated At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {isBlogsLoading ? (
+              <tr>
+                <td colSpan="7" className="admin-empty-cell">
+                  Loading blogs...
+                </td>
+              </tr>
+            ) : blogs.length ? (
+              blogs.map((blog) => (
+                <tr key={blog.blog_detail_id}>
+                  <td>{blog.blog_detail_id}</td>
+                  <td>{blog.blog?.blog_category || "-"}</td>
+                  <td>{blog.blog_author || "-"}</td>
+                  <td>{(blog.blog_description || "").slice(0, 80)}</td>
+                  <td>{formatDate(blog.created_at)}</td>
+                  <td>{formatDate(blog.updated_at)}</td>
+                  <td>
+                    <div className="admin-row-actions">
+                      <button type="button" onClick={() => onOpenForm(blog)}>
+                        Edit
+                      </button>
+                      <button type="button" className="danger" onClick={() => onDelete(blog)}>
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="7" className="admin-empty-cell">
+                  No blogs found.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="admin-pagination">
+        <button
+          type="button"
+          className="admin-button admin-button-light"
+          disabled={blogsPagination.page <= 1 || isBlogsLoading}
+          onClick={() => onBlogsPageChange(blogsPagination.page - 1)}
+        >
+          Previous
+        </button>
+        <span>
+          Page {blogsPagination.totalPages ? blogsPagination.page : 0} of {blogsPagination.totalPages}
+        </span>
+        <button
+          type="button"
+          className="admin-button admin-button-light"
+          disabled={blogsPagination.page >= blogsPagination.totalPages || isBlogsLoading}
+          onClick={() => onBlogsPageChange(blogsPagination.page + 1)}
+        >
+          Next
+        </button>
       </div>
     </article>
   </div>
