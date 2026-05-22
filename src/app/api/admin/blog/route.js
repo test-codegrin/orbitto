@@ -56,8 +56,36 @@ const blogDetailSelect = `
   blog_author_info,
   created_at,
   updated_at,
+  blog_images:blog_detail_images (image_id, sort_order, created_at),
   blog:blog_id (blog_id, blog_category, created_at)
 `;
+
+const parseMultipartImages = async (body) => {
+  const files = [];
+  for (const image of body?.getAll?.("images") || []) {
+    if (image && typeof image !== "string" && image.size > 0) {
+      files.push(image);
+    }
+  }
+
+  if (!files.length) {
+    const fallbackSingle = body?.get?.("image");
+    if (
+      fallbackSingle &&
+      typeof fallbackSingle !== "string" &&
+      fallbackSingle.size > 0
+    ) {
+      files.push(fallbackSingle);
+    }
+  }
+
+  if (!files.length) return [];
+
+  const compressed = await compressImagesForDatabase(files);
+  return compressed
+    .map((item) => item?.imageBlob ?? null)
+    .filter(Boolean);
+};
 
 const validateMetrics = (metrics) => {
   if (metrics === undefined || metrics === null) return { valid: true, value: null };
@@ -205,12 +233,10 @@ export async function POST(request) {
   if (!category) return errorResponse("Invalid blog_id. Blog category does not exist.", 400);
 
   let imageBlob = null;
+  let galleryImageBlobs = [];
   if (isMultipart) {
-    const image = body?.get?.("image");
-    if (image && typeof image !== "string" && image.size > 0) {
-      const compressed = await compressImagesForDatabase([image]);
-      imageBlob = compressed[0]?.imageBlob ?? null;
-    }
+    galleryImageBlobs = await parseMultipartImages(body);
+    imageBlob = galleryImageBlobs[0] ?? null;
   } else {
     const rawImage = getValue("blog_image");
     imageBlob = rawImage ?? null;
@@ -235,6 +261,28 @@ export async function POST(request) {
     .single();
 
   if (error) return errorResponse(error.message, 500);
+
+  if (galleryImageBlobs.length && data?.blog_detail_id) {
+    const galleryPayload = galleryImageBlobs.map((blob, index) => ({
+      blog_detail_id: data.blog_detail_id,
+      image_blob: blob,
+      sort_order: index,
+    }));
+    const { error: galleryError } = await supabaseAdmin
+      .from("blog_detail_images")
+      .insert(galleryPayload);
+
+    if (galleryError) return errorResponse(galleryError.message, 500);
+
+    const { data: refreshed, error: refreshError } = await supabaseAdmin
+      .from("blog_detail")
+      .select(blogDetailSelect)
+      .eq("blog_detail_id", data.blog_detail_id)
+      .single();
+
+    if (refreshError) return errorResponse(refreshError.message, 500);
+    return successResponse("Blog created successfully", refreshed, 201);
+  }
 
   return successResponse("Blog created successfully", data, 201);
 }

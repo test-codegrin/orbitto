@@ -3,7 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   splitLineSeparatedText,
   splitProductApplicationText,
@@ -36,7 +36,7 @@ const emptyBlogForm = {
   blog_video_url: "",
   blog_author: "",
   blog_quote: "",
-  blog_metrics: "",
+  blog_metrics: [],
   blog_author_info: "",
 };
 
@@ -92,6 +92,23 @@ const createSpecRow = (key = "", value = "") => ({
   value,
 });
 
+const createMetricRow = (key = "", value = "") => ({
+  id: globalThis.crypto?.randomUUID
+    ? globalThis.crypto.randomUUID()
+    : `${Date.now()}-${Math.random()}`,
+  key,
+  value,
+});
+
+const stripHtml = (value = "") =>
+  value
+    .replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, "")
+    .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
 const formatDate = (value) => {
   if (!value) return "-";
   return new Intl.DateTimeFormat("en", {
@@ -146,7 +163,8 @@ const AdminPanel = () => {
   const [blogForm, setBlogForm] = useState(emptyBlogForm);
   const [editingBlog, setEditingBlog] = useState(null);
   const [isBlogFormOpen, setIsBlogFormOpen] = useState(false);
-  const [blogImageFile, setBlogImageFile] = useState(null);
+  const [blogImageFiles, setBlogImageFiles] = useState([]);
+  const [removedBlogImageIds, setRemovedBlogImageIds] = useState([]);
   const [isBlogsLoading, setIsBlogsLoading] = useState(false);
   const [blogsPage, setBlogsPage] = useState(1);
   const [blogsLimit, setBlogsLimit] = useState(10);
@@ -709,6 +727,7 @@ const AdminPanel = () => {
     setIsBlogFormOpen(true);
 
     if (blog) {
+      setRemovedBlogImageIds([]);
       setBlogForm({
         blog_id: blog.blog_id ? String(blog.blog_id) : "",
         blog_read_time: blog.blog_read_time || "",
@@ -716,23 +735,28 @@ const AdminPanel = () => {
         blog_video_url: blog.blog_video_url || "",
         blog_author: blog.blog_author || "",
         blog_quote: blog.blog_quote || "",
-        blog_metrics: blog.blog_metrics
-          ? JSON.stringify(blog.blog_metrics, null, 2)
-          : "",
+        blog_metrics:
+          blog.blog_metrics && typeof blog.blog_metrics === "object"
+            ? Object.entries(blog.blog_metrics).map(([key, value]) =>
+                createMetricRow(key, String(value ?? ""))
+              )
+            : [createMetricRow()],
         blog_author_info: blog.blog_author_info || "",
       });
       return;
     }
 
-    setBlogForm(emptyBlogForm);
-    setBlogImageFile(null);
+    setBlogForm({ ...emptyBlogForm, blog_metrics: [createMetricRow()] });
+    setBlogImageFiles([]);
+    setRemovedBlogImageIds([]);
   };
 
   const closeBlogForm = () => {
     setIsBlogFormOpen(false);
     setEditingBlog(null);
-    setBlogForm(emptyBlogForm);
-    setBlogImageFile(null);
+    setBlogForm({ ...emptyBlogForm, blog_metrics: [createMetricRow()] });
+    setBlogImageFiles([]);
+    setRemovedBlogImageIds([]);
   };
 
   const handleBlogSubmit = async (event) => {
@@ -742,7 +766,7 @@ const AdminPanel = () => {
       showNotice("error", "Blog category is required.");
       return;
     }
-    if (!blogForm.blog_description.trim()) {
+    if (!stripHtml(blogForm.blog_description)) {
       showNotice("error", "Blog description is required.");
       return;
     }
@@ -751,18 +775,25 @@ const AdminPanel = () => {
       return;
     }
 
-    let parsedMetrics = null;
-    if (blogForm.blog_metrics.trim()) {
-      try {
-        parsedMetrics = JSON.parse(blogForm.blog_metrics);
-        if (!parsedMetrics || Array.isArray(parsedMetrics) || typeof parsedMetrics !== "object") {
-          throw new Error("invalid");
-        }
-      } catch {
-        showNotice("error", "Blog metrics must be a valid JSON object.");
-        return;
-      }
+    const metricsRows = Array.isArray(blogForm.blog_metrics) ? blogForm.blog_metrics : [];
+    const metricsEntries = metricsRows
+      .map((row) => ({
+        key: (row?.key || "").trim(),
+        value: (row?.value || "").trim(),
+      }))
+      .filter((row) => row.key || row.value);
+
+    if (metricsEntries.some((row) => !row.key || !row.value)) {
+      showNotice("error", "Each blog metric needs both a key and a value.");
+      return;
     }
+
+    const parsedMetrics = metricsEntries.length
+      ? metricsEntries.reduce((acc, row) => {
+          acc[row.key] = row.value;
+          return acc;
+        }, {})
+      : null;
 
     setIsSaving(true);
     try {
@@ -778,9 +809,10 @@ const AdminPanel = () => {
         "blog_metrics",
         parsedMetrics ? JSON.stringify(parsedMetrics) : ""
       );
-      if (blogImageFile) {
-        formData.append("image", blogImageFile);
-      }
+      blogImageFiles.forEach((file) => {
+        formData.append("images", file);
+      });
+      formData.append("remove_image_ids", JSON.stringify(removedBlogImageIds));
 
       await adminFetch(
         editingBlog ? `/api/admin/blog/${editingBlog.blog_detail_id}` : "/api/admin/blog",
@@ -1103,8 +1135,10 @@ const AdminPanel = () => {
             onBlogsClearFilters={handleBlogClearFilters}
             onSubmit={handleBlogSubmit}
             onDelete={handleDeleteBlog}
-            blogImageFile={blogImageFile}
-            onBlogImageFileChange={setBlogImageFile}
+            blogImageFiles={blogImageFiles}
+            onBlogImageFilesChange={setBlogImageFiles}
+            removedBlogImageIds={removedBlogImageIds}
+            onRemovedBlogImageIdsChange={setRemovedBlogImageIds}
           />
         ) : null}
       </section>
@@ -1408,6 +1442,182 @@ const BlogCategoriesManager = ({
   </div>
 );
 
+const BlogDescriptionEditor = ({ blogForm, onBlogFormChange }) => {
+  const editorRef = useRef(null);
+
+  useEffect(() => {
+    if (!editorRef.current) return;
+    if (editorRef.current.innerHTML === (blogForm.blog_description || "")) return;
+    editorRef.current.innerHTML = blogForm.blog_description || "";
+  }, [blogForm.blog_description]);
+
+  const applyFormat = (command, value = null) => {
+    editorRef.current?.focus();
+    document.execCommand(command, false, value);
+    onBlogFormChange((form) => ({
+      ...form,
+      blog_description: editorRef.current?.innerHTML || "",
+    }));
+  };
+
+  return (
+    <label className="admin-blog-description-field">
+      Blog Description
+      <div className="admin-rich-editor-wrap">
+        <div className="admin-rich-editor-toolbar">
+          <button type="button" className="admin-button admin-button-light" onClick={() => applyFormat("bold")}>
+            Bold
+          </button>
+          <button type="button" className="admin-button admin-button-light" onClick={() => applyFormat("italic")}>
+            Italic
+          </button>
+          <button
+            type="button"
+            className="admin-button admin-button-light"
+            onClick={() => applyFormat("fontSize", "4")}
+          >
+            Large
+          </button>
+          <button
+            type="button"
+            className="admin-button admin-button-light"
+            onClick={() => applyFormat("fontSize", "3")}
+          >
+            Normal
+          </button>
+        </div>
+        <div
+          ref={editorRef}
+          className="admin-rich-editor-canvas"
+          contentEditable
+          suppressContentEditableWarning
+          onInput={() =>
+            onBlogFormChange((form) => ({
+              ...form,
+              blog_description: editorRef.current?.innerHTML || "",
+            }))
+          }
+          data-placeholder="Write formatted blog content here..."
+        />
+      </div>
+    </label>
+  );
+};
+
+const BlogImageUploadField = ({
+  editingBlog,
+  blogImageFiles,
+  onBlogImageFilesChange,
+  removedBlogImageIds,
+  onRemovedBlogImageIdsChange,
+}) => {
+  const uploadedImagePreviewUrls = useMemo(
+    () => (blogImageFiles || []).map((file) => URL.createObjectURL(file)),
+    [blogImageFiles]
+  );
+
+  useEffect(() => {
+    return () => {
+      uploadedImagePreviewUrls.forEach((url) => URL.revokeObjectURL(url));
+    };
+  }, [uploadedImagePreviewUrls]);
+
+  const existingImages = (editingBlog?.blog_images || [])
+    .slice()
+    .filter((item) => !removedBlogImageIds.includes(item.image_id))
+    .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
+  const hasExistingImage = Boolean(existingImages.length || editingBlog?.blog_image);
+  const fallbackExistingImageSrc =
+    editingBlog?.blog_detail_id ? `/api/blog/${editingBlog.blog_detail_id}/image` : "";
+
+  const combinedPreviewItems = [
+    ...existingImages.map((image, index) => ({
+      kind: "saved",
+      id: image.image_id || `saved-${index}`,
+      src: `/api/blog/image/${image.image_id}`,
+      label: index === 0 ? "Saved primary image" : `Saved image ${index + 1}`,
+      imageId: image.image_id,
+    })),
+    ...uploadedImagePreviewUrls.map((previewUrl, index) => ({
+      kind: "new",
+      id: `new-${index}-${previewUrl}`,
+      src: previewUrl,
+      label:
+        index === 0
+          ? `New image: ${blogImageFiles[index]?.name || "Selected"}`
+          : `New image: ${blogImageFiles[index]?.name || "Selected"}`,
+      fileIndex: index,
+    })),
+  ];
+
+  if (!combinedPreviewItems.length && hasExistingImage && fallbackExistingImageSrc) {
+    combinedPreviewItems.push({
+      kind: "saved-fallback",
+      id: "saved-fallback",
+      src: fallbackExistingImageSrc,
+      label: "Current image from saved blog",
+    });
+  }
+
+  return (
+    <label>
+      Upload Blog Image
+      <input
+        type="file"
+        accept="image/*"
+        multiple
+        onChange={(event) =>
+          onBlogImageFilesChange([
+            ...(blogImageFiles || []),
+            ...Array.from(event.target.files || []),
+          ])
+        }
+      />
+      {combinedPreviewItems.length ? (
+        <div className="admin-blog-upload-previews">
+          {combinedPreviewItems.map((item, index) => (
+            <div key={item.id || index} className="admin-current-image admin-blog-image-card">
+              <img
+                src={item.src}
+                alt={`Blog upload preview ${index + 1}`}
+                className="admin-product-thumb"
+              />
+              <small className="admin-blog-image-name">{item.label}</small>
+              {item.kind === "saved" ? (
+                <button
+                  type="button"
+                  className="admin-button admin-button-light admin-button-compact"
+                  onClick={() =>
+                    onRemovedBlogImageIdsChange([
+                      ...(removedBlogImageIds || []),
+                      item.imageId,
+                    ])
+                  }
+                >
+                  Delete
+                </button>
+              ) : null}
+              {item.kind === "new" ? (
+                <button
+                  type="button"
+                  className="admin-button admin-button-light admin-button-compact"
+                  onClick={() =>
+                    onBlogImageFilesChange(
+                      (blogImageFiles || []).filter((_, fileIndex) => fileIndex !== item.fileIndex)
+                    )
+                  }
+                >
+                  Remove
+                </button>
+              ) : null}
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </label>
+  );
+};
+
 const BlogsManager = ({
   blogCategories,
   blogs,
@@ -1436,8 +1646,10 @@ const BlogsManager = ({
   onBlogsClearFilters,
   onSubmit,
   onDelete,
-  blogImageFile,
-  onBlogImageFileChange,
+  blogImageFiles,
+  onBlogImageFilesChange,
+  removedBlogImageIds,
+  onRemovedBlogImageIdsChange,
 }) => (
   <div className="admin-stack">
     <div className="admin-section-actions">
@@ -1495,14 +1707,13 @@ const BlogsManager = ({
             />
           </label>
 
-          <label>
-            Upload Blog Image
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(event) => onBlogImageFileChange(event.target.files?.[0] || null)}
-            />
-          </label>
+          <BlogImageUploadField
+            editingBlog={editingBlog}
+            blogImageFiles={blogImageFiles}
+            onBlogImageFilesChange={onBlogImageFilesChange}
+            removedBlogImageIds={removedBlogImageIds}
+            onRemovedBlogImageIdsChange={onRemovedBlogImageIdsChange}
+          />
 
           <label>
             Video URL
@@ -1524,28 +1735,64 @@ const BlogsManager = ({
             />
           </label>
 
-          <label>
-            Blog Description
-            <textarea
-              rows="5"
-              value={blogForm.blog_description}
-              onChange={(event) =>
-                onBlogFormChange((form) => ({ ...form, blog_description: event.target.value }))
-              }
-              required
-            />
-          </label>
+          <BlogDescriptionEditor blogForm={blogForm} onBlogFormChange={onBlogFormChange} />
 
-          <label>
-            Blog Metrics (JSON)
-            <textarea
-              rows="5"
-              placeholder='{"views": 100, "likes": 10}'
-              value={blogForm.blog_metrics}
-              onChange={(event) =>
-                onBlogFormChange((form) => ({ ...form, blog_metrics: event.target.value }))
-              }
-            />
+          <label className="admin-blog-metrics-field">
+            Blog Metrics
+            <div className="admin-metric-list">
+              {(blogForm.blog_metrics || []).map((metric, index) => (
+                <div className="admin-metric-row" key={metric.id || index}>
+                  <input
+                    placeholder="Metric Key"
+                    value={metric.key}
+                    onChange={(event) =>
+                      onBlogFormChange((form) => ({
+                        ...form,
+                        blog_metrics: (form.blog_metrics || []).map((row, rowIndex) =>
+                          rowIndex === index ? { ...row, key: event.target.value } : row
+                        ),
+                      }))
+                    }
+                  />
+                  <input
+                    placeholder="Metric Value"
+                    value={metric.value}
+                    onChange={(event) =>
+                      onBlogFormChange((form) => ({
+                        ...form,
+                        blog_metrics: (form.blog_metrics || []).map((row, rowIndex) =>
+                          rowIndex === index ? { ...row, value: event.target.value } : row
+                        ),
+                      }))
+                    }
+                  />
+                  <button
+                    type="button"
+                    className="admin-button admin-button-light admin-button-compact"
+                    onClick={() =>
+                      onBlogFormChange((form) => ({
+                        ...form,
+                        blog_metrics: (form.blog_metrics || []).filter((_, rowIndex) => rowIndex !== index),
+                      }))
+                    }
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))}
+              <button
+                type="button"
+                className="admin-button admin-button-light admin-button-compact admin-metric-add-button"
+                onClick={() =>
+                  onBlogFormChange((form) => ({
+                    ...form,
+                    blog_metrics: [...(form.blog_metrics || []), createMetricRow()],
+                  }))
+                }
+              >
+                Add Metric
+              </button>
+            </div>
           </label>
 
           <label>
@@ -1564,7 +1811,6 @@ const BlogsManager = ({
               {isSaving ? "Saving..." : editingBlog ? "Update Blog" : "Add Blog"}
             </button>
           </div>
-          {blogImageFile ? <small>Selected image: {blogImageFile.name}</small> : null}
         </form>
       </article>
     ) : null}
@@ -1666,6 +1912,7 @@ const BlogsManager = ({
           <thead>
             <tr>
               <th>Detail ID</th>
+              <th>Image</th>
               <th>Category</th>
               <th>Author</th>
               <th>Description</th>
@@ -1677,7 +1924,7 @@ const BlogsManager = ({
           <tbody>
             {isBlogsLoading ? (
               <tr>
-                <td colSpan="7" className="admin-empty-cell">
+                <td colSpan="8" className="admin-empty-cell">
                   Loading blogs...
                 </td>
               </tr>
@@ -1685,6 +1932,30 @@ const BlogsManager = ({
               blogs.map((blog) => (
                 <tr key={blog.blog_detail_id}>
                   <td>{blog.blog_detail_id}</td>
+                  <td>
+                    {blog.blog_images?.length ? (
+                      <img
+                        className="admin-product-thumb"
+                        src={`/api/blog/image/${blog.blog_images
+                          .slice()
+                          .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0))[0]?.image_id}`}
+                        alt={blog.blog_author || "Blog image"}
+                      />
+                    ) : blog.blog_image ? (
+                      <img
+                        className="admin-product-thumb"
+                        src={`/api/blog/${blog.blog_detail_id}/image`}
+                        alt={blog.blog_author || "Blog image"}
+                      />
+                    ) : (
+                      <span
+                        className="admin-product-thumb admin-product-thumb-empty"
+                        aria-label="No blog image"
+                      >
+                        N/A
+                      </span>
+                    )}
+                  </td>
                   <td>{blog.blog?.blog_category || "-"}</td>
                   <td>{blog.blog_author || "-"}</td>
                   <td>{(blog.blog_description || "").slice(0, 80)}</td>
@@ -1704,7 +1975,7 @@ const BlogsManager = ({
               ))
             ) : (
               <tr>
-                <td colSpan="7" className="admin-empty-cell">
+                <td colSpan="8" className="admin-empty-cell">
                   No blogs found.
                 </td>
               </tr>

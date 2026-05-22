@@ -22,8 +22,55 @@ const blogDetailSelect = `
   blog_author_info,
   created_at,
   updated_at,
+  blog_images:blog_detail_images (image_id, sort_order, created_at),
   blog:blog_id (blog_id, blog_category, created_at)
 `;
+
+const parseMultipartImages = async (body) => {
+  const files = [];
+  for (const image of body?.getAll?.("images") || []) {
+    if (image && typeof image !== "string" && image.size > 0) {
+      files.push(image);
+    }
+  }
+
+  if (!files.length) {
+    const fallbackSingle = body?.get?.("image");
+    if (
+      fallbackSingle &&
+      typeof fallbackSingle !== "string" &&
+      fallbackSingle.size > 0
+    ) {
+      files.push(fallbackSingle);
+    }
+  }
+
+  if (!files.length) return [];
+
+  const compressed = await compressImagesForDatabase(files);
+  return compressed
+    .map((item) => item?.imageBlob ?? null)
+    .filter(Boolean);
+};
+
+const parseRemoveImageIds = (value) => {
+  if (value === undefined || value === null) return [];
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => Number.parseInt(item, 10))
+      .filter((item) => Number.isFinite(item) && item > 0);
+  }
+  if (typeof value === "string") {
+    if (!value.trim()) return [];
+    try {
+      const parsed = JSON.parse(value);
+      return parseRemoveImageIds(parsed);
+    } catch {
+      return [];
+    }
+  }
+  return [];
+};
 
 const ensureAdmin = async () => {
   const { response } = await requireAdmin();
@@ -141,10 +188,56 @@ export async function PUT(request, { params }) {
   }
 
   if (isMultipart) {
-    const image = getValue("image");
-    if (image && typeof image !== "string" && image.size > 0) {
-      const compressed = await compressImagesForDatabase([image]);
-      payload.blog_image = compressed[0]?.imageBlob ?? null;
+    const removeImageIds = parseRemoveImageIds(getValue("remove_image_ids"));
+    if (removeImageIds.length) {
+      const { error: removeError } = await supabaseAdmin
+        .from("blog_detail_images")
+        .delete()
+        .eq("blog_detail_id", blogDetailId)
+        .in("image_id", removeImageIds);
+      if (removeError) return errorResponse(removeError.message, 500);
+    }
+
+    const galleryImageBlobs = await parseMultipartImages(body);
+    if (galleryImageBlobs.length) {
+      const { data: maxSortData, error: maxSortError } = await supabaseAdmin
+        .from("blog_detail_images")
+        .select("sort_order")
+        .eq("blog_detail_id", blogDetailId)
+        .order("sort_order", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (maxSortError && maxSortError.code !== "PGRST116") {
+        return errorResponse(maxSortError.message, 500);
+      }
+
+      const startingSortOrder = (maxSortData?.sort_order ?? -1) + 1;
+      const galleryPayload = galleryImageBlobs.map((blob, index) => ({
+        blog_detail_id: blogDetailId,
+        image_blob: blob,
+        sort_order: startingSortOrder + index,
+      }));
+
+      const { error: insertGalleryError } = await supabaseAdmin
+        .from("blog_detail_images")
+        .insert(galleryPayload);
+
+      if (insertGalleryError) return errorResponse(insertGalleryError.message, 500);
+    }
+
+    if (removeImageIds.length || galleryImageBlobs.length) {
+      const { data: primaryImage, error: primaryError } = await supabaseAdmin
+        .from("blog_detail_images")
+        .select("image_blob")
+        .eq("blog_detail_id", blogDetailId)
+        .order("sort_order", { ascending: true })
+        .order("image_id", { ascending: true })
+        .limit(1)
+        .maybeSingle();
+      if (primaryError && primaryError.code !== "PGRST116") {
+        return errorResponse(primaryError.message, 500);
+      }
+      payload.blog_image = primaryImage?.image_blob ?? null;
     }
   } else if (hasValue("blog_image")) {
     payload.blog_image = getValue("blog_image") || null;

@@ -309,6 +309,108 @@ font-family: 'Roboto', sans-serif;
   resize: vertical;
 }
 
+.admin-rich-editor-wrap {
+  border: 1px solid #cfdbc5;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.admin-rich-editor-toolbar {
+  background: #f5f9f1;
+  border-bottom: 1px solid #cfdbc5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+}
+
+.admin-rich-editor-toolbar .admin-button {
+  min-height: 34px;
+  padding: 6px 10px;
+}
+
+.admin-rich-editor-canvas {
+  background: #fff;
+  min-height: 180px;
+  padding: 12px;
+}
+
+.admin-rich-editor-canvas:focus {
+  outline: none;
+}
+
+.admin-rich-editor-canvas:empty::before {
+  color: #8a9684;
+  content: attr(data-placeholder);
+}
+
+.admin-metric-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-items: start;
+}
+
+.admin-metric-row {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr auto;
+}
+
+.admin-button-compact {
+  font-size: 13px;
+  min-height: 32px;
+  padding: 6px 10px;
+}
+
+.admin-blog-upload-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-metric-add-button {
+  align-self: flex-start;
+  display: inline-grid;
+  min-height: 30px;
+  padding: 5px 10px;
+  width: auto;
+}
+
+.admin-blog-upload-previews .admin-current-image {
+  width: 190px;
+}
+
+.admin-blog-metrics-field {
+  grid-column: 1 / -1;
+}
+
+.admin-blog-description-field {
+  grid-column: 1 / -1;
+}
+
+.admin-blog-image-card {
+  align-items: flex-start;
+  background: #f8faf6;
+  border: 1px solid #e3eadb;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
+
+.admin-blog-image-card .admin-product-thumb {
+  height: 96px;
+  width: 100%;
+}
+
+.admin-blog-image-name {
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
 .admin-button,
 .admin-row-actions button,
 .admin-spec-row button {
@@ -619,6 +721,10 @@ font-family: 'Roboto', sans-serif;
   .admin-product-form,
   .admin-inline-form,
   .admin-product-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-metric-row {
     grid-template-columns: 1fr;
   }
 }

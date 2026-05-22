@@ -3,10 +3,29 @@ import BlogCardPrimary from "@/components/shared/cards/BlogCardPrimary";
 import Nodata from "@/components/shared/no-data/Nodata";
 import Pagination from "@/components/shared/paginations/Pagination";
 import usePagination from "@/hooks/usePagination";
-import getAllBlogs from "@/libs/getAllBlogs";
+import { useEffect, useState } from "react";
 
 const BlogsGridPrimary = () => {
-  const blogs = getAllBlogs();
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    const load = async () => {
+      const response = await fetch("/api/blog", { cache: "no-store" });
+      const result = await response.json().catch(() => ({}));
+      const normalized = (result.data || []).map((item) => ({
+        id: item.blog_detail_id,
+        image: item.blog_images?.length
+          ? `/api/blog/image/${item.blog_images[0].image_id}`
+          : `/api/blog/${item.blog_detail_id}/image`,
+        title: item.blog_author || "Blog Post",
+        desc: item.excerpt || "",
+        publishDate: item.created_at,
+        category: item.blog?.blog_category || "General",
+        author: { desig: item.blog_author_info || "Admin" },
+      }));
+      setBlogs(normalized);
+    };
+    load();
+  }, []);
   // get pagination details
   const {
     currentItems,
