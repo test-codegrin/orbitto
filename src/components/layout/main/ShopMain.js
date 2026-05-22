@@ -2,6 +2,7 @@
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
 import ProductsPrimary from "@/components/sections/products/ProductsPrimary";
+import useCategories from "@/hooks/useCategories";
 import useProducts from "@/hooks/useProducts";
 import useSearch from "@/hooks/useSearch";
 import filterItems from "@/libs/filterItems";
@@ -36,6 +37,11 @@ const ProductMain = ({ title, isSidebar, text }) => {
     page: productPage,
     limit: productLimit,
   });
+  const {
+    categories: productCategories,
+    isLoading: isCategoriesLoading,
+    error: categoriesError,
+  } = useCategories();
 
   const {
     searchedItems,
@@ -115,6 +121,9 @@ const ProductMain = ({ title, isSidebar, text }) => {
       <CommonContext
         value={{
           filteredProducts,
+          productCategories,
+          isCategoriesLoading,
+          categoriesError,
           productPagination,
           productPage,
           setProductPage,

@@ -7,13 +7,25 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 const ProductCategories = ({ className = "", isDropdown = false }) => {
-  const { currentPath, category: currentCategory } = useCommonContext();
-  const { categories: apiCategories, isLoading: isCategoriesLoading } =
-    useCategories();
+  const {
+    currentPath,
+    category: currentCategory,
+    productCategories,
+    isCategoriesLoading: isCategoriesLoadingFromContext,
+  } = useCommonContext();
+  const {
+    categories: apiCategories,
+    isLoading: isCategoriesLoadingFromHook,
+  } = useCategories({ enabled: !productCategories });
+  const apiCategoryList = productCategories || apiCategories;
+  const isCategoriesLoading =
+    typeof isCategoriesLoadingFromContext === "boolean"
+      ? isCategoriesLoadingFromContext
+      : isCategoriesLoadingFromHook;
   const router = useRouter();
   const dropdownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-  const categoryOptions = (apiCategories || []).map((category) => ({
+  const categoryOptions = (apiCategoryList || []).map((category) => ({
     label: category.name,
     value: category.slug,
   }));

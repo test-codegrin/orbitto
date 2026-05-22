@@ -26,6 +26,7 @@ const skeletonItems = Array.from({ length: 8 }, (_, index) => index);
 const ProductsPrimary = ({ isSidebar }) => {
   const {
     filteredProducts,
+    isCategoriesLoading,
     category,
     productPagination,
     productPage,
@@ -37,6 +38,7 @@ const ProductsPrimary = ({ isSidebar }) => {
   const limit = isSidebar === false ? 16 : 21;
   const pageJumpRef = useRef(null);
   const [isPageJumpOpen, setIsPageJumpOpen] = useState(false);
+  const [areVisibleImagesReady, setAreVisibleImagesReady] = useState(false);
   const shouldShowPowderNote = powderNoteCategories.has(
     normalizeProductType(category)
   );
@@ -65,6 +67,13 @@ const ProductsPrimary = ({ isSidebar }) => {
   } = clientPagination;
   const isApiPaginated = Boolean(productPagination);
   const visibleItems = isApiPaginated ? arrangedProducts : currentItems;
+  const visibleItemsKey = useMemo(
+    () =>
+      (visibleItems || [])
+        .map((item, idx) => getProductKey(item, idx))
+        .join("|"),
+    [visibleItems]
+  );
   const visibleTotalPages = isApiPaginated
     ? productPagination.totalPages
     : totalPages;
@@ -113,6 +122,46 @@ const ProductsPrimary = ({ isSidebar }) => {
   useEffect(() => {
     setCurrentpage(0);
   }, [productListKey, setCurrentpage]);
+
+  useEffect(() => {
+    if (isProductsLoading || isCategoriesLoading) {
+      setAreVisibleImagesReady(false);
+      return;
+    }
+
+    const productsToPrepare = visibleItems || [];
+    if (!productsToPrepare.length) {
+      setAreVisibleImagesReady(true);
+      return;
+    }
+
+    let isCancelled = false;
+    const preloadImage = (src) =>
+      new Promise((resolve) => {
+        if (!src) {
+          resolve();
+          return;
+        }
+        const img = new window.Image();
+        img.onload = () => resolve();
+        img.onerror = () => resolve();
+        img.src = src;
+        if (img.complete) resolve();
+      });
+
+    setAreVisibleImagesReady(false);
+    Promise.all(productsToPrepare.map((item) => preloadImage(item?.image))).finally(() => {
+      if (!isCancelled) {
+        setAreVisibleImagesReady(true);
+      }
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [isProductsLoading, isCategoriesLoading, visibleItemsKey, visibleItems]);
+
+  const isMainLoading = isProductsLoading || isCategoriesLoading || !areVisibleImagesReady;
 
   const handlePageJumpSelect = (pageIndex) => {
     setIsPageJumpOpen(false);
@@ -211,7 +260,7 @@ const ProductsPrimary = ({ isSidebar }) => {
 
             <div className="ltn__product-tab-content-inner ltn__product-grid-view">
               <div className="row products3-fixed-card-grid products-page-card-grid">
-                {isProductsLoading ? (
+                {isMainLoading ? (
                   skeletonItems.map((item) => (
                     <div
                       className={`${

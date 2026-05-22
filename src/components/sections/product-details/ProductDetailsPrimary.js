@@ -48,6 +48,19 @@ const ProductDetailsPrimary = ({ initialProductIdOrSlug }) => {
     setError("");
 
     try {
+      const preloadImage = (src) =>
+        new Promise((resolve) => {
+          if (!src) {
+            resolve();
+            return;
+          }
+          const img = new window.Image();
+          img.onload = () => resolve();
+          img.onerror = () => resolve();
+          img.src = src;
+          if (img.complete) resolve();
+        });
+
       const [productResponse, relatedResponse] = await Promise.all([
         fetch(`/api/user/products/${encodeURIComponent(productIdOrSlug)}`, {
           cache: "no-store",
@@ -72,6 +85,12 @@ const ProductDetailsPrimary = ({ initialProductIdOrSlug }) => {
       const nextProduct = productResult?.product || null;
       const nextRelatedProducts = relatedResult?.products || [];
       const nextLoadedProducts = [nextProduct, ...nextRelatedProducts].filter(Boolean);
+      const criticalImageUrls = [
+        nextProduct?.image,
+        ...nextRelatedProducts.map((item) => item?.image),
+      ];
+
+      await Promise.all(criticalImageUrls.map((src) => preloadImage(src)));
 
       setProduct(nextProduct);
       setRelatedProducts(nextRelatedProducts);
@@ -113,7 +132,21 @@ const ProductDetailsPrimary = ({ initialProductIdOrSlug }) => {
         `/products/${nextProductPath}`
       );
 
-      switchTimerRef.current = window.setTimeout(() => {
+      const preloadImage = (src) =>
+        new Promise((resolve) => {
+          if (!src) {
+            resolve();
+            return;
+          }
+          const img = new window.Image();
+          img.onload = () => resolve();
+          img.onerror = () => resolve();
+          img.src = src;
+          if (img.complete) resolve();
+        });
+
+      switchTimerRef.current = window.setTimeout(async () => {
+        await preloadImage(targetProduct?.image);
         setProduct(targetProduct);
         setSelectedProductId(targetProduct.id);
         setCurrentProduct(targetProduct);
@@ -249,8 +282,10 @@ const ProductDetailsPrimary = ({ initialProductIdOrSlug }) => {
       // ── Build slides ───────────────────────────────────────────────────────
       galleryProducts.forEach(({ image, title, id }) => {
         const safeAlt = (title || "Product image").replace(/"/g, "&quot;");
+        const fallbackDataUri =
+          "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000'><rect width='100%25' height='100%25' fill='%23f3f3f3'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23999' font-size='42' font-family='Arial'>Image unavailable</text></svg>";
         const imgTag = image
-          ? `<img src="${image}" alt="${safeAlt}" width="1000" height="1000" style="width:100%;height:auto" />`
+          ? `<img src="${image}" alt="${safeAlt}" width="1000" height="1000" style="width:100%;height:auto" onerror="this.onerror=null;this.src='${fallbackDataUri}'" />`
           : `<span class="product-details-image-empty" aria-label="No product image"></span>`;
 
         $large.append(
@@ -437,7 +472,42 @@ const ProductDetailsPrimary = ({ initialProductIdOrSlug }) => {
     return (
       <div className="ltn__Product-details-area pb-120">
         <div className="container">
-          <p className="home-products-state-text">Loading product details...</p>
+          <div className="ltn__Product-details-inner mb-60">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="product-card-skeleton" aria-hidden="true">
+                  <div
+                    className="product-card-skeleton__image"
+                    style={{ height: "420px", borderRadius: "10px" }}
+                  />
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="product-card-skeleton" aria-hidden="true">
+                  <div
+                    className="product-card-skeleton__title"
+                    style={{ width: "70%", height: "28px", marginBottom: "14px" }}
+                  />
+                  <div
+                    className="product-card-skeleton__title"
+                    style={{ width: "100%", height: "16px", marginBottom: "10px" }}
+                  />
+                  <div
+                    className="product-card-skeleton__title"
+                    style={{ width: "90%", height: "16px", marginBottom: "10px" }}
+                  />
+                  <div
+                    className="product-card-skeleton__title"
+                    style={{ width: "55%", height: "16px", marginBottom: "24px" }}
+                  />
+                  <div
+                    className="product-card-skeleton__title"
+                    style={{ width: "45%", height: "40px", borderRadius: "8px" }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

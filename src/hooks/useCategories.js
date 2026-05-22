@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 
-const useCategories = () => {
+const useCategories = ({ enabled = true } = {}) => {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!enabled) {
+      setIsLoading(false);
+      return undefined;
+    }
+
     const controller = new AbortController();
 
     const loadCategories = async () => {
@@ -37,7 +42,7 @@ const useCategories = () => {
     loadCategories();
 
     return () => controller.abort();
-  }, []);
+  }, [enabled]);
 
   return { categories, isLoading, error };
 };
