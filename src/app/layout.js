@@ -7,6 +7,18 @@ import "@/assets/css/plugins.css";
 import "@/assets/css/responsive.css";
 import "./globals.css";
 
+import StructuredData from "@/components/seo/StructuredData";
+import {
+  brandName,
+  buildMetadataImages,
+  defaultDescription,
+  defaultOgImage,
+  getLocalBusinessSchema,
+  getOrganizationSchema,
+  getSiteUrl,
+  getWebsiteSchema,
+  mergeKeywords,
+} from "@/libs/seo";
 import ProductProvider from "@/providers/ProductContext";
 
 const open_sans = Open_Sans({
@@ -31,8 +43,66 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Orbitto - Organic Food",
-  description: "Orbitto - Organic Food ",
+  metadataBase: new URL(getSiteUrl()),
+  title: {
+    default:
+      "Orbitto International | Fruit Powder, Spices, Honey & Ingredient Exporter",
+    template: "%s | Orbitto International",
+  },
+  description: defaultDescription,
+  applicationName: brandName,
+  referrer: "origin-when-cross-origin",
+  keywords: mergeKeywords([
+    "international food exporter",
+    "spray dried fruit powder manufacturer",
+    "export quality ingredients",
+  ]),
+  authors: [{ name: brandName }],
+  creator: brandName,
+  publisher: brandName,
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en",
+      "hi-IN": "/hi",
+      "gu-IN": "/gu",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: brandName,
+    title:
+      "Orbitto International | Fruit Powder, Spices, Honey & Ingredient Exporter",
+    description: defaultDescription,
+    images: buildMetadataImages(defaultOgImage, brandName),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Orbitto International | Fruit Powder, Spices, Honey & Ingredient Exporter",
+    description: defaultDescription,
+    images: buildMetadataImages(defaultOgImage, brandName).map(
+      (image) => image.url
+    ),
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -44,7 +114,16 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning={true}
       className={`${rajdhani.variable} ${open_sans.variable} ${playfair.variable}`}
     >
+      <head>
+        <link rel="alternate" hrefLang="en" href={`${getSiteUrl()}/`} />
+        <link rel="alternate" hrefLang="hi" href={`${getSiteUrl()}/hi`} />
+        <link rel="alternate" hrefLang="gu" href={`${getSiteUrl()}/gu`} />
+        <link rel="alternate" hrefLang="x-default" href={`${getSiteUrl()}/`} />
+      </head>
       <body className={open_sans.className}>
+        <StructuredData id="orbitto-organization-schema" data={getOrganizationSchema()} />
+        <StructuredData id="orbitto-website-schema" data={getWebsiteSchema()} />
+        <StructuredData id="orbitto-local-business-schema" data={getLocalBusinessSchema()} />
         <Script src="/plugins.js" strategy="lazyOnload" />
         {mapsApiKey ? (
           <Script

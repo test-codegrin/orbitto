@@ -1,6 +1,9 @@
 import React from "react";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import BlogsMain from "@/components/layout/main/BlogsMain";
+import { buildNoIndexMetadata } from "@/libs/seo";
+
+export const metadata = buildNoIndexMetadata("Blog Right Sidebar");
 
 const blogRightSidebar = () => {
   return (

@@ -39,6 +39,7 @@ const BlogDetailsPrimary = () => {
     () => (blog?.blog_images || []).slice().sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0)),
     [blog]
   );
+  const blogTitle = blog?.title || blog?.blog_author || "Orbitto Article";
   const coverSrc = sortedImages.length ? `/api/blog/image/${sortedImages[0].image_id}` : `/api/blog/${id}/image`;
 
   const currentIndex = allBlogs.findIndex((b) => b.blog_detail_id === Number.parseInt(id, 10));
@@ -61,7 +62,7 @@ const BlogDetailsPrimary = () => {
               {blog.blog?.blog_category || "General"}
             </div>
             <h1 style={{ fontSize: "clamp(28px,4vw,42px)", fontWeight: "800", color: T.text, lineHeight: "1.18", margin: "0 0 18px" }}>
-              {blog.blog_author || "Blog Post"}
+              {blogTitle}
             </h1>
             <p style={{ fontSize: "13.5px", color: T.muted, lineHeight: "1.7", margin: "0 0 24px" }}>{blog.excerpt || ""}</p>
             <div style={{ fontSize: "11px", color: T.muted }}>
@@ -69,7 +70,7 @@ const BlogDetailsPrimary = () => {
             </div>
           </div>
           <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3" }}>
-            <Image src={coverSrc} alt={blog.blog_author || "Blog"} fill style={{ objectFit: "cover" }} />
+            <Image src={coverSrc} alt={blogTitle} fill style={{ objectFit: "cover" }} />
           </div>
         </div>
       </div>

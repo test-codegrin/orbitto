@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const categoryColors = {
   Science: { bg: "#e8f0e4", text: "#2d5a1e" },
@@ -37,6 +38,7 @@ const ArrowIcon = () => (
 
 const BlogCard = ({ blog, isSingle }) => {
   const [hovered, setHovered] = useState(false);
+  const blogTitle = blog.title || blog.blog_author || "Orbitto Article";
   const category = blog.blog?.blog_category || "General";
   const cat = categoryColors[category] || categoryColors.Science;
   const coverSrc = blog.blog_images?.length
@@ -46,7 +48,7 @@ const BlogCard = ({ blog, isSingle }) => {
   return (
     <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ overflow: "hidden", transition: "all 0.35s ease", transform: hovered ? "translateY(-6px)" : "translateY(0px)", display: "flex", flexDirection: "column", height: "100%" }}>
       <div style={{ height: "260px", overflow: "hidden", position: "relative" }}>
-        <Image src={coverSrc} alt={blog.blog_author || "Blog"} fill sizes="(max-width: 768px) 100vw, 384px" style={{ objectFit: "cover", transition: "transform 0.5s ease", transform: hovered ? "scale(1.06)" : "scale(1)" }} />
+        <Image src={coverSrc} alt={blogTitle} fill sizes="(max-width: 768px) 100vw, 384px" style={{ objectFit: "cover", transition: "transform 0.5s ease", transform: hovered ? "scale(1.06)" : "scale(1)" }} />
         <div style={{ position: "absolute", top: "16px", left: "16px", background: "#ffffff", padding: "6px 14px", borderRadius: "999px", fontSize: "12px", fontWeight: "600", color: "#1d3d19" }}>{category}</div>
       </div>
       <div style={{ background: cat.bg, padding: "24px 26px 26px", flex: 1, display: "flex", flexDirection: "column" }}>
@@ -56,7 +58,7 @@ const BlogCard = ({ blog, isSingle }) => {
           <span>•</span>
           <span>{blog.blog_read_time || "5 min read"}</span>
         </div>
-        <h3 style={{ fontSize: "20px", lineHeight: "1.28", marginBottom: "16px", color: "#1d1d1d", fontWeight: "700", letterSpacing: "-0.03em" }}>{blog.blog_author || "Blog Post"}</h3>
+        <h3 style={{ fontSize: "20px", lineHeight: "1.28", marginBottom: "16px", color: "#1d1d1d", fontWeight: "700", letterSpacing: "-0.03em" }}>{blogTitle}</h3>
         <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#5d5d5d", marginBottom: "28px", flex: 1 }}>{blog.excerpt || ""}</p>
         <Link href={`/blogs/${blog.blog_detail_id}`} style={{ display: "inline-flex", alignItems: "center", gap: "10px", textDecoration: "none", fontSize: "18px", fontWeight: "600", color: cat.text }}>
           Read Article
@@ -70,6 +72,8 @@ const BlogCard = ({ blog, isSingle }) => {
 };
 
 const BlogsPrimary = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState("all");
   const [blogs, setBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -85,6 +89,11 @@ const BlogsPrimary = () => {
     loadBlogs();
   }, []);
 
+  useEffect(() => {
+    const selectedCategory = searchParams?.get("category");
+    setActiveCategory(selectedCategory ? normalizeCategoryId(selectedCategory) : "all");
+  }, [searchParams]);
+
   const categories = useMemo(() => {
     const all = Array.from(new Set(blogs.map((item) => item.blog?.blog_category).filter(Boolean)));
     return [{ id: "all", label: "All Insights", icon: "✦" }, ...all.map((label) => ({ id: normalizeCategoryId(label), label, icon: "◉" }))];
@@ -94,12 +103,25 @@ const BlogsPrimary = () => {
     ? blogs
     : blogs.filter((b) => normalizeCategoryId(b.blog?.blog_category || "") === activeCategory);
 
+  const handleCategoryChange = (categoryId) => {
+    setActiveCategory(categoryId);
+    if (categoryId === "all") {
+      router.push("/blogs");
+      return;
+    }
+
+    const params = new URLSearchParams({
+      category: categoryId,
+    });
+    router.push(`/blogs?${params.toString()}`);
+  };
+
   return (
     <div className="news-page" style={{ background: "#ffffff", minHeight: "100vh", width: "100%" }}>
       <div style={{ textAlign: "center", padding: "60px 24px 40px" }}>
-        <h1 style={{ fontSize: "clamp(40px, 6vw, 60px)", fontWeight: "800", color: "#1a3a18", margin: "0 0 16px", letterSpacing: "-0.03em", lineHeight: "1.1" }}>F&B Insights</h1>
+        <h2 style={{ fontSize: "clamp(40px, 6vw, 60px)", fontWeight: "800", color: "#1a3a18", margin: "0 0 16px", letterSpacing: "-0.03em", lineHeight: "1.1" }}>Export Insights & Ingredient Articles</h2>
         <p style={{ fontSize: "15px", color: "#5a7050", maxWidth: "440px", margin: "0 auto", lineHeight: "1.6" }}>
-          Discover the science, trends, and innovations shaping the future of nutritional powders and holistic health.
+          Explore Orbitto International updates on ingredient applications, export readiness, category trends, and sourcing insights for global buyers.
         </p>
       </div>
 
@@ -107,7 +129,7 @@ const BlogsPrimary = () => {
         {categories.map((cat) => {
           const isActive = activeCategory === cat.id;
           return (
-            <button key={cat.id} onClick={() => setActiveCategory(cat.id)} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", padding: "10px 22px", border: "1.5px solid #dde8cc", background: isActive ? "#1e4d14" : "#ffffff", color: isActive ? "#ffffff" : "#4a6a38", fontWeight: "600", fontSize: "12px", cursor: "pointer", minWidth: "140px" }}>
+            <button key={cat.id} onClick={() => handleCategoryChange(cat.id)} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", padding: "10px 22px", border: "1.5px solid #dde8cc", background: isActive ? "#1e4d14" : "#ffffff", color: isActive ? "#ffffff" : "#4a6a38", fontWeight: "600", fontSize: "12px", cursor: "pointer", minWidth: "140px" }}>
               <span style={{ fontSize: "13px", opacity: isActive ? 1 : 0.7 }}>{cat.icon}</span>
               {cat.label}
             </button>

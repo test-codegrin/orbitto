@@ -254,7 +254,7 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
                   type === 2 ? "" : isSmallTitle ? "text-center" : "ltn__section-title-2 text-center"
                 }`}
               >
-                <h1 className="section-title">{title || "Our Products"}</h1>
+                <h2 className="section-title">{title || "Our Products"}</h2>
                 {desc && <p>{desc}</p>}
               </div>
 

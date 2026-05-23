@@ -1,6 +1,7 @@
 "use client";
 
-import makePath from "@/libs/makePath";
+import { buildProductSearchPath } from "@/libs/catalog";
+import { primaryPhone } from "@/libs/seo";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -13,7 +14,7 @@ const HeaderSearch = () => {
 
     if (!searchValue) return;
 
-    router.push(`/products?search=${makePath(searchValue)}`);
+    router.push(buildProductSearchPath(searchValue));
     event.currentTarget.reset();
   };
 
@@ -28,7 +29,7 @@ const HeaderSearch = () => {
           <div className="header-feature-info">
             <h6>Phone</h6>
             <p>
-              <a href="tel:0123456789">+0123-456-789</a>
+              <a href={`tel:${primaryPhone.replace(/\s+/g, "")}`}>{primaryPhone}</a>
             </p>
           </div>
         </div>

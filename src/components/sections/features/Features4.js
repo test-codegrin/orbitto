@@ -24,10 +24,9 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Organic & Pure</h4>
+                      <h4>Quality-Focused Ingredients</h4>
                       <p>
-                        Every product is naturally grown, free from pesticides,
-                        preservatives, and artificial additives
+                        Product quality, consistency, and suitability remain central to every commercial supply discussion.
                       </p>
                     </div>
                   </div>
@@ -44,10 +43,9 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Traditionally Sourced</h4>
+                      <h4>Export Documentation Support</h4>
                       <p>
-                        Handpicked from trusted farms and spice gardens using
-                        age-old, time-honoured farming practices
+                        We align product movement with documentation and export coordination requirements for smoother international supply.
                       </p>
                     </div>
                   </div>
@@ -64,10 +62,9 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Quality You Can Trust</h4>
+                      <h4>Consistent Supply Planning</h4>
                       <p>
-                        Rigorously tested for purity, freshness, and authentic
-                        flavour before reaching your hands
+                        Orbitto supports repeat orders, buyer timelines, and dependable communication for long-term sourcing relationships.
                       </p>
                     </div>
                   </div>
@@ -84,10 +81,9 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Farm to Your Doorstep</h4>
+                      <h4>Flexible Packaging Options</h4>
                       <p>
-                        Sourced directly from farmers, ensuring freshness,
-                        fair trade, and zero unnecessary middlemen
+                        Bulk supply, packaging preferences, and private label discussions can be aligned to buyer and market requirements.
                       </p>
                     </div>
                   </div>

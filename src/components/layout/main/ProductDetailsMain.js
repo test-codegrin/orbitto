@@ -15,7 +15,7 @@ const ProductDetailsMain = ({
   return (
     <main>
       <HeroPrimary
-        title={title ? title : "Product Details"}
+        title={title ? title : "Export Product Details"}
         text={text ? text : "Product Details"}
         item={breadcrumbItem || { name: "Products", path: "/products" }}
         type={3}

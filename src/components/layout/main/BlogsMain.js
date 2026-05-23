@@ -7,8 +7,8 @@ const BlogsMain = ({ title }) => {
   return (
     <main>
       <HeroPrimary
-        title={title ? title : "News Feeds"}
-        text="Blogs"
+        title={title ? title : "Export Insights & Ingredient Blog"}
+        text="Insights"
         isCapitalize={false}
       />
       <BlogsPrimary />

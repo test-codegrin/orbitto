@@ -1,5 +1,5 @@
 "use client";
-import makePath from "@/libs/makePath";
+import { buildProductSearchPath } from "@/libs/catalog";
 import { locationUrl, officeAddress3, socialUrls } from "@/libs/contactInfo";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,7 +37,7 @@ const MobileMenu = () => {
     if (!searchValue) return;
 
     closeMobileMenuPanel();
-    router.push(`/products?search=${makePath(searchValue)}`);
+    router.push(buildProductSearchPath(searchValue));
     event.currentTarget.reset();
   };
 

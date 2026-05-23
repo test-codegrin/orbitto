@@ -1,13 +1,13 @@
 import Link from "next/link";
+import { buildProductCategoryPath } from "@/libs/catalog";
 import React from "react";
 
 const productLinks = [
-  { name: "Fruits", href: "/products?category=fruit" },
-  { name: "Vegetables", href: "/products?category=vegetable" },
-  { name: "Herbal Powder", href: "/products?category=herbal_powder" },
-  { name: "Spices", href: "/products?category=spices" },
-  { name: "Fruit Powder", href: "/products?category=fruit_powder" },
-  { name: "Honey", href: "/products?category=honey" },
+  { name: "Fruit Powder", href: buildProductCategoryPath("fruit-powder") },
+  { name: "Vegetable Powder", href: buildProductCategoryPath("vegetable-powder") },
+  { name: "Herbal Powder", href: buildProductCategoryPath("herbal-powder") },
+  { name: "Spices", href: buildProductCategoryPath("spices") },
+  { name: "Honey", href: buildProductCategoryPath("honey") },
 ];
 
 const FooterServices2 = () => {

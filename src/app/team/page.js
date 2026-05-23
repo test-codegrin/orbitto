@@ -1,6 +1,9 @@
 import TeamMain from "@/components/layout/main/TeamMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
+import { buildNoIndexMetadata } from "@/libs/seo";
 import React from "react";
+
+export const metadata = buildNoIndexMetadata("Team");
 
 const Team = () => {
   return (

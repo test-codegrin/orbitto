@@ -1,8 +1,12 @@
 import TeamDetailsMain from "@/components/layout/main/TeamDetailsMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import getTeamMembers from "@/libs/getTeamMembers";
+import { buildNoIndexMetadata } from "@/libs/seo";
 import { notFound } from "next/navigation";
 import React from "react";
+
+export const metadata = buildNoIndexMetadata("Team Details");
+
 const teamMembers = getTeamMembers();
 const TeamDetails = ({ params }) => {
   const { id } = params;

@@ -12,14 +12,15 @@ import CommonContext from "@/providers/CommonContext";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
-const ProductMain = ({ title, isSidebar, text }) => {
+const ProductMain = ({ title, isSidebar, text, categoryOverride }) => {
   const productLimit = isSidebar === false ? 16 : 21;
-  const category = useSearchParams()?.get("category");
+  const searchParams = useSearchParams();
+  const category = categoryOverride || searchParams?.get("category");
   const brand = useSearchParams()?.get("brand");
   const tag = useSearchParams()?.get("tag");
   const size = useSearchParams()?.get("size");
   const color = useSearchParams()?.get("color");
-  const search = useSearchParams()?.get("search");
+  const search = searchParams?.get("search");
   const currentPath = usePathname();
   const [productPage, setProductPage] = useState(1);
   const [rangeValue, setRangeValue] = useState(null);
@@ -99,7 +100,7 @@ const ProductMain = ({ title, isSidebar, text }) => {
       <HeroPrimary
         title={
           category
-            ? `Category: ${makeText(category)}`
+            ? `${makeText(category)} Export Products`
             : brand
             ? `Brand: ${makeText(brand)}`
             : size
@@ -109,12 +110,20 @@ const ProductMain = ({ title, isSidebar, text }) => {
             : color
             ? `Product Color: ${makeText(color)}`
             : search
-            ? `Search: ${makeText(search)}`
+            ? `Search Results for ${makeText(search)}`
             : title
             ? title
-            : "Product"
+            : "Export Product Catalog"
         }
-        text={text ? text : "Product"}
+        text={
+          category
+            ? makeText(category)
+            : search
+            ? "Product Search"
+            : text
+            ? text
+            : "Products"
+        }
         type={isSidebar === "primary" ? 2 : 3}
         isCapitalize={Boolean(brand)}
       />

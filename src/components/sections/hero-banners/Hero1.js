@@ -2,6 +2,7 @@
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { buildProductCategoryPath } from "@/libs/catalog";
 
 const DEFAULT_FLOAT_SIZE = 100;
 const BASE_STAGE_WIDTH = 1920;
@@ -27,7 +28,7 @@ const SLIDES = [
     id: 0,
     line1: "Fruit",
     line2: "Powder",
-    categoryHref: "/products?category=fruit_powder",
+    categoryHref: buildProductCategoryPath("fruit-powder"),
     subtitle: "From fruit to fine powder perfection",
     bgText: "FRUIT POWDER",
     watermarkGradient:
@@ -208,7 +209,7 @@ const SLIDES = [
     id: 1,
     line1: "Vegetable",
     line2: "Powder",
-    categoryHref: "/products?category=vegetable_powder",
+    categoryHref: buildProductCategoryPath("vegetable-powder"),
     subtitle: "From farm to fine powder perfection",
     bgText: "VEGETABLE POWDER",
     watermarkGradient:
@@ -368,7 +369,7 @@ const SLIDES = [
     id: 2,
     line1: "Pure",
     line2: "Honey",
-    categoryHref: "/products?category=honey",
+    categoryHref: buildProductCategoryPath("honey"),
     subtitle: "Nature's golden sweetness refined",
     bgText: "PURE HONEY",
     watermarkGradient:
@@ -490,7 +491,7 @@ const SLIDES = [
     id: 3,
     line1: "",
     line2: "Premium Spices",
-    categoryHref: "/products?category=spices",
+    categoryHref: buildProductCategoryPath("spices"),
     subtitle: "Handpicked spices bursting with bold flavor",
     bgText: "PREMIUM SPICES",
     watermarkGradient:
@@ -624,7 +625,7 @@ const SLIDES = [
     id: 4,
     line1: "Herbal",
     line2: "Powder",
-    categoryHref: "/products?category=herbal_powder",
+    categoryHref: buildProductCategoryPath("herbal-powder"),
     subtitle: "Pure herbs transformed into healing powder",
     bgText: "HERBAL POWDER",
     watermarkGradient:

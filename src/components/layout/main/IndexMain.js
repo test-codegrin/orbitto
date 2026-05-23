@@ -19,7 +19,7 @@ const IndexMain = () => {
       <Offerings />
       <Products3 isDouble={true} title={"Our Products"} pt={" pt-85"} />
       <HotDeal3 />
-      <Blogs2 type={2} pb="pb-70" title="Leatest Blog" />
+      <Blogs2 type={2} pb="pb-70" title="Latest Insights" />
       <Testimonials3 />
       <Features4 />
     </main>

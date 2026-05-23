@@ -1,6 +1,6 @@
 "use client";
 import ButtonOpenMobileMenu from "@/components/shared/buttons/ButtonOpenMobileMenu";
-import makePath from "@/libs/makePath";
+import { buildProductSearchPath } from "@/libs/catalog";
 import { useHeaderContex } from "@/providers/HeaderContex";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -21,7 +21,7 @@ const HeaderRight = () => {
 
     if (!searchValue) return;
 
-    router.push(`/products?search=${makePath(searchValue)}`);
+    router.push(buildProductSearchPath(searchValue));
     setIsSearchOpen(false);
     event.currentTarget.reset();
   };

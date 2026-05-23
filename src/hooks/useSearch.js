@@ -1,6 +1,6 @@
 "use client";
 import filterItems from "@/libs/filterItems";
-import makePath from "@/libs/makePath";
+import { buildProductSearchPath } from "@/libs/catalog";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 
@@ -20,7 +20,10 @@ const useSearch = (items, pathForRedirect) => {
 
     if (!currentSearchString?.trim()) return;
 
-    router.push(`${pathForRedirect}?search=${makePath(currentSearchString)}`);
+    const targetPath = pathForRedirect?.startsWith("/products")
+      ? buildProductSearchPath(currentSearchString)
+      : `${pathForRedirect}?search=${encodeURIComponent(currentSearchString)}`;
+    router.push(targetPath);
     setIsShowSearch(true);
     setpreviousSearchedItems(searchedItems);
     e.target.search.value = "";

@@ -19,6 +19,6 @@ export const socialUrls = {
   linkedin:
     "https://www.linkedin.com/in/orbitto-international-833b1540a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   x: "https://x.com/ORBITTO01pd",
-  youtube: "https://www.youtube.com",
-  behance: "https://www.behance.com",
+  youtube: "",
+  behance: "",
 };

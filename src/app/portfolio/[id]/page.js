@@ -1,7 +1,10 @@
 import PortfolioDetailsMain from "@/components/layout/main/PortfolioDetailsMain";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import getAllPortfolios from "@/libs/getAllPortfolios";
+import { buildNoIndexMetadata } from "@/libs/seo";
 import { notFound } from "next/navigation";
+
+export const metadata = buildNoIndexMetadata("Portfolio Details");
 
 const portfolios = getAllPortfolios();
 const PortfolioDetails = ({ params }) => {

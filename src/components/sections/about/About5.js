@@ -21,12 +21,12 @@ const About5 = ({ pt }) => {
                 <h6 className="section-subtitle ltn__secondary-color">
                   About Us
                 </h6>
-                <h1 className="section-title">Orbitto</h1>
+                <h2 className="section-title">Orbitto International</h2>
                 <p>
-                  Orbitto is a manufacturer of spray-dried fruit, vegetable,
-                  dairy, and specialty powders - delivering natural ingredients
-                  that bring nutrition, functionality, and convenience to food
-                  and beverage innovations worldwide.
+                  Orbitto International is an export-focused manufacturer of
+                  spray-dried fruit powders, vegetable powders, spices, honey,
+                  and specialty ingredients for food, beverage, nutraceutical,
+                  and private label buyers worldwide.
                 </p>
               </div>
             </div>

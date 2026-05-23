@@ -35,7 +35,7 @@ const QuickSearchItems = () => {
               >
                 <div className="sidebar__post__img">
                   <Image
-                    alt=""
+                    alt={title || "Search result"}
                     loading="lazy"
                     src={image}
                     width={1000}

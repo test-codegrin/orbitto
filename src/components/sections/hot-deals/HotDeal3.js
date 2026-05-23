@@ -14,9 +14,9 @@ const HotDeal3 = () => {
             <div className="call-to-action-inner call-to-action-inner-4 text-color-white--- text-center---">
               <div className="section-title-area ltn__section-title-2 text-center---">
                 <h6 className="ltn__secondary-color">Todays Hot Deals</h6>
-                <h1 className="section-title">
+                <h2 className="section-title">
                   Original Stock Honey <br /> Combo Package
-                </h1>
+                </h2>
               </div>
               <div
                 className="ltn__countdown ltn__countdown-3 bg-white--"
@@ -39,4 +39,3 @@ const HotDeal3 = () => {
 };
 
 export default HotDeal3;
-

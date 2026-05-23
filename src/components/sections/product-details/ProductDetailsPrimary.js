@@ -602,7 +602,7 @@ const ProductDetailsPrimary = ({ initialProductIdOrSlug }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="mt-20">
-                <h1 className="section-title">Related Products</h1>
+                <h2 className="section-title">Related Products</h2>
               </div>
             </div>
           </div>

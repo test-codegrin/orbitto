@@ -1,7 +1,17 @@
 import Link from "next/link";
 
-const HeroPrimary = ({ text, title, item, type, mb, isCapitalize, bg }) => {
+const HeroPrimary = ({
+  text,
+  title,
+  item,
+  type,
+  mb,
+  isCapitalize,
+  bg,
+  headingTag = "h1",
+}) => {
   const { name, path } = item ? item : {};
+  const HeadingTag = headingTag;
 
   return (
     <div
@@ -33,15 +43,15 @@ const HeroPrimary = ({ text, title, item, type, mb, isCapitalize, bg }) => {
               {/* CENTER: Title */}
               <div className="section-title-area ltn__section-title-2">
                 <h6 className="section-subtitle ltn__secondary-color">
-                  Welcome to our Orbitto
+                  Orbitto International
                 </h6>
-                <h1
+                <HeadingTag
                   className={`section-title white-color ${
                     isCapitalize ? "text-capitalize" : ""
                   }`}
                 >
                   {title}
-                </h1>
+                </HeadingTag>
               </div>
 
               {/* RIGHT: empty spacer to keep title centered */}

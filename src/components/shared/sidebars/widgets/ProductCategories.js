@@ -1,5 +1,6 @@
 "use client";
 import useCategories from "@/hooks/useCategories";
+import { buildProductCategoryPath } from "@/libs/catalog";
 import { normalizeProductType } from "@/libs/productType";
 import { useCommonContext } from "@/providers/CommonContext";
 import Link from "next/link";
@@ -8,7 +9,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 const ProductCategories = ({ className = "", isDropdown = false }) => {
   const {
-    currentPath,
     category: currentCategory,
     productCategories,
     isCategoriesLoading: isCategoriesLoadingFromContext,
@@ -33,7 +33,7 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
     { label: "All Products", value: "" },
     ...categoryOptions,
   ];
-  const productPath = currentPath ? currentPath : "/shop";
+  const productPath = "/products";
   const selectedCategory = normalizeProductType(currentCategory) || "";
   const selectedCategoryLabel =
     categories.find(
@@ -42,9 +42,7 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
     categories[0].label;
   const handleCategorySelect = (categoryPath) => {
     setIsOpen(false);
-    router.push(
-      categoryPath ? `${productPath}?category=${categoryPath}` : productPath
-    );
+    router.push(categoryPath ? buildProductCategoryPath(categoryPath) : productPath);
   };
 
   useEffect(() => {
@@ -122,7 +120,7 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
           return (
             <li key={value || "all-products"}>
               <Link
-                href={value ? `${productPath}?category=${value}` : productPath}
+                href={value ? buildProductCategoryPath(value) : productPath}
                 className={
                   (value && selectedCategory === normalizeProductType(value)) ||
                   (!value && !currentCategory)
