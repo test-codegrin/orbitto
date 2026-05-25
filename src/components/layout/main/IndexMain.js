@@ -8,6 +8,8 @@ import HotDeal3 from "@/components/sections/hot-deals/HotDeal3";
 import Offerings from "@/components/sections/offerings/Offerings";
 import Products3 from "@/components/sections/products/Products3";
 import Testimonials3 from "@/components/sections/testimonils/Testimonials3";
+import SeoFaqSection from "@/components/seo/SeoFaqSection";
+import { homeFaqItems } from "@/libs/seoContent";
 
 const IndexMain = () => {
   return (
@@ -21,6 +23,12 @@ const IndexMain = () => {
       <HotDeal3 />
       <Blogs2 type={2} pb="pb-70" title="Latest Insights" />
       <Testimonials3 />
+      <SeoFaqSection
+        id="home-faq"
+        title="International Buyer FAQ"
+        intro="Helpful answers for brands, importers, and distributors exploring Orbitto International."
+        items={homeFaqItems}
+      />
       <Features4 />
     </main>
   );

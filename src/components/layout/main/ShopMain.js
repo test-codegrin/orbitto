@@ -2,6 +2,7 @@
 import Features4 from "@/components/sections/features/Features4";
 import HeroPrimary from "@/components/sections/hero-banners/HeroPrimary";
 import ProductsPrimary from "@/components/sections/products/ProductsPrimary";
+import SeoFaqSection from "@/components/seo/SeoFaqSection";
 import useCategories from "@/hooks/useCategories";
 import useProducts from "@/hooks/useProducts";
 import useSearch from "@/hooks/useSearch";
@@ -12,7 +13,13 @@ import CommonContext from "@/providers/CommonContext";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
-const ProductMain = ({ title, isSidebar, text, categoryOverride }) => {
+const ProductMain = ({
+  title,
+  isSidebar,
+  text,
+  categoryOverride,
+  faqSection,
+}) => {
   const productLimit = isSidebar === false ? 16 : 21;
   const searchParams = useSearchParams();
   const category = categoryOverride || searchParams?.get("category");
@@ -156,6 +163,15 @@ const ProductMain = ({ title, isSidebar, text, categoryOverride }) => {
       >
         <ProductsPrimary isSidebar={isSidebar} />
       </CommonContext>
+      {faqSection?.items?.length ? (
+        <SeoFaqSection
+          id={faqSection.id}
+          title={faqSection.title}
+          intro={faqSection.intro}
+          items={faqSection.items}
+          eyebrow={faqSection.eyebrow}
+        />
+      ) : null}
       <Features4 />
     </main>
   );

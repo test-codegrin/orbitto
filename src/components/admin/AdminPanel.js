@@ -100,6 +100,41 @@ const createMetricRow = (key = "", value = "") => ({
   value,
 });
 
+const AutoResizeTextarea = ({
+  value,
+  onChange,
+  minRows = 3,
+  className = "",
+  ...props
+}) => {
+  const textareaRef = useRef(null);
+
+  const resizeToContent = useCallback(() => {
+    const el = textareaRef.current;
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${el.scrollHeight}px`;
+  }, []);
+
+  useEffect(() => {
+    resizeToContent();
+  }, [value, resizeToContent]);
+
+  return (
+    <textarea
+      {...props}
+      ref={textareaRef}
+      className={className}
+      rows={minRows}
+      value={value}
+      onChange={(event) => {
+        onChange?.(event);
+        resizeToContent();
+      }}
+    />
+  );
+};
+
 const stripHtml = (value = "") =>
   value
     .replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, "")
@@ -124,9 +159,41 @@ const sectionLabel = (section) => {
   return section.charAt(0).toUpperCase() + section.slice(1);
 };
 
+const adminSidebarMenu = [
+  { type: "link", section: "dashboard" },
+  {
+    type: "group",
+    key: "productData",
+    label: "Product Data",
+    children: ["categories", "products"],
+  },
+  {
+    type: "group",
+    key: "blogData",
+    label: "Blog Data",
+    children: ["blogCategories", "blogs"],
+  },
+];
+
 const AdminPanel = () => {
   const router = useRouter();
   const [activeSection, setActiveSection] = useState("dashboard");
+  const [confirmDialog, setConfirmDialog] = useState({
+    isOpen: false,
+    title: "",
+    message: "",
+    confirmLabel: "Confirm",
+    confirmTone: "primary",
+    action: null,
+  });
+  const [pendingDeleteProduct, setPendingDeleteProduct] = useState(null);
+  const [shouldScrollToProductForm, setShouldScrollToProductForm] =
+    useState(false);
+  const [openSidebarGroups, setOpenSidebarGroups] = useState(() => ({
+    productData: false,
+    blogData: false,
+  }));
+  const productFormRef = useRef(null);
   const [sessionChecked, setSessionChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
@@ -183,6 +250,25 @@ const AdminPanel = () => {
     [blogCategories]
   );
   const recentBlogs = useMemo(() => blogs.slice(0, 5), [blogs]);
+
+  const isGroupActive = useCallback(
+    (groupKey) =>
+      adminSidebarMenu.some(
+        (item) =>
+          item.type === "group" &&
+          item.key === groupKey &&
+          item.children.includes(activeSection)
+      ),
+    [activeSection]
+  );
+
+  useEffect(() => {
+    setOpenSidebarGroups((prev) => ({
+      ...prev,
+      ...(isGroupActive("productData") ? { productData: true } : {}),
+      ...(isGroupActive("blogData") ? { blogData: true } : {}),
+    }));
+  }, [activeSection, isGroupActive]);
 
   const showNotice = useCallback((type, text) => {
     setNotice({ type, text });
@@ -392,6 +478,30 @@ const AdminPanel = () => {
   }, [blogsSearchInput]);
 
   useEffect(() => {
+    if (
+      !shouldScrollToProductForm ||
+      !isProductFormOpen ||
+      activeSection !== "products"
+    ) {
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      if (productFormRef.current) {
+        productFormRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      setShouldScrollToProductForm(false);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [shouldScrollToProductForm, isProductFormOpen, activeSection]);
+
+  useEffect(() => {
     if (!sessionChecked || isLoading) return;
     loadBlogCategories({
       page: blogCategoriesPage,
@@ -499,6 +609,7 @@ const AdminPanel = () => {
     setEditingProduct(product);
     setIsProductFormOpen(true);
     setImageFile(null);
+    setShouldScrollToProductForm(true);
 
     if (product) {
       setProductForm({
@@ -564,11 +675,12 @@ const AdminPanel = () => {
 
       showNotice("success", editingProduct ? "Product updated." : "Product added.");
       closeProductForm();
-      if (productPage === 1) {
-        loadProducts({ page: 1 });
-      } else {
-        setProductPage(1);
-      }
+      await loadProducts({
+        page: productPage,
+        limit: productLimit,
+        search: appliedProductSearch,
+        category: selectedProductCategory,
+      });
     } catch (error) {
       showNotice("error", error.message);
     } finally {
@@ -576,10 +688,7 @@ const AdminPanel = () => {
     }
   };
 
-  const handleDeleteProduct = async (product) => {
-    const confirmed = window.confirm(`Delete "${product.product_name}"?`);
-    if (!confirmed) return;
-
+  const performDeleteProduct = async (product) => {
     setIsSaving(true);
     try {
       await adminFetch(`/api/admin/products/${product.products_id}`, {
@@ -590,13 +699,59 @@ const AdminPanel = () => {
       if (products.length <= 1 && productPage > 1) {
         setProductPage((page) => page - 1);
       } else {
-        loadProducts();
+        await loadProducts({
+          page: productPage,
+          limit: productLimit,
+          search: appliedProductSearch,
+          category: selectedProductCategory,
+        });
       }
     } catch (error) {
       showNotice("error", error.message);
     } finally {
       setIsSaving(false);
     }
+  };
+
+  const openConfirmDialog = ({
+    title,
+    message,
+    confirmLabel,
+    confirmTone = "primary",
+    action,
+  }) => {
+    setConfirmDialog({
+      isOpen: true,
+      title,
+      message,
+      confirmLabel,
+      confirmTone,
+      action,
+    });
+  };
+
+  const closeConfirmDialog = () => {
+    setConfirmDialog({
+      isOpen: false,
+      title: "",
+      message: "",
+      confirmLabel: "Confirm",
+      confirmTone: "primary",
+      action: null,
+    });
+    setPendingDeleteProduct(null);
+  };
+
+  const handleDeleteProduct = (product) => {
+    setPendingDeleteProduct(product);
+    openConfirmDialog({
+      title: "Delete Product?",
+      message:
+        "Are you sure you want to delete this product? This action cannot be undone.",
+      confirmLabel: "Delete",
+      confirmTone: "danger",
+      action: "deleteProduct",
+    });
   };
 
   const handleProductSearchSubmit = (event) => {
@@ -909,6 +1064,20 @@ const AdminPanel = () => {
     router.refresh();
   };
 
+  const handleConfirmDialogConfirm = async () => {
+    if (confirmDialog.action === "logout") {
+      closeConfirmDialog();
+      await handleLogout();
+      return;
+    }
+
+    if (confirmDialog.action === "deleteProduct" && pendingDeleteProduct) {
+      const productToDelete = pendingDeleteProduct;
+      closeConfirmDialog();
+      await performDeleteProduct(productToDelete);
+    }
+  };
+
   const handleRefresh = () => {
     loadAdminData();
     if (!sessionChecked) return;
@@ -979,28 +1148,83 @@ const AdminPanel = () => {
     <main className="admin-shell">
       <aside className="admin-sidebar">
         <div>
-          <div className="admin-logo">Orbitto Admin</div>
+          <div className="admin-logo">
+            <img src="/img/logo.png" alt="Orbitto" />
+          </div>
           <nav className="admin-nav" aria-label="Admin navigation">
-            {[
-              "dashboard",
-              "categories",
-              "products",
-              "blogCategories",
-              "blogs",
-            ].map((section) => (
-              <button
-                key={section}
-                type="button"
-                className={activeSection === section ? "active" : ""}
-                onClick={() => setActiveSection(section)}
-              >
-                {sectionLabel(section)}
-              </button>
-            ))}
+            {adminSidebarMenu.map((item) => {
+              if (item.type === "link") {
+                return (
+                  <button
+                    key={item.section}
+                    type="button"
+                    className={activeSection === item.section ? "active" : ""}
+                    onClick={() => setActiveSection(item.section)}
+                  >
+                    {sectionLabel(item.section)}
+                  </button>
+                );
+              }
+
+              const isOpen = openSidebarGroups[item.key];
+              const isActive = isGroupActive(item.key);
+
+              return (
+                <div
+                  key={item.key}
+                  className={`admin-nav-group ${isOpen ? "open" : ""}`}
+                >
+                  <button
+                    type="button"
+                    className={`admin-nav-dropdown-trigger ${isActive ? "active" : ""}`}
+                    onClick={() =>
+                      setOpenSidebarGroups((prev) => ({
+                        ...prev,
+                        [item.key]: !prev[item.key],
+                      }))
+                    }
+                    aria-expanded={isOpen}
+                  >
+                    <span>{item.label}</span>
+                    <span className={`admin-nav-chevron ${isOpen ? "open" : ""}`} aria-hidden="true">
+                      <i className="fas fa-chevron-down" />
+                    </span>
+                  </button>
+
+                  <div className="admin-nav-dropdown-panel">
+                    {item.children.map((section) => (
+                      <button
+                        key={section}
+                        type="button"
+                        className={activeSection === section ? "active" : ""}
+                        onClick={() => setActiveSection(section)}
+                      >
+                        {sectionLabel(section)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </nav>
         </div>
-        <button type="button" className="admin-logout" onClick={handleLogout}>
-          Logout
+        <button
+          type="button"
+          className="admin-logout"
+          onClick={() =>
+            openConfirmDialog({
+              title: "Confirm Logout",
+              message: "Are you sure you want to log out of the admin panel?",
+              confirmLabel: "Yes, Logout",
+              confirmTone: "primary",
+              action: "logout",
+            })
+          }
+        >
+          <span className="admin-logout-icon" aria-hidden="true">
+            <i className="fas fa-sign-out-alt" />
+          </span>
+          <span>Logout</span>
         </button>
       </aside>
 
@@ -1081,6 +1305,7 @@ const AdminPanel = () => {
             imageFile={imageFile}
             onSubmit={handleProductSubmit}
             onDelete={handleDeleteProduct}
+            formRef={productFormRef}
           />
         ) : null}
 
@@ -1142,6 +1367,40 @@ const AdminPanel = () => {
           />
         ) : null}
       </section>
+      {confirmDialog.isOpen ? (
+        <div
+          className="admin-confirm-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="admin-confirm-title"
+          onClick={closeConfirmDialog}
+        >
+          <div className="admin-confirm-card" onClick={(event) => event.stopPropagation()}>
+            <h2 id="admin-confirm-title">{confirmDialog.title}</h2>
+            <p>{confirmDialog.message}</p>
+            <div className="admin-confirm-actions">
+              <button
+                type="button"
+                className="admin-button admin-button-light"
+                onClick={closeConfirmDialog}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className={`admin-button ${
+                  confirmDialog.confirmTone === "danger"
+                    ? "admin-button-danger"
+                    : "admin-button-primary"
+                }`}
+                onClick={handleConfirmDialogConfirm}
+              >
+                {confirmDialog.confirmLabel}
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 };
@@ -2039,6 +2298,7 @@ const ProductsManager = ({
   imageFile,
   onSubmit,
   onDelete,
+  formRef,
 }) => {
   const applicationPreviewItems = splitProductApplicationText(
     productForm.product_application
@@ -2072,7 +2332,7 @@ const ProductsManager = ({
     </div>
 
     {isProductFormOpen ? (
-      <article className="admin-card">
+      <article className="admin-card" ref={formRef}>
         <div className="admin-card-header">
           <h2>{editingProduct ? "Edit Product" : "Add Product"}</h2>
           <button type="button" className="admin-button admin-button-light" onClick={onCloseForm}>
@@ -2111,7 +2371,7 @@ const ProductsManager = ({
 
           <label>
             Product Description
-            <textarea
+            <AutoResizeTextarea
               value={productForm.product_description}
               onChange={(event) =>
                 onProductFormChange((form) => ({
@@ -2119,13 +2379,13 @@ const ProductsManager = ({
                   product_description: event.target.value,
                 }))
               }
-              rows="4"
+              minRows={4}
             />
           </label>
 
           <label>
             Product Application
-            <textarea
+            <AutoResizeTextarea
               value={productForm.product_application}
               placeholder={`Enter each application on a new line
 Example:
@@ -2138,7 +2398,7 @@ Used in nutraceutical applications`}
                   product_application: event.target.value,
                 }))
               }
-              rows="6"
+              minRows={6}
             />
           </label>
 
@@ -2178,10 +2438,10 @@ Used in nutraceutical applications`}
                   onChange={(event) => onSpecRowChange(index, "key", event.target.value)}
                 />
                 <div className="admin-spec-value-cell">
-                  <textarea
+                  <AutoResizeTextarea
                     placeholder={`Value
 Enter multiple values on separate lines`}
-                    rows="2"
+                    minRows={2}
                     value={row.value}
                     onChange={(event) => onSpecRowChange(index, "value", event.target.value)}
                   />
@@ -2385,3 +2645,5 @@ Enter multiple values on separate lines`}
 };
 
 export default AdminPanel;
+
+

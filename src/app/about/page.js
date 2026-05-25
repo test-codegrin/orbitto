@@ -1,5 +1,4 @@
 import AboutMain from "@/components/layout/main/AboutMain";
-import SeoFaqSection from "@/components/seo/SeoFaqSection";
 import StructuredData from "@/components/seo/StructuredData";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import {
@@ -49,12 +48,14 @@ const About = () => {
         isNavbarAppointmentBtn={true}
       >
         <>
-          <AboutMain />
-          <SeoFaqSection
-            id="about-faq"
-            title="About Orbitto FAQ"
-            intro="Key answers for international buyers researching the Orbitto brand."
-            items={aboutFaqItems}
+          <AboutMain
+            faqSection={{
+              id: "about-faq",
+              title: "About Orbitto FAQ",
+              intro:
+                "Key answers for international buyers researching the Orbitto brand.",
+              items: aboutFaqItems,
+            }}
           />
         </>
       </PageWrapper>

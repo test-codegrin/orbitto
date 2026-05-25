@@ -1,6 +1,5 @@
 import ProductMain from "@/components/layout/main/ShopMain";
 import StructuredData from "@/components/seo/StructuredData";
-import SeoFaqSection from "@/components/seo/SeoFaqSection";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import {
   buildSeoMetadata,
@@ -159,12 +158,13 @@ const Products = async ({ searchParams }) => {
             isSidebar="primary"
             title="Export Product Catalog"
             text="Products"
-          />
-          <SeoFaqSection
-            id="products-faq"
-            title="Products FAQ"
-            intro="Key questions from international buyers sourcing Orbitto ingredients."
-            items={productsFaqItems}
+            faqSection={{
+              id: "products-faq",
+              title: "Products FAQ",
+              intro:
+                "Key questions from international buyers sourcing Orbitto ingredients.",
+              items: productsFaqItems,
+            }}
           />
         </>
       </PageWrapper>

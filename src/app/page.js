@@ -1,5 +1,4 @@
 import IndexMain from "@/components/layout/main/IndexMain";
-import SeoFaqSection from "@/components/seo/SeoFaqSection";
 import StructuredData from "@/components/seo/StructuredData";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import {
@@ -7,7 +6,6 @@ import {
   defaultDescription,
   getWebPageSchema,
 } from "@/libs/seo";
-import { homeFaqItems } from "@/libs/seoContent";
 
 export const metadata = buildSeoMetadata({
   title: "Fruit Powder, Spices, Honey & Ingredient Exporter",
@@ -33,15 +31,7 @@ export default function Home() {
         })}
       />
       <PageWrapper isNavbarAppointmentBtn={true}>
-        <>
-          <IndexMain />
-          <SeoFaqSection
-            id="home-faq"
-            title="International Buyer FAQ"
-            intro="Helpful answers for brands, importers, and distributors exploring Orbitto International."
-            items={homeFaqItems}
-          />
-        </>
+        <IndexMain />
       </PageWrapper>
     </>
   );

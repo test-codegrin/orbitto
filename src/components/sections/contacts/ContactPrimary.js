@@ -187,7 +187,7 @@ const ContactPrimary = () => {
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div className="input-item">
+                    <div className="input-item service-type-select">
                       <select
                         name="serviceType"
                         className="nice-select"
@@ -203,6 +203,7 @@ const ContactPrimary = () => {
                         <option>Packaging Type</option>
 
                       </select>
+                      <span className="service-type-select-arrow" aria-hidden="true" />
                     </div>
                   </div>
                   <div className="col-md-6">

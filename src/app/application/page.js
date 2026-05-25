@@ -1,5 +1,4 @@
 import PortfolioMain from "@/components/layout/main/PortfolioMain";
-import SeoFaqSection from "@/components/seo/SeoFaqSection";
 import StructuredData from "@/components/seo/StructuredData";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import {
@@ -50,12 +49,14 @@ const Application = () => {
         isNavbarAppointmentBtn={true}
       >
         <>
-          <PortfolioMain />
-          <SeoFaqSection
-            id="application-faq"
-            title="Application FAQ"
-            intro="Answers around where Orbitto ingredients fit in food, beverage, and wellness product development."
-            items={applicationFaqItems}
+          <PortfolioMain
+            faqSection={{
+              id: "application-faq",
+              title: "Application FAQ",
+              intro:
+                "Answers around where Orbitto ingredients fit in food, beverage, and wellness product development.",
+              items: applicationFaqItems,
+            }}
           />
         </>
       </PageWrapper>

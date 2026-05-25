@@ -6,6 +6,7 @@ const Features4 = ({ type, mb }) => {
       className={`ltn__feature-area  ${type === 2 ? "" : ""}  ${
         mb ? mb : "before-bg-bottom-2"
       } plr--5`}
+      style={{ marginTop: "32px" }}
     >
       <div className="container-fluid">
         <div className="row">

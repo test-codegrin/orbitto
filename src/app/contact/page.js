@@ -1,5 +1,4 @@
 import ContactMain from "@/components/layout/main/ContactMain";
-import SeoFaqSection from "@/components/seo/SeoFaqSection";
 import StructuredData from "@/components/seo/StructuredData";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import {
@@ -47,12 +46,14 @@ const Contact = () => {
         isNavbarAppointmentBtn={true}
       >
         <>
-          <ContactMain />
-          <SeoFaqSection
-            id="contact-faq"
-            title="Quote and Export Support FAQ"
-            intro="Common questions from buyers contacting Orbitto International."
-            items={contactFaqItems}
+          <ContactMain
+            faqSection={{
+              id: "contact-faq",
+              title: "Quote and Export Support FAQ",
+              intro:
+                "Common questions from buyers contacting Orbitto International.",
+              items: contactFaqItems,
+            }}
           />
         </>
       </PageWrapper>

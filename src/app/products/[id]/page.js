@@ -1,5 +1,4 @@
 import ProductDetailsMain from "@/components/layout/main/ProductDetailsMain";
-import SeoFaqSection from "@/components/seo/SeoFaqSection";
 import StructuredData from "@/components/seo/StructuredData";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import {
@@ -85,12 +84,12 @@ const ProductDetails = async ({ params }) => {
             text={categoryName}
             type={1}
             breadcrumbItem={{ name: categoryName, path: categoryPath }}
-          />
-          <SeoFaqSection
-            id="product-detail-faq"
-            title={`${productTitle} FAQ`}
-            intro={`Buyer-focused answers for ${productTitle} from Orbitto International.`}
-            items={faqItems}
+            faqSection={{
+              id: "product-detail-faq",
+              title: `${productTitle} FAQ`,
+              intro: `Buyer-focused answers for ${productTitle} from Orbitto International.`,
+              items: faqItems,
+            }}
           />
         </>
       </PageWrapper>

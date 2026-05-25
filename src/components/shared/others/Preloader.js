@@ -130,8 +130,8 @@ const Preloader = () => {
               className="preloader-logo-img"
               src="/img/logo.png"
               alt="Loading"
-              width={154}
-              height={42}
+              width={254}
+              height={254}
               priority
             />
           </div>

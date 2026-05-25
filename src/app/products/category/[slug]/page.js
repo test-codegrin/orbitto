@@ -1,6 +1,5 @@
 import ProductMain from "@/components/layout/main/ShopMain";
 import StructuredData from "@/components/seo/StructuredData";
-import SeoFaqSection from "@/components/seo/SeoFaqSection";
 import PageWrapper from "@/components/shared/wrappers/PageWrapper";
 import {
   buildSeoMetadata,
@@ -96,12 +95,15 @@ const ProductCategoryPage = async ({ params }) => {
         isNavbarAppointmentBtn={true}
       >
         <>
-          <ProductMain isSidebar="primary" categoryOverride={category.slug} />
-          <SeoFaqSection
-            id="product-category-faq"
-            title={`${category.label} Export FAQ`}
-            intro={`Quick answers for international buyers, distributors, and brands sourcing ${category.label.toLowerCase()} from Orbitto International.`}
-            items={faqItems}
+          <ProductMain
+            isSidebar="primary"
+            categoryOverride={category.slug}
+            faqSection={{
+              id: "product-category-faq",
+              title: `${category.label} Export FAQ`,
+              intro: `Quick answers for international buyers, distributors, and brands sourcing ${category.label.toLowerCase()} from Orbitto International.`,
+              items: faqItems,
+            }}
           />
         </>
       </PageWrapper>
