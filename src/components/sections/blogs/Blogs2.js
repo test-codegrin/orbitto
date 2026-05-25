@@ -33,7 +33,7 @@ const Blogs2 = ({ type, title, pt, pb }) => {
         <div className="row">
           <div className="col-lg-12">
             <div className="section-title-area ltn__section-title-2 text-center">
-              <h2 className="section-title">{title ? title : "Latest Insights"}</h2>
+              <h2 className="section-title">{title ? title : "Latest Blogs"}</h2>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@ const Blogs2 = ({ type, title, pt, pb }) => {
           {blogs?.map((blog, idx) => (
             <div
               key={idx}
-              className="col-lg-12"
+              className="col-lg-12 latest-insights-col"
               style={
                 blogs.length === 1
                   ? { maxWidth: "420px", marginLeft: "auto", marginRight: "auto" }

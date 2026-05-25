@@ -9,7 +9,7 @@ const BlogCard2 = ({ blog, type }) => {
   return (
     <div
       className={`ltn__blog-item  ${
-        type === 2 ? "ltn__blog-item-3" : "ltn__blog-item-4 bg-image"
+        type === 2 ? "ltn__blog-item-3 latest-insight-card" : "ltn__blog-item-4 bg-image"
       }`}
       data-bs-bg={image}
     >

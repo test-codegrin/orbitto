@@ -12389,6 +12389,53 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   transform: scale(1.1);
 }
 
+.latest-insights-col {
+  display: flex;
+  align-self: stretch;
+}
+
+.latest-insight-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.latest-insight-card .ltn__blog-img {
+  height: 310px;
+  overflow: hidden;
+}
+
+.latest-insight-card .ltn__blog-img img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.latest-insight-card .ltn__blog-brief {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.latest-insight-card .ltn__blog-meta {
+  min-height: 100px;
+}
+
+.latest-insight-card .ltn__blog-title {
+  min-height: 72px;
+  margin-bottom: 16px;
+}
+
+.latest-insight-card .ltn__blog-meta-btn {
+  margin-top: auto;
+}
+
+.ltn__blog-item-3-normal {
+  align-items: stretch;
+}
+
 /* ltn__blog-item-4 */
 .ltn__blog-item-4 {
   border: 2px solid var(--white-9);
