@@ -222,6 +222,24 @@ const BlogDetailsPrimary = () => {
           </div>
         ) : null}
 
+        {blog.blog_author_info ? (
+          <div
+            style={{
+              background: "#f7fbf4",
+              border: `1px solid ${T.border}`,
+              padding: "24px 28px",
+              marginBottom: "40px",
+            }}
+          >
+            <h4 style={{ fontSize: "17px", fontWeight: "700", color: T.text, margin: "0 0 10px" }}>
+              Author Info
+            </h4>
+            <p style={{ margin: 0, color: T.muted, lineHeight: 1.8 }}>
+              {blog.blog_author_info}
+            </p>
+          </div>
+        ) : null}
+
         <div style={{ height: 1, background: T.border, marginBottom: "36px" }} />
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "40px" }}>
           <div style={{ textAlign: "left", visibility: prev ? "visible" : "hidden" }}>
