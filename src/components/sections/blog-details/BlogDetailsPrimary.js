@@ -15,6 +15,39 @@ const T = {
 const formatDate = (value) =>
   new Date(value).toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric" });
 
+const toEmbeddableVideoUrl = (rawUrl) => {
+  const value = String(rawUrl || "").trim();
+  if (!value) return "";
+
+  try {
+    const parsed = new URL(value);
+    const host = parsed.hostname.replace(/^www\./, "").toLowerCase();
+
+    // Convert standard YouTube links to embed links.
+    if (host === "youtube.com" || host === "m.youtube.com" || host === "youtu.be") {
+      let videoId = "";
+
+      if (host === "youtu.be") {
+        videoId = parsed.pathname.split("/").filter(Boolean)[0] || "";
+      } else if (parsed.pathname.startsWith("/watch")) {
+        videoId = parsed.searchParams.get("v") || "";
+      } else if (parsed.pathname.startsWith("/shorts/")) {
+        videoId = parsed.pathname.split("/").filter(Boolean)[1] || "";
+      } else if (parsed.pathname.startsWith("/embed/")) {
+        videoId = parsed.pathname.split("/").filter(Boolean)[1] || "";
+      }
+
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+    }
+
+    return value;
+  } catch {
+    return value;
+  }
+};
+
 const BlogDetailsPrimary = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
@@ -41,6 +74,7 @@ const BlogDetailsPrimary = () => {
   );
   const blogTitle = blog?.title || blog?.blog_author || "Orbitto Article";
   const coverSrc = sortedImages.length ? `/api/blog/image/${sortedImages[0].image_id}` : `/api/blog/${id}/image`;
+  const coverImageId = sortedImages[0]?.image_id ?? null;
 
   const currentIndex = allBlogs.findIndex((b) => b.blog_detail_id === Number.parseInt(id, 10));
   const prev = currentIndex > 0 ? allBlogs[currentIndex - 1] : null;
@@ -91,20 +125,31 @@ const BlogDetailsPrimary = () => {
                 i += 1;
               }
 
+              const nonDuplicateImages = imageGroup.filter((imageBlock) => {
+                if (imageBlock?.image_id && coverImageId) {
+                  return Number(imageBlock.image_id) !== Number(coverImageId);
+                }
+                return getImageSrc(imageBlock) !== coverSrc;
+              });
+
+              if (!nonDuplicateImages.length) {
+                continue;
+              }
+
               rendered.push(
                 <div
                   key={`image-group-${i}`}
                   style={{
                     display: "grid",
-                    gridTemplateColumns: imageGroup.length > 1 ? "1fr 1fr" : "1fr",
+                    gridTemplateColumns: nonDuplicateImages.length > 1 ? "1fr 1fr" : "1fr",
                     gap: "16px",
                     marginBottom: "24px",
-                    maxWidth: imageGroup.length > 1 ? "100%" : "560px",
-                    marginLeft: imageGroup.length > 1 ? "0" : "auto",
-                    marginRight: imageGroup.length > 1 ? "0" : "auto",
+                    maxWidth: nonDuplicateImages.length > 1 ? "100%" : "560px",
+                    marginLeft: nonDuplicateImages.length > 1 ? "0" : "auto",
+                    marginRight: nonDuplicateImages.length > 1 ? "0" : "auto",
                   }}
                 >
-                  {imageGroup.map((imageBlock, imageIndex) => (
+                  {nonDuplicateImages.map((imageBlock, imageIndex) => (
                     <div key={`img-wrap-${imageIndex}-${getImageSrc(imageBlock)}`} style={{ aspectRatio: "4/3", overflow: "hidden" }}>
                       <Image
                         key={`img-${imageIndex}-${getImageSrc(imageBlock)}`}
@@ -144,9 +189,18 @@ const BlogDetailsPrimary = () => {
             }
 
             if (block.type === "video") {
+              const embedUrl = toEmbeddableVideoUrl(block.url);
+              if (!embedUrl) continue;
               rendered.push(
                 <div key={`video-${i}`} style={{ marginBottom: "24px", aspectRatio: "16/9" }}>
-                  <iframe src={block.url} title={`video-${i}`} style={{ width: "100%", height: "100%", border: 0 }} allowFullScreen />
+                  <iframe
+                    src={embedUrl}
+                    title={`video-${i}`}
+                    style={{ width: "100%", height: "100%", border: 0 }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
                 </div>
               );
             }
