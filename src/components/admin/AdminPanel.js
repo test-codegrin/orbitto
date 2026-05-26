@@ -187,13 +187,18 @@ const AdminPanel = () => {
     action: null,
   });
   const [pendingDeleteProduct, setPendingDeleteProduct] = useState(null);
+  const [pendingDeleteCategory, setPendingDeleteCategory] = useState(null);
+  const [pendingDeleteBlog, setPendingDeleteBlog] = useState(null);
+  const [pendingDeleteBlogCategory, setPendingDeleteBlogCategory] = useState(null);
   const [shouldScrollToProductForm, setShouldScrollToProductForm] =
     useState(false);
+  const [shouldScrollToBlogForm, setShouldScrollToBlogForm] = useState(false);
   const [openSidebarGroups, setOpenSidebarGroups] = useState(() => ({
     productData: false,
     blogData: false,
   }));
   const productFormRef = useRef(null);
+  const blogFormRef = useRef(null);
   const [sessionChecked, setSessionChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
@@ -237,10 +242,7 @@ const AdminPanel = () => {
   const [blogsLimit, setBlogsLimit] = useState(10);
   const [blogsSearchInput, setBlogsSearchInput] = useState("");
   const [appliedBlogsSearch, setAppliedBlogsSearch] = useState("");
-  const [blogsFilterBlogId, setBlogsFilterBlogId] = useState("");
   const [blogsFilterCategory, setBlogsFilterCategory] = useState("");
-  const [blogsSortBy, setBlogsSortBy] = useState("created_at");
-  const [blogsSortOrder, setBlogsSortOrder] = useState("desc");
   const [blogsPagination, setBlogsPagination] = useState(defaultPagination);
 
   const recentCategories = useMemo(() => categories.slice(0, 5), [categories]);
@@ -355,10 +357,7 @@ const AdminPanel = () => {
       page = 1,
       limit = 10,
       search = "",
-      blogId = "",
       category = "",
-      sortBy = "created_at",
-      sortOrder = "desc",
     } = {}) => {
       setIsBlogsLoading(true);
 
@@ -368,10 +367,7 @@ const AdminPanel = () => {
             page,
             limit,
             search,
-            blogId,
             category,
-            sortBy,
-            sortOrder,
           })
         );
 
@@ -502,6 +498,26 @@ const AdminPanel = () => {
   }, [shouldScrollToProductForm, isProductFormOpen, activeSection]);
 
   useEffect(() => {
+    if (!shouldScrollToBlogForm || !isBlogFormOpen || activeSection !== "blogs") {
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      if (blogFormRef.current) {
+        blogFormRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      setShouldScrollToBlogForm(false);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [shouldScrollToBlogForm, isBlogFormOpen, activeSection]);
+
+  useEffect(() => {
     if (!sessionChecked || isLoading) return;
     loadBlogCategories({
       page: blogCategoriesPage,
@@ -523,10 +539,7 @@ const AdminPanel = () => {
       page: blogsPage,
       limit: blogsLimit,
       search: appliedBlogsSearch,
-      blogId: blogsFilterBlogId,
       category: blogsFilterCategory,
-      sortBy: blogsSortBy,
-      sortOrder: blogsSortOrder,
     });
   }, [
     sessionChecked,
@@ -535,10 +548,7 @@ const AdminPanel = () => {
     blogsPage,
     blogsLimit,
     appliedBlogsSearch,
-    blogsFilterBlogId,
     blogsFilterCategory,
-    blogsSortBy,
-    blogsSortOrder,
   ]);
 
   const resetCategoryForm = () => {
@@ -584,12 +594,7 @@ const AdminPanel = () => {
     setCategoryName(category.category_name);
   };
 
-  const handleDeleteCategory = async (category) => {
-    const confirmed = window.confirm(
-      `Delete "${category.category_name}"? Products in this category will also be removed by your database cascade.`
-    );
-    if (!confirmed) return;
-
+  const performDeleteCategory = async (category) => {
     setIsSaving(true);
     try {
       await adminFetch(`/api/admin/categories/${category.categories_id}`, {
@@ -602,6 +607,17 @@ const AdminPanel = () => {
     } finally {
       setIsSaving(false);
     }
+  };
+
+  const handleDeleteCategory = (category) => {
+    setPendingDeleteCategory(category);
+    openConfirmDialog({
+      title: "Delete Category?",
+      message: `Delete "${category.category_name}"? Products in this category will also be removed by your database cascade.`,
+      confirmLabel: "Delete",
+      confirmTone: "danger",
+      action: "deleteCategory",
+    });
   };
 
   const openProductForm = (product = null) => {
@@ -740,6 +756,9 @@ const AdminPanel = () => {
       action: null,
     });
     setPendingDeleteProduct(null);
+    setPendingDeleteCategory(null);
+    setPendingDeleteBlog(null);
+    setPendingDeleteBlogCategory(null);
   };
 
   const handleDeleteProduct = (product) => {
@@ -845,12 +864,7 @@ const AdminPanel = () => {
     setBlogCategoryName(category.blog_category || "");
   };
 
-  const handleDeleteBlogCategory = async (category) => {
-    const confirmed = window.confirm(
-      `Delete "${category.blog_category}"? Related blog details will also be deleted by cascade.`
-    );
-    if (!confirmed) return;
-
+  const performDeleteBlogCategory = async (category) => {
     setIsSaving(true);
     try {
       await adminFetch(`/api/admin/blog/categories/${category.blog_id}`, {
@@ -876,10 +890,22 @@ const AdminPanel = () => {
     }
   };
 
+  const handleDeleteBlogCategory = (category) => {
+    setPendingDeleteBlogCategory(category);
+    openConfirmDialog({
+      title: "Delete Blog Category?",
+      message: `Delete "${category.blog_category}"? Related blog details will also be deleted by cascade.`,
+      confirmLabel: "Delete",
+      confirmTone: "danger",
+      action: "deleteBlogCategory",
+    });
+  };
+
   const openBlogForm = (blog = null) => {
     setActiveSection("blogs");
     setEditingBlog(blog);
     setIsBlogFormOpen(true);
+    setShouldScrollToBlogForm(true);
 
     if (blog) {
       setRemovedBlogImageIds([]);
@@ -983,10 +1009,7 @@ const AdminPanel = () => {
           page: 1,
           limit: blogsLimit,
           search: appliedBlogsSearch,
-          blogId: blogsFilterBlogId,
           category: blogsFilterCategory,
-          sortBy: blogsSortBy,
-          sortOrder: blogsSortOrder,
         });
       } else {
         setBlogsPage(1);
@@ -998,10 +1021,7 @@ const AdminPanel = () => {
     }
   };
 
-  const handleDeleteBlog = async (blog) => {
-    const confirmed = window.confirm(`Delete this blog entry by "${blog.blog_author}"?`);
-    if (!confirmed) return;
-
+  const performDeleteBlog = async (blog) => {
     setIsSaving(true);
     try {
       await adminFetch(`/api/admin/blog/${blog.blog_detail_id}`, { method: "DELETE" });
@@ -1013,10 +1033,7 @@ const AdminPanel = () => {
           page: blogsPage,
           limit: blogsLimit,
           search: appliedBlogsSearch,
-          blogId: blogsFilterBlogId,
           category: blogsFilterCategory,
-          sortBy: blogsSortBy,
-          sortOrder: blogsSortOrder,
         });
       }
     } catch (error) {
@@ -1024,6 +1041,17 @@ const AdminPanel = () => {
     } finally {
       setIsSaving(false);
     }
+  };
+
+  const handleDeleteBlog = (blog) => {
+    setPendingDeleteBlog(blog);
+    openConfirmDialog({
+      title: "Delete Blog?",
+      message: `Are you sure you want to delete blog entry by "${blog.blog_author || "Unknown"}"? This action cannot be undone.`,
+      confirmLabel: "Delete",
+      confirmTone: "danger",
+      action: "deleteBlog",
+    });
   };
 
   const handleBlogCategoryPageChange = (page) => {
@@ -1045,10 +1073,7 @@ const AdminPanel = () => {
   const handleBlogClearFilters = () => {
     setBlogsSearchInput("");
     setAppliedBlogsSearch("");
-    setBlogsFilterBlogId("");
     setBlogsFilterCategory("");
-    setBlogsSortBy("created_at");
-    setBlogsSortOrder("desc");
     setBlogsPage(1);
   };
 
@@ -1075,6 +1100,30 @@ const AdminPanel = () => {
       const productToDelete = pendingDeleteProduct;
       closeConfirmDialog();
       await performDeleteProduct(productToDelete);
+      return;
+    }
+
+    if (confirmDialog.action === "deleteCategory" && pendingDeleteCategory) {
+      const categoryToDelete = pendingDeleteCategory;
+      closeConfirmDialog();
+      await performDeleteCategory(categoryToDelete);
+      return;
+    }
+
+    if (confirmDialog.action === "deleteBlog" && pendingDeleteBlog) {
+      const blogToDelete = pendingDeleteBlog;
+      closeConfirmDialog();
+      await performDeleteBlog(blogToDelete);
+      return;
+    }
+
+    if (
+      confirmDialog.action === "deleteBlogCategory" &&
+      pendingDeleteBlogCategory
+    ) {
+      const blogCategoryToDelete = pendingDeleteBlogCategory;
+      closeConfirmDialog();
+      await performDeleteBlogCategory(blogCategoryToDelete);
     }
   };
 
@@ -1096,10 +1145,7 @@ const AdminPanel = () => {
       page: blogsPage,
       limit: blogsLimit,
       search: appliedBlogsSearch,
-      blogId: blogsFilterBlogId,
       category: blogsFilterCategory,
-      sortBy: blogsSortBy,
-      sortOrder: blogsSortOrder,
     });
   };
 
@@ -1341,20 +1387,14 @@ const AdminPanel = () => {
             isSaving={isSaving}
             isBlogsLoading={isBlogsLoading}
             blogsSearchInput={blogsSearchInput}
-            blogsFilterBlogId={blogsFilterBlogId}
             blogsFilterCategory={blogsFilterCategory}
-            blogsSortBy={blogsSortBy}
-            blogsSortOrder={blogsSortOrder}
             blogsLimit={blogsLimit}
             blogsPagination={blogsPagination}
             onOpenForm={openBlogForm}
             onCloseForm={closeBlogForm}
             onBlogFormChange={setBlogForm}
             onBlogsSearchInputChange={setBlogsSearchInput}
-            onBlogsFilterBlogIdChange={setBlogsFilterBlogId}
             onBlogsFilterCategoryChange={setBlogsFilterCategory}
-            onBlogsSortByChange={setBlogsSortBy}
-            onBlogsSortOrderChange={setBlogsSortOrder}
             onBlogsLimitChange={setBlogsLimit}
             onBlogsPageChange={handleBlogsPageChange}
             onBlogsClearFilters={handleBlogClearFilters}
@@ -1364,6 +1404,7 @@ const AdminPanel = () => {
             onBlogImageFilesChange={setBlogImageFiles}
             removedBlogImageIds={removedBlogImageIds}
             onRemovedBlogImageIdsChange={setRemovedBlogImageIds}
+            formRef={blogFormRef}
           />
         ) : null}
       </section>
@@ -1886,20 +1927,14 @@ const BlogsManager = ({
   isSaving,
   isBlogsLoading,
   blogsSearchInput,
-  blogsFilterBlogId,
   blogsFilterCategory,
-  blogsSortBy,
-  blogsSortOrder,
   blogsLimit,
   blogsPagination,
   onOpenForm,
   onCloseForm,
   onBlogFormChange,
   onBlogsSearchInputChange,
-  onBlogsFilterBlogIdChange,
   onBlogsFilterCategoryChange,
-  onBlogsSortByChange,
-  onBlogsSortOrderChange,
   onBlogsLimitChange,
   onBlogsPageChange,
   onBlogsClearFilters,
@@ -1909,6 +1944,7 @@ const BlogsManager = ({
   onBlogImageFilesChange,
   removedBlogImageIds,
   onRemovedBlogImageIdsChange,
+  formRef,
 }) => (
   <div className="admin-stack">
     <div className="admin-section-actions">
@@ -1918,7 +1954,7 @@ const BlogsManager = ({
     </div>
 
     {isBlogFormOpen ? (
-      <article className="admin-card">
+      <article className="admin-card" ref={formRef}>
         <div className="admin-card-header">
           <h2>{editingBlog ? "Edit Blog" : "Add Blog"}</h2>
           <button type="button" className="admin-button admin-button-light" onClick={onCloseForm}>
@@ -2104,43 +2140,6 @@ const BlogsManager = ({
                 {category.blog_category}
               </option>
             ))}
-          </select>
-        </label>
-        <label>
-          Filter by Blog ID
-          <input
-            value={blogsFilterBlogId}
-            onChange={(event) => {
-              onBlogsFilterBlogIdChange(event.target.value);
-              onBlogsPageChange(1);
-            }}
-            placeholder="e.g. 1"
-          />
-        </label>
-        <label>
-          Sort By
-          <select
-            value={blogsSortBy}
-            onChange={(event) => {
-              onBlogsSortByChange(event.target.value);
-              onBlogsPageChange(1);
-            }}
-          >
-            <option value="created_at">Created At</option>
-            <option value="updated_at">Updated At</option>
-          </select>
-        </label>
-        <label>
-          Sort Order
-          <select
-            value={blogsSortOrder}
-            onChange={(event) => {
-              onBlogsSortOrderChange(event.target.value);
-              onBlogsPageChange(1);
-            }}
-          >
-            <option value="desc">Desc</option>
-            <option value="asc">Asc</option>
           </select>
         </label>
         <label>
