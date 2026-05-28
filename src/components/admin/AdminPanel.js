@@ -2415,9 +2415,6 @@ Used in nutraceutical applications`}
           <div className="admin-spec-box">
             <div className="admin-card-header">
               <h3>Product Specification</h3>
-              <button type="button" className="admin-button admin-button-light" onClick={onAddSpecRow}>
-                Add Row
-              </button>
             </div>
             {specRows.map((row, index) => (
               <div
@@ -2438,9 +2435,8 @@ Used in nutraceutical applications`}
                 />
                 <div className="admin-spec-value-cell">
                   <AutoResizeTextarea
-                    placeholder={`Value
-Enter multiple values on separate lines`}
-                    minRows={2}
+                    placeholder={`Enter multiple values on separate lines`}
+                    minRows={1}
                     value={row.value}
                     onChange={(event) => onSpecRowChange(index, "value", event.target.value)}
                   />
@@ -2457,6 +2453,9 @@ Enter multiple values on separate lines`}
                 </button>
               </div>
             ))}
+            <button type="button" className="admin-button admin-button-light" onClick={onAddSpecRow}>
+              Add Row
+            </button>
           </div>
 
           <label>
