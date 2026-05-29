@@ -25,6 +25,79 @@ const Blogs2 = ({ type, title, pt, pb }) => {
     };
     load();
   }, []);
+
+  useEffect(() => {
+    if (type !== 2 || !blogs.length || typeof window === "undefined" || !window.$) {
+      return;
+    }
+
+    const $ = window.$;
+    const $slider = $(".ltn__blog-slider-one-active");
+    if (!$slider.length) return;
+
+    // Re-initialize after async data render so first paint is slider, not stacked cards.
+    if ($slider.hasClass("slick-initialized")) {
+      $slider.slick("unslick");
+    }
+
+    $slider.slick({
+      arrows: true,
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow:
+        '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+      nextArrow:
+        '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 580,
+          settings: {
+            arrows: false,
+            dots: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+
+    return () => {
+      if ($slider.hasClass("slick-initialized")) {
+        $slider.slick("unslick");
+      }
+    };
+  }, [blogs, type]);
+
   return (
     <div
       className={`ltn__blog-area ${pb ? pb : " pb-90"}   ${pt ? pt : "pt-115"}`}
