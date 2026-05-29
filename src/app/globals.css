@@ -9532,7 +9532,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: var(--section-bg-1);
+  background-color: transparent;
 }
 
 .products3-fixed-card-grid .ltn__product-item-3 .product-img a {
@@ -9579,7 +9579,7 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   .ltn__product-item-3.product-card--box-image
   .product-img {
   padding: 12px;
-  background-color: var(--white);
+  background-color: transparent;
 }
 
 .products-page-card-grid
