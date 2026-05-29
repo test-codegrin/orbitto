@@ -4,6 +4,16 @@ import useProducts from "@/hooks/useProducts";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 const ContactPrimary = () => {
+  const serviceTypeOptions = [
+    "Select Service Type",
+    "MOQ",
+    "Price",
+    "Product Details",
+    "Bulk/Wholesale Supply",
+    "Private Labeling",
+    "Sample Request",
+    "Packaging Type",
+  ];
   const { products } = useProducts({ limit: 200 });
   const [formData, setFormData] = useState({
     name: "",
@@ -15,11 +25,13 @@ const ContactPrimary = () => {
     message: "",
   });
   const [serviceType, setServiceType] = useState("Select Service Type");
+  const [isServiceTypeOpen, setIsServiceTypeOpen] = useState(false);
   const [productSearch, setProductSearch] = useState("");
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
   const [status, setStatus] = useState("");
   const productDropdownRef = useRef(null);
+  const serviceTypeDropdownRef = useRef(null);
   const productSearchInputRef = useRef(null);
 
   const filteredProducts = useMemo(() => {
@@ -72,9 +84,9 @@ const ContactPrimary = () => {
     }));
   };
 
-  const handleServiceTypeChange = (e) => {
-    const value = e.target.value;
+  const handleServiceTypeSelect = (value) => {
     setServiceType(value);
+    setIsServiceTypeOpen(false);
     setFormData((currentData) => ({
       ...currentData,
       serviceType: value,
@@ -86,11 +98,9 @@ const ContactPrimary = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-    const selectCurrent = document.querySelector(".nice-select .current");
-    const currentServiceType = selectCurrent?.innerText || serviceType;
     const submitData = {
       ...formData,
-      serviceType: currentServiceType,
+      serviceType,
       product: selectedProducts,
     };
 
@@ -116,6 +126,7 @@ const ContactPrimary = () => {
         });
         setSelectedProducts([]);
         setProductSearch("");
+        setIsServiceTypeOpen(false);
         setIsProductDropdownOpen(false);
       } else {
         setStatus("Failed to send email.");
@@ -125,19 +136,14 @@ const ContactPrimary = () => {
     }
   };
   useEffect(() => {
-    let selectCurrent = document.querySelector(".nice-select .current");
-    const currentServiceType = selectCurrent?.innerText;
-    if (currentServiceType) {
-      setServiceType(currentServiceType);
-    }
-    if (status && selectCurrent) {
-      setServiceType("Select Service Type");
-      selectCurrent.innerText = "Select Service Type";
-    }
-  }, [formData.agree, status]);
-
-  useEffect(() => {
     const handleClickOutside = (event) => {
+      if (
+        serviceTypeDropdownRef.current &&
+        !serviceTypeDropdownRef.current.contains(event.target)
+      ) {
+        setIsServiceTypeOpen(false);
+      }
+
       if (
         productDropdownRef.current &&
         !productDropdownRef.current.contains(event.target)
@@ -187,23 +193,48 @@ const ContactPrimary = () => {
                     </div>
                   </div>
                   <div className="col-md-6">
-                    <div className="input-item service-type-select">
-                      <select
-                        name="serviceType"
-                        className="nice-select"
-                        onChange={handleServiceTypeChange}
+                    <div
+                      className="input-item service-type-select"
+                      ref={serviceTypeDropdownRef}
+                    >
+                      <button
+                        type="button"
+                        className="nice-select service-type-select-trigger flex items-center justify-between"
+                        onClick={() => setIsServiceTypeOpen((current) => !current)}
+                        aria-haspopup="listbox"
+                        aria-expanded={isServiceTypeOpen}
+                        aria-controls="service-type-dropdown-list"
                       >
-                        <option>Select Service Type</option>
-                        <option>MOQ</option>
-                        <option>Price </option>
-                        <option>Product Details</option>
-                        <option>Bulk/Wholesale Supply</option>
-                        <option>Private Labeling</option>
-                        <option>Sample Request</option>
-                        <option>Packaging Type</option>
-
-                      </select>
-                      <span className="service-type-select-arrow" aria-hidden="true" />
+                        <span className="current">{serviceType}</span>
+                        <span
+                          className={`service-type-select-arrow transition-transform duration-200 ${
+                            isServiceTypeOpen ? "is-open rotate-180" : ""
+                          }`}
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <div
+                        id="service-type-dropdown-list"
+                        className={`service-type-list ${
+                          isServiceTypeOpen ? "open" : ""
+                        }`}
+                        role="listbox"
+                      >
+                        {serviceTypeOptions.map((option) => (
+                          <button
+                            key={option}
+                            type="button"
+                            className={`service-type-option ${
+                              serviceType === option ? "selected" : ""
+                            }`}
+                            onClick={() => handleServiceTypeSelect(option)}
+                            role="option"
+                            aria-selected={serviceType === option}
+                          >
+                            {option}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   <div className="col-md-6">

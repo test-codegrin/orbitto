@@ -13887,27 +13887,34 @@ blockquote::before {
   position: relative;
 }
 
-.service-type-select .nice-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+.service-type-select-trigger.nice-select {
+  align-items: center;
   appearance: none;
-  padding-right: 46px;
+  background-color: var(--white);
+  border: 2px solid var(--border-color-9);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding: 0 18px;
+  text-align: left;
 }
 
-.service-type-select .nice-select::-ms-expand {
+.service-type-select-trigger.nice-select::before,
+.service-type-select-trigger.nice-select::after {
   display: none;
+}
+
+.service-type-select-trigger .current {
+  display: block;
 }
 
 .service-type-select-arrow {
   align-items: center;
-  display: flex;
-  height: 100%;
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 20px;
   justify-content: center;
-  pointer-events: none;
-  position: absolute;
-  right: 12px;
-  top: 0;
-  width: 24px;
+  width: 20px;
 }
 
 .service-type-select-arrow::before {
@@ -13916,8 +13923,55 @@ blockquote::before {
   content: "";
   display: block;
   height: 8px;
-  transform: rotate(45deg) translateY(-2px);
+  transform: rotate(45deg);
   width: 8px;
+}
+
+.service-type-select-arrow.is-open {
+  transform: rotate(180deg);
+}
+
+.service-type-list {
+  background-color: var(--white);
+  border: 2px solid var(--border-color-9);
+  border-top: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  left: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transition: max-height 0.2s ease, opacity 0.2s ease;
+  z-index: 10;
+}
+
+.service-type-list.open {
+  max-height: 320px;
+  opacity: 1;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.service-type-option {
+  background: var(--white);
+  border: 0;
+  color: var(--ltn__paragraph-color);
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 12px 18px;
+  text-align: left;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.service-type-option:hover,
+.service-type-option.selected {
+  background-color: var(--ltn__secondary-color);
+  color: var(--white);
 }
 
 .product-list {
