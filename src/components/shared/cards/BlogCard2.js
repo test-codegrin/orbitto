@@ -16,7 +16,7 @@ const BlogCard2 = ({ blog, type }) => {
       {type === 2 ? (
         <div className="ltn__blog-img">
           <Link href={`/blogs/${id}`}>
-            <Image src={image} alt="#" width={2000} height={1000} />
+            <Image src={image} alt={title || "Blog image"} width={2000} height={1000} />
           </Link>
         </div>
       ) : (

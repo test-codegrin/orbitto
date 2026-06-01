@@ -69,6 +69,15 @@ const PageWrapper = ({
       "scroll",
       "mousemove",
     ];
+    const needsLegacySelectors = [
+      ".ltn__slide-one-active",
+      ".ltn__blog-slider-one-active",
+      ".ltn__related-product-slider-one-active",
+      ".ltn__Product-details-large-img",
+      ".ltn__Product-details-small-img",
+      ".ltn__category-slider-active",
+      ".ltn__testimonial-slider-active",
+    ];
 
     const detachInteractionListeners = () => {
       interactionEvents.forEach((eventName) => {
@@ -80,8 +89,32 @@ const PageWrapper = ({
       window.addEventListener(eventName, bootstrapLegacy, { passive: true, once: true });
     });
 
+    // Load when a legacy-driven widget is close to viewport.
+    let observer = null;
+    const watchedNode = needsLegacySelectors
+      .map((selector) => document.querySelector(selector))
+      .find(Boolean);
+    if (watchedNode && "IntersectionObserver" in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            bootstrapLegacy();
+          }
+        },
+        { rootMargin: "200px 0px" }
+      );
+      observer.observe(watchedNode);
+    }
+
+    // Fallback for low-interaction sessions.
+    const idleHandle = window.setTimeout(() => {
+      if (!booted) bootstrapLegacy();
+    }, 3500);
+
     return () => {
       isCancelled = true;
+      if (observer) observer.disconnect();
+      window.clearTimeout(idleHandle);
       detachInteractionListeners();
       cleanupMain();
     };

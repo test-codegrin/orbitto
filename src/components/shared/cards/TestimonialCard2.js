@@ -6,7 +6,7 @@ const TestimonialCard2 = ({ testimonial }) => {
   return (
     <div className="ltn__testimonial-item ltn__testimonial-item-4">
       <div className="ltn__testimoni-img">
-        <Image src={image} alt="#" priority={false} height={400} width={400} />
+        <Image src={image} alt={`${name} testimonial`} priority={false} height={400} width={400} />
       </div>
       <div className="ltn__testimoni-info">
         <p>{desc} </p>

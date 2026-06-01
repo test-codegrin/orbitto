@@ -117,6 +117,20 @@ const main = () => {
 
       $track.attr("aria-label", `${sectionHeading} slides`);
     });
+
+    // Slick uses listbox semantics that frequently fail required-child checks.
+    $(".slick-track[role='listbox']").attr("role", "group");
+    $(".slick-slide[role='option']").attr("role", "group");
+    $(".slick-prev, .slick-next").each(function () {
+      const $arrow = $(this);
+      if (!$arrow.attr("aria-label")) {
+        $arrow.attr(
+          "aria-label",
+          $arrow.hasClass("slick-next") ? "Next slide" : "Previous slide"
+        );
+      }
+      $arrow.attr("role", "button");
+    });
   };
 
   const checkJquery = setInterval(() => {
@@ -382,9 +396,9 @@ const main = () => {
         arrows: true,
         focusOnSelect: true,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 992,
@@ -465,9 +479,9 @@ const main = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           prevArrow:
-            '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+            '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
           nextArrow:
-            '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+            '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
           responsive: [
             {
               breakpoint: 1200,
@@ -498,9 +512,9 @@ const main = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           prevArrow:
-            '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+            '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
           nextArrow:
-            '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+            '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
           responsive: [
             {
               breakpoint: 1200,
@@ -527,9 +541,9 @@ const main = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 992,
@@ -566,9 +580,9 @@ const main = () => {
         slidesToShow: 4,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 992,
@@ -611,9 +625,9 @@ const main = () => {
         slidesToShow: 4,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 992,
@@ -656,9 +670,9 @@ const main = () => {
         swipe: true,
         touchMove: true,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 1200,
@@ -711,9 +725,9 @@ const main = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 1200,
@@ -763,9 +777,9 @@ const main = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 1200,
@@ -817,9 +831,9 @@ const main = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 992,
@@ -858,9 +872,9 @@ const main = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 1200,
@@ -908,9 +922,9 @@ const main = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 1600,
@@ -963,9 +977,9 @@ const main = () => {
         slidesToShow: 4,
         slidesToScroll: 1,
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 1200,
@@ -1026,9 +1040,9 @@ const main = () => {
         centerMode: true,
         centerPadding: "0px",
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 992,
@@ -1070,9 +1084,9 @@ const main = () => {
         centerMode: true,
         centerPadding: "80px",
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 992,
@@ -1120,9 +1134,9 @@ const main = () => {
         centerMode: true,
         centerPadding: "0px",
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 992,
@@ -1168,9 +1182,9 @@ const main = () => {
         centerMode: true,
         centerPadding: "0px",
         prevArrow:
-          '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
         nextArrow:
-          '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+          '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
         responsive: [
           {
             breakpoint: 1200,
@@ -1222,9 +1236,9 @@ const main = () => {
           slidesToShow: 5,
           slidesToScroll: 1,
           prevArrow:
-            '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+            '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
           nextArrow:
-            '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+            '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
           responsive: [
             {
               breakpoint: 992,
@@ -1267,9 +1281,9 @@ const main = () => {
       //     slidesToShow: 1,
       //     slidesToScroll: 1,
       //     prevArrow:
-      //       '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
+      //       '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="fas fa-arrow-left" aria-hidden="true"></i></button>',
       //     nextArrow:
-      //       '<a class="slick-next"><i class="fas fa-arrow-right" alt="Arrow Icon"></i></a>',
+      //       '<button type="button" class="slick-next" aria-label="Next slide"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>',
       //   });
       // }
 
@@ -1378,3 +1392,4 @@ const main = () => {
 };
 
 export default main;
+

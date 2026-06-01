@@ -11,7 +11,7 @@ const FeatureCard2 = ({ feature, idx }) => {
       }`}
     >
       <div className="ltn__feature-icon">
-        <Image src={img} alt="#" width={60} height={63} />
+        <Image src={img} alt={title} width={60} height={63} />
       </div>
       <div className="ltn__feature-info">
         <h3>
