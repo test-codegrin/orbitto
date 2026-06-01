@@ -70,16 +70,12 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
             isOpen ? "active" : ""
           }`}
           aria-expanded={isOpen}
-          aria-haspopup="listbox"
           onClick={() => setIsOpen((current) => !current)}
         >
           <span>{selectedCategoryLabel}</span>
           <i className={`fas ${isOpen ? "fa-chevron-up" : "fa-chevron-down"}`}></i>
         </button>
-        <ul
-          className={`ltn__product-category-dropdown ${isOpen ? "active" : ""}`}
-          role="listbox"
-        >
+        <ul className={`ltn__product-category-dropdown ${isOpen ? "active" : ""}`}>
           {isCategoriesLoading ? (
             <li className="product-category-skeleton-wrap" aria-hidden="true">
               <span className="product-category-skeleton" />
@@ -91,11 +87,7 @@ const ProductCategories = ({ className = "", isDropdown = false }) => {
             const isActive = selectedCategory === normalizeProductType(value);
 
             return (
-              <li
-                key={value || "all-products"}
-                role="option"
-                aria-selected={isActive}
-              >
+              <li key={value || "all-products"}>
                 <button
                   type="button"
                   className={isActive ? "active" : ""}

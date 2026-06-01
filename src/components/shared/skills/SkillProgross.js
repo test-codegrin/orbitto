@@ -22,6 +22,10 @@ const SkillProgross = () => {
               data-wow-duration="0.5s"
               data-wow-delay=".5s"
               role="progressbar"
+              aria-label="Product Sourcing progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={72}
               style={{ width: "72%" }}
             >
               <span>72%</span>
@@ -36,6 +40,10 @@ const SkillProgross = () => {
               data-wow-duration="0.5s"
               data-wow-delay=".5s"
               role="progressbar"
+              aria-label="Processing Support progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={74}
               style={{ width: "74%" }}
             >
               <span>74%</span>
@@ -50,6 +58,10 @@ const SkillProgross = () => {
               data-wow-duration="0.5s"
               data-wow-delay=".5s"
               role="progressbar"
+              aria-label="Export Coordination progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={81}
               style={{ width: "81%" }}
             >
               <span>81%</span>

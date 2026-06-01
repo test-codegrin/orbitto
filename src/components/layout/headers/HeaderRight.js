@@ -34,15 +34,17 @@ const HeaderRight = () => {
     >
       {/* <!-- header-search-1 --> */}{" "}
       <div className="header-search-wrap">
-        <div
+        <button
+          type="button"
           className={`header-search-1 ${isSearchOpen ? "search-open" : ""}`}
           onClick={handleSearchToggle}
+          aria-label={isSearchOpen ? "Close search" : "Open search"}
         >
           <div className="search-icon">
             <i className="icon-search for-search-show"></i>
             <i className="icon-cancel  for-search-close"></i>
           </div>
-        </div>
+        </button>
         <div
           className={`header-search-1-form ${
             isSearchOpen ? "search-open" : ""

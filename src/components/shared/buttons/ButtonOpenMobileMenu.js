@@ -32,6 +32,7 @@ const ButtonOpenMobileMenu = () => {
         href="#ltn__utilize-mobile-menu"
         className="ltn__utilize-toggle"
         onClick={handleOpenMobileMenu}
+        aria-label="Open menu"
       >
         <svg viewBox="0 0 800 600">
           <path

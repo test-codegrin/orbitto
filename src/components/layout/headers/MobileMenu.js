@@ -87,7 +87,7 @@ const MobileMenu = () => {
               />
             </Link>
           </div>
-          <button className="ltn__utilize-close" onClick={closeMobileMenu}>
+          <button className="ltn__utilize-close" onClick={closeMobileMenu} aria-label="Close menu">
             ×
           </button>
         </div>
@@ -154,12 +154,13 @@ const MobileMenu = () => {
               <Link
                 href={socialUrls.facebook}
                 title="Facebook"
+                aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Image
                   src="/img/social/facebook.svg"
-                  alt=""
+                  alt="Facebook"
                   width={22}
                   height={22}
                 />
@@ -169,22 +170,24 @@ const MobileMenu = () => {
               <Link
                 href={socialUrls.x}
                 title="Twitter"
+                aria-label="X"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/img/social/x.svg" alt="" width={22} height={22} />
+                <Image src="/img/social/x.svg" alt="X" width={22} height={22} />
               </Link>
             </li>
             <li>
               <Link
                 href={socialUrls.linkedin}
                 title="Linkedin"
+                aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Image
                   src="/img/social/linkedin.svg"
-                  alt=""
+                  alt="LinkedIn"
                   width={22}
                   height={22}
                 />
@@ -194,12 +197,13 @@ const MobileMenu = () => {
               <Link
                 href={socialUrls.instagram}
                 title="Instagram"
+                aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Image
                   src="/img/social/instagram.svg"
-                  alt=""
+                  alt="Instagram"
                   width={22}
                   height={22}
                 />
@@ -213,3 +217,4 @@ const MobileMenu = () => {
 };
 
 export default MobileMenu;
+

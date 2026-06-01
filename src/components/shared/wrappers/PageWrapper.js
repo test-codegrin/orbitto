@@ -85,15 +85,22 @@ const PageWrapper = ({
       });
     };
 
-    interactionEvents.forEach((eventName) => {
-      window.addEventListener(eventName, bootstrapLegacy, { passive: true, once: true });
-    });
+    const hasLegacyWidgets = needsLegacySelectors.some((selector) =>
+      Boolean(document.querySelector(selector))
+    );
+    if (hasLegacyWidgets) {
+      interactionEvents.forEach((eventName) => {
+        window.addEventListener(eventName, bootstrapLegacy, { passive: true, once: true });
+      });
+    }
 
     // Load when a legacy-driven widget is close to viewport.
     let observer = null;
-    const watchedNode = needsLegacySelectors
-      .map((selector) => document.querySelector(selector))
-      .find(Boolean);
+    const watchedNode = hasLegacyWidgets
+      ? needsLegacySelectors
+          .map((selector) => document.querySelector(selector))
+          .find(Boolean)
+      : null;
     if (watchedNode && "IntersectionObserver" in window) {
       observer = new IntersectionObserver(
         (entries) => {
@@ -106,15 +113,17 @@ const PageWrapper = ({
       observer.observe(watchedNode);
     }
 
-    // Fallback for low-interaction sessions.
-    const idleHandle = window.setTimeout(() => {
-      if (!booted) bootstrapLegacy();
-    }, 3500);
+    // Fallback for low-interaction sessions on pages that actually need legacy widgets.
+    const idleHandle = hasLegacyWidgets
+      ? window.setTimeout(() => {
+          if (!booted) bootstrapLegacy();
+        }, 3500)
+      : null;
 
     return () => {
       isCancelled = true;
       if (observer) observer.disconnect();
-      window.clearTimeout(idleHandle);
+      if (idleHandle) window.clearTimeout(idleHandle);
       detachInteractionListeners();
       cleanupMain();
     };

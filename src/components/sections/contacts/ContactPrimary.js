@@ -201,7 +201,6 @@ const ContactPrimary = () => {
                         type="button"
                         className="nice-select service-type-select-trigger flex items-center justify-between"
                         onClick={() => setIsServiceTypeOpen((current) => !current)}
-                        aria-haspopup="listbox"
                         aria-expanded={isServiceTypeOpen}
                         aria-controls="service-type-dropdown-list"
                       >
@@ -218,7 +217,6 @@ const ContactPrimary = () => {
                         className={`service-type-list ${
                           isServiceTypeOpen ? "open" : ""
                         }`}
-                        role="listbox"
                       >
                         {serviceTypeOptions.map((option) => (
                           <button
@@ -228,8 +226,6 @@ const ContactPrimary = () => {
                               serviceType === option ? "selected" : ""
                             }`}
                             onClick={() => handleServiceTypeSelect(option)}
-                            role="option"
-                            aria-selected={serviceType === option}
                           >
                             {option}
                           </button>
@@ -297,11 +293,7 @@ const ContactPrimary = () => {
                             }
                             aria-label="Search or select products"
                             aria-autocomplete="list"
-                            aria-haspopup="listbox"
-                            aria-expanded={isProductDropdownOpen}
-                            aria-controls="product-dropdown-list"
                             autoComplete="off"
-                            role="combobox"
                           />
                           <span className="product-dropdown-arrow" />
                         </div>
@@ -309,7 +301,6 @@ const ContactPrimary = () => {
                           <div
                             className="product-list"
                             id="product-dropdown-list"
-                            role="listbox"
                           >
                             {filteredProducts.length ? (
                               filteredProducts.map((product) => (
@@ -320,8 +311,6 @@ const ContactPrimary = () => {
                                   onClick={() =>
                                     handleProductSelect(product.title)
                                   }
-                                  aria-selected={false}
-                                  role="option"
                                 >
                                   {product.title}
                                 </button>

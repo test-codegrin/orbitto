@@ -209,7 +209,6 @@ const ProductsPrimary = ({ isSidebar }) => {
                           isPageJumpOpen ? "active" : ""
                         }`}
                         aria-expanded={isPageJumpOpen}
-                        aria-haspopup="listbox"
                         onClick={() =>
                           setIsPageJumpOpen((current) => !current)
                         }
@@ -224,17 +223,9 @@ const ProductsPrimary = ({ isSidebar }) => {
                         ></i>
                       </button>
                       {isPageJumpOpen ? (
-                        <ul
-                          className="product-page-select__list"
-                          role="listbox"
-                          aria-label="Select product page"
-                        >
+                        <ul className="product-page-select__list" aria-label="Select product page">
                           {pageJumpOptions?.map((option) => (
-                            <li
-                              key={option.value}
-                              role="option"
-                              aria-selected={option.value === visibleCurrentPage}
-                            >
+                            <li key={option.value}>
                               <button
                                 type="button"
                               className={
