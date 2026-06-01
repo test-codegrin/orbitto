@@ -2,7 +2,6 @@ import { Open_Sans, Playfair_Display, Rajdhani } from "next/font/google";
 import Script from "next/script";
 import { Suspense } from "react";
 
-import "@/assets/css/plugins.css";
 import "./globals.css";
 
 import StructuredData from "@/components/seo/StructuredData";
@@ -120,6 +119,12 @@ export default function RootLayout({ children }) {
         <link rel="alternate" hrefLang="gu" href={`${getSiteUrl()}/gu`} />
         <link rel="alternate" hrefLang="x-default" href={`${getSiteUrl()}/`} />
         <link
+          id="defer-plugins-css"
+          rel="preload"
+          href="/css/plugins.css"
+          as="style"
+        />
+        <link
           id="defer-font-icons-css"
           rel="preload"
           href="/css/font-icons.css"
@@ -132,6 +137,7 @@ export default function RootLayout({ children }) {
           as="style"
         />
         <noscript>
+          <link rel="stylesheet" href="/css/plugins.css" />
           <link rel="stylesheet" href="/css/font-icons.css" />
           <link rel="stylesheet" href="/css/responsive.css" />
         </noscript>
@@ -139,7 +145,7 @@ export default function RootLayout({ children }) {
       <body className={open_sans.className}>
         <Script id="defer-non-critical-css" strategy="afterInteractive">
           {`(function () {
-            var ids = ["defer-font-icons-css", "defer-responsive-css"];
+            var ids = ["defer-plugins-css", "defer-font-icons-css", "defer-responsive-css"];
             ids.forEach(function (id) {
               var link = document.getElementById(id);
               if (link) link.rel = "stylesheet";
