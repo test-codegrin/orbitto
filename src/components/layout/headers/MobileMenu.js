@@ -94,9 +94,6 @@ const MobileMenu = () => {
         <div className="ltn__utilize-menu-search-form">
           <form onSubmit={handleProductSearch}>
             <input type="text" name="search" placeholder="Search products..." />
-          
-              <i className="fas fa-search"></i>
-        
           </form>
         </div>
         <div className="ltn__utilize-menu">
