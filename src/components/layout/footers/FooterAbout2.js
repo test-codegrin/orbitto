@@ -11,7 +11,7 @@ import {
 } from "@/libs/contactInfo";
 
 const FooterAbout2 = () => {
-  const { footerStyle, footerBg } = useFooterContex();
+  const { footerBg } = useFooterContex();
   return (
     <div className="col-xl-3 col-md-6 col-sm-6 col-12">
       <div className="footer-widget footer-about-widget">

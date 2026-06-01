@@ -1,7 +1,5 @@
-import TeamCard from "@/components/shared/cards/TeamCard";
 import TeamCardPrimary from "@/components/shared/cards/TeamCardPrimary";
 import getTeamMembers from "@/libs/getTeamMembers";
-import Image from "next/image";
 import React from "react";
 
 const TeamPrimary = () => {

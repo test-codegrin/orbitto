@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PortfolioCard = ({ portfolio }) => {
-  const { id, title, desc, icon, img, dep, duration, path } = portfolio;
+  const { id, title, desc, icon, img, path } = portfolio;
   return (
     <div className="ltn__gallery-item-inner">
       <div className="ltn__gallery-item-img">

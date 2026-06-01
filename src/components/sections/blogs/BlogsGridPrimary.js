@@ -30,14 +30,11 @@ const BlogsGridPrimary = () => {
   const {
     currentItems,
     currentpage,
-    setCurrentpage,
     paginationItems,
     currentPaginationItems,
     showMore,
     totalPages,
     handleCurrentPage,
-    firstItem,
-    lastItem,
   } = usePagination(blogs, 6, 5);
 
   return (

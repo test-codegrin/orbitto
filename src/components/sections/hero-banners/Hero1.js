@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { buildProductCategoryPath } from "@/libs/catalog";
+import { HERO_SLIDER_ASSETS } from "@/assets/images/hero-slider";
 
 const DEFAULT_FLOAT_SIZE = 100;
 const BASE_STAGE_WIDTH = 1920;
@@ -758,6 +759,16 @@ const SLIDES = [
   },
 ];
 
+const HERO_SLIDES = SLIDES.map((slide) => ({
+  ...slide,
+  mainImg: HERO_SLIDER_ASSETS[slide.mainImg] || slide.mainImg,
+  tabIcon: HERO_SLIDER_ASSETS[slide.tabIcon] || slide.tabIcon,
+  floats: slide.floats.map((item) => ({
+    ...item,
+    src: HERO_SLIDER_ASSETS[item.src] || item.src,
+  })),
+}));
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Pick the tightest breakpoint override that covers current viewport width.
 // Now includes laptop breakpoints: 1150, 1280, 1366, 1440
@@ -1423,7 +1434,7 @@ export default function Hero1() {
   const [cupAnimating, setCupAnimating] = useState(false);
   const [viewportW, setViewportW] = useState(1440);
 
-  const slide = SLIDES[current];
+  const slide = HERO_SLIDES[current];
   const watermarkGradient = (slide.watermarkGradient || "")
     .replace(/^background\s*:\s*/i, "")
     .replace(/;$/, "")
@@ -1436,8 +1447,8 @@ export default function Hero1() {
       setPrevCup(c);
       setCupAnimating(true);
       return direction === "next"
-        ? (c + 1) % SLIDES.length
-        : (c - 1 + SLIDES.length) % SLIDES.length;
+        ? (c + 1) % HERO_SLIDES.length
+        : (c - 1 + HERO_SLIDES.length) % HERO_SLIDES.length;
     });
   }, []);
 
@@ -1457,7 +1468,6 @@ export default function Hero1() {
   const titleAnim = dir === "next" ? "hs-anim-up" : "hs-anim-down";
   const subtitleAnim =
     dir === "next" ? "hs-anim-up-delay" : "hs-anim-down-delay";
-  const cardAnim = dir === "next" ? "hs-anim-card-up" : "hs-anim-card-down";
   const cupInAnim = dir === "next" ? "hs-anim-cup-next" : "hs-anim-cup-prev";
   const cupOutAnim =
     dir === "next" ? "hs-anim-cup-out-next" : "hs-anim-cup-out-prev";
@@ -1509,23 +1519,23 @@ export default function Hero1() {
 
   const getVisibleTabs = (fluid) => {
     const visibleCount = !fluid
-      ? SLIDES.length
+      ? HERO_SLIDES.length
       : viewportW <= 575
         ? 2
         : viewportW <= 768
           ? 3
-          : SLIDES.length;
+          : HERO_SLIDES.length;
 
-    if (visibleCount >= SLIDES.length) {
-      return SLIDES.map((slide, index) => ({ slide, index }));
+    if (visibleCount >= HERO_SLIDES.length) {
+      return HERO_SLIDES.map((slide, index) => ({ slide, index }));
     }
 
     const startOffset = visibleCount === 2 ? 0 : -Math.floor(visibleCount / 2);
 
     return Array.from({ length: visibleCount }, (_, itemIndex) => {
       const index =
-        (current + startOffset + itemIndex + SLIDES.length) % SLIDES.length;
-      return { slide: SLIDES[index], index };
+        (current + startOffset + itemIndex + HERO_SLIDES.length) % HERO_SLIDES.length;
+      return { slide: HERO_SLIDES[index], index };
     });
   };
 
@@ -1649,7 +1659,7 @@ export default function Hero1() {
                       }}
                     >
                       <Image
-                        src={SLIDES[prevCup].mainImg}
+                        src={HERO_SLIDES[prevCup].mainImg}
                         alt=""
                         fill
                         sizes="500px"
@@ -1802,7 +1812,7 @@ export default function Hero1() {
                       }}
                     >
                       <Image
-                        src={SLIDES[prevCup].mainImg}
+                        src={HERO_SLIDES[prevCup].mainImg}
                         alt=""
                         fill
                         sizes="(max-width: 480px) 62vw, (max-width: 576px) 60vw, (max-width: 768px) 40vw, (max-width: 1024px) 34vw, (max-width: 1280px) 31vw, 30vw"

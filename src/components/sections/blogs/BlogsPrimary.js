@@ -36,7 +36,7 @@ const ArrowIcon = () => (
   </svg>
 );
 
-const BlogCard = ({ blog, isSingle }) => {
+const BlogCard = ({ blog }) => {
   const [hovered, setHovered] = useState(false);
   const blogTitle = blog.title || blog.blog_author || "Orbitto Article";
   const category = blog.blog?.blog_category || "General";
@@ -153,7 +153,7 @@ const BlogsPrimary = () => {
                     : undefined
                 }
               >
-                <BlogCard blog={blog} isSingle={filtered.length === 1} />
+                <BlogCard blog={blog} />
               </div>
             ))}
           </div>

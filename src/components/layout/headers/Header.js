@@ -16,7 +16,6 @@ const Header = () => {
     headerSize,
     isNotHeaderRight,
     isNotTransparent,
-    isTextWhite,
     isStickyOnMobile,
   } = useHeaderContex();
 

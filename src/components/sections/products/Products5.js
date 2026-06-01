@@ -4,7 +4,7 @@ import ProductCardPrimary from "@/components/shared/cards/ProductCardPrimary";
 import useProducts from "@/hooks/useProducts";
 import React from "react";
 
-const Products5 = ({ isRelated, title, tag, pt, pb }) => {
+const Products5 = ({ isRelated, pt, pb }) => {
   const { products } = useProducts({ limit: 6 });
 
   return (

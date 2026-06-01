@@ -4,7 +4,7 @@ import React from "react";
 import { socialUrls } from "@/libs/contactInfo";
 
 const TeamCard = ({ teamSingle }) => {
-  const { id, name, img, desig, duration } = teamSingle;
+  const { id, name, img, desig } = teamSingle;
   return (
     <div className="ltn__team-item ltn__team-item-3">
       <div className="team-img">

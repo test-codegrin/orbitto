@@ -74,8 +74,6 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
     return Math.min(0, Math.max(maxOffset, val));
   }, [getCardWidth, maxRowLen, cardsPerRow]);
 
-  const getCategoryIndex = (slug) => normalizedCategories.findIndex((c) => c.slug === slug);
-
   const switchCategory = useCallback((dir) => {
     setActiveCategorySlug((current) => {
       const idx = normalizedCategories.findIndex((c) => c.slug === current);
