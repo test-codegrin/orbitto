@@ -1,4 +1,4 @@
-const productImage1 = "/img/product/1.png";
+const productImage1 = "/img/product/1.webp";
 
 const getAllFeatues = () => {
   const features = [
@@ -32,7 +32,7 @@ const getAllFeatues = () => {
     {
       id: 4,
       title: "All Kind Brand",
-      img: "/img/icons/icon-img/21.png",
+      img: "/img/icons/icon-img/21.webp",
       path: "/about",
       desc: "A broad ingredient range for food, beverage, wellness, and export markets.",
       bg: "white",
@@ -41,7 +41,7 @@ const getAllFeatues = () => {
     {
       id: 5,
       title: "Vegetable Growing",
-      img: "/img/icons/icon-img/22.png",
+      img: "/img/icons/icon-img/22.webp",
       path: "/team",
       desc: "Fresh produce and powders selected for clean taste, color, and usability.",
       bg: "white",
@@ -50,7 +50,7 @@ const getAllFeatues = () => {
     {
       id: 6,
       title: "Landscaping",
-      img: "/img/icons/icon-img/23.png",
+      img: "/img/icons/icon-img/23.webp",
       path: "/portfolio",
       desc: "Reliable supply support for domestic and international product programs.",
       bg: "white",

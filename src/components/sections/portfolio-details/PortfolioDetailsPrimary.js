@@ -53,7 +53,7 @@ const PortfolioDetailsPrimary = () => {
               <div className="row">
                 <div className="col-lg-6">
                   <Image
-                    src="/img/service/33.jpg"
+                    src="/img/service/33.webp"
                     alt="image"
                     width={600}
                     height={600}
@@ -62,7 +62,7 @@ const PortfolioDetailsPrimary = () => {
                 </div>
                 <div className="col-lg-6">
                   <Image
-                    src="/img/service/34.jpg"
+                    src="/img/service/34.webp"
                     alt="image"
                     width={600}
                     height={600}

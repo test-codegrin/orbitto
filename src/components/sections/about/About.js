@@ -38,7 +38,7 @@ const About = () => {
 
         <div className="home-about__image-wrap">
           <Image
-            src="/img/hero/about.png"
+            src="/img/hero/about.webp"
             alt="Orbitto premium fruit powder"
             width={760}
             height={520}

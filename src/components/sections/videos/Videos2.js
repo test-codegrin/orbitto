@@ -8,7 +8,7 @@ const Videos2 = () => {
           <div className="col-lg-10 offset-lg-1">
             <div
               className="ltn__video-bg-img ltn__video-popup-height-600 bg-image"
-              data-bs-bg="/img/bg/16.jpg"
+              data-bs-bg="/img/bg/16.webp"
             >
               <Link
                 className="ltn__video-icon-2"

@@ -1195,7 +1195,7 @@ const AdminPanel = () => {
       <aside className="admin-sidebar">
         <div>
           <div className="admin-logo">
-            <img src="/img/logo.png" alt="Orbitto" />
+            <img src="/img/logo.webp" alt="Orbitto" />
           </div>
           <nav className="admin-nav" aria-label="Admin navigation">
             {adminSidebarMenu.map((item) => {

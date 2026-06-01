@@ -1,11 +1,11 @@
-const teamImage1 = "/img/team/1.jpg";
-const teamImage2 = "/img/team/2.jpg";
-const teamImage3 = "/img/team/3.jpg";
-const teamImage4 = "/img/team/4.jpg";
-const teamImage5 = "/img/team/5.jpg";
-const teamImage6 = "/img/team/6.jpg";
-const teamImage7 = "/img/team/7.jpg";
-const teamImage8 = "/img/team/8.jpg";
+const teamImage1 = "/img/team/1.webp";
+const teamImage2 = "/img/team/2.webp";
+const teamImage3 = "/img/team/3.webp";
+const teamImage4 = "/img/team/4.webp";
+const teamImage5 = "/img/team/5.webp";
+const teamImage6 = "/img/team/6.webp";
+const teamImage7 = "/img/team/7.webp";
+const teamImage8 = "/img/team/8.webp";
 
 const getTeamMembers = () => {
   const team = [

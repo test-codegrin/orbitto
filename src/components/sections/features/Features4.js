@@ -17,7 +17,7 @@ const Features4 = ({ type, mb }) => {
                   <div className="ltn__feature-item ltn__feature-item-8">
                     <div className="ltn__feature-icon">
                       <Image
-                        src={"/img/icons/icon-img/11.png"}
+                        src={"/img/icons/icon-img/11.webp"}
                         width={51}
                         height={50}
                         alt="Organic"
@@ -36,7 +36,7 @@ const Features4 = ({ type, mb }) => {
                   <div className="ltn__feature-item ltn__feature-item-8">
                     <div className="ltn__feature-icon">
                       <Image
-                        src={"/img/icons/icon-img/12.png"}
+                        src={"/img/icons/icon-img/12.webp"}
                         width={51}
                         height={50}
                         alt="Traditional Sourcing"
@@ -55,7 +55,7 @@ const Features4 = ({ type, mb }) => {
                   <div className="ltn__feature-item ltn__feature-item-8">
                     <div className="ltn__feature-icon">
                       <Image
-                        src={"/img/icons/icon-img/13.png"}
+                        src={"/img/icons/icon-img/13.webp"}
                         width={51}
                         height={50}
                         alt="Quality Assured"
@@ -74,7 +74,7 @@ const Features4 = ({ type, mb }) => {
                   <div className="ltn__feature-item ltn__feature-item-8">
                     <div className="ltn__feature-icon">
                       <Image
-                        src={"/img/icons/icon-img/14.png"}
+                        src={"/img/icons/icon-img/14.webp"}
                         width={51}
                         height={50}
                         alt="Direct from Farm"

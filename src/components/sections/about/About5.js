@@ -8,7 +8,7 @@ const About5 = ({ pt }) => {
           <div className="col-lg-6 align-self-center">
             <div className="about-us-img-wrap about-img-left">
               <Image
-                src="/img/others/6.png"
+                src="/img/others/6.webp"
                 alt="About Us Image"
                 width={570}
                 height={531}

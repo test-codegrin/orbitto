@@ -18,7 +18,7 @@ const Adress = () => {
             <div className="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
               <div className="ltn__contact-address-icon">
                 <Image
-                  src="/img/icons/Phone_Icon.jpg"
+                  src="/img/icons/Phone_Icon.webp"
                   width={84}
                   height={82}
                   alt="Icon Image"
@@ -48,7 +48,7 @@ const Adress = () => {
             <div className="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
               <div className="ltn__contact-address-icon">
                 <Image
-                  src="/img/icons/Mail_Icon.jpg"
+                  src="/img/icons/Mail_Icon.webp"
                   width={84}
                   height={82}
                   alt="Icon Image"
@@ -64,7 +64,7 @@ const Adress = () => {
             <div className="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
               <div className="ltn__contact-address-icon">
                 <Image
-                  src="/img/icons/Address_Icon.jpg"
+                  src="/img/icons/Address_Icon.webp"
                   width={84}
                   height={82}
                   alt="Icon Image"

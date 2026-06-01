@@ -9,7 +9,7 @@ const Video = () => {
           <div className="col-lg-12">
             <div
               className="ltn__video-bg-img ltn__video-popup-height-600  bg-image"
-              data-bs-bg={"/img/bg/15.jpg"}
+              data-bs-bg={"/img/bg/15.webp"}
             >
               <Link
                 className="ltn__video-icon-2 ltn__video-icon-2-border"

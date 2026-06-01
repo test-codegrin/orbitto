@@ -40,10 +40,10 @@ const SLIDES = [
       title: "Premium Fruit Powder",
       desc: "Bringing the goodness of fresh fruits into every serving.",
     },
-    mainImg: "/img/slider/main/Blueberry.png",
+    mainImg: "/img/slider/main/Blueberry.webp",
     floats: [
       {
-        src: "/img/slider/Fruit/kiwi_blur.png",
+        src: "/img/slider/Fruit/kiwi_blur.webp",
         alt: "Kiwi",
         top: "0%",
         left: "6%",
@@ -60,7 +60,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Fruit/coconut_blur.png",
+        src: "/img/slider/Fruit/coconut_blur.webp",
         alt: "Coconut",
         top: "15%",
         right: "12%",
@@ -77,7 +77,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Fruit/avocado.png",
+        src: "/img/slider/Fruit/avocado.webp",
         alt: "Avocado",
         top: "18%",
         left: "21%",
@@ -95,7 +95,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Fruit/cherry.png",
+        src: "/img/slider/Fruit/cherry.webp",
         alt: "Cherry",
         bottom: "14%",
         left: "35%",
@@ -113,7 +113,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Fruit/berry_blur.png",
+        src: "/img/slider/Fruit/berry_blur.webp",
         alt: "Blueberry",
         bottom: "-20%",
         left: "-5%",
@@ -131,7 +131,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Fruit/berry.png",
+        src: "/img/slider/Fruit/berry.webp",
         alt: "Blueberry",
         bottom: "5%",
         right: "31%",
@@ -149,7 +149,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Fruit/cherry_blur.png",
+        src: "/img/slider/Fruit/cherry_blur.webp",
         alt: "Small Strawberry",
         bottom: "0%",
         right: "-10%",
@@ -167,7 +167,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Fruit/berry_loom.png",
+        src: "/img/slider/Fruit/berry_loom.webp",
         alt: "Blackberry",
         bottom: "-10%",
         right: "18%",
@@ -184,7 +184,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Fruit/gauvava_blur.png",
+        src: "/img/slider/Fruit/gauvava_blur.webp",
         alt: "Green Apple",
         top: "-20%",
         right: "22%",
@@ -203,7 +203,7 @@ const SLIDES = [
       },
     ],
     accent: "#432750",
-    tabIcon: "/img/slider/FruiteBasket.png",
+    tabIcon: "/img/slider/FruiteBasket.webp",
     tabLabel: "Fruit Powder",
   },
   {
@@ -221,10 +221,10 @@ const SLIDES = [
       title: "Natural Vegetable Powder",
       desc: "Processed to preserve natural flavor and rich nutrients.",
     },
-    mainImg: "/img/slider/main/brocili.png",
+    mainImg: "/img/slider/main/brocili.webp",
     floats: [
       {
-        src: "/img/slider/Vegetable/Beet.png",
+        src: "/img/slider/Vegetable/Beet.webp",
         alt: "Beetroot",
         top: "22%",
         left: "25%",
@@ -241,7 +241,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Vegetable/Coriander.png",
+        src: "/img/slider/Vegetable/Coriander.webp",
         alt: "Coriander Leaves",
         bottom: "0%",
         left: "25%",
@@ -259,7 +259,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Vegetable/broccoli.png",
+        src: "/img/slider/Vegetable/broccoli.webp",
         alt: "Broccoli",
         bottom: "0%",
         right: "30%",
@@ -276,7 +276,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Vegetable/Carrot.png",
+        src: "/img/slider/Vegetable/Carrot.webp",
         alt: "Carrot",
         bottom: "-10%",
         right: "-12%",
@@ -294,7 +294,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Vegetable/Bittermelon.png",
+        src: "/img/slider/Vegetable/Bittermelon.webp",
         alt: "BitterGourd",
         top: "-10%",
         left: "-1%",
@@ -311,7 +311,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Vegetable/SlicedOnion.png",
+        src: "/img/slider/Vegetable/SlicedOnion.webp",
         alt: "Onion Ring",
         top: "-40%",
         right: "20%",
@@ -328,7 +328,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Vegetable/blur.png",
+        src: "/img/slider/Vegetable/blur.webp",
         alt: "Spinach",
         bottom: "-29%",
         left: "5%",
@@ -345,7 +345,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Vegetable/Greenchilli.png",
+        src: "/img/slider/Vegetable/Greenchilli.webp",
         alt: "Green Chili",
         top: "15%",
         right: "12%",
@@ -363,7 +363,7 @@ const SLIDES = [
       },
     ],
     accent: "#2a7d3e",
-    tabIcon: "/img/slider/VegBasket.png",
+    tabIcon: "/img/slider/VegBasket.webp",
     tabLabel: "Vegetable Powder",
   },
   {
@@ -381,10 +381,10 @@ const SLIDES = [
       title: "Raw Pure Honey",
       desc: "Directly sourced from natural hives for authentic golden taste.",
     },
-    mainImg: "/img/slider/main/HoneyBowl.png",
+    mainImg: "/img/slider/main/HoneyBowl.webp",
     floats: [
       {
-        src: "/img/slider/Honey/bee.gif",
+        src: "/img/slider/Honey/bee.webp",
         alt: "Bee",
         top: "50%",
         left: "23%",
@@ -401,7 +401,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Honey/3.png",
+        src: "/img/slider/Honey/3.webp",
         alt: "Sunflower",
         top: "0%",
         right: "20%",
@@ -417,7 +417,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Honey/5.png",
+        src: "/img/slider/Honey/5.webp",
         alt: "Honey Drop",
         top: "-5%",
         left: "0%",
@@ -434,7 +434,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Honey/1.png",
+        src: "/img/slider/Honey/1.webp",
         alt: "Honey Jar",
         bottom: "10%",
         right: "30%",
@@ -451,7 +451,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Honey/2.png",
+        src: "/img/slider/Honey/2.webp",
         alt: "Honey Jar",
         bottom: "-20%",
         right: "-8%",
@@ -468,7 +468,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Honey/4.png",
+        src: "/img/slider/Honey/4.webp",
         alt: "Honey Jar",
         top: "-5%",
         right: "-3%",
@@ -485,7 +485,7 @@ const SLIDES = [
       },
     ],
     accent: "#d97706",
-    tabIcon: "/img/slider/HoneyPad.png",
+    tabIcon: "/img/slider/HoneyPad.webp",
     tabLabel: "Pure Honey",
   },
   {
@@ -503,10 +503,10 @@ const SLIDES = [
       title: "Exotic Spice Blends",
       desc: "Sun-dried and stone-ground for maximum aroma and authentic taste.",
     },
-    mainImg: "/img/slider/main/Red chilli.png",
+    mainImg: "/img/slider/main/Red chilli.webp",
     floats: [
       {
-        src: "/img/slider/Spices/GaramMsala.png",
+        src: "/img/slider/Spices/GaramMsala.webp",
         alt: "GaramMasala",
         top: "-15%",
         left: "-4%",
@@ -522,7 +522,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Spices/DryChilli.png",
+        src: "/img/slider/Spices/DryChilli.webp",
         alt: "Red Chili",
         top: "4%",
         right: "-3%",
@@ -538,7 +538,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Spices/Clove.png",
+        src: "/img/slider/Spices/Clove.webp",
         alt: "Clove",
         bottom: "-12%",
         left: "15%",
@@ -554,7 +554,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Spices/RedChilli.png",
+        src: "/img/slider/Spices/RedChilli.webp",
         alt: "Red Chili",
         bottom: "-5%",
         right: "30%",
@@ -570,7 +570,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Spices/Leaf.png",
+        src: "/img/slider/Spices/Leaf.webp",
         alt: "Tea Leaf",
         bottom: "-50%",
         right: "-12%",
@@ -586,7 +586,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Spices/Turmeric.png",
+        src: "/img/slider/Spices/Turmeric.webp",
         alt: "Turmeric",
         top: "-10%",
         right: "30%",
@@ -602,7 +602,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Spices/StarAnise.png",
+        src: "/img/slider/Spices/StarAnise.webp",
         alt: "Star Anise",
         bottom: "-46%",
         left: "-8%",
@@ -619,7 +619,7 @@ const SLIDES = [
       },
     ],
     accent: "#c2410c",
-    tabIcon: "/img/slider/SpicesBasket.png",
+    tabIcon: "/img/slider/SpicesBasket.webp",
     tabLabel: "Spices",
   },
   {
@@ -637,10 +637,10 @@ const SLIDES = [
       title: "Pure Herbal Powder",
       desc: "Cold-processed medicinal herbs retaining full nutritional potency.",
     },
-    mainImg: "/img/slider/main/aloe vera.png",
+    mainImg: "/img/slider/main/aloe vera.webp",
     floats: [
       {
-        src: "/img/slider/Herbs/amla.png",
+        src: "/img/slider/Herbs/amla.webp",
         alt: "Amla",
         top: "18%",
         left: "26%",
@@ -657,7 +657,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Herbs/PricklyPear.png",
+        src: "/img/slider/Herbs/PricklyPear.webp",
         alt: "PricklyPear",
         top: "-5%",
         left: "-2%",
@@ -673,7 +673,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Herbs/Rose.png",
+        src: "/img/slider/Herbs/Rose.webp",
         alt: "Rose",
         bottom: "-20%",
         left: "8%",
@@ -689,7 +689,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Herbs/MoringaLeaf.png",
+        src: "/img/slider/Herbs/MoringaLeaf.webp",
         alt: "MoringaLeaf",
         bottom: "-5%",
         right: "27%",
@@ -705,7 +705,7 @@ const SLIDES = [
         },
       },
       // {
-      //   src: "/img/slider/Herbs/AloeveraBlur.png",
+      //   src: "/img/slider/Herbs/AloeveraBlur.webp",
       //   alt: "Aloe Vera",
       //   bottom: "-20%",
       //   right: "-5%",
@@ -721,7 +721,7 @@ const SLIDES = [
       //   },
       // },
       {
-        src: "/img/slider/Herbs/GreenFennel.png",
+        src: "/img/slider/Herbs/GreenFennel.webp",
         alt: "GreenFennel",
         bottom: "-20%",
         right: "-9%",
@@ -737,7 +737,7 @@ const SLIDES = [
         },
       },
       {
-        src: "/img/slider/Herbs/AloeveraBlur.png",
+        src: "/img/slider/Herbs/AloeveraBlur.webp",
         alt: "Aloe Vera",
         top: "0",
         right: "12%",
@@ -754,7 +754,7 @@ const SLIDES = [
       },
     ],
     accent: "#166534",
-    tabIcon: "/img/slider/HerbalBasket.png",
+    tabIcon: "/img/slider/HerbalBasket.webp",
     tabLabel: "Herbal Powder",
   },
 ];
@@ -1845,3 +1845,5 @@ export default function Hero1() {
     </>
   );
 }
+
+

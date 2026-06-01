@@ -8,7 +8,7 @@ import SeoFaqSection from "@/components/seo/SeoFaqSection";
 const AboutMain = ({ faqSection }) => {
   return (
     <main>
-      <HeroPrimary title="About Us" text="About Us" bg="/img/bg/5.jpg" />
+      <HeroPrimary title="About Us" text="About Us" bg="/img/bg/5.webp" />
       <About5 pt={"pt-0"} />
       <WhyChooseOrbitto />
       <AboutPageSequence />

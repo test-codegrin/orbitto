@@ -79,7 +79,7 @@ const MobileMenu = () => {
             <Link href="/">
               <Image
                 className="orbot-logo"
-                src="/img/logo.png"
+                src="/img/logo.webp"
                 alt="Logo"
                 width={155}
                 height={89}

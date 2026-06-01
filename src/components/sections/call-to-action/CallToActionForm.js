@@ -14,7 +14,7 @@ const CallToActionForm = ({ type }) => {
               className={`ltn__service-form-area ltn__service-form-1 ${
                 type === 2 ? "" : "ltn__service-form-margin"
               } bg-image bg-overlay-theme-black-60 pt-115 pb-95`}
-              data-bs-bg="/img/bg/2.jpg"
+              data-bs-bg="/img/bg/2.webp"
             >
               <div className="row">
                 <div className="col-xl-5 col-lg-12 align-self-center">

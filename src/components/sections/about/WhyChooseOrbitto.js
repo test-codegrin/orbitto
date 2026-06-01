@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const slides = [
   {
-    image: "/img/bg/16.jpg",
+    image: "/img/bg/16.webp",
     imageAlt: "Fresh products packed for reliable delivery",
     copy: [
       "We do not just make great powders - we build long-term partnerships. At Orbitto, our goal is simple: deliver high-quality ingredients with consistency, reliability, and care.",
@@ -35,7 +35,7 @@ const slides = [
     ],
   },
   {
-    image: "/img/service/2.jpg",
+    image: "/img/service/2.webp",
     imageAlt: "Export support and product handling process",
     copy: [
       "Our export process is planned around client priorities, product safety, and dependable movement from purchase to dispatch.",
@@ -65,7 +65,7 @@ const slides = [
     ],
   },
   {
-    image: "/img/about/Grinder.png",
+    image: "/img/about/Grinder.webp",
     imageAlt: "Premium product packaging for export clients",
     copy: [
       "Orbitto values the time and money clients invest in every order, so service speed and clarity are always part of the work.",
@@ -185,14 +185,14 @@ const WhyChooseOrbitto = () => {
         </div>
 
         <Image
-          src="/img/slider/Fruit/avocado.png"
+          src="/img/slider/Fruit/avocado.webp"
           alt=""
           width={120}
           height={120}
           className="why-orbitto-decor why-orbitto-decor--left"
         />
         <Image
-          src="/img/slider/Fruit/berry.png"
+          src="/img/slider/Fruit/berry.webp"
           alt=""
           width={130}
           height={130}

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-const logoImage1 = "/img/logo.png";
-const logoImage2 = "/img/logo-2.png";
+const logoImage1 = "/img/logo.webp";
+const logoImage2 = "/img/logo-2.webp";
 
 import Link from "next/link";
 import { useHeaderContex } from "@/providers/HeaderContex";

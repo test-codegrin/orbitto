@@ -39,13 +39,13 @@ const companyOwners = [
     name: "YASH PATEL",
     role: "MARKETING MANAGER & FOUNDER",
     phone: "+91 99047 27348",
-    image: "/img/OwnerProfile/YashPatel.png",
+    image: "/img/OwnerProfile/YashPatel.webp",
   },
   {
     name: "PARTH PATEL",
     role: "MARKETING MANAGER & MANAGEMENT MANAGER & FOUNDER",
     phone: "+91 97266 87849",
-    image: "/img/OwnerProfile/ParthPatel.png",
+    image: "/img/OwnerProfile/ParthPatel.webp",
   },
   {
     name: "DHRUV PATEL",
@@ -94,7 +94,7 @@ const AboutPageSequence = () => {
         <div className="about-sequence__container about-intro__grid">
           <div className="about-intro__image">
             <Image
-              src="/img/about/VegetablePowder.png"
+              src="/img/about/VegetablePowder.webp"
               alt="Orbitto premium fruit powder product"
               width={640}
               height={430}
@@ -179,7 +179,7 @@ const AboutPageSequence = () => {
           <div className="about-quality__grid">
             <div className="about-quality__image">
               <Image
-                src="/img/service/2.jpg"
+                src="/img/service/2.webp"
                 alt="Food safety policy and process quality checks"
                 width={760}
                 height={450}
@@ -208,7 +208,7 @@ const AboutPageSequence = () => {
           <div className="about-commitment__visual" aria-hidden="true">
             <div>
               <Image
-                src="/img/about/OurCommitment.jpg"
+                src="/img/about/OurCommitment.webp"
                 alt=""
                 width={300}
                 height={300}
@@ -253,7 +253,7 @@ const AboutPageSequence = () => {
           <div className="about-forte__layout">
             <div className="about-forte__visual" aria-hidden="true">
               <Image
-                src="/img/about/forte-powder-spoons.png"
+                src="/img/about/forte-powder-spoons.webp"
                 alt=""
                 width={680}
                 height={420}

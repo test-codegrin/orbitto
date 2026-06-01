@@ -128,7 +128,7 @@ const Preloader = () => {
             <Image
               ref={brandRef}
               className="preloader-logo-img"
-              src="/img/logo.png"
+              src="/img/logo.webp"
               alt="Loading"
               width={254}
               height={254}

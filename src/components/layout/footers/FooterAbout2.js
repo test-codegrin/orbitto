@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-const logoImage = "/img/logo.png";
-const logoImage2 = "/img/logo-2.png";
+const logoImage = "/img/logo.webp";
+const logoImage2 = "/img/logo-2.webp";
 import Link from "next/link";
 import { useFooterContex } from "@/providers/FooterContext";
 import {

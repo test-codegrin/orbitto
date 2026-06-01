@@ -12,7 +12,7 @@ const Skills = () => {
           <div className="col-lg-6 align-self-center">
             <div className="about-img-right">
               <Image
-                src="/img/team/t-4.jpg"
+                src="/img/team/t-4.webp"
                 alt="Image"
                 width={600}
                 height={600}

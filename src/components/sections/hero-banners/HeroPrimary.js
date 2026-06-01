@@ -18,7 +18,7 @@ const HeroPrimary = ({
       className={`ltn__breadcrumb-area ltn__breadcrumb-area-2 page-breadcrumb-area ltn__breadcrumb-color-white bg-overlay-theme-black-90 bg-image ${
         type === 3 ? "plr--9" : type === 2 ? "ltn__breadcrumb-area-3 plr--9" : ""
       } ${mb ? mb : ""}`}
-      data-bs-bg={bg ? bg : "/img/bg/9.jpg"}
+      data-bs-bg={bg ? bg : "/img/bg/9.webp"}
     >
       <div className="container">
         <div className="row">

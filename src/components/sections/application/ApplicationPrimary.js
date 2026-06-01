@@ -8,35 +8,35 @@ const applicationSections = [
     items: [
       {
         title: "Beverages",
-        image: "/img/applications/Beverages.png",
+        image: "/img/applications/Beverages.webp",
       },
       {
         title: "Smoothies & Shakes",
-        image: "/img/applications/Beverages.png",
+        image: "/img/applications/Beverages.webp",
       },
       {
         title: "Bakery Items",
-        image: "/img/applications/Bakery.jpg",
+        image: "/img/applications/Bakery.webp",
       },
       {
         title: "Desserts",
-        image: "/img/applications/desserts.jpg",
+        image: "/img/applications/Desserts.webp",
       },
       {
         title: "Ice Creams",
-        image: "/img/applications/IceCreams.jpg",
+        image: "/img/applications/IceCreams.webp",
       },
       {
         title: "Confectionery",
-        image: "/img/applications/confectionery.jpg",
+        image: "/img/applications/Confectionery.webp",
       },
       {
         title: "Snacks",
-        image: "/img/applications/SavorySnacks.jpg",
+        image: "/img/applications/SavorySnacks.webp",
       },
       {
         title: "Breakfast Items",
-        image: "/img/applications/Breakfast.jpg",
+        image: "/img/applications/Breakfast.webp",
       },
     ],
   },
@@ -46,35 +46,35 @@ const applicationSections = [
     items: [
       {
         title: "Soups",
-        image: "/img/applications/Soups.jpg",
+        image: "/img/applications/Soups.webp",
       },
       {
         title: "Sauces",
-        image: "/img/applications/Sauces.jpg",
+        image: "/img/applications/Sauces.webp",
       },
       {
         title: "Seasonings",
-        image: "/img/applications/Seasonings.jpg",
+        image: "/img/applications/Seasonings.webp",
       },
       {
         title: "Ready Meals",
-        image: "/img/applications/Meals.jpg",
+        image: "/img/applications/Meals.webp",
       },
       {
         title: "Instant Mixes",
-        image: "/img/applications/InstantMixes.jpg",
+        image: "/img/applications/InstantMixes.webp",
       },
       {
         title: "Noodles & Pasta",
-        image: "/img/applications/NoodlesPasta.jpg",
+        image: "/img/applications/NoodlesPasta.webp",
       },
       {
         title: "Savory Snacks",
-        image: "/img/applications/SavorySnacks.jpg",
+        image: "/img/applications/SavorySnacks.webp",
       },
       {
         title: "Health Foods",
-        image: "/img/applications/HealthFoods.jpg",
+        image: "/img/applications/HealthFoods.webp",
       },
     ],
   },
@@ -84,35 +84,35 @@ const applicationSections = [
     items: [
       {
         title: "Beverages",
-        image: "/img/applications/HoneyBeverages.jpg",
+        image: "/img/applications/HoneyBeverages.webp",
       },
       {
         title: "Bakery Items",
-        image: "/img/applications/HoneyBakery.jpg",
+        image: "/img/applications/HoneyBakery.webp",
       },
       {
         title: "Confectionery",
-        image: "/img/applications/HoneyConfectionery.jpg",
+        image: "/img/applications/HoneyConfectionery.webp",
       },
       {
         title: "Breakfast Items",
-        image: "/img/applications/HoneyBreakfast.jpg",
+        image: "/img/applications/HoneyBreakfast.webp",
       },
       {
         title: "Dairy Desserts",
-        image: "/img/applications/HoneyDairyDesserts.jpg",
+        image: "/img/applications/HoneyDairyDesserts.webp",
       },
       {
         title: "Sauces & Dressings",
-        image: "/img/applications/HoneySaucesDressings.jpg",
+        image: "/img/applications/HoneySaucesDressings.webp",
       },
       {
         title: "Nutraceuticals",
-        image: "/img/applications/HoneyNutraceuticals.jpg",
+        image: "/img/applications/HoneyNutraceuticals.webp",
       },
       {
         title: "Ready Mixes",
-        image: "/img/applications/HoneyReadyMixes.jpg",
+        image: "/img/applications/HoneyReadyMixes.webp",
       },
     ],
   },
@@ -122,35 +122,35 @@ const applicationSections = [
     items: [
       {
         title: "Spice Blends",
-        image: "/img/applications/SpiceBlends.jpg",
+        image: "/img/applications/SpiceBlends.webp",
       },
       {
         title: "Seasonings",
-        image: "/img/applications/SpiceSeasonings.jpg",
+        image: "/img/applications/SpiceSeasonings.webp",
       },
       {
         title: "Savory Snacks",
-        image: "/img/applications/SpiceSavorySnacks.jpg",
+        image: "/img/applications/SpiceSavorySnacks.webp",
       },
       {
         title: "Sauces",
-        image: "/img/applications/SpiceSauces.jpg",
+        image: "/img/applications/SpiceSauces.webp",
       },
       {
         title: "Marinades",
-        image: "/img/applications/SpiceMarinades.jpg",
+        image: "/img/applications/SpiceMarinades.webp",
       },
       {
         title: "Pickles",
-        image: "/img/applications/SpicePickles.jpg",
+        image: "/img/applications/SpicePickles.webp",
       },
       {
         title: "Instant Noodles",
-        image: "/img/applications/SpiceInstantNoodles.jpg",
+        image: "/img/applications/SpiceInstantNoodles.webp",
       },
       {
         title: "Ready Meals",
-        image: "/img/applications/SpiceReadyMeals.jpg",
+        image: "/img/applications/SpiceReadyMeals.webp",
       },
     ],
   },
@@ -160,35 +160,35 @@ const applicationSections = [
     items: [
       {
         title: "Herbal Tea",
-        image: "/img/applications/HerbalTea.jpg",
+        image: "/img/applications/HerbalTea.webp",
       },
       {
         title: "Functional Drinks",
-        image: "/img/applications/HerbalFunctionalDrinks.jpg",
+        image: "/img/applications/HerbalFunctionalDrinks.webp",
       },
       {
         title: "Supplements",
-        image: "/img/applications/HerbalSupplements.jpg",
+        image: "/img/applications/HerbalSupplements.webp",
       },
       {
         title: "Wellness Mixes",
-        image: "/img/applications/HerbalWellnessMixes.jpg",
+        image: "/img/applications/HerbalWellnessMixes.webp",
       },
       {
         title: "Health Foods",
-        image: "/img/applications/HerbalHealthFoods.jpg",
+        image: "/img/applications/HerbalHealthFoods.webp",
       },
       {
         title: "Dairy Products",
-        image: "/img/applications/HerbalDairyProducts.jpg",
+        image: "/img/applications/HerbalDairyProducts.webp",
       },
       {
         title: "Bakery Items",
-        image: "/img/applications/HerbalBakeryItems.jpg",
+        image: "/img/applications/HerbalBakeryItems.webp",
       },
       {
         title: "Nutraceuticals",
-        image: "/img/applications/HerbalNutraceuticals.jpg",
+        image: "/img/applications/HerbalNutraceuticals.webp",
       },
     ],
   },
@@ -230,3 +230,4 @@ const ApplicationPrimary = () => {
 };
 
 export default ApplicationPrimary;
+

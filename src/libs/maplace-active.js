@@ -1,4 +1,4 @@
-import markerImage from "/public/img/icons/map-marker-2.png";
+import markerImage from "/public/img/icons/map-marker-2.webp";
 import { locationUrl, locationName, officeAddress } from "@/libs/contactInfo";
 
 function mplace() {

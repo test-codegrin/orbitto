@@ -9,7 +9,7 @@ export const brandName = "Orbitto International";
 export const brandShortName = "Orbitto";
 export const brandEmail = "orbittointernational@gmail.com";
 export const primaryPhone = "+91 99047 27348";
-export const defaultOgImage = "/img/banner/banner-2.jpg";
+export const defaultOgImage = "/img/banner/banner-2.webp";
 export const defaultDescription =
   "Orbitto International is an export-focused manufacturer and supplier of fruit powders, vegetable powders, spices, honey, and herbal ingredients for global food and beverage brands.";
 
@@ -188,7 +188,7 @@ export const getOrganizationSchema = () => ({
   name: brandName,
   alternateName: brandShortName,
   url: absoluteUrl("/"),
-  logo: absoluteUrl("/img/logo.png"),
+  logo: absoluteUrl("/img/logo.webp"),
   image: absoluteUrl(defaultOgImage),
   description: defaultDescription,
   email: brandEmail,
