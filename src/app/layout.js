@@ -2,9 +2,7 @@ import { Open_Sans, Playfair_Display, Rajdhani } from "next/font/google";
 import Script from "next/script";
 import { Suspense } from "react";
 
-import "@/assets/css/font-icons.css";
 import "@/assets/css/plugins.css";
-import "@/assets/css/responsive.css";
 import "./globals.css";
 
 import StructuredData from "@/components/seo/StructuredData";
@@ -23,15 +21,16 @@ import ProductProvider from "@/providers/ProductContext";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   display: "swap",
   variable: "--ltn__body-font",
 });
 
 const rajdhani = Rajdhani({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
   display: "swap",
+  preload: false,
   variable: "--ltn__heading-font",
 });
 
@@ -39,6 +38,7 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["800"],
   display: "swap",
+  preload: false,
   variable: "--font-playfair",
 });
 
@@ -119,12 +119,36 @@ export default function RootLayout({ children }) {
         <link rel="alternate" hrefLang="hi" href={`${getSiteUrl()}/hi`} />
         <link rel="alternate" hrefLang="gu" href={`${getSiteUrl()}/gu`} />
         <link rel="alternate" hrefLang="x-default" href={`${getSiteUrl()}/`} />
+        <link
+          id="defer-font-icons-css"
+          rel="preload"
+          href="/css/font-icons.css"
+          as="style"
+        />
+        <link
+          id="defer-responsive-css"
+          rel="preload"
+          href="/css/responsive.css"
+          as="style"
+        />
+        <noscript>
+          <link rel="stylesheet" href="/css/font-icons.css" />
+          <link rel="stylesheet" href="/css/responsive.css" />
+        </noscript>
       </head>
       <body className={open_sans.className}>
+        <Script id="defer-non-critical-css" strategy="afterInteractive">
+          {`(function () {
+            var ids = ["defer-font-icons-css", "defer-responsive-css"];
+            ids.forEach(function (id) {
+              var link = document.getElementById(id);
+              if (link) link.rel = "stylesheet";
+            });
+          })();`}
+        </Script>
         <StructuredData id="orbitto-organization-schema" data={getOrganizationSchema()} />
         <StructuredData id="orbitto-website-schema" data={getWebsiteSchema()} />
         <StructuredData id="orbitto-local-business-schema" data={getLocalBusinessSchema()} />
-        <Script src="/plugins.js" strategy="lazyOnload" />
         {mapsApiKey ? (
           <Script
             src={`https://maps.googleapis.com/maps/api/js?key=${mapsApiKey}&loading=async`}

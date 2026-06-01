@@ -28,18 +28,15 @@ const ProductCardPrimary = ({
   const [isImageUnavailable, setIsImageUnavailable] = useState(
     hideCardWhenImageUnavailable && !image
   );
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [resolvedImage, setResolvedImage] = useState(image || FALLBACK_IMAGE_SRC);
 
   useEffect(() => {
     setIsImageUnavailable(hideCardWhenImageUnavailable && !image);
-    setIsImageLoaded(false);
     setResolvedImage(image || FALLBACK_IMAGE_SRC);
   }, [hideCardWhenImageUnavailable, image, id]);
 
   const handleImageError = () => {
     setResolvedImage(FALLBACK_IMAGE_SRC);
-    setIsImageLoaded(true);
     if (onImageReady) onImageReady(id);
     if (!hideCardWhenImageUnavailable) return;
     setIsImageUnavailable(true);
@@ -49,7 +46,6 @@ const ProductCardPrimary = ({
   };
 
   const handleImageLoad = () => {
-    setIsImageLoaded(true);
     if (onImageReady) onImageReady(id);
   };
 
@@ -73,23 +69,14 @@ const ProductCardPrimary = ({
       <div className="product-img">
         <Link href={productPath} prefetch={!onProductClick} onClick={handleProductClick}>
           <span className="product-img-state-wrap" style={{ display: "block", position: "relative" }}>
-            {!isImageLoaded ? (
-              <span
-                className="product-card-skeleton__image"
-                aria-hidden="true"
-                style={{ position: "absolute", inset: 0, zIndex: 1 }}
-              />
-            ) : null}
-            <span style={{ opacity: isImageLoaded ? 1 : 0, transition: "opacity 220ms ease", display: "block" }}>
-              <Image
-                src={resolvedImage}
-                alt={title || "product image"}
-                width={1000}
-                height={1000}
-                onError={handleImageError}
-                onLoad={handleImageLoad}
-              />
-            </span>
+            <Image
+              src={resolvedImage}
+              alt={title || "product image"}
+              width={1000}
+              height={1000}
+              onError={handleImageError}
+              onLoad={handleImageLoad}
+            />
             {!image ? (
             <span
               className="product-img-empty"

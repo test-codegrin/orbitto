@@ -35,9 +35,7 @@ const SidebarSearch = ({ className = "", isCompact = false }) => {
           onKeyUp={startSearch}
           required
         />
-        <button type="submit">
-          <i className="fas fa-search"></i>
-        </button>
+       
         <QuickSearchItems />
       </form>
     </div>

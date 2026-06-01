@@ -21,6 +21,9 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
 
   const trackRef = useRef(null);
   const containerRef = useRef(null);
+  const cardWidthRef = useRef(0);
+  const dragFrameRef = useRef(null);
+  const pendingOffsetRef = useRef(null);
 
   // drag state
   const dragRef = useRef({ active: false, startX: 0, startOffset: 0 });
@@ -62,17 +65,32 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
   const row2 = useMemo(() => products?.filter((_, i) => i % 2 === 1) || [], [products]);
   const maxRowLen = Math.max(row1.length, row2.length);
 
-  const getCardWidth = useCallback(() => {
-    if (!containerRef.current) return 0;
-    return containerRef.current.offsetWidth / cardsPerRow;
+  const measureCardWidth = useCallback(() => {
+    if (!containerRef.current) {
+      cardWidthRef.current = 0;
+      return 0;
+    }
+    cardWidthRef.current = containerRef.current.clientWidth / cardsPerRow;
+    return cardWidthRef.current;
   }, [cardsPerRow]);
 
+  useEffect(() => {
+    measureCardWidth();
+    if (!containerRef.current || typeof ResizeObserver === "undefined") return;
+
+    const observer = new ResizeObserver(() => {
+      measureCardWidth();
+    });
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, [measureCardWidth]);
+
   const clampOffset = useCallback((val) => {
-    const cardW = getCardWidth();
+    const cardW = cardWidthRef.current || measureCardWidth();
     if (!cardW || maxRowLen === 0) return 0;
     const maxOffset = -(maxRowLen - cardsPerRow) * cardW;
     return Math.min(0, Math.max(maxOffset, val));
-  }, [getCardWidth, maxRowLen, cardsPerRow]);
+  }, [measureCardWidth, maxRowLen, cardsPerRow]);
 
   const switchCategory = useCallback((dir) => {
     setActiveCategorySlug((current) => {
@@ -88,7 +106,7 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
 
   // ─── Core slide-forward logic (used by both auto and manual) ─────────────
   const slideNext = useCallback((currentOffset) => {
-    const cardW = getCardWidth();
+    const cardW = cardWidthRef.current || measureCardWidth();
     if (!cardW) return currentOffset;
     const maxOffset = -(maxRowLen - cardsPerRow) * cardW;
     const newOffset = currentOffset - cardW * SLIDE_STEP;
@@ -100,10 +118,10 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
       return 0;
     }
     return clamped;
-  }, [getCardWidth, maxRowLen, cardsPerRow, clampOffset, switchCategory]);
+  }, [measureCardWidth, maxRowLen, cardsPerRow, clampOffset, switchCategory]);
 
   const slidePrev = useCallback((currentOffset) => {
-    const cardW = getCardWidth();
+    const cardW = cardWidthRef.current || measureCardWidth();
     if (!cardW) return currentOffset;
     const newOffset = currentOffset + cardW * SLIDE_STEP;
     const clamped = clampOffset(newOffset);
@@ -112,7 +130,7 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
       return 0;
     }
     return clamped;
-  }, [getCardWidth, clampOffset, switchCategory]);
+  }, [measureCardWidth, clampOffset, switchCategory]);
 
   // ─── Auto-slide engine ───────────────────────────────────────────────────
   useEffect(() => {
@@ -152,6 +170,7 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
   // ─── Drag handlers ───────────────────────────────────────────────────────
   const onDragStart = (e) => {
     pauseAuto();
+    measureCardWidth();
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     dragRef.current = { active: true, startX: clientX, startOffset: offset };
     if (trackRef.current) trackRef.current.style.transition = "none";
@@ -161,7 +180,14 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
     if (!dragRef.current.active) return;
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const delta = clientX - dragRef.current.startX;
-    setOffset(clampOffset(dragRef.current.startOffset + delta));
+    pendingOffsetRef.current = clampOffset(dragRef.current.startOffset + delta);
+    if (dragFrameRef.current) return;
+    dragFrameRef.current = window.requestAnimationFrame(() => {
+      dragFrameRef.current = null;
+      if (pendingOffsetRef.current !== null) {
+        setOffset(pendingOffsetRef.current);
+      }
+    });
   };
 
   const onDragEnd = (e) => {
@@ -172,7 +198,11 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
       ? e.changedTouches[0].clientX
       : e.clientX ?? dragRef.current.startX;
     const delta = clientX - dragRef.current.startX;
-    const cardW = getCardWidth();
+    const cardW = cardWidthRef.current || measureCardWidth();
+    if (!cardW) {
+      resumeAuto();
+      return;
+    }
     const rawIndex = -offset / cardW;
     const snapped = delta < -30
       ? Math.ceil(rawIndex)
@@ -186,6 +216,14 @@ const Products3 = ({ title, desc, isSmallTitle, pt, type }) => {
       resumeAuto();
     }, 380);
   };
+
+  useEffect(() => {
+    return () => {
+      if (dragFrameRef.current) {
+        window.cancelAnimationFrame(dragFrameRef.current);
+      }
+    };
+  }, []);
 
   // ─── Render helpers ──────────────────────────────────────────────────────
   // When all products fit within the visible window, center them

@@ -29,7 +29,7 @@ const About = () => {
             solutions.
           </p>
           <Link
-            href="/products/acaiberry-powder"
+            href="/products"
             className="theme-btn-1 btn btn-effect-1 text-uppercase"
           >
             View more details

@@ -30,11 +30,16 @@ const Navbar = () => {
             {navItems?.map((item, idx) => (
               <NavItem key={idx} item={item} />
             ))}
-            {headerStyle === 5 && <Logo sticky={true} />}
-            <div
+            {headerStyle === 5 && (
+              <li className="header-logo-item" aria-hidden="true">
+                <Logo sticky={true} />
+              </li>
+            )}
+            <li
               className={`header-menu ${
                 headerStyle === 5 ? "header-menu-2" : "d-none d-xl-block"
               }`}
+              aria-hidden="true"
             />
             {(isNavbarAppointmentBtn ||
               headerSize === "lg" ||

@@ -26,7 +26,6 @@ const skeletonItems = Array.from({ length: 8 }, (_, index) => index);
 const ProductsPrimary = ({ isSidebar }) => {
   const {
     filteredProducts,
-    isCategoriesLoading,
     category,
     productPagination,
     productPage,
@@ -124,7 +123,7 @@ const ProductsPrimary = ({ isSidebar }) => {
   }, [productListKey, setCurrentpage]);
 
   useEffect(() => {
-    if (isProductsLoading || isCategoriesLoading) {
+    if (isProductsLoading) {
       setAreVisibleImagesReady(false);
       return;
     }
@@ -159,9 +158,9 @@ const ProductsPrimary = ({ isSidebar }) => {
     return () => {
       isCancelled = true;
     };
-  }, [isProductsLoading, isCategoriesLoading, visibleItemsKey, visibleItems]);
+  }, [isProductsLoading, visibleItemsKey, visibleItems]);
 
-  const isMainLoading = isProductsLoading || isCategoriesLoading || !areVisibleImagesReady;
+  const isMainLoading = isProductsLoading || !areVisibleImagesReady;
 
   const handlePageJumpSelect = (pageIndex) => {
     setIsPageJumpOpen(false);

@@ -50,11 +50,11 @@ const HeaderRight = () => {
         >
           <form onSubmit={handleProductSearch}>
             <input type="text" name="search" placeholder="Search here..." />
-            <button type="submit">
+  
               <span>
                 <i className="icon-search"></i>
               </span>
-            </button>
+        
           </form>
         </div>
       </div>

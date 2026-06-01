@@ -13,7 +13,7 @@ const HotDeal3 = () => {
           <div className="col-lg-7">
             <div className="call-to-action-inner call-to-action-inner-4 text-color-white--- text-center---">
               <div className="section-title-area ltn__section-title-2 text-center---">
-                <h6 className="ltn__secondary-color">Todays Hot Deals</h6>
+                <p className="ltn__secondary-color">Todays Hot Deals</p>
                 <h2 className="section-title">
                   Original Stock Honey <br /> Combo Package
                 </h2>

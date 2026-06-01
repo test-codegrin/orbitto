@@ -99,6 +99,26 @@ const main = () => {
     }
   };
 
+  const applySlickA11yLabels = () => {
+    const $ = getJquery();
+    if (!$) return;
+
+    $(".slick-track[role='listbox']").each(function (index) {
+      const $track = $(this);
+      if ($track.attr("aria-label")) return;
+
+      const sectionHeading =
+        $track
+          .closest("section, .ltn__testimonial-area, .ltn__blog-area, .ltn__product-area")
+          .find("h1, h2, h3")
+          .first()
+          .text()
+          .trim() || "Carousel items";
+
+      $track.attr("aria-label", `${sectionHeading} slides`);
+    });
+  };
+
   const checkJquery = setInterval(() => {
     if (typeof window !== "undefined" && window.$) {
       clearCheckJquery();
@@ -460,6 +480,7 @@ const main = () => {
         })
         .on("afterChange", function () {
           new WOW().init();
+          applySlickA11yLabels();
         });
       /* --------------------------------------------------------
               15-2. Slider Active 2
@@ -492,6 +513,7 @@ const main = () => {
         })
         .on("afterChange", function () {
           new WOW().init();
+          applySlickA11yLabels();
         });
 
       /* --------------------------------------------------------
@@ -1229,6 +1251,8 @@ const main = () => {
           ],
         });
       }
+
+      applySlickA11yLabels();
 
       /* --------------------------------------------------------
               28. Blog Gallery (Blog Page )

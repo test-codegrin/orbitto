@@ -25,7 +25,7 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Quality-Focused Ingredients</h4>
+                      <h3 className="ltn__feature-title">Quality-Focused Ingredients</h3>
                       <p>
                         Product quality, consistency, and suitability remain central to every commercial supply discussion.
                       </p>
@@ -44,7 +44,7 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Export Documentation Support</h4>
+                      <h3 className="ltn__feature-title">Export Documentation Support</h3>
                       <p>
                         We align product movement with documentation and export coordination requirements for smoother international supply.
                       </p>
@@ -63,7 +63,7 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Consistent Supply Planning</h4>
+                      <h3 className="ltn__feature-title">Consistent Supply Planning</h3>
                       <p>
                         Orbitto supports repeat orders, buyer timelines, and dependable communication for long-term sourcing relationships.
                       </p>
@@ -82,7 +82,7 @@ const Features4 = ({ type, mb }) => {
                       />
                     </div>
                     <div className="ltn__feature-info">
-                      <h4>Flexible Packaging Options</h4>
+                      <h3 className="ltn__feature-title">Flexible Packaging Options</h3>
                       <p>
                         Bulk supply, packaging preferences, and private label discussions can be aligned to buyer and market requirements.
                       </p>

@@ -15,8 +15,8 @@ const TestimonialCard = ({ testimonial }) => {
             <Image src={imageSmall} width={400} height={400} alt="#" />
           </div>
           <div className="ltn__testimoni-name-designation">
-            <h4>{name}</h4>
-            <h6>{desig}</h6>
+            <h3 className="ltn__testimoni-name">{name}</h3>
+            <p className="ltn__testimoni-designation">{desig}</p>
           </div>
         </div>
         <div className="ltn__testimoni-bg-icon">
