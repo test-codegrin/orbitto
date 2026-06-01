@@ -9579,14 +9579,43 @@ main > .page-breadcrumb-area + [class*="pt-"] {
   .ltn__product-item-3.product-card--box-image
   .product-img {
   padding: 12px;
-  background-color: transparent;
+  background-color: rgba(143, 140, 140, 0.13);
+}
+
+.products-page-card-grid
+  .ltn__product-item-3.product-card--box-image
+  .product-img
+  .product-img-state-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.products-page-card-grid
+  .ltn__product-item-3.product-card--box-image
+  .product-img
+  .product-img-state-wrap
+  > span:last-child {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .products-page-card-grid
   .ltn__product-item-3.product-card--box-image
   .product-img
   img {
-  object-fit: contain;
+  width: 100%;
+  height: auto !important;
+  max-height: 100%;
+  object-fit: contain !important;
   object-position: center;
 }
 
